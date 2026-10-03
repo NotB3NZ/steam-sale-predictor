@@ -1,0 +1,48 @@
+# Project Context — Steam Sale Prediction
+
+## Research Question
+
+> Given information available about a Steam game **before** a specific Steam Autumn Sale begins, what is the probability that the game will be discounted during that sale?
+
+## Unit of Observation
+
+```
+one row = one game × one Autumn Sale year
+```
+
+Example:
+```
+appid | sale_year | age_at_sale | price | ... | discounted
+12345 | 2023      | 850         | 29.99 | ... | 1
+12345 | 2024      | 1216        | 29.99 | ... | 0
+```
+
+## Data Sources
+
+| Source | Role | Status |
+|--------|------|--------|
+| `games.csv` | Game metadata & potential predictors | Available (125,855 games) |
+| ITAD historical Steam price data | Ground-truth sale labels (`discounted`) | Phase 2+ |
+
+## Known Data Issue
+
+The raw `games.csv` header has a concatenated column `DiscountDLC count` that should be `Discount` + `DLC count` (header has 39 fields, data rows have 40). The inspection script corrects this at load time. The original file is preserved.
+
+## Methodological Rules
+
+1. **Label integrity:** Insufficient historical price coverage → `UNKNOWN`, never `0`.
+2. **Raw data preservation:** Never overwrite `games.csv` or `games.json`.
+3. **API caching:** Raw ITAD API responses must be cached locally.
+4. **Temporal validity:** Predictors must represent information available **before** the sale being predicted.
+5. **No temporal leakage:** Lifetime stats (Peak CCU, review counts, playtime, current Discount) are post-hoc snapshots — unsafe as historical predictors without reconstruction.
+6. **Primary key:** Steam AppID is the identifier across all tables.
+7. **Dataset before modeling:** Complete the analytical dataset before fitting any model.
+8. **Pilot first:** Test the full pipeline on a small sample before scaling.
+
+## Target Sale Windows
+
+```
+Autumn 2023: 2023-11-21 to 2023-11-28
+Autumn 2024: 2024-11-27 to 2024-12-04
+Autumn 2025: 2025-09-29 to 2025-10-06  (date may need verification)
+```
