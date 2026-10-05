@@ -1,0 +1,79 @@
+{
+  "steam_appid": 2504210,
+  "itad_game_id": "018d937f-7456-7396-b192-9e185b79ca1a",
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "lookup_endpoint": "/games/lookup/v1",
+    "history_endpoint": "/games/history/v2",
+    "country": "US",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "id": "018d937f-7456-7396-b192-9e185b79ca1a",
+      "slug": "the-leverage-game-business-edition",
+      "title": "The Leverage Game Business Edition",
+      "type": null,
+      "mature": false,
+      "assets": {
+        "boxart": "https://assets.isthereanydeal.com/018d937f-7456-7396-b192-9e185b79ca1a/boxart.jpg?t=1763229455",
+        "banner145": "https://assets.isthereanydeal.com/018d937f-7456-7396-b192-9e185b79ca1a/banner145.jpg?t=1763229455",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-7456-7396-b192-9e185b79ca1a/banner300.jpg?t=1763229455",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-7456-7396-b192-9e185b79ca1a/banner400.jpg?t=1763229455",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-7456-7396-b192-9e185b79ca1a/banner600.jpg?t=1763229456"
+      }
+    }
+  },
+  "history_response": [],
+  "collection_metadata": {
+    "collected_at": "2026-10-05T17:04:31.275957Z",
+    "lookup_status": "matched",
+    "history_status": "empty_history",
+    "reason": ""
+  },
+  "lookup_evidence": {
+    "endpoint": "/games/lookup/v1",
+    "params": {
+      "appid": "2504210"
+    },
+    "attempts": [
+      {
+        "http_status": 200,
+        "reason": "",
+        "at": "2026-10-05T17:04:32.174352Z"
+      }
+    ],
+    "http_status": 200,
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-7456-7396-b192-9e185b79ca1a\",\"slug\":\"the-leverage-game-business-edition\",\"title\":\"The Leverage Game Business Edition\",\"type\":null,\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-7456-7396-b192-9e185b79ca1a\\/boxart.jpg?t=1763229455\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-7456-7396-b192-9e185b79ca1a\\/banner145.jpg?t=1763229455\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-7456-7396-b192-9e185b79ca1a\\/banner300.jpg?t=1763229455\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-7456-7396-b192-9e185b79ca1a\\/banner400.jpg?t=1763229455\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-7456-7396-b192-9e185b79ca1a\\/banner600.jpg?t=1763229456\"}}}",
+    "response_headers": {
+      "Date": "Mon, 05 Oct 2026 17:04:32 GMT",
+      "Content-Type": "application/json"
+    },
+    "received_at": "2026-10-05T17:04:32.174352Z"
+  },
+  "history_evidence": {
+    "endpoint": "/games/history/v2",
+    "params": {
+      "id": "018d937f-7456-7396-b192-9e185b79ca1a",
+      "country": "US",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "attempts": [
+      {
+        "http_status": 200,
+        "reason": "",
+        "at": "2026-10-05T17:04:33.175506Z"
+      }
+    ],
+    "http_status": 200,
+    "body": "[]",
+    "response_headers": {
+      "Date": "Mon, 05 Oct 2026 17:04:33 GMT",
+      "Content-Type": "application/json"
+    },
+    "received_at": "2026-10-05T17:04:33.175506Z"
+  }
+}

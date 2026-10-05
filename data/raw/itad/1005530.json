@@ -1,0 +1,100 @@
+{
+  "steam_appid": 1005530,
+  "itad_game_id": "018d937f-30d2-715a-99f6-e5bdbdc1003b",
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "lookup_endpoint": "/games/lookup/v1",
+    "history_endpoint": "/games/history/v2",
+    "country": "US",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "id": "018d937f-30d2-715a-99f6-e5bdbdc1003b",
+      "slug": "club-soccer-director-pro-2020",
+      "title": "Club Soccer Director PRO 2020",
+      "type": "game",
+      "mature": false,
+      "assets": {
+        "boxart": "https://assets.isthereanydeal.com/018d937f-30d2-715a-99f6-e5bdbdc1003b/boxart.jpg?t=1763267509",
+        "banner145": "https://assets.isthereanydeal.com/018d937f-30d2-715a-99f6-e5bdbdc1003b/banner145.jpg?t=1763267509",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-30d2-715a-99f6-e5bdbdc1003b/banner300.jpg?t=1763267509",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-30d2-715a-99f6-e5bdbdc1003b/banner400.jpg?t=1763267509",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-30d2-715a-99f6-e5bdbdc1003b/banner600.jpg?t=1763267510"
+      }
+    }
+  },
+  "history_response": [
+    {
+      "timestamp": "2021-01-01T01:00:00+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 24.99,
+          "amountInt": 2499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 24.99,
+          "amountInt": 2499,
+          "currency": "USD"
+        },
+        "cut": 0
+      }
+    }
+  ],
+  "collection_metadata": {
+    "collected_at": "2026-10-05T17:06:32.342797Z",
+    "lookup_status": "matched",
+    "history_status": "history_received",
+    "reason": ""
+  },
+  "lookup_evidence": {
+    "endpoint": "/games/lookup/v1",
+    "params": {
+      "appid": "1005530"
+    },
+    "attempts": [
+      {
+        "http_status": 200,
+        "reason": "",
+        "at": "2026-10-05T17:06:33.346809Z"
+      }
+    ],
+    "http_status": 200,
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-30d2-715a-99f6-e5bdbdc1003b\",\"slug\":\"club-soccer-director-pro-2020\",\"title\":\"Club Soccer Director PRO 2020\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-30d2-715a-99f6-e5bdbdc1003b\\/boxart.jpg?t=1763267509\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-30d2-715a-99f6-e5bdbdc1003b\\/banner145.jpg?t=1763267509\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-30d2-715a-99f6-e5bdbdc1003b\\/banner300.jpg?t=1763267509\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-30d2-715a-99f6-e5bdbdc1003b\\/banner400.jpg?t=1763267509\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-30d2-715a-99f6-e5bdbdc1003b\\/banner600.jpg?t=1763267510\"}}}",
+    "response_headers": {
+      "Date": "Mon, 05 Oct 2026 17:06:33 GMT",
+      "Content-Type": "application/json"
+    },
+    "received_at": "2026-10-05T17:06:33.346809Z"
+  },
+  "history_evidence": {
+    "endpoint": "/games/history/v2",
+    "params": {
+      "id": "018d937f-30d2-715a-99f6-e5bdbdc1003b",
+      "country": "US",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "attempts": [
+      {
+        "http_status": 200,
+        "reason": "",
+        "at": "2026-10-05T17:06:33.699767Z"
+      }
+    ],
+    "http_status": 200,
+    "body": "[{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":24.99,\"amountInt\":2499,\"currency\":\"USD\"},\"regular\":{\"amount\":24.99,\"amountInt\":2499,\"currency\":\"USD\"},\"cut\":0}}]",
+    "response_headers": {
+      "Date": "Mon, 05 Oct 2026 17:06:33 GMT",
+      "Content-Type": "application/json"
+    },
+    "received_at": "2026-10-05T17:06:33.699767Z"
+  }
+}

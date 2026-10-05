@@ -1,0 +1,100 @@
+{
+  "steam_appid": 1141280,
+  "itad_game_id": "018d937f-2d93-73e4-8808-a3907a771339",
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "lookup_endpoint": "/games/lookup/v1",
+    "history_endpoint": "/games/history/v2",
+    "country": "US",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "id": "018d937f-2d93-73e4-8808-a3907a771339",
+      "slug": "super-space-slayer-2",
+      "title": "Super Space Slayer 2",
+      "type": "game",
+      "mature": false,
+      "assets": {
+        "boxart": "https://assets.isthereanydeal.com/018d937f-2d93-73e4-8808-a3907a771339/boxart.jpg?t=1763147207",
+        "banner145": "https://assets.isthereanydeal.com/018d937f-2d93-73e4-8808-a3907a771339/banner145.jpg?t=1763147208",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-2d93-73e4-8808-a3907a771339/banner300.jpg?t=1763147208",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-2d93-73e4-8808-a3907a771339/banner400.jpg?t=1763147208",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-2d93-73e4-8808-a3907a771339/banner600.jpg?t=1763147209"
+      }
+    }
+  },
+  "history_response": [
+    {
+      "timestamp": "2021-01-01T01:00:00+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 2.99,
+          "amountInt": 299,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 2.99,
+          "amountInt": 299,
+          "currency": "USD"
+        },
+        "cut": 0
+      }
+    }
+  ],
+  "collection_metadata": {
+    "collected_at": "2026-10-05T17:03:16.880719Z",
+    "lookup_status": "matched",
+    "history_status": "history_received",
+    "reason": ""
+  },
+  "lookup_evidence": {
+    "endpoint": "/games/lookup/v1",
+    "params": {
+      "appid": "1141280"
+    },
+    "attempts": [
+      {
+        "http_status": 200,
+        "reason": "",
+        "at": "2026-10-05T17:03:17.876829Z"
+      }
+    ],
+    "http_status": 200,
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-2d93-73e4-8808-a3907a771339\",\"slug\":\"super-space-slayer-2\",\"title\":\"Super Space Slayer 2\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-2d93-73e4-8808-a3907a771339\\/boxart.jpg?t=1763147207\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-2d93-73e4-8808-a3907a771339\\/banner145.jpg?t=1763147208\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-2d93-73e4-8808-a3907a771339\\/banner300.jpg?t=1763147208\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-2d93-73e4-8808-a3907a771339\\/banner400.jpg?t=1763147208\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-2d93-73e4-8808-a3907a771339\\/banner600.jpg?t=1763147209\"}}}",
+    "response_headers": {
+      "Date": "Mon, 05 Oct 2026 17:03:17 GMT",
+      "Content-Type": "application/json"
+    },
+    "received_at": "2026-10-05T17:03:17.876829Z"
+  },
+  "history_evidence": {
+    "endpoint": "/games/history/v2",
+    "params": {
+      "id": "018d937f-2d93-73e4-8808-a3907a771339",
+      "country": "US",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "attempts": [
+      {
+        "http_status": 200,
+        "reason": "",
+        "at": "2026-10-05T17:03:18.883747Z"
+      }
+    ],
+    "http_status": 200,
+    "body": "[{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":2.99,\"amountInt\":299,\"currency\":\"USD\"},\"regular\":{\"amount\":2.99,\"amountInt\":299,\"currency\":\"USD\"},\"cut\":0}}]",
+    "response_headers": {
+      "Date": "Mon, 05 Oct 2026 17:03:18 GMT",
+      "Content-Type": "application/json"
+    },
+    "received_at": "2026-10-05T17:03:18.883747Z"
+  }
+}

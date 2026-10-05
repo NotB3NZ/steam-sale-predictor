@@ -60,3 +60,9 @@ Retention in the master catalog does not approve historical feature use. Price, 
 Phase 3 uses a deterministic diagnostic diversity sample of 100 paid catalog entries, with `release_date <= 2023-11-21` for the whole pilot. This cutoff is pilot-specific and does not constrain later modeling populations. The pilot is not statistically representative, and its model performance must not be treated as population performance.
 
 `pilot_*` columns describe sampling only. Snapshot price, owners, activity, and publisher portfolio diagnostics do not authorize historical feature use. Source columns and the master catalog remain unchanged. Publisher tokens and developer/publisher overlap are approximate metadata proxies, not verified publisher identity or corporate ownership.
+
+## ITAD Collection Contract
+
+Official ITAD API 2.11.0 documentation and OpenAPI specification verified for Phase 4. Resolve identifiers only with `GET /games/lookup/v1?appid=<Steam AppID>`; fetch raw history with `GET /games/history/v2` using the resolved UUID, `country=US`, `shops=61`, and explicit `since=2021-01-01T00:00:00Z`. Omitting since restricts history to the latest three months. Authenticate via the `ITAD-API-Key` header from process environment variable `ITAD_API_KEY`; the collector does not read the local `apikey` file or automatically load `.env`.
+
+History records have timestamp, shop, and deal; the official schema permits `deal=null`. Preserve these records and all returned fields, including original response text, without interpreting their sale meaning. Cache wrappers live in `data/raw/itad/<AppID>.json`; configuration-compatible validated evidence is reused, and intentional refreshes archive prior artifacts. A three-game smoke receipt is required before full collection. Collection diagnostics describe observations only; event-specific coverage and sale labels remain Phase 5 work.

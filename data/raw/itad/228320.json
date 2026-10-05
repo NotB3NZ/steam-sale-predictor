@@ -1,0 +1,220 @@
+{
+  "steam_appid": 228320,
+  "itad_game_id": "018d937f-1d24-72ee-8a6e-52cd0de0921a",
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "lookup_endpoint": "/games/lookup/v1",
+    "history_endpoint": "/games/history/v2",
+    "country": "US",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "id": "018d937f-1d24-72ee-8a6e-52cd0de0921a",
+      "slug": "a-valley-without-wind-2",
+      "title": "A Valley Without Wind 2",
+      "type": "dlc",
+      "mature": false,
+      "assets": {
+        "boxart": "https://assets.isthereanydeal.com/018d937f-1d24-72ee-8a6e-52cd0de0921a/boxart.png?t=1788226849",
+        "banner145": "https://assets.isthereanydeal.com/018d937f-1d24-72ee-8a6e-52cd0de0921a/banner145.jpg?t=1788226849",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-1d24-72ee-8a6e-52cd0de0921a/banner300.jpg?t=1788226849",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-1d24-72ee-8a6e-52cd0de0921a/banner400.jpg?t=1788226849",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-1d24-72ee-8a6e-52cd0de0921a/banner600.jpg?t=1788226850"
+      }
+    }
+  },
+  "history_response": [
+    {
+      "timestamp": "2021-03-08T19:21:39+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 3.74,
+          "amountInt": 374,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 14.99,
+          "amountInt": 1499,
+          "currency": "USD"
+        },
+        "cut": 75
+      }
+    },
+    {
+      "timestamp": "2021-02-15T19:25:49+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 14.99,
+          "amountInt": 1499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 14.99,
+          "amountInt": 1499,
+          "currency": "USD"
+        },
+        "cut": 0
+      }
+    },
+    {
+      "timestamp": "2021-02-11T20:02:14+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 3.74,
+          "amountInt": 374,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 14.99,
+          "amountInt": 1499,
+          "currency": "USD"
+        },
+        "cut": 75
+      }
+    },
+    {
+      "timestamp": "2021-01-25T19:21:39+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 14.99,
+          "amountInt": 1499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 14.99,
+          "amountInt": 1499,
+          "currency": "USD"
+        },
+        "cut": 0
+      }
+    },
+    {
+      "timestamp": "2021-01-11T19:21:26+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 3.74,
+          "amountInt": 374,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 14.99,
+          "amountInt": 1499,
+          "currency": "USD"
+        },
+        "cut": 75
+      }
+    },
+    {
+      "timestamp": "2021-01-05T19:52:22+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 14.99,
+          "amountInt": 1499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 14.99,
+          "amountInt": 1499,
+          "currency": "USD"
+        },
+        "cut": 0
+      }
+    },
+    {
+      "timestamp": "2021-01-01T01:00:00+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 3.74,
+          "amountInt": 374,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 14.99,
+          "amountInt": 1499,
+          "currency": "USD"
+        },
+        "cut": 75
+      }
+    }
+  ],
+  "collection_metadata": {
+    "collected_at": "2026-10-05T16:31:11.308058Z",
+    "lookup_status": "matched",
+    "history_status": "history_received",
+    "reason": ""
+  },
+  "lookup_evidence": {
+    "endpoint": "/games/lookup/v1",
+    "params": {
+      "appid": "228320"
+    },
+    "attempts": [
+      {
+        "http_status": 200,
+        "reason": "",
+        "at": "2026-10-05T16:31:12.235473Z"
+      }
+    ],
+    "http_status": 200,
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-1d24-72ee-8a6e-52cd0de0921a\",\"slug\":\"a-valley-without-wind-2\",\"title\":\"A Valley Without Wind 2\",\"type\":\"dlc\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1d24-72ee-8a6e-52cd0de0921a\\/boxart.png?t=1788226849\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1d24-72ee-8a6e-52cd0de0921a\\/banner145.jpg?t=1788226849\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1d24-72ee-8a6e-52cd0de0921a\\/banner300.jpg?t=1788226849\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1d24-72ee-8a6e-52cd0de0921a\\/banner400.jpg?t=1788226849\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1d24-72ee-8a6e-52cd0de0921a\\/banner600.jpg?t=1788226850\"}}}",
+    "response_headers": {
+      "Date": "Mon, 05 Oct 2026 16:31:12 GMT",
+      "Content-Type": "application/json"
+    },
+    "received_at": "2026-10-05T16:31:12.235473Z"
+  },
+  "history_evidence": {
+    "endpoint": "/games/history/v2",
+    "params": {
+      "id": "018d937f-1d24-72ee-8a6e-52cd0de0921a",
+      "country": "US",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "attempts": [
+      {
+        "http_status": 200,
+        "reason": "",
+        "at": "2026-10-05T16:31:13.234192Z"
+      }
+    ],
+    "http_status": 200,
+    "body": "[{\"timestamp\":\"2021-03-08T19:21:39+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":3.74,\"amountInt\":374,\"currency\":\"USD\"},\"regular\":{\"amount\":14.99,\"amountInt\":1499,\"currency\":\"USD\"},\"cut\":75}},{\"timestamp\":\"2021-02-15T19:25:49+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":14.99,\"amountInt\":1499,\"currency\":\"USD\"},\"regular\":{\"amount\":14.99,\"amountInt\":1499,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-02-11T20:02:14+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":3.74,\"amountInt\":374,\"currency\":\"USD\"},\"regular\":{\"amount\":14.99,\"amountInt\":1499,\"currency\":\"USD\"},\"cut\":75}},{\"timestamp\":\"2021-01-25T19:21:39+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":14.99,\"amountInt\":1499,\"currency\":\"USD\"},\"regular\":{\"amount\":14.99,\"amountInt\":1499,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-01-11T19:21:26+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":3.74,\"amountInt\":374,\"currency\":\"USD\"},\"regular\":{\"amount\":14.99,\"amountInt\":1499,\"currency\":\"USD\"},\"cut\":75}},{\"timestamp\":\"2021-01-05T19:52:22+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":14.99,\"amountInt\":1499,\"currency\":\"USD\"},\"regular\":{\"amount\":14.99,\"amountInt\":1499,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":3.74,\"amountInt\":374,\"currency\":\"USD\"},\"regular\":{\"amount\":14.99,\"amountInt\":1499,\"currency\":\"USD\"},\"cut\":75}}]",
+    "response_headers": {
+      "Date": "Mon, 05 Oct 2026 16:31:13 GMT",
+      "Content-Type": "application/json"
+    },
+    "received_at": "2026-10-05T16:31:13.234192Z"
+  }
+}

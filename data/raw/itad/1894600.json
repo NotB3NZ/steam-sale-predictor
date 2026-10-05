@@ -1,0 +1,79 @@
+{
+  "steam_appid": 1894600,
+  "itad_game_id": "018d937f-27fe-719a-a2fc-b2c550dbe5cc",
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "lookup_endpoint": "/games/lookup/v1",
+    "history_endpoint": "/games/history/v2",
+    "country": "US",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "id": "018d937f-27fe-719a-a2fc-b2c550dbe5cc",
+      "slug": "monster",
+      "title": "Monster",
+      "type": null,
+      "mature": false,
+      "assets": {
+        "boxart": "https://assets.isthereanydeal.com/018d937f-27fe-719a-a2fc-b2c550dbe5cc/boxart.jpg?t=1788300924",
+        "banner145": "https://assets.isthereanydeal.com/018d937f-27fe-719a-a2fc-b2c550dbe5cc/banner145.jpg?t=1788300924",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-27fe-719a-a2fc-b2c550dbe5cc/banner300.jpg?t=1788300924",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-27fe-719a-a2fc-b2c550dbe5cc/banner400.jpg?t=1788300924",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-27fe-719a-a2fc-b2c550dbe5cc/banner600.jpg?t=1788300924"
+      }
+    }
+  },
+  "history_response": [],
+  "collection_metadata": {
+    "collected_at": "2026-10-05T17:04:03.073967Z",
+    "lookup_status": "matched",
+    "history_status": "empty_history",
+    "reason": ""
+  },
+  "lookup_evidence": {
+    "endpoint": "/games/lookup/v1",
+    "params": {
+      "appid": "1894600"
+    },
+    "attempts": [
+      {
+        "http_status": 200,
+        "reason": "",
+        "at": "2026-10-05T17:04:04.039290Z"
+      }
+    ],
+    "http_status": 200,
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-27fe-719a-a2fc-b2c550dbe5cc\",\"slug\":\"monster\",\"title\":\"Monster\",\"type\":null,\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-27fe-719a-a2fc-b2c550dbe5cc\\/boxart.jpg?t=1788300924\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-27fe-719a-a2fc-b2c550dbe5cc\\/banner145.jpg?t=1788300924\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-27fe-719a-a2fc-b2c550dbe5cc\\/banner300.jpg?t=1788300924\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-27fe-719a-a2fc-b2c550dbe5cc\\/banner400.jpg?t=1788300924\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-27fe-719a-a2fc-b2c550dbe5cc\\/banner600.jpg?t=1788300924\"}}}",
+    "response_headers": {
+      "Date": "Mon, 05 Oct 2026 17:04:04 GMT",
+      "Content-Type": "application/json"
+    },
+    "received_at": "2026-10-05T17:04:04.039290Z"
+  },
+  "history_evidence": {
+    "endpoint": "/games/history/v2",
+    "params": {
+      "id": "018d937f-27fe-719a-a2fc-b2c550dbe5cc",
+      "country": "US",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "attempts": [
+      {
+        "http_status": 200,
+        "reason": "",
+        "at": "2026-10-05T17:04:05.051368Z"
+      }
+    ],
+    "http_status": 200,
+    "body": "[]",
+    "response_headers": {
+      "Date": "Mon, 05 Oct 2026 17:04:05 GMT",
+      "Content-Type": "application/json"
+    },
+    "received_at": "2026-10-05T17:04:05.051368Z"
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "steam_appid": 1338570,
+  "itad_game_id": "018d937f-435e-72d2-b078-9eb5f9e7d5f6",
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "lookup_endpoint": "/games/lookup/v1",
+    "history_endpoint": "/games/history/v2",
+    "country": "US",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "id": "018d937f-435e-72d2-b078-9eb5f9e7d5f6",
+      "slug": "sheng-tian-sheng-tian-episode-1",
+      "title": "Sheng Tian (升天) - Episode 1",
+      "type": "game",
+      "mature": false,
+      "assets": {
+        "boxart": "https://assets.isthereanydeal.com/018d937f-435e-72d2-b078-9eb5f9e7d5f6/boxart.jpg?t=1763281232",
+        "banner145": "https://assets.isthereanydeal.com/018d937f-435e-72d2-b078-9eb5f9e7d5f6/banner145.jpg?t=1763281233",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-435e-72d2-b078-9eb5f9e7d5f6/banner300.jpg?t=1763281233",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-435e-72d2-b078-9eb5f9e7d5f6/banner400.jpg?t=1763281233",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-435e-72d2-b078-9eb5f9e7d5f6/banner600.jpg?t=1763281234"
+      }
+    }
+  },
+  "history_response": [
+    {
+      "timestamp": "2021-01-01T01:00:00+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        },
+        "cut": 0
+      }
+    }
+  ],
+  "collection_metadata": {
+    "collected_at": "2026-10-05T17:03:30.931580Z",
+    "lookup_status": "matched",
+    "history_status": "history_received",
+    "reason": ""
+  },
+  "lookup_evidence": {
+    "endpoint": "/games/lookup/v1",
+    "params": {
+      "appid": "1338570"
+    },
+    "attempts": [
+      {
+        "http_status": 200,
+        "reason": "",
+        "at": "2026-10-05T17:03:31.908225Z"
+      }
+    ],
+    "http_status": 200,
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-435e-72d2-b078-9eb5f9e7d5f6\",\"slug\":\"sheng-tian-sheng-tian-episode-1\",\"title\":\"Sheng Tian (\\u5347\\u5929) - Episode 1\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-435e-72d2-b078-9eb5f9e7d5f6\\/boxart.jpg?t=1763281232\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-435e-72d2-b078-9eb5f9e7d5f6\\/banner145.jpg?t=1763281233\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-435e-72d2-b078-9eb5f9e7d5f6\\/banner300.jpg?t=1763281233\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-435e-72d2-b078-9eb5f9e7d5f6\\/banner400.jpg?t=1763281233\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-435e-72d2-b078-9eb5f9e7d5f6\\/banner600.jpg?t=1763281234\"}}}",
+    "response_headers": {
+      "Date": "Mon, 05 Oct 2026 17:03:31 GMT",
+      "Content-Type": "application/json"
+    },
+    "received_at": "2026-10-05T17:03:31.908225Z"
+  },
+  "history_evidence": {
+    "endpoint": "/games/history/v2",
+    "params": {
+      "id": "018d937f-435e-72d2-b078-9eb5f9e7d5f6",
+      "country": "US",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "attempts": [
+      {
+        "http_status": 200,
+        "reason": "",
+        "at": "2026-10-05T17:03:32.931531Z"
+      }
+    ],
+    "http_status": 200,
+    "body": "[{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"regular\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"cut\":0}}]",
+    "response_headers": {
+      "Date": "Mon, 05 Oct 2026 17:03:32 GMT",
+      "Content-Type": "application/json"
+    },
+    "received_at": "2026-10-05T17:03:32.931531Z"
+  }
+}

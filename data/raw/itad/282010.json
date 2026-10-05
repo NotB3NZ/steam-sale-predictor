@@ -1,0 +1,240 @@
+{
+  "steam_appid": 282010,
+  "itad_game_id": "018d937f-1339-70a2-83f3-bddda2cf238f",
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "lookup_endpoint": "/games/lookup/v1",
+    "history_endpoint": "/games/history/v2",
+    "country": "US",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "id": "018d937f-1339-70a2-83f3-bddda2cf238f",
+      "slug": "carmageddon-max-pack",
+      "title": "Carmageddon Max Pack",
+      "type": "game",
+      "mature": false,
+      "assets": {
+        "boxart": "https://assets.isthereanydeal.com/018d937f-1339-70a2-83f3-bddda2cf238f/boxart.jpg?t=1786149150",
+        "banner145": "https://assets.isthereanydeal.com/018d937f-1339-70a2-83f3-bddda2cf238f/banner145.jpg?t=1786149150",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-1339-70a2-83f3-bddda2cf238f/banner300.jpg?t=1786149150",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-1339-70a2-83f3-bddda2cf238f/banner400.jpg?t=1786149150",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-1339-70a2-83f3-bddda2cf238f/banner600.jpg?t=1786149150"
+      }
+    }
+  },
+  "history_response": [
+    {
+      "timestamp": "2021-03-05T19:21:14+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 9.99,
+          "amountInt": 999,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 9.99,
+          "amountInt": 999,
+          "currency": "USD"
+        },
+        "cut": 0
+      }
+    },
+    {
+      "timestamp": "2021-03-02T19:21:19+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 9.99,
+          "amountInt": 999,
+          "currency": "USD"
+        },
+        "cut": 80
+      }
+    },
+    {
+      "timestamp": "2021-02-15T19:21:55+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 9.99,
+          "amountInt": 999,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 9.99,
+          "amountInt": 999,
+          "currency": "USD"
+        },
+        "cut": 0
+      }
+    },
+    {
+      "timestamp": "2021-02-11T19:33:51+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 2.49,
+          "amountInt": 249,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 9.99,
+          "amountInt": 999,
+          "currency": "USD"
+        },
+        "cut": 75
+      }
+    },
+    {
+      "timestamp": "2021-02-08T19:21:25+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 9.99,
+          "amountInt": 999,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 9.99,
+          "amountInt": 999,
+          "currency": "USD"
+        },
+        "cut": 0
+      }
+    },
+    {
+      "timestamp": "2021-02-01T19:21:24+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 2.49,
+          "amountInt": 249,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 9.99,
+          "amountInt": 999,
+          "currency": "USD"
+        },
+        "cut": 75
+      }
+    },
+    {
+      "timestamp": "2021-01-05T19:57:26+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 9.99,
+          "amountInt": 999,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 9.99,
+          "amountInt": 999,
+          "currency": "USD"
+        },
+        "cut": 0
+      }
+    },
+    {
+      "timestamp": "2021-01-01T01:00:00+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 2.49,
+          "amountInt": 249,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 9.99,
+          "amountInt": 999,
+          "currency": "USD"
+        },
+        "cut": 75
+      }
+    }
+  ],
+  "collection_metadata": {
+    "collected_at": "2026-10-05T16:31:23.400599Z",
+    "lookup_status": "matched",
+    "history_status": "history_received",
+    "reason": ""
+  },
+  "lookup_evidence": {
+    "endpoint": "/games/lookup/v1",
+    "params": {
+      "appid": "282010"
+    },
+    "attempts": [
+      {
+        "http_status": 200,
+        "reason": "",
+        "at": "2026-10-05T16:31:24.278920Z"
+      }
+    ],
+    "http_status": 200,
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-1339-70a2-83f3-bddda2cf238f\",\"slug\":\"carmageddon-max-pack\",\"title\":\"Carmageddon Max Pack\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1339-70a2-83f3-bddda2cf238f\\/boxart.jpg?t=1786149150\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1339-70a2-83f3-bddda2cf238f\\/banner145.jpg?t=1786149150\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1339-70a2-83f3-bddda2cf238f\\/banner300.jpg?t=1786149150\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1339-70a2-83f3-bddda2cf238f\\/banner400.jpg?t=1786149150\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1339-70a2-83f3-bddda2cf238f\\/banner600.jpg?t=1786149150\"}}}",
+    "response_headers": {
+      "Date": "Mon, 05 Oct 2026 16:31:24 GMT",
+      "Content-Type": "application/json"
+    },
+    "received_at": "2026-10-05T16:31:24.278920Z"
+  },
+  "history_evidence": {
+    "endpoint": "/games/history/v2",
+    "params": {
+      "id": "018d937f-1339-70a2-83f3-bddda2cf238f",
+      "country": "US",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "attempts": [
+      {
+        "http_status": 200,
+        "reason": "",
+        "at": "2026-10-05T16:31:25.290242Z"
+      }
+    ],
+    "http_status": 200,
+    "body": "[{\"timestamp\":\"2021-03-05T19:21:14+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":9.99,\"amountInt\":999,\"currency\":\"USD\"},\"regular\":{\"amount\":9.99,\"amountInt\":999,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-03-02T19:21:19+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"regular\":{\"amount\":9.99,\"amountInt\":999,\"currency\":\"USD\"},\"cut\":80}},{\"timestamp\":\"2021-02-15T19:21:55+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":9.99,\"amountInt\":999,\"currency\":\"USD\"},\"regular\":{\"amount\":9.99,\"amountInt\":999,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-02-11T19:33:51+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":2.49,\"amountInt\":249,\"currency\":\"USD\"},\"regular\":{\"amount\":9.99,\"amountInt\":999,\"currency\":\"USD\"},\"cut\":75}},{\"timestamp\":\"2021-02-08T19:21:25+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":9.99,\"amountInt\":999,\"currency\":\"USD\"},\"regular\":{\"amount\":9.99,\"amountInt\":999,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-02-01T19:21:24+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":2.49,\"amountInt\":249,\"currency\":\"USD\"},\"regular\":{\"amount\":9.99,\"amountInt\":999,\"currency\":\"USD\"},\"cut\":75}},{\"timestamp\":\"2021-01-05T19:57:26+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":9.99,\"amountInt\":999,\"currency\":\"USD\"},\"regular\":{\"amount\":9.99,\"amountInt\":999,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":2.49,\"amountInt\":249,\"currency\":\"USD\"},\"regular\":{\"amount\":9.99,\"amountInt\":999,\"currency\":\"USD\"},\"cut\":75}}]",
+    "response_headers": {
+      "Date": "Mon, 05 Oct 2026 16:31:25 GMT",
+      "Content-Type": "application/json"
+    },
+    "received_at": "2026-10-05T16:31:25.290242Z"
+  }
+}

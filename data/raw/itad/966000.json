@@ -1,0 +1,140 @@
+{
+  "steam_appid": 966000,
+  "itad_game_id": "018d937f-1ee1-73be-a070-1d7776912af8",
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "lookup_endpoint": "/games/lookup/v1",
+    "history_endpoint": "/games/history/v2",
+    "country": "US",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "id": "018d937f-1ee1-73be-a070-1d7776912af8",
+      "slug": "detective-sherlock-pug-hidden-object-relaxing-games",
+      "title": "Detective Sherlock Pug - Hidden Object. Relaxing games",
+      "type": null,
+      "mature": false,
+      "assets": {
+        "boxart": "https://assets.isthereanydeal.com/018d937f-1ee1-73be-a070-1d7776912af8/boxart.png?t=1790883700",
+        "banner145": "https://assets.isthereanydeal.com/018d937f-1ee1-73be-a070-1d7776912af8/banner145.jpg?t=1790883700",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-1ee1-73be-a070-1d7776912af8/banner300.jpg?t=1790883701",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-1ee1-73be-a070-1d7776912af8/banner400.jpg?t=1790883701",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-1ee1-73be-a070-1d7776912af8/banner600.jpg?t=1790883701"
+      }
+    }
+  },
+  "history_response": [
+    {
+      "timestamp": "2021-02-08T19:21:20+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        },
+        "cut": 0
+      }
+    },
+    {
+      "timestamp": "2021-02-01T19:21:11+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 1.19,
+          "amountInt": 119,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        },
+        "cut": 40
+      }
+    },
+    {
+      "timestamp": "2021-01-01T01:00:00+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        },
+        "cut": 0
+      }
+    }
+  ],
+  "collection_metadata": {
+    "collected_at": "2026-10-05T16:32:31.585304Z",
+    "lookup_status": "matched",
+    "history_status": "history_received",
+    "reason": ""
+  },
+  "lookup_evidence": {
+    "endpoint": "/games/lookup/v1",
+    "params": {
+      "appid": "966000"
+    },
+    "attempts": [
+      {
+        "http_status": 200,
+        "reason": "",
+        "at": "2026-10-05T16:32:32.530456Z"
+      }
+    ],
+    "http_status": 200,
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-1ee1-73be-a070-1d7776912af8\",\"slug\":\"detective-sherlock-pug-hidden-object-relaxing-games\",\"title\":\"Detective Sherlock Pug - Hidden Object. Relaxing games\",\"type\":null,\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1ee1-73be-a070-1d7776912af8\\/boxart.png?t=1790883700\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1ee1-73be-a070-1d7776912af8\\/banner145.jpg?t=1790883700\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1ee1-73be-a070-1d7776912af8\\/banner300.jpg?t=1790883701\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1ee1-73be-a070-1d7776912af8\\/banner400.jpg?t=1790883701\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1ee1-73be-a070-1d7776912af8\\/banner600.jpg?t=1790883701\"}}}",
+    "response_headers": {
+      "Date": "Mon, 05 Oct 2026 16:32:32 GMT",
+      "Content-Type": "application/json"
+    },
+    "received_at": "2026-10-05T16:32:32.530456Z"
+  },
+  "history_evidence": {
+    "endpoint": "/games/history/v2",
+    "params": {
+      "id": "018d937f-1ee1-73be-a070-1d7776912af8",
+      "country": "US",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "attempts": [
+      {
+        "http_status": 200,
+        "reason": "",
+        "at": "2026-10-05T16:32:33.528955Z"
+      }
+    ],
+    "http_status": 200,
+    "body": "[{\"timestamp\":\"2021-02-08T19:21:20+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"regular\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-02-01T19:21:11+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":1.19,\"amountInt\":119,\"currency\":\"USD\"},\"regular\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"cut\":40}},{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"regular\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"cut\":0}}]",
+    "response_headers": {
+      "Date": "Mon, 05 Oct 2026 16:32:33 GMT",
+      "Content-Type": "application/json"
+    },
+    "received_at": "2026-10-05T16:32:33.528955Z"
+  }
+}

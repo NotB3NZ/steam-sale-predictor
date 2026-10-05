@@ -1,0 +1,41 @@
+{
+  "steam_appid": 1005530,
+  "itad_game_id": null,
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "lookup_endpoint": "/games/lookup/v1",
+    "history_endpoint": "/games/history/v2",
+    "country": "US",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "lookup_response": null,
+  "history_response": null,
+  "collection_metadata": {
+    "collected_at": "2026-10-05T16:32:33.531508Z",
+    "lookup_status": "lookup_error",
+    "history_status": "not_requested",
+    "reason": "retry_after_exceeds_60s; stop and resume later"
+  },
+  "lookup_evidence": {
+    "endpoint": "/games/lookup/v1",
+    "params": {
+      "appid": "1005530"
+    },
+    "attempts": [
+      {
+        "http_status": 429,
+        "reason": "",
+        "at": "2026-10-05T16:32:34.537386Z"
+      }
+    ],
+    "http_status": 429,
+    "body": "",
+    "response_headers": {
+      "Retry-After": "201",
+      "Date": "Mon, 05 Oct 2026 16:32:34 GMT",
+      "Content-Type": "text/html; charset=UTF-8"
+    },
+    "received_at": "2026-10-05T16:32:34.537386Z"
+  }
+}

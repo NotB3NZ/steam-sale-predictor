@@ -1,0 +1,140 @@
+{
+  "steam_appid": 1271420,
+  "itad_game_id": "018d937f-4061-70fb-938a-6e10d31fa8ae",
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "lookup_endpoint": "/games/lookup/v1",
+    "history_endpoint": "/games/history/v2",
+    "country": "US",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "id": "018d937f-4061-70fb-938a-6e10d31fa8ae",
+      "slug": "chronicles-of-honor",
+      "title": "Chronicles of Honor",
+      "type": "game",
+      "mature": false,
+      "assets": {
+        "boxart": "https://assets.isthereanydeal.com/018d937f-4061-70fb-938a-6e10d31fa8ae/boxart.jpg?t=1763094238",
+        "banner145": "https://assets.isthereanydeal.com/018d937f-4061-70fb-938a-6e10d31fa8ae/banner145.jpg?t=1763094238",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-4061-70fb-938a-6e10d31fa8ae/banner300.jpg?t=1763094238",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-4061-70fb-938a-6e10d31fa8ae/banner400.jpg?t=1763094238",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-4061-70fb-938a-6e10d31fa8ae/banner600.jpg?t=1763094239"
+      }
+    }
+  },
+  "history_response": [
+    {
+      "timestamp": "2021-04-13T18:03:10+02:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 12.99,
+          "amountInt": 1299,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 12.99,
+          "amountInt": 1299,
+          "currency": "USD"
+        },
+        "cut": 0
+      }
+    },
+    {
+      "timestamp": "2021-01-05T19:56:19+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 24.99,
+          "amountInt": 2499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 24.99,
+          "amountInt": 2499,
+          "currency": "USD"
+        },
+        "cut": 0
+      }
+    },
+    {
+      "timestamp": "2021-01-01T01:00:00+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 12.49,
+          "amountInt": 1249,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 24.99,
+          "amountInt": 2499,
+          "currency": "USD"
+        },
+        "cut": 50
+      }
+    }
+  ],
+  "collection_metadata": {
+    "collected_at": "2026-10-05T17:03:29.058118Z",
+    "lookup_status": "matched",
+    "history_status": "history_received",
+    "reason": ""
+  },
+  "lookup_evidence": {
+    "endpoint": "/games/lookup/v1",
+    "params": {
+      "appid": "1271420"
+    },
+    "attempts": [
+      {
+        "http_status": 200,
+        "reason": "",
+        "at": "2026-10-05T17:03:29.911555Z"
+      }
+    ],
+    "http_status": 200,
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-4061-70fb-938a-6e10d31fa8ae\",\"slug\":\"chronicles-of-honor\",\"title\":\"Chronicles of Honor\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-4061-70fb-938a-6e10d31fa8ae\\/boxart.jpg?t=1763094238\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-4061-70fb-938a-6e10d31fa8ae\\/banner145.jpg?t=1763094238\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-4061-70fb-938a-6e10d31fa8ae\\/banner300.jpg?t=1763094238\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-4061-70fb-938a-6e10d31fa8ae\\/banner400.jpg?t=1763094238\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-4061-70fb-938a-6e10d31fa8ae\\/banner600.jpg?t=1763094239\"}}}",
+    "response_headers": {
+      "Date": "Mon, 05 Oct 2026 17:03:29 GMT",
+      "Content-Type": "application/json"
+    },
+    "received_at": "2026-10-05T17:03:29.911555Z"
+  },
+  "history_evidence": {
+    "endpoint": "/games/history/v2",
+    "params": {
+      "id": "018d937f-4061-70fb-938a-6e10d31fa8ae",
+      "country": "US",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "attempts": [
+      {
+        "http_status": 200,
+        "reason": "",
+        "at": "2026-10-05T17:03:30.929245Z"
+      }
+    ],
+    "http_status": 200,
+    "body": "[{\"timestamp\":\"2021-04-13T18:03:10+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":12.99,\"amountInt\":1299,\"currency\":\"USD\"},\"regular\":{\"amount\":12.99,\"amountInt\":1299,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-01-05T19:56:19+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":24.99,\"amountInt\":2499,\"currency\":\"USD\"},\"regular\":{\"amount\":24.99,\"amountInt\":2499,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":12.49,\"amountInt\":1249,\"currency\":\"USD\"},\"regular\":{\"amount\":24.99,\"amountInt\":2499,\"currency\":\"USD\"},\"cut\":50}}]",
+    "response_headers": {
+      "Date": "Mon, 05 Oct 2026 17:03:30 GMT",
+      "Content-Type": "application/json"
+    },
+    "received_at": "2026-10-05T17:03:30.929245Z"
+  }
+}

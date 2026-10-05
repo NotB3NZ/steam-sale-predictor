@@ -1,0 +1,100 @@
+{
+  "steam_appid": 666120,
+  "itad_game_id": "018d937f-3129-7061-b2c8-9a6febd3586c",
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "lookup_endpoint": "/games/lookup/v1",
+    "history_endpoint": "/games/history/v2",
+    "country": "US",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "id": "018d937f-3129-7061-b2c8-9a6febd3586c",
+      "slug": "dawn-of-the-killer-zombies",
+      "title": "Dawn of the killer zombies",
+      "type": "game",
+      "mature": false,
+      "assets": {
+        "boxart": "https://assets.isthereanydeal.com/018d937f-3129-7061-b2c8-9a6febd3586c/boxart.png?t=1732033541",
+        "banner145": "https://assets.isthereanydeal.com/018d937f-3129-7061-b2c8-9a6febd3586c/banner145.jpg?t=1732033541",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-3129-7061-b2c8-9a6febd3586c/banner300.jpg?t=1732033541",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-3129-7061-b2c8-9a6febd3586c/banner400.jpg?t=1732033541",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-3129-7061-b2c8-9a6febd3586c/banner600.jpg?t=1732033542"
+      }
+    }
+  },
+  "history_response": [
+    {
+      "timestamp": "2021-01-01T01:00:00+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        },
+        "cut": 0
+      }
+    }
+  ],
+  "collection_metadata": {
+    "collected_at": "2026-10-05T16:32:03.436717Z",
+    "lookup_status": "matched",
+    "history_status": "history_received",
+    "reason": ""
+  },
+  "lookup_evidence": {
+    "endpoint": "/games/lookup/v1",
+    "params": {
+      "appid": "666120"
+    },
+    "attempts": [
+      {
+        "http_status": 200,
+        "reason": "",
+        "at": "2026-10-05T16:32:04.450021Z"
+      }
+    ],
+    "http_status": 200,
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-3129-7061-b2c8-9a6febd3586c\",\"slug\":\"dawn-of-the-killer-zombies\",\"title\":\"Dawn of the killer zombies\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-3129-7061-b2c8-9a6febd3586c\\/boxart.png?t=1732033541\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-3129-7061-b2c8-9a6febd3586c\\/banner145.jpg?t=1732033541\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-3129-7061-b2c8-9a6febd3586c\\/banner300.jpg?t=1732033541\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-3129-7061-b2c8-9a6febd3586c\\/banner400.jpg?t=1732033541\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-3129-7061-b2c8-9a6febd3586c\\/banner600.jpg?t=1732033542\"}}}",
+    "response_headers": {
+      "Date": "Mon, 05 Oct 2026 16:32:04 GMT",
+      "Content-Type": "application/json"
+    },
+    "received_at": "2026-10-05T16:32:04.450021Z"
+  },
+  "history_evidence": {
+    "endpoint": "/games/history/v2",
+    "params": {
+      "id": "018d937f-3129-7061-b2c8-9a6febd3586c",
+      "country": "US",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "attempts": [
+      {
+        "http_status": 200,
+        "reason": "",
+        "at": "2026-10-05T16:32:05.447274Z"
+      }
+    ],
+    "http_status": 200,
+    "body": "[{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"regular\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"cut\":0}}]",
+    "response_headers": {
+      "Date": "Mon, 05 Oct 2026 16:32:05 GMT",
+      "Content-Type": "application/json"
+    },
+    "received_at": "2026-10-05T16:32:05.447274Z"
+  }
+}

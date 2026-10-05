@@ -1,0 +1,200 @@
+{
+  "steam_appid": 451950,
+  "itad_game_id": "018d937f-1946-7164-bec3-34b1d95cc2a0",
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "lookup_endpoint": "/games/lookup/v1",
+    "history_endpoint": "/games/history/v2",
+    "country": "US",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "id": "018d937f-1946-7164-bec3-34b1d95cc2a0",
+      "slug": "eep-train-simulator-mission",
+      "title": "EEP Train Simulator Mission",
+      "type": "game",
+      "mature": false,
+      "assets": {
+        "boxart": "https://assets.isthereanydeal.com/018d937f-1946-7164-bec3-34b1d95cc2a0/boxart.png?t=1733441836",
+        "banner145": "https://assets.isthereanydeal.com/018d937f-1946-7164-bec3-34b1d95cc2a0/banner145.jpg?t=1733441836",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-1946-7164-bec3-34b1d95cc2a0/banner300.jpg?t=1733441836",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-1946-7164-bec3-34b1d95cc2a0/banner400.jpg?t=1733441836",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-1946-7164-bec3-34b1d95cc2a0/banner600.jpg?t=1733441837"
+      }
+    }
+  },
+  "history_response": [
+    {
+      "timestamp": "2023-07-13T19:19:23+02:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 19.99,
+          "amountInt": 1999,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 19.99,
+          "amountInt": 1999,
+          "currency": "USD"
+        },
+        "cut": 0
+      }
+    },
+    {
+      "timestamp": "2023-06-29T20:26:24+02:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 19.99,
+          "amountInt": 1999,
+          "currency": "USD"
+        },
+        "cut": 90
+      }
+    },
+    {
+      "timestamp": "2022-11-29T19:24:57+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 19.99,
+          "amountInt": 1999,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 19.99,
+          "amountInt": 1999,
+          "currency": "USD"
+        },
+        "cut": 0
+      }
+    },
+    {
+      "timestamp": "2022-11-22T22:35:04+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 19.99,
+          "amountInt": 1999,
+          "currency": "USD"
+        },
+        "cut": 75
+      }
+    },
+    {
+      "timestamp": "2021-01-05T19:56:19+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 19.99,
+          "amountInt": 1999,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 19.99,
+          "amountInt": 1999,
+          "currency": "USD"
+        },
+        "cut": 0
+      }
+    },
+    {
+      "timestamp": "2021-01-01T01:00:00+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 7.99,
+          "amountInt": 799,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 19.99,
+          "amountInt": 1999,
+          "currency": "USD"
+        },
+        "cut": 60
+      }
+    }
+  ],
+  "collection_metadata": {
+    "collected_at": "2026-10-05T16:31:49.396790Z",
+    "lookup_status": "matched",
+    "history_status": "history_received",
+    "reason": ""
+  },
+  "lookup_evidence": {
+    "endpoint": "/games/lookup/v1",
+    "params": {
+      "appid": "451950"
+    },
+    "attempts": [
+      {
+        "http_status": 200,
+        "reason": "",
+        "at": "2026-10-05T16:31:50.380688Z"
+      }
+    ],
+    "http_status": 200,
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-1946-7164-bec3-34b1d95cc2a0\",\"slug\":\"eep-train-simulator-mission\",\"title\":\"EEP Train Simulator Mission\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1946-7164-bec3-34b1d95cc2a0\\/boxart.png?t=1733441836\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1946-7164-bec3-34b1d95cc2a0\\/banner145.jpg?t=1733441836\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1946-7164-bec3-34b1d95cc2a0\\/banner300.jpg?t=1733441836\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1946-7164-bec3-34b1d95cc2a0\\/banner400.jpg?t=1733441836\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1946-7164-bec3-34b1d95cc2a0\\/banner600.jpg?t=1733441837\"}}}",
+    "response_headers": {
+      "Date": "Mon, 05 Oct 2026 16:31:50 GMT",
+      "Content-Type": "application/json"
+    },
+    "received_at": "2026-10-05T16:31:50.380688Z"
+  },
+  "history_evidence": {
+    "endpoint": "/games/history/v2",
+    "params": {
+      "id": "018d937f-1946-7164-bec3-34b1d95cc2a0",
+      "country": "US",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "attempts": [
+      {
+        "http_status": 200,
+        "reason": "",
+        "at": "2026-10-05T16:31:51.390597Z"
+      }
+    ],
+    "http_status": 200,
+    "body": "[{\"timestamp\":\"2023-07-13T19:19:23+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":19.99,\"amountInt\":1999,\"currency\":\"USD\"},\"regular\":{\"amount\":19.99,\"amountInt\":1999,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2023-06-29T20:26:24+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"regular\":{\"amount\":19.99,\"amountInt\":1999,\"currency\":\"USD\"},\"cut\":90}},{\"timestamp\":\"2022-11-29T19:24:57+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":19.99,\"amountInt\":1999,\"currency\":\"USD\"},\"regular\":{\"amount\":19.99,\"amountInt\":1999,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2022-11-22T22:35:04+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"regular\":{\"amount\":19.99,\"amountInt\":1999,\"currency\":\"USD\"},\"cut\":75}},{\"timestamp\":\"2021-01-05T19:56:19+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":19.99,\"amountInt\":1999,\"currency\":\"USD\"},\"regular\":{\"amount\":19.99,\"amountInt\":1999,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":7.99,\"amountInt\":799,\"currency\":\"USD\"},\"regular\":{\"amount\":19.99,\"amountInt\":1999,\"currency\":\"USD\"},\"cut\":60}}]",
+    "response_headers": {
+      "Date": "Mon, 05 Oct 2026 16:31:51 GMT",
+      "Content-Type": "application/json"
+    },
+    "received_at": "2026-10-05T16:31:51.390597Z"
+  }
+}

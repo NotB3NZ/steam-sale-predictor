@@ -1,0 +1,139 @@
+{
+  "steam_appid": 202410,
+  "itad_game_id": "018d937f-15a6-70fb-a572-f37f2fc1a02d",
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "lookup_endpoint": "/games/lookup/v1",
+    "history_endpoint": "/games/history/v2",
+    "country": "US",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "id": "018d937f-15a6-70fb-a572-f37f2fc1a02d",
+      "slug": "scoregasm",
+      "title": "Scoregasm",
+      "type": "game",
+      "mature": false,
+      "assets": {
+        "boxart": "https://assets.isthereanydeal.com/018d937f-15a6-70fb-a572-f37f2fc1a02d/boxart.png?t=1790909778",
+        "banner145": "https://assets.isthereanydeal.com/018d937f-15a6-70fb-a572-f37f2fc1a02d/banner145.jpg?t=1790909778",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-15a6-70fb-a572-f37f2fc1a02d/banner300.jpg?t=1790909779",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-15a6-70fb-a572-f37f2fc1a02d/banner400.jpg?t=1790909779"
+      }
+    }
+  },
+  "history_response": [
+    {
+      "timestamp": "2026-10-01T20:14:40+02:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 2.99,
+          "amountInt": 299,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 5.99,
+          "amountInt": 599,
+          "currency": "USD"
+        },
+        "cut": 50
+      }
+    },
+    {
+      "timestamp": "2026-07-10T07:15:19+02:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 5.99,
+          "amountInt": 599,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 5.99,
+          "amountInt": 599,
+          "currency": "USD"
+        },
+        "cut": 0
+      }
+    },
+    {
+      "timestamp": "2021-01-01T01:00:00+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        },
+        "cut": 0
+      }
+    }
+  ],
+  "collection_metadata": {
+    "collected_at": "2026-10-05T16:31:03.308435Z",
+    "lookup_status": "matched",
+    "history_status": "history_received",
+    "reason": ""
+  },
+  "lookup_evidence": {
+    "endpoint": "/games/lookup/v1",
+    "params": {
+      "appid": "202410"
+    },
+    "attempts": [
+      {
+        "http_status": 200,
+        "reason": "",
+        "at": "2026-10-05T16:31:04.220135Z"
+      }
+    ],
+    "http_status": 200,
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-15a6-70fb-a572-f37f2fc1a02d\",\"slug\":\"scoregasm\",\"title\":\"Scoregasm\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-15a6-70fb-a572-f37f2fc1a02d\\/boxart.png?t=1790909778\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-15a6-70fb-a572-f37f2fc1a02d\\/banner145.jpg?t=1790909778\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-15a6-70fb-a572-f37f2fc1a02d\\/banner300.jpg?t=1790909779\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-15a6-70fb-a572-f37f2fc1a02d\\/banner400.jpg?t=1790909779\"}}}",
+    "response_headers": {
+      "Date": "Mon, 05 Oct 2026 16:31:04 GMT",
+      "Content-Type": "application/json"
+    },
+    "received_at": "2026-10-05T16:31:04.220135Z"
+  },
+  "history_evidence": {
+    "endpoint": "/games/history/v2",
+    "params": {
+      "id": "018d937f-15a6-70fb-a572-f37f2fc1a02d",
+      "country": "US",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "attempts": [
+      {
+        "http_status": 200,
+        "reason": "",
+        "at": "2026-10-05T16:31:05.210538Z"
+      }
+    ],
+    "http_status": 200,
+    "body": "[{\"timestamp\":\"2026-10-01T20:14:40+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":2.99,\"amountInt\":299,\"currency\":\"USD\"},\"regular\":{\"amount\":5.99,\"amountInt\":599,\"currency\":\"USD\"},\"cut\":50}},{\"timestamp\":\"2026-07-10T07:15:19+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":5.99,\"amountInt\":599,\"currency\":\"USD\"},\"regular\":{\"amount\":5.99,\"amountInt\":599,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"regular\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"cut\":0}}]",
+    "response_headers": {
+      "Date": "Mon, 05 Oct 2026 16:31:05 GMT",
+      "Content-Type": "application/json"
+    },
+    "received_at": "2026-10-05T16:31:05.210538Z"
+  }
+}

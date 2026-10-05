@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-Phase 3 — Create Pilot Sample ✅ (Phases 1 and 2 also complete)
+Phase 4 — ITAD Historical Price Collection ✅ (Phases 1–3 complete)
 
 ## Completed
 
@@ -90,6 +90,15 @@ This diagnostic diversity pilot is not statistically representative or suitable 
 
 Execution: `python3 src/02_create_pilot.py`. No ITAD/Steam/external API calls, scraping, labels, sale-year expansion, or model work occurred. Phase 3 stopped before Phase 4.
 
+## Phase 4 completed
+
+- Validation PASS at 2026-10-05T17:06:32.189335Z; pilot: 100; matched: 100; history success: 100; empty: 3; unmatched: 0; request failures: 0.
+- AppID lookup /games/lookup/v1; history /games/history/v2; US; shops=61; since=2021-01-01T00:00:00Z.
+- Cache: data/raw/itad/; manifest: data/intermediate/itad_collection_manifest.csv; report: reports/itad_collection_report.md.
+- Smoke receipt and raw cache provenance validated; Phase 2/3 datasets unchanged.
+- Unresolved collection issues: 0 unmatched AppIDs (see report). Event-specific historical coverage remains unassessed.
+- No sale labels or event-specific coverage decisions; Phase 5 has not begun.
+
 ## Next Phase
 
-**Phase 4 — ITAD Historical Price Collection**
+**Phase 5 — Historical Coverage Assessment and Autumn Sale Labels**

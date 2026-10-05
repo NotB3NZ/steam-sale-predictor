@@ -1,0 +1,100 @@
+{
+  "steam_appid": 314300,
+  "itad_game_id": "018d937f-305e-703d-9228-6aaad68425fc",
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "lookup_endpoint": "/games/lookup/v1",
+    "history_endpoint": "/games/history/v2",
+    "country": "US",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "id": "018d937f-305e-703d-9228-6aaad68425fc",
+      "slug": "cubez",
+      "title": "CubeZ",
+      "type": "game",
+      "mature": false,
+      "assets": {
+        "boxart": "https://assets.isthereanydeal.com/018d937f-305e-703d-9228-6aaad68425fc/boxart.png?t=1785856205",
+        "banner145": "https://assets.isthereanydeal.com/018d937f-305e-703d-9228-6aaad68425fc/banner145.jpg?t=1785856205",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-305e-703d-9228-6aaad68425fc/banner300.jpg?t=1785856205",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-305e-703d-9228-6aaad68425fc/banner400.jpg?t=1785856205",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-305e-703d-9228-6aaad68425fc/banner600.jpg?t=1785856206"
+      }
+    }
+  },
+  "history_response": [
+    {
+      "timestamp": "2021-01-01T01:00:00+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 7.99,
+          "amountInt": 799,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 7.99,
+          "amountInt": 799,
+          "currency": "USD"
+        },
+        "cut": 0
+      }
+    }
+  ],
+  "collection_metadata": {
+    "collected_at": "2026-10-05T16:31:31.403285Z",
+    "lookup_status": "matched",
+    "history_status": "history_received",
+    "reason": ""
+  },
+  "lookup_evidence": {
+    "endpoint": "/games/lookup/v1",
+    "params": {
+      "appid": "314300"
+    },
+    "attempts": [
+      {
+        "http_status": 200,
+        "reason": "",
+        "at": "2026-10-05T16:31:32.304291Z"
+      }
+    ],
+    "http_status": 200,
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-305e-703d-9228-6aaad68425fc\",\"slug\":\"cubez\",\"title\":\"CubeZ\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-305e-703d-9228-6aaad68425fc\\/boxart.png?t=1785856205\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-305e-703d-9228-6aaad68425fc\\/banner145.jpg?t=1785856205\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-305e-703d-9228-6aaad68425fc\\/banner300.jpg?t=1785856205\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-305e-703d-9228-6aaad68425fc\\/banner400.jpg?t=1785856205\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-305e-703d-9228-6aaad68425fc\\/banner600.jpg?t=1785856206\"}}}",
+    "response_headers": {
+      "Date": "Mon, 05 Oct 2026 16:31:32 GMT",
+      "Content-Type": "application/json"
+    },
+    "received_at": "2026-10-05T16:31:32.304291Z"
+  },
+  "history_evidence": {
+    "endpoint": "/games/history/v2",
+    "params": {
+      "id": "018d937f-305e-703d-9228-6aaad68425fc",
+      "country": "US",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "attempts": [
+      {
+        "http_status": 200,
+        "reason": "",
+        "at": "2026-10-05T16:31:33.316660Z"
+      }
+    ],
+    "http_status": 200,
+    "body": "[{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":7.99,\"amountInt\":799,\"currency\":\"USD\"},\"regular\":{\"amount\":7.99,\"amountInt\":799,\"currency\":\"USD\"},\"cut\":0}}]",
+    "response_headers": {
+      "Date": "Mon, 05 Oct 2026 16:31:33 GMT",
+      "Content-Type": "application/json"
+    },
+    "received_at": "2026-10-05T16:31:33.316660Z"
+  }
+}

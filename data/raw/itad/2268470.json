@@ -1,0 +1,180 @@
+{
+  "steam_appid": 2268470,
+  "itad_game_id": "018d937f-6ba8-70fa-a2df-9567f766cb29",
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "lookup_endpoint": "/games/lookup/v1",
+    "history_endpoint": "/games/history/v2",
+    "country": "US",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "id": "018d937f-6ba8-70fa-a2df-9567f766cb29",
+      "slug": "hope-left-me",
+      "title": "HOPE LEFT ME",
+      "type": "game",
+      "mature": false,
+      "assets": {
+        "boxart": "https://assets.isthereanydeal.com/018d937f-6ba8-70fa-a2df-9567f766cb29/boxart.jpg?t=1763178380",
+        "banner145": "https://assets.isthereanydeal.com/018d937f-6ba8-70fa-a2df-9567f766cb29/banner145.jpg?t=1763178380",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-6ba8-70fa-a2df-9567f766cb29/banner300.jpg?t=1763178380",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-6ba8-70fa-a2df-9567f766cb29/banner400.jpg?t=1763178380",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-6ba8-70fa-a2df-9567f766cb29/banner600.jpg?t=1763178381"
+      }
+    }
+  },
+  "history_response": [
+    {
+      "timestamp": "2023-11-25T19:24:20+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        },
+        "cut": 0
+      }
+    },
+    {
+      "timestamp": "2023-11-18T19:03:43+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 1.59,
+          "amountInt": 159,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        },
+        "cut": 20
+      }
+    },
+    {
+      "timestamp": "2023-08-14T19:09:01+02:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        },
+        "cut": 0
+      }
+    },
+    {
+      "timestamp": "2023-08-07T19:21:49+02:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 1.59,
+          "amountInt": 159,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        },
+        "cut": 20
+      }
+    },
+    {
+      "timestamp": "2023-03-10T15:33:11+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        },
+        "cut": 0
+      }
+    }
+  ],
+  "collection_metadata": {
+    "collected_at": "2026-10-05T17:04:17.151941Z",
+    "lookup_status": "matched",
+    "history_status": "history_received",
+    "reason": ""
+  },
+  "lookup_evidence": {
+    "endpoint": "/games/lookup/v1",
+    "params": {
+      "appid": "2268470"
+    },
+    "attempts": [
+      {
+        "http_status": 200,
+        "reason": "",
+        "at": "2026-10-05T17:04:18.166869Z"
+      }
+    ],
+    "http_status": 200,
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-6ba8-70fa-a2df-9567f766cb29\",\"slug\":\"hope-left-me\",\"title\":\"HOPE LEFT ME\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-6ba8-70fa-a2df-9567f766cb29\\/boxart.jpg?t=1763178380\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-6ba8-70fa-a2df-9567f766cb29\\/banner145.jpg?t=1763178380\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-6ba8-70fa-a2df-9567f766cb29\\/banner300.jpg?t=1763178380\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-6ba8-70fa-a2df-9567f766cb29\\/banner400.jpg?t=1763178380\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-6ba8-70fa-a2df-9567f766cb29\\/banner600.jpg?t=1763178381\"}}}",
+    "response_headers": {
+      "Date": "Mon, 05 Oct 2026 17:04:18 GMT",
+      "Content-Type": "application/json"
+    },
+    "received_at": "2026-10-05T17:04:18.166869Z"
+  },
+  "history_evidence": {
+    "endpoint": "/games/history/v2",
+    "params": {
+      "id": "018d937f-6ba8-70fa-a2df-9567f766cb29",
+      "country": "US",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "attempts": [
+      {
+        "http_status": 200,
+        "reason": "",
+        "at": "2026-10-05T17:04:19.136277Z"
+      }
+    ],
+    "http_status": 200,
+    "body": "[{\"timestamp\":\"2023-11-25T19:24:20+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"regular\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2023-11-18T19:03:43+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":1.59,\"amountInt\":159,\"currency\":\"USD\"},\"regular\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"cut\":20}},{\"timestamp\":\"2023-08-14T19:09:01+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"regular\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2023-08-07T19:21:49+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":1.59,\"amountInt\":159,\"currency\":\"USD\"},\"regular\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"cut\":20}},{\"timestamp\":\"2023-03-10T15:33:11+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"regular\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"cut\":0}}]",
+    "response_headers": {
+      "Date": "Mon, 05 Oct 2026 17:04:19 GMT",
+      "Content-Type": "application/json"
+    },
+    "received_at": "2026-10-05T17:04:19.136277Z"
+  }
+}

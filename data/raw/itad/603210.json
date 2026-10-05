@@ -1,0 +1,100 @@
+{
+  "steam_appid": 603210,
+  "itad_game_id": "018d95f0-423e-70d8-9c61-5010c4800abe",
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "lookup_endpoint": "/games/lookup/v1",
+    "history_endpoint": "/games/history/v2",
+    "country": "US",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "id": "018d95f0-423e-70d8-9c61-5010c4800abe",
+      "slug": "valkyries",
+      "title": "Valkyries",
+      "type": null,
+      "mature": false,
+      "assets": {
+        "boxart": "https://assets.isthereanydeal.com/018d95f0-423e-70d8-9c61-5010c4800abe/boxart.png?t=1790912142",
+        "banner145": "https://assets.isthereanydeal.com/018d95f0-423e-70d8-9c61-5010c4800abe/banner145.jpg?t=1790912142",
+        "banner300": "https://assets.isthereanydeal.com/018d95f0-423e-70d8-9c61-5010c4800abe/banner300.jpg?t=1790912142",
+        "banner400": "https://assets.isthereanydeal.com/018d95f0-423e-70d8-9c61-5010c4800abe/banner400.jpg?t=1790912142",
+        "banner600": "https://assets.isthereanydeal.com/018d95f0-423e-70d8-9c61-5010c4800abe/banner600.jpg?t=1790912143"
+      }
+    }
+  },
+  "history_response": [
+    {
+      "timestamp": "2021-01-01T01:00:00+01:00",
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "deal": {
+        "price": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        },
+        "cut": 0
+      }
+    }
+  ],
+  "collection_metadata": {
+    "collected_at": "2026-10-05T16:31:59.442091Z",
+    "lookup_status": "matched",
+    "history_status": "history_received",
+    "reason": ""
+  },
+  "lookup_evidence": {
+    "endpoint": "/games/lookup/v1",
+    "params": {
+      "appid": "603210"
+    },
+    "attempts": [
+      {
+        "http_status": 200,
+        "reason": "",
+        "at": "2026-10-05T16:32:00.398984Z"
+      }
+    ],
+    "http_status": 200,
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d95f0-423e-70d8-9c61-5010c4800abe\",\"slug\":\"valkyries\",\"title\":\"Valkyries\",\"type\":null,\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d95f0-423e-70d8-9c61-5010c4800abe\\/boxart.png?t=1790912142\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d95f0-423e-70d8-9c61-5010c4800abe\\/banner145.jpg?t=1790912142\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d95f0-423e-70d8-9c61-5010c4800abe\\/banner300.jpg?t=1790912142\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d95f0-423e-70d8-9c61-5010c4800abe\\/banner400.jpg?t=1790912142\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d95f0-423e-70d8-9c61-5010c4800abe\\/banner600.jpg?t=1790912143\"}}}",
+    "response_headers": {
+      "Date": "Mon, 05 Oct 2026 16:32:00 GMT",
+      "Content-Type": "application/json"
+    },
+    "received_at": "2026-10-05T16:32:00.398984Z"
+  },
+  "history_evidence": {
+    "endpoint": "/games/history/v2",
+    "params": {
+      "id": "018d95f0-423e-70d8-9c61-5010c4800abe",
+      "country": "US",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "attempts": [
+      {
+        "http_status": 200,
+        "reason": "",
+        "at": "2026-10-05T16:32:01.409097Z"
+      }
+    ],
+    "http_status": 200,
+    "body": "[{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"regular\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"cut\":0}}]",
+    "response_headers": {
+      "Date": "Mon, 05 Oct 2026 16:32:01 GMT",
+      "Content-Type": "application/json"
+    },
+    "received_at": "2026-10-05T16:32:01.409097Z"
+  }
+}
