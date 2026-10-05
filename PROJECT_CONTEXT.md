@@ -26,7 +26,7 @@ appid | sale_year | age_at_sale | price | ... | discounted
 
 ## Known Data Issue
 
-The raw `games.csv` header has a concatenated column `DiscountDLC count` that should be `Discount` + `DLC count` (header has 39 fields, data rows have 40). The inspection script corrects this at load time. The original file is preserved.
+The raw `games.csv` header has a concatenated column `DiscountDLC count` that should be `Discount` + `DLC count` (header has 39 fields, data rows have 40). Both pipeline scripts use `src/source_schema.py` to correct this at load time. The original file is preserved.
 
 ## Methodological Rules
 
@@ -46,3 +46,11 @@ Autumn 2023: 2023-11-21 to 2023-11-28
 Autumn 2024: 2024-11-27 to 2024-12-04
 Autumn 2025: 2025-09-29 to 2025-10-06  (date may need verification)
 ```
+
+## Master Catalog Population
+
+`data/intermediate/games_master.csv` is one row per Steam game, not the final game × sale-year modeling dataset. Require valid positive integer AppID, nonblank name, valid release date, and finite numeric Price > 0. Titles with source Price <= 0 are excluded from the paid-game candidate population; this does not prove permanent free-to-play status.
+
+Optional missing metadata, zero-owner ranges, and zero Peak CCU do not disqualify games. Owner ranges remain source text. No historical-sale release cutoff is applied until event-specific construction (`release_date <= sale_start_date`). The dataset snapshot reference date is unknown; do not infer it from file timestamps or the current date.
+
+Retention in the master catalog does not approve historical feature use. Price, Discount, DLC count, Achievements, Tags, Categories, language support, and engagement statistics are snapshots requiring later temporal assessment. Discount must never become the target. Relatively stable metadata is not guaranteed historically unchanged.

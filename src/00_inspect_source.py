@@ -31,20 +31,7 @@ CSV_PATH = PROJECT_ROOT / "games.csv"
 
 # The correct header should have 40 columns. The raw file has a known issue
 # where "Discount" and "DLC count" are concatenated as "DiscountDLC count".
-CORRECTED_COLUMNS = [
-    "AppID", "Name", "Release date", "Estimated owners", "Peak CCU",
-    "Required age", "Price", "Discount", "DLC count", "About the game",
-    "Supported languages", "Full audio languages", "Reviews",
-    "Header image", "Website", "Support url", "Support email",
-    "Windows", "Mac", "Linux",
-    "Metacritic score", "Metacritic url", "User score",
-    "Positive", "Negative", "Score rank",
-    "Achievements", "Recommendations", "Notes",
-    "Average playtime forever", "Average playtime two weeks",
-    "Median playtime forever", "Median playtime two weeks",
-    "Developers", "Publishers", "Categories", "Genres", "Tags",
-    "Screenshots", "Movies",
-]
+from source_schema import CORRECTED_COLUMNS
 
 SECTION_SEP = "\n" + "=" * 80 + "\n"
 
