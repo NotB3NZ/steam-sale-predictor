@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-Phase 2 — Games Master Dataset ✅ (Phase 1 also complete)
+Phase 3 — Create Pilot Sample ✅ (Phases 1 and 2 also complete)
 
 ## Completed
 
@@ -61,10 +61,35 @@ Original rows: 125,855. Sequential removals: invalid AppID 0; missing/invalid na
 
 Names are trimmed; dates are standardized as `release_date` with `release_year`. Eleven unnecessary columns are dropped. Optional missing metadata, original owner ranges, and multi-value fields are preserved. No historical-sale cutoff is applied. There remain 7,872 zero-owner games and 81,702 zero-Peak-CCU games.
 
-Snapshot reference date remains unknown, so no future-release flag is created. Retained snapshot fields (including Price, Discount, DLC count, Tags, and Achievements) are not approved as historical predictors. Discount is never a sale label. No Phase 3+ work has been performed.
+Snapshot reference date remains unknown, so no future-release flag is created. Retained snapshot fields (including Price, Discount, DLC count, Tags, and Achievements) are not approved as historical predictors. Discount is never a sale label. Phase 2 stopped before pilot sampling; Phase 3 is documented below.
 
 Execution: `python3 src/01_build_games_master.py` with requirements installed. The system Python currently supplies pandas 2.3.3; the existing `.venv` lacks pandas.
 
+## Phase 3 completed
+
+- [x] Script: `src/02_create_pilot.py`.
+- [x] Master candidates: **99,194**; eligible at `release_date <= 2023-11-21`: **61,681**; later releases excluded from this pilot only: **37,513**.
+- [x] Pilot: **100 unique games**, all within the historical cutoff; **36 columns** (30 unchanged master columns plus 6 pilot diagnostics).
+- [x] Output: `data/intermediate/pilot_games.csv`.
+- [x] Report: `reports/pilot_sample_report.md`, including distributions, 12 edge criteria across 11 distinct games, and a 20-record sanity view.
+- [x] Seed **42**, stable SHA-256 priority by AppID, independent of source row order.
+- [x] 80-game core uses square-root-weighted release-era/price quotas and activity cycling; diagnostics/supplements plus diversity fill complete the sample. No manual fame-based selection.
+- [x] All eras, price bands, owner groups, and activity groups represented. Target genres meet minimum coverage; no parsed publisher exceeds two pilot games.
+- [x] Saved-CSV validation passes, all 30 source-column values match the master, and invalid schema/duplicate/source-value/cutoff/price cases are rejected.
+- [x] Two full script runs produce identical pilot and report bytes. Repeated selection and shuffled-master selection are identical.
+- [x] Master hash unchanged: `e4fa1eb1a7d5154831badc8b82cd5e1d34409948b0559b18dee81d9192b97852`.
+- [x] Pilot SHA-256: `458ddc9042beb8f978e1607cac6eeace88bd3b9a73537bc2dae82b75c419d14e`.
+
+Release-era counts: before 2015 **20**; 2015–2018 **24**; 2019–2020 **18**; 2021–2022 **21**; 2023 through cutoff **17**.
+
+Source-price quartiles: **1.19 / 2.99 / 5.99**. Pilot price-band counts, low to high: **25 / 25 / 23 / 27**. Zero/nonzero Peak CCU: **53 / 47**, including **24** high-activity games (eligible nonzero CCU 90th-percentile threshold **89.4**).
+
+Genres include Adventure 38, Strategy 22, RPG 19, Simulation 19, Massively Multiplayer 4, Racing 4, and Sports 3; 19 games have the exact Puzzle tag. Publisher tokens: 103 distinct, maximum concentration 2; 62 games share at least one developer/publisher token. Missing metadata: Tags 10, Genres 1, Publishers 2.
+
+This diagnostic diversity pilot is not statistically representative or suitable for population model-performance claims. Snapshot diagnostics are not approved historical predictors. Publisher comma parsing may split organization names; exact developer overlap is only a self-publishing proxy. The approved paid catalog contains some software/non-game products, including the high-DLC diagnostic. These remain unchanged for downstream review. ITAD matching/history coverage remains unknown.
+
+Execution: `python3 src/02_create_pilot.py`. No ITAD/Steam/external API calls, scraping, labels, sale-year expansion, or model work occurred. Phase 3 stopped before Phase 4.
+
 ## Next Phase
 
-**Phase 3 — Create Pilot Sample**
+**Phase 4 — ITAD Historical Price Collection**
