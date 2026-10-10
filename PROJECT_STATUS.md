@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-Phase 4 — ITAD Historical Price Collection ✅ (Phases 1–3 complete)
+Phase 5A — Autumn Sale Evidence Audit completed; pending human review (Phases 1–4 COMPLETE)
 
 ## Completed
 
@@ -97,8 +97,24 @@ Execution: `python3 src/02_create_pilot.py`. No ITAD/Steam/external API calls, s
 - Cache: data/raw/itad/; manifest: data/intermediate/itad_collection_manifest.csv; report: reports/itad_collection_report.md.
 - Smoke receipt and raw cache provenance validated; Phase 2/3 datasets unchanged.
 - Unresolved collection issues: 0 unmatched AppIDs (see report). Event-specific historical coverage remains unassessed.
-- No sale labels or event-specific coverage decisions; Phase 5 has not begun.
+- Phase 4 created no sale labels or event-specific coverage decisions. Collection is COMPLETE; its inputs remain frozen.
+
+## Phase 5A completed — pending review
+
+- Offline exploratory audit: `src/04_audit_autumn_evidence.py`; report: `reports/autumn_sale_evidence_audit.md`.
+- Outputs: `data/intermediate/autumn_sale_evidence_audit.csv` (**200 unique AppID × sale_year rows**) and `data/intermediate/autumn_sale_evidence_records.csv` (**238 actual in-window records**).
+- All **100 pilot games** considered for **2023 and 2024**. No missing/unreadable/invalid caches, record parsing failures, or non-Steam records.
+- Canonical dates are unchanged: November 21–28, 2023; November 27–December 4, 2024. Exact sale hours/timezone are not documented; audit includes both calendar dates in UTC, with the midnight after the end date exclusive. This convention is explicit and does not verify live sale hours.
+- Descriptive categories A/B/C/D: **2023: 55/8/0/37**; **2024: 60/4/0/36**. These are evidence descriptions, not final target labels.
+- Observation counts 0/1/2/3: **2023: 37/9/53/1**; **2024: 36/8/56/0**. Every B case has one full-price observation; no sufficiency decision has been made.
+- Before/after evidence is reported separately without price carry-forward. All original in-window records and timestamps are retained with raw array indices.
+- Empirical histories suggest change-oriented records, but periodic polling/change retention/corrections cannot be distinguished confidently. Two repeated state patterns, six conflicting same-timestamp groups, and 65 exact requested-since timestamps are documented; no observed null deals.
+- **30 offline tests PASS**, including boundary inclusion, timezone normalization, zero evidence, discount/full-price/null/ambiguous handling, nearest context/ties, missing caches, reproducibility, and Phase 4 regression tests. Saved CSVs are independently reconciled to raw history.
+- SHA-256 and inventories unchanged for **107 frozen input files**, including every raw ITAD JSON, the pilot/master/collection manifest, and Phase 4 script/report. Receipt: `reports/autumn_sale_evidence_validation.json`. Initial pre-work hashes were also verified after completion.
+- **Zero API/network requests.** No raw cache refreshes, final labels, coverage thresholds, state-persistence rules, training data, or modeling changes.
 
 ## Next Phase
 
-**Phase 5 — Historical Coverage Assessment and Autumn Sale Labels**
+**Phase 5B — Final coverage and labeling methodology NOT YET IMPLEMENTED.**
+
+STOP after Phase 5A. Human review of the evidence audit is required before implementing Phase 5B. Phase 5 labeling is not complete.
