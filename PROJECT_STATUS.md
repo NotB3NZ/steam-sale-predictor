@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-Phase 5B.2 — Historical ground-truth verification and label-feasibility investigation completed with external verification limitations; pending human review. Phase 4 COMPLETE and frozen; final labeling remains unimplemented.
+Phase 5B.3 — Operational label construction completed; pending human review before Phase 6. Recorded-discount labels exist; true sale participation remains unverified. Phase 4 COMPLETE and frozen; no predictive features or models.
 
 ## Completed
 
@@ -129,9 +129,9 @@ Execution: `python3 src/02_create_pilot.py`. No ITAD/Steam/external API calls, s
 
 ## Next Phase
 
-**Phase 5B.3 — NOT STARTED. Final coverage and labeling methodology remains unimplemented.**
+**Phase 6 — NOT STARTED. Leakage-safe feature engineering requires human review.**
 
-STOP after Phase 5B.2. Human review of ground-truth feasibility is required before Phase 5B.3. Phase 5 labeling is not complete.
+STOP after Phase 5B.3. Operational labeling is complete; it does not verify actual sale participation.
 
 ## Phase 5B.1 completed — pending review
 
@@ -158,4 +158,13 @@ STOP after Phase 5B.2. Human review of ground-truth feasibility is required befo
 - Main report: `reports/autumn_sale_ground_truth_feasibility.md`; pilot/evidence CSVs under `data/intermediate/`; reviewed research ledger and pre-work manifest under `reports/sources/`; new offline script `src/06_verify_historical_ground_truth.py` and focused tests `tests/test_historical_ground_truth.py`.
 - **80 offline tests PASS**, including 18 new focused tests. Reproduction: `python3 -B src/06_verify_historical_ground_truth.py --verify`. Validation receipt records identical repeated outputs, **144 unchanged protected preceding files**, including all **107 frozen Phase 4 inputs**, and zero diagnostic network attempts.
 - No ITAD pricing/history requests, new histories, final labels, state persistence, features or models. Authorized external research was limited to source documentation and legitimate public verification; underlying web-tool HTTP totals unavailable. Only 2023–2025 outcomes considered.
-- Strategy A is currently the most defensible evidence-retention approach, with other pairs unresolved; no defensible binary dataset established. Permissioned complete logs/publisher schedules and limited archive evidence require further human review. **STOP before Phase 5B.3.**
+- At Phase 5B.2 completion, Strategy A was the most defensible evidence-retention approach; no binary dataset for verified participation was established. The subsequent human-authorized operational target is documented below; prior analytical artifacts remain frozen.
+
+## Phase 5B.3 completed — operational labels; pending review
+
+- Human-approved target: whether a qualifying Steam-store discount is **recorded** during the exact event, not actual/formal sale participation. Rule: `operational_observed_v1`; A → 1, B/D → 0, C → null with ambiguity/review flags. All limitation flags true.
+- **300 unique rows**, unchanged categories **175/3/0/122**. Operational labels **175 ones / 125 zeros / 0 nulls**. Yearly ones/zeros: **2023 55/45; 2024 60/40; 2025 60/40**. PU view: **175 positive / 125 unlabeled**.
+- **One eligibility-uncertain pair**: nekowater (2650840), 2023, retains zero and explicit review/release-hour flags. All rows retained. Three empty histories remain nine D operational zeros; no actual non-discounting inferred.
+- Created `src/06_build_operational_labels.py`, `tests/test_operational_labels.py`, two label CSVs, `reports/autumn_sale_operational_labeling.md` and `reports/autumn_sale_operational_label_validation.json`. Shared parser/calendar reused; actual in-sale records and raw indices reconciled to saved evidence.
+- **102 offline tests PASS**, including 22 new focused tests. Verification: `python3 -B src/06_build_operational_labels.py --verify`. Receipt records byte-identical repeated outputs and **153 unchanged protected preceding files**, including **107 frozen Phase 4 inputs**, with prior audits/investigations/verification receipts preserved.
+- No further source research, network/API calls, raw refreshes, new games/years, predictive features, PU algorithms, models or accuracy estimates. **STOP before Phase 6.** Future evaluation/probabilities must refer to recorded discounts; the operational label CSV is not a feature table.

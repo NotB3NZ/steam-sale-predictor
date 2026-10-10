@@ -2,7 +2,9 @@
 
 ## Research Question
 
-> Given information available about a Steam game **before** a specific Steam Autumn Sale begins, what is the probability that the game will be discounted at any point during that sale?
+> Can historical Steam game metadata and pre-sale pricing behavior predict whether a Steam-store discount will be RECORDED during the Steam Autumn Sale?
+
+The broader motivation is actual Autumn Sale discount participation. Phase 5B.3 adopts recorded discount occurrence as the operational target because historical observation coverage is incomplete; operational zero does not establish actual non-participation.
 
 ## Unit of Observation
 
@@ -12,9 +14,9 @@ one row = one game × one Autumn Sale year
 
 Example:
 ```
-appid | sale_year | age_at_sale | price | ... | discounted
-12345 | 2023      | 850         | 29.99 | ... | 1
-12345 | 2024      | 1216        | 29.99 | ... | 0
+appid | sale_year | discount_observed
+7830  | 2024      | 0
+7830  | 2025      | 1
 ```
 
 ## Data Sources
@@ -22,7 +24,7 @@ appid | sale_year | age_at_sale | price | ... | discounted
 | Source | Role | Status |
 |--------|------|--------|
 | `games.csv` | Game metadata & potential predictors | Available (125,855 games) |
-| ITAD historical Steam price data | Ground-truth sale labels (`discounted`) | Phase 2+ |
+| ITAD historical Steam price data | Recorded-discount operational labels, not verified participation | Phase 4 frozen; Phase 5B.3 labels constructed |
 
 ## Known Data Issue
 
@@ -30,7 +32,7 @@ The raw `games.csv` header has a concatenated column `DiscountDLC count` that sh
 
 ## Methodological Rules
 
-1. **Label integrity:** Insufficient historical price coverage → `UNKNOWN`, never `0`.
+1. **Target interpretation:** `discount_observed=0` means no qualifying in-sale discount observation; never infer actual non-discounting from missing evidence. Category C remains null and flagged. True-participation negatives remain unverified; the earlier `UNKNOWN` requirement applies to that broader target, not the authorized operational definition.
 2. **Raw data preservation:** Never overwrite `games.csv` or `games.json`.
 3. **API caching:** Raw ITAD API responses must be cached locally.
 4. **Temporal validity:** Predictors must represent information available **before** the sale being predicted.
@@ -119,8 +121,22 @@ The target event is a valid Steam-store discount at **any point** within the ver
 
 Eleven source candidates cover SteamDB price/event information, official Steam store/news/publisher records, Wayback, Common Crawl, Steambase, CheapShark, GG.deals and a metadata snapshot dataset. SteamDB scraping was not undertaken; publisher credentials were not bypassed. The Wayback lookup failed, and that component stopped without interpreting failure as archive absence. Seven of 17 distinct public Steam news feeds were accessible, covering eight selected pairs, but none supplied target-event price evidence. Wrong-year announcements and current prices/outcomes were excluded.
 
-Independent verification: **0 positive / 0 full-sale absence / 0 partial-only pricing / 0 source conflicts / 18 NOT_VERIFIABLE**. These are verification results, not labels. Zero independent conflicts does not resolve known ITAD conflicts; nekowater's release hour remains unknown. No investigated source established a complete historical offer log. Strategy A—retain directly observed ITAD discounts as evidence and leave other pairs unresolved—is the most defensible evidence-retention approach currently; it cannot support ordinary binary model training on its own. No labeling strategy has been implemented.
+Independent verification: **0 positive / 0 full-sale absence / 0 partial-only pricing / 0 source conflicts / 18 NOT_VERIFIABLE**. These are verification results, not labels. Zero independent conflicts does not resolve known ITAD conflicts; nekowater's release hour remains unknown. No investigated source established a complete historical offer log. At Phase 5B.2 completion, Strategy A—retain directly observed ITAD discounts as evidence and leave other pairs unresolved—was the most defensible evidence-retention approach; it could not support ordinary binary model training on its own. No labeling strategy was implemented in that phase.
 
 Artifacts: `data/intermediate/autumn_sale_verification_pilot.csv`, `data/intermediate/autumn_sale_verification_evidence.csv`, `reports/autumn_sale_ground_truth_feasibility.md`, `reports/autumn_sale_ground_truth_validation.json`, and reviewed JSONs under `reports/sources/`. Before/after SHA-256 verification protects **144 preceding files**, including all **107 frozen Phase 4 inputs** and prior Phase 5A/5B.1 artifacts. Run `python3 -B src/06_verify_historical_ground_truth.py --verify` for full offline tests and deterministic reruns. Authorized documentation/public-page research is separate from network-blocked execution; no ITAD pricing/history requests or new histories occurred.
 
-**STOP before Phase 5B.3. Final labels, predictive features and models remain unimplemented.** Human review must address authorized complete-source access, negative-ground-truth feasibility, source-selection bias, region/purchase scope, conflicts and eligibility. Only 2023–2025 outcomes were investigated; 2026 remains reserved.
+Phase 5B.2 ended without labels, features or models. Its reports remain frozen; the subsequent human-authorized operational target changes the modeling outcome as documented below. Only 2023–2025 outcomes were investigated; 2026 remains reserved.
+
+## Phase 5B.3 — Operational label construction (completed; pending human review)
+
+Rule **operational_observed_v1** uses the unchanged exact calendar and observation/category parser: A → `discount_observed=1`; B/D → `0`; C → null with ambiguity/review flags. PU status is A → positive, B/C/D → unlabeled. All labels carry `label_limitation_flag=True`. A zero measures non-observation, not verified absence or formal Valve sale enrollment. No price persistence or coverage threshold is assumed.
+
+`src/06_build_operational_labels.py` reads only local evidence artifacts and reconciles embedded raw records, categories, counts, exact timestamps, raw-array indices and collection scope. The operational CSV preserves all **300 pairs** and **175 A / 3 B / 0 C / 122 D** categories. Labels: **175 ones / 125 zeros / 0 nulls**; yearly ones/zeros **2023: 55/45; 2024: 60/40; 2025: 60/40**. PU: **175 positive / 125 unlabeled**.
+
+nekowater (2650840), 2023, retains operational zero with `eligibility_status=uncertain_release_hour` and `requires_review=True`; the remaining 299 rows are eligible under the existing date rule. No row is excluded. Shop 61 / US are manifest provenance; missing observed currencies and supporting records remain missing/empty, never invented.
+
+Outputs: `data/intermediate/autumn_sale_operational_labels.csv`, `data/intermediate/autumn_sale_pu_labels.csv`, `reports/autumn_sale_operational_labeling.md`, and `reports/autumn_sale_operational_label_validation.json`. Run `python3 -B src/06_build_operational_labels.py --verify` for offline tests, deterministic reruns and before/after SHA-256 verification of **153 protected preceding files**, including all **107 frozen Phase 4 inputs**. No preceding artifact/receipt is regenerated; no network/API calls or new histories occur.
+
+These are **target/provenance tables, not predictor tables**. In-sale observations can construct retrospective targets but cannot be predictors. In-window counts, supporting indices, categories, PU status, history-coverage flags and collection metadata must not become features. Any later model estimates recorded-discount probability under the source's observation conditions, not independently verified participation probability. Pilot sampling and recording coverage can bias evaluation; no PU algorithms or class priors are implemented.
+
+**STOP before Phase 6.** Feature engineering requires human review, a separate pre-sale-only feature table, historical validity checks and preservation of the 2023–2024 / 2025 temporal split. No predictive features, model training, tuning, accuracy calculations or 2026 outcomes were introduced.

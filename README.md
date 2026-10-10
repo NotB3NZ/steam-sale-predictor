@@ -1,18 +1,18 @@
 # Steam Seasonal Sale Prediction
 
-An ongoing data science project investigating whether game characteristics available before a Steam Autumn Sale can help predict an observed Steam discount during that event.
+An ongoing data science project investigating whether historical game metadata and pre-sale pricing behavior can predict a **recorded Steam-store discount** during an Autumn Sale.
 
-The intended primary model is **interpretable logistic regression**, with attention to historical validity, reproducible evidence and associations between game characteristics and discounting behavior. Event-specific predictions could help analysts study seasonal pricing patterns; reliable outcomes must be established before those associations can be estimated.
+The intended primary model is **interpretable logistic regression**, with attention to historical validity, reproducible evidence and associations between game characteristics and recorded discounting behavior. The broader motivation is actual discount participation, but incomplete historical coverage requires an explicitly observation-based target.
 
-**Current milestone: Phase 5B.2 ground-truth feasibility investigation completed, pending human review. Independent historical verification was limited by access and evidence availability. Phase 5B.3 has not started. No final target labels, modeling features or trained models exist.**
+**Current milestone: Phase 5B.3 operational label construction completed, pending human review. Phase 6 has not started. Operational labels exist; no predictive features or trained models exist.**
 
 ## Research Question
 
-> Given information available about a Steam game before a specific Steam Autumn Sale begins, what is the probability that the game will be discounted at any point during that sale?
+> Can historical Steam game metadata and pre-sale pricing behavior predict whether a Steam-store discount will be RECORDED during the Steam Autumn Sale?
 
 The target concerns a particular historical event. Whether a game has ever been discounted does not establish whether it was discounted during the Autumn Sale being predicted.
 
-An observed Steam discount inside the event window is the intended outcome. It does **not** verify formal enrollment in Valve's seasonal sale program; the cached pricing records do not establish that distinction.
+The operational outcome is at least one qualifying recorded Steam-store discount inside the exact event window. A zero means **discount not observed**, not verified full price or non-participation. Recorded discounts also do **not** verify formal enrollment in Valve's seasonal sale program.
 
 ## Research Design
 
@@ -39,7 +39,7 @@ The metadata contains release information, prices, developers, publishers, genre
 
 Phase 4 matched Steam AppIDs to IsThereAnyDeal identifiers and requested histories for `country=US`, Steam shop ID `61`, and `since=2021-01-01T00:00:00Z`. Cached JSON wrappers preserve response bodies, request configuration, lookup evidence and collection metadata. History observations contain timestamps, shop identifiers and deal information with price, regular price, cut percentage and currency where available.
 
-The evidence audit reads these local caches without additional pricing API requests. Successful collection establishes availability and provenance, not complete historical coverage or final sale labels.
+The evidence audit and label builder read local artifacts without additional pricing API requests. Successful collection establishes availability and provenance, not complete historical coverage or actual sale participation.
 
 ## Project Progress
 
@@ -53,7 +53,7 @@ The evidence audit reads these local caches without additional pricing API reque
 | 5A.1 | Exact Sale Boundaries and 2025 Expansion | Complete; Need some more review on my end |
 | 5B.1 | Historical Price-State and Coverage Investigation | Complete; pending human review |
 | 5B.2 | Historical Ground-Truth Verification and Label Feasibility | Complete; pending human review |
-| 5B.3 | Subsequent labeling work, subject to human approval | **Not started** |
+| 5B.3 | Operational Label Construction | Complete; pending human review |
 | 6 | Feature Engineering and Modeling Dataset | Not started |
 | 7 | Logistic Regression Modeling and Evaluation | Not started |
 | 8 | Scaling and Final Validation | Not started |
@@ -201,16 +201,28 @@ The recorded validation includes **42 passing offline tests**, independent saved
 
 **Results:** Eight selected pairs had a discoverable source page, but none yielded relevant historical price evidence. Independent verification found **0 positive, 0 full-sale absence, 0 partial-only pricing and 0 conflicting observations; all 18 remain NOT_VERIFIABLE**. SteamDB automation required permission; publisher access required credentials; the archive lookup failed. None of these limitations implies no discount. Prior 300 pairs and evidence categories remain unchanged.
 
-**Key takeaway:** A defensible binary dataset is not established. Direct ITAD discounts remain positive evidence candidates; other outcomes remain unresolved. Complete authorized histories or publisher schedules would need verification before any interval reconstruction or negative-label inference. No labels were generated.
+**Key takeaway:** A binary dataset for verified actual participation was not established. Direct ITAD discounts remained positive evidence candidates; other outcomes were unresolved. Complete authorized histories or publisher schedules would need verification before any interval reconstruction or true-negative inference. No labels were generated in Phase 5B.2; Phase 5B.3 subsequently adopted the operational recorded-discount target.
 
 **Detailed report:** [Ground-Truth Feasibility](reports/autumn_sale_ground_truth_feasibility.md), [validation receipt](reports/autumn_sale_ground_truth_validation.json), [source inventory](reports/sources/historical_price_source_inventory.json), [verification pilot](data/intermediate/autumn_sale_verification_pilot.csv) and [source evidence](data/intermediate/autumn_sale_verification_evidence.csv).
+
+### Phase 5B.3 — Operational Label Construction
+
+**Objective:** Construct reproducible labels for recorded discounts after independent full-sale negative verification proved unavailable in Phase 5B.2.
+
+**Methodology:** Reuse the existing exact calendar and observation parser, reconcile saved evidence/provenance, and apply `operational_observed_v1`: A → 1; B/D → 0; C → null with ambiguity/review flags. PU status is A → positive; all others → unlabeled. Every label carries a historical-coverage limitation flag.
+
+**Results:** All **300 pairs** retained: **175 recorded-discount ones / 125 non-observation zeros / 0 nulls**. Yearly ones/zeros: **2023 55/45; 2024 60/40; 2025 60/40**. PU: **175 positive / 125 unlabeled**. nekowater's 2023 release-hour uncertainty remains flagged; no row was removed. Prior categories and frozen artifacts remain unchanged.
+
+**Key takeaway:** Operational labels support a recorded-discount modeling task. Zero does not establish that a game was never discounted. Future evaluation and probabilities must be interpreted against recorded occurrence, not independently verified participation. No features, PU algorithms or models were built.
+
+**Detailed report:** [Operational Labeling](reports/autumn_sale_operational_labeling.md), [validation receipt](reports/autumn_sale_operational_label_validation.json), [operational labels](data/intermediate/autumn_sale_operational_labels.csv) and [PU view](data/intermediate/autumn_sale_pu_labels.csv).
 
 ## Key Findings So Far
 
 - **The history endpoint is change-oriented, but completeness and persistence remain unestablished.** Official ITAD documentation describes price changes; empirical repeats and six conflicting timestamp groups prevent treating records as a strict, complete change log. See the [coverage investigation](reports/autumn_sale_coverage_investigation.md#i-itad-history-semantics-assessment).
 - **Event hours matter.** Calendar end dates admitted post-sale full-price observations, changing ten full-price-only cases once exact boundaries were applied. See the [boundary comparison](reports/autumn_sale_boundary_comparison.md).
-- **Absence of a record is not a negative outcome.** Even close surrounding observations do not directly establish behavior inside the event. The audit preserves them separately without carrying prices forward.
-- **Historical coverage remains the central unresolved problem.** Sparse, empty or truncated histories cannot be assumed complete. Reliable outcome construction is needed before feature engineering or modeling.
+- **Absence of a record is not proof of no discount.** Operational zero represents non-observation; surrounding evidence does not establish prices throughout the sale.
+- **Coverage limits the outcome interpretation.** The approved target now measures recorded occurrence. Sparse histories can still bias future modeling and cannot establish actual participation probabilities.
 
 ## Methodological Considerations
 
@@ -218,9 +230,10 @@ The recorded validation includes **42 passing offline tests**, independent saved
 |---|---|
 | Observed evidence | Timestamped Steam records, with raw fields and provenance retained |
 | Inferred price states | Not implemented; no interpolation, missing-observation filling or price carry-forward |
-| Final target labels | Not implemented; full-sale negative evidence and evidence-to-label mapping await review before Phase 5B.3 |
+| Operational labels | Implemented: A → 1, B/D → 0, C → null; zero means discount not observed |
+| Actual participation | Unverified; operational zeros are not true negatives |
 
-The intended label vocabulary is `1` (discounted), `0` (not discounted) and `UNKNOWN` (insufficient or unresolved evidence). This is a future design requirement, not an implemented mapping. Category B is not automatically `0`; Category D is not automatically `0` or a finalized `UNKNOWN` assignment. No observation-count or gap threshold has been selected.
+`discount_observed` is `1` for a recorded qualifying discount and `0` for no qualifying observation; Category C remains null for review. The separate PU view preserves positive/unlabeled status without treating unlabeled pairs as verified negatives. The earlier proposed `1/0/UNKNOWN` true-participation target remains unverified and is distinct from the approved operational target. No coverage threshold, daily-price reconstruction or persistence rule is assumed.
 
 The audit describes a discount when explicit cut > 0 and price < regular; full price requires cut = 0 and equal price/regular amounts. These checks describe an observation, not an event-level target label. Missing or contradictory information remains ambiguous.
 
@@ -253,7 +266,9 @@ Important existing files and directories:
 │   │   ├── autumn_sale_coverage_diagnostics.csv
 │   │   ├── autumn_sale_coverage_sensitivity.csv
 │   │   ├── autumn_sale_verification_pilot.csv
-│   │   └── autumn_sale_verification_evidence.csv
+│   │   ├── autumn_sale_verification_evidence.csv
+│   │   ├── autumn_sale_operational_labels.csv
+│   │   └── autumn_sale_pu_labels.csv
 │   └── processed/                    # Currently empty; no model-ready data
 ├── src/
 │   ├── source_schema.py
@@ -264,12 +279,14 @@ Important existing files and directories:
 │   ├── 04_audit_autumn_evidence.py
 │   ├── 05_investigate_sale_coverage.py
 │   ├── 06_verify_historical_ground_truth.py
+│   ├── 06_build_operational_labels.py
 │   └── autumn_sale_calendar.json
 ├── tests/
 │   ├── test_itad_collection.py
 │   ├── test_autumn_evidence_audit.py
 │   ├── test_autumn_sale_coverage.py
-│   └── test_historical_ground_truth.py
+│   ├── test_historical_ground_truth.py
+│   └── test_operational_labels.py
 ├── reports/                          # Phase reports and validation receipts
 │   ├── baselines/phase_5a_calendar_window/
 │   │                                 # Original CSVs/report/receipt/code/context + manifest
@@ -278,6 +295,8 @@ Important existing files and directories:
 ```
 
 The audit CSV has one row per game/year. The evidence-record CSV has one row per actual in-window observation. Neither is a model-ready labeled dataset.
+
+The operational label CSV is a **target/provenance table, not a predictor table**. Categories, PU status, supporting indices, in-sale counts and coverage/collection diagnostics must not become predictors. The PU CSV is only a lightweight optional sensitivity view; no PU-learning method is implemented.
 
 ## Reproducibility
 
@@ -339,13 +358,21 @@ python3 -B src/06_verify_historical_ground_truth.py --verify
 
 This offline workflow runs the full test suite, verifies repeated identical outputs and checks 144 protected preceding files. It does not repeat external research, request pricing data or regenerate prior-phase artifacts. Source-access failures and missing observations remain explicit; no final target columns are created.
 
+### Offline Operational Labels
+
+```bash
+python3 -B src/06_build_operational_labels.py --verify
+```
+
+The builder validates local schemas, exact UTC windows, categories, raw-record provenance and counts; produces the operational/PU CSVs and report/receipt; runs the complete offline suite; and checks repeated byte-identical outputs. It verifies **153 protected prior files**, including all frozen Phase 4 inputs, without regenerating prior analytical artifacts. It makes no API calls and performs no source research.
+
 ## Current Status and Next Steps
 
-**Phase 5B.2 is complete and awaits human review. Phase 5B.3 has not started.**
+**Phase 5B.3 is complete and awaits human review. Phase 6 has not started.**
 
-Human review must decide whether authorized complete historical records can be obtained, whether limited archived observations can improve evidence, and whether the study cohort or question needs revision. Capture completeness, purchase-option/region scope, source-selection bias, conflicts and release-hour eligibility remain unresolved. Recent full-price observations and accessible webpages do not establish full-sale negative outcomes; no final rule or threshold is specified.
+Next, review the operational target and flagged eligibility before creating a separate leakage-safe pre-sale feature table. In-sale observations legitimately construct historical targets but would leak those targets if used as predictors. Current metadata snapshots are not automatically valid for historical prediction. No further ground-truth investigation is required to reproduce these operational labels.
 
-Feature engineering and logistic regression will follow once the labels are validated and predictor timing is established. The planned temporal split remains 2023–2024 training, 2025 validation and 2026 retrospective prediction/manual verification, with 2026 outcomes excluded from model development. The project currently stops before Phase 5B.3.
+Feature engineering and logistic regression require subsequent approval and historical predictor-timing checks. The planned temporal split remains 2023–2024 training, 2025 validation and 2026 retrospective prediction/manual verification, with 2026 outcomes excluded from model development. Model probabilities and evaluation will concern recorded discounts under incomplete observation coverage. The project stops before Phase 6.
 
 ## Technologies
 
