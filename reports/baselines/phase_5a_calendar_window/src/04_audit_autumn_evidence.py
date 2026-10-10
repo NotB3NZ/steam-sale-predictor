@@ -1,4 +1,4 @@
-"""Phase 5A.1: offline exact-boundary evidence audit; no coverage rules or labels.
+"""Phase 5A: offline descriptive evidence audit; no coverage rules or target labels.
 
 Run from any directory: python3 src/04_audit_autumn_evidence.py
 Only standard-library local file operations are used. Phase 4 is never executed.
@@ -8,15 +8,15 @@ import hashlib
 import json
 import math
 from collections import Counter, defaultdict
-from datetime import date, datetime, timezone
+from datetime import datetime, timedelta, timezone
 from itertools import groupby
 from pathlib import Path
 import re
 import statistics
-from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
-BASELINE_DIRECTORY = 'reports/baselines/phase_5a_calendar_window'
+EXPECTED_WINDOWS = {2023: ('2023-11-21', '2023-11-28'),
+                    2024: ('2024-11-27', '2024-12-04')}
 CATEGORIES = {
     'A': 'At least one directly observed in-window discount',
     'B': 'In-window records exist and every record shows full price',
@@ -58,54 +58,16 @@ def fmt(dt):
     return dt.isoformat().replace('+00:00', 'Z')
 
 
-def calendar_data(root):
-    calendar = json.loads((root / 'src/autumn_sale_calendar.json').read_text(encoding='utf-8'))
-    require(calendar['timezone'] == 'America/Los_Angeles')
-    require([e['sale_year'] for e in calendar['events']] == [2023, 2024, 2025])
-    pacific = ZoneInfo(calendar['timezone'])
-    for event in calendar['events']:
-        if event['verification_status'] != 'verified' or not event.get('source_url') or not event.get('verification_evidence'):
-            raise ValueError(f"Unverified event boundary: {event['sale_year']}")
-        for side in ('start', 'end'):
-            value = event[f'sale_{side}_pacific']
-            local = datetime.fromisoformat(value)
-            require(local.tzinfo is not None)
-            require(local.isoformat() == local.astimezone(pacific).isoformat())
-            require(fmt(local.astimezone(timezone.utc)) == event[f'sale_{side}_utc'])
-            require(local.year == event['sale_year'])
-        require(utc_stamp(event['sale_start_utc']) < utc_stamp(event['sale_end_utc']))
-        if event.get('source_image_path'):
-            require(digest(root / event['source_image_path']) == event['source_image_sha256'])
-    return calendar
-
-
-def execution_source_hashes(root):
-    paths = [root / 'src/04_audit_autumn_evidence.py', root / 'src/autumn_sale_calendar.json']
-    paths += sorted((root / 'tests').glob('test_*.py'))
-    return {str(p.relative_to(root)): digest(p) for p in paths}
-
-
-def execution_validation(root):
-    """Reuse an offline validation receipt only for exactly the tested sources."""
-    path = root / 'reports/phase_5a1_execution_checks.json'
-    if path.exists():
-        checks = json.loads(path.read_text(encoding='utf-8'))
-        if checks['source_sha256'] == execution_source_hashes(root):
-            return checks
-    return {'status': 'NOT RUN for current sources', 'source_sha256': execution_source_hashes(root)}
-
-
 def canonical_windows(root):
-    calendar = calendar_data(root)
     text = (root / 'PROJECT_CONTEXT.md').read_text(encoding='utf-8')
     windows = {}
-    for event in calendar['events']:
-        year = event['sale_year']
-        start, end = event['sale_start_pacific'][:10], event['sale_end_pacific'][:10]
+    for year, expected in EXPECTED_WINDOWS.items():
         matches = re.findall(rf'^Autumn {year}: (\d{{4}}-\d{{2}}-\d{{2}}) to (\d{{4}}-\d{{2}}-\d{{2}})', text, re.M)
-        if matches != [(start, end)]:
+        if matches != [expected]:
             raise ValueError(f'Canonical {year} dates missing/changed; review before running')
-        windows[year] = (start, end, utc_stamp(event['sale_start_utc']), utc_stamp(event['sale_end_utc']))
+        start, end = matches[0]
+        windows[year] = (start, end, utc_stamp(start + 'T00:00:00Z'),
+                         utc_stamp(end + 'T00:00:00Z') + timedelta(days=1))
     return windows
 
 
@@ -263,12 +225,7 @@ def context_fields(side, records, boundary):
 
 def audit_pair(game, year, window, records, cache_info):
     start_date, end_date, start, end = window
-    release = date.fromisoformat(game['release_date'])
-    eligible = release <= date.fromisoformat(start_date)
-    eligibility_reason = ('release_date_after_sale_start_date' if not eligible else
-                          'release_date_on_sale_start_date; exact release hour unavailable' if release.isoformat() == start_date else
-                          'release_date_before_sale_start_date')
-    before, inside, after = partition(records, start, end) if eligible else ([], [], [])
+    before, inside, after = partition(records, start, end)
     kinds = Counter(r['observation_kind'] for r in inside)
     currencies = sorted({r['price_currency'] for r in inside if number(r['price'])})
     regular_currencies = {r['regular_currency'] for r in inside if number(r['regular_price'])}
@@ -298,8 +255,7 @@ def audit_pair(game, year, window, records, cache_info):
                max_observed_in_window_regular_price=max(regulars) if regulars and money_comparable else '',
                max_observed_in_window_cut=max(cuts) if cuts else '',
                in_window_mixed_discount_full_price=bool(kinds['discount'] and kinds['full_price']),
-               evidence_category=category(inside), release_date=game['release_date'],
-               eligible_for_sale=eligible, eligibility_reason=eligibility_reason)
+               evidence_category=category(inside))
     if cache_info['cache_status'] != 'ok':
         # Missing/failed input is not a successfully audited zero-observation case.
         row['evidence_category'] = ''
@@ -307,11 +263,6 @@ def audit_pair(game, year, window, records, cache_info):
             for key in list(row):
                 if key.startswith('in_window_') or key in ('has_in_window_records', 'total_timestamp_usable_steam_records'):
                     row[key] = ''
-    if not eligible:
-        row['evidence_category'] = ''
-        for key in list(row):
-            if key.startswith('in_window_') or key == 'has_in_window_records':
-                row[key] = ''
     row.update(context_fields('before', before, start))
     row.update(context_fields('after', after, end))
     long = [dict(AppID=game['AppID'], Name=game['Name'], sale_year=year, **r) for r in inside]
@@ -330,162 +281,6 @@ def md_table(headers, rows):
     def line(values):
         return '| ' + ' | '.join(str(v).replace('|', '\\|').replace('\n', ' ') for v in values) + ' |'
     return '\n'.join([line(headers), line(['---'] * len(headers)), *[line(r) for r in rows]])
-
-
-def baseline_hashes(root):
-    base = root / BASELINE_DIRECTORY
-    return {str(p.relative_to(root)): digest(p) for p in sorted(base.rglob('*')) if p.is_file()}
-
-
-def verify_baseline(root):
-    """Never create or refresh the baseline from mutable audit outputs."""
-    base = root / BASELINE_DIRECTORY
-    manifest = json.loads((base / 'baseline_manifest.json').read_text(encoding='utf-8'))
-    for path, expected in manifest['files_sha256'].items():
-        if digest(base / path) != expected:
-            raise ValueError(f'Preserved Phase 5A baseline changed: {path}')
-    if frozen_hashes(root) != manifest['frozen_phase4_sha256']:
-        raise ValueError('Frozen Phase 4 inputs differ from preserved baseline')
-    rows = read_csv(base / 'data/intermediate/autumn_sale_evidence_audit.csv')
-    records = read_csv(base / 'data/intermediate/autumn_sale_evidence_records.csv')
-    require(len(rows) == manifest['game_sale_pairs'])
-    require(len(records) == manifest['in_window_records'])
-    require(len({(r['AppID'], r['sale_year']) for r in rows}) == len(rows))
-    require(len({(r['AppID'], r['sale_year'], r['source_record_index']) for r in records}) == len(records))
-    observed = Counter((r['AppID'], r['sale_year']) for r in records)
-    for row in rows:
-        if row['cache_status'] == 'ok':
-            require(int(row['in_window_record_count']) == observed[(row['AppID'], row['sale_year'])])
-    for year, expected in manifest['categories'].items():
-        actual = Counter(r['evidence_category'] for r in rows if r['sale_year'] == year)
-        require(all(actual[c] == expected[c] for c in CATEGORIES))
-    return manifest, rows, records
-
-
-def compare_boundaries(old_rows, old_records, rows, records, windows):
-    """Compare immutable raw array indices, not prices or inferred state."""
-    pair_key = lambda r: (r['AppID'], int(r['sale_year']))
-    record_key = lambda r: (*pair_key(r), int(r['source_record_index']))
-    old_by_pair = {pair_key(r): r for r in old_rows}
-    new_by_pair = {pair_key(r): r for r in rows if int(r['sale_year']) in (2023, 2024)}
-    require(len(old_by_pair) == len(old_rows))
-    require(old_by_pair.keys() == new_by_pair.keys())
-    old_by_record = {record_key(r): r for r in old_records}
-    new_by_record = {record_key(r): r for r in records if int(r['sale_year']) in (2023, 2024)}
-    require(len(old_by_record) == len(old_records))
-    require(len(new_by_record) == sum(int(r['sale_year']) in (2023, 2024) for r in records))
-    for key in old_by_record.keys() & new_by_record.keys():
-        require(json.loads(old_by_record[key]['raw_record_json']) == json.loads(new_by_record[key]['raw_record_json']))
-    removed, added = [], []
-    for key in sorted(old_by_record.keys() - new_by_record.keys(), key=lambda k: (k[1], int(k[0]), k[2])):
-        r = old_by_record[key]
-        start, end = windows[key[1]][2:]
-        dt = utc_stamp(r['timestamp_utc'])
-        reason = ('before_exact_sale_start' if dt < start else 'at_or_after_exact_sale_end' if dt >= end
-                  else 'ineligible_release_date' if not new_by_pair[key[:2]]['eligible_for_sale'] else '')
-        if not reason:
-            raise ValueError('Removed record cannot be explained by boundaries or eligibility')
-        removed.append(dict(r, removal_reason=reason))
-    for key in sorted(new_by_record.keys() - old_by_record.keys(), key=lambda k: (k[1], int(k[0]), k[2])):
-        added.append(dict(new_by_record[key], inclusion_reason='inside_exact_window_outside_original_calendar_window'))
-    changes, original_b_cases, pair_effects = [], [], []
-    for key, old in old_by_pair.items():
-        new = new_by_pair[key]
-        rem = [r for r in removed if pair_key(r) == key]
-        add = [r for r in added if pair_key(r) == key]
-        effect = dict(AppID=key[0], Name=old['Name'], sale_year=key[1],
-                      original_category=old['evidence_category'], corrected_category=new['evidence_category'],
-                      original_record_count=old['in_window_record_count'], corrected_record_count=new['in_window_record_count'],
-                      removed_before_start=sum(r['removal_reason'] == 'before_exact_sale_start' for r in rem),
-                      removed_at_or_after_end=sum(r['removal_reason'] == 'at_or_after_exact_sale_end' for r in rem),
-                      removed_records=len(rem), added_records=len(add))
-        effect['reason'] = ('; '.join(sorted({r['removal_reason'] for r in rem})) if rem else
-                            'newly_included_records' if add else 'no_boundary_effect')
-        if old['evidence_category'] != new['evidence_category']:
-            changes.append(effect)
-        if old['evidence_category'] == 'B':
-            original_b_cases.append(dict(effect, original_observations=[r for r in old_records if pair_key(r) == key]))
-        if rem or add:
-            pair_effects.append(effect)
-    summary = {}
-    for year in (2023, 2024):
-        old = [r for r in old_rows if int(r['sale_year']) == year]
-        new = [r for r in rows if int(r['sale_year']) == year]
-        original_categories = {c: sum(r['evidence_category'] == c for r in old) for c in CATEGORIES}
-        corrected_categories = {c: sum(r['evidence_category'] == c for r in new) for c in CATEGORIES}
-        rem = [r for r in removed if int(r['sale_year']) == year]
-        add = [r for r in added if int(r['sale_year']) == year]
-        original_count = sum(int(r['sale_year']) == year for r in old_records)
-        corrected_count = sum(int(r['sale_year']) == year for r in records)
-        require(original_count - len(rem) + len(add) == corrected_count)
-        summary[str(year)] = dict(original_categories=original_categories, corrected_categories=corrected_categories,
-                                  changed_pairs=sum(r['sale_year'] == year for r in changes),
-                                  affected_pairs=sum(r['sale_year'] == year for r in pair_effects),
-                                  original_records=original_count, corrected_records=corrected_count,
-                                  removed_records=len(rem), added_records=len(add),
-                                  removed_before_start=sum(r['removal_reason'] == 'before_exact_sale_start' for r in rem),
-                                  removed_at_or_after_end=sum(r['removal_reason'] == 'at_or_after_exact_sale_end' for r in rem),
-                                  affected_original_b_cases=sum(r['sale_year'] == year and r['removed_records'] > 0 for r in original_b_cases))
-    return dict(summary=summary, category_changes=changes, original_b_cases=original_b_cases,
-                affected_pairs=pair_effects, removed_records=removed, added_records=added)
-
-
-def comparison_overview(comparison):
-    return md_table(['Year', 'Original A/B/C/D', 'Exact A/B/C/D', 'Category changes', 'Original records',
-                     'Exact records', 'Removed before start', 'Removed at/after end', 'Added', 'Affected original B'],
-                    [(year, '/'.join(str(s['original_categories'][c]) for c in CATEGORIES),
-                      '/'.join(str(s['corrected_categories'][c]) for c in CATEGORIES), s['changed_pairs'],
-                      s['original_records'], s['corrected_records'], s['removed_before_start'],
-                      s['removed_at_or_after_end'], s['added_records'], s['affected_original_b_cases'])
-                     for year, s in comparison['summary'].items()])
-
-
-def build_comparison_report(comparison, baseline):
-    lines = ['# Autumn Sale Boundary Comparison — Phase 5A.1', '',
-             f'Original Phase 5A commit: `{baseline["git_revision"]}`. '
-             f'Baseline directory: `{BASELINE_DIRECTORY}/`. Original {baseline["game_sale_pairs"]} pairs and '
-             f'{baseline["in_window_records"]} records were verified before the exact-window audit.', '',
-             'The old UTC calendar windows started at midnight and ended at midnight after the last sale date. '
-             'Corrected windows use verified Valve event hours and include start, exclude end. '
-             'Only directly timestamped records contribute; no states are carried forward.', '',
-             comparison_overview(comparison), '',
-             '2025 is new audit scope and has no original baseline. 2026 is excluded. '
-             'The exact 2023/2024 windows lie entirely inside their original calendar windows, so additions are not expected; '
-             'the comparison computes them rather than assuming zero.', '',
-             '## Each category change', '',
-             md_table(['Year', 'AppID', 'Name', 'Original', 'Exact', 'Original count', 'Exact count', 'Reason'],
-                      [(r['sale_year'], r['AppID'], r['Name'], r['original_category'], r['corrected_category'],
-                        r['original_record_count'], r['corrected_record_count'], r['reason']) for r in comparison['category_changes']]), '',
-             '## Every original category B case', '',
-             'The original B cases each had one full-price observation. The table shows that observation and its actual '
-             'relationship to the exact event; retained B and new D remain evidence descriptions, not negative labels.', '',
-             md_table(['Year', 'AppID', 'Name', 'UTC timestamp', 'Price', 'Regular', 'Cut', 'Exact category', 'Boundary result'],
-                      [(r['sale_year'], r['AppID'], r['Name'], o['timestamp_utc'], o['price'], o['regular_price'],
-                        o['cut'], r['corrected_category'], r['reason'] if r['removed_records'] else 'retained_inside_exact_window')
-                       for r in comparison['original_b_cases'] for o in r['original_observations']]), '',
-             '## Start and end boundary effects on every affected pair', '',
-             'Effects include record changes that leave the category unchanged, such as A remaining A after a '
-             'post-sale full-price observation is removed. Removed records remain in the baseline and can become contextual '
-             'before/after evidence; they do not contribute to an in-window category.', '',
-             md_table(['Year', 'AppID', 'Name', 'Original → exact', 'Original count', 'Exact count', 'Start removals', 'End removals', 'Added'],
-                      [(r['sale_year'], r['AppID'], r['Name'], f"{r['original_category']} → {r['corrected_category']}",
-                        r['original_record_count'], r['corrected_record_count'], r['removed_before_start'],
-                        r['removed_at_or_after_end'], r['added_records']) for r in comparison['affected_pairs']]), '',
-             '## Every removed record', '',
-             md_table(['Year', 'AppID', 'Name', 'Raw index', 'UTC timestamp', 'Price', 'Regular', 'Cut', 'Reason'],
-                      [(r['sale_year'], r['AppID'], r['Name'], r['source_record_index'], r['timestamp_utc'],
-                        r['price'], r['regular_price'], r['cut'], r['removal_reason']) for r in comparison['removed_records']]), '',
-             '## Newly included records', '',
-             md_table(['Year', 'AppID', 'Raw index', 'UTC timestamp'],
-                      [(r['sale_year'], r['AppID'], r['source_record_index'], r['timestamp_utc']) for r in comparison['added_records']])
-             if comparison['added_records'] else 'None.', '',
-             '## Original artifact SHA-256', '',
-             md_table(['Original relative path', 'Preserved SHA-256'], baseline['files_sha256'].items()), '',
-             'Validation reconciles original records − removed + added = corrected records for each year. '
-             'Shared records retain identical raw JSON; original raw array indices identify records without deduplicating timestamps. '
-             'The baseline hashes and Phase 4 hashes remain unchanged before/after execution.', '',
-             '**Stopped after Phase 5A.1. Coverage sufficiency, state persistence, and final labeling remain Phase 5B decisions.**', '']
-    return '\n'.join(lines)
 
 
 def stat_values(values):
@@ -557,15 +352,12 @@ def evidence_table(records, side='in-window'):
 
 
 def build_report(games, rows, long, histories, infos, windows, receipt):
-    valid = [r for r in rows if r['cache_status'] == 'ok' and r['eligible_for_sale']]
-    calendar = receipt['event_calendar']
-    lines = ['# Autumn Sale In-Window Evidence Audit — Phase 5A.1', '',
+    valid = [r for r in rows if r['cache_status'] == 'ok']
+    lines = ['# Autumn Sale In-Window Evidence Audit — Phase 5A', '',
              '**Exploratory audit completed; pending human review. No final labels or coverage rules.**', '',
              '## Scope and overall results', '',
-             f'Pilot games: **{len(games)}**. Years: **2023, 2024, 2025**. 2026 is excluded. Expected pairs: **{len(games) * len(windows)}**. '
+             f'Pilot games: **{len(games)}**. Expected pairs: **{len(games) * 2}**. '
              f'Actual rows considered: **{len(rows)}**. Successfully analyzed pairs: **{len(valid)}**. '
-             f'Eligible pairs: **{sum(r["eligible_for_sale"] for r in rows)}**. '
-             f'Ineligible pairs: **{sum(not r["eligible_for_sale"] for r in rows)}**. '
              f'Actual in-window records: **{len(long)}**.', '',
              md_table(['Cache/parse diagnostic', 'Games/records'], [
                  ('Missing cache files (games)', sum(i['cache_status'] == 'missing' for i in infos.values())),
@@ -575,41 +367,21 @@ def build_report(games, rows, long, histories, infos, windows, receipt):
                  ('Record parsing failures', sum(len(i.get('record_parsing_failures', [])) for i in infos.values())),
                  ('Non-Steam records excluded', sum(i.get('non_steam_records_excluded', 0) for i in infos.values())),
                  ('Empty successful histories', sum(not histories[a] and i['cache_status'] == 'ok' for a, i in infos.items()))]), '',
-             'Eligibility uses the project’s existing release-date <= sale-start-date rule, checked separately for each event. '
-             'Only release dates, not exact release hours, are available; same-start-date eligibility has this unresolved precision limitation. '
-             'Ineligible rows remain explicit with a reason, blank category/counts and no in-window records; they are not D cases. '
-             'No games were silently dropped. '
+             'All pilot games satisfy the existing release-date cutoff for both years. No games were silently dropped. '
              'The 100-game pilot is a diagnostic diversity sample; these results do not estimate population participation.', '',
-             md_table(['Year', 'AppID', 'Name', 'Release date', 'Eligibility reason'],
-                      [(r['sale_year'], r['AppID'], r['Name'], r['release_date'], r['eligibility_reason'])
-                       for r in rows if not r['eligible_for_sale'] or r['release_date'] == r['sale_start']]), '',
-             '## Verified official event calendar and boundary convention', '',
-             'Central calendar: `src/autumn_sale_calendar.json`; calendar dates are cross-checked with `PROJECT_CONTEXT.md`. '
-             f'Verified from Valve sources on {calendar["verified_on"]}. '
-             'Use `sale_start_utc <= timestamp_utc < sale_end_utc`: start is included, end excluded. '
-             'Pacific conversion uses `zoneinfo.ZoneInfo("America/Los_Angeles")`; November dates are PST (UTC −8), '
-             'September/October 2025 dates are PDT (UTC −7). Exact UTC values are checked against these local conversions. '
+             '## Canonical dates and boundary convention', '',
+             'Dates are read from `PROJECT_CONTEXT.md`, not from external sources. '
+             'The repository supplies calendar dates, without exact sale hours or a sale timezone. '
+             'This audit uses both endpoint dates inclusively in UTC: start midnight <= timestamp < midnight after the end date. '
+             'This is a documented calendar-date convention, not verification of exact live sale hours. '
              'Original offsets are preserved; comparisons use timezone-aware UTC instants.', '',
-             md_table(['Year', 'Pacific start', 'Pacific end', 'UTC start (inclusive)', 'UTC end (exclusive)', 'Verification'],
-                      [(e['sale_year'], e['sale_start_pacific'], e['sale_end_pacific'], e['sale_start_utc'],
-                        e['sale_end_utc'], e['verification_status']) for e in calendar['events']]), '',
-             *[f'- [{e["source_title"]}]({e["source_url"]}): {e["verification_evidence"]}'
-               + (f' [Official artwork]({e["source_image_url"]}); local copy: `{e["source_image_path"]}`.' if e.get('source_image_url') else
-                  f' [Readable official text]({e["source_text_url"]}).') for e in calendar['events']], '',
-             'For 2024/2025, the artwork is the English capsule referenced by the official announcement’s '
-             '`localized_capsule_image[0]` metadata, not a third-party calendar. Publication times and announcement '
-             'metadata start/end times are not treated as sale event boundaries. Older Steamworks URLs redirect to '
-             'current calendars; those redirects were not used as historical verification.', '',
-             'Before means strictly earlier than exact sale start. After means at or later than exact sale end. '
+             md_table(['Year', 'Canonical start', 'Canonical end (inclusive)', 'UTC start', 'UTC end (exclusive)'],
+                      [(y, s, e, fmt(a), fmt(b)) for y, (s, e, a, b) in windows.items()]), '',
+             'Before means strictly earlier than start midnight. After means at or later than end-exclusive midnight. '
              'Gap days are elapsed seconds / 86,400 relative to those boundaries, not rounded calendar-day distances. '
-             'An observation exactly at sale end has an after-gap of zero. Corrected boundaries exclude pre-start '
-             'and at/after-end records without making any coverage inference.', '',
-             '## Boundary corrections versus preserved Phase 5A', '',
-             comparison_overview(receipt['boundary_comparison']), '',
-             f'Baseline `{BASELINE_DIRECTORY}/` was hash-verified before analysis. '
-             'See `reports/autumn_sale_boundary_comparison.md` for every category change, every original B case, '
-             'all affected pairs and every removed/added record. The validation receipt also contains the full structured comparison. '
-             'Original 2023/2024 counts are preserved, not reconstructed from altered outputs. 2025 is new scope.', '',
+             'An observation at end-exclusive midnight has an after-gap of zero. '
+             'Full-price records on the documented sale end date may be post-sale-hour observations. '
+             'No hour boundary is silently substituted and no boundary sensitivity establishes coverage.', '',
              '## Actual cached schema and extraction semantics', '',
              'Phase 4 wrapper fields are `steam_appid`, `itad_game_id`, `request_configuration`, '
              '`lookup_response`, `history_response`, `collection_metadata`, `lookup_evidence`, and `history_evidence`. '
@@ -678,7 +450,8 @@ def build_report(games, rows, long, histories, infos, windows, receipt):
                 gaps_rows.append((y, group, side, len(rr) - len(vals), *stat_values(vals)))
     lines += [md_table(['Year', 'Subset', 'Side', 'Missing', 'N', 'Min days', 'Q1', 'Median', 'Mean', 'Q3', 'Max days'], gaps_rows), '',
               '## All full-price-only cases (category B)', '',
-              'This list describes directly timestamped full-price observations only; none is a negative label.', '',
+              'Each has exactly one directly timestamped full-price observation. This list describes observed records only; '
+              'none is a negative label. Endpoint dates have no verified hour boundary in the repository.', '',
               md_table(['Year', 'AppID', 'Name', 'UTC timestamp', 'Price', 'Regular', 'Cut'],
                        [(r['sale_year'], r['AppID'], r['Name'], obs['timestamp_utc'], obs['price'], obs['regular_price'], obs['cut'])
                         for r in valid if r['evidence_category'] == 'B'
@@ -708,7 +481,7 @@ def build_report(games, rows, long, histories, infos, windows, receipt):
     choose('Completely empty cached history', lambda r: r['total_timestamp_usable_steam_records'] == 0)
     choose('Three in-window observations', lambda r: r['in_window_record_count'] >= 3)
     choose('Pilot game released on 2023 sale start date', lambda r: r['AppID'] == '2650840' and r['sale_year'] == 2023)
-    choose('2025 discounted evidence', lambda r: r['sale_year'] == 2025 and r['evidence_category'] == 'A')
+    choose('Full-price-only evidence on 2024 end date', lambda r: r['AppID'] == '7830' and r['sale_year'] == 2024)
     choose('Null or ambiguous in-window deal', lambda r: r['in_window_ambiguous_count'])
     for title, row in examples:
         app, year = row['AppID'], row['sale_year']
@@ -727,7 +500,7 @@ def build_report(games, rows, long, histories, infos, windows, receipt):
             lines += [evidence_table([r for r in after if r['timestamp_utc'] == after[0]['timestamp_utc']], 'after context'), '']
     counts, transitions, all_gaps, repeats, conflicts, full_changes = empirical_semantics(histories)
     lines += ['## Empirical ITAD history semantics', '', '### Observed facts', '',
-              'These diagnostics use all cached Steam history, not just the three sale windows. '
+              'These diagnostics use all cached Steam history, not just the two sale windows. '
               'Records are sorted by UTC timestamp. Equal-time records are preserved; transitions are counted only between adjacent '
               'timestamp groups containing exactly one record each, so conflicting equal-time states have no invented order.', '',
               md_table(['Diagnostic', 'Count'], [
@@ -788,28 +561,20 @@ def build_report(games, rows, long, histories, infos, windows, receipt):
               f'Frozen input files checked: **{len(receipt["frozen_input_sha256"])}** '
               '(all raw ITAD JSON including smoke receipt/archive, three frozen intermediate CSVs, Phase 4 script/report). '
               'Every file has identical SHA-256 before/after; the file inventory is unchanged. '
-              'Individual digests are in the validation receipt. No ITAD or pricing requests were made. '
-              'Audit execution made zero network/API requests. External research was confined to official event-calendar '
-              'verification, as explicitly authorized; the web tool does not expose its underlying HTTP request count. '
-              'Four official source files were downloaded directly; one earlier sandbox DNS attempt failed. '
+              'Individual digests are in the validation receipt. No API, web, or network requests were made. '
               'The standalone audit has no network client and does not execute/import the Phase 4 collector.', '',
-              'Preserved baseline hashes/inventory are unchanged; central calendar and official artwork hashes are recorded separately.', '',
-              'Execution checks are recorded in `reports/phase_5a1_execution_checks.json` and bound to SHA-256 '
-              'of the audit script, central calendar and all test modules. A changed source invalidates that receipt.', '',
-              md_table(['Execution check', 'Result'], [(k, v) for k, v in receipt['execution_validation'].items()
-                                                      if k != 'source_sha256']), '',
               'Reproduce: `python3 src/04_audit_autumn_evidence.py`. '
               'Tests: `python3 -m unittest discover -s tests -v` (offline synthetic fixtures; includes Phase 4 regression tests). '
               'The report/datasets are deterministic for identical frozen inputs and canonical dates; '
               'the audit does not modify project status/context itself.', '',
               '## Remaining ambiguities and stop gate', '',
-              'Event hours are now verified. Release hours remain unknown for same-start-date releases. '
-              'Whether any full-price-only case provides sufficient negative coverage remains undecided. '
-              'Null/ambiguous evidence, multiple full-price observations and mixed records are reported when present; '
-              'their absence is not replaced with invented examples. '
+              'Exact sale-hour boundaries are unspecified in the repository. End-date full-price observations and mixed records '
+              'must be reviewed with that limitation in mind. All B cases have only one full-price observation; '
+              'whether any such case provides sufficient negative coverage remains undecided. '
+              'There are no multiple-full-price-only, null, or ambiguous in-window examples in this pilot. '
               'Several histories are empty, stop long before the window, or have very distant surrounding observations. '
               'Same-timestamp conflicting records and possible requested-since boundary artifacts need later semantic review.', '',
-              '**Stopped after Phase 5A.1. Phase 4 remains COMPLETE. Phase 5A.1 is completed/pending review. '
+              '**Stopped after Phase 5A. Phase 4 remains COMPLETE. Phase 5A is completed/pending review. '
               'Phase 5B coverage and final labeling methodology are NOT YET IMPLEMENTED.** '
               'No labels, UNKNOWN mapping, observation sufficiency threshold, state persistence, feature engineering, or modeling changes were created.', '']
     return '\n'.join(lines)
@@ -817,11 +582,6 @@ def build_report(games, rows, long, histories, infos, windows, receipt):
 
 def run(root=ROOT):
     before_hashes = frozen_hashes(root)
-    before_baseline = baseline_hashes(root)
-    baseline, old_rows, old_records = verify_baseline(root)
-    calendar = calendar_data(root)
-    calendar_paths = ['src/autumn_sale_calendar.json'] + [e['source_image_path'] for e in calendar['events'] if e.get('source_image_path')]
-    calendar_hashes = {p: digest(root / p) for p in calendar_paths}
     games = read_csv(root / 'data/intermediate/pilot_games.csv')
     manifest = read_csv(root / 'data/intermediate/itad_collection_manifest.csv')
     ids = [g['AppID'] for g in games]
@@ -830,6 +590,8 @@ def run(root=ROOT):
     if len(manifest) != 100 or {r['AppID'] for r in manifest} != set(ids):
         raise ValueError('Manifest must match all pilot AppIDs uniquely')
     windows = canonical_windows(root)
+    if any(g['release_date'] > windows[2023][0] for g in games):
+        raise ValueError('Pilot release eligibility differs from documented Phase 3 cutoff')
     manifest_by_id = {r['AppID']: r for r in manifest}
     rows, long, histories, infos = [], [], {}, {}
     for game in games:
@@ -840,38 +602,26 @@ def run(root=ROOT):
             row, observations = audit_pair(game, year, window, records, info)
             rows.append(row)
             long.extend(observations)
-    expected_pairs = len(games) * len(windows)
-    if len(rows) != expected_pairs or len({(r['AppID'], r['sale_year']) for r in rows}) != expected_pairs:
-        raise ValueError('Expected 300 unique game-sale pairs, including explicit ineligible rows')
+    if len(rows) != 200 or len({(r['AppID'], r['sale_year']) for r in rows}) != 200:
+        raise ValueError('Expected 200 unique game-sale pairs')
     if any(r['shop_id'] != 61 for r in long):
         raise ValueError('Non-Steam record included')
     if any(not windows[r['sale_year']][2] <= utc_stamp(r['timestamp_utc']) < windows[r['sale_year']][3] for r in long):
         raise ValueError('In-window boundary validation failed')
     for r in rows:
-        if r['cache_status'] == 'ok' and r['eligible_for_sale'] and r['in_window_record_count'] != sum(
+        if r['cache_status'] == 'ok' and r['in_window_record_count'] != sum(
                 r[k] for k in ('in_window_discount_count', 'in_window_full_price_count', 'in_window_ambiguous_count')):
             raise ValueError('In-window record counts fail reconciliation')
     after_hashes = frozen_hashes(root)
     if before_hashes != after_hashes:
         raise ValueError('Frozen inputs changed during audit')
     receipt = {
-        'phase': '5A.1', 'api_calls': 0, 'network_requests': 0,
-        'network_count_scope': 'Offline audit execution only; authorized official calendar research described separately in event_calendar',
-        'pilot_games': len(games), 'expected_pairs': expected_pairs, 'actual_pairs': len(rows),
-        'eligible_pairs': sum(r['eligible_for_sale'] for r in rows),
-        'ineligible_pairs': sum(not r['eligible_for_sale'] for r in rows),
+        'phase': '5A', 'api_calls': 0, 'network_requests': 0,
+        'pilot_games': len(games), 'expected_pairs': 200, 'actual_pairs': len(rows),
         'in_window_records': len(long),
-        'event_calendar': calendar,
-        'calendar_source_sha256': calendar_hashes,
-        'baseline_git_revision': baseline['git_revision'],
-        'baseline_sha256': {p: {'before': h, 'after': h} for p, h in before_baseline.items()},
-        'boundary_comparison': compare_boundaries(old_rows, old_records, rows, long, windows),
-        'execution_validation': execution_validation(root),
-        'checks': {'All 100 pilot AppIDs, all three years, explicit eligibility': 'PASS',
-                   '300 unique AppID × sale_year rows': 'PASS',
-                   'Timezone-aware UTC parsing and verified half-open event boundaries': 'PASS',
-                   'Original baseline verified before execution': 'PASS',
-                   'Original versus exact comparison counts reconcile': 'PASS',
+        'checks': {'All 100 pilot AppIDs, both eligible years': 'PASS',
+                   '200 unique AppID × sale_year rows': 'PASS',
+                   'Timezone-aware UTC parsing and inclusive calendar-date boundaries': 'PASS',
                    'Long-file counts reconcile to audit rows': 'PASS',
                    'Discount/full/ambiguous counts reconcile': 'PASS',
                    'Only integer Steam shop ID 61 included': 'PASS',
@@ -882,7 +632,7 @@ def run(root=ROOT):
         'frozen_input_sha256': {p: {'before': h, 'after': after_hashes[p]} for p, h in before_hashes.items()}}
     # Explicit long/summary reconciliation; keep a header even with no actual records.
     count_by_pair = Counter((r['AppID'], r['sale_year']) for r in long)
-    if any(r['cache_status'] == 'ok' and r['eligible_for_sale'] and r['in_window_record_count'] != count_by_pair[(r['AppID'], r['sale_year'])] for r in rows):
+    if any(r['cache_status'] == 'ok' and r['in_window_record_count'] != count_by_pair[(r['AppID'], r['sale_year'])] for r in rows):
         raise ValueError('Long-file counts disagree with summary')
     intermediate = root / 'data/intermediate'
     reports = root / 'reports'
@@ -891,19 +641,14 @@ def run(root=ROOT):
     write_csv(intermediate / 'autumn_sale_evidence_records.csv', long, ['AppID', 'Name', 'sale_year', *OBS_FIELDS])
     (reports / 'autumn_sale_evidence_validation.json').write_text(json.dumps(receipt, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
     (reports / 'autumn_sale_evidence_audit.md').write_text(build_report(games, rows, long, histories, infos, windows, receipt), encoding='utf-8')
-    (reports / 'autumn_sale_boundary_comparison.md').write_text(build_comparison_report(receipt['boundary_comparison'], baseline), encoding='utf-8')
     if frozen_hashes(root) != before_hashes:
         raise ValueError('Frozen inputs changed while writing outputs')
-    if baseline_hashes(root) != before_baseline:
-        raise ValueError('Preserved baseline files changed while writing outputs')
-    if {p: digest(root / p) for p in calendar_paths} != calendar_hashes:
-        raise ValueError('Verified event calendar/source artwork changed during execution')
     for year in windows:
         rr = [r for r in rows if r['sale_year'] == year]
-        density = Counter(r['in_window_record_count'] for r in rr if r['cache_status'] == 'ok' and r['eligible_for_sale'])
+        density = Counter(r['in_window_record_count'] for r in rr if r['cache_status'] == 'ok')
         print(f'{year}: categories={dict(Counter(r["evidence_category"] for r in rr))}; '
               f'record density={dict(sorted(density.items()))}; input issues={sum(r["cache_status"] != "ok" for r in rr)}')
-    print(f'Phase 5A.1: {len(rows)} pairs; {len(long)} actual in-window records; frozen and baseline hashes unchanged; zero audit network calls.')
+    print(f'Phase 5A: {len(rows)} pairs; {len(long)} actual in-window records; frozen hashes unchanged; zero network calls.')
     return rows, long, receipt
 
 

@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "full_offline_test_suite": "PASS — 42 tests; all original tests retained",
+  "test_command": "python3 -m unittest discover -s tests -v",
+  "network_guard": "Socket connect/connect_ex/create_connection forbidden during full suite and audit reruns",
+  "baseline_commit_and_hash_verification": "PASS — six preserved files byte-match original Git revision",
+  "baseline_reproduction": "PASS — all four original output artifacts reproduced byte-for-byte in isolated temporary directory",
+  "deterministic_audit_reruns": "PASS — two full reruns; all five generated outputs byte-identical",
+  "independent_saved_csv_validation": "PASS — 300 unique pairs; 178 records; raw indices/JSON, boundaries, eligibility, kinds, counts, extrema, nearest context and ties reconciled independently",
+  "frozen_phase4_inputs": "PASS — 107 hashes/inventory equal baseline and initial pre-work snapshot",
+  "baseline_preservation": "PASS — all seven baseline files and inventory unchanged",
+  "itad_pricing_requests": 0,
+  "audit_network_requests": 0,
+  "source_sha256": {
+    "src/04_audit_autumn_evidence.py": "67af9d9b54d4b8f625f23634f3ed93ce8fec7eb5670e340923cdd56c88b12a26",
+    "src/autumn_sale_calendar.json": "f7d37c4b33a1386a467b93d8660c1405cf4ce15687903e26e3e9517e9734d7b7",
+    "tests/test_autumn_evidence_audit.py": "786886d62bba86a86bc97f0c9a8b679d5c472a4d1849afadcdc66f07853b138e",
+    "tests/test_itad_collection.py": "1bcf0b558acaa8c654ae15e419de9f66002bf58b88f95d4b0c64cb77eac3f495"
+  }
+}

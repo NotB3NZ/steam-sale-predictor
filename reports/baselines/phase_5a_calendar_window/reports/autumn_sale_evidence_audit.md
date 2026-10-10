@@ -1,10 +1,10 @@
-# Autumn Sale In-Window Evidence Audit — Phase 5A.1
+# Autumn Sale In-Window Evidence Audit — Phase 5A
 
 **Exploratory audit completed; pending human review. No final labels or coverage rules.**
 
 ## Scope and overall results
 
-Pilot games: **100**. Years: **2023, 2024, 2025**. 2026 is excluded. Expected pairs: **300**. Actual rows considered: **300**. Successfully analyzed pairs: **300**. Eligible pairs: **300**. Ineligible pairs: **0**. Actual in-window records: **178**.
+Pilot games: **100**. Expected pairs: **200**. Actual rows considered: **200**. Successfully analyzed pairs: **200**. Actual in-window records: **238**.
 
 | Cache/parse diagnostic | Games/records |
 | --- | --- |
@@ -16,38 +16,18 @@ Pilot games: **100**. Years: **2023, 2024, 2025**. 2026 is excluded. Expected pa
 | Non-Steam records excluded | 0 |
 | Empty successful histories | 3 |
 
-Eligibility uses the project’s existing release-date <= sale-start-date rule, checked separately for each event. Only release dates, not exact release hours, are available; same-start-date eligibility has this unresolved precision limitation. Ineligible rows remain explicit with a reason, blank category/counts and no in-window records; they are not D cases. No games were silently dropped. The 100-game pilot is a diagnostic diversity sample; these results do not estimate population participation.
+All pilot games satisfy the existing release-date cutoff for both years. No games were silently dropped. The 100-game pilot is a diagnostic diversity sample; these results do not estimate population participation.
 
-| Year | AppID | Name | Release date | Eligibility reason |
+## Canonical dates and boundary convention
+
+Dates are read from `PROJECT_CONTEXT.md`, not from external sources. The repository supplies calendar dates, without exact sale hours or a sale timezone. This audit uses both endpoint dates inclusively in UTC: start midnight <= timestamp < midnight after the end date. This is a documented calendar-date convention, not verification of exact live sale hours. Original offsets are preserved; comparisons use timezone-aware UTC instants.
+
+| Year | Canonical start | Canonical end (inclusive) | UTC start | UTC end (exclusive) |
 | --- | --- | --- | --- | --- |
-| 2023 | 2650840 | nekowater | 2023-11-21 | release_date_on_sale_start_date; exact release hour unavailable |
+| 2023 | 2023-11-21 | 2023-11-28 | 2023-11-21T00:00:00Z | 2023-11-29T00:00:00Z |
+| 2024 | 2024-11-27 | 2024-12-04 | 2024-11-27T00:00:00Z | 2024-12-05T00:00:00Z |
 
-## Verified official event calendar and boundary convention
-
-Central calendar: `src/autumn_sale_calendar.json`; calendar dates are cross-checked with `PROJECT_CONTEXT.md`. Verified from Valve sources on 2026-10-11. Use `sale_start_utc <= timestamp_utc < sale_end_utc`: start is included, end excluded. Pacific conversion uses `zoneinfo.ZoneInfo("America/Los_Angeles")`; November dates are PST (UTC −8), September/October 2025 dates are PDT (UTC −7). Exact UTC values are checked against these local conversions. Original offsets are preserved; comparisons use timezone-aware UTC instants.
-
-| Year | Pacific start | Pacific end | UTC start (inclusive) | UTC end (exclusive) | Verification |
-| --- | --- | --- | --- | --- | --- |
-| 2023 | 2023-11-21T10:00:00-08:00 | 2023-11-28T10:00:00-08:00 | 2023-11-21T18:00:00Z | 2023-11-28T18:00:00Z | verified |
-| 2024 | 2024-11-27T10:00:00-08:00 | 2024-12-04T10:00:00-08:00 | 2024-11-27T18:00:00Z | 2024-12-04T18:00:00Z | verified |
-| 2025 | 2025-09-29T10:00:00-07:00 | 2025-10-06T10:00:00-07:00 | 2025-09-29T17:00:00Z | 2025-10-06T17:00:00Z | verified |
-
-- [Valve Steam News: The Steam Autumn Sale is just a few days away! (2023-11-17)](https://steamcommunity.com/games/593110/announcements/detail/3823053915973575702): Announcement explicitly specifies November 21 at 10 AM PST (UTC -8) through November 28 at 10 AM PST (UTC -8). [Readable official text](https://store.steampowered.com/news/posts/?enddate=1700494047).
-- [Valve Steam News: The Steam Autumn Sale is on now! (2024-11-27)](https://steamcommunity.com/games/593110/announcements/detail/4464851103138185583): Official announcement artwork specifies November 27–December 4 at 10 AM Pacific; announcement text separately confirms the December 4 end at 10 AM PST. [Official artwork](https://clan.fastly.steamstatic.com/images/27766192/b16a89fef845591fc364490eb3e35d3c08ad05c9.jpg); local copy: `reports/sources/autumn_sale_calendar/2024_valve_announcement.jpg`.
-- [Valve Steam News: Steam Autumn Sale is here! (2025-09-29)](https://steamcommunity.com/games/593110/announcements/detail/507340830949770005): Official announcement artwork specifies September 29–October 6 at 10 AM PT; text separately confirms the October 6 end at 10 AM PT. Both dates are PDT (UTC -7). [Official artwork](https://clan.fastly.steamstatic.com/images/27766192/fe66f80c30a3f49f0564f8ae3cbc6dafb075921a.jpg); local copy: `reports/sources/autumn_sale_calendar/2025_valve_announcement.jpg`.
-
-For 2024/2025, the artwork is the English capsule referenced by the official announcement’s `localized_capsule_image[0]` metadata, not a third-party calendar. Publication times and announcement metadata start/end times are not treated as sale event boundaries. Older Steamworks URLs redirect to current calendars; those redirects were not used as historical verification.
-
-Before means strictly earlier than exact sale start. After means at or later than exact sale end. Gap days are elapsed seconds / 86,400 relative to those boundaries, not rounded calendar-day distances. An observation exactly at sale end has an after-gap of zero. Corrected boundaries exclude pre-start and at/after-end records without making any coverage inference.
-
-## Boundary corrections versus preserved Phase 5A
-
-| Year | Original A/B/C/D | Exact A/B/C/D | Category changes | Original records | Exact records | Removed before start | Removed at/after end | Added | Affected original B |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2023 | 55/8/0/37 | 55/2/0/43 | 6 | 118 | 57 | 1 | 60 | 0 | 6 |
-| 2024 | 60/4/0/36 | 60/0/0/40 | 4 | 120 | 60 | 0 | 60 | 0 | 4 |
-
-Baseline `reports/baselines/phase_5a_calendar_window/` was hash-verified before analysis. See `reports/autumn_sale_boundary_comparison.md` for every category change, every original B case, all affected pairs and every removed/added record. The validation receipt also contains the full structured comparison. Original 2023/2024 counts are preserved, not reconstructed from altered outputs. 2025 is new scope.
+Before means strictly earlier than start midnight. After means at or later than end-exclusive midnight. Gap days are elapsed seconds / 86,400 relative to those boundaries, not rounded calendar-day distances. An observation at end-exclusive midnight has an after-gap of zero. Full-price records on the documented sale end date may be post-sale-hour observations. No hour boundary is silently substituted and no boundary sensitivity establishes coverage.
 
 ## Actual cached schema and extraction semantics
 
@@ -70,15 +50,13 @@ Category A takes precedence if any directly discounted observation exists, even 
 
 | Year | Games analyzed | Any records | Zero records | A | B | C | D | Pairs with any ambiguous record | Pairs with null deal | Mixed discount/full |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2023 | 100 | 57 | 43 | 55 | 2 | 0 | 43 | 0 | 0 | 0 |
-| 2024 | 100 | 60 | 40 | 60 | 0 | 0 | 40 | 0 | 0 | 0 |
-| 2025 | 100 | 61 | 39 | 60 | 1 | 0 | 39 | 0 | 0 | 0 |
+| 2023 | 100 | 63 | 37 | 55 | 8 | 0 | 37 | 0 | 0 | 54 |
+| 2024 | 100 | 64 | 36 | 60 | 4 | 0 | 36 | 0 | 0 | 56 |
 
 | Year | In-window records | Discount records | Full-price records | Ambiguous | Null deals |
 | --- | --- | --- | --- | --- | --- |
-| 2023 | 57 | 55 | 2 | 0 | 0 |
-| 2024 | 60 | 60 | 0 | 0 | 0 |
-| 2025 | 61 | 60 | 1 | 0 | 0 |
+| 2023 | 118 | 55 | 63 | 0 | 0 |
+| 2024 | 120 | 60 | 60 | 0 | 0 |
 
 ## In-window record density
 
@@ -86,22 +64,22 @@ Statistics include zero-observation games. Quartiles use inclusive interpolation
 
 | Year | N | Min | Q1 | Median | Mean | Q3 | Max |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2023 | 100 | 0 | 0.0 | 1.0 | 0.57 | 1.0 | 1 |
-| 2024 | 100 | 0 | 0.0 | 1.0 | 0.6 | 1.0 | 1 |
-| 2025 | 100 | 0 | 0.0 | 1.0 | 0.61 | 1.0 | 1 |
+| 2023 | 100 | 0 | 0.0 | 2.0 | 1.18 | 2.0 | 3 |
+| 2024 | 100 | 0 | 0.0 | 2.0 | 1.2 | 2.0 | 2 |
 
-| Observation count | 2023 | 2024 | 2025 |
-| --- | --- | --- | --- |
-| 0 | 43 | 40 | 39 |
-| 1 | 57 | 60 | 61 |
+| Observation count | 2023 | 2024 |
+| --- | --- | --- |
+| 0 | 37 | 36 |
+| 1 | 9 | 8 |
+| 2 | 53 | 56 |
+| 3 | 1 | 0 |
 
 ### Endpoint-date observations
 
 | Year | Records on start date | Records on end date | B cases only on end date |
 | --- | --- | --- | --- |
-| 2023 | 52 | 1 | 0 |
-| 2024 | 59 | 0 | 0 |
-| 2025 | 56 | 0 | 0 |
+| 2023 | 53 | 61 | 6 |
+| 2024 | 59 | 60 | 4 |
 
 ## Before/after gaps — contextual diagnostics only
 
@@ -109,28 +87,33 @@ Nearest usable here means nearest timestamp-usable Steam observation; it does no
 
 | Year | Subset | Side | Missing | N | Min days | Q1 | Median | Mean | Q3 | Max days |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2023 | all analyzed pairs | before | 4 | 96 | 0.091285 | 19.77831 | 85.025666 | 270.561439 | 242.896484 | 1054.75 |
-| 2023 | all analyzed pairs | after | 23 | 77 | 0.005162 | 0.027789 | 0.104711 | 39.436987 | 0.184965 | 954.46897 |
-| 2023 | zero in-window pairs | before | 3 | 40 | 1.20603 | 129.125848 | 638.990295 | 571.758953 | 1054.75 | 1054.75 |
-| 2023 | zero in-window pairs | after | 22 | 21 | 0.009711 | 0.158102 | 23.090741 | 144.029737 | 181.948218 | 954.46897 |
-| 2024 | all analyzed pairs | before | 3 | 97 | 0.987106 | 22.028681 | 64.028634 | 337.097452 | 351.969271 | 1426.75 |
-| 2024 | all analyzed pairs | after | 24 | 76 | 0.012407 | 0.020593 | 0.035874 | 26.639733 | 0.062248 | 623.323634 |
-| 2024 | zero in-window pairs | before | 3 | 37 | 0.987106 | 138.993727 | 691.895405 | 777.863803 | 1387.985185 | 1426.75 |
-| 2024 | zero in-window pairs | after | 24 | 16 | 0.012407 | 11.336641 | 15.516146 | 123.732365 | 159.493597 | 623.323634 |
-| 2025 | all analyzed pairs | before | 3 | 97 | 0.989016 | 16.989282 | 53.289398 | 383.205852 | 201.728831 | 1732.708333 |
-| 2025 | all analyzed pairs | after | 26 | 74 | 0.012546 | 0.016528 | 0.033374 | 17.371599 | 0.059797 | 317.365301 |
-| 2025 | zero in-window pairs | before | 3 | 36 | 3.291505 | 82.482645 | 1141.938247 | 961.332388 | 1703.634722 | 1732.708333 |
-| 2025 | zero in-window pairs | after | 26 | 13 | 0.012581 | 1.013472 | 44.053414 | 95.199429 | 105.354456 | 317.365301 |
+| 2023 | all analyzed pairs | before | 4 | 96 | 0.231424 | 19.02831 | 84.275666 | 269.863633 | 242.146484 | 1054.0 |
+| 2023 | all analyzed pairs | after | 23 | 77 | 0.211366 | 14.763773 | 22.805428 | 53.100637 | 22.950752 | 954.21897 |
+| 2023 | zero in-window pairs | before | 3 | 34 | 18.272002 | 138.032005 | 982.72559 | 665.964455 | 1054.0 | 1054.0 |
+| 2023 | zero in-window pairs | after | 22 | 15 | 15.304329 | 22.835961 | 23.160104 | 201.346706 | 342.978929 | 954.21897 |
+| 2024 | all analyzed pairs | before | 3 | 97 | 0.237106 | 21.278681 | 63.278634 | 336.347452 | 351.219271 | 1426.0 |
+| 2024 | all analyzed pairs | after | 24 | 76 | 0.761701 | 14.854398 | 14.913814 | 36.280797 | 15.096207 | 623.073634 |
+| 2024 | zero in-window pairs | before | 3 | 33 | 15.23515 | 267.234097 | 1323.331134 | 870.674448 | 1426.0 | 1426.0 |
+| 2024 | zero in-window pairs | after | 24 | 12 | 14.854398 | 15.175492 | 97.866209 | 164.717813 | 172.805949 | 623.073634 |
 
 ## All full-price-only cases (category B)
 
-This list describes directly timestamped full-price observations only; none is a negative label.
+Each has exactly one directly timestamped full-price observation. This list describes observed records only; none is a negative label. Endpoint dates have no verified hour boundary in the repository.
 
 | Year | AppID | Name | UTC timestamp | Price | Regular | Cut |
 | --- | --- | --- | --- | --- | --- | --- |
-| 2025 | 2205710 | Hentai Beauty | 2025-09-30T17:15:31Z | 0.99 | 0.99 | 0 |
+| 2024 | 7830 | Men of War™ | 2024-12-04T18:17:52Z | 4.99 | 4.99 | 0 |
+| 2023 | 303680 | FATE: The Traitor Soul | 2023-11-28T18:13:59Z | 7.99 | 7.99 | 0 |
+| 2023 | 1158850 | The Great Ace Attorney Chronicles | 2023-11-28T20:12:20Z | 39.99 | 39.99 | 0 |
+| 2024 | 1239260 | Barro F | 2024-12-04T18:48:03Z | 4.99 | 4.99 | 0 |
+| 2024 | 1257270 | The Valley of Super Flowers | 2024-12-04T18:48:03Z | 4.99 | 4.99 | 0 |
+| 2023 | 1836120 | QUICKERFLAK | 2023-11-28T21:06:13Z | 0.99 | 0.99 | 0 |
+| 2023 | 1882420 | Learn Programming: Python - Remake | 2023-11-28T21:10:19Z | 2.99 | 2.99 | 0 |
 | 2023 | 2268470 | HOPE LEFT ME | 2023-11-25T18:24:20Z | 1.99 | 1.99 | 0 |
+| 2023 | 2383710 | Caveman Ransom | 2023-11-28T21:39:53Z | 4.99 | 4.99 | 0 |
+| 2023 | 2621900 | Railway Islands 2 - Puzzle | 2023-11-28T21:47:40Z | 3.99 | 3.99 | 0 |
 | 2023 | 2650840 | nekowater | 2023-11-21T22:39:17Z | 2.99 | 2.99 | 0 |
+| 2024 | 2650840 | nekowater | 2024-12-04T18:35:54Z | 1.99 | 1.99 | 0 |
 
 ## Representative game-sale cases
 
@@ -138,77 +121,31 @@ Examples use only actual pilot records. “Closest”/“most distant” below r
 
 **Multiple full-price observations with no discounted evidence:** no example exists in this pilot.
 
-**Mixed discounted and full-price observations:** no example exists in this pilot.
-
-**Three in-window observations:** no example exists in this pilot.
-
 **Null or ambiguous in-window deal:** no example exists in this pilot.
 
-### Clear in-window discount: Men of War™ — AppID 7830, 2025
+### Clear in-window discount: American Truck Simulator — AppID 270880, 2024
 
-Category A; 1 directly timestamped records. Before gap: 80.987998 days; after gap: 0.012546 days.
-
-| Relation | Raw index | UTC timestamp | Price | Regular | Cut | Currency | Kind |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| in-window | 13 | 2025-09-29T17:36:25Z | 0.74 | 4.99 | 85 | USD | discount |
+Category A; 1 directly timestamped records. Before gap: 23.280822 days; after gap: 7.763484 days.
 
 | Relation | Raw index | UTC timestamp | Price | Regular | Cut | Currency | Kind |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| before context | 14 | 2025-07-10T17:17:17Z | 4.99 | 4.99 | 0 | USD | full_price |
+| in-window | 40 | 2024-11-27T20:40:30Z | 4.99 | 19.99 | 75 | USD | discount |
 
 | Relation | Raw index | UTC timestamp | Price | Regular | Cut | Currency | Kind |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| after context | 12 | 2025-10-06T17:18:04Z | 4.99 | 4.99 | 0 | USD | full_price |
-
-### One full-price observation: Hentai Beauty — AppID 2205710, 2025
-
-Category B; 1 directly timestamped records. Before gap: 12.988738 days; after gap: 25.013137 days.
+| before context | 41 | 2024-11-03T17:15:37Z | 19.99 | 19.99 | 0 | USD | full_price |
 
 | Relation | Raw index | UTC timestamp | Price | Regular | Cut | Currency | Kind |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| in-window | 21 | 2025-09-30T17:15:31Z | 0.99 | 0.99 | 0 | USD | full_price |
+| after context | 39 | 2024-12-12T18:19:25Z | 19.99 | 19.99 | 0 | USD | full_price |
+
+### One full-price observation: Men of War™ — AppID 7830, 2024
+
+Category B; 1 directly timestamped records. Before gap: 0.237106 days; after gap: 14.953681 days.
 
 | Relation | Raw index | UTC timestamp | Price | Regular | Cut | Currency | Kind |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| before context | 22 | 2025-09-16T17:16:13Z | 0.49 | 0.99 | 51 | USD | discount |
-
-| Relation | Raw index | UTC timestamp | Price | Regular | Cut | Currency | Kind |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| after context | 20 | 2025-10-31T17:18:55Z | 0.49 | 0.99 | 51 | USD | discount |
-
-### 2023: zero records, closest two-sided context: Railway Islands 2 - Puzzle — AppID 2621900, 2023
-
-Category D; 0 directly timestamped records. Before gap: 1.20603 days; after gap: 0.158102 days.
-
-No in-window observations. Surrounding prices do not establish in-window behavior.
-
-| Relation | Raw index | UTC timestamp | Price | Regular | Cut | Currency | Kind |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| before context | 62 | 2023-11-20T13:03:19Z | 2.99 | 3.99 | 25 | USD | discount |
-
-| Relation | Raw index | UTC timestamp | Price | Regular | Cut | Currency | Kind |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| after context | 61 | 2023-11-28T21:47:40Z | 3.99 | 3.99 | 0 | USD | full_price |
-
-### 2023: zero records, most distant two-sided context: Scoregasm — AppID 202410, 2023
-
-Category D; 0 directly timestamped records. Before gap: 1054.75 days; after gap: 954.46897 days.
-
-No in-window observations. Surrounding prices do not establish in-window behavior.
-
-| Relation | Raw index | UTC timestamp | Price | Regular | Cut | Currency | Kind |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| before context | 2 | 2021-01-01T00:00:00Z | 4.99 | 4.99 | 0 | USD | full_price |
-
-| Relation | Raw index | UTC timestamp | Price | Regular | Cut | Currency | Kind |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| after context | 1 | 2026-07-10T05:15:19Z | 5.99 | 5.99 | 0 | USD | full_price |
-
-### 2024: zero records, closest two-sided context: Men of War™ — AppID 7830, 2024
-
-Category D; 0 directly timestamped records. Before gap: 0.987106 days; after gap: 0.012407 days.
-
-No in-window observations. Surrounding prices do not establish in-window behavior.
+| in-window | 24 | 2024-12-04T18:17:52Z | 4.99 | 4.99 | 0 | USD | full_price |
 
 | Relation | Raw index | UTC timestamp | Price | Regular | Cut | Currency | Kind |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -216,11 +153,42 @@ No in-window observations. Surrounding prices do not establish in-window behavio
 
 | Relation | Raw index | UTC timestamp | Price | Regular | Cut | Currency | Kind |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| after context | 24 | 2024-12-04T18:17:52Z | 4.99 | 4.99 | 0 | USD | full_price |
+| after context | 23 | 2024-12-19T22:53:18Z | 0.74 | 4.99 | 85 | USD | discount |
 
-### 2024: zero records, most distant two-sided context: Scoregasm — AppID 202410, 2024
+### Mixed discounted and full-price observations: Tycoon City: New York — AppID 9730, 2023
 
-Category D; 0 directly timestamped records. Before gap: 1426.75 days; after gap: 582.46897 days.
+Category A; 2 directly timestamped records. Before gap: 77.289479 days; after gap: 23.002384 days.
+
+| Relation | Raw index | UTC timestamp | Price | Regular | Cut | Currency | Kind |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| in-window | 54 | 2023-11-21T18:30:17Z | 4.99 | 9.99 | 50 | USD | discount |
+| in-window | 53 | 2023-11-28T18:12:21Z | 9.99 | 9.99 | 0 | USD | full_price |
+
+| Relation | Raw index | UTC timestamp | Price | Regular | Cut | Currency | Kind |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| before context | 55 | 2023-09-04T17:03:09Z | 3.99 | 9.99 | 60 | USD | discount |
+
+| Relation | Raw index | UTC timestamp | Price | Regular | Cut | Currency | Kind |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| after context | 52 | 2023-12-22T00:03:26Z | 4.99 | 9.99 | 50 | USD | discount |
+
+### 2023: zero records, closest two-sided context: Have a Nice Death — AppID 1740720, 2023
+
+Category D; 0 directly timestamped records. Before gap: 18.272002 days; after gap: 22.92816 days.
+
+No in-window observations. Surrounding prices do not establish in-window behavior.
+
+| Relation | Raw index | UTC timestamp | Price | Regular | Cut | Currency | Kind |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| before context | 47 | 2023-11-02T17:28:19Z | 24.99 | 24.99 | 0 | USD | full_price |
+
+| Relation | Raw index | UTC timestamp | Price | Regular | Cut | Currency | Kind |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| after context | 46 | 2023-12-21T22:16:33Z | 16.74 | 24.99 | 33 | USD | discount |
+
+### 2023: zero records, most distant two-sided context: Scoregasm — AppID 202410, 2023
+
+Category D; 0 directly timestamped records. Before gap: 1054.0 days; after gap: 954.21897 days.
 
 No in-window observations. Surrounding prices do not establish in-window behavior.
 
@@ -232,23 +200,23 @@ No in-window observations. Surrounding prices do not establish in-window behavio
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | after context | 1 | 2026-07-10T05:15:19Z | 5.99 | 5.99 | 0 | USD | full_price |
 
-### 2025: zero records, closest two-sided context: The Great Ace Attorney Chronicles — AppID 1158850, 2025
+### 2024: zero records, closest two-sided context: Cyberpunk SFX — AppID 1465260, 2024
 
-Category D; 0 directly timestamped records. Before gap: 5.98684 days; after gap: 1.013472 days.
+Category D; 0 directly timestamped records. Before gap: 15.447743 days; after gap: 15.229676 days.
 
 No in-window observations. Surrounding prices do not establish in-window behavior.
 
 | Relation | Raw index | UTC timestamp | Price | Regular | Cut | Currency | Kind |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| before context | 18 | 2025-09-23T17:18:57Z | 15.99 | 39.99 | 60 | USD | discount |
+| before context | 37 | 2024-11-11T13:15:15Z | 19.99 | 19.99 | 0 | USD | full_price |
 
 | Relation | Raw index | UTC timestamp | Price | Regular | Cut | Currency | Kind |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| after context | 17 | 2025-10-07T17:19:24Z | 39.99 | 39.99 | 0 | USD | full_price |
+| after context | 36 | 2024-12-20T05:30:44Z | 0.99 | 19.99 | 95 | USD | discount |
 
-### 2025: zero records, most distant two-sided context: Scoregasm — AppID 202410, 2025
+### 2024: zero records, most distant two-sided context: Scoregasm — AppID 202410, 2024
 
-Category D; 0 directly timestamped records. Before gap: 1732.708333 days; after gap: 276.510637 days.
+Category D; 0 directly timestamped records. Before gap: 1426.0 days; after gap: 582.21897 days.
 
 No in-window observations. Surrounding prices do not establish in-window behavior.
 
@@ -262,7 +230,7 @@ No in-window observations. Surrounding prices do not establish in-window behavio
 
 ### No in-window records and absent subsequent history: A Valley Without Wind 2 — AppID 228320, 2023
 
-Category D; 0 directly timestamped records. Before gap: 987.984965 days; after gap: unavailable days.
+Category D; 0 directly timestamped records. Before gap: 987.234965 days; after gap: unavailable days.
 
 No in-window observations. Surrounding prices do not establish in-window behavior.
 
@@ -276,9 +244,27 @@ Category D; 0 directly timestamped records. Before gap: unavailable days; after 
 
 No in-window observations. Surrounding prices do not establish in-window behavior.
 
+### Three in-window observations: Workplace Fantasy — AppID 2544720, 2023
+
+Category A; 3 directly timestamped records. Before gap: 4.35191 days; after gap: 23.016852 days.
+
+| Relation | Raw index | UTC timestamp | Price | Regular | Cut | Currency | Kind |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| in-window | 69 | 2023-11-21T15:48:33Z | 14.99 | 14.99 | 0 | USD | full_price |
+| in-window | 68 | 2023-11-21T18:03:25Z | 11.99 | 14.99 | 20 | USD | discount |
+| in-window | 67 | 2023-11-28T21:46:12Z | 14.99 | 14.99 | 0 | USD | full_price |
+
+| Relation | Raw index | UTC timestamp | Price | Regular | Cut | Currency | Kind |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| before context | 70 | 2023-11-16T15:33:15Z | 11.99 | 14.99 | 20 | USD | discount |
+
+| Relation | Raw index | UTC timestamp | Price | Regular | Cut | Currency | Kind |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| after context | 66 | 2023-12-22T00:24:16Z | 9.74 | 14.99 | 35 | USD | discount |
+
 ### Pilot game released on 2023 sale start date: nekowater — AppID 2650840, 2023
 
-Category B; 1 directly timestamped records. Before gap: unavailable days; after gap: 7.606794 days.
+Category B; 1 directly timestamped records. Before gap: unavailable days; after gap: 7.356794 days.
 
 | Relation | Raw index | UTC timestamp | Price | Regular | Cut | Currency | Kind |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -288,27 +274,27 @@ Category B; 1 directly timestamped records. Before gap: unavailable days; after 
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | after context | 53 | 2023-12-06T08:33:47Z | 1.99 | 1.99 | 0 | USD | full_price |
 
-### 2025 discounted evidence: Men of War™ — AppID 7830, 2025
+### Full-price-only evidence on 2024 end date: Men of War™ — AppID 7830, 2024
 
-Category A; 1 directly timestamped records. Before gap: 80.987998 days; after gap: 0.012546 days.
-
-| Relation | Raw index | UTC timestamp | Price | Regular | Cut | Currency | Kind |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| in-window | 13 | 2025-09-29T17:36:25Z | 0.74 | 4.99 | 85 | USD | discount |
+Category B; 1 directly timestamped records. Before gap: 0.237106 days; after gap: 14.953681 days.
 
 | Relation | Raw index | UTC timestamp | Price | Regular | Cut | Currency | Kind |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| before context | 14 | 2025-07-10T17:17:17Z | 4.99 | 4.99 | 0 | USD | full_price |
+| in-window | 24 | 2024-12-04T18:17:52Z | 4.99 | 4.99 | 0 | USD | full_price |
 
 | Relation | Raw index | UTC timestamp | Price | Regular | Cut | Currency | Kind |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| after context | 12 | 2025-10-06T17:18:04Z | 4.99 | 4.99 | 0 | USD | full_price |
+| before context | 25 | 2024-11-26T18:18:34Z | 0.74 | 4.99 | 85 | USD | discount |
+
+| Relation | Raw index | UTC timestamp | Price | Regular | Cut | Currency | Kind |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| after context | 23 | 2024-12-19T22:53:18Z | 0.74 | 4.99 | 85 | USD | discount |
 
 ## Empirical ITAD history semantics
 
 ### Observed facts
 
-These diagnostics use all cached Steam history, not just the three sale windows. Records are sorted by UTC timestamp. Equal-time records are preserved; transitions are counted only between adjacent timestamp groups containing exactly one record each, so conflicting equal-time states have no invented order.
+These diagnostics use all cached Steam history, not just the two sale windows. Records are sorted by UTC timestamp. Equal-time records are preserved; transitions are counted only between adjacent timestamp groups containing exactly one record each, so conflicting equal-time states have no invented order.
 
 | Diagnostic | Count |
 | --- | --- |
@@ -432,11 +418,9 @@ The cached data alone cannot confidently distinguish event notifications, period
 
 | Validation | Result |
 | --- | --- |
-| All 100 pilot AppIDs, all three years, explicit eligibility | PASS |
-| 300 unique AppID × sale_year rows | PASS |
-| Timezone-aware UTC parsing and verified half-open event boundaries | PASS |
-| Original baseline verified before execution | PASS |
-| Original versus exact comparison counts reconcile | PASS |
+| All 100 pilot AppIDs, both eligible years | PASS |
+| 200 unique AppID × sale_year rows | PASS |
+| Timezone-aware UTC parsing and inclusive calendar-date boundaries | PASS |
 | Long-file counts reconcile to audit rows | PASS |
 | Discount/full/ambiguous counts reconcile | PASS |
 | Only integer Steam shop ID 61 included | PASS |
@@ -445,31 +429,12 @@ The cached data alone cannot confidently distinguish event notifications, period
 | Network/API requests | 0 |
 | Final labeling/coverage decisions | NOT IMPLEMENTED |
 
-Frozen input files checked: **107** (all raw ITAD JSON including smoke receipt/archive, three frozen intermediate CSVs, Phase 4 script/report). Every file has identical SHA-256 before/after; the file inventory is unchanged. Individual digests are in the validation receipt. No ITAD or pricing requests were made. Audit execution made zero network/API requests. External research was confined to official event-calendar verification, as explicitly authorized; the web tool does not expose its underlying HTTP request count. Four official source files were downloaded directly; one earlier sandbox DNS attempt failed. The standalone audit has no network client and does not execute/import the Phase 4 collector.
-
-Preserved baseline hashes/inventory are unchanged; central calendar and official artwork hashes are recorded separately.
-
-Execution checks are recorded in `reports/phase_5a1_execution_checks.json` and bound to SHA-256 of the audit script, central calendar and all test modules. A changed source invalidates that receipt.
-
-| Execution check | Result |
-| --- | --- |
-| status | PASS |
-| full_offline_test_suite | PASS — 42 tests; all original tests retained |
-| test_command | python3 -m unittest discover -s tests -v |
-| network_guard | Socket connect/connect_ex/create_connection forbidden during full suite and audit reruns |
-| baseline_commit_and_hash_verification | PASS — six preserved files byte-match original Git revision |
-| baseline_reproduction | PASS — all four original output artifacts reproduced byte-for-byte in isolated temporary directory |
-| deterministic_audit_reruns | PASS — two full reruns; all five generated outputs byte-identical |
-| independent_saved_csv_validation | PASS — 300 unique pairs; 178 records; raw indices/JSON, boundaries, eligibility, kinds, counts, extrema, nearest context and ties reconciled independently |
-| frozen_phase4_inputs | PASS — 107 hashes/inventory equal baseline and initial pre-work snapshot |
-| baseline_preservation | PASS — all seven baseline files and inventory unchanged |
-| itad_pricing_requests | 0 |
-| audit_network_requests | 0 |
+Frozen input files checked: **107** (all raw ITAD JSON including smoke receipt/archive, three frozen intermediate CSVs, Phase 4 script/report). Every file has identical SHA-256 before/after; the file inventory is unchanged. Individual digests are in the validation receipt. No API, web, or network requests were made. The standalone audit has no network client and does not execute/import the Phase 4 collector.
 
 Reproduce: `python3 src/04_audit_autumn_evidence.py`. Tests: `python3 -m unittest discover -s tests -v` (offline synthetic fixtures; includes Phase 4 regression tests). The report/datasets are deterministic for identical frozen inputs and canonical dates; the audit does not modify project status/context itself.
 
 ## Remaining ambiguities and stop gate
 
-Event hours are now verified. Release hours remain unknown for same-start-date releases. Whether any full-price-only case provides sufficient negative coverage remains undecided. Null/ambiguous evidence, multiple full-price observations and mixed records are reported when present; their absence is not replaced with invented examples. Several histories are empty, stop long before the window, or have very distant surrounding observations. Same-timestamp conflicting records and possible requested-since boundary artifacts need later semantic review.
+Exact sale-hour boundaries are unspecified in the repository. End-date full-price observations and mixed records must be reviewed with that limitation in mind. All B cases have only one full-price observation; whether any such case provides sufficient negative coverage remains undecided. There are no multiple-full-price-only, null, or ambiguous in-window examples in this pilot. Several histories are empty, stop long before the window, or have very distant surrounding observations. Same-timestamp conflicting records and possible requested-since boundary artifacts need later semantic review.
 
-**Stopped after Phase 5A.1. Phase 4 remains COMPLETE. Phase 5A.1 is completed/pending review. Phase 5B coverage and final labeling methodology are NOT YET IMPLEMENTED.** No labels, UNKNOWN mapping, observation sufficiency threshold, state persistence, feature engineering, or modeling changes were created.
+**Stopped after Phase 5A. Phase 4 remains COMPLETE. Phase 5A is completed/pending review. Phase 5B coverage and final labeling methodology are NOT YET IMPLEMENTED.** No labels, UNKNOWN mapping, observation sufficiency threshold, state persistence, feature engineering, or modeling changes were created.

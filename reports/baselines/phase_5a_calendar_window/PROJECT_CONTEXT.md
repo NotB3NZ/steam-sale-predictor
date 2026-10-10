@@ -44,18 +44,8 @@ The raw `games.csv` header has a concatenated column `DiscountDLC count` that sh
 ```
 Autumn 2023: 2023-11-21 to 2023-11-28
 Autumn 2024: 2024-11-27 to 2024-12-04
-Autumn 2025: 2025-09-29 to 2025-10-06
+Autumn 2025: 2025-09-29 to 2025-10-06  (date may need verification)
 ```
-
-Phase 5A.1 verified both event endpoints from official Valve announcements and, for 2024/2025, their official artwork. Central configuration: `src/autumn_sale_calendar.json`; source links, archived artwork hashes and verification details are in `reports/autumn_sale_evidence_audit.md`.
-
-| Year | UTC start, inclusive | UTC end, exclusive | Pacific start/end time |
-|------|----------------------|--------------------|------------------------|
-| 2023 | 2023-11-21T18:00:00Z | 2023-11-28T18:00:00Z | 10 AM PST (UTC −8) |
-| 2024 | 2024-11-27T18:00:00Z | 2024-12-04T18:00:00Z | 10 AM PST (UTC −8) |
-| 2025 | 2025-09-29T17:00:00Z | 2025-10-06T17:00:00Z | 10 AM PDT (UTC −7) |
-
-The experimental design is 2023–2024 historical training, 2025 temporal validation, and 2026 final retrospective prediction/manual verification. Phase 5A.1 excludes 2026 and implements only evidence diagnostics.
 
 ## Master Catalog Population
 
@@ -77,22 +67,14 @@ Official ITAD API 2.11.0 documentation and OpenAPI specification verified for Ph
 
 History records have timestamp, shop, and deal; the official schema permits `deal=null`. Preserve these records and all returned fields, including original response text, without interpreting their sale meaning. Cache wrappers live in `data/raw/itad/<AppID>.json`; configuration-compatible validated evidence is reused, and intentional refreshes archive prior artifacts. A three-game smoke receipt is required before full collection. Collection diagnostics describe observations only; event-specific coverage and sale labels remain Phase 5 work.
 
-## Phase 5A — Preserved calendar-date evidence baseline
+## Phase 5A — Exploratory evidence audit (completed; pending human review)
 
-The original Phase 5A audit covered all 100 pilot AppIDs for Autumn 2023 and 2024 (200 game-sale pairs); 238 records were directly timestamped inside the documented calendar-date windows. Its original CSVs, report, validation receipt, implementation and context are preserved at `reports/baselines/phase_5a_calendar_window/`, with original hashes and Git revision in `baseline_manifest.json`. The original implementation reproduces all four artifacts byte-for-byte using frozen inputs in an isolated temporary directory.
+`src/04_audit_autumn_evidence.py` reads frozen Phase 4 caches locally, without importing/executing the collector or making network requests. The audit covers all 100 pilot AppIDs for Autumn 2023 and 2024 (200 game-sale pairs); 238 records are directly timestamped inside the documented calendar-date windows. See `reports/autumn_sale_evidence_audit.md`, the two `autumn_sale_evidence_*.csv` intermediate files, and `reports/autumn_sale_evidence_validation.json` for provenance/hashes and validation.
 
-Phase 5A used inclusive UTC calendar dates: start midnight through midnight after the end date, exclusive at the latter boundary. At that time exact event hours were unverified. Phase 5A.1 supersedes this convention with the verified half-open event intervals above; the baseline remains unchanged.
+Canonical dates above remain unchanged. The repository does not specify exact sale hours/timezone. For Phase 5A only, compare timezone-aware UTC timestamps against inclusive UTC calendar dates: start midnight through midnight after the end date, exclusive at the latter boundary. This is an explicit audit convention, not verification of official hour boundaries. End-date full-price observations may occur after live sale hours; no different dates/hours have been silently substituted.
 
 Timestamp-usable Steam records include null/ambiguous deals when time/shop are valid. Reported discount observations have explicit cut > 0 and price < regular; reported full-price observations have cut = 0 and equal price/regular. Missing/contradictory information is ambiguous and raw fields are retained. Descriptive A/B/C/D categories summarize only in-window records. Before/after records and gaps are separate diagnostics and do not imply state persistence or coverage. Equal-time records are preserved with raw indices; all nearest-context ties remain inspectable.
 
 Observed categories A/B/C/D: 2023 **55/8/0/37**, 2024 **60/4/0/36**. All B cases have one full-price observation; no multiple-full-price-only or null/ambiguous in-window cases occur. Cached histories appear change-oriented, but repeats, conflicting same-time prices, sparse gaps and exact requested-since timestamps prevent confident identification of the generating process from these data alone.
 
-## Phase 5A.1 — Exact boundaries and 2025 expansion (completed; pending human review)
-
-`src/04_audit_autumn_evidence.py` continues reading only frozen Phase 4 caches, without importing/executing the collector or making network requests. Current outputs cover **300 unique game-sale pairs** and **178 directly timestamped in-window Steam records**. All pairs qualify under the existing date-level release rule, checked separately for each event; release dates after the start date would produce explicit ineligible rows with blank evidence category/counts. nekowater (AppID 2650840) was released on the 2023 start date; its exact release hour is unavailable and this precision limitation is explicitly reported rather than assumed resolved.
-
-Corrected A/B/C/D counts: **2023: 55/2/0/43**, **2024: 60/0/0/40**, **2025: 60/1/0/39**. Each observed pair has one in-window record. No ambiguous/null or mixed in-window records occur. For 2023/2024, **121 records** were removed (one before exact start, 120 at/after exact end), with no additions. **Ten original B cases become D** (six in 2023, four in 2024); discount-evidence categories are unchanged. `reports/autumn_sale_boundary_comparison.md` lists every affected pair, original B case and removed record.
-
-Current artifacts: `data/intermediate/autumn_sale_evidence_audit.csv`, `data/intermediate/autumn_sale_evidence_records.csv`, `reports/autumn_sale_evidence_audit.md`, and `reports/autumn_sale_evidence_validation.json`. **42 offline tests PASS**; isolated baseline reproduction, deterministic reruns, saved-CSV reconciliation and **107 unchanged frozen-input hashes** are recorded in `reports/phase_5a1_execution_checks.json`. Network research was confined to the official event calendar; no ITAD/pricing requests or new histories were fetched. Audit execution makes zero network requests.
-
-Phase 4 remains COMPLETE and frozen. Phase 5A.1 is an audit, not a final labeling implementation. **Phase 5B is NOT YET IMPLEMENTED:** observation sufficiency, before/after coverage use, thresholds, state persistence and the final 1/0/UNKNOWN methodology remain undecided pending human review. No labels, model-ready data, feature engineering or modeling changes were created. Stop for human review before Phase 5B.
+Phase 4 remains COMPLETE and frozen. Phase 5A is an audit, not a final labeling implementation. **Phase 5B is NOT YET IMPLEMENTED:** observation sufficiency, before/after coverage use, thresholds, state persistence and the final 1/0/UNKNOWN methodology remain undecided pending human review. No labels, model-ready data, feature engineering or modeling changes were created.

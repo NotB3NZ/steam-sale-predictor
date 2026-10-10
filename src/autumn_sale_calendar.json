@@ -1,0 +1,50 @@
+{
+  "calendar_version": "phase_5a1_verified_exact_windows",
+  "timezone": "America/Los_Angeles",
+  "verified_on": "2026-10-11",
+  "verification_method": "Official Valve Steam News announcements; 2024/2025 announcement capsule artwork visually inspected. Pacific offsets computed with zoneinfo, not a fixed PT offset.",
+  "research_network_note": "External research was limited to official event-calendar verification. Audit execution is offline with zero network requests. Web-tool underlying HTTP request counts are not exposed; four official source files were successfully downloaded directly and one earlier sandbox DNS attempt failed. No ITAD or pricing requests.",
+  "events": [
+    {
+      "sale_year": 2023,
+      "sale_start_pacific": "2023-11-21T10:00:00-08:00",
+      "sale_end_pacific": "2023-11-28T10:00:00-08:00",
+      "sale_start_utc": "2023-11-21T18:00:00Z",
+      "sale_end_utc": "2023-11-28T18:00:00Z",
+      "verification_status": "verified",
+      "source_title": "Valve Steam News: The Steam Autumn Sale is just a few days away! (2023-11-17)",
+      "source_url": "https://steamcommunity.com/games/593110/announcements/detail/3823053915973575702",
+      "source_text_url": "https://store.steampowered.com/news/posts/?enddate=1700494047",
+      "verification_evidence": "Announcement explicitly specifies November 21 at 10 AM PST (UTC -8) through November 28 at 10 AM PST (UTC -8)."
+    },
+    {
+      "sale_year": 2024,
+      "sale_start_pacific": "2024-11-27T10:00:00-08:00",
+      "sale_end_pacific": "2024-12-04T10:00:00-08:00",
+      "sale_start_utc": "2024-11-27T18:00:00Z",
+      "sale_end_utc": "2024-12-04T18:00:00Z",
+      "verification_status": "verified",
+      "source_title": "Valve Steam News: The Steam Autumn Sale is on now! (2024-11-27)",
+      "source_url": "https://steamcommunity.com/games/593110/announcements/detail/4464851103138185583",
+      "source_image_url": "https://clan.fastly.steamstatic.com/images/27766192/b16a89fef845591fc364490eb3e35d3c08ad05c9.jpg",
+      "source_image_path": "reports/sources/autumn_sale_calendar/2024_valve_announcement.jpg",
+      "verification_evidence": "Official announcement artwork specifies November 27–December 4 at 10 AM Pacific; announcement text separately confirms the December 4 end at 10 AM PST.",
+      "source_image_sha256": "3db4e105db87ebae0f42e65b85ff0d4b78f36e4d53388fb0dfd0c670e9d0ba64"
+    },
+    {
+      "sale_year": 2025,
+      "sale_start_pacific": "2025-09-29T10:00:00-07:00",
+      "sale_end_pacific": "2025-10-06T10:00:00-07:00",
+      "sale_start_utc": "2025-09-29T17:00:00Z",
+      "sale_end_utc": "2025-10-06T17:00:00Z",
+      "verification_status": "verified",
+      "source_title": "Valve Steam News: Steam Autumn Sale is here! (2025-09-29)",
+      "source_url": "https://steamcommunity.com/games/593110/announcements/detail/507340830949770005",
+      "source_text_url": "https://store.steampowered.com/news/posts/?enddate=1759469475&feed=steam_client+Steam+News",
+      "source_image_url": "https://clan.fastly.steamstatic.com/images/27766192/fe66f80c30a3f49f0564f8ae3cbc6dafb075921a.jpg",
+      "source_image_path": "reports/sources/autumn_sale_calendar/2025_valve_announcement.jpg",
+      "verification_evidence": "Official announcement artwork specifies September 29–October 6 at 10 AM PT; text separately confirms the October 6 end at 10 AM PT. Both dates are PDT (UTC -7).",
+      "source_image_sha256": "a0fee0d11e02297fceb0a61585bc788e0fe60c2ee97e93fab669260a84a1f57d"
+    }
+  ]
+}
