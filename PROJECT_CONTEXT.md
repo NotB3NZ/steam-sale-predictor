@@ -2,7 +2,7 @@
 
 ## Research Question
 
-> Given information available about a Steam game **before** a specific Steam Autumn Sale begins, what is the probability that the game will be discounted during that sale?
+> Given information available about a Steam game **before** a specific Steam Autumn Sale begins, what is the probability that the game will be discounted at any point during that sale?
 
 ## Unit of Observation
 
@@ -95,4 +95,32 @@ Corrected A/B/C/D counts: **2023: 55/2/0/43**, **2024: 60/0/0/40**, **2025: 60/1
 
 Current artifacts: `data/intermediate/autumn_sale_evidence_audit.csv`, `data/intermediate/autumn_sale_evidence_records.csv`, `reports/autumn_sale_evidence_audit.md`, and `reports/autumn_sale_evidence_validation.json`. **42 offline tests PASS**; isolated baseline reproduction, deterministic reruns, saved-CSV reconciliation and **107 unchanged frozen-input hashes** are recorded in `reports/phase_5a1_execution_checks.json`. Network research was confined to the official event calendar; no ITAD/pricing requests or new histories were fetched. Audit execution makes zero network requests.
 
-Phase 4 remains COMPLETE and frozen. Phase 5A.1 is an audit, not a final labeling implementation. **Phase 5B is NOT YET IMPLEMENTED:** observation sufficiency, before/after coverage use, thresholds, state persistence and the final 1/0/UNKNOWN methodology remain undecided pending human review. No labels, model-ready data, feature engineering or modeling changes were created. Stop for human review before Phase 5B.
+Phase 4 remains COMPLETE and frozen. Phase 5A.1 created no final labels, model-ready data, feature engineering or models. Its original artifacts remain unchanged; the subsequent diagnostic investigation is documented below.
+
+## Phase 5B.1 — Historical price-state and coverage investigation (completed; pending human review)
+
+`src/05_investigate_sale_coverage.py` reads the same frozen histories and Phase 5A.1 calendar/parser offline. It investigates all **300 pairs**, preserving the **175 A / 3 B / 0 C / 122 D** evidence categories and all **178 in-window observations**. Full observed chronologies, pre/in/post raw indices, nearest tied records, observed states, counts, elapsed-day gaps and conflict indicators are diagnostics only. A valid temporal record can have ambiguous/null price information; such information is never replaced by an older known price. Conflicting nearest same-time records have an ambiguous aggregate state and retain all raw fields.
+
+**2026 exclusion is strict for this investigation:** only observations timestamped before `2026-01-01T00:00:00Z` enter any context, chronology, semantics or sensitivity calculation. **852** of 5,568 cached observations are outside scope; **4,716** are analyzed. The raw files remain intact. Post-sale context is therefore censored and can differ from Phase 5A.1; missing post evidence means none was returned within the permitted observation scope, not that no later price exists.
+
+Category B pre-state is **2 discounted / 1 missing**; Category D pre-state is **93 full price / 20 discounted / 9 missing**. No nearest ambiguous state occurs in these actual pairs. Recency scenarios at 7/14/30/60/90 days/unrestricted find **1/2/7/10/13/93** non-A pairs with pre-sale full-price evidence and **7/14/15/15/15/22** with discounted pre-evidence. Missing-pre pairs remain a separate bucket. These hypothetical scenarios quantify availability; none establishes a negative label or selects a coverage threshold. No price is carried forward, and equal observed surrounding prices do not establish what happened between them.
+
+Official ITAD documentation reviewed for Phase 5B.1 explicitly describes price changes in the history endpoint's `since` parameter. Historical records and change-oriented behavior are supported; complete capture of every Steam change and safe state persistence are not established by the reviewed documentation. Six same-timestamp conflict groups, repeated states, changed full-price values and requested-since timestamps remain empirical caveats. Documentation-only research is separate from the network-blocked diagnostic pipeline.
+
+Artifacts: `data/intermediate/autumn_sale_coverage_diagnostics.csv`, `data/intermediate/autumn_sale_coverage_sensitivity.csv`, `reports/autumn_sale_coverage_investigation.md`, `reports/autumn_sale_coverage_validation.json`, and `reports/sources/itad_history_semantics.json`. Run `python3 src/05_investigate_sale_coverage.py --verify` for **62 passing offline tests**, repeated deterministic executions, saved-CSV reconciliation and preservation checks for **133 prior-phase files**, including **107 frozen Phase 4 inputs**. No pricing API requests or new collection occurred.
+
+Phase 5B.1 ended without implementing coverage or 1/0/UNKNOWN labeling methodology. The subsequent source-feasibility investigation is documented below; its original artifacts remain frozen.
+
+## Phase 5B.2 — Historical ground-truth verification and label feasibility (completed; pending human review)
+
+The target event is a valid Steam-store discount at **any point** within the verified half-open Autumn Sale interval. Positive occurrence evidence and complete-event absence evidence require different standards. Single full-price observations, sampled snapshots, missing records and inaccessible pages cannot establish full-sale absence. Geographic/purchase-option scope and evidence-to-label policy remain unresolved.
+
+`src/06_verify_historical_ground_truth.py` deterministically selects **18 pairs / 17 games** from the unchanged 300 diagnostics: **4 A / 3 B / 0 C / 11 D**, including all B cases, recent/stale D, empty history, positive controls and historical conflicts. Original categories and individual selection rationales are preserved. The reviewed local source inventory and research ledger regenerate all new outputs offline; they are not an external price collector.
+
+Eleven source candidates cover SteamDB price/event information, official Steam store/news/publisher records, Wayback, Common Crawl, Steambase, CheapShark, GG.deals and a metadata snapshot dataset. SteamDB scraping was not undertaken; publisher credentials were not bypassed. The Wayback lookup failed, and that component stopped without interpreting failure as archive absence. Seven of 17 distinct public Steam news feeds were accessible, covering eight selected pairs, but none supplied target-event price evidence. Wrong-year announcements and current prices/outcomes were excluded.
+
+Independent verification: **0 positive / 0 full-sale absence / 0 partial-only pricing / 0 source conflicts / 18 NOT_VERIFIABLE**. These are verification results, not labels. Zero independent conflicts does not resolve known ITAD conflicts; nekowater's release hour remains unknown. No investigated source established a complete historical offer log. Strategy A—retain directly observed ITAD discounts as evidence and leave other pairs unresolved—is the most defensible evidence-retention approach currently; it cannot support ordinary binary model training on its own. No labeling strategy has been implemented.
+
+Artifacts: `data/intermediate/autumn_sale_verification_pilot.csv`, `data/intermediate/autumn_sale_verification_evidence.csv`, `reports/autumn_sale_ground_truth_feasibility.md`, `reports/autumn_sale_ground_truth_validation.json`, and reviewed JSONs under `reports/sources/`. Before/after SHA-256 verification protects **144 preceding files**, including all **107 frozen Phase 4 inputs** and prior Phase 5A/5B.1 artifacts. Run `python3 -B src/06_verify_historical_ground_truth.py --verify` for full offline tests and deterministic reruns. Authorized documentation/public-page research is separate from network-blocked execution; no ITAD pricing/history requests or new histories occurred.
+
+**STOP before Phase 5B.3. Final labels, predictive features and models remain unimplemented.** Human review must address authorized complete-source access, negative-ground-truth feasibility, source-selection bias, region/purchase scope, conflicts and eligibility. Only 2023–2025 outcomes were investigated; 2026 remains reserved.

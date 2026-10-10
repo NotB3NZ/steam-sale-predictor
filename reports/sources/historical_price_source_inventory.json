@@ -1,0 +1,352 @@
+{
+  "phase": "5B.2",
+  "access_date": "2026-10-11",
+  "scope_years": [
+    2023,
+    2024,
+    2025
+  ],
+  "research_method": "Public primary documentation and limited public-page inspection via web tool; no pricing APIs or anti-bot workarounds. Generic retrieval errors have unknown HTTP cause.",
+  "sources": [
+    {
+      "source_id": "steamdb_prices",
+      "name": "SteamDB historical prices",
+      "family": "A",
+      "access_date": "2026-10-11",
+      "documentation_urls": [
+        "https://steamdb.info/faq/"
+      ],
+      "verified_facts": [
+        "FAQ describes per-app price graphs; it disclaims completeness. Automated scraping is prohibited; academic scraping requires permission."
+      ],
+      "individual_appids": true,
+      "steam_store_separation": "Steam price graphs; purchase-option matching still needed",
+      "timestamps": "Graph resolution not retrieved",
+      "coverage_by_year": {
+        "2023": "NOT_ESTABLISHED",
+        "2024": "NOT_ESTABLISHED",
+        "2025": "NOT_ESTABLISHED"
+      },
+      "temporary_discount_capture": "NOT_ESTABLISHED",
+      "full_sale_negative_capability": "NOT_ESTABLISHED",
+      "completeness": "NOT_ESTABLISHED",
+      "access": "Public UI; programmatic data access not authorized",
+      "official_api_or_export": "No usable public API verified; FAQ describes potential partner access, not a public endpoint",
+      "rate_limits": "No authorized numerical scraping quota",
+      "automation_permission": "PROHIBITED_WITHOUT_PERMISSION",
+      "reproducibility": "Permissioned export would be needed for repeatable collection",
+      "limitations": "No app price pages scraped; no complete log established; independence from ITAD must be checked",
+      "investigation_status": "STOPPED_PERMISSION_REQUIRED"
+    },
+    {
+      "source_id": "steamdb_events",
+      "name": "SteamDB sales/event history",
+      "family": "B",
+      "access_date": "2026-10-11",
+      "documentation_urls": [
+        "https://steamdb.info/sales/history/",
+        "https://steamdb.info/faq/"
+      ],
+      "verified_facts": [
+        "A public event calendar was discoverable; the retrieved extract did not provide 2023–2025 app-level membership."
+      ],
+      "individual_appids": "No historical app membership retrieved",
+      "steam_store_separation": "Steam event calendar",
+      "timestamps": "Event dates; no app observations retrieved",
+      "coverage_by_year": {
+        "2023": "NOT_ESTABLISHED",
+        "2024": "NOT_ESTABLISHED",
+        "2025": "NOT_ESTABLISHED"
+      },
+      "temporary_discount_capture": "NOT_ESTABLISHED",
+      "full_sale_negative_capability": "NOT_ESTABLISHED",
+      "completeness": "NOT_ESTABLISHED",
+      "access": "Public calendar; scraping restriction applies",
+      "official_api_or_export": "No event-membership API/export verified",
+      "rate_limits": "NOT_ESTABLISHED",
+      "automation_permission": "PROHIBITED_WITHOUT_PERMISSION",
+      "reproducibility": "Documentation-only; no membership dataset",
+      "limitations": "Being absent from an event list would not establish absence of every Steam discount",
+      "investigation_status": "CALENDAR_ONLY"
+    },
+    {
+      "source_id": "steam_current",
+      "name": "Steam store / IStoreService",
+      "family": "C",
+      "access_date": "2026-10-11",
+      "documentation_urls": [
+        "https://partner.steamgames.com/doc/webapi/IStoreService",
+        "https://partner.steamgames.com/doc/marketing/discounts"
+      ],
+      "verified_facts": [
+        "Documented change markers describe store updates, not a publicly documented complete retrospective price log."
+      ],
+      "individual_appids": true,
+      "steam_store_separation": true,
+      "timestamps": "Modification metadata is not a historical price observation",
+      "coverage_by_year": {
+        "2023": "NOT_ESTABLISHED",
+        "2024": "NOT_ESTABLISHED",
+        "2025": "NOT_ESTABLISHED"
+      },
+      "temporary_discount_capture": "NOT_ESTABLISHED",
+      "full_sale_negative_capability": "NOT_ESTABLISHED",
+      "completeness": "NOT_ESTABLISHED",
+      "access": "Store public; API-specific access requirements apply",
+      "official_api_or_export": "IStoreService documented; historical price export not verified",
+      "rate_limits": "NOT_ESTABLISHED",
+      "automation_permission": "Only documented methods subject to Valve terms; no store scraping used",
+      "reproducibility": "No retrospective price payload retrieved",
+      "limitations": "Current prices were not collected or used for historical outcomes",
+      "investigation_status": "DOCUMENTATION_REVIEW"
+    },
+    {
+      "source_id": "steam_news",
+      "name": "Steam publisher news / ISteamNews",
+      "family": "C",
+      "access_date": "2026-10-11",
+      "documentation_urls": [
+        "https://partner.steamgames.com/doc/webapi/ISteamNews"
+      ],
+      "verified_facts": [
+        "Public news retrieval is documented by AppID with enddate and count parameters. News is not continuous store-price coverage."
+      ],
+      "individual_appids": true,
+      "steam_store_separation": "Publisher announcements require explicit storefront, edition and time checks",
+      "timestamps": "News publication time; not necessarily time of a store-price observation",
+      "coverage_by_year": {
+        "2023": "NOT_ESTABLISHED",
+        "2024": "NOT_ESTABLISHED",
+        "2025": "NOT_ESTABLISHED"
+      },
+      "temporary_discount_capture": "Some announcements describe discounts; target-pair price evidence not retrieved",
+      "full_sale_negative_capability": "NOT_ESTABLISHED",
+      "completeness": "News pagination and publisher posting do not guarantee price-change completeness",
+      "access": "Public community pages; documented public news method",
+      "official_api_or_export": "GetNewsForApp/v2 documented; not a pricing API",
+      "rate_limits": "Numerical news quota not verified in reviewed method page",
+      "automation_permission": "Public documented method; no permission for unrestricted store scraping inferred",
+      "reproducibility": "Exact attempted URLs recorded; extracted page contents can change",
+      "limitations": "17 distinct app feeds opened; one documented API probe failed; no current-year outcomes retained",
+      "investigation_status": "DOCUMENTATION_REVIEW"
+    },
+    {
+      "source_id": "steam_partner",
+      "name": "Valve publisher financial reports",
+      "family": "C",
+      "access_date": "2026-10-11",
+      "documentation_urls": [
+        "https://partner.steamgames.com/doc/webapi/IPartnerFinancialsService"
+      ],
+      "verified_facts": [
+        "Publisher financial methods require an authorized financial API key. Transaction fields distinguish Steam/Retail and include country and pricing fields."
+      ],
+      "individual_appids": "Publisher-owned products/packages; not arbitrary public AppIDs",
+      "steam_store_separation": true,
+      "timestamps": "Daily accounting periods, not all offer changes",
+      "coverage_by_year": {
+        "2023": "NOT_ESTABLISHED",
+        "2024": "NOT_ESTABLISHED",
+        "2025": "NOT_ESTABLISHED"
+      },
+      "temporary_discount_capture": "NOT_ESTABLISHED",
+      "full_sale_negative_capability": "NOT_ESTABLISHED",
+      "completeness": "NOT_ESTABLISHED",
+      "access": "Publisher authentication required",
+      "official_api_or_export": "Documented financial API, not a public price-history export",
+      "rate_limits": "NOT_ESTABLISHED",
+      "automation_permission": "Authorized publisher only; no requests made",
+      "reproducibility": "Credentials and authorized publisher records required",
+      "limitations": "No sales transactions do not establish no discount; complete offer schedules would need separate evidence",
+      "investigation_status": "STOPPED_CREDENTIALS_REQUIRED"
+    },
+    {
+      "source_id": "wayback",
+      "name": "Internet Archive / Wayback Machine",
+      "family": "D",
+      "access_date": "2026-10-11",
+      "documentation_urls": [
+        "https://help.archive.org/help/using-the-wayback-machine/",
+        "https://archive.org/help/wayback_api.php",
+        "https://github.com/internetarchive/wayback/tree/master/wayback-cdx-server"
+      ],
+      "verified_facts": [
+        "Availability API and CDX capture lookup are documented. A successful lookup identifies captures, not continuous coverage."
+      ],
+      "individual_appids": "Steam app URLs can be queried; pilot capture availability unverified",
+      "steam_store_separation": "Original store URL must match; bundles/resellers excluded",
+      "timestamps": "Capture timestamp; rendered price origin and freshness need checking",
+      "coverage_by_year": {
+        "2023": "NOT_ESTABLISHED",
+        "2024": "NOT_ESTABLISHED",
+        "2025": "NOT_ESTABLISHED"
+      },
+      "temporary_discount_capture": "Only if a capture contains the relevant price during the event",
+      "full_sale_negative_capability": "NOT_ESTABLISHED",
+      "completeness": "Sampled web captures; missing resources and live fallbacks possible",
+      "access": "Public documented lookups; one CDX probe unavailable through research tool",
+      "official_api_or_export": "Availability API and CDX documented",
+      "rate_limits": "No numeric quota verified; do not infer unlimited access",
+      "automation_permission": "Documented lookup only; no restrictions bypassed",
+      "reproducibility": "Save original URL, capture URL/time and response hashes if obtained; none obtained",
+      "limitations": "Failed CDX retrieval is not an empty capture index; external archive component stopped",
+      "investigation_status": "ACCESS_LIMITATION"
+    },
+    {
+      "source_id": "common_crawl",
+      "name": "Common Crawl",
+      "family": "E",
+      "access_date": "2026-10-11",
+      "documentation_urls": [
+        "https://commoncrawl.org/overview",
+        "https://commoncrawl.org/get-started",
+        "https://www.commoncrawl.org/cdxj-index",
+        "https://commoncrawl.org/terms-of-use",
+        "https://blog.commoncrawl.org/faq"
+      ],
+      "verified_facts": [
+        "Public URL indexes and WARC downloads are documented; crawl collections exist for 2023–2025."
+      ],
+      "individual_appids": "URL-level potential; pilot captures not looked up",
+      "steam_store_separation": "Needs original Steam store URL and captured price payload",
+      "timestamps": "Crawl capture timestamps",
+      "coverage_by_year": {
+        "2023": "NOT_ESTABLISHED",
+        "2024": "NOT_ESTABLISHED",
+        "2025": "NOT_ESTABLISHED"
+      },
+      "temporary_discount_capture": "NOT_ESTABLISHED",
+      "full_sale_negative_capability": "NOT_ESTABLISHED",
+      "completeness": "Sampled crawls, not continuous offer monitoring",
+      "access": "Public downloads; Athena requires AWS account/cost",
+      "official_api_or_export": "Documented CDXJ/columnar indexes and WARC export",
+      "rate_limits": "CDX heavily rate limited; HTTPS, spaced single-thread requests, descriptive User-Agent; no proxies; numerical quota unspecified",
+      "automation_permission": "Documented download subject to terms and underlying content rights",
+      "reproducibility": "Capture metadata plus WARC offset/hash if retrieved",
+      "limitations": "No WARC or pilot capture retrieved; content rights are not automatically transferred",
+      "investigation_status": "DOCUMENTATION_ONLY_NO_CAPTURE_RETRIEVAL"
+    },
+    {
+      "source_id": "steambase",
+      "name": "Steambase",
+      "family": "E",
+      "access_date": "2026-10-11",
+      "documentation_urls": [
+        "https://steambase.io/games/have-a-nice-death/price",
+        "https://steambase.io/legal/terms/",
+        "https://steambase.io/legal/fair-use/"
+      ],
+      "verified_facts": [
+        "Public tracker exposes monthly Steam summaries, separately from key-marketplace offers. Disclaimer does not guarantee completeness."
+      ],
+      "individual_appids": true,
+      "steam_store_separation": "Steam monthly table separate from reseller section",
+      "timestamps": "Monthly aggregates; exact target-event points not retrieved",
+      "coverage_by_year": {
+        "2023": "NOT_ESTABLISHED",
+        "2024": "NOT_ESTABLISHED",
+        "2025": "NOT_ESTABLISHED"
+      },
+      "temporary_discount_capture": "NOT_ESTABLISHED",
+      "full_sale_negative_capability": "NOT_ESTABLISHED",
+      "completeness": "NOT_ESTABLISHED",
+      "access": "Public UI; terms specify personal non-commercial access and consent for content reuse",
+      "official_api_or_export": "No official historical API/export verified",
+      "rate_limits": "Not verified",
+      "automation_permission": "Bulk collection/republication permission not established; stopped before collection",
+      "reproducibility": "Month summaries do not locate discounts within a sale; chart payload not exported",
+      "limitations": "One selected 2023 game inspected; rendered monthly table did not reach target year; no historical price copied",
+      "investigation_status": "DISCOVERY_ONLY_PERMISSION_UNRESOLVED"
+    },
+    {
+      "source_id": "cheapshark",
+      "name": "CheapShark",
+      "family": "E",
+      "access_date": "2026-10-11",
+      "documentation_urls": [
+        "https://apidocs.cheapshark.com/"
+      ],
+      "verified_facts": [
+        "Official API documentation landing page discovered, but research tool returned no readable method documentation."
+      ],
+      "individual_appids": "NOT_ESTABLISHED",
+      "steam_store_separation": "NOT_ESTABLISHED",
+      "timestamps": "NOT_ESTABLISHED",
+      "coverage_by_year": {
+        "2023": "NOT_ESTABLISHED",
+        "2024": "NOT_ESTABLISHED",
+        "2025": "NOT_ESTABLISHED"
+      },
+      "temporary_discount_capture": "NOT_ESTABLISHED",
+      "full_sale_negative_capability": "NOT_ESTABLISHED",
+      "completeness": "NOT_ESTABLISHED",
+      "access": "Documentation discoverable; method access not evaluated",
+      "official_api_or_export": "API documentation exists; suitable historical endpoint not verified",
+      "rate_limits": "NOT_ESTABLISHED",
+      "automation_permission": "Unresolved; no data endpoints used",
+      "reproducibility": "Insufficient readable documentation",
+      "limitations": "Store-specific event history, quotas and full-sale coverage not verified",
+      "investigation_status": "DOCUMENTATION_RENDER_LIMITATION"
+    },
+    {
+      "source_id": "gg_deals",
+      "name": "GG.deals",
+      "family": "E",
+      "access_date": "2026-10-11",
+      "documentation_urls": [
+        "https://gg.deals/faq/"
+      ],
+      "verified_facts": [
+        "FAQ retrieval failed through the research tool."
+      ],
+      "individual_appids": "NOT_ESTABLISHED",
+      "steam_store_separation": "NOT_ESTABLISHED",
+      "timestamps": "NOT_ESTABLISHED",
+      "coverage_by_year": {
+        "2023": "NOT_ESTABLISHED",
+        "2024": "NOT_ESTABLISHED",
+        "2025": "NOT_ESTABLISHED"
+      },
+      "temporary_discount_capture": "NOT_ESTABLISHED",
+      "full_sale_negative_capability": "NOT_ESTABLISHED",
+      "completeness": "NOT_ESTABLISHED",
+      "access": "Unavailable in this research environment",
+      "official_api_or_export": "No usable official API verified",
+      "rate_limits": "NOT_ESTABLISHED",
+      "automation_permission": "Unverified; no game-page scraping attempted",
+      "reproducibility": "Unestablished",
+      "limitations": "No historical observations or source guarantees retrieved",
+      "investigation_status": "ACCESS_LIMITATION"
+    },
+    {
+      "source_id": "public_snapshot",
+      "name": "Public Steam metadata dataset (May 2024)",
+      "family": "E",
+      "access_date": "2026-10-11",
+      "documentation_urls": [
+        "https://github.com/RitikSarang/steam-games-dataset-may2024"
+      ],
+      "verified_facts": [
+        "Repository describes a metadata snapshot with prices, not an event-resolution offer log."
+      ],
+      "individual_appids": true,
+      "steam_store_separation": "Steam-derived snapshot metadata",
+      "timestamps": "Dataset month, not complete per-price observation timestamps",
+      "coverage_by_year": {
+        "2023": "NOT_ESTABLISHED",
+        "2024": "NOT_ESTABLISHED",
+        "2025": "NOT_ESTABLISHED"
+      },
+      "temporary_discount_capture": "NOT_ESTABLISHED",
+      "full_sale_negative_capability": "NOT_ESTABLISHED",
+      "completeness": "Metadata snapshot; no full-sale coverage",
+      "access": "Public repository; licenses and upstream rights require review before reuse",
+      "official_api_or_export": "Repository files; no historical price API",
+      "rate_limits": "NOT_ESTABLISHED",
+      "automation_permission": "No download undertaken",
+      "reproducibility": "A pinned dataset revision could reproduce a snapshot, not missing event prices",
+      "limitations": "Release-year coverage does not mean historical price coverage",
+      "investigation_status": "REJECTED_FOR_EVENT_GROUND_TRUTH"
+    }
+  ]
+}

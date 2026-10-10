@@ -4,11 +4,11 @@ An ongoing data science project investigating whether game characteristics avail
 
 The intended primary model is **interpretable logistic regression**, with attention to historical validity, reproducible evidence and associations between game characteristics and discounting behavior. Event-specific predictions could help analysts study seasonal pricing patterns; reliable outcomes must be established before those associations can be estimated.
 
-**Current milestone: Phase 5A.1 completed, pending human review. Phase 5B has not started. No final target labels, modeling features or trained models exist.**
+**Current milestone: Phase 5B.2 ground-truth feasibility investigation completed, pending human review. Independent historical verification was limited by access and evidence availability. Phase 5B.3 has not started. No final target labels, modeling features or trained models exist.**
 
 ## Research Question
 
-> Given information available about a Steam game before a specific Steam Autumn Sale begins, what is the probability that the game will be discounted during that sale?
+> Given information available about a Steam game before a specific Steam Autumn Sale begins, what is the probability that the game will be discounted at any point during that sale?
 
 The target concerns a particular historical event. Whether a game has ever been discounted does not establish whether it was discounted during the Autumn Sale being predicted.
 
@@ -51,7 +51,9 @@ The evidence audit reads these local caches without additional pricing API reque
 | 4 | Historical Price Collection | Complete |
 | 5A | Autumn Sale In-Window Evidence Audit | Complete; preserved baseline |
 | 5A.1 | Exact Sale Boundaries and 2025 Expansion | Complete; Need some more review on my end |
-| 5B | Coverage and Final Labeling Methodology | **Not started** |
+| 5B.1 | Historical Price-State and Coverage Investigation | Complete; pending human review |
+| 5B.2 | Historical Ground-Truth Verification and Label Feasibility | Complete; pending human review |
+| 5B.3 | Subsequent labeling work, subject to human approval | **Not started** |
 | 6 | Feature Engineering and Modeling Dataset | Not started |
 | 7 | Logistic Regression Modeling and Evaluation | Not started |
 | 8 | Scaling and Final Validation | Not started |
@@ -179,9 +181,33 @@ The recorded validation includes **42 passing offline tests**, independent saved
 
 **Detailed reports:** [Exact-Window Evidence Audit](reports/autumn_sale_evidence_audit.md) and [Boundary Comparison](reports/autumn_sale_boundary_comparison.md). Validation: [audit receipt](reports/autumn_sale_evidence_validation.json) and [execution checks](reports/phase_5a1_execution_checks.json).
 
+### Phase 5B.1 — Historical Price-State and Coverage Investigation
+
+**Objective:** Investigate surrounding price observations and hypothetical coverage standards before developing target labels.
+
+**Methodology:** Reuse the exact calendar and frozen parser; order observations without carrying prices forward; retain tied conflicts and missing values; compare pre-sale recency scenarios at 7, 14, 30, 60 and 90 days plus unrestricted. All observations dated in 2026 are excluded: **4,716 records** are analyzed and **852** remain outside scope, without changing the caches.
+
+**Results:** All **300 pairs** retain their Phase 5A.1 evidence categories. The three B pairs have latest pre-sale states of two discounted and one missing. The 122 D pairs have 93 full-price, 20 discounted and nine missing pre-states. Among non-A pairs, full-price pre-evidence within 7/14/30/60/90 days occurs in **1/2/7/10/13** pairs; discounted pre-evidence occurs in **7/14/15/15/15**. These counts remain separate and are not inferred negatives. **62 offline tests pass**, repeated full executions are deterministic, and **133 prior-phase file hashes** remain unchanged, including all 107 frozen Phase 4 inputs.
+
+**Key takeaway:** Recency measures availability, not event-wide coverage. Official documentation supports change-oriented history, while complete capture and safe price persistence remain unresolved. No final labels or coverage rule were created.
+
+**Detailed report:** [Coverage Investigation](reports/autumn_sale_coverage_investigation.md), [validation receipt](reports/autumn_sale_coverage_validation.json), [pair diagnostics](data/intermediate/autumn_sale_coverage_diagnostics.csv) and [hypothetical sensitivity scenarios](data/intermediate/autumn_sale_coverage_sensitivity.csv).
+
+### Phase 5B.2 — Historical Ground-Truth Verification and Label Feasibility
+
+**Objective:** Investigate whether independent historical sources can establish discount occurrence or absence throughout an entire Autumn Sale.
+
+**Methodology:** Review eleven source candidates and select 18 diagnostic pairs deterministically, including all three B cases, recent/stale D cases, positive controls, an empty history and timestamp conflicts. Preserve source URLs and access outcomes in a reviewed research ledger; regenerate artifacts offline.
+
+**Results:** Eight selected pairs had a discoverable source page, but none yielded relevant historical price evidence. Independent verification found **0 positive, 0 full-sale absence, 0 partial-only pricing and 0 conflicting observations; all 18 remain NOT_VERIFIABLE**. SteamDB automation required permission; publisher access required credentials; the archive lookup failed. None of these limitations implies no discount. Prior 300 pairs and evidence categories remain unchanged.
+
+**Key takeaway:** A defensible binary dataset is not established. Direct ITAD discounts remain positive evidence candidates; other outcomes remain unresolved. Complete authorized histories or publisher schedules would need verification before any interval reconstruction or negative-label inference. No labels were generated.
+
+**Detailed report:** [Ground-Truth Feasibility](reports/autumn_sale_ground_truth_feasibility.md), [validation receipt](reports/autumn_sale_ground_truth_validation.json), [source inventory](reports/sources/historical_price_source_inventory.json), [verification pilot](data/intermediate/autumn_sale_verification_pilot.csv) and [source evidence](data/intermediate/autumn_sale_verification_evidence.csv).
+
 ## Key Findings So Far
 
-- **Record patterns suggest a change-oriented history.** Frequent discount/full-price transitions, irregular gaps and no identical full-price states between adjacent singleton timestamp groups support this interpretation. Repeated states and six conflicting timestamp groups prevent treating it as a confirmed record-generation rule. See the [empirical semantics audit](reports/autumn_sale_evidence_audit.md#empirical-itad-history-semantics).
+- **The history endpoint is change-oriented, but completeness and persistence remain unestablished.** Official ITAD documentation describes price changes; empirical repeats and six conflicting timestamp groups prevent treating records as a strict, complete change log. See the [coverage investigation](reports/autumn_sale_coverage_investigation.md#i-itad-history-semantics-assessment).
 - **Event hours matter.** Calendar end dates admitted post-sale full-price observations, changing ten full-price-only cases once exact boundaries were applied. See the [boundary comparison](reports/autumn_sale_boundary_comparison.md).
 - **Absence of a record is not a negative outcome.** Even close surrounding observations do not directly establish behavior inside the event. The audit preserves them separately without carrying prices forward.
 - **Historical coverage remains the central unresolved problem.** Sparse, empty or truncated histories cannot be assumed complete. Reliable outcome construction is needed before feature engineering or modeling.
@@ -192,7 +218,7 @@ The recorded validation includes **42 passing offline tests**, independent saved
 |---|---|
 | Observed evidence | Timestamped Steam records, with raw fields and provenance retained |
 | Inferred price states | Not implemented; no interpolation, missing-observation filling or price carry-forward |
-| Final target labels | Not implemented; coverage criteria and evidence-to-label mapping await Phase 5B |
+| Final target labels | Not implemented; full-sale negative evidence and evidence-to-label mapping await review before Phase 5B.3 |
 
 The intended label vocabulary is `1` (discounted), `0` (not discounted) and `UNKNOWN` (insufficient or unresolved evidence). This is a future design requirement, not an implemented mapping. Category B is not automatically `0`; Category D is not automatically `0` or a finalized `UNKNOWN` assignment. No observation-count or gap threshold has been selected.
 
@@ -223,7 +249,11 @@ Important existing files and directories:
 │   │   ├── pilot_games.csv
 │   │   ├── itad_collection_manifest.csv
 │   │   ├── autumn_sale_evidence_audit.csv
-│   │   └── autumn_sale_evidence_records.csv
+│   │   ├── autumn_sale_evidence_records.csv
+│   │   ├── autumn_sale_coverage_diagnostics.csv
+│   │   ├── autumn_sale_coverage_sensitivity.csv
+│   │   ├── autumn_sale_verification_pilot.csv
+│   │   └── autumn_sale_verification_evidence.csv
 │   └── processed/                    # Currently empty; no model-ready data
 ├── src/
 │   ├── source_schema.py
@@ -232,14 +262,18 @@ Important existing files and directories:
 │   ├── 02_create_pilot.py
 │   ├── 03_fetch_itad.py
 │   ├── 04_audit_autumn_evidence.py
+│   ├── 05_investigate_sale_coverage.py
+│   ├── 06_verify_historical_ground_truth.py
 │   └── autumn_sale_calendar.json
 ├── tests/
 │   ├── test_itad_collection.py
-│   └── test_autumn_evidence_audit.py
+│   ├── test_autumn_evidence_audit.py
+│   ├── test_autumn_sale_coverage.py
+│   └── test_historical_ground_truth.py
 ├── reports/                          # Phase reports and validation receipts
 │   ├── baselines/phase_5a_calendar_window/
 │   │                                 # Original CSVs/report/receipt/code/context + manifest
-│   └── sources/autumn_sale_calendar/  # Official 2024/2025 artwork copies
+│   └── sources/                       # Reviewed research JSONs and calendar artwork
 └── notebooks/                        # Currently empty
 ```
 
@@ -287,13 +321,31 @@ The audit regenerates the two evidence CSVs, updated audit report, validation re
 
 The existing [execution receipt](reports/phase_5a1_execution_checks.json) records 42 passing tests, independent CSV validation and identical outputs across repeated full audits. The audit reuses that receipt only when the tested source hashes match; it does not run or certify new tests automatically.
 
+### Offline Coverage Investigation
+
+To reproduce Phase 5B.1 without regenerating previous-phase artifacts:
+
+```bash
+python3 src/05_investigate_sale_coverage.py --verify
+```
+
+This standard-library workflow reads the frozen inputs and local documentation note, runs the full offline test suite under a socket/DNS prohibition, generates the two coverage CSVs and report/receipt, and verifies identical repeated executions. It makes no pricing API requests and requires no credentials. Its 2026 cutoff also censors post-sale context; missing post observations remain missing. Prior Phase 5A/5A.1 outputs and the baseline are preserved.
+
+To reproduce Phase 5B.2 from the reviewed local source inventory and research ledger:
+
+```bash
+python3 -B src/06_verify_historical_ground_truth.py --verify
+```
+
+This offline workflow runs the full test suite, verifies repeated identical outputs and checks 144 protected preceding files. It does not repeat external research, request pricing data or regenerate prior-phase artifacts. Source-access failures and missing observations remain explicit; no final target columns are created.
+
 ## Current Status and Next Steps
 
-**Phase 5A.1 is complete and awaits human review. Phase 5B has not started.**
+**Phase 5B.2 is complete and awaits human review. Phase 5B.3 has not started.**
 
-The next task is to decide what historical evidence can support reliable discounted, non-discounted and unknown outcomes. Review must address record semantics, missing observations, conflicts, release-hour precision and whether any contextual evidence can establish coverage. No final labeling rule is specified yet.
+Human review must decide whether authorized complete historical records can be obtained, whether limited archived observations can improve evidence, and whether the study cohort or question needs revision. Capture completeness, purchase-option/region scope, source-selection bias, conflicts and release-hour eligibility remain unresolved. Recent full-price observations and accessible webpages do not establish full-sale negative outcomes; no final rule or threshold is specified.
 
-Feature engineering and logistic regression will follow once the labels are validated and predictor timing is established. The planned temporal split remains 2023–2024 training, 2025 validation and 2026 retrospective prediction/manual verification, with 2026 outcomes excluded from model development. The project currently stops before Phase 5B.
+Feature engineering and logistic regression will follow once the labels are validated and predictor timing is established. The planned temporal split remains 2023–2024 training, 2025 validation and 2026 retrospective prediction/manual verification, with 2026 outcomes excluded from model development. The project currently stops before Phase 5B.3.
 
 ## Technologies
 

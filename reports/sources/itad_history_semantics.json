@@ -1,0 +1,18 @@
+{
+  "reviewed_on": "2026-10-11",
+  "api_documentation_version": "2.11.0",
+  "documentation_url": "https://docs.isthereanydeal.com/#tag/History/operation/games-history-v2",
+  "openapi_url": "https://github.com/IsThereAnyDeal/API/blob/master/dist/openapi.json",
+  "openapi_read_url": "https://raw.githubusercontent.com/IsThereAnyDeal/API/master/dist/openapi.json",
+  "endpoint_reviewed": "/games/history/v2",
+  "endpoint_description_quote": "Get log of historical prices",
+  "since_description_quote": "Load only price changes after this date.",
+  "schema_observations": [
+    "History response is an array with required timestamp, shop and deal fields.",
+    "Deal may be null, or an object with price, regular and cut fields.",
+    "No complete-Steam-change-capture guarantee or state-persistence guarantee was found in the reviewed endpoint, schema and general documentation."
+  ],
+  "review_scope": "Official rendered documentation and official OpenAPI specification; no pricing endpoint was called. Absence of a guarantee in these reviewed materials is not proof that no guarantee exists elsewhere.",
+  "limitations": "Documentation describes change-oriented records but does not settle polling latency, historical completeness, corrections, same-timestamp variants, or whether a state can be carried forward safely.",
+  "network_note": "External research was documentation-only. Diagnostic execution reads this local evidence note without network access. Web-tool underlying HTTP request totals are unavailable. Zero ITAD/pricing API requests and zero new history retrievals."
+}

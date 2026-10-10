@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-Phase 5A.1 — Exact-boundary evidence audit and 2025 expansion completed; pending human review (Phases 1–4 COMPLETE)
+Phase 5B.2 — Historical ground-truth verification and label-feasibility investigation completed with external verification limitations; pending human review. Phase 4 COMPLETE and frozen; final labeling remains unimplemented.
 
 ## Completed
 
@@ -129,6 +129,33 @@ Execution: `python3 src/02_create_pilot.py`. No ITAD/Steam/external API calls, s
 
 ## Next Phase
 
-**Phase 5B — Final coverage and labeling methodology NOT YET IMPLEMENTED.**
+**Phase 5B.3 — NOT STARTED. Final coverage and labeling methodology remains unimplemented.**
 
-STOP after Phase 5A.1. Human review of the refined evidence audit is required before implementing Phase 5B. Phase 5 labeling is not complete.
+STOP after Phase 5B.2. Human review of ground-truth feasibility is required before Phase 5B.3. Phase 5 labeling is not complete.
+
+## Phase 5B.1 completed — pending review
+
+- New offline script: `src/05_investigate_sale_coverage.py`; reuses the unchanged Phase 5A.1 parser and exact event calendar.
+- **300 unique game-sale pairs**, all date-eligible; unchanged A/B/C/D totals **175/3/0/122**, with **178** directly observed in-window records. No 2026 sale rows.
+- Strict investigation cutoff: timestamps **before 2026-01-01T00:00:00Z** only. Of 5,568 cached records, 852 are excluded by timestamp and 4,716 analyzed. This censors post-sale context without modifying any cached history or earlier artifact.
+- Category B latest pre-state: **0 full price / 2 discounted / 0 ambiguous / 1 missing**. Category D: **93 full price / 20 discounted / 0 ambiguous / 9 missing**. D post-state before cutoff: **18 full price / 25 discounted / 0 ambiguous / 79 missing**.
+- Non-A pre-recency scenarios, 7/14/30/60/90 days/unrestricted: full-price counts **1/2/7/10/13/93**, discounted counts **7/14/15/15/15/22**. Unrestricted also reports 10 missing-pre pairs separately. These measure evidence availability, never inferred negative labels; no threshold chosen.
+- D pre-gap median **808.986539 days** (113 available, 9 missing); post-gap median **17.013194 days** (43 available, 79 missing). Surrounding interval median **118.708287 days**, maximum **1,243.698218 days** where both sides exist.
+- Official ITAD documentation supports historical and change-oriented records. Complete Steam-change capture and safe persistence are unestablished. Pre-2026 observations contain 6 conflicting timestamp groups, 2 repeated-state patterns, 53 consecutive cut=0 pairs and 65 requested-since timestamps; no null/ambiguous individual deals.
+- Main report: `reports/autumn_sale_coverage_investigation.md`. Pair chronology and raw indices: `data/intermediate/autumn_sale_coverage_diagnostics.csv`. Hypothetical scenarios: `data/intermediate/autumn_sale_coverage_sensitivity.csv` (384 overlapping aggregate cells). Receipt: `reports/autumn_sale_coverage_validation.json`. Documentation review note: `reports/sources/itad_history_semantics.json`.
+- **62 offline tests PASS**, including all 42 previous tests. Full diagnostic executions produce identical bytes for all four outputs. Independent partition/provenance, gap, category and scenario reconciliation passes; saved CSVs round-trip exactly.
+- **133 protected prior-phase file hashes unchanged**, including **107 frozen Phase 4 inputs** and the original Phase 5A baseline. Initial tracked-file hashes also checked after work.
+- **Zero diagnostic network attempts/requests; zero ITAD/pricing API calls; zero new histories.** External research was confined to official ITAD documentation; web-tool underlying HTTP totals are unavailable.
+- No persistent price inference, final target labels, modeling features or models. Release-hour precision for nekowater (2023), coverage sufficiency, conflict handling and later UNKNOWN methodology remain human-review questions.
+
+## Phase 5B.2 completed — source feasibility; pending review
+
+- Formalized the any-point discount event and distinct minimum evidence requirements for occurrence, full-sale absence, partial/missing/conflicting evidence and unknown eligibility. No final labeling policy selected or implemented.
+- Investigated **11 source candidates** across all five requested families, with primary URLs/access dates and explicit restrictions in `reports/sources/historical_price_source_inventory.json`.
+- Deterministic diagnostic subset: **18 pairs / 17 games**, **4 A / 3 B / 0 C / 11 D**, including all B cases, old/recent D, empty history, positive controls and conflict-bearing games. Original 100-game pilot and 300 pair categories remain unchanged.
+- Recorded **21 pair-source attempt rows**. Seven of 17 distinct public Steam news feeds accessible, covering eight pairs; no relevant historical price observations. Wayback CDX probe failed; external archive component stopped. SteamDB automation and authenticated publisher access were not attempted without permission/credentials. No access restrictions bypassed.
+- Independent outcomes verified: **0 positive / 0 full-sale absence / 0 partial-only pricing / 0 conflicting observations / 18 NOT_VERIFIABLE**. Inaccessibility or absent target evidence never became a negative outcome. Known ITAD conflicts and nekowater release-hour uncertainty remain unresolved.
+- Main report: `reports/autumn_sale_ground_truth_feasibility.md`; pilot/evidence CSVs under `data/intermediate/`; reviewed research ledger and pre-work manifest under `reports/sources/`; new offline script `src/06_verify_historical_ground_truth.py` and focused tests `tests/test_historical_ground_truth.py`.
+- **80 offline tests PASS**, including 18 new focused tests. Reproduction: `python3 -B src/06_verify_historical_ground_truth.py --verify`. Validation receipt records identical repeated outputs, **144 unchanged protected preceding files**, including all **107 frozen Phase 4 inputs**, and zero diagnostic network attempts.
+- No ITAD pricing/history requests, new histories, final labels, state persistence, features or models. Authorized external research was limited to source documentation and legitimate public verification; underlying web-tool HTTP totals unavailable. Only 2023–2025 outcomes considered.
+- Strategy A is currently the most defensible evidence-retention approach, with other pairs unresolved; no defensible binary dataset established. Permissioned complete logs/publisher schedules and limited archive evidence require further human review. **STOP before Phase 5B.3.**
