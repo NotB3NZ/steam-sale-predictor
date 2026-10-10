@@ -1,0 +1,243 @@
+{
+  "audit_only_columns": [
+    "audit_release_hour_uncertain"
+  ],
+  "baseline_feature_allowlist": [
+    "game_age_days",
+    "release_year",
+    "release_month",
+    "release_quarter",
+    "prior_price_record_count",
+    "prior_discount_count",
+    "prior_discount_rate",
+    "days_since_last_price_record",
+    "days_since_last_discount",
+    "max_prior_discount_pct",
+    "mean_prior_discount_pct",
+    "last_observed_price",
+    "last_observed_discount_pct",
+    "has_prior_price_history",
+    "has_prior_discount_observation"
+  ],
+  "feature_generation_version": "pre_sale_observations_v1",
+  "features": [
+    {
+      "baseline_allowlist": false,
+      "definition": "Stable Steam AppID; row linkage only.",
+      "feature_generation_version": "pre_sale_observations_v1",
+      "feature_name": "appid",
+      "historical_availability_justification": "Identity/calendar or date-level eligibility audit, excluded from predictors.",
+      "leakage_risk": "Excluded from baseline predictors.",
+      "missing_value_meaning": "Not permitted to be missing.",
+      "source": "authorized pair identity / verified event calendar",
+      "type": "integer"
+    },
+    {
+      "baseline_allowlist": false,
+      "definition": "Authorized Autumn Sale year; split/identity only.",
+      "feature_generation_version": "pre_sale_observations_v1",
+      "feature_name": "sale_year",
+      "historical_availability_justification": "Identity/calendar or date-level eligibility audit, excluded from predictors.",
+      "leakage_risk": "Excluded from baseline predictors.",
+      "missing_value_meaning": "Not permitted to be missing.",
+      "source": "authorized pair identity / verified event calendar",
+      "type": "integer"
+    },
+    {
+      "baseline_allowlist": false,
+      "definition": "Verified official sale start in UTC; all price inputs must precede it.",
+      "feature_generation_version": "pre_sale_observations_v1",
+      "feature_name": "prediction_cutoff_utc",
+      "historical_availability_justification": "Identity/calendar or date-level eligibility audit, excluded from predictors.",
+      "leakage_risk": "Excluded from baseline predictors.",
+      "missing_value_meaning": "Not permitted to be missing.",
+      "source": "authorized pair identity / verified event calendar",
+      "type": "UTC datetime string"
+    },
+    {
+      "baseline_allowlist": true,
+      "definition": "Sale-start Pacific calendar date minus source-reported release date; date-resolution days.",
+      "feature_generation_version": "pre_sale_observations_v1",
+      "feature_name": "game_age_days",
+      "historical_availability_justification": "Phase 2 classifies release date as historically derivable; assume the reported date accurately describes release. No release hour or retrospective metadata revisions established.",
+      "leakage_risk": "Conditional on source release-date accuracy/stability.",
+      "missing_value_meaning": "Not permitted to be missing.",
+      "source": "normalized pilot release_date (master cross-checked)",
+      "type": "integer"
+    },
+    {
+      "baseline_allowlist": true,
+      "definition": "Year of the normalized source-reported release date.",
+      "feature_generation_version": "pre_sale_observations_v1",
+      "feature_name": "release_year",
+      "historical_availability_justification": "Phase 2 classifies release date as historically derivable; assume the reported date accurately describes release. No release hour or retrospective metadata revisions established.",
+      "leakage_risk": "Conditional on source release-date accuracy/stability.",
+      "missing_value_meaning": "Not permitted to be missing.",
+      "source": "normalized pilot release_date (master cross-checked)",
+      "type": "integer"
+    },
+    {
+      "baseline_allowlist": true,
+      "definition": "Month (1\u201312) of the normalized source-reported release date.",
+      "feature_generation_version": "pre_sale_observations_v1",
+      "feature_name": "release_month",
+      "historical_availability_justification": "Phase 2 classifies release date as historically derivable; assume the reported date accurately describes release. No release hour or retrospective metadata revisions established.",
+      "leakage_risk": "Conditional on source release-date accuracy/stability.",
+      "missing_value_meaning": "Not permitted to be missing.",
+      "source": "normalized pilot release_date (master cross-checked)",
+      "type": "integer"
+    },
+    {
+      "baseline_allowlist": true,
+      "definition": "Quarter (1\u20134) of the normalized source-reported release date.",
+      "feature_generation_version": "pre_sale_observations_v1",
+      "feature_name": "release_quarter",
+      "historical_availability_justification": "Phase 2 classifies release date as historically derivable; assume the reported date accurately describes release. No release hour or retrospective metadata revisions established.",
+      "leakage_risk": "Conditional on source release-date accuracy/stability.",
+      "missing_value_meaning": "Not permitted to be missing.",
+      "source": "normalized pilot release_date (master cross-checked)",
+      "type": "integer"
+    },
+    {
+      "baseline_allowlist": true,
+      "definition": "Count of independently parser-valid pre-cutoff Steam price observations; duplicates retained.",
+      "feature_generation_version": "pre_sale_observations_v1",
+      "feature_name": "prior_price_record_count",
+      "historical_availability_justification": "Strict observation_timestamp < sale start; no state propagation. Retrospective provider backfill/initialization remains unverified.",
+      "leakage_risk": "Future timestamps excluded; historical provider availability not proven.",
+      "missing_value_meaning": "Never null; zero means no parser-valid pre-cutoff price observations.",
+      "source": "cached ITAD Steam shop 61 / US; shared Phase 5A.1 parser",
+      "type": "integer"
+    },
+    {
+      "baseline_allowlist": true,
+      "definition": "Count of qualifying discounted observations among prior_price_record_count; not campaigns.",
+      "feature_generation_version": "pre_sale_observations_v1",
+      "feature_name": "prior_discount_count",
+      "historical_availability_justification": "Strict observation_timestamp < sale start; no state propagation. Retrospective provider backfill/initialization remains unverified.",
+      "leakage_risk": "Future timestamps excluded; historical provider availability not proven.",
+      "missing_value_meaning": "Never null; zero means no qualifying pre-cutoff discount observations.",
+      "source": "cached ITAD Steam shop 61 / US; shared Phase 5A.1 parser",
+      "type": "integer"
+    },
+    {
+      "baseline_allowlist": true,
+      "definition": "prior_discount_count / prior_price_record_count; observation-level ratio, not discounted-day share.",
+      "feature_generation_version": "pre_sale_observations_v1",
+      "feature_name": "prior_discount_rate",
+      "historical_availability_justification": "Strict observation_timestamp < sale start; no state propagation. Retrospective provider backfill/initialization remains unverified.",
+      "leakage_risk": "Future timestamps excluded; historical provider availability not proven.",
+      "missing_value_meaning": "Null when no valid prior price observations; zero if prices exist but no discounts were observed.",
+      "source": "cached ITAD Steam shop 61 / US; shared Phase 5A.1 parser",
+      "type": "number"
+    },
+    {
+      "baseline_allowlist": true,
+      "definition": "Elapsed UTC days since latest valid pre-cutoff price observation.",
+      "feature_generation_version": "pre_sale_observations_v1",
+      "feature_name": "days_since_last_price_record",
+      "historical_availability_justification": "Strict observation_timestamp < sale start; no state propagation. Retrospective provider backfill/initialization remains unverified.",
+      "leakage_risk": "Future timestamps excluded; historical provider availability not proven.",
+      "missing_value_meaning": "Null when no valid prior price observation; never zero-filled.",
+      "source": "cached ITAD Steam shop 61 / US; shared Phase 5A.1 parser",
+      "type": "number"
+    },
+    {
+      "baseline_allowlist": true,
+      "definition": "Elapsed UTC days since latest qualifying pre-cutoff discount observation.",
+      "feature_generation_version": "pre_sale_observations_v1",
+      "feature_name": "days_since_last_discount",
+      "historical_availability_justification": "Strict observation_timestamp < sale start; no state propagation. Retrospective provider backfill/initialization remains unverified.",
+      "leakage_risk": "Future timestamps excluded; historical provider availability not proven.",
+      "missing_value_meaning": "Null when no qualifying prior discount observation; never zero-filled.",
+      "source": "cached ITAD Steam shop 61 / US; shared Phase 5A.1 parser",
+      "type": "number"
+    },
+    {
+      "baseline_allowlist": true,
+      "definition": "Maximum explicit cut percentage among qualifying pre-cutoff discounts.",
+      "feature_generation_version": "pre_sale_observations_v1",
+      "feature_name": "max_prior_discount_pct",
+      "historical_availability_justification": "Strict observation_timestamp < sale start; no state propagation. Retrospective provider backfill/initialization remains unverified.",
+      "leakage_risk": "Future timestamps excluded; historical provider availability not proven.",
+      "missing_value_meaning": "Null when no qualifying prior discount observation.",
+      "source": "cached ITAD Steam shop 61 / US; shared Phase 5A.1 parser",
+      "type": "number"
+    },
+    {
+      "baseline_allowlist": true,
+      "definition": "Arithmetic mean explicit cut percentage among qualifying pre-cutoff discounts.",
+      "feature_generation_version": "pre_sale_observations_v1",
+      "feature_name": "mean_prior_discount_pct",
+      "historical_availability_justification": "Strict observation_timestamp < sale start; no state propagation. Retrospective provider backfill/initialization remains unverified.",
+      "leakage_risk": "Future timestamps excluded; historical provider availability not proven.",
+      "missing_value_meaning": "Null when no qualifying prior discount observation.",
+      "source": "cached ITAD Steam shop 61 / US; shared Phase 5A.1 parser",
+      "type": "number"
+    },
+    {
+      "baseline_allowlist": true,
+      "definition": "Amount at latest valid pre-cutoff observation, only with exclusively USD prior valid prices and no latest-timestamp conflict.",
+      "feature_generation_version": "pre_sale_observations_v1",
+      "feature_name": "last_observed_price",
+      "historical_availability_justification": "Strict observation_timestamp < sale start; no state propagation. Retrospective provider backfill/initialization remains unverified.",
+      "leakage_risk": "Future timestamps excluded; historical provider availability not proven.",
+      "missing_value_meaning": "Null for no valid prior price, mixed/non-USD prior currencies, or conflicting latest timestamp.",
+      "source": "cached ITAD Steam shop 61 / US; shared Phase 5A.1 parser",
+      "type": "number"
+    },
+    {
+      "baseline_allowlist": true,
+      "definition": "Explicit cut at latest valid pre-cutoff observation; null for conflicting latest timestamp.",
+      "feature_generation_version": "pre_sale_observations_v1",
+      "feature_name": "last_observed_discount_pct",
+      "historical_availability_justification": "Strict observation_timestamp < sale start; no state propagation. Retrospective provider backfill/initialization remains unverified.",
+      "leakage_risk": "Future timestamps excluded; historical provider availability not proven.",
+      "missing_value_meaning": "Null for no valid prior price or conflicting latest timestamp.",
+      "source": "cached ITAD Steam shop 61 / US; shared Phase 5A.1 parser",
+      "type": "number"
+    },
+    {
+      "baseline_allowlist": true,
+      "definition": "1 if at least one valid pre-cutoff price observation exists, otherwise 0.",
+      "feature_generation_version": "pre_sale_observations_v1",
+      "feature_name": "has_prior_price_history",
+      "historical_availability_justification": "Strict observation_timestamp < sale start; no state propagation. Retrospective provider backfill/initialization remains unverified.",
+      "leakage_risk": "Future timestamps excluded; historical provider availability not proven.",
+      "missing_value_meaning": "Never null; zero denotes no valid pre-cutoff price observations, not full-history emptiness.",
+      "source": "cached ITAD Steam shop 61 / US; shared Phase 5A.1 parser",
+      "type": "integer"
+    },
+    {
+      "baseline_allowlist": true,
+      "definition": "1 if at least one qualifying pre-cutoff discount observation exists, otherwise 0.",
+      "feature_generation_version": "pre_sale_observations_v1",
+      "feature_name": "has_prior_discount_observation",
+      "historical_availability_justification": "Strict observation_timestamp < sale start; no state propagation. Retrospective provider backfill/initialization remains unverified.",
+      "leakage_risk": "Future timestamps excluded; historical provider availability not proven.",
+      "missing_value_meaning": "Never null; zero denotes no recorded qualifying pre-cutoff discount, not proof of no discount.",
+      "source": "cached ITAD Steam shop 61 / US; shared Phase 5A.1 parser",
+      "type": "integer"
+    },
+    {
+      "baseline_allowlist": false,
+      "definition": "1 if reported release date equals sale-start Pacific date; release hour unknown. Audit only.",
+      "feature_generation_version": "pre_sale_observations_v1",
+      "feature_name": "audit_release_hour_uncertain",
+      "historical_availability_justification": "Identity/calendar or date-level eligibility audit, excluded from predictors.",
+      "leakage_risk": "Excluded from baseline predictors.",
+      "missing_value_meaning": "Not permitted to be missing.",
+      "source": "normalized pilot release_date (master cross-checked)",
+      "type": "integer"
+    }
+  ],
+  "identifier_columns": [
+    "appid",
+    "sale_year",
+    "prediction_cutoff_utc"
+  ],
+  "missing_csv_representation": "blank cells; JSON null in validation",
+  "monetary_unit": "USD only; no conversion or mixed-currency monetary aggregation",
+  "target_column": "discount_observed",
+  "target_in_feature_only_csv": false
+}

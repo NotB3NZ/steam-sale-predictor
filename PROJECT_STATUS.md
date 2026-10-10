@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-Phase 5B.3 — Operational label construction completed; pending human review before Phase 6. Recorded-discount labels exist; true sale participation remains unverified. Phase 4 COMPLETE and frozen; no predictive features or models.
+Phase 6 — Leakage-safe feature engineering completed; pending human review before Phase 7. Feature-only and separate modeling tables exist. Recorded-discount targets remain unchanged; true participation is unverified. Phase 4 COMPLETE and frozen; no models or performance estimates.
 
 ## Completed
 
@@ -129,9 +129,9 @@ Execution: `python3 src/02_create_pilot.py`. No ITAD/Steam/external API calls, s
 
 ## Next Phase
 
-**Phase 6 — NOT STARTED. Leakage-safe feature engineering requires human review.**
+**Phase 7 — NOT STARTED. Baseline modeling requires human review of Phase 6.**
 
-STOP after Phase 5B.3. Operational labeling is complete; it does not verify actual sale participation.
+STOP after Phase 6. Feature engineering and operational labeling are complete; they do not verify actual sale participation or prove point-in-time provider availability.
 
 ## Phase 5B.1 completed — pending review
 
@@ -160,11 +160,25 @@ STOP after Phase 5B.3. Operational labeling is complete; it does not verify actu
 - No ITAD pricing/history requests, new histories, final labels, state persistence, features or models. Authorized external research was limited to source documentation and legitimate public verification; underlying web-tool HTTP totals unavailable. Only 2023–2025 outcomes considered.
 - At Phase 5B.2 completion, Strategy A was the most defensible evidence-retention approach; no binary dataset for verified participation was established. The subsequent human-authorized operational target is documented below; prior analytical artifacts remain frozen.
 
-## Phase 5B.3 completed — operational labels; pending review
+## Phase 5B.3 completed — operational labels; approved for Phase 6
 
 - Human-approved target: whether a qualifying Steam-store discount is **recorded** during the exact event, not actual/formal sale participation. Rule: `operational_observed_v1`; A → 1, B/D → 0, C → null with ambiguity/review flags. All limitation flags true.
 - **300 unique rows**, unchanged categories **175/3/0/122**. Operational labels **175 ones / 125 zeros / 0 nulls**. Yearly ones/zeros: **2023 55/45; 2024 60/40; 2025 60/40**. PU view: **175 positive / 125 unlabeled**.
 - **One eligibility-uncertain pair**: nekowater (2650840), 2023, retains zero and explicit review/release-hour flags. All rows retained. Three empty histories remain nine D operational zeros; no actual non-discounting inferred.
 - Created `src/06_build_operational_labels.py`, `tests/test_operational_labels.py`, two label CSVs, `reports/autumn_sale_operational_labeling.md` and `reports/autumn_sale_operational_label_validation.json`. Shared parser/calendar reused; actual in-sale records and raw indices reconciled to saved evidence.
 - **102 offline tests PASS**, including 22 new focused tests. Verification: `python3 -B src/06_build_operational_labels.py --verify`. Receipt records byte-identical repeated outputs and **153 unchanged protected preceding files**, including **107 frozen Phase 4 inputs**, with prior audits/investigations/verification receipts preserved.
-- No further source research, network/API calls, raw refreshes, new games/years, predictive features, PU algorithms, models or accuracy estimates. **STOP before Phase 6.** Future evaluation/probabilities must refer to recorded discounts; the operational label CSV is not a feature table.
+- Phase 5B.3 performed no further source research, network/API calls, raw refreshes, new games/years, predictive features, PU algorithms, models or accuracy estimates. It ended before the subsequently approved Phase 6. Future evaluation/probabilities must refer to recorded discounts; the operational label CSV is not a feature table.
+
+
+## Phase 6 completed — leakage-safe feature engineering; pending review
+
+- Created `src/07_build_autumn_features.py`, `tests/test_autumn_features.py`, `data/intermediate/autumn_sale_features.csv`, `data/intermediate/autumn_sale_modeling_table.csv`, `reports/autumn_sale_feature_availability.md`, `reports/autumn_sale_feature_manifest.json`, and `reports/autumn_sale_feature_validation.json`.
+- **300 unique pairs / 100 games**, **100 rows each for 2023/2024/2025**. Feature-only output excludes targets/categories/PU status; separate modeling output joins unchanged `discount_observed` (175 ones / 125 zeros) only after feature calculation.
+- Exact verified sale-start cutoffs; all price inputs strictly precede cutoff. **15 explicitly allowed predictors**: four release-date derivatives, nine pre-price observation summaries and two pre-history flags. Identifiers and same-day release-hour audit flag excluded from predictors.
+- Undated snapshot prices, discounts, reviews, ownership/player counts, mutable metadata and sampling diagnostics excluded. Release dates are used as reported historical facts under the existing source-accuracy assumption; game age has date resolution. nekowater 2023 remains flagged and retained.
+- **10 rows** lack valid prior price evidence; **46** lack prior discounts. Counts/flags are zero where appropriate; missing ratios, recencies and values remain blank. No constant predictor, negative age or impossible numeric value found. Extreme gaps/prices/cuts retained.
+- All observed currencies USD; **zero currency conflicts**. Mixed/non-USD money would be withheld; valid percentages are dimensionless. Twelve pairs contain older timestamp conflicts; zero latest-price conflict pairs. No interpolation, forward-filling, persistence or campaign inference.
+- Six games / 18 pairs have pre-release-date observations; 65 cached records / 64 games align with the requested-since boundary. These remain explicit timing/interpretation limitations, not corrected price histories or proof of historical availability.
+- **136 offline tests PASS**, including 34 focused/adversarial tests. Verify: `python3 -B src/07_build_autumn_features.py --verify`. Five output files byte-identical across repeated full executions. **159 protected preceding files unchanged**, including **107 frozen Phase 4 inputs**, labels, earlier investigations and receipts.
+- **Zero API/network requests; no new histories, games, 2026 outcomes, models, tuning, target-based feature selection or performance evaluation.**
+- **STOP before Phase 7.** Next planned work after human review: training-only preprocessing and an interpretable logistic-regression baseline for recorded-discount prediction, with the approved temporal split and coverage/eligibility limitations.

@@ -127,7 +127,7 @@ Artifacts: `data/intermediate/autumn_sale_verification_pilot.csv`, `data/interme
 
 Phase 5B.2 ended without labels, features or models. Its reports remain frozen; the subsequent human-authorized operational target changes the modeling outcome as documented below. Only 2023–2025 outcomes were investigated; 2026 remains reserved.
 
-## Phase 5B.3 — Operational label construction (completed; pending human review)
+## Phase 5B.3 — Operational label construction (completed; approved for Phase 6)
 
 Rule **operational_observed_v1** uses the unchanged exact calendar and observation/category parser: A → `discount_observed=1`; B/D → `0`; C → null with ambiguity/review flags. PU status is A → positive, B/C/D → unlabeled. All labels carry `label_limitation_flag=True`. A zero measures non-observation, not verified absence or formal Valve sale enrollment. No price persistence or coverage threshold is assumed.
 
@@ -139,4 +139,25 @@ Outputs: `data/intermediate/autumn_sale_operational_labels.csv`, `data/intermedi
 
 These are **target/provenance tables, not predictor tables**. In-sale observations can construct retrospective targets but cannot be predictors. In-window counts, supporting indices, categories, PU status, history-coverage flags and collection metadata must not become features. Any later model estimates recorded-discount probability under the source's observation conditions, not independently verified participation probability. Pilot sampling and recording coverage can bias evaluation; no PU algorithms or class priors are implemented.
 
-**STOP before Phase 6.** Feature engineering requires human review, a separate pre-sale-only feature table, historical validity checks and preservation of the 2023–2024 / 2025 temporal split. No predictive features, model training, tuning, accuracy calculations or 2026 outcomes were introduced.
+Phase 5B.3 was approved for Phase 6. That phase introduced no predictors or models; its label artifacts remain frozen.
+
+
+## Phase 6 — Leakage-safe feature engineering (completed; pending review)
+
+`src/07_build_autumn_features.py` generates **300 unique rows / 100 games**, **100 per year**, from the frozen pilot/master release dates and cached Steam history using the existing parser. Prediction cutoff is the exact verified sale start: **2023-11-21T18:00:00Z**, **2024-11-27T18:00:00Z**, **2025-09-29T17:00:00Z**. Price records must satisfy **timestamp < cutoff**; exact cutoff, current-sale, post-sale and future-year observations cannot enter predictors. Prior-year sale observations may enter later-year predictors as past evidence.
+
+The explicit **15-feature allowlist** contains `game_age_days`, `release_year`, `release_month`, `release_quarter`, `prior_price_record_count`, `prior_discount_count`, `prior_discount_rate`, `days_since_last_price_record`, `days_since_last_discount`, `max_prior_discount_pct`, `mean_prior_discount_pct`, `last_observed_price`, `last_observed_discount_pct`, `has_prior_price_history`, and `has_prior_discount_observation`. No numeric auto-selection is permitted. AppID, year, cutoff and `audit_release_hour_uncertain` are linkage/audit fields, excluded from the allowlist. The audit flag is derived from the reported release date, not copied from target-derived review flags; nekowater 2023 remains uncertain and retained.
+
+Release dates follow Phase 2's historically derivable classification, conditional on reported date accuracy/stability. Age subtracts the Pacific sale-start date from the normalized release date, with no invented release hour. Other metadata snapshots, including current prices/discounts, reviews/scores, player counts/CCU, ownership, languages, platforms, genres/tags and publisher/developer fields, are excluded without timestamped historical snapshots. Sampling diagnostics and target/evidence/PU/post-sale fields are prohibited predictors.
+
+A price-usable observation must be classified `discount` or `full_price` by the unchanged parser. Ambiguous/null temporal records do not enter price statistics. Counts retain independently valid duplicate/conflicting observations and do not represent campaigns or discounted duration. Latest valid price refers to a timestamped observation, never the inferred state at cutoff. Latest-timestamp conflicts make last price/cut missing. USD-only compatible prior prices are required for the monetary feature; mixed/non-USD monetary values are missing with an audit reason. Valid dimensionless cuts are comparable within each record's matching currency pair; no conversion or interpolation is applied. Actual data has zero currency conflicts and zero latest-valid timestamp conflict pairs; 12 pairs contain older timestamp conflicts.
+
+Missing pre-price history yields zero counts/flags and null rate, gaps and values. With valid prices but no observed prior discount, rate is zero and discount recency/max/mean remain null. **10 pairs** lack valid prior prices; **46** lack qualifying prior discounts. No missing gap is replaced with zero. All 15 baseline features vary; extreme gaps up to 1,732.71 days and observed 100% cuts are retained without target-based selection.
+
+Outputs: `data/intermediate/autumn_sale_features.csv` contains no target, category or PU status. `data/intermediate/autumn_sale_modeling_table.csv` adds only `discount_observed` after independent feature calculation. Definitions/availability: `reports/autumn_sale_feature_availability.md`; explicit allowlist and version **pre_sale_observations_v1**: `reports/autumn_sale_feature_manifest.json`; validation, missingness/distributions and strictly pre-cutoff raw-index provenance: `reports/autumn_sale_feature_validation.json`.
+
+Timestamp filtering establishes direct temporal separation, not proven point-in-time provider availability. Six games / 18 pairs have observations dated before the source-reported release date; earlier access/preorders, source errors or date interpretation remain hypotheses. Sixty-five cached records across 64 games occur exactly at the requested 2021-01-01 boundary, potentially reflecting initialization. They satisfy the existing parser and remain visible, without silent historical correction. Backfill and source release-date stability remain unresolved.
+
+Run `python3 -B src/07_build_autumn_features.py --verify`: **136 offline tests PASS**, including 34 new feature tests and adversarial future/target invariance tests. All five generated outputs are byte-identical across repeated executions; **159 protected preceding files** and **107 frozen Phase 4 inputs** retain their hashes. No previous evidence/labels/receipts are regenerated; zero network/API requests. No models, imputation, scaling, tuning, feature selection against targets or performance estimates.
+
+**STOP before Phase 7.** Human review precedes baseline modeling. Training-only preprocessing, repeated-game dependence, uncertain eligibility and recorded-discount probability interpretation require attention. Preserve 2023–2024 training / 2025 validation; 2026 outcomes remain excluded.

@@ -4,7 +4,7 @@ An ongoing data science project investigating whether historical game metadata a
 
 The intended primary model is **interpretable logistic regression**, with attention to historical validity, reproducible evidence and associations between game characteristics and recorded discounting behavior. The broader motivation is actual discount participation, but incomplete historical coverage requires an explicitly observation-based target.
 
-**Current milestone: Phase 5B.3 operational label construction completed, pending human review. Phase 6 has not started. Operational labels exist; no predictive features or trained models exist.**
+**Current milestone: Phase 6 leakage-safe feature engineering completed, pending human review before Phase 7. Operational labels and separate feature/modeling tables exist; no models have been trained.**
 
 ## Research Question
 
@@ -53,8 +53,8 @@ The evidence audit and label builder read local artifacts without additional pri
 | 5A.1 | Exact Sale Boundaries and 2025 Expansion | Complete; Need some more review on my end |
 | 5B.1 | Historical Price-State and Coverage Investigation | Complete; pending human review |
 | 5B.2 | Historical Ground-Truth Verification and Label Feasibility | Complete; pending human review |
-| 5B.3 | Operational Label Construction | Complete; pending human review |
-| 6 | Feature Engineering and Modeling Dataset | Not started |
+| 5B.3 | Operational Label Construction | Complete; approved |
+| 6 | Leakage-Safe Feature Engineering and Modeling Dataset | Complete; pending human review |
 | 7 | Logistic Regression Modeling and Evaluation | Not started |
 | 8 | Scaling and Final Validation | Not started |
 
@@ -217,6 +217,18 @@ The recorded validation includes **42 passing offline tests**, independent saved
 
 **Detailed report:** [Operational Labeling](reports/autumn_sale_operational_labeling.md), [validation receipt](reports/autumn_sale_operational_label_validation.json), [operational labels](data/intermediate/autumn_sale_operational_labels.csv) and [PU view](data/intermediate/autumn_sale_pu_labels.csv).
 
+### Phase 6 — Leakage-Safe Feature Engineering
+
+**Objective:** Create a compact predictor table for the 300 authorized game-year pairs, independently of the operational target.
+
+**Methodology:** Reuse the verified calendar and price parser; require every price observation to precede its sale-start UTC cutoff. Admit date-derived metadata under the existing release-date accuracy assumption; exclude mutable undated snapshots. Keep an explicit 15-feature allowlist and separate the target join from feature calculation.
+
+**Results:** **300 unique rows / 100 games**, with **100 rows per year**. Features comprise age and release year/month/quarter; prior price/discount observation counts and ratio; price/discount recency; max/mean prior discount; latest observed price/cut; and two pre-history flags. Ten rows lack valid prior price evidence; 46 lack prior discount evidence. Missing values remain blank, counts/flags remain explicit, and one same-day release-hour audit flag is preserved outside the predictor allowlist. All observed currencies are USD; mixed/non-USD monetary values or conflicting latest prices would be withheld.
+
+**Key takeaway:** Direct future and target leakage is tested: injecting cutoff/current-sale/future observations or changing targets leaves predictors unchanged. Retrospective provider availability, initialized timestamps and release-date interpretation remain limitations. Counts are observations, not campaigns or durations; latest prices are observations, not carried-forward sale-start states. **136 offline tests pass**, five outputs are byte-identical across repeated executions, and **159 protected prior files**, including **107 frozen Phase 4 inputs**, remain unchanged. No model, imputation, feature selection against targets or performance estimate was created.
+
+**Detailed report:** [Feature availability and definitions](reports/autumn_sale_feature_availability.md), [machine-readable allowlist](reports/autumn_sale_feature_manifest.json), [validation receipt](reports/autumn_sale_feature_validation.json), [features](data/intermediate/autumn_sale_features.csv) and [modeling table](data/intermediate/autumn_sale_modeling_table.csv).
+
 ## Key Findings So Far
 
 - **The history endpoint is change-oriented, but completeness and persistence remain unestablished.** Official ITAD documentation describes price changes; empirical repeats and six conflicting timestamp groups prevent treating records as a strict, complete change log. See the [coverage investigation](reports/autumn_sale_coverage_investigation.md#i-itad-history-semantics-assessment).
@@ -268,8 +280,10 @@ Important existing files and directories:
 │   │   ├── autumn_sale_verification_pilot.csv
 │   │   ├── autumn_sale_verification_evidence.csv
 │   │   ├── autumn_sale_operational_labels.csv
-│   │   └── autumn_sale_pu_labels.csv
-│   └── processed/                    # Currently empty; no model-ready data
+│   │   ├── autumn_sale_pu_labels.csv
+│   │   ├── autumn_sale_features.csv
+│   │   └── autumn_sale_modeling_table.csv
+│   └── processed/                    # Currently empty; no fitted-model outputs
 ├── src/
 │   ├── source_schema.py
 │   ├── 00_inspect_source.py
@@ -280,13 +294,15 @@ Important existing files and directories:
 │   ├── 05_investigate_sale_coverage.py
 │   ├── 06_verify_historical_ground_truth.py
 │   ├── 06_build_operational_labels.py
+│   ├── 07_build_autumn_features.py
 │   └── autumn_sale_calendar.json
 ├── tests/
 │   ├── test_itad_collection.py
 │   ├── test_autumn_evidence_audit.py
 │   ├── test_autumn_sale_coverage.py
 │   ├── test_historical_ground_truth.py
-│   └── test_operational_labels.py
+│   ├── test_operational_labels.py
+│   └── test_autumn_features.py
 ├── reports/                          # Phase reports and validation receipts
 │   ├── baselines/phase_5a_calendar_window/
 │   │                                 # Original CSVs/report/receipt/code/context + manifest
@@ -366,13 +382,23 @@ python3 -B src/06_build_operational_labels.py --verify
 
 The builder validates local schemas, exact UTC windows, categories, raw-record provenance and counts; produces the operational/PU CSVs and report/receipt; runs the complete offline suite; and checks repeated byte-identical outputs. It verifies **153 protected prior files**, including all frozen Phase 4 inputs, without regenerating prior analytical artifacts. It makes no API calls and performs no source research.
 
+### Offline Feature Engineering
+
+```bash
+python3 -B src/07_build_autumn_features.py --verify
+```
+
+Uses only local pilot/master metadata, cached Steam histories, authorized pair identities and the verified calendar. No API credential or new dependency is needed. This command generates only Phase 6 artifacts and preserves previous phase outputs. The full offline suite and repeated executions verify cutoff/target invariance, deterministic bytes and protected input hashes.
+
+Pricing cutoffs are **2023-11-21T18:00:00Z**, **2024-11-27T18:00:00Z**, and **2025-09-29T17:00:00Z**; an observation exactly at a cutoff is excluded. The feature-only CSV contains no target. The modeling CSV adds only `discount_observed`. Future modeling must use `baseline_feature_allowlist` from the manifest rather than selecting all numeric columns: identifiers, cutoff and `audit_release_hour_uncertain` are audit/linkage fields.
+
 ## Current Status and Next Steps
 
-**Phase 5B.3 is complete and awaits human review. Phase 6 has not started.**
+**Phase 6 is complete and awaits human review. Phase 7 has not started.**
 
-Next, review the operational target and flagged eligibility before creating a separate leakage-safe pre-sale feature table. In-sale observations legitimately construct historical targets but would leak those targets if used as predictors. Current metadata snapshots are not automatically valid for historical prediction. No further ground-truth investigation is required to reproduce these operational labels.
+Next, build a logistic-regression baseline with training-only missing-value handling, scaling and encoding after approval. Use 2023–2024 for training and reserve 2025 for temporal validation; exclude 2026 outcomes from development. Do not interpret operational zeros as verified non-discounts or eventual model probabilities as verified participation probabilities.
 
-Feature engineering and logistic regression require subsequent approval and historical predictor-timing checks. The planned temporal split remains 2023–2024 training, 2025 validation and 2026 retrospective prediction/manual verification, with 2026 outcomes excluded from model development. Model probabilities and evaluation will concern recorded discounts under incomplete observation coverage. The project stops before Phase 6.
+The release-date assumption, same-day eligibility, provider backfill/initialization and incomplete histories remain limitations. Six games have pre-cutoff observations preceding their reported release date; early access/preorders and source interpretation are possible explanations, not verified conclusions. Pre-cutoff evidence availability is necessary but does not establish what ITAD knew at that instant. No price interpolation or persistence is assumed, and undated snapshot prices, discounts, reviews, ownership, activity and mutable metadata are excluded. The project stops before Phase 7.
 
 ## Technologies
 
