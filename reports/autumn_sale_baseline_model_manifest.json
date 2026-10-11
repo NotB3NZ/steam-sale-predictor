@@ -1,0 +1,256 @@
+{
+  "artifact_format": "joblib pickle; trusted local artifacts only",
+  "artifacts": {
+    "bernoulli_baseline": {
+      "path": "models/bernoulli_baseline.joblib",
+      "sha256": "bf84ee7fad528862018a58901a441996bbb580f63267ac44bdf4ac1fcce1c247"
+    },
+    "logistic_regression": {
+      "path": "models/logistic_regression.joblib",
+      "sha256": "ebcdca6f913a7f5abb311b80c47b86782bde0bde28dd56426975610d91aa9973"
+    }
+  },
+  "decision_score_convention": "Bernoulli: blank CSV / not applicable; logistic: decision_function log-odds.",
+  "estimator_parameters": {
+    "bernoulli_baseline": {
+      "constant": null,
+      "random_state": 42,
+      "strategy": "prior"
+    },
+    "logistic_regression": {
+      "C": 1.0,
+      "class_weight": null,
+      "dual": false,
+      "fit_intercept": true,
+      "intercept_scaling": 1,
+      "l1_ratio": null,
+      "max_iter": 2000,
+      "multi_class": "deprecated",
+      "n_jobs": null,
+      "penalty": "l2",
+      "random_state": 42,
+      "solver": "lbfgs",
+      "tol": 0.0001,
+      "verbose": 0,
+      "warm_start": false
+    }
+  },
+  "feature_allowlist": [
+    "game_age_days",
+    "release_year",
+    "release_month",
+    "release_quarter",
+    "prior_price_record_count",
+    "prior_discount_count",
+    "prior_discount_rate",
+    "days_since_last_price_record",
+    "days_since_last_discount",
+    "max_prior_discount_pct",
+    "mean_prior_discount_pct",
+    "last_observed_price",
+    "last_observed_discount_pct",
+    "has_prior_price_history",
+    "has_prior_discount_observation"
+  ],
+  "fitted_parameters": {
+    "bernoulli_class_prior": [
+      0.425,
+      0.575
+    ],
+    "imputation_statistics": [
+      1693.5,
+      2019.5,
+      6.5,
+      2.5,
+      24.0,
+      12.0,
+      0.5,
+      72.73741898148148,
+      52.02866898148148,
+      72.0,
+      53.1875,
+      9.99,
+      0.0,
+      1.0,
+      1.0
+    ],
+    "logistic_coefficients": [
+      [
+        0.025723426079999882,
+        0.03366265001334076,
+        -0.47476665000415685,
+        0.4901782986856106,
+        0.41530968017934705,
+        0.43935425005488193,
+        -0.16984885664990174,
+        -1.065808133244036,
+        -1.205992925480808,
+        -0.20918720230737514,
+        0.11893413059006071,
+        0.05524289253415298,
+        -1.0699558771560085,
+        0.31457502743771437,
+        1.4050430171486794
+      ]
+    ],
+    "logistic_intercept": [
+      -0.17569137305653343
+    ],
+    "logistic_iterations": [
+      18
+    ],
+    "scaler_mean": [
+      2093.64,
+      2018.17,
+      6.43,
+      2.44,
+      28.125,
+      13.845,
+      0.42533442872551397,
+      295.9075644097222,
+      181.53025167824075,
+      66.37,
+      54.03258920601657,
+      13.283600000000002,
+      4.57,
+      0.965,
+      0.835
+    ],
+    "scaler_variance": [
+      2820833.7504000003,
+      21.021099999999997,
+      11.2251,
+      1.3263999999999998,
+      625.399375,
+      158.130975,
+      0.02994817192552344,
+      204586.96969257735,
+      108360.87598036218,
+      388.4731,
+      318.1442764425849,
+      227.57270603999999,
+      265.3151,
+      0.033775000000000006,
+      0.13777500000000004
+    ]
+  },
+  "phase": "7A",
+  "preprocessing": {
+    "additional_missingness_indicators": [],
+    "all_missing_rule": "Exclude entirely missing training features using training predictors only; never use validation values.",
+    "excluded_all_missing_training_features": [],
+    "imputation_statistics": [
+      1693.5,
+      2019.5,
+      6.5,
+      2.5,
+      24.0,
+      12.0,
+      0.5,
+      72.73741898148148,
+      52.02866898148148,
+      72.0,
+      53.1875,
+      9.99,
+      0.0,
+      1.0,
+      1.0
+    ],
+    "retained_constant_training_features": [],
+    "scaler_mean": [
+      2093.64,
+      2018.17,
+      6.43,
+      2.44,
+      28.125,
+      13.845,
+      0.42533442872551397,
+      295.9075644097222,
+      181.53025167824075,
+      66.37,
+      54.03258920601657,
+      13.283600000000002,
+      4.57,
+      0.965,
+      0.835
+    ],
+    "scaler_samples": 200,
+    "scaler_scale": [
+      1679.5337895975777,
+      4.584877315697771,
+      3.3503880372279267,
+      1.1516944039110375,
+      25.007986224404394,
+      12.575013916493294,
+      0.17305540131854724,
+      452.3129112600892,
+      329.1821319275428,
+      19.709720951855203,
+      17.836599351966868,
+      15.085513118220407,
+      16.288495940386884,
+      0.1837797594948911,
+      0.37118054905934933
+    ],
+    "scaler_variance": [
+      2820833.7504000003,
+      21.021099999999997,
+      11.2251,
+      1.3263999999999998,
+      625.399375,
+      158.130975,
+      0.02994817192552344,
+      204586.96969257735,
+      108360.87598036218,
+      388.4731,
+      318.1442764425849,
+      227.57270603999999,
+      265.3151,
+      0.033775000000000006,
+      0.13777500000000004
+    ],
+    "strategy": "training-only median imputation, then StandardScaler; existing coverage flags retained",
+    "transformed_feature_names": [
+      "game_age_days",
+      "release_year",
+      "release_month",
+      "release_quarter",
+      "prior_price_record_count",
+      "prior_discount_count",
+      "prior_discount_rate",
+      "days_since_last_price_record",
+      "days_since_last_discount",
+      "max_prior_discount_pct",
+      "mean_prior_discount_pct",
+      "last_observed_price",
+      "last_observed_discount_pct",
+      "has_prior_price_history",
+      "has_prior_discount_observation"
+    ]
+  },
+  "protocol": "Chronological temporal holdout for previously represented games; no tuning.",
+  "random_seed": 42,
+  "source_sha256": {
+    "requirements-baseline.txt": "ea23506c0bff0326c2f4a2f17fddca5fe256e88eeb3ebcf656fe5ced9b28f16d",
+    "src/08_train_baseline_models.py": "e0040cdb7841dad842f86311bbc78bf5c2bf2e02e464abe9e51bd37d9faa1b9b",
+    "src/plotting_style.py": "aa41b88c389dc85f3f3ab02c1f404764637a97ed6a29841cd3b4ea7f5006a18d",
+    "tests/test_baseline_models.py": "fd3eefdf670a2d1dd551fb9c59d5f78172a74087741e23340da7a9d299812c3b"
+  },
+  "target_column": "discount_observed",
+  "target_definition": "1: a qualifying Steam-store discount was recorded during the official Autumn Sale window; 0: no qualifying discount was recorded. Zero does not establish absence of an actual discount. Probabilities concern recorded occurrence, not verified participation.",
+  "threshold": 0.5,
+  "training_years": [
+    2023,
+    2024
+  ],
+  "validation_year": 2025,
+  "versions": {
+    "joblib": "1.5.3",
+    "matplotlib": "3.9.4",
+    "numpy": "2.0.2",
+    "pandas": "2.3.3",
+    "python": "3.9.6",
+    "scipy": "1.13.1",
+    "sklearn": "1.6.1"
+  }
+}

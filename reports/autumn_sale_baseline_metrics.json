@@ -1,0 +1,55 @@
+{
+  "models": {
+    "bernoulli_baseline": {
+      "accuracy": 0.6,
+      "average_precision": 0.6,
+      "brier_score": 0.240625,
+      "confusion_matrix": [
+        [
+          0,
+          40
+        ],
+        [
+          0,
+          60
+        ]
+      ],
+      "confusion_matrix_orientation": "rows actual [0,1]; columns predicted [0,1]",
+      "f1": 0.75,
+      "log_loss": 0.6742975869339602,
+      "observations": 100,
+      "precision": 0.6,
+      "recall": 1.0,
+      "roc_auc": 0.5,
+      "threshold": 0.5,
+      "undefined_metrics": {}
+    },
+    "logistic_regression": {
+      "accuracy": 0.91,
+      "average_precision": 0.9376595618842051,
+      "brier_score": 0.07538892614130745,
+      "confusion_matrix": [
+        [
+          32,
+          8
+        ],
+        [
+          1,
+          59
+        ]
+      ],
+      "confusion_matrix_orientation": "rows actual [0,1]; columns predicted [0,1]",
+      "f1": 0.9291338582677166,
+      "log_loss": 0.2685934568650077,
+      "observations": 100,
+      "precision": 0.8805970149253731,
+      "recall": 0.9833333333333333,
+      "roc_auc": 0.93375,
+      "threshold": 0.5,
+      "undefined_metrics": {}
+    }
+  },
+  "target_definition": "1: a qualifying Steam-store discount was recorded during the official Autumn Sale window; 0: no qualifying discount was recorded. Zero does not establish absence of an actual discount. Probabilities concern recorded occurrence, not verified participation.",
+  "training_positive_prevalence": 0.575,
+  "validation_positive_prevalence": 0.6
+}

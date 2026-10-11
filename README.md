@@ -4,7 +4,7 @@ An ongoing data science project investigating whether historical game metadata a
 
 The intended primary model is **interpretable logistic regression**, with attention to historical validity, reproducible evidence and associations between game characteristics and recorded discounting behavior. The broader motivation is actual discount participation, but incomplete historical coverage requires an explicitly observation-based target.
 
-**Current milestone: Phase 6 leakage-safe feature engineering completed, pending human review before Phase 7. Operational labels and separate feature/modeling tables exist; no models have been trained.**
+**Current milestone: Phase 7A baseline modeling completed and verified. Bernoulli and logistic regression artifacts, 2025 temporal validation metrics and eight light-mode figures are available. Stop before Phase 7B pending explicit human approval.**
 
 ## Research Question
 
@@ -392,19 +392,44 @@ Uses only local pilot/master metadata, cached Steam histories, authorized pair i
 
 Pricing cutoffs are **2023-11-21T18:00:00Z**, **2024-11-27T18:00:00Z**, and **2025-09-29T17:00:00Z**; an observation exactly at a cutoff is excluded. The feature-only CSV contains no target. The modeling CSV adds only `discount_observed`. Future modeling must use `baseline_feature_allowlist` from the manifest rather than selecting all numeric columns: identifiers, cutoff and `audit_release_hour_uncertain` are audit/linkage fields.
 
-## Current Status and Next Steps
+## Phase 7A completed — baseline modeling, evaluation and visualization
 
-**Phase 6 is complete and awaits human review. Phase 7 has not started.**
+Phase 6 was approved. Phase 7A is implemented and verified; **Phase 7B is not started and requires explicit human approval**. The research target is recorded Steam-store discount occurrence. Operational zero means no qualifying discount was recorded, not verified absence of a discount.
 
-Next, build a logistic-regression baseline with training-only missing-value handling, scaling and encoding after approval. Use 2023–2024 for training and reserve 2025 for temporal validation; exclude 2026 outcomes from development. Do not interpret operational zeros as verified non-discounts or eventual model probabilities as verified participation probabilities.
+- Chronological training: 2023–2024, **200 rows (115 positive / 85 negative)**. Validation: 2025, **100 rows (60 positive / 40 negative)**, the same 100 games represented previously. This evaluates later-sale temporal generalization, not unseen-game or catalog generalization.
+- Bernoulli: deterministic `DummyClassifier(strategy="prior")`, **P(recorded discount)=0.575** from training labels only. Logistic regression: explicit allowlist selection → training-only median imputation → StandardScaler → `LogisticRegression(penalty="l2", C=1.0, solver="lbfgs", max_iter=2000, random_state=42)`. Existing historical coverage flags retained; no added indicators or feature exclusions. Exactly the 15 approved Phase 6 predictors; identifiers/target/audit fields excluded. No tuning; threshold fixed at 0.50.
+- Validation: Bernoulli ROC-AUC **0.50000**, AP **0.60000**, Brier **0.240625**, accuracy **0.60**. Logistic ROC-AUC **0.93375**, AP **0.93766**, Brier **0.075389**, accuracy **0.91**. Full metrics, confusion matrices and methodological limitations: [baseline evaluation](reports/autumn_sale_baseline_evaluation.md).
+- Artifacts: `models/bernoulli_baseline.joblib`, `models/logistic_regression.joblib` (complete fitted pipeline); `data/processed/autumn_sale_2025_baseline_predictions.csv` (200 long-format rows); `reports/autumn_sale_baseline_metrics.json`; `reports/autumn_sale_baseline_model_manifest.json`; `reports/autumn_sale_baseline_validation.json`; `reports/autumn_sale_baseline_plot_data.json`. Load only trusted local joblib artifacts.
+- **171 offline tests pass**, including **35 new baseline tests** and adversarial validation-label/feature changes, prohibited columns, row ordering, preprocessing isolation, threshold boundaries, metrics, sigmoid, serialization and plotting provenance. Two complete reruns have identical structured results, predictions, metrics, model parameters, plotted data, PNG bytes and joblib bytes in this environment. All **166 protected earlier files**, including Phase 6 and **107 frozen Phase 4 inputs**, remain unchanged. Zero network/API requests; earlier artifacts are never regenerated.
+- Eight minimalist light-mode PNGs at 300 DPI use `src/plotting_style.py`; the sigmoid overlays actual 100 validation scores/probabilities (maximum sigmoid error **0.0**):
 
-The release-date assumption, same-day eligibility, provider backfill/initialization and incomplete histories remain limitations. Six games have pre-cutoff observations preceding their reported release date; early access/preorders and source interpretation are possible explanations, not verified conclusions. Pre-cutoff evidence availability is necessary but does not establish what ITAD knew at that instant. No price interpolation or persistence is assumed, and undated snapshot prices, discounts, reviews, ownership, activity and mutable metadata are excluded. The project stops before Phase 7.
+- `reports/figures/baseline_pr_curves.png`
+- `reports/figures/baseline_roc_curves.png`
+- `reports/figures/bernoulli_distribution.png`
+- `reports/figures/logistic_coefficients.png`
+- `reports/figures/logistic_confusion_matrix.png`
+- `reports/figures/logistic_probability_distribution.png`
+- `reports/figures/logistic_reliability.png`
+- `reports/figures/logistic_sigmoid.png`
+
+Reproduce using Python 3.9.6 and the recorded dependency versions, already available in the execution environment (`requirements-baseline.txt` preserves the original protected `requirements.txt`):
+
+```bash
+python3 -B src/08_train_baseline_models.py --verify
+python3 -B -m unittest discover -s tests -p 'test_baseline_models.py'
+```
+
+A normal run without `--verify` generates artifacts and explicitly records tests/determinism as not run. Verification blocks network access, runs the full offline suite, compares two complete isolated experiments and saves the verified artifacts. Cross-platform floating-point/font/PNG identity and cross-version joblib compatibility are not guaranteed.
+
+Limitations: only 100 validation rows from one later sale, repeated games, sparse recording coverage, retrospective provider availability/backfill, source release-date/eligibility ambiguity and pilot selection bias. Metrics and calibration concern recorded labels; coefficients are standardized associations, without causal interpretation. The sigmoid is explanatory, not accuracy evidence. Strong calibration claims and unseen-game/catalog extrapolation are unsupported.
+
+Phase 7B handoff: preserve this baseline and target semantics; use training-only temporal resampling for any future configuration selection, since 2025 has now been inspected. Consider an untouched holdout for confirmatory evaluation, review coverage and repeated-game dependence, and agree on Phase 7B scope before implementing it. **Stop here: no Phase 7B, Phase 8, Phase 9, PU learning, additional model families, rankings, dashboard, or 2026 predictions.**
 
 ## Technologies
 
 | Implementation state | Technologies |
 |---|---|
 | Used in completed phases | Python; pandas; NumPy; standard-library CSV/JSON, SHA-256 hashing, timezone handling, HTTP collection and `unittest`; Git; ITAD API with local caching |
-| Planned for modeling | Logistic regression; scikit-learn is not currently listed in requirements or used by the completed pipeline |
+| Phase 7A modeling and figures | scikit-learn logistic regression / constant-prior baseline; SciPy expit; matplotlib; joblib; training-only imputation/scaling; requirements-baseline.txt |
 
-No trained-model performance, coefficients or causal conclusions are available at this stage.
+Fitted-model performance and transformed-scale coefficients are available for recorded-discount labels; no causal conclusions or verified participation probabilities are claimed.

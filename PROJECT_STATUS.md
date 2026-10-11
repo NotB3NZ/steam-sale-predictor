@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-Phase 6 — Leakage-safe feature engineering completed; pending human review before Phase 7. Feature-only and separate modeling tables exist. Recorded-discount targets remain unchanged; true participation is unverified. Phase 4 COMPLETE and frozen; no models or performance estimates.
+Phase 7A — Baseline modeling, evaluation and visualization completed and verified. Bernoulli and logistic regression fitted; 2025 temporal holdout evaluated. Phase 6 and earlier artifacts remain frozen. Targets measure recorded discounts; true participation is unverified. Stop before Phase 7B pending explicit human approval.
 
 ## Completed
 
@@ -129,9 +129,9 @@ Execution: `python3 src/02_create_pilot.py`. No ITAD/Steam/external API calls, s
 
 ## Next Phase
 
-**Phase 7 — NOT STARTED. Baseline modeling requires human review of Phase 6.**
+**Phase 7B — NOT STARTED. Phase 7A is complete; explicit human approval is required for Phase 7B.**
 
-STOP after Phase 6. Feature engineering and operational labeling are complete; they do not verify actual sale participation or prove point-in-time provider availability.
+Stop after Phase 7A. Modeling and temporal validation concern recorded occurrence; they do not verify actual sale participation or prove point-in-time provider availability.
 
 ## Phase 5B.1 completed — pending review
 
@@ -170,7 +170,7 @@ STOP after Phase 6. Feature engineering and operational labeling are complete; t
 - Phase 5B.3 performed no further source research, network/API calls, raw refreshes, new games/years, predictive features, PU algorithms, models or accuracy estimates. It ended before the subsequently approved Phase 6. Future evaluation/probabilities must refer to recorded discounts; the operational label CSV is not a feature table.
 
 
-## Phase 6 completed — leakage-safe feature engineering; pending review
+## Phase 6 completed — leakage-safe feature engineering; approved for Phase 7A
 
 - Created `src/07_build_autumn_features.py`, `tests/test_autumn_features.py`, `data/intermediate/autumn_sale_features.csv`, `data/intermediate/autumn_sale_modeling_table.csv`, `reports/autumn_sale_feature_availability.md`, `reports/autumn_sale_feature_manifest.json`, and `reports/autumn_sale_feature_validation.json`.
 - **300 unique pairs / 100 games**, **100 rows each for 2023/2024/2025**. Feature-only output excludes targets/categories/PU status; separate modeling output joins unchanged `discount_observed` (175 ones / 125 zeros) only after feature calculation.
@@ -181,4 +181,37 @@ STOP after Phase 6. Feature engineering and operational labeling are complete; t
 - Six games / 18 pairs have pre-release-date observations; 65 cached records / 64 games align with the requested-since boundary. These remain explicit timing/interpretation limitations, not corrected price histories or proof of historical availability.
 - **136 offline tests PASS**, including 34 focused/adversarial tests. Verify: `python3 -B src/07_build_autumn_features.py --verify`. Five output files byte-identical across repeated full executions. **159 protected preceding files unchanged**, including **107 frozen Phase 4 inputs**, labels, earlier investigations and receipts.
 - **Zero API/network requests; no new histories, games, 2026 outcomes, models, tuning, target-based feature selection or performance evaluation.**
-- **STOP before Phase 7.** Next planned work after human review: training-only preprocessing and an interpretable logistic-regression baseline for recorded-discount prediction, with the approved temporal split and coverage/eligibility limitations.
+- Phase 6 was approved for Phase 7A; its inputs remain frozen. Phase 7A completion and the Phase 7B stop gate are recorded below.
+
+## Phase 7A completed — baseline modeling, evaluation and visualization
+
+Phase 6 was approved. Phase 7A is implemented and verified; **Phase 7B is not started and requires explicit human approval**. The research target is recorded Steam-store discount occurrence. Operational zero means no qualifying discount was recorded, not verified absence of a discount.
+
+- Chronological training: 2023–2024, **200 rows (115 positive / 85 negative)**. Validation: 2025, **100 rows (60 positive / 40 negative)**, the same 100 games represented previously. This evaluates later-sale temporal generalization, not unseen-game or catalog generalization.
+- Bernoulli: deterministic `DummyClassifier(strategy="prior")`, **P(recorded discount)=0.575** from training labels only. Logistic regression: explicit allowlist selection → training-only median imputation → StandardScaler → `LogisticRegression(penalty="l2", C=1.0, solver="lbfgs", max_iter=2000, random_state=42)`. Existing historical coverage flags retained; no added indicators or feature exclusions. Exactly the 15 approved Phase 6 predictors; identifiers/target/audit fields excluded. No tuning; threshold fixed at 0.50.
+- Validation: Bernoulli ROC-AUC **0.50000**, AP **0.60000**, Brier **0.240625**, accuracy **0.60**. Logistic ROC-AUC **0.93375**, AP **0.93766**, Brier **0.075389**, accuracy **0.91**. Full metrics, confusion matrices and methodological limitations: [baseline evaluation](reports/autumn_sale_baseline_evaluation.md).
+- Artifacts: `models/bernoulli_baseline.joblib`, `models/logistic_regression.joblib` (complete fitted pipeline); `data/processed/autumn_sale_2025_baseline_predictions.csv` (200 long-format rows); `reports/autumn_sale_baseline_metrics.json`; `reports/autumn_sale_baseline_model_manifest.json`; `reports/autumn_sale_baseline_validation.json`; `reports/autumn_sale_baseline_plot_data.json`. Load only trusted local joblib artifacts.
+- **171 offline tests pass**, including **35 new baseline tests** and adversarial validation-label/feature changes, prohibited columns, row ordering, preprocessing isolation, threshold boundaries, metrics, sigmoid, serialization and plotting provenance. Two complete reruns have identical structured results, predictions, metrics, model parameters, plotted data, PNG bytes and joblib bytes in this environment. All **166 protected earlier files**, including Phase 6 and **107 frozen Phase 4 inputs**, remain unchanged. Zero network/API requests; earlier artifacts are never regenerated.
+- Eight minimalist light-mode PNGs at 300 DPI use `src/plotting_style.py`; the sigmoid overlays actual 100 validation scores/probabilities (maximum sigmoid error **0.0**):
+
+- `reports/figures/baseline_pr_curves.png`
+- `reports/figures/baseline_roc_curves.png`
+- `reports/figures/bernoulli_distribution.png`
+- `reports/figures/logistic_coefficients.png`
+- `reports/figures/logistic_confusion_matrix.png`
+- `reports/figures/logistic_probability_distribution.png`
+- `reports/figures/logistic_reliability.png`
+- `reports/figures/logistic_sigmoid.png`
+
+Reproduce using Python 3.9.6 and the recorded dependency versions, already available in the execution environment (`requirements-baseline.txt` preserves the original protected `requirements.txt`):
+
+```bash
+python3 -B src/08_train_baseline_models.py --verify
+python3 -B -m unittest discover -s tests -p 'test_baseline_models.py'
+```
+
+A normal run without `--verify` generates artifacts and explicitly records tests/determinism as not run. Verification blocks network access, runs the full offline suite, compares two complete isolated experiments and saves the verified artifacts. Cross-platform floating-point/font/PNG identity and cross-version joblib compatibility are not guaranteed.
+
+Limitations: only 100 validation rows from one later sale, repeated games, sparse recording coverage, retrospective provider availability/backfill, source release-date/eligibility ambiguity and pilot selection bias. Metrics and calibration concern recorded labels; coefficients are standardized associations, without causal interpretation. The sigmoid is explanatory, not accuracy evidence. Strong calibration claims and unseen-game/catalog extrapolation are unsupported.
+
+Phase 7B handoff: preserve this baseline and target semantics; use training-only temporal resampling for any future configuration selection, since 2025 has now been inspected. Consider an untouched holdout for confirmatory evaluation, review coverage and repeated-game dependence, and agree on Phase 7B scope before implementing it. **Stop here: no Phase 7B, Phase 8, Phase 9, PU learning, additional model families, rankings, dashboard, or 2026 predictions.**

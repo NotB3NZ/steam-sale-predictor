@@ -1,0 +1,9 @@
+# Phase 7A reproducible dependency set; original requirements.txt stays protected.
+-r requirements.txt
+numpy==2.0.2
+pandas==2.3.3
+scikit-learn==1.6.1
+scipy==1.13.1
+matplotlib==3.9.4
+joblib==1.5.3
+threadpoolctl>=3.1
