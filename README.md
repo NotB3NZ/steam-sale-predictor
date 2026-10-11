@@ -51,10 +51,10 @@ The evidence audit and label builder read local artifacts without additional pri
 | 4 | Historical Price Collection | Complete |
 | 5A | Autumn Sale In-Window Evidence Audit | Complete; preserved baseline |
 | 5A.1 | Exact Sale Boundaries and 2025 Expansion | Complete; Need some more review on my end |
-| 5B.1 | Historical Price-State and Coverage Investigation | Complete; pending human review |
-| 5B.2 | Historical Ground-Truth Verification and Label Feasibility | Complete; pending human review |
+| 5B.1 | Historical Price-State and Coverage Investigation | Complete; Needs further review |
+| 5B.2 | Historical Ground-Truth Verification and Label Feasibility | Complete; Needs further review |
 | 5B.3 | Operational Label Construction | Complete; approved |
-| 6 | Leakage-Safe Feature Engineering and Modeling Dataset | Complete; pending human review |
+| 6 | Leakage-Safe Feature Engineering and Modeling Dataset | Complete; Need further review but payts |
 | 7 | Logistic Regression Modeling and Evaluation | Not started |
 | 8 | Scaling and Final Validation | Not started |
 
