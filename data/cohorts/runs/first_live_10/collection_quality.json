@@ -1,7 +1,7 @@
 {
   "already_cached_games": 0,
   "cohort_sha256": "67c69c5cba7f883e386691dafb37a0111e2408bd3e3e21c7c43f41e7d3da5fd4",
-  "collection_duration_seconds": 0.01071,
+  "collection_duration_seconds": 1.205847,
   "configuration": {
     "api_base": "https://api.isthereanydeal.com",
     "country": "US",
@@ -43,27 +43,27 @@
     }
   },
   "cumulative_requests": {
-    "failed_api_requests": 0,
+    "failed_api_requests": 10,
     "interrupted_or_unknown_attempts": 0,
     "successful_api_requests": 0,
-    "total_http_attempts": 0
+    "total_http_attempts": 10
   },
-  "estimated_requests_without_retries": 20,
+  "estimated_requests_without_retries": 14,
   "games_with_incomplete_historical_records": 10,
   "games_with_usable_historical_records": 0,
   "games_with_usable_model_labels": 0,
   "label_semantics": "Recorded discounts only; D retains the historical operational target but is excluded from expanded fitting. Steam participation remains unknown.",
   "maximum_cumulative_attempts": 30,
   "missing_or_uncertain_labels": 30,
-  "mode": "offline",
+  "mode": "live",
   "newly_retrieved_games": 0,
-  "planned_games": 10,
+  "planned_games": 7,
   "run_requests": {
-    "failed_api_requests": 0,
+    "failed_api_requests": 1,
     "interrupted_or_unknown_attempts": 0,
     "successful_api_requests": 0,
-    "total_http_attempts": 0
+    "total_http_attempts": 1
   },
-  "stopped": "",
+  "stopped": "Provider, credential-reflection, or schema safeguard stopped collection",
   "target_games": 10
 }

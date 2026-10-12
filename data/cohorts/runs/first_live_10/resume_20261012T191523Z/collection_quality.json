@@ -1,0 +1,75 @@
+{
+  "already_cached_games": 0,
+  "cohort_sha256": "67c69c5cba7f883e386691dafb37a0111e2408bd3e3e21c7c43f41e7d3da5fd4",
+  "collection_duration_seconds": 13.2574,
+  "configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "coverage_by_sale_year": {
+    "2023": {
+      "categories": {
+        "A": 3,
+        "D": 3,
+        "unknown": 4
+      },
+      "missing_or_uncertain_labels": 7,
+      "observed_discount_games": 3,
+      "release_ineligible_games": 0,
+      "target_games": 10,
+      "usable_model_labels": 3
+    },
+    "2024": {
+      "categories": {
+        "A": 3,
+        "D": 3,
+        "unknown": 4
+      },
+      "missing_or_uncertain_labels": 7,
+      "observed_discount_games": 3,
+      "release_ineligible_games": 0,
+      "target_games": 10,
+      "usable_model_labels": 3
+    },
+    "2025": {
+      "categories": {
+        "A": 3,
+        "D": 3,
+        "unknown": 4
+      },
+      "missing_or_uncertain_labels": 7,
+      "observed_discount_games": 3,
+      "release_ineligible_games": 0,
+      "target_games": 10,
+      "usable_model_labels": 3
+    }
+  },
+  "cumulative_requests": {
+    "failed_api_requests": 10,
+    "interrupted_or_unknown_attempts": 0,
+    "successful_api_requests": 12,
+    "total_http_attempts": 22
+  },
+  "estimated_requests_without_retries": 12,
+  "games_with_incomplete_historical_records": 4,
+  "games_with_usable_historical_records": 6,
+  "games_with_usable_model_labels": 4,
+  "label_semantics": "Recorded discounts only; D retains the historical operational target but is excluded from expanded fitting. Steam participation remains unknown.",
+  "maximum_cumulative_attempts": 30,
+  "missing_or_uncertain_labels": 21,
+  "mode": "live",
+  "newly_retrieved_games": 6,
+  "planned_games": 6,
+  "run_requests": {
+    "failed_api_requests": 0,
+    "interrupted_or_unknown_attempts": 0,
+    "successful_api_requests": 12,
+    "total_http_attempts": 12
+  },
+  "stopped": "",
+  "target_games": 10
+}

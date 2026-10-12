@@ -240,7 +240,11 @@ def run(cohort, cache_dir, output_dir, reuse_dirs=(ORIGINAL_CACHE,), live=False,
     after = before.copy()
     stopped = ''
     if live:
+        # Match the original collector: normalize before validating header content.
+        key = key.strip()
         require(bool(key), 'ITAD_API_KEY is required only for explicit live collection')
+        require(not any(c in key for c in '\r\n'),
+                'ITAD_API_KEY contains invalid header characters; zero API calls.')
         with cache_lock(cache_dir):
             journal = Journal(cache_dir, maximum)
             before = journal.counts()

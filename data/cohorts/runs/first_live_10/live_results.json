@@ -1,0 +1,112 @@
+{
+  "cohort_sha256": "67c69c5cba7f883e386691dafb37a0111e2408bd3e3e21c7c43f41e7d3da5fd4",
+  "collection_wall_span_seconds": 31.489,
+  "connection_failure_attempts": 9,
+  "coverage_by_sale_year": {
+    "2023": {
+      "categories": {
+        "unknown": 10
+      },
+      "missing_or_uncertain_labels": 10,
+      "observed_discount_games": 0,
+      "release_ineligible_games": 0,
+      "target_games": 10,
+      "usable_model_labels": 0
+    },
+    "2024": {
+      "categories": {
+        "unknown": 10
+      },
+      "missing_or_uncertain_labels": 10,
+      "observed_discount_games": 0,
+      "release_ineligible_games": 0,
+      "target_games": 10,
+      "usable_model_labels": 0
+    },
+    "2025": {
+      "categories": {
+        "unknown": 10
+      },
+      "missing_or_uncertain_labels": 10,
+      "observed_discount_games": 0,
+      "release_ineligible_games": 0,
+      "target_games": 10,
+      "usable_model_labels": 0
+    }
+  },
+  "downstream_processing_completed": true,
+  "failed_games": 4,
+  "failed_retrievals": [
+    {
+      "AppID": "1521870",
+      "history_status": "not_requested",
+      "lookup_status": "lookup_error",
+      "reason": "timeout_or_connection_failure"
+    },
+    {
+      "AppID": "747130",
+      "history_status": "not_requested",
+      "lookup_status": "lookup_error",
+      "reason": "timeout_or_connection_failure"
+    },
+    {
+      "AppID": "2494860",
+      "history_status": "not_requested",
+      "lookup_status": "lookup_error",
+      "reason": "timeout_or_connection_failure"
+    },
+    {
+      "AppID": "1110980",
+      "history_status": "not_requested",
+      "lookup_status": "lookup_error",
+      "reason": "HTTP_403"
+    }
+  ],
+  "failure_checkpoint_files": 4,
+  "games_with_unavailable_or_incomplete_histories": 10,
+  "http_status_counts": {
+    "403": 1,
+    "None": 9
+  },
+  "journal_preserved": true,
+  "maximum_cumulative_http_attempts": 30,
+  "models_trained": false,
+  "newly_cached_games": 0,
+  "not_attempted_appids": [
+    "779950",
+    "1777210",
+    "556770",
+    "1868280",
+    "410910",
+    "2358320"
+  ],
+  "not_attempted_games": 6,
+  "only_original_selected_appids_processed": true,
+  "original_appid_caches_verified": 100,
+  "parent_cohort_sha256": "1765eb1cffc66cf3ea48536da0daeae6b5e1a54c095d72d89d942d4fad59e9d9",
+  "protected_artifacts_verified": 219,
+  "protected_hash_mismatches": [],
+  "rate_limit_responses": 0,
+  "remaining_390_games_collected": 0,
+  "selected_appids": [
+    "1521870",
+    "747130",
+    "2494860",
+    "1110980",
+    "779950",
+    "1777210",
+    "556770",
+    "1868280",
+    "410910",
+    "2358320"
+  ],
+  "status": "STOPPED_HTTP_403",
+  "successful_history_retrievals": 0,
+  "successful_lookups": 0,
+  "target_games": 10,
+  "timing_definition": "Total elapsed wall time from verified prechecks through downstream processing, final verification and report assembly using epoch timestamps; includes interruption and resumption. Collection span is first reserved attempt through final collector report.",
+  "total_execution_seconds": 137.401,
+  "total_http_attempts": 10,
+  "unknown_labels": 30,
+  "usable_labels": 0
+}

@@ -1,0 +1,90 @@
+{
+  "additional_attempts_made": 12,
+  "diagnostic_counted": false,
+  "existing_checkpoints_preserved": true,
+  "games_with_complete_caches": 6,
+  "games_with_unresolved_failures": 4,
+  "journal_preserved": true,
+  "maximum_cumulative_http_attempts": 30,
+  "models_trained": false,
+  "original_protected_artifacts_verified": 219,
+  "outcomes": [
+    {
+      "AppID": "1521870",
+      "cache_status": "incomplete",
+      "history_status": "not_requested",
+      "lookup_status": "lookup_error",
+      "reason": "timeout_or_connection_failure"
+    },
+    {
+      "AppID": "747130",
+      "cache_status": "incomplete",
+      "history_status": "not_requested",
+      "lookup_status": "lookup_error",
+      "reason": "timeout_or_connection_failure"
+    },
+    {
+      "AppID": "2494860",
+      "cache_status": "incomplete",
+      "history_status": "not_requested",
+      "lookup_status": "lookup_error",
+      "reason": "timeout_or_connection_failure"
+    },
+    {
+      "AppID": "1110980",
+      "cache_status": "incomplete",
+      "history_status": "not_requested",
+      "lookup_status": "lookup_error",
+      "reason": "HTTP_403"
+    },
+    {
+      "AppID": "779950",
+      "cache_status": "valid",
+      "history_status": "history_received",
+      "lookup_status": "matched",
+      "reason": ""
+    },
+    {
+      "AppID": "1777210",
+      "cache_status": "valid",
+      "history_status": "history_received",
+      "lookup_status": "matched",
+      "reason": ""
+    },
+    {
+      "AppID": "556770",
+      "cache_status": "valid",
+      "history_status": "history_received",
+      "lookup_status": "matched",
+      "reason": ""
+    },
+    {
+      "AppID": "1868280",
+      "cache_status": "valid",
+      "history_status": "history_received",
+      "lookup_status": "matched",
+      "reason": ""
+    },
+    {
+      "AppID": "410910",
+      "cache_status": "valid",
+      "history_status": "history_received",
+      "lookup_status": "matched",
+      "reason": ""
+    },
+    {
+      "AppID": "2358320",
+      "cache_status": "valid",
+      "history_status": "history_received",
+      "lookup_status": "matched",
+      "reason": ""
+    }
+  ],
+  "sample_complete": false,
+  "stopped": "",
+  "successful_histories": 6,
+  "successful_history_http_responses": 6,
+  "successful_lookup_http_responses": 6,
+  "successful_lookups": 6,
+  "total_cumulative_http_attempts": 22
+}

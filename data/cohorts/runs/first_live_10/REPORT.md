@@ -1,83 +1,60 @@
-# First live 10-game test: prepared, blocked before HTTP
+# First live 10-game test results
 
-Live collection did not start: `ITAD_API_KEY` is absent/nonempty=false in the
-collector's process environment. Its value was never printed or read from a
-credential file. No HTTP requests were attempted. The remaining 390 new games
-were not collected.
+The bounded test stopped when the network-enabled lookup returned HTTP 403. The key was present in the collector environment and was never displayed. HTTP 403 establishes a forbidden response; the specific reason is not established.
 
-The deterministic 500-game cohort was frozen at
-`data/cohorts/cohort_500.csv`. Its membership, ordering and SHA-256 remain
-unchanged after deriving `data/cohorts/first_live_10.csv`. The test contains
-nonpilot sample ranks 1–10, in that order. Each is eligible for 2023–2025 with
-no sale-start release-hour uncertainty in the existing candidate frame.
-
-Selected AppIDs:
-`1521870, 747130, 2494860, 1110980, 779950, 1777210, 556770, 1868280, 410910, 2358320`.
+The first sandboxed execution recorded nine timeout/connection failures, affecting three games. It was interrupted to preserve the budget. The resumed network-enabled command reused the frozen subset, cache namespace and append-only journal and recorded one HTTP 403 for the fourth game. The provider safeguard then stopped collection. No further requests were made.
 
 | Measure | Result |
 |---|---:|
-| Selected new games | 10 |
-| Prior journal attempts | 0; no existing journal |
-| Authorized cumulative cap, including retries | 30 |
-| Estimated lookup + history requests without retries | 20 |
-| Total HTTP attempts | 0 |
-| Successful lookups / history retrievals | 0 / 0 |
-| Failed HTTP requests | 0 |
-| Games not attempted | 10 |
-| Newly cached games | 0 |
-| Unknown or insufficient game-year labels | 30 |
-| API errors / rate-limit responses | None; API not contacted |
-| Live collection duration | 0 seconds; not started |
-| Offline subset checks, dry run and processing | 0.400 seconds |
+| Selected games | 10 |
+| Cumulative HTTP attempts including retries | 10/30 |
+| Successful lookups | 0 |
+| Successful history retrievals | 0 |
+| Newly cached successful histories | 0 |
+| Saved failure checkpoint files | 4 |
+| Failed game retrievals | 4 |
+| Not attempted after safeguard stop | 6 |
+| Unavailable or incomplete histories | 10 |
+| Usable / unknown game-year labels | 0 / 30 |
+| Timeout/connection failure attempts | 9 |
+| HTTP 403 responses | 1 |
+| HTTP 429 / rate-limit responses | 0 |
+| Collection wall span including resumption | 31.489 seconds |
+| Total execution time | 137.401 seconds |
 
-Coverage is unobserved for all 10 games in each Autumn Sale year, 2023, 2024
-and 2025. These are 10 unknown labels per year, not negative observations.
-The downstream feature/evidence/label pipeline ran offline in
-`data/cohorts/runs/first_live_10/processing`. It trained no models. The
-common incremental cache namespace is `data/cohorts/itad/cache`; offline
-preparation created no caches or request journal there.
+Timing runs from verified prechecks through offline processing, final integrity verification and report assembly. It includes interruption and resumption. The collector JSON run duration describes only the last invocation; this consolidated report accounts for both invocations.
 
-The actual CLI accepts the 10-row cohort file and `--max-total-attempts 30`.
-Its journal reserves and persists every attempt before HTTP, enforces the
-cumulative cap before opening a request, and counts retries and interrupted
-attempts. No collector code change is required for this scope. Existing
-endpoint, shop 61, US, historical-start, pacing, retries and cooldown handling
-were inspected and retained.
+| Autumn Sale | Histories providing usable evidence | Usable labels | Unknown labels |
+|---|---:|---:|---:|
+| 2023 | 0/10 | 0 | 10 |
+| 2024 | 0/10 | 0 | 10 |
+| 2025 | 0/10 | 0 | 10 |
 
-Before and after preparation, all 219 protected research artifacts matched
-their prior SHA-256 hashes, including the original 100 AppID caches, datasets,
-four models, reports and scaling preparation. No source code or original
-research artifacts were modified in this task.
+Historical coverage is unobserved for all selected games in all three sale years. Unknown labels were retained and were not converted to negatives. No games were replaced.
 
-Parent cohort SHA-256:
-`1765eb1cffc66cf3ea48536da0daeae6b5e1a54c095d72d89d942d4fad59e9d9`.
+## Game outcomes
 
-Test cohort SHA-256:
-`67c69c5cba7f883e386691dafb37a0111e2408bd3e3e21c7c43f41e7d3da5fd4`.
+| AppID | Outcome |
+|---|---|
+| 1521870 | timeout_or_connection_failure |
+| 747130 | timeout_or_connection_failure |
+| 2494860 | timeout_or_connection_failure |
+| 1110980 | HTTP_403 |
+| 779950 | Not attempted after provider safeguard stop |
+| 1777210 | Not attempted after provider safeguard stop |
+| 556770 | Not attempted after provider safeguard stop |
+| 1868280 | Not attempted after provider safeguard stop |
+| 410910 | Not attempted after provider safeguard stop |
+| 2358320 | Not attempted after provider safeguard stop |
 
-To resume the already authorized bounded test, make `ITAD_API_KEY` available
-privately to the collector's process environment. Do not paste its value into
-chat. Reuse the frozen subset and retain the cumulative 30-attempt cap:
+## Processing and preservation
 
-```sh
-/usr/bin/python3 -B src/03_fetch_itad.py \
-  --cohort data/cohorts/first_live_10.csv \
-  --cache-dir data/cohorts/itad/cache \
-  --output-dir data/cohorts/runs/first_live_10 \
-  --max-total-attempts 30 --live
-```
+The existing offline feature entry point regenerated evidence, coverage, operational/PU labels, features, modeling tables, provenance and data-quality reports for only the frozen 10-game cohort. It produced 30 label rows and 30 feature rows. No model training was invoked.
 
-This command was not executed. The offline collection reports presently in
-that directory describe preparation; live execution will replace those two
-collection snapshots. `preparation_status.json` and this report preserve the
-preparation record. After actual collection, rerun the following offline stage
-and verify protected hashes before reporting live results:
+All 219 original protected artifacts match their prior SHA-256 hashes and sizes, including all 100 original AppID caches. Both frozen cohort hashes remain unchanged. Collector paths enforce read-only reuse of original caches and isolate writes under `data/cohorts`.
 
-```sh
-env -u ITAD_API_KEY /usr/bin/python3 -B src/07_build_autumn_features.py \
-  --cohort data/cohorts/first_live_10.csv \
-  --cache-dir data/cohorts/itad/cache \
-  --output-dir data/cohorts/runs/first_live_10/processing
-```
+Serial pacing, three-attempt endpoint limits, 30-second timeouts, retry backoff, durable cumulative reservations and provider cooldown safeguards were retained. No journal entries were deleted or reset.
 
-Stop after this test. Do not pass the full 500-game cohort to the live collector.
+Outputs: `collection_manifest.csv`, `collection_quality.json`, `live_prechecks.json`, `live_results.json`, and `processing/data_quality.json` with downstream CSVs and provenance. `preparation_status.json` preserves the earlier offline preparation record.
+
+**Stopped after this test. The remaining 390 games were not collected.**

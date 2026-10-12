@@ -93,6 +93,68 @@ class ScalableTests(unittest.TestCase):
         self.assertEqual(report['missing_or_uncertain_labels'], 3)
         self.assertFalse(self.cache.exists())
 
+    def test_valid_key_reaches_mocked_requests(self):
+        opener = FakeOpener()
+        report = inc.run(self.cohort, self.cache, self.output, reuse_dirs=[],
+                         live=True, key=KEY, opener=opener)
+        self.assertEqual(opener.calls, [inc.itad.LOOKUP, inc.itad.HISTORY])
+        self.assertEqual(report['cumulative_requests']['successful_api_requests'], 2)
+
+    def test_key_surrounding_whitespace_is_stripped_before_mocked_requests(self):
+        opener = FakeOpener()
+        report = inc.run(self.cohort, self.cache, self.output, reuse_dirs=[],
+                         live=True, key=' \t\r\n'+KEY+'\r\n\t ', opener=opener)
+        self.assertEqual(opener.calls, [inc.itad.LOOKUP, inc.itad.HISTORY])
+        self.assertEqual(report['newly_retrieved_games'], 1)
+        for path in self.directory.rglob('*'):
+            if path.is_file():
+                self.assertNotIn(KEY.encode(), path.read_bytes())
+
+    def assert_key_rejected_before_side_effects(self, key, message):
+        opener = FakeOpener()
+        with patch.object(inc, 'cache_lock') as lock, \
+             patch.object(inc, 'Journal') as journal, \
+             patch.object(inc, 'RecordingClient') as client:
+            with self.assertRaises(ValueError) as caught:
+                inc.run(self.cohort, self.cache, self.output, reuse_dirs=[],
+                        live=True, key=key, opener=opener)
+            self.assertEqual(str(caught.exception), message)
+            lock.assert_not_called()
+            journal.assert_not_called()
+            client.assert_not_called()
+        self.assertEqual(opener.calls, [])
+        self.assertFalse(self.cache.exists())
+        self.assertFalse(self.output.exists())
+
+    def test_empty_key_is_rejected(self):
+        self.assert_key_rejected_before_side_effects(
+            '', 'ITAD_API_KEY is required only for explicit live collection')
+
+    def test_whitespace_only_key_is_rejected(self):
+        self.assert_key_rejected_before_side_effects(
+            ' \t\r\n ', 'ITAD_API_KEY is required only for explicit live collection')
+
+    def test_embedded_newline_in_key_is_rejected(self):
+        self.assert_key_rejected_before_side_effects(
+            KEY+'\nembedded', 'ITAD_API_KEY contains invalid header characters; zero API calls.')
+
+    def test_embedded_carriage_return_in_key_is_rejected(self):
+        self.assert_key_rejected_before_side_effects(
+            KEY+'\rembedded', 'ITAD_API_KEY contains invalid header characters; zero API calls.')
+
+    def test_live_cli_normalizes_synthetic_environment_key(self):
+        opener = FakeOpener()
+        output = io.StringIO()
+        with patch.dict(inc.os.environ, {'ITAD_API_KEY': ' \t'+KEY+'\r\n'}), \
+             patch.object(inc.itad, 'build_opener', return_value=opener), \
+             patch('sys.stdout', output):
+            status = inc.cli(['--cohort', str(self.cohort), '--cache-dir', str(self.cache),
+                              '--output-dir', str(self.output), '--reuse-cache',
+                              str(self.directory/'unused'), '--live'])
+        self.assertEqual(status, 0)
+        self.assertEqual(opener.calls, [inc.itad.LOOKUP, inc.itad.HISTORY])
+        self.assertNotIn(KEY, output.getvalue())
+
     def test_incremental_collection_skips_valid_and_restart_makes_zero_requests(self):
         first = FakeOpener()
         report = self.collect(first)

@@ -1,0 +1,47 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-12T18:36:58.244959Z",
+    "history_status": "not_requested",
+    "lookup_status": "lookup_error",
+    "reason": "timeout_or_connection_failure"
+  },
+  "history_response": null,
+  "itad_game_id": null,
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-12T18:36:58.258602Z",
+        "http_status": null,
+        "reason": "timeout_or_connection_failure"
+      },
+      {
+        "at": "2026-10-12T18:37:00.269683Z",
+        "http_status": null,
+        "reason": "timeout_or_connection_failure"
+      },
+      {
+        "at": "2026-10-12T18:37:04.287979Z",
+        "http_status": null,
+        "reason": "timeout_or_connection_failure"
+      }
+    ],
+    "body": null,
+    "endpoint": "/games/lookup/v1",
+    "http_status": null,
+    "params": {
+      "appid": "1521870"
+    },
+    "received_at": "2026-10-12T18:37:04.287979Z",
+    "response_headers": {}
+  },
+  "lookup_response": null,
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 1521870
+}
