@@ -118,6 +118,20 @@ python3 -B src/10_audit_scaling_feasibility.py --verify
 
 The audit uses existing local files and dependencies, without API requests or model fitting. Its [validation receipt](reports/autumn_sale_scaling_validation.json) records 22 passing focused tests, two byte-identical audit runs and preservation of 214 earlier files. Four additional light-mode figures describe catalog releases, observed local evidence, planned sample composition and the sampling population. Collection feasibility remains conditional on quota, matching, response limits and historical provenance; bulk collection requires separate approval.
 
+### Bounded collection preparation
+
+The expansion collector is prepared for a separately approved **20-game trial**. No expansion histories have been retrieved. The trial preserves the first 20 new candidates in the approved ranking: one pre-2015 game, eight from 2015–2019, eight from 2020–2022 and three from 2023 before the sale. Missing histories or failed matches will not trigger replacement sampling or negative-label creation.
+
+Game-level memberships are frozen across all **61,559 eligible nonpilot games**: **49,247 development** and **12,312 sealed evaluation**. An independent SHA-256 priority assigns approximately 80/20 within each release stratum. The trial contains 16 development and four evaluation games; the original pilot remains separate. Held-out AppIDs are rejected from development inputs in every sale year.
+
+```bash
+python3 -B src/11_prepare_expansion_collection.py --verify
+```
+
+The default command is offline. All **36 focused tests pass**, using mocked HTTP responses and temporary encryption keys. Two isolated verified runs produce byte-identical preparation outputs and preserve all **225 protected earlier files**. The [preflight report](reports/expansion/autumn_sale_smoke_preflight.md) documents the exact cohort, API uncertainties, cache and failure accounting, and proposed future command. Its [approval manifest](reports/expansion/autumn_sale_smoke_approval_manifest.json) remains **PENDING**.
+
+Live mode requires explicit human approval bound to the manifest digest, a **60-attempt cumulative request budget**, and an external custodian's public certificate. Requests would be serial, spaced at least one second, with a 30-second timeout and at most three attempts per game/endpoint across restarts. Evaluation responses must be encrypted before storage. Separate private-key custody and a trusted collection operator are necessary; filesystem permissions and Python guards alone cannot guarantee blindness. Actual custody, current provider quota, matching and historical completeness remain unverified. No API credential is required for preparation, and no dependencies are installed by this workflow.
+
 ## Limitations
 
 Historical coverage is incomplete. An absent discount record cannot establish absence of a discount, and models may learn recording coverage as well as discount behavior. The history endpoint is change-oriented; complete capture and price persistence between records have not been established. Independent research did not establish verified full-sale negatives for the diagnostic verification sample.
@@ -242,13 +256,15 @@ The main modeling artifacts are:
 | Complete fitted Random Forest pipeline | `models/random_forest.joblib` |
 | Complete fitted XGBoost pipeline | `models/xgboost_model.joblib` |
 | Scaling candidates (planning only) | `data/intermediate/autumn_sale_scaling_candidates.csv` |
+| Frozen nonpilot evaluation membership | `data/intermediate/expansion/autumn_sale_evaluation_membership.csv` |
+| Pending 20-game collection cohort | `data/intermediate/expansion/autumn_sale_smoke_candidates.csv` |
 | Ensemble configuration and versions | `reports/autumn_sale_ensemble_model_manifest.json` |
 
 Operational labels and the separate positive/unlabeled view are target/provenance artifacts, not predictor tables. No PU-learning algorithm is implemented. [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md) records methodological decisions; [PROJECT_STATUS.md](PROJECT_STATUS.md) retains the implementation history.
 
 ## Planned work
 
-The four-model experiments and historical scaling feasibility audit are complete. Expanded historical collection, cohort-aware label/feature construction and broader validation remain planned work. Phase 8B, Phase 8C and Phase 9 have not started. Future evaluation should distinguish represented games from unseen games, seal game-level holdouts before collection and use training-only temporal resampling. The previously examined 2025 pilot cannot serve as a fresh confirmatory test. No future sale dates or predictions are assumed.
+The four-model experiments, historical scaling feasibility audit and bounded collection preparation are complete. The 20-game historical collection trial awaits explicit authorization and external key custody. Expanded collection, cohort-aware label/feature construction and broader validation remain planned work; Phase 8B.2, Phase 8C and Phase 9 have not started. Future evaluation should distinguish represented games from unseen games and use training-only temporal resampling. The previously examined 2025 pilot cannot serve as a fresh confirmatory test. No future sale dates or predictions are assumed.
 
 ## Sources and licensing
 

@@ -40,6 +40,7 @@ The raw `games.csv` header has a concatenated column `DiscountDLC count` that sh
 6. **Primary key:** Steam AppID is the identifier across all tables.
 7. **Dataset before modeling:** Complete the analytical dataset before fitting any model.
 8. **Pilot first:** Test the full pipeline on a small sample before scaling.
+9. **Expansion evaluation:** Frozen nonpilot held-out AppIDs are excluded from development in every year. Collection approval does not authorize outcome access, labeling or model fitting; evaluation evidence requires independent private-key custody.
 
 ## Target Sale Windows
 
@@ -240,3 +241,21 @@ python3 -B src/10_audit_scaling_feasibility.py --verify
 **22 focused offline tests pass**. Two complete isolated audit executions produce byte-identical candidate CSV, JSON/Markdown reports, plotted data and PNGs in this environment. All **214 completed source/data/report/model/dependency artifacts**, including raw source snapshots, all prior figures and Phase 7 outputs, retain their hashes. The three project documentation files are updated as authorized. The audit does not execute earlier model-fitting test suites; prior verified results remain hash-protected. Zero network/API requests, zero new histories and zero model fits.
 
 Recommended next step, requiring separate approval: a cohort-aware collection implementation and bounded release-stratified smoke/coverage trial with account quota and response-limit confirmation. Assess matching/nonresponse, response sizes and historical timing provenance before approving bulk collection. Phase 8B, Phase 8C and Phase 9 remain unstarted.
+
+## Bounded expansion collection and sealed evaluation design
+
+Phase 8B.1 prepares infrastructure only. It does not authorize live collection. `src/11_prepare_expansion_collection.py` defaults to offline preparation; the approval manifest under `reports/expansion/` remains PENDING. The exact trial is the Phase 8A rank-1–20 prefix: 20 nonpilot AppIDs, with release-stratum allocation 1 / 8 / 8 / 3. No replacements depend on matching, history completeness or outcomes.
+
+All 61,559 eligible nonpilot AppIDs are assigned once at game level. Within each existing release-period stratum, SHA-256 of `steam-autumn-unseen-v1|314159|appid` determines the order. The first `floor((n+2)/5)` form sealed evaluation, a nearest-20% allocation; the remainder form development. Totals are 49,247 development / 12,312 evaluation. The trial contains 16 / 4. The independent salt differs from Phase 8A sampling; the pilot stays a separate diagnostic sample. The membership CSV and its digest are frozen before retrieval, with no post-retrieval rebalancing. Held-out IDs are rejected by the development adapter in every year.
+
+Future collection requires a human-authored approval receipt binding the pending-manifest SHA-256, exact cohort, implementation, 60-attempt cumulative budget and external custodian certificate. Serial spacing is at least one second; timeout is 30 seconds; each game/endpoint has at most three attempts across restarts. The journal reserves attempts before requests, counts crash reservations conservatively, blocks concurrent collectors and refuses restart if caches exist without the journal. No 500-game mode exists.
+
+Evaluation payloads, including errors and quarantine, are encrypted before disk storage using system OpenSSL CMS with AES-256-CBC and an external RSA certificate. Private keys are never accepted or generated for production. Independent custody and a trusted collection operator are essential: the operator sees plaintext in memory, ciphertext length reveals coarse size, and repository owners can bypass software guards deliberately. Filesystem permissions alone do not guarantee blindness. Custody remains unverified and must be established before live approval; evaluation-outcome inspection and unsealing are not authorized.
+
+Missing retrievals, unmatched lookup, request failures, malformed responses, empty arrays, ambiguous deals and schema anomalies remain distinct. Collection generates no operational labels. Successful responses retain UNVERIFIED historical completion, with duplicate timestamps and raw order preserved. The provider's current quota, pagination, truncation and backfill guarantees remain unknown. The requested-since history can include post-2025 records; later separately approved features must apply the unchanged exact historical cutoffs and 15-feature allowlist.
+
+```bash
+python3 -B src/11_prepare_expansion_collection.py --verify
+```
+
+The focused offline suite mocks all HTTP behavior, uses temporary test-only encryption keys, and verifies protected artifacts and deterministic preparation outputs. Planning CSVs are under `data/intermediate/expansion/`; the preflight, pending approval, SHA-256 inventory and validation receipt are under `reports/expansion/`. No raw expansion histories, new labels, models or figures are created. The separately approved 20-game trial is the next decision; Phase 8B.2, larger collection and later modeling remain outside this execution.

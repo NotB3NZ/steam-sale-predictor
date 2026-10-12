@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-Phase 8A — offline historical scaling feasibility audit completed and verified. Four-model Phase 7B and all earlier artifacts remain preserved. Candidate cohorts are planning records; no expanded histories, labels, features or models were created. Phase 8B, Phase 8C and Phase 9 are not started. Targets measure recorded discounts, not verified participation.
+Phase 8B.1 — offline bounded-collection preparation. The 20-game trial remains pending explicit authorization and external evaluation-key custody. Four-model Phase 7B, the Phase 8A sampling design and all earlier research artifacts remain preserved. No expansion histories, labels, features or models exist. Phase 8B.2, Phase 8C and Phase 9 are not started. Targets measure recorded discounts, not verified participation.
 
 ## Completed
 
@@ -261,3 +261,19 @@ python3 -B src/10_audit_scaling_feasibility.py --verify
 **22 focused offline tests pass**. Two complete isolated audit executions produce byte-identical candidate CSV, JSON/Markdown reports, plotted data and PNGs in this environment. All **214 completed source/data/report/model/dependency artifacts**, including raw source snapshots, all prior figures and Phase 7 outputs, retain their hashes. The three project documentation files are updated as authorized. The audit does not execute earlier model-fitting test suites; prior verified results remain hash-protected. Zero network/API requests, zero new histories and zero model fits.
 
 Recommended next step, requiring separate approval: a cohort-aware collection implementation and bounded release-stratified smoke/coverage trial with account quota and response-limit confirmation. Assess matching/nonresponse, response sizes and historical timing provenance before approving bulk collection. Phase 8B, Phase 8C and Phase 9 remain unstarted.
+
+## Bounded expansion preparation verified
+
+Phase 8B.1 implements `src/11_prepare_expansion_collection.py` and focused mock-only tests. The approved 20 new games retain Phase 8A ranks 1–20, with release strata 1 pre-2015 / 8 from 2015–2019 / 8 from 2020–2022 / 3 from 2023 before the sale. The original pilot and sampling design remain intact.
+
+The full eligible frame is frozen as 49,247 development / 12,312 sealed evaluation games using an independent salted SHA-256 allocation within the existing strata. The trial contains 16 development / 4 evaluation games. No held-out AppID may enter development training in any year; no retrieval-driven replacement or group rebalancing is allowed.
+
+The pending approval manifest binds candidate, membership, protected-inventory and implementation digests. The proposed budget is 60 total HTTP attempts across all restarts (up to 40 initial requests), with serial spacing of at least one second, a 30-second timeout and at most three attempts per endpoint/game. Journal loss, concurrent collectors, namespace collisions, changed provenance and approval mismatches stop execution. Evaluation responses must be encrypted to an externally held custodian key; actual custody and provider contracts remain unverified. Live mode requires separate human authorization and does not grant outcome-access or modeling permission.
+
+Artifacts: two planning CSVs under `data/intermediate/expansion/`; `autumn_sale_smoke_preflight.md`, `autumn_sale_smoke_preflight.json`, `autumn_sale_smoke_approval_manifest.json`, `autumn_sale_smoke_validation.json` and `autumn_sale_smoke_protected_inventory.json` under `reports/expansion/`. The preflight contains the exact proposed future command and receipt contract. No analytical figure is needed for this planning gate.
+
+```bash
+python3 -B src/11_prepare_expansion_collection.py --verify
+```
+
+All 36 focused offline tests pass, with zero failures, errors or skips. Two isolated verification runs produce byte-identical versions of all seven preparation outputs, including the validation receipt. All 225 protected earlier files remain byte-identical. Verification does not execute earlier model-training scripts. API credentials are not printed or stored; the recorded environment has no credential available. Approval remains PENDING. No live requests, new histories, operational labels or fitted models were produced. Collection feasibility remains conditional on matching, current account quota, response completeness, historical provenance and independent key custody. Await explicit approval for the exact 20-game trial; Phase 8B.2, 500-game collection and retraining remain unstarted.
