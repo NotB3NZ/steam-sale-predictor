@@ -1,0 +1,115 @@
+{
+  "metric_directions": {
+    "accuracy": "higher",
+    "average_precision": "higher",
+    "brier_score": "lower",
+    "f1": "higher",
+    "log_loss": "lower",
+    "precision": "higher",
+    "recall": "higher",
+    "roc_auc": "higher"
+  },
+  "models": {
+    "bernoulli_baseline": {
+      "accuracy": 0.6,
+      "average_precision": 0.6,
+      "brier_score": 0.240625,
+      "confusion_matrix": [
+        [
+          0,
+          40
+        ],
+        [
+          0,
+          60
+        ]
+      ],
+      "confusion_matrix_orientation": "rows actual [0,1]; columns predicted [0,1]",
+      "f1": 0.75,
+      "log_loss": 0.6742975869339602,
+      "observations": 100,
+      "precision": 0.6,
+      "recall": 1.0,
+      "roc_auc": 0.5,
+      "threshold": 0.5,
+      "undefined_metrics": {}
+    },
+    "logistic_regression": {
+      "accuracy": 0.91,
+      "average_precision": 0.9376595618842051,
+      "brier_score": 0.07538892614130745,
+      "confusion_matrix": [
+        [
+          32,
+          8
+        ],
+        [
+          1,
+          59
+        ]
+      ],
+      "confusion_matrix_orientation": "rows actual [0,1]; columns predicted [0,1]",
+      "f1": 0.9291338582677166,
+      "log_loss": 0.2685934568650077,
+      "observations": 100,
+      "precision": 0.8805970149253731,
+      "recall": 0.9833333333333333,
+      "roc_auc": 0.93375,
+      "threshold": 0.5,
+      "undefined_metrics": {}
+    },
+    "random_forest": {
+      "accuracy": 0.88,
+      "average_precision": 0.918200840548757,
+      "brier_score": 0.081896672394621,
+      "confusion_matrix": [
+        [
+          29,
+          11
+        ],
+        [
+          1,
+          59
+        ]
+      ],
+      "confusion_matrix_orientation": "rows actual [0,1]; columns predicted [0,1]",
+      "f1": 0.9076923076923077,
+      "log_loss": 0.2883329343644717,
+      "observations": 100,
+      "precision": 0.8428571428571429,
+      "recall": 0.9833333333333333,
+      "roc_auc": 0.9270833333333333,
+      "threshold": 0.5,
+      "undefined_metrics": {}
+    },
+    "xgboost": {
+      "accuracy": 0.93,
+      "average_precision": 0.9262401376352335,
+      "brier_score": 0.06750149869510079,
+      "confusion_matrix": [
+        [
+          34,
+          6
+        ],
+        [
+          1,
+          59
+        ]
+      ],
+      "confusion_matrix_orientation": "rows actual [0,1]; columns predicted [0,1]",
+      "f1": 0.944,
+      "log_loss": 0.25251767347994875,
+      "observations": 100,
+      "precision": 0.9076923076923077,
+      "recall": 0.9833333333333333,
+      "roc_auc": 0.9295833333333333,
+      "threshold": 0.5,
+      "undefined_metrics": {}
+    }
+  },
+  "protocol": "2023\u20132024 -> 2025; previously examined holdout",
+  "target_definition": "1: a qualifying Steam-store discount was recorded during the official Autumn Sale window; 0: no qualifying discount was recorded. Zero does not establish absence of an actual discount. Probabilities concern recorded occurrence, not verified participation.",
+  "training_positive_prevalence": 0.575,
+  "unavailable_models": {},
+  "validation_positive_prevalence": 0.6
+}

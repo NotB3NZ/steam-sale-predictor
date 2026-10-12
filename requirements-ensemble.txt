@@ -1,0 +1,4 @@
+# Phase 7B: retain the protected baseline dependency declaration.
+-r requirements-baseline.txt
+# Optional locally installed comparison model; Python 3.9 / sklearn 1.6 compatible.
+xgboost==2.1.4

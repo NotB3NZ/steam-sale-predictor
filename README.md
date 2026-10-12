@@ -2,7 +2,7 @@
 
 An independent data science research project investigating whether historical Steam game metadata and pre-sale pricing behavior can predict a recorded Steam-store discount during the Autumn Sale.
 
-The completed initial experiments compare a constant-probability Bernoulli baseline with logistic regression on a 100-game historical pilot. Training uses 2023–2024 observations; validation uses 2025 observations. The target is **recorded discount occurrence**, not independently verified sale participation.
+The completed experiments compare a constant-probability Bernoulli baseline, logistic regression and a predefined Random Forest on a 100-game historical pilot. An XGBoost comparison is implemented but remains unavailable in the local execution environment. Training uses 2023–2024 observations; validation uses 2025 observations. The target is **recorded discount occurrence**, not independently verified sale participation.
 
 ## Research question
 
@@ -59,26 +59,32 @@ The split is chronological, without random mixing across years. Preprocessing an
 
 The same 100 games appear across years. This tests temporal generalization to a later sale for previously represented games, not generalization to entirely unseen games or the full catalog.
 
-### Baseline models
+### Models
 
 The Bernoulli baseline uses `DummyClassifier(strategy="prior")` to assign every validation observation the training positive rate: **115 / 200 = 0.575**. It uses no game-specific predictors or preprocessing. The validation prevalence of 0.600 is an evaluation reference, not its fitted probability.
 
 Logistic regression uses an explicit sklearn pipeline: approved feature selection, training-only median imputation, StandardScaler and `LogisticRegression(penalty="l2", C=1.0, solver="lbfgs", max_iter=2000, random_state=42)`. Existing historical coverage indicators are retained without additional missingness indicators. No training feature is constant or entirely missing, so all 15 approved predictors are retained. Coefficients describe associations on the transformed feature scale, without causal interpretation.
 
+Random Forest is a predefined nonlinear comparison, using 200 trees, maximum depth 4, minimum leaf size 5, `max_features="sqrt"`, `random_state=42` and `n_jobs=1`. Its complete pipeline selects the same 15 approved predictors and fits a training-only median imputer; tree predictors are not scaled.
+
+The conditional XGBoost implementation uses 100 trees, maximum depth 3, learning rate 0.05, row and column subsampling of 0.8, `objective="binary:logistic"`, `eval_metric="logloss"`, seed 42 and one job. It uses the same training-only median preprocessing, without validation-based early stopping. XGBoost is not installed locally, so no XGBoost metrics, predictions, fitted artifact or importance figure were produced. Its dependency is declared in `requirements-ensemble.txt`; no network installation or substitute model was used.
+
 ## Results
 
-The completed Phase 7A experiments give the following results on the 100 observations from 2025:
+The initial baselines and Random Forest comparison use the same 100 observations from 2025. The baseline predictions and metrics are loaded from the approved Phase 7A artifacts rather than retrained. Since this holdout was already inspected, the comparison is not a fresh confirmatory test:
 
 | Model | ROC-AUC | Average precision | Brier score | Accuracy |
 |---|---:|---:|---:|---:|
 | Bernoulli baseline | 0.500000 | 0.600000 | 0.240625 | 0.600000 |
 | Logistic regression | 0.933750 | 0.937660 | 0.075389 | 0.910000 |
+| Random Forest | 0.927083 | 0.918201 | 0.081897 | 0.880000 |
+| XGBoost | Unavailable | Unavailable | Unavailable | Unavailable |
 
-Logistic regression improves ranking, probability error and fixed-threshold accuracy over the constant baseline on this holdout. These are pilot results against recorded-discount labels; they do not establish actual participation probabilities or catalog-wide performance. [The evaluation report](reports/autumn_sale_baseline_evaluation.md) includes log loss, precision, recall, F1, coefficient interpretation and calibration diagnostics. Exact metrics are saved in [JSON](reports/autumn_sale_baseline_metrics.json).
+Logistic regression improves ranking, probability error and fixed-threshold accuracy over the constant baseline, and scores slightly better than the predefined Random Forest on these measures. Higher ROC-AUC, average precision and accuracy are better; lower Brier score is better. This does not establish a universal best model based on accuracy alone. These are pilot results against recorded-discount labels; they do not establish actual participation probabilities or catalog-wide performance. [The evaluation report](reports/autumn_sale_baseline_evaluation.md) includes log loss, precision, recall, F1, coefficient interpretation and calibration diagnostics. Exact baseline metrics are saved in [JSON](reports/autumn_sale_baseline_metrics.json). The [comparative evaluation](reports/autumn_sale_model_comparison.md) and [comparison metrics](reports/autumn_sale_model_comparison_metrics.json) include all available models, all eight metrics and their confusion matrices.
 
 ![ROC curves for both baselines on the 2025 validation observations](reports/figures/baseline_roc_curves.png)
 
-The ROC curves compare the models using their actual validation probabilities.
+The original baseline ROC curves compare Bernoulli and logistic regression using their actual validation probabilities. The new [comparison ROC figure](reports/figures/model_roc_curves.png) includes Random Forest.
 
 ![Sigmoid transformation with actual logistic regression validation predictions](reports/figures/logistic_sigmoid.png)
 
@@ -89,6 +95,14 @@ The sigmoid transforms the combined multivariable decision score into a probabil
 Rows are actual operational labels and columns are predicted labels. At the fixed threshold, logistic regression produces 32 true negatives, eight false positives, one false negative and 59 true positives **against the operational labels**.
 
 Additional coefficient, precision–recall, probability-distribution, reliability and Bernoulli-distribution figures are available in [reports/figures/](reports/figures/). All figures use a consistent light-mode style and are exported at 300 DPI.
+
+### Secondary temporal check and coverage diagnostic
+
+A secondary chronological check fits the same available model types on 2023 only and evaluates 2024, using 100 training observations and 100 evaluation observations. The Bernoulli prior is recomputed as 0.55; preprocessing remains training-only. ROC-AUC is 0.500000 for Bernoulli, 0.910833 for logistic regression and 0.892917 for Random Forest. [Full secondary results](reports/autumn_sale_temporal_robustness.json) are saved separately. Different training sizes and evaluation years prevent interpreting differences as controlled temporal drift. The games recur, and 2024 outcomes contribute to primary training, so this is not an independent confirmatory test.
+
+A post-hoc exploratory coverage-only logistic model uses `prior_price_record_count`, `days_since_last_price_record` and `has_prior_price_history`. Discount-specific counts, recencies and flags are excluded from this narrow availability diagnostic. It achieves ROC-AUC 0.865833, average precision 0.874952, Brier score 0.108245 and accuracy 0.870000 on 2025. This suggests observation availability may contribute to the operational target's predictive signal, without proving its precise source. The [coverage diagnostic](reports/autumn_sale_coverage_sensitivity_modeling.json) does not replace or modify a primary model.
+
+Random Forest [feature importance](reports/figures/random_forest_feature_importance.png) combines native training impurity importance with exploratory permutation importance on the previously examined 2025 holdout (ROC-AUC, 20 repeats, seed 42). Correlated predictors can distort both methods; importance is not causal and is not used for feature selection or retuning. New figures cover metric comparisons, ROC/PR curves, confusion matrices, probability distributions, temporal robustness and coverage sensitivity. Their [underlying plotted values](reports/autumn_sale_ensemble_plot_data.json) are saved for verification.
 
 ## Limitations
 
@@ -112,19 +126,24 @@ python3 -m pip install -r requirements-baseline.txt
 
 Dependency installation requires package access. Once dependencies and the existing local inputs are available, baseline execution is offline and requires no API credential.
 
-### Reproduce the baseline experiments
+### Reproduce the comparative experiments
 
 ```bash
-python3 -B src/08_train_baseline_models.py --verify
+python3 -B src/09_train_ensemble_models.py --verify
 ```
 
-This command runs the full offline test suite, compares two complete experiments in isolated output directories, checks protected-input hashes and saves the verified baseline outputs. It does not regenerate earlier datasets or refresh price histories. Verification blocks socket and DNS access.
+The original baseline command, `python3 -B src/08_train_baseline_models.py --verify`, remains supported. Run earlier artifact-regenerating workflows in a separate working copy when preserving the approved comparison inputs.
 
-For the baseline tests alone:
+The comparison command validates the approved baseline artifacts, fits available ensembles, runs the secondary check and coverage/importance diagnostics, generates figures and reports, and verifies two complete isolated executions. It saves only new comparison outputs and checks protected-input hashes. It does not regenerate earlier datasets or refresh price histories. Verification blocks socket and DNS access.
+
+For the focused tests:
 
 ```bash
 python3 -B -m unittest discover -s tests -p 'test_baseline_models.py'
+python3 -B -m unittest discover -s tests -p 'test_ensemble_models.py'
 ```
+
+The [ensemble validation receipt](reports/autumn_sale_ensemble_validation.json) records **201 tests: 200 passed and one XGBoost test skipped** because the dependency is absent. Repeated predictions, metrics, model fingerprints, secondary/diagnostic results, plotted data, PNG bytes and Random Forest artifact bytes are identical in the recorded environment. All **186 protected earlier files**, including every Phase 7A output and existing figure, remain unchanged. `requirements-ensemble.txt` declares the optional XGBoost dependency; this offline workflow does not install it.
 
 The saved [validation receipt](reports/autumn_sale_baseline_validation.json) records **171 passing offline tests**, including 35 baseline tests. It verifies identical predictions, metrics, fitted parameters, plotted data, PNG bytes and model bytes across repeated runs in the recorded environment, plus unchanged hashes for **166 protected earlier files**. Cross-platform numerical or image-byte identity and cross-version joblib compatibility are not guaranteed. Load only trusted local joblib artifacts.
 
@@ -176,8 +195,8 @@ python3 -m unittest discover -s tests -v
 .
 ├── data/raw/itad/          # Cached historical price responses and provenance
 ├── data/intermediate/     # Catalog, pilot, evidence, labels and historical features
-├── data/processed/        # 2025 baseline validation predictions
-├── models/                # Fitted Bernoulli estimator and logistic pipeline
+├── data/processed/        # 2025 baseline and ensemble validation predictions
+├── models/                # Approved baselines and the fitted Random Forest pipeline
 ├── reports/               # Research reports, manifests and validation receipts
 │   ├── figures/           # Static model and evaluation figures
 │   ├── sources/           # Reviewed source notes and official calendar artwork
@@ -186,6 +205,7 @@ python3 -m unittest discover -s tests -v
 ├── tests/                 # Offline unit, integration and adversarial tests
 ├── requirements.txt
 ├── requirements-baseline.txt
+├── requirements-ensemble.txt
 ├── PROJECT_CONTEXT.md
 └── PROJECT_STATUS.md
 ```
@@ -202,13 +222,17 @@ The main modeling artifacts are:
 | Fitted constant-prior estimator | `models/bernoulli_baseline.joblib` |
 | Complete fitted logistic pipeline | `models/logistic_regression.joblib` |
 | Model configuration, preprocessing and versions | `reports/autumn_sale_baseline_model_manifest.json` |
-| Underlying plotted values | `reports/autumn_sale_baseline_plot_data.json` |
+| Underlying baseline plotted values | `reports/autumn_sale_baseline_plot_data.json` |
+| Ensemble validation predictions | `data/processed/autumn_sale_2025_ensemble_predictions.csv` |
+| All available model predictions | `data/processed/autumn_sale_2025_model_comparison_predictions.csv` |
+| Complete fitted Random Forest pipeline | `models/random_forest.joblib` |
+| Ensemble configuration and versions | `reports/autumn_sale_ensemble_model_manifest.json` |
 
 Operational labels and the separate positive/unlabeled view are target/provenance artifacts, not predictor tables. No PU-learning algorithm is implemented. [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md) records methodological decisions; [PROJECT_STATUS.md](PROJECT_STATUS.md) retains the implementation history.
 
 ## Planned work
 
-The Bernoulli and logistic regression baselines are completed initial experiments. Random forest and XGBoost comparisons, dataset scaling and broader validation are planned work; **Phase 7B has not started**. Future model selection should use training-only temporal resampling because the 2025 holdout has already been inspected. The longer-term design includes a separate retrospective 2026 evaluation; no 2026 predictions or outcomes are used in the current experiments.
+The Bernoulli, logistic regression and Random Forest experiments are complete. XGBoost evaluation is blocked by its unavailable local dependency; the conditional implementation is present but has not been trained or runtime-validated here. Dataset scaling and broader validation remain planned work. Phase 8 and Phase 9 have not started. Future model selection should use training-only temporal resampling because the 2025 holdout has already been inspected. The longer-term design includes a separate retrospective 2026 evaluation; no 2026 predictions or outcomes are used in the current experiments.
 
 ## Sources and licensing
 

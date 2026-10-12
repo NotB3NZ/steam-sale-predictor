@@ -1,0 +1,4289 @@
+{
+  "bernoulli_training_prior": 0.55,
+  "evaluation_rows": 100,
+  "evaluation_target_counts": {
+    "0": 40,
+    "1": 60
+  },
+  "evaluation_year": 2024,
+  "fitted_parameters": {
+    "bernoulli_baseline": {
+      "class_prior": [
+        0.45,
+        0.55
+      ]
+    },
+    "logistic_regression": {
+      "coefficients": [
+        [
+          0.14273407417056258,
+          -0.15563956081292235,
+          0.3603243556090571,
+          0.16709124923681745,
+          0.4946102578571184,
+          0.4291821716681397,
+          -0.43478078687200794,
+          -1.0817255500444851,
+          -1.1033689289296191,
+          -0.2757751774020657,
+          0.1750830711928654,
+          0.10636428177911794,
+          -0.7337523322046623,
+          0.25981785108061045,
+          1.372203454489655
+        ]
+      ],
+      "imputation_statistics": [
+        1416.0,
+        2019.5,
+        6.5,
+        2.5,
+        18.0,
+        9.0,
+        0.5,
+        85.02566550925926,
+        57.01671296296296,
+        70.0,
+        52.53977272727273,
+        9.99,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "intercept": [
+        -0.1139992453198405
+      ],
+      "iterations": [
+        17
+      ],
+      "scaler_mean": [
+        1907.64,
+        2018.17,
+        6.43,
+        2.44,
+        22.56,
+        11.09,
+        0.4223106646013909,
+        263.14000787037037,
+        155.6642931712963,
+        64.52,
+        52.952115502700636,
+        12.8392,
+        5.01,
+        0.96,
+        0.82
+      ],
+      "scaler_variance": [
+        2786237.7504000003,
+        21.0211,
+        11.2251,
+        1.3263999999999998,
+        433.1664,
+        109.78190000000002,
+        0.03365237656529019,
+        147177.31964798167,
+        70777.97970246992,
+        398.3496000000001,
+        336.7059541206626,
+        213.21985136,
+        229.9099,
+        0.0384,
+        0.14759999999999998
+      ]
+    },
+    "random_forest": {
+      "feature_importances": [
+        0.023480528391403726,
+        0.017893374277502833,
+        0.020280938936176482,
+        0.008306222393141887,
+        0.21476352714271643,
+        0.17661699263498168,
+        0.04441141971997464,
+        0.16878948135826294,
+        0.1106641141806297,
+        0.03297458790603397,
+        0.07328454423485292,
+        0.03714441911622041,
+        0.01750675738870359,
+        0.0,
+        0.05388309231939872
+      ],
+      "imputation_statistics": [
+        1416.0,
+        2019.5,
+        6.5,
+        2.5,
+        18.0,
+        9.0,
+        0.5,
+        85.02566550925926,
+        57.01671296296296,
+        70.0,
+        52.53977272727273,
+        9.99,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "tree_state_sha256": "78fe66fc6e028b79350cb8cac039f79997c085572902fd3596c2c4ed3b488c29",
+      "trees": 200
+    },
+    "xgboost": {
+      "booster_json_sha256": "37a8ebe9f9568a32dd017c89ae5b3629692523a34043d6bb6f1eb811e406e5f9",
+      "feature_importances": [
+        0.042591653764247894,
+        0.026975387707352638,
+        0.03688971325755119,
+        0.02695295214653015,
+        0.1755780428647995,
+        0.1415163278579712,
+        0.05413822457194328,
+        0.10390391200780869,
+        0.0696481466293335,
+        0.04472013935446739,
+        0.04569576308131218,
+        0.05283628776669502,
+        0.0848848968744278,
+        0.0,
+        0.09366858005523682
+      ],
+      "imputation_statistics": [
+        1416.0,
+        2019.5,
+        6.5,
+        2.5,
+        18.0,
+        9.0,
+        0.5,
+        85.02566550925926,
+        57.01671296296296,
+        70.0,
+        52.53977272727273,
+        9.99,
+        0.0,
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "limitations": "Different training sizes and evaluation years; not a controlled temporal-drift estimate. Games recur in training. 2024 outcomes contribute to primary training, so this check is not an independent confirmatory test.",
+  "metrics": {
+    "models": {
+      "bernoulli_baseline": {
+        "accuracy": 0.6,
+        "average_precision": 0.6,
+        "brier_score": 0.2425,
+        "confusion_matrix": [
+          [
+            0,
+            40
+          ],
+          [
+            0,
+            60
+          ]
+        ],
+        "confusion_matrix_orientation": "rows actual [0,1]; columns predicted [0,1]",
+        "f1": 0.75,
+        "log_loss": 0.6781052789404809,
+        "observations": 100,
+        "precision": 0.6,
+        "recall": 1.0,
+        "roc_auc": 0.5,
+        "threshold": 0.5,
+        "undefined_metrics": {}
+      },
+      "logistic_regression": {
+        "accuracy": 0.9,
+        "average_precision": 0.9019277537094658,
+        "brier_score": 0.09022151298568538,
+        "confusion_matrix": [
+          [
+            32,
+            8
+          ],
+          [
+            2,
+            58
+          ]
+        ],
+        "confusion_matrix_orientation": "rows actual [0,1]; columns predicted [0,1]",
+        "f1": 0.9206349206349206,
+        "log_loss": 0.3369334001448527,
+        "observations": 100,
+        "precision": 0.8787878787878788,
+        "recall": 0.9666666666666667,
+        "roc_auc": 0.9108333333333334,
+        "threshold": 0.5,
+        "undefined_metrics": {}
+      },
+      "random_forest": {
+        "accuracy": 0.86,
+        "average_precision": 0.8677629843611121,
+        "brier_score": 0.11168523872993845,
+        "confusion_matrix": [
+          [
+            29,
+            11
+          ],
+          [
+            3,
+            57
+          ]
+        ],
+        "confusion_matrix_orientation": "rows actual [0,1]; columns predicted [0,1]",
+        "f1": 0.890625,
+        "log_loss": 0.37886073573714435,
+        "observations": 100,
+        "precision": 0.8382352941176471,
+        "recall": 0.95,
+        "roc_auc": 0.8929166666666667,
+        "threshold": 0.5,
+        "undefined_metrics": {}
+      },
+      "xgboost": {
+        "accuracy": 0.87,
+        "average_precision": 0.9017688836472504,
+        "brier_score": 0.10488475073850623,
+        "confusion_matrix": [
+          [
+            34,
+            6
+          ],
+          [
+            7,
+            53
+          ]
+        ],
+        "confusion_matrix_orientation": "rows actual [0,1]; columns predicted [0,1]",
+        "f1": 0.8907563025210085,
+        "log_loss": 0.356590987263345,
+        "observations": 100,
+        "precision": 0.8983050847457628,
+        "recall": 0.8833333333333333,
+        "roc_auc": 0.9104166666666667,
+        "threshold": 0.5,
+        "undefined_metrics": {}
+      }
+    },
+    "target_definition": "1: a qualifying Steam-store discount was recorded during the official Autumn Sale window; 0: no qualifying discount was recorded. Zero does not establish absence of an actual discount. Probabilities concern recorded occurrence, not verified participation.",
+    "validation_positive_prevalence": 0.6
+  },
+  "predictions": [
+    {
+      "actual_label": 0,
+      "appid": 7830,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 8930,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 9730,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 15170,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 20710,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 38210,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 61600,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 115320,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 202410,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 213670,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 218740,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 219200,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 228320,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 234490,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 242960,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 252490,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 262470,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 270880,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 282010,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 292400,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 303680,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 312520,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 314300,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 331200,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 360430,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 363890,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 371450,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 397310,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 418030,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 445220,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 449310,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 451950,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 528950,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 536220,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 582660,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 595140,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 603210,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 646350,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 666120,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 700600,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 708430,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 745880,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 757320,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 791800,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 799600,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 806140,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 809230,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 821720,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 826420,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 829590,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 887920,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 965590,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 966000,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1005530,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1023370,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1063730,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1083210,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1090250,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1097370,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1141280,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1158850,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1200900,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1239260,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1249680,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1257270,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1271420,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1338570,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1373180,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1413660,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1418360,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1465260,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1532510,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1544810,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1560770,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1575230,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1588760,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1655440,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1708340,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1740720,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1785150,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1836120,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1882420,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1894600,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2009420,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 2062610,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2123430,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 2164880,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2205710,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2265760,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 2268470,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2270520,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2312170,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2314050,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2383710,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2387820,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2490910,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 2504210,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2544720,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2621900,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 2650840,
+      "decision_score": null,
+      "model_name": "bernoulli_baseline",
+      "predicted_class": 1,
+      "predicted_probability": 0.55,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 7830,
+      "decision_score": -0.9485700274846888,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.2791724919102943,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 8930,
+      "decision_score": 1.9231249728438746,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.8724865036727828,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 9730,
+      "decision_score": 2.6604611949045736,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9346528405805177,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 15170,
+      "decision_score": 4.18754328606443,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9850435511431566,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 20710,
+      "decision_score": 1.7951103387818548,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.8575526768696976,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 38210,
+      "decision_score": 3.496440084525845,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9705863089881056,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 61600,
+      "decision_score": 2.2727616615063244,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9065959073577211,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 115320,
+      "decision_score": 4.57727013770094,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9898217333963117,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 202410,
+      "decision_score": -5.960909968312684,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.0025709386392110465,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 213670,
+      "decision_score": 3.1909733171909793,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9604931705403299,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 218740,
+      "decision_score": 2.4956643763888,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9238373171709778,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 219200,
+      "decision_score": 1.4896656616647388,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.8160280849234562,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 228320,
+      "decision_score": -12.212084515777184,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 4.970006123342367e-06,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 234490,
+      "decision_score": 1.5490916468510658,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.8247824986989162,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 242960,
+      "decision_score": 4.3745238941589815,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9875625025883802,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 252490,
+      "decision_score": 2.911782262790883,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9484258123608368,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 262470,
+      "decision_score": 2.3024811439713435,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9090823178972574,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 270880,
+      "decision_score": 4.313251368771398,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9867869785065503,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 282010,
+      "decision_score": -6.827784164072186,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.001082083603966875,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 292400,
+      "decision_score": 1.8466679355752702,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.8637354055836646,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 303680,
+      "decision_score": 2.6269364109194195,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9325751699429652,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 312520,
+      "decision_score": 3.4795009213516543,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9700988467809515,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 314300,
+      "decision_score": -4.584049603747984,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.010110192041886434,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 331200,
+      "decision_score": 1.4243436569276926,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.8060184617752592,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 360430,
+      "decision_score": 4.419773611575415,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9881062080581957,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 363890,
+      "decision_score": 5.888214344955858,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9972357403353355,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 371450,
+      "decision_score": -4.967615229875439,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.006911622608892907,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 397310,
+      "decision_score": 4.89200175529154,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9925495444744612,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 418030,
+      "decision_score": 4.408930941134971,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9879781047049064,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 445220,
+      "decision_score": 1.472742698491003,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.8134739047961658,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 449310,
+      "decision_score": -2.2599931031025142,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.09449095906373253,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 451950,
+      "decision_score": -2.558943549569557,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.07182794257759327,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 528950,
+      "decision_score": 4.81452380607519,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9919541767380176,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 536220,
+      "decision_score": 3.8811677329988683,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.979790138638673,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 582660,
+      "decision_score": 3.3835825024006816,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9671874894459119,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 595140,
+      "decision_score": 1.7451763405880718,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.8513433640828336,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 603210,
+      "decision_score": -5.349781409617507,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.0047267408273955645,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 646350,
+      "decision_score": -2.5208543690405207,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.07440908134539449,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 666120,
+      "decision_score": -5.471794116194887,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.004186086509045601,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 700600,
+      "decision_score": 1.5597869990369686,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.8263227866049869,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 708430,
+      "decision_score": 5.308917210200031,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9950770744110644,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 745880,
+      "decision_score": -4.834968276460115,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.007884284486926636,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 757320,
+      "decision_score": 4.487195419453911,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9888730450666678,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 791800,
+      "decision_score": 1.5496985344804373,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.8248701865844068,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 799600,
+      "decision_score": 3.055253512268602,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9550087945114788,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 806140,
+      "decision_score": -8.777695432818426,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.00015410913251571255,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 809230,
+      "decision_score": 5.090812467423081,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9938846093844557,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 821720,
+      "decision_score": 3.454852567316158,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9693755255242728,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 826420,
+      "decision_score": 0.8699379026470938,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.704732776666349,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 829590,
+      "decision_score": 4.066429918873183,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9831503126498229,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 887920,
+      "decision_score": 1.4320851066495779,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.8072259916484236,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 965590,
+      "decision_score": 1.5201025407695343,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.8205535797458502,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 966000,
+      "decision_score": -8.713132342980696,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.00016438542386126674,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1005530,
+      "decision_score": -5.248171908505964,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.005229627337587642,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1023370,
+      "decision_score": -6.446833758248943,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.0015830244750347309,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1063730,
+      "decision_score": -1.1762312155491497,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.2357305102250654,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1083210,
+      "decision_score": 4.279133827246355,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9863346710338421,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1090250,
+      "decision_score": 1.0373256300562796,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.7383336550760257,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1097370,
+      "decision_score": -7.9085029451823345,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.0003674694095391204,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1141280,
+      "decision_score": -5.4080823159642035,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.004460240755870826,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1158850,
+      "decision_score": 3.3903151457400655,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9674004848413347,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1200900,
+      "decision_score": -8.81162462447733,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.00014896880976256917,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1239260,
+      "decision_score": -0.8107141989578232,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.307738325114462,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1249680,
+      "decision_score": 2.316005847974153,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9101939895855601,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1257270,
+      "decision_score": -0.6145375790690882,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.3510248109414276,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1271420,
+      "decision_score": -8.338794870863516,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.00023900313175025383,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1338570,
+      "decision_score": -5.669319034845,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.0034383509055421714,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1373180,
+      "decision_score": 0.8903818323030243,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.7089689630641812,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1413660,
+      "decision_score": 1.506854178084607,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.8185945281839181,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1418360,
+      "decision_score": 3.514140685531994,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9710874476532414,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1465260,
+      "decision_score": 4.829572308899585,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9920733953174916,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1532510,
+      "decision_score": -0.24636626680839646,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.4387180858323813,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1544810,
+      "decision_score": -10.806758856208555,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 2.0261680455350375e-05,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1560770,
+      "decision_score": 3.0260541661730684,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.953737384731836,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1575230,
+      "decision_score": -0.7334727400241395,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.3244331216240725,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1588760,
+      "decision_score": 3.742634870619217,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9768567050781556,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1655440,
+      "decision_score": 1.3280653807582936,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.790520446021214,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1708340,
+      "decision_score": -3.1582340827702033,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.04076805559195768,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1740720,
+      "decision_score": 1.7337415343500366,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.8498903780965786,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1785150,
+      "decision_score": 1.7113078076544108,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.8470058359610563,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1836120,
+      "decision_score": 1.2842369131604616,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.783170129644391,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1882420,
+      "decision_score": 0.14717697336995383,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.5367279700298564,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1894600,
+      "decision_score": -4.3024161681195725,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.013355043275698369,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2009420,
+      "decision_score": 2.8126408493517423,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9433551016237588,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 2062610,
+      "decision_score": -4.512978224185803,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.010846809589433338,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2123430,
+      "decision_score": 1.3458679815984518,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.7934532727131322,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 2164880,
+      "decision_score": -3.2140155357928926,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.03864168663562358,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2205710,
+      "decision_score": 2.806849300050777,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9430448270963998,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2265760,
+      "decision_score": -3.4218695653619973,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.03161893367236324,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 2268470,
+      "decision_score": -1.7471491290650494,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.1484071370828098,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2270520,
+      "decision_score": 1.5210101055544338,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.8206871756126095,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2312170,
+      "decision_score": 0.15816248576515302,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.5394584001688485,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2314050,
+      "decision_score": 1.1636299956291882,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.7619916781285375,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2383710,
+      "decision_score": 1.620619362464663,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.8348805297513032,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2387820,
+      "decision_score": 2.1937595121968645,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.8996877116100748,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2490910,
+      "decision_score": 2.160005806564036,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.8966000868600836,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 2504210,
+      "decision_score": -4.474522204483804,
+      "model_name": "logistic_regression",
+      "predicted_class": 0,
+      "predicted_probability": 0.011267267607777904,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2544720,
+      "decision_score": 2.648926722241344,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.9339448087915302,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2621900,
+      "decision_score": 1.9468917137211263,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.8751073191239593,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 2650840,
+      "decision_score": 0.8179278162439034,
+      "model_name": "logistic_regression",
+      "predicted_class": 1,
+      "predicted_probability": 0.6937962960544056,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 7830,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.7536033500935255,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 8930,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.5140257668499718,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 9730,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.9178585628569484,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 15170,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.9235022306896805,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 20710,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.6000343602023616,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 38210,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.6842513173183165,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 61600,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.6358291127113295,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 115320,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.9453100943430912,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 202410,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.03230635954076107,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 213670,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.9150859384944823,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 218740,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.6823903657698648,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 219200,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.5733908878419259,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 228320,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.18321650495090647,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 234490,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.6340513343427581,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 242960,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.9609107064953767,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 252490,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.8545723216453723,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 262470,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.654662560440838,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 270880,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.9388600526437991,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 282010,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.20782621136649518,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 292400,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.634920088656087,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 303680,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.8467955220254864,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 312520,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.8210787151840551,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 314300,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.06026627897862167,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 331200,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.5571671461105115,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 360430,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.9641226447428838,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 363890,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.9638764659611363,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 371450,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.3111650648113497,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 397310,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.9565899360349583,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 418030,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.913818975831999,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 445220,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.8409056866914005,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 449310,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.07194344696840826,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 451950,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.21245892400226757,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 528950,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.9657434417082204,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 536220,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.9717869651782145,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 582660,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.9545041290181469,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 595140,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.9150076370069574,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 603210,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.012168025902546026,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 646350,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.43166627678830205,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 666120,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.013726867001709709,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 700600,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.8969813099405678,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 708430,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.8582675713608997,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 745880,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.04305439364173634,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 757320,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.9699935622595817,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 791800,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.5988732670010702,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 799600,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.8755768888933992,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 806140,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.08823654119171685,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 809230,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.9705306657781541,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 821720,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.8447448303458646,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 826420,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.5755810934299435,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 829590,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.9450974067369955,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 887920,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.6056809903412426,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 965590,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.8613808991167534,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 966000,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.08344233885739304,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1005530,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.02374134378836391,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1023370,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.017408685977764925,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1063730,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.21161979827284993,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1083210,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.7946916840148747,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1090250,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.5522957587876353,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1097370,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.13424556887447497,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1141280,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.013643533668376373,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1158850,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.8591236960301615,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1200900,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.12655886331493668,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1239260,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.7585182208311694,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1249680,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.9113968988108077,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1257270,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.7593356811486298,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1271420,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.09402657123194798,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1338570,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.013240755890598596,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1373180,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.5302613654345828,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1413660,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.830610278392301,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1418360,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.8450307507495444,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1465260,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.9731928722177596,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1532510,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.36061049989724714,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1544810,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.07962308796011093,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1560770,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.7600185698358305,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1575230,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.1983337237761623,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1588760,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.8575905732049189,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1655440,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.6360827942010487,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1708340,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.044016500978843694,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1740720,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.8319165559919688,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1785150,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.8183744962268217,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1836120,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.765677263292385,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1882420,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.4888549611589592,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1894600,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.15998356423115842,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2009420,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.8715282251372183,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 2062610,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.15551765514024934,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2123430,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.5367625725197406,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 2164880,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.16437246726231536,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2205710,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.766785312599317,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2265760,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.1643000858436979,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 2268470,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.19158990359416062,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2270520,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.7491200633391866,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2312170,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.6155603670160873,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2314050,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.7319311366311427,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2383710,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.8001826150846952,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2387820,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.8700644757890934,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2490910,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.8044248235703725,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 2504210,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 0,
+      "predicted_probability": 0.1710194588920531,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2544720,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.870055835671866,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2621900,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.8277517486644218,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 2650840,
+      "decision_score": null,
+      "model_name": "random_forest",
+      "predicted_class": 1,
+      "predicted_probability": 0.6196835761296519,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 7830,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.3182521164417267,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 8930,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.6261506676673889,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 9730,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9659166932106018,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 15170,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9700101613998413,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 20710,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.6709849238395691,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 38210,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.5980006456375122,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 61600,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.6400858759880066,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 115320,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9645022749900818,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 202410,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.028852036222815514,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 213670,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9535289406776428,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 218740,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.6895669102668762,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 219200,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.4732651710510254,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 228320,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.062153998762369156,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 234490,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.5156680941581726,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 242960,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9779855012893677,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 252490,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9278779625892639,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 262470,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.6562892198562622,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 270880,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9576134085655212,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 282010,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.08468950539827347,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 292400,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.6028445363044739,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 303680,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9315459132194519,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 312520,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.8340332508087158,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 314300,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.035989101976156235,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 331200,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.39100685715675354,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 360430,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9668125510215759,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 363890,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9648373126983643,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 371450,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.09671787172555923,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 397310,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9680172204971313,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 418030,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9798974394798279,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 445220,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9277406930923462,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 449310,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.026336975395679474,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 451950,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.04430093988776207,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 528950,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9788209199905396,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 536220,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.980485200881958,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 582660,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9735469222068787,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 595140,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9590937495231628,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 603210,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.021767430007457733,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 646350,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.23396050930023193,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 666120,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.024817217141389847,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 700600,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9528648853302002,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 708430,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.799081027507782,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 745880,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.026323717087507248,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 757320,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9782773852348328,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 791800,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.5368703007698059,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 799600,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9712740182876587,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 806140,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.021035628393292427,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 809230,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9729803204536438,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 821720,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.8094804883003235,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 826420,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.4056517779827118,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 829590,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9617300033569336,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 887920,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.46260249614715576,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 965590,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.949249267578125,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 966000,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.033190127462148666,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1005530,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.024031076580286026,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1023370,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.019339486956596375,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1063730,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.4392278492450714,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1083210,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.8112661242485046,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1090250,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.4953586757183075,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1097370,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.055954452604055405,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1141280,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.02486174926161766,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1158850,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9310117959976196,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1200900,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.03264020383358002,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1239260,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.2666737735271454,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1249680,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9712857007980347,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1257270,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.2910192906856537,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1271420,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.043796975165605545,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1338570,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.024817217141389847,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1373180,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.5174562335014343,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1413660,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9431822299957275,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1418360,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9539752006530762,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1465260,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9727659225463867,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1532510,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.11882540583610535,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1544810,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.02242048643529415,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1560770,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.7167407274246216,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1575230,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.032468169927597046,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1588760,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9470937252044678,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1655440,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.6691834330558777,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1708340,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.025646930560469627,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1740720,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9450033903121948,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1785150,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9379481673240662,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1836120,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.8332235217094421,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 1882420,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.17292006313800812,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 1894600,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.09613315761089325,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2009420,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9648573994636536,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 2062610,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.08554939180612564,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2123430,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.7448036074638367,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 2164880,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.07473793625831604,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2205710,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.8846877813339233,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2265760,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.05339360609650612,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 2268470,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.05165247246623039,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2270520,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.8608673214912415,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2312170,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.7969573140144348,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2314050,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9287582635879517,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2383710,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9269136190414429,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2387820,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9616111516952515,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2490910,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9410304427146912,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 2504210,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.08554939180612564,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2544720,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9770873785018921,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 1,
+      "appid": 2621900,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 1,
+      "predicted_probability": 0.9479178190231323,
+      "sale_year": 2024
+    },
+    {
+      "actual_label": 0,
+      "appid": 2650840,
+      "decision_score": null,
+      "model_name": "xgboost",
+      "predicted_class": 0,
+      "predicted_probability": 0.39249399304389954,
+      "sale_year": 2024
+    }
+  ],
+  "preprocessing": {
+    "logistic_regression": {
+      "added_missingness_indicators": [],
+      "all_missing_rule": "Preserve schema; SimpleImputer keep_empty_features=True uses structural zero for an entirely missing training column.",
+      "all_missing_training_features": [],
+      "features": [
+        "game_age_days",
+        "release_year",
+        "release_month",
+        "release_quarter",
+        "prior_price_record_count",
+        "prior_discount_count",
+        "prior_discount_rate",
+        "days_since_last_price_record",
+        "days_since_last_discount",
+        "max_prior_discount_pct",
+        "mean_prior_discount_pct",
+        "last_observed_price",
+        "last_observed_discount_pct",
+        "has_prior_price_history",
+        "has_prior_discount_observation"
+      ],
+      "imputation_statistics": [
+        1416.0,
+        2019.5,
+        6.5,
+        2.5,
+        18.0,
+        9.0,
+        0.5,
+        85.02566550925926,
+        57.01671296296296,
+        70.0,
+        52.53977272727273,
+        9.99,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "scaler_mean": [
+        1907.64,
+        2018.17,
+        6.43,
+        2.44,
+        22.56,
+        11.09,
+        0.4223106646013909,
+        263.14000787037037,
+        155.6642931712963,
+        64.52,
+        52.952115502700636,
+        12.8392,
+        5.01,
+        0.96,
+        0.82
+      ],
+      "scaler_samples": 100,
+      "scaler_scale": [
+        1669.2027289697319,
+        4.584877315697772,
+        3.3503880372279267,
+        1.1516944039110375,
+        20.812649999459463,
+        10.477685813193675,
+        0.18344584095936922,
+        383.63696334944274,
+        266.0413120221555,
+        19.95869735228229,
+        18.34954915306266,
+        14.602049560250096,
+        15.162780088097302,
+        0.19595917942265423,
+        0.3841874542459709
+      ],
+      "scaler_variance": [
+        2786237.7504000003,
+        21.0211,
+        11.2251,
+        1.3263999999999998,
+        433.1664,
+        109.78190000000002,
+        0.03365237656529019,
+        147177.31964798167,
+        70777.97970246992,
+        398.3496000000001,
+        336.7059541206626,
+        213.21985136,
+        229.9099,
+        0.0384,
+        0.14759999999999998
+      ],
+      "scaling": "StandardScaler",
+      "training_missingness": {
+        "days_since_last_discount": 18,
+        "days_since_last_price_record": 4,
+        "game_age_days": 0,
+        "has_prior_discount_observation": 0,
+        "has_prior_price_history": 0,
+        "last_observed_discount_pct": 4,
+        "last_observed_price": 4,
+        "max_prior_discount_pct": 18,
+        "mean_prior_discount_pct": 18,
+        "prior_discount_count": 0,
+        "prior_discount_rate": 4,
+        "prior_price_record_count": 0,
+        "release_month": 0,
+        "release_quarter": 0,
+        "release_year": 0
+      },
+      "training_rows": 100,
+      "training_years": [
+        2023
+      ],
+      "transformed_features": [
+        "game_age_days",
+        "release_year",
+        "release_month",
+        "release_quarter",
+        "prior_price_record_count",
+        "prior_discount_count",
+        "prior_discount_rate",
+        "days_since_last_price_record",
+        "days_since_last_discount",
+        "max_prior_discount_pct",
+        "mean_prior_discount_pct",
+        "last_observed_price",
+        "last_observed_discount_pct",
+        "has_prior_price_history",
+        "has_prior_discount_observation"
+      ]
+    },
+    "random_forest": {
+      "added_missingness_indicators": [],
+      "all_missing_rule": "Preserve schema; SimpleImputer keep_empty_features=True uses structural zero for an entirely missing training column.",
+      "all_missing_training_features": [],
+      "features": [
+        "game_age_days",
+        "release_year",
+        "release_month",
+        "release_quarter",
+        "prior_price_record_count",
+        "prior_discount_count",
+        "prior_discount_rate",
+        "days_since_last_price_record",
+        "days_since_last_discount",
+        "max_prior_discount_pct",
+        "mean_prior_discount_pct",
+        "last_observed_price",
+        "last_observed_discount_pct",
+        "has_prior_price_history",
+        "has_prior_discount_observation"
+      ],
+      "imputation_statistics": [
+        1416.0,
+        2019.5,
+        6.5,
+        2.5,
+        18.0,
+        9.0,
+        0.5,
+        85.02566550925926,
+        57.01671296296296,
+        70.0,
+        52.53977272727273,
+        9.99,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "scaling": "none",
+      "training_missingness": {
+        "days_since_last_discount": 18,
+        "days_since_last_price_record": 4,
+        "game_age_days": 0,
+        "has_prior_discount_observation": 0,
+        "has_prior_price_history": 0,
+        "last_observed_discount_pct": 4,
+        "last_observed_price": 4,
+        "max_prior_discount_pct": 18,
+        "mean_prior_discount_pct": 18,
+        "prior_discount_count": 0,
+        "prior_discount_rate": 4,
+        "prior_price_record_count": 0,
+        "release_month": 0,
+        "release_quarter": 0,
+        "release_year": 0
+      },
+      "training_rows": 100,
+      "training_years": [
+        2023
+      ],
+      "transformed_features": [
+        "game_age_days",
+        "release_year",
+        "release_month",
+        "release_quarter",
+        "prior_price_record_count",
+        "prior_discount_count",
+        "prior_discount_rate",
+        "days_since_last_price_record",
+        "days_since_last_discount",
+        "max_prior_discount_pct",
+        "mean_prior_discount_pct",
+        "last_observed_price",
+        "last_observed_discount_pct",
+        "has_prior_price_history",
+        "has_prior_discount_observation"
+      ]
+    },
+    "xgboost": {
+      "added_missingness_indicators": [],
+      "all_missing_rule": "Preserve schema; SimpleImputer keep_empty_features=True uses structural zero for an entirely missing training column.",
+      "all_missing_training_features": [],
+      "features": [
+        "game_age_days",
+        "release_year",
+        "release_month",
+        "release_quarter",
+        "prior_price_record_count",
+        "prior_discount_count",
+        "prior_discount_rate",
+        "days_since_last_price_record",
+        "days_since_last_discount",
+        "max_prior_discount_pct",
+        "mean_prior_discount_pct",
+        "last_observed_price",
+        "last_observed_discount_pct",
+        "has_prior_price_history",
+        "has_prior_discount_observation"
+      ],
+      "imputation_statistics": [
+        1416.0,
+        2019.5,
+        6.5,
+        2.5,
+        18.0,
+        9.0,
+        0.5,
+        85.02566550925926,
+        57.01671296296296,
+        70.0,
+        52.53977272727273,
+        9.99,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "scaling": "none",
+      "training_missingness": {
+        "days_since_last_discount": 18,
+        "days_since_last_price_record": 4,
+        "game_age_days": 0,
+        "has_prior_discount_observation": 0,
+        "has_prior_price_history": 0,
+        "last_observed_discount_pct": 4,
+        "last_observed_price": 4,
+        "max_prior_discount_pct": 18,
+        "mean_prior_discount_pct": 18,
+        "prior_discount_count": 0,
+        "prior_discount_rate": 4,
+        "prior_price_record_count": 0,
+        "release_month": 0,
+        "release_quarter": 0,
+        "release_year": 0
+      },
+      "training_rows": 100,
+      "training_years": [
+        2023
+      ],
+      "transformed_features": [
+        "game_age_days",
+        "release_year",
+        "release_month",
+        "release_quarter",
+        "prior_price_record_count",
+        "prior_discount_count",
+        "prior_discount_rate",
+        "days_since_last_price_record",
+        "days_since_last_discount",
+        "max_prior_discount_pct",
+        "mean_prior_discount_pct",
+        "last_observed_price",
+        "last_observed_discount_pct",
+        "has_prior_price_history",
+        "has_prior_discount_observation"
+      ]
+    }
+  },
+  "primary_metrics": {
+    "metric_directions": {
+      "accuracy": "higher",
+      "average_precision": "higher",
+      "brier_score": "lower",
+      "f1": "higher",
+      "log_loss": "lower",
+      "precision": "higher",
+      "recall": "higher",
+      "roc_auc": "higher"
+    },
+    "models": {
+      "bernoulli_baseline": {
+        "accuracy": 0.6,
+        "average_precision": 0.6,
+        "brier_score": 0.240625,
+        "confusion_matrix": [
+          [
+            0,
+            40
+          ],
+          [
+            0,
+            60
+          ]
+        ],
+        "confusion_matrix_orientation": "rows actual [0,1]; columns predicted [0,1]",
+        "f1": 0.75,
+        "log_loss": 0.6742975869339602,
+        "observations": 100,
+        "precision": 0.6,
+        "recall": 1.0,
+        "roc_auc": 0.5,
+        "threshold": 0.5,
+        "undefined_metrics": {}
+      },
+      "logistic_regression": {
+        "accuracy": 0.91,
+        "average_precision": 0.9376595618842051,
+        "brier_score": 0.07538892614130745,
+        "confusion_matrix": [
+          [
+            32,
+            8
+          ],
+          [
+            1,
+            59
+          ]
+        ],
+        "confusion_matrix_orientation": "rows actual [0,1]; columns predicted [0,1]",
+        "f1": 0.9291338582677166,
+        "log_loss": 0.2685934568650077,
+        "observations": 100,
+        "precision": 0.8805970149253731,
+        "recall": 0.9833333333333333,
+        "roc_auc": 0.93375,
+        "threshold": 0.5,
+        "undefined_metrics": {}
+      },
+      "random_forest": {
+        "accuracy": 0.88,
+        "average_precision": 0.918200840548757,
+        "brier_score": 0.081896672394621,
+        "confusion_matrix": [
+          [
+            29,
+            11
+          ],
+          [
+            1,
+            59
+          ]
+        ],
+        "confusion_matrix_orientation": "rows actual [0,1]; columns predicted [0,1]",
+        "f1": 0.9076923076923077,
+        "log_loss": 0.2883329343644717,
+        "observations": 100,
+        "precision": 0.8428571428571429,
+        "recall": 0.9833333333333333,
+        "roc_auc": 0.9270833333333333,
+        "threshold": 0.5,
+        "undefined_metrics": {}
+      },
+      "xgboost": {
+        "accuracy": 0.93,
+        "average_precision": 0.9262401376352335,
+        "brier_score": 0.06750149869510079,
+        "confusion_matrix": [
+          [
+            34,
+            6
+          ],
+          [
+            1,
+            59
+          ]
+        ],
+        "confusion_matrix_orientation": "rows actual [0,1]; columns predicted [0,1]",
+        "f1": 0.944,
+        "log_loss": 0.25251767347994875,
+        "observations": 100,
+        "precision": 0.9076923076923077,
+        "recall": 0.9833333333333333,
+        "roc_auc": 0.9295833333333333,
+        "threshold": 0.5,
+        "undefined_metrics": {}
+      }
+    },
+    "protocol": "2023\u20132024 -> 2025; previously examined holdout",
+    "target_definition": "1: a qualifying Steam-store discount was recorded during the official Autumn Sale window; 0: no qualifying discount was recorded. Zero does not establish absence of an actual discount. Probabilities concern recorded occurrence, not verified participation.",
+    "training_positive_prevalence": 0.575,
+    "unavailable_models": {},
+    "validation_positive_prevalence": 0.6
+  },
+  "primary_protocol": "2023\u20132024 -> 2025",
+  "protocol": "2023 -> 2024",
+  "training_rows": 100,
+  "training_target_counts": {
+    "0": 45,
+    "1": 55
+  },
+  "training_years": [
+    2023
+  ],
+  "unavailable_models": {}
+}

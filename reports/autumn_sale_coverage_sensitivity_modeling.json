@@ -1,0 +1,1081 @@
+{
+  "analysis": "Post-hoc exploratory coverage sensitivity motivated by Phase 7A; not a primary/production model.",
+  "diagnostic_isolated_from_primary": true,
+  "distinction": "No discount-specific counts, recencies or indicators enter this diagnostic; they mix discount behavior and observation availability.",
+  "estimator_parameters": {
+    "C": 1.0,
+    "class_weight": null,
+    "dual": false,
+    "fit_intercept": true,
+    "intercept_scaling": 1,
+    "l1_ratio": null,
+    "max_iter": 2000,
+    "multi_class": "deprecated",
+    "n_jobs": null,
+    "penalty": "l2",
+    "random_state": 42,
+    "solver": "lbfgs",
+    "tol": 0.0001,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "excluded_discount_behavior_features": [
+    "prior_discount_count",
+    "days_since_last_discount",
+    "has_prior_discount_observation"
+  ],
+  "feature_classification": {
+    "days_since_last_price_record": "historical price-observation availability",
+    "has_prior_price_history": "historical price-observation availability",
+    "prior_price_record_count": "historical price-observation availability"
+  },
+  "feature_subset": [
+    "prior_price_record_count",
+    "days_since_last_price_record",
+    "has_prior_price_history"
+  ],
+  "fitted_parameters": {
+    "coverage_only_logistic": {
+      "coefficients": [
+        [
+          0.7928496706791168,
+          -1.8671981794571653,
+          0.7476972147706117
+        ]
+      ],
+      "imputation_statistics": [
+        24.0,
+        72.73741898148148,
+        1.0
+      ],
+      "intercept": [
+        0.00040181887261350096
+      ],
+      "iterations": [
+        8
+      ],
+      "scaler_mean": [
+        28.125,
+        295.9075644097222,
+        0.965
+      ],
+      "scaler_variance": [
+        625.399375,
+        204586.96969257735,
+        0.033775000000000006
+      ]
+    }
+  },
+  "interpretation": "Strong coverage-only results would suggest the operational target partly reflects provider observation patterns; they cannot establish the precise source of the signal.",
+  "metrics": {
+    "models": {
+      "coverage_only_logistic": {
+        "accuracy": 0.87,
+        "average_precision": 0.8749521893361483,
+        "brier_score": 0.10824484594335841,
+        "confusion_matrix": [
+          [
+            27,
+            13
+          ],
+          [
+            0,
+            60
+          ]
+        ],
+        "confusion_matrix_orientation": "rows actual [0,1]; columns predicted [0,1]",
+        "f1": 0.9022556390977443,
+        "log_loss": 0.36811278140847564,
+        "observations": 100,
+        "precision": 0.821917808219178,
+        "recall": 1.0,
+        "roc_auc": 0.8658333333333333,
+        "threshold": 0.5,
+        "undefined_metrics": {}
+      },
+      "logistic_regression": {
+        "accuracy": 0.91,
+        "average_precision": 0.9376595618842051,
+        "brier_score": 0.07538892614130745,
+        "confusion_matrix": [
+          [
+            32,
+            8
+          ],
+          [
+            1,
+            59
+          ]
+        ],
+        "confusion_matrix_orientation": "rows actual [0,1]; columns predicted [0,1]",
+        "f1": 0.9291338582677166,
+        "log_loss": 0.2685934568650077,
+        "observations": 100,
+        "precision": 0.8805970149253731,
+        "recall": 0.9833333333333333,
+        "roc_auc": 0.93375,
+        "threshold": 0.5,
+        "undefined_metrics": {}
+      }
+    },
+    "target_definition": "1: a qualifying Steam-store discount was recorded during the official Autumn Sale window; 0: no qualifying discount was recorded. Zero does not establish absence of an actual discount. Probabilities concern recorded occurrence, not verified participation.",
+    "validation_positive_prevalence": 0.6
+  },
+  "predictions": [
+    {
+      "actual_label": 1,
+      "appid": 7830,
+      "decision_score": 1.7869388674121576,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.8565515625159793,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 8930,
+      "decision_score": 0.8077585287829253,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.6916316548067161,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 9730,
+      "decision_score": 2.4025183230570453,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.9170191367585423,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 15170,
+      "decision_score": 2.929428800439421,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.9492821814244863,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 20710,
+      "decision_score": 1.2162692131826416,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.7714063339272933,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 38210,
+      "decision_score": 2.4150698659181864,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.9179692612621282,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 61600,
+      "decision_score": 1.0894543025050205,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.7482789492832669,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 115320,
+      "decision_score": 3.076886897006266,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.9559292200912085,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 202410,
+      "decision_score": -6.648443835632682,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 0,
+      "predicted_probability": 0.001294359845454366,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 213670,
+      "decision_score": 2.9759943384058056,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.9514777727009002,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 218740,
+      "decision_score": 1.5333087593824977,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.8224899095131905,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 219200,
+      "decision_score": 2.329605675734818,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.9112994676004498,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 228320,
+      "decision_score": -6.182607166410943,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 0,
+      "predicted_probability": 0.0020607813456527523,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 234490,
+      "decision_score": 1.573103305891036,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.8282255591433231,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 242960,
+      "decision_score": 2.481456122221258,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.9228315572513083,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 252490,
+      "decision_score": 2.5021107273081014,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.9242896574016648,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 262470,
+      "decision_score": 1.588454807476104,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.8303985942314817,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 270880,
+      "decision_score": 3.844551079297264,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.9790521948193268,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 282010,
+      "decision_score": -6.163288836650075,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 0,
+      "predicted_probability": 0.002100894775559392,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 292400,
+      "decision_score": 1.4699020446192652,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.8130424968401282,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 303680,
+      "decision_score": 1.2479752223026175,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.7769491656772892,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 312520,
+      "decision_score": 3.0752362250366243,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.9558596273217721,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 314300,
+      "decision_score": -6.648443835632682,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 0,
+      "predicted_probability": 0.001294359845454366,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 331200,
+      "decision_score": 1.5016065725880852,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.8178139685530916,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 360430,
+      "decision_score": 3.6832241328339093,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.9754748231192147,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 363890,
+      "decision_score": 3.643264098334973,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.974500448075719,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 371450,
+      "decision_score": -4.614618649417011,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 0,
+      "predicted_probability": 0.009808794798340318,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 397310,
+      "decision_score": 3.7066713864470398,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.9760295580853727,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 418030,
+      "decision_score": 3.1069401796566094,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.9571781146361095,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 445220,
+      "decision_score": 1.7701014651618032,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.8544702887923379,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 449310,
+      "decision_score": -1.4826149275786353,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 0,
+      "predicted_probability": 0.18503277478595204,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 451950,
+      "decision_score": -2.6766978799521524,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 0,
+      "predicted_probability": 0.0643624439842315,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 528950,
+      "decision_score": 3.2558793512027178,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.9628838051200198,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 536220,
+      "decision_score": 2.343590906429104,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.9124234486371384,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 582660,
+      "decision_score": 2.7473090427475304,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.9397611946382008,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 595140,
+      "decision_score": 1.3114090277982784,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.7877488416954371,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 603210,
+      "decision_score": -6.648443835632682,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 0,
+      "predicted_probability": 0.001294359845454366,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 646350,
+      "decision_score": -2.314657939844857,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 0,
+      "predicted_probability": 0.08991625056129712,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 666120,
+      "decision_score": -6.648443835632682,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 0,
+      "predicted_probability": 0.001294359845454366,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 700600,
+      "decision_score": 1.8503940301519017,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.8641733600060951,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 708430,
+      "decision_score": 3.962944613221814,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.9813474665276144,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 745880,
+      "decision_score": -6.648443835632682,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 0,
+      "predicted_probability": 0.001294359845454366,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 757320,
+      "decision_score": 3.535767851871707,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.9716885180068034,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 791800,
+      "decision_score": 1.0895029893768797,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.7482881197129638,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 799600,
+      "decision_score": 2.1089265560400845,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.8917677701209841,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 806140,
+      "decision_score": -6.300998072486669,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 0,
+      "predicted_probability": 0.0018311137973800653,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 809230,
+      "decision_score": 3.5590487096921173,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.9723219881096331,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 821720,
+      "decision_score": 3.3316768509645778,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.9654996693370246,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 826420,
+      "decision_score": 1.2797363206897705,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.7824048890281426,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 829590,
+      "decision_score": 3.640453484878539,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.9744305130071392,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 887920,
+      "decision_score": 1.3114502611352894,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.7877557358524955,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 965590,
+      "decision_score": 2.0096968052929287,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.8818114268857759,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 966000,
+      "decision_score": -6.425010635486886,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 0,
+      "predicted_probability": 0.0016178942193224696,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 1005530,
+      "decision_score": -6.648443835632682,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 0,
+      "predicted_probability": 0.001294359845454366,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 1023370,
+      "decision_score": -6.648443835632682,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 0,
+      "predicted_probability": 0.001294359845454366,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 1063730,
+      "decision_score": 0.4871830842015387,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.6194426148172711,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 1083210,
+      "decision_score": 3.559248741949792,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.9723273708570814,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 1090250,
+      "decision_score": 1.5443726524592607,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.8240994813982472,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 1097370,
+      "decision_score": -6.150903641802583,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 0,
+      "predicted_probability": 0.0021270208761046618,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 1141280,
+      "decision_score": -6.648443835632682,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 0,
+      "predicted_probability": 0.001294359845454366,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 1158850,
+      "decision_score": 2.603813760914645,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.9311066238681772,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 1200900,
+      "decision_score": -6.336999687926043,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 0,
+      "predicted_probability": 0.0017664776777633273,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 1239260,
+      "decision_score": 3.5425409456086125,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.9718742513334189,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 1249680,
+      "decision_score": 1.7577124957678185,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.8529229349126011,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 1257270,
+      "decision_score": 3.703870519920792,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.9759639419619546,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 1271420,
+      "decision_score": -6.161207581056247,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 0,
+      "predicted_probability": 0.002105262613020814,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 1338570,
+      "decision_score": -6.648443835632682,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 0,
+      "predicted_probability": 0.001294359845454366,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 1373180,
+      "decision_score": 0.4363064338008593,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.6073785767990757,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 1413660,
+      "decision_score": 2.239879325255971,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.9037739641301598,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 1418360,
+      "decision_score": 2.4411741419856674,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.919913632510933,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 1465260,
+      "decision_score": 3.4305756360970445,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.9686465547711735,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 1532510,
+      "decision_score": 0.8042409297850278,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.6908809254787197,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 1544810,
+      "decision_score": -6.308022828948938,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 0,
+      "predicted_probability": 0.0018183190507751576,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 1560770,
+      "decision_score": 2.4785010913440924,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.9226208561226121,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 1575230,
+      "decision_score": -1.2151931141432888,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 0,
+      "predicted_probability": 0.22878347929136653,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 1588760,
+      "decision_score": 3.445766236482389,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.9691046296291438,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 1655440,
+      "decision_score": 0.6272100563298091,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.6518565820959212,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 1708340,
+      "decision_score": 0.3603952642563455,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.5891361130204912,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 1740720,
+      "decision_score": 1.8789309290905936,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.8674882825050466,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 1785150,
+      "decision_score": 2.1586514572575677,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.8964744598825265,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 1836120,
+      "decision_score": 2.3101348926539167,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.9097129353594551,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 1882420,
+      "decision_score": 1.0261848092295007,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.7361755732598726,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 1894600,
+      "decision_score": -3.8960440723381433,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 0,
+      "predicted_probability": 0.019917381649373282,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 2009420,
+      "decision_score": 2.281728086430714,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.9073524190492568,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 2062610,
+      "decision_score": -3.8960440723381433,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 0,
+      "predicted_probability": 0.019917381649373282,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 2123430,
+      "decision_score": 0.1517156687855268,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.5378563314072567,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 2164880,
+      "decision_score": -0.20157414414719774,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 0,
+      "predicted_probability": 0.44977640656591916,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 2205710,
+      "decision_score": 2.0993512579629834,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.8908401085214906,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 2265760,
+      "decision_score": 0.5506431204063759,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.6342847869850101,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 2268470,
+      "decision_score": -2.15092047688923,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 0,
+      "predicted_probability": 0.104245239355723,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 2270520,
+      "decision_score": 1.7493122373634824,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.8518660340002212,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 2312170,
+      "decision_score": 0.8042743751337045,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.6908880681713602,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 2314050,
+      "decision_score": 1.4928824095052442,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.8165105123690984,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 2383710,
+      "decision_score": 2.0980492880089368,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.8907134353015143,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 2387820,
+      "decision_score": 1.9987983233549065,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.8806708518931884,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 2490910,
+      "decision_score": 1.4434953644545716,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.8089953451402028,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 2504210,
+      "decision_score": -3.8960440723381433,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 0,
+      "predicted_probability": 0.019917381649373282,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 2544720,
+      "decision_score": 1.895429710709025,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.8693733840879067,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 1,
+      "appid": 2621900,
+      "decision_score": 1.7753912860822472,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.8551268496935606,
+      "sale_year": 2025
+    },
+    {
+      "actual_label": 0,
+      "appid": 2650840,
+      "decision_score": 1.6086108940917616,
+      "model_name": "coverage_only_logistic",
+      "predicted_class": 1,
+      "predicted_probability": 0.8332184380077099,
+      "sale_year": 2025
+    }
+  ],
+  "preprocessing": {
+    "added_missingness_indicators": [],
+    "all_missing_rule": "Preserve schema; SimpleImputer keep_empty_features=True uses structural zero for an entirely missing training column.",
+    "all_missing_training_features": [],
+    "features": [
+      "prior_price_record_count",
+      "days_since_last_price_record",
+      "has_prior_price_history"
+    ],
+    "imputation_statistics": [
+      24.0,
+      72.73741898148148,
+      1.0
+    ],
+    "scaler_mean": [
+      28.125,
+      295.9075644097222,
+      0.965
+    ],
+    "scaler_samples": 200,
+    "scaler_scale": [
+      25.007986224404394,
+      452.3129112600892,
+      0.1837797594948911
+    ],
+    "scaler_variance": [
+      625.399375,
+      204586.96969257735,
+      0.033775000000000006
+    ],
+    "scaling": "StandardScaler",
+    "training_missingness": {
+      "days_since_last_price_record": 7,
+      "has_prior_price_history": 0,
+      "prior_price_record_count": 0
+    },
+    "training_rows": 200,
+    "training_years": [
+      2023,
+      2024
+    ],
+    "transformed_features": [
+      "prior_price_record_count",
+      "days_since_last_price_record",
+      "has_prior_price_history"
+    ]
+  },
+  "threshold": 0.5,
+  "training_rows": 200,
+  "training_years": [
+    2023,
+    2024
+  ],
+  "validation_rows": 100,
+  "validation_year": 2025
+}
