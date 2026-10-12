@@ -1,0 +1,800 @@
+{
+  "catalog": {
+    "definitely_before_all_three_start_dates": 61658,
+    "duplicate_appid_values": 0,
+    "duplicate_excess_rows": 0,
+    "duplicate_rule": "All rows with a repeated valid AppID are excluded from candidates; no arbitrary deduplication or source repair.",
+    "eligibility_by_year": {
+      "2023": {
+        "after_end_date": 37364,
+        "before_start_date": 61658,
+        "definitely_before_start_date": 61658,
+        "denominator_catalog_records": 99194,
+        "eligible_by_existing_date_rule": 61681,
+        "interior_sale_dates": 124,
+        "on_end_date": 25,
+        "on_start_date": 23,
+        "unknown_release_date": 0
+      },
+      "2024": {
+        "after_end_date": 22648,
+        "before_start_date": 76209,
+        "definitely_before_start_date": 76209,
+        "denominator_catalog_records": 99194,
+        "eligible_by_existing_date_rule": 76256,
+        "interior_sale_dates": 223,
+        "on_end_date": 67,
+        "on_start_date": 47,
+        "unknown_release_date": 0
+      },
+      "2025": {
+        "after_end_date": 8005,
+        "before_start_date": 90839,
+        "definitely_before_start_date": 90839,
+        "denominator_catalog_records": 99194,
+        "eligible_by_existing_date_rule": 90893,
+        "interior_sale_dates": 246,
+        "on_end_date": 50,
+        "on_start_date": 54,
+        "unknown_release_date": 0
+      }
+    },
+    "eligible_all_three_date_rule": 61681,
+    "invalid_identifiers": 0,
+    "invalid_release_dates": 0,
+    "missing_appids": 0,
+    "missing_release_dates": 0,
+    "path": "data/intermediate/games_master.csv",
+    "release_precision": "Date-only YYYY-MM-DD; no release time or purchase-availability guarantee.",
+    "release_year_distribution": {
+      "1997": 1,
+      "1998": 1,
+      "1999": 2,
+      "2000": 2,
+      "2001": 4,
+      "2002": 1,
+      "2003": 3,
+      "2004": 5,
+      "2005": 6,
+      "2006": 63,
+      "2007": 80,
+      "2008": 145,
+      "2009": 300,
+      "2010": 229,
+      "2011": 232,
+      "2012": 285,
+      "2013": 420,
+      "2014": 1395,
+      "2015": 2231,
+      "2016": 3546,
+      "2017": 5018,
+      "2018": 6266,
+      "2019": 6102,
+      "2020": 7312,
+      "2021": 8783,
+      "2022": 9400,
+      "2023": 11072,
+      "2024": 14860,
+      "2025": 18577,
+      "2026": 2853
+    },
+    "release_year_mismatches": 0,
+    "total_records": 99194,
+    "unique_valid_appids": 99194
+  },
+  "collection": {
+    "authentication": "ITAD-API-Key header from ITAD_API_KEY environment variable; no credential needed for this audit.",
+    "caching": "Atomic JSON replacement, configuration/provenance checks, compatible cache reuse, deliberate retry of incomplete matched histories, forced refresh archives old files.",
+    "checkpoint_resume": "Each completed game is cached; restart reuses valid cache. Manifest/report written after traversal; no durable per-attempt scheduler or bulk progress checkpoint. Existing smoke gate is pilot-hash-bound.",
+    "configuration": {
+      "country": "US",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "next_authorization": "First parameterize a separate collection namespace and approve a bounded smoke/coverage trial; no collection in Phase 8A.",
+    "pacing": "Default serial request-start spacing at least one second. Latency, throttles, retries and checkpoints add time; floors are not completion-time forecasts.",
+    "pagination": "Current code sends one array-returning history request per matched game; no cursor, offset, page or pagination loop. Provider limits/truncation remain unestablished offline.",
+    "provider": "IsThereAnyDeal",
+    "recorded_quota": "Existing Phase 4 report records a verified-email default of 1,000 requests per five minutes, reviewed 2026-10-05. Account-specific/current quota is NOT verified by this audit.",
+    "request_formula": "U uncached games: Q=U + q*U*H before retries, where q is mapping fraction and H history requests per match (current implementation H=1). Add retry attempts; apply actual account quota.",
+    "response_size_constraints": "No documented response-size cap or truncation detector in current code; entire response/body and decoded history retained in memory and duplicated in cache wrappers. Provider cap unknown.",
+    "retries": "At most three attempts. Exponential waits 2s/4s for transient connection/408/5xx failures; 429 honors Retry-After. Missing/invalid Retry-After or waits >60s stop; 401/403 and redirects abort. Per-request timeout 30s.",
+    "storage_note": "Wrapper-size scenarios use the nonrepresentative pilot mean; new-history size may differ substantially. No full-catalog coverage or storage forecast is established.",
+    "workload": {
+      "1000": {
+        "all_matched_no_retry_requests": 1800,
+        "at_most_three_attempts_per_endpoint_all_matched_bound": 5400,
+        "cold_start_all_matched_requests": 2000,
+        "hypothetical_120_requests_per_5_minutes_floor_minutes": 75.0,
+        "mapping_fraction_scenarios": {
+          "0.5": 1350.0,
+          "0.8": 1620.0,
+          "1.0": 1800.0
+        },
+        "pacing_floor_minutes_all_matched": 29.983333333333334,
+        "pilot_mean_wrapper_size_scenario_bytes": 38960510.0,
+        "reusable_pilot_caches": 100,
+        "total_games": 1000,
+        "uncached_candidates": 900
+      },
+      "2000": {
+        "all_matched_no_retry_requests": 3800,
+        "at_most_three_attempts_per_endpoint_all_matched_bound": 11400,
+        "cold_start_all_matched_requests": 4000,
+        "hypothetical_120_requests_per_5_minutes_floor_minutes": 158.33333333333334,
+        "mapping_fraction_scenarios": {
+          "0.5": 2850.0,
+          "0.8": 3420.0,
+          "1.0": 3800.0
+        },
+        "pacing_floor_minutes_all_matched": 63.31666666666667,
+        "pilot_mean_wrapper_size_scenario_bytes": 77921020.0,
+        "reusable_pilot_caches": 100,
+        "total_games": 2000,
+        "uncached_candidates": 1900
+      },
+      "500": {
+        "all_matched_no_retry_requests": 800,
+        "at_most_three_attempts_per_endpoint_all_matched_bound": 2400,
+        "cold_start_all_matched_requests": 1000,
+        "hypothetical_120_requests_per_5_minutes_floor_minutes": 33.333333333333336,
+        "mapping_fraction_scenarios": {
+          "0.5": 600.0,
+          "0.8": 720.0,
+          "1.0": 800.0
+        },
+        "pacing_floor_minutes_all_matched": 13.316666666666666,
+        "pilot_mean_wrapper_size_scenario_bytes": 19480255.0,
+        "reusable_pilot_caches": 100,
+        "total_games": 500,
+        "uncached_candidates": 400
+      },
+      "5000": {
+        "all_matched_no_retry_requests": 9800,
+        "at_most_three_attempts_per_endpoint_all_matched_bound": 29400,
+        "cold_start_all_matched_requests": 10000,
+        "hypothetical_120_requests_per_5_minutes_floor_minutes": 408.3333333333333,
+        "mapping_fraction_scenarios": {
+          "0.5": 7350.0,
+          "0.8": 8820.0,
+          "1.0": 9800.0
+        },
+        "pacing_floor_minutes_all_matched": 163.31666666666666,
+        "pilot_mean_wrapper_size_scenario_bytes": 194802550.0,
+        "reusable_pilot_caches": 100,
+        "total_games": 5000,
+        "uncached_candidates": 4900
+      }
+    }
+  },
+  "evaluation_design": {
+    "confirmatory_feasibility": "New held-out games have uninspected local outcomes, but the 2025 event and model choices have already informed methodology. A preregistered sealed cohort offers untouched game outcomes, not an entirely fresh event-level confirmatory test. A future unexamined sale could provide stronger confirmation only after separate authorization and verified dates/data; none are assumed here.",
+    "coverage": "Report evaluation sizes and performance by pre-cutoff coverage flags/count bands fixed using development data. Separately report retrieval failure, empty response, ambiguity and date uncertainty; never select replacements for abundant histories or favorable targets.",
+    "pilot_vs_sample": "Report pilot and probability-sample results separately; use new-sample stratum inclusion weights for its restricted sampling frame where justified. Do not pool the pilot as a probability sample.",
+    "preprocessing": "All imputation, scaling, feature-selection rules and calibration (if later authorized) fit exclusively on chronological development training; exact historical cutoffs preserved.",
+    "represented_games": "Lock a new-sample development cohort before collection. Train on eligible 2023\u20132024 rows, evaluate its 2025 rows separately; pilot 2025 remains an examined diagnostic.",
+    "tuning": "Predefine training-only grouped/temporal resampling. No tuning on the examined pilot 2025 labels, new 2025 evaluation labels, missingness in evaluation, or importance computed on evaluation.",
+    "uncertainty": "Cluster uncertainty calculations by AppID, account for sampling design and small coverage strata; no generalization to post-2023-release titles, permanent-free titles, missing snapshot entries or the full Steam catalog is established.",
+    "unseen_games": "Within each new-sample release stratum, preassign AppIDs by an independent seed/hash to development versus sealed game-level holdout before collecting outcomes. Exclude EVERY holdout AppID from all training years; evaluate eligible 2025 holdout rows only."
+  },
+  "event_windows": [
+    {
+      "sale_end_pacific": "2023-11-28T10:00:00-08:00",
+      "sale_end_utc": "2023-11-28T18:00:00Z",
+      "sale_start_pacific": "2023-11-21T10:00:00-08:00",
+      "sale_start_utc": "2023-11-21T18:00:00Z",
+      "sale_year": 2023,
+      "source_text_url": "https://store.steampowered.com/news/posts/?enddate=1700494047",
+      "source_title": "Valve Steam News: The Steam Autumn Sale is just a few days away! (2023-11-17)",
+      "source_url": "https://steamcommunity.com/games/593110/announcements/detail/3823053915973575702",
+      "verification_evidence": "Announcement explicitly specifies November 21 at 10 AM PST (UTC -8) through November 28 at 10 AM PST (UTC -8).",
+      "verification_status": "verified"
+    },
+    {
+      "sale_end_pacific": "2024-12-04T10:00:00-08:00",
+      "sale_end_utc": "2024-12-04T18:00:00Z",
+      "sale_start_pacific": "2024-11-27T10:00:00-08:00",
+      "sale_start_utc": "2024-11-27T18:00:00Z",
+      "sale_year": 2024,
+      "source_image_path": "reports/sources/autumn_sale_calendar/2024_valve_announcement.jpg",
+      "source_image_sha256": "3db4e105db87ebae0f42e65b85ff0d4b78f36e4d53388fb0dfd0c670e9d0ba64",
+      "source_image_url": "https://clan.fastly.steamstatic.com/images/27766192/b16a89fef845591fc364490eb3e35d3c08ad05c9.jpg",
+      "source_title": "Valve Steam News: The Steam Autumn Sale is on now! (2024-11-27)",
+      "source_url": "https://steamcommunity.com/games/593110/announcements/detail/4464851103138185583",
+      "verification_evidence": "Official announcement artwork specifies November 27\u2013December 4 at 10 AM Pacific; announcement text separately confirms the December 4 end at 10 AM PST.",
+      "verification_status": "verified"
+    },
+    {
+      "sale_end_pacific": "2025-10-06T10:00:00-07:00",
+      "sale_end_utc": "2025-10-06T17:00:00Z",
+      "sale_start_pacific": "2025-09-29T10:00:00-07:00",
+      "sale_start_utc": "2025-09-29T17:00:00Z",
+      "sale_year": 2025,
+      "source_image_path": "reports/sources/autumn_sale_calendar/2025_valve_announcement.jpg",
+      "source_image_sha256": "a0fee0d11e02297fceb0a61585bc788e0fe60c2ee97e93fab669260a84a1f57d",
+      "source_image_url": "https://clan.fastly.steamstatic.com/images/27766192/fe66f80c30a3f49f0564f8ae3cbc6dafb075921a.jpg",
+      "source_text_url": "https://store.steampowered.com/news/posts/?enddate=1759469475&feed=steam_client+Steam+News",
+      "source_title": "Valve Steam News: Steam Autumn Sale is here! (2025-09-29)",
+      "source_url": "https://steamcommunity.com/games/593110/announcements/detail/507340830949770005",
+      "verification_evidence": "Official announcement artwork specifies September 29\u2013October 6 at 10 AM PT; text separately confirms the October 6 end at 10 AM PT. Both dates are PDT (UTC -7).",
+      "verification_status": "verified"
+    }
+  ],
+  "local_evidence": {
+    "by_year": {
+      "2023": {
+        "after": {
+          "games_with_discount_records": 75,
+          "games_with_temporal_records": 77,
+          "games_with_valid_price_records": 77,
+          "temporal_records": 3255
+        },
+        "before": {
+          "games_with_discount_records": 82,
+          "games_with_temporal_records": 96,
+          "games_with_valid_price_records": 96,
+          "temporal_records": 2256
+        },
+        "denominator_local_games": 100,
+        "games_without_in_window_record": 43,
+        "inside": {
+          "games_with_discount_records": 55,
+          "games_with_temporal_records": 57,
+          "games_with_valid_price_records": 57,
+          "temporal_records": 57
+        }
+      },
+      "2024": {
+        "after": {
+          "games_with_discount_records": 75,
+          "games_with_temporal_records": 76,
+          "games_with_valid_price_records": 76,
+          "temporal_records": 2139
+        },
+        "before": {
+          "games_with_discount_records": 85,
+          "games_with_temporal_records": 97,
+          "games_with_valid_price_records": 97,
+          "temporal_records": 3369
+        },
+        "denominator_local_games": 100,
+        "games_without_in_window_record": 40,
+        "inside": {
+          "games_with_discount_records": 60,
+          "games_with_temporal_records": 60,
+          "games_with_valid_price_records": 60,
+          "temporal_records": 60
+        }
+      },
+      "2025": {
+        "after": {
+          "games_with_discount_records": 73,
+          "games_with_temporal_records": 74,
+          "games_with_valid_price_records": 74,
+          "temporal_records": 1124
+        },
+        "before": {
+          "games_with_discount_records": 87,
+          "games_with_temporal_records": 97,
+          "games_with_valid_price_records": 97,
+          "temporal_records": 4383
+        },
+        "denominator_local_games": 100,
+        "games_without_in_window_record": 39,
+        "inside": {
+          "games_with_discount_records": 60,
+          "games_with_temporal_records": 61,
+          "games_with_valid_price_records": 61,
+          "temporal_records": 61
+        }
+      }
+    },
+    "cache_wrapper_bytes": {
+      "max": 89771,
+      "mean": 38960.51,
+      "min": 3193,
+      "total": 3896051
+    },
+    "catalog_denominator": 99194,
+    "catalog_games_with_local_cache": 100,
+    "catalog_games_without_local_cache": 99094,
+    "collection_status_counts": {
+      "empty_history": 3,
+      "history_received": 97
+    },
+    "continuous_sale_coverage_unestablished_games": 100,
+    "discounted_records": 2783,
+    "existing_evidence_categories": {
+      "A": 175,
+      "B": 3,
+      "D": 122
+    },
+    "games_with_any_discount_record": 88,
+    "games_with_any_temporal_record": 97,
+    "games_with_any_valid_price_record": 97,
+    "games_with_no_temporal_observations": 3,
+    "known_external_potential": "The existing lookup/history contract can be queried for new AppIDs in an approved future collection. Match rate and historical completeness are unestablished.",
+    "local_cohort_denominator": 100,
+    "malformed_cache_count": 0,
+    "observation_warning": "An empty response is observed local absence of returned records, not absence of discounts or a verified complete negative.",
+    "partition_rule": "Before timestamp < start; inside start <= timestamp < end; after timestamp >= end. Observations, not continuous price coverage.",
+    "provider_coverage_for_uncached_games": "UNKNOWN: no requests made; no provider-side availability inference.",
+    "record_count_range": {
+      "max": 136,
+      "min": 0
+    },
+    "temporal_records": 5568,
+    "uncertain_complete_capture_games": 100,
+    "valid_price_records": 5568
+  },
+  "phase": "8A",
+  "pipeline_readiness": {
+    "approved_features": [
+      "game_age_days",
+      "release_year",
+      "release_month",
+      "release_quarter",
+      "prior_price_record_count",
+      "prior_discount_count",
+      "prior_discount_rate",
+      "days_since_last_price_record",
+      "days_since_last_discount",
+      "max_prior_discount_pct",
+      "mean_prior_discount_pct",
+      "last_observed_price",
+      "last_observed_discount_pct",
+      "has_prior_price_history",
+      "has_prior_discount_observation"
+    ],
+    "existing_feature_missingness": {
+      "days_since_last_discount": 46,
+      "days_since_last_price_record": 10,
+      "game_age_days": 0,
+      "has_prior_discount_observation": 0,
+      "has_prior_price_history": 0,
+      "last_observed_discount_pct": 10,
+      "last_observed_price": 10,
+      "max_prior_discount_pct": 46,
+      "mean_prior_discount_pct": 46,
+      "prior_discount_count": 0,
+      "prior_discount_rate": 10,
+      "prior_price_record_count": 0,
+      "release_month": 0,
+      "release_quarter": 0,
+      "release_year": 0
+    },
+    "existing_modeling_rows": 300,
+    "feature_definitions_unchanged": true,
+    "features": {
+      "barriers": [
+        {
+          "line": 235,
+          "path": "src/07_build_autumn_features.py",
+          "text": "header = read_table(root / 'data/intermediate/pilot_games.csv', ['AppID'])[0].keys()"
+        },
+        {
+          "line": 284,
+          "path": "src/07_build_autumn_features.py",
+          "text": "f\"Rows: **{len(rows)}**; year counts: **100 / 100 / 100**. Currency conflicts: **{stats['currency_conflict_pair_count']}**; uncertain release-hour pairs: **{stats['uncertain_release_hour_count']}**. Constant baseline features: **{', '.join(stats['constant_features']) or 'none'}**. Unusual values are retained; no target-based feature selection is performed.\", '',"
+        },
+        {
+          "line": 314,
+          "path": "src/07_build_autumn_features.py",
+          "text": "pilot = read_table(root / 'data/intermediate/pilot_games.csv', ['AppID', 'release_date', 'release_year'])"
+        },
+        {
+          "line": 316,
+          "path": "src/07_build_autumn_features.py",
+          "text": "require(len(pilot) == len(games) == 100 and set(pairs) == {(a, y) for a in games for y in windows}, 'Expected original 100 games / 300 pairs')"
+        },
+        {
+          "line": 326,
+          "path": "src/07_build_autumn_features.py",
+          "text": "require(len(manifest) == len(manifests) == 100 and set(manifest) == set(games), 'Manifest identities differ')"
+        },
+        {
+          "line": 334,
+          "path": "src/07_build_autumn_features.py",
+          "text": "require(Counter(r['discount_observed'] for r in model) == {1: 175, 0: 125}, 'Approved target counts differ')"
+        }
+      ],
+      "changes_needed": "Parameterize paths and expected cohort/pair counts; construct release-eligible pairs with same-day flags; validate labels/catalog/cache identities; keep exact 15-feature schema and strictly pre-cutoff observation selection.",
+      "cutoff": "timestamp < exact UTC sale start. No carry-forward, interpolation, contemporary predictors or future observations.",
+      "determinism": "Sort AppIDs, game-year keys, timestamps and raw indices; preserve duplicates, tied conflicts, currencies and exact cutoffs. Freeze source/configuration hashes.",
+      "missingness": "Existing counts/flags distinguish no valid history; ratios, recencies and prices remain null. Preserve currency/conflict rules. Future preprocessing must fit only training data and explicitly retain/drop all-missing columns by a training-only rule.",
+      "performance": "Current loader parses all game histories and keeps raw-record provenance in memory; three passes per game filter/sort history. For 5,000 games at three years, at most 15,000 pairs. Stream/chunk by game and bound provenance size after measuring actual records; no benchmark of expanded histories is possible here."
+    },
+    "labeling": {
+      "barriers": [
+        {
+          "line": 43,
+          "path": "src/06_build_operational_labels.py",
+          "text": "'games': ('data/intermediate/pilot_games.csv', ['AppID', 'Name', 'release_date']),"
+        },
+        {
+          "line": 125,
+          "path": "src/06_build_operational_labels.py",
+          "text": "require(set(pairs) == expected and set(games) == set(manifests), 'Expected every pilot AppID for every sale year')"
+        },
+        {
+          "line": 163,
+          "path": "src/06_build_operational_labels.py",
+          "text": "require(r['cache_path'] == manifest['cache_path'] == f'data/raw/itad/{appid}.json', f'Cache path mismatch: {key}')"
+        },
+        {
+          "line": 212,
+          "path": "src/06_build_operational_labels.py",
+          "text": "require(stats['total_rows'] == 300 and stats['duplicate_count'] == 0, 'Expected 300 unique operational rows')"
+        },
+        {
+          "line": 213,
+          "path": "src/06_build_operational_labels.py",
+          "text": "require(stats['category_counts'] == dict(A=175, B=3, C=0, D=122), 'Current pilot categories differ; review required')"
+        },
+        {
+          "line": 214,
+          "path": "src/06_build_operational_labels.py",
+          "text": "require(stats['operational_label_counts'] == {'1': 175, '0': 125, 'null': 0}, 'Unexpected operational label counts')"
+        },
+        {
+          "line": 215,
+          "path": "src/06_build_operational_labels.py",
+          "text": "require(stats['pu_status_counts'] == {'positive': 175, 'unlabeled': 125}, 'Unexpected PU counts')"
+        },
+        {
+          "line": 228,
+          "path": "src/06_build_operational_labels.py",
+          "text": "require(len(inputs['games']) == 100, 'Expected unchanged 100-game pilot')"
+        },
+        {
+          "line": 317,
+          "path": "src/06_build_operational_labels.py",
+          "text": "'PU status totals: **175 positive / 125 unlabeled**. All 300 original game-year pairs remain, with unchanged categories. There are zero current C cases and zero null labels. Label counts are checked against the approved frozen pilot; an unexpected scope/count change stops execution for review rather than forcing results.', '',"
+        }
+      ],
+      "changes_needed": "Parameterize cohort/input/output namespace, reject duplicate keys, construct only historically eligible pairs, preserve A/B/C/D semantics and nullable labels; keep legacy pilot regression checks in their own fixtures. Missing/failed retrieval is a collection status, not an operational zero.",
+      "evidence_categories": {
+        "A": "Recorded qualifying discount -> 1",
+        "B": "Only directly observed full-price records -> 0; continuity unverified",
+        "C": "Ambiguous in-window evidence without qualifying discount -> null/review",
+        "D": "No in-window records -> 0; not verified absence of a discount"
+      },
+      "upstream_audit_barriers": [
+        {
+          "line": 43,
+          "path": "src/04_audit_autumn_evidence.py",
+          "text": "('pilot_games.csv', 'games_master.csv', 'itad_collection_manifest.csv')]"
+        },
+        {
+          "line": 825,
+          "path": "src/04_audit_autumn_evidence.py",
+          "text": "games = read_csv(root / 'data/intermediate/pilot_games.csv')"
+        },
+        {
+          "line": 826,
+          "path": "src/04_audit_autumn_evidence.py",
+          "text": "manifest = read_csv(root / 'data/intermediate/itad_collection_manifest.csv')"
+        }
+      ],
+      "upstream_barriers": [
+        {
+          "line": 28,
+          "path": "src/03_fetch_itad.py",
+          "text": "PILOT = ROOT / 'data/intermediate/pilot_games.csv'"
+        },
+        {
+          "line": 30,
+          "path": "src/03_fetch_itad.py",
+          "text": "CACHE = ROOT / 'data/raw/itad'"
+        },
+        {
+          "line": 31,
+          "path": "src/03_fetch_itad.py",
+          "text": "MANIFEST = ROOT / 'data/intermediate/itad_collection_manifest.csv'"
+        },
+        {
+          "line": 73,
+          "path": "src/03_fetch_itad.py",
+          "text": "if len(rows) != 100 or len(set(ids)) != 100:"
+        },
+        {
+          "line": 122,
+          "path": "src/03_fetch_itad.py",
+          "text": "if not number(deal['cut']) or not 0 <= deal['cut'] <= 100:"
+        },
+        {
+          "line": 348,
+          "path": "src/03_fetch_itad.py",
+          "text": "if len(rows) != 100 or {r['AppID'] for r in rows} != {g['AppID'] for g in games}:"
+        },
+        {
+          "line": 440,
+          "path": "src/03_fetch_itad.py",
+          "text": "def smoke_receipt_valid(pilot_hash):"
+        },
+        {
+          "line": 465,
+          "path": "src/03_fetch_itad.py",
+          "text": "if args.limit is not None and not 1 <= args.limit <= 100:"
+        },
+        {
+          "line": 478,
+          "path": "src/03_fetch_itad.py",
+          "text": "elif (args.limit or 100) > 3 and not smoke_receipt_valid(hashes[PILOT]):"
+        },
+        {
+          "line": 485,
+          "path": "src/03_fetch_itad.py",
+          "text": "selected = i < (args.limit or 100)"
+        },
+        {
+          "line": 516,
+          "path": "src/03_fetch_itad.py",
+          "text": "elif smoke_receipt_valid(hashes[PILOT]):"
+        }
+      ]
+    },
+    "modeling_handoff": {
+      "barriers": [
+        {
+          "line": 175,
+          "path": "src/08_train_baseline_models.py",
+          "text": "require(len(train) == 200 and len(valid) == 100, 'Expected 200 training / 100 validation rows')"
+        },
+        {
+          "line": 176,
+          "path": "src/08_train_baseline_models.py",
+          "text": "require(set(train.appid) == set(valid.appid) and train.appid.nunique() == 100, 'Repeated pilot game identities mismatch')"
+        },
+        {
+          "line": 177,
+          "path": "src/08_train_baseline_models.py",
+          "text": "require(all(train.groupby('sale_year').size() == 100), 'Expected 100 rows per training year')"
+        },
+        {
+          "line": 187,
+          "path": "src/08_train_baseline_models.py",
+          "text": "require(len(frame) == len(features) == 300, 'Expected 300 game-year observations')"
+        },
+        {
+          "line": 190,
+          "path": "src/08_train_baseline_models.py",
+          "text": "require(frame[TARGET].notna().all() and set(frame[TARGET]) == {0, 1}, 'Invalid operational labels')"
+        },
+        {
+          "line": 200,
+          "path": "src/08_train_baseline_models.py",
+          "text": "require(train[TARGET].value_counts().to_dict() == {1: 115, 0: 85}, 'Training target count mismatch')"
+        },
+        {
+          "line": 201,
+          "path": "src/08_train_baseline_models.py",
+          "text": "require(valid[TARGET].value_counts().to_dict() == {1: 60, 0: 40}, 'Validation target count mismatch')"
+        },
+        {
+          "line": 215,
+          "path": "src/08_train_baseline_models.py",
+          "text": "require(len(merged) == 300 and (merged[TARGET] == merged[TARGET + '_source']).all(), 'Frozen operational label disagreement')"
+        },
+        {
+          "line": 276,
+          "path": "src/08_train_baseline_models.py",
+          "text": "require(len(out) == 200 and not out.duplicated(KEYS + ['model_name']).any(), 'Prediction row count/uniqueness failure')"
+        },
+        {
+          "line": 143,
+          "path": "src/09_train_ensemble_models.py",
+          "text": "require(len(train)==100*len(training_years) and len(valid)==100,'Temporal row count mismatch')"
+        },
+        {
+          "line": 144,
+          "path": "src/09_train_ensemble_models.py",
+          "text": "require(set(train.appid)==set(valid.appid) and valid.appid.nunique()==100,'Temporal identity mismatch')"
+        },
+        {
+          "line": 152,
+          "path": "src/09_train_ensemble_models.py",
+          "text": "require(len(predictions)==100*len(names) and set(predictions.model_name)==set(names),'Prediction model/row count mismatch')"
+        },
+        {
+          "line": 233,
+          "path": "src/09_train_ensemble_models.py",
+          "text": "require(set(train.sale_year.unique())==set(training_years) and len(train)==100*len(training_years),'Fitting received nontraining rows')"
+        }
+      ],
+      "recommendation": "A later authorized modeling phase needs cohort-aware expected counts and grouped chronological evaluation. Existing model wrappers reject null targets; ambiguous C labels and failed retrievals need a preregistered missing-target accounting policy, not relabeling or silent exclusion. Do not change or execute approved fitting scripts in this audit."
+    }
+  },
+  "plot_data": {
+    "funnel": {
+      "counts": [
+        99194,
+        61658,
+        61559,
+        4900
+      ],
+      "labels": [
+        "Master catalog",
+        "Before all three starts",
+        "Nonpilot sampling frame",
+        "Largest planned new cohort"
+      ]
+    },
+    "historical_coverage": {
+      "after": [
+        77,
+        76,
+        74
+      ],
+      "before": [
+        96,
+        97,
+        97
+      ],
+      "denominator": 100,
+      "inside": [
+        57,
+        60,
+        61
+      ]
+    },
+    "release_years": {
+      "1997": 1,
+      "1998": 1,
+      "1999": 2,
+      "2000": 2,
+      "2001": 4,
+      "2002": 1,
+      "2003": 3,
+      "2004": 5,
+      "2005": 6,
+      "2006": 63,
+      "2007": 80,
+      "2008": 145,
+      "2009": 300,
+      "2010": 229,
+      "2011": 232,
+      "2012": 285,
+      "2013": 420,
+      "2014": 1395,
+      "2015": 2231,
+      "2016": 3546,
+      "2017": 5018,
+      "2018": 6266,
+      "2019": 6102,
+      "2020": 7312,
+      "2021": 8783,
+      "2022": 9400,
+      "2023": 11072,
+      "2024": 14860,
+      "2025": 18577,
+      "2026": 2853
+    },
+    "sampling_composition": {
+      "1000": {
+        "2015_2019": 338,
+        "2020_2022": 372,
+        "2023_before_sale": 144,
+        "before_2015": 46
+      },
+      "2000": {
+        "2015_2019": 714,
+        "2020_2022": 786,
+        "2023_before_sale": 303,
+        "before_2015": 97
+      },
+      "500": {
+        "2015_2019": 150,
+        "2020_2022": 165,
+        "2023_before_sale": 64,
+        "before_2015": 21
+      },
+      "5000": {
+        "2015_2019": 1841,
+        "2020_2022": 2027,
+        "2023_before_sale": 781,
+        "before_2015": 251
+      }
+    }
+  },
+  "sampling": {
+    "cohorts": {
+      "1000": {
+        "new_probability_sample_games": 900,
+        "new_sample_by_stratum": {
+          "2015_2019": 338,
+          "2020_2022": 372,
+          "2023_before_sale": 144,
+          "before_2015": 46
+        },
+        "pilot_games": 100,
+        "total_games": 1000,
+        "within_stratum_inclusion_probability": {
+          "2015_2019": 0.014611161544114468,
+          "2020_2022": 0.01461000706935826,
+          "2023_before_sale": 0.014678899082568808,
+          "before_2015": 0.014584654407102092
+        }
+      },
+      "2000": {
+        "new_probability_sample_games": 1900,
+        "new_sample_by_stratum": {
+          "2015_2019": 714,
+          "2020_2022": 786,
+          "2023_before_sale": 303,
+          "before_2015": 97
+        },
+        "pilot_games": 100,
+        "total_games": 2000,
+        "within_stratum_inclusion_probability": {
+          "2015_2019": 0.030864998054727012,
+          "2020_2022": 0.03086953106590213,
+          "2023_before_sale": 0.0308868501529052,
+          "before_2015": 0.030754597336715282
+        }
+      },
+      "500": {
+        "new_probability_sample_games": 400,
+        "new_sample_by_stratum": {
+          "2015_2019": 150,
+          "2020_2022": 165,
+          "2023_before_sale": 64,
+          "before_2015": 21
+        },
+        "pilot_games": 100,
+        "total_games": 500,
+        "within_stratum_inclusion_probability": {
+          "2015_2019": 0.006484243288808196,
+          "2020_2022": 0.006480245071086325,
+          "2023_before_sale": 0.006523955147808359,
+          "before_2015": 0.006658211794546607
+        }
+      },
+      "5000": {
+        "new_probability_sample_games": 4900,
+        "new_sample_by_stratum": {
+          "2015_2019": 1841,
+          "2020_2022": 2027,
+          "2023_before_sale": 781,
+          "before_2015": 251
+        },
+        "pilot_games": 100,
+        "total_games": 5000,
+        "within_stratum_inclusion_probability": {
+          "2015_2019": 0.0795832792979726,
+          "2020_2022": 0.0796088288429817,
+          "2023_before_sale": 0.07961264016309888,
+          "before_2015": 0.07958148383005707
+        }
+      }
+    },
+    "evidence_coverage_role": "Known only after collection for new games; diagnostic strata, not inclusion filters or replacement rules.",
+    "frame_by_stratum": {
+      "2015_2019": 23133,
+      "2020_2022": 25462,
+      "2023_before_sale": 9810,
+      "before_2015": 3154
+    },
+    "frame_nonpilot_games": 61559,
+    "inclusion_probability_note": "k_h/n_h describes the stratified pseudorandom sampling design over randomized priorities; the realized fixed-seed sample is deterministic. Apply weights only to the new cohort, never to the diagnostic pilot.",
+    "interleaving": "Sort within-stratum rank r by exact rational (r-0.5)/stratum_size; ties by stratum, SHA-256 and AppID. Take prefixes.",
+    "later_release_limitation": "New games released on/after the 2023 start date are outside this balanced historical frame; no claim of representation for them or the full Steam catalog.",
+    "nested_cohorts": true,
+    "pilot_games": 100,
+    "priority_definition": "SHA-256 of UTF-8 42|appid, ascending within each release stratum; ties by integer AppID.",
+    "prohibited_selection_variables": "Discount outcomes, evidence categories, price histories, snapshot prices/reviews/activity and provider matching success.",
+    "sampling_frame": "Unique valid nonpilot AppIDs with consistent release dates strictly before every 2023\u20132025 sale start date.",
+    "seed": 42,
+    "selection_variables": [
+      "AppID",
+      "release_date",
+      "release_year",
+      "pilot membership"
+    ],
+    "sizes_are_total_including_pilot": true
+  },
+  "scope": "Offline feasibility only; no new histories/labels/features, collection, training, Phase 8B/8C or Phase 9.",
+  "status": "AUDIT_COMPLETE_SCALING_NOT_STARTED"
+}
