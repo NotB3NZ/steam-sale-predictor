@@ -1,10 +1,14 @@
 # Project Status
 
-## Current Phase
+## Active baseline
 
-Phase 8B.1 — offline bounded-collection preparation. The 20-game trial remains pending explicit authorization and external evaluation-key custody. Four-model Phase 7B, the Phase 8A sampling design and all earlier research artifacts remain preserved. No expansion histories, labels, features or models exist. Phase 8B.2, Phase 8C and Phase 9 are not started. Targets measure recorded discounts, not verified participation.
+The Phase 8 authorization, encryption-custody and unfinished 20-game collection-trial workflow is **RETIRED** as of 2026-10-13. **No 20-game live collection occurred.** The original 100-game pipeline remains the active baseline. The next objective is incremental ITAD caching and configurable processing for larger game cohorts; no new pipeline has been implemented.
+
+Historical authorization records, retired code/tests, frozen trial/evaluation-membership CSVs and pre-rollback documentation are archived at `~/Documents/Steam_Sale_Rollback_Archive/2026-10-13_012206_PHT`. They are research history, not active instructions. External authorization and private-custody files remain untouched. See [ROLLBACK_REPORT.md](ROLLBACK_REPORT.md) for integrity checks and restoration.
 
 ## Completed
+
+- [x] Authorized retirement of the unfinished Phase 8 authorization workflow: 45 source/documentation files archived and verified before removing 42 retired files. Original 100-game research and useful scaling preparation are preserved; no live trial occurred.
 
 - [x] Directory setup (`data/raw/`, `data/intermediate/`, `data/processed/`, `src/`, `reports/`, `notebooks/`)
 - [x] Source CSV inspection (`src/00_inspect_source.py`)
@@ -127,11 +131,9 @@ Execution: `python3 src/02_create_pilot.py`. No ITAD/Steam/external API calls, s
 - **Zero ITAD/pricing requests; zero audit network requests.** Authorized external research was confined to official Valve event-calendar verification; web-tool HTTP totals are unavailable. No raw refresh, target labels, coverage rules, state persistence, features or modeling.
 - Training/validation intent remains 2023–2024 / 2025; **2026 excluded** from this audit. Sparse histories and timestamp conflicts remain evidence limitations for human methodological review.
 
-## Next Phase
+## Next objective
 
-**Phase 8 — NOT STARTED. The Phase 7B available-model comparison is verified; XGBoost evaluation remains blocked by its missing dependency.**
-
-Stop after the Phase 7B available-model comparison. Modeling and temporal validation concern recorded occurrence; they do not verify actual sale participation or prove point-in-time provider availability.
+Next objective: incremental ITAD caching and configurable processing for larger game cohorts, using ordinary historical-price caches and the original 100-game pipeline as the baseline. Keep the existing 100-game artifacts unchanged and parameterize separate larger-cohort paths and counts in future work. Matching/nonresponse, response limits and current account quota still need confirmation before any future collection. This rollback performs no collection, new processing or model fitting; it creates no new research phase.
 
 ## Phase 5B.1 completed — pending review
 
@@ -248,9 +250,9 @@ Existing local evidence remains **100 caches / 5,568 Steam observations**: **97 
 
 If all new games match and need one history request, existing-cache reuse gives **800 / 1,800 / 3,800 / 9,800** requests for the planned totals, before retries. Recorded quota documentation is historical, not verification of the current account limit. Matching fractions, request formulas, pacing floors, storage scenarios, retry/caching/resume behavior and unknown response limits are documented in the feasibility reports. Wall-clock completion time is not established.
 
-Collection, labeling, features and existing modeling wrappers contain pilot-specific paths, count guards and fixed-panel assumptions. The Phase 6 wrapper also locks the original 175 positive / 125 negative counts; existing model wrappers reject null targets. Expanded ambiguity and failed retrievals require explicit accounting rather than recoding or silent exclusion. A future Phase 8B must parameterize separate cohort namespaces, retain failures/ambiguity, enforce release eligibility and exact pre-cutoff rules, and preserve the 15 approved features and operational target semantics. No such source changes were made here. New cohort/model-ready data do not yet exist.
+Collection, labeling, features and existing modeling wrappers contain pilot-specific paths, count guards and fixed-panel assumptions. The Phase 6 wrapper also locks the original 175 positive / 125 negative counts; existing model wrappers reject null targets. Expanded ambiguity and failed retrievals require explicit accounting rather than recoding or silent exclusion. Future configurable processing must parameterize separate cohort namespaces, retain failures/ambiguity, enforce release eligibility and exact pre-cutoff rules, and preserve the 15 approved features and operational target semantics. No such source changes were made here. New cohort/model-ready data do not yet exist.
 
-Proposed evaluation separates represented-game temporal evaluation from a sealed unseen-game cohort whose AppIDs are excluded from every training year. Report pilot and probability sample separately, and use development-defined pre-cutoff coverage sensitivity. New game outcomes can be kept untouched, but 2025 as an event and the model methodology have already been examined; it is not a fresh event-level confirmatory test.
+The preserved scaling audit proposes separating represented-game temporal evaluation from unseen-game evaluation, with held-out AppIDs excluded from every training year. The retired encrypted trial membership is historical and is no longer an active split or custody instruction. Report pilot and probability sample separately, and use development-defined pre-cutoff coverage sensitivity. New game outcomes can be kept untouched, but 2025 as an event and the model methodology have already been examined; it is not a fresh event-level confirmatory test.
 
 Artifacts: `src/10_audit_scaling_feasibility.py`, `tests/test_scaling_feasibility.py`, `data/intermediate/autumn_sale_scaling_candidates.csv`, `reports/autumn_sale_scaling_feasibility.md`, `reports/autumn_sale_scaling_feasibility.json`, `reports/autumn_sale_sampling_plan.md` and `reports/autumn_sale_scaling_validation.json`. Four white-background 300-DPI figures: `scaling_catalog_release_years.png`, `scaling_historical_coverage.png`, `scaling_sampling_composition.png` and `scaling_population_funnel.png` under `reports/figures/`.
 
@@ -260,20 +262,10 @@ python3 -B src/10_audit_scaling_feasibility.py --verify
 
 **22 focused offline tests pass**. Two complete isolated audit executions produce byte-identical candidate CSV, JSON/Markdown reports, plotted data and PNGs in this environment. All **214 completed source/data/report/model/dependency artifacts**, including raw source snapshots, all prior figures and Phase 7 outputs, retain their hashes. The three project documentation files are updated as authorized. The audit does not execute earlier model-fitting test suites; prior verified results remain hash-protected. Zero network/API requests, zero new histories and zero model fits.
 
-Recommended next step, requiring separate approval: a cohort-aware collection implementation and bounded release-stratified smoke/coverage trial with account quota and response-limit confirmation. Assess matching/nonresponse, response sizes and historical timing provenance before approving bulk collection. Phase 8B, Phase 8C and Phase 9 remain unstarted.
+Next objective: incremental ITAD caching and configurable processing for larger game cohorts, using ordinary historical-price caches and the original 100-game pipeline as the baseline. Keep the existing 100-game artifacts unchanged and parameterize separate larger-cohort paths and counts in future work. Matching/nonresponse, response limits and current account quota still need confirmation before any future collection. This rollback performs no collection, new processing or model fitting; it creates no new research phase.
 
-## Bounded expansion preparation verified
+## Retired workflow history
 
-Phase 8B.1 implements `src/11_prepare_expansion_collection.py` and focused mock-only tests. The approved 20 new games retain Phase 8A ranks 1–20, with release strata 1 pre-2015 / 8 from 2015–2019 / 8 from 2020–2022 / 3 from 2023 before the sale. The original pilot and sampling design remain intact.
+The Phase 8 authorization, encryption-custody and unfinished 20-game collection-trial workflow is **RETIRED** as of 2026-10-13. **No 20-game live collection occurred.** The original 100-game pipeline remains the active baseline. The next objective is incremental ITAD caching and configurable processing for larger game cohorts; no new pipeline has been implemented.
 
-The full eligible frame is frozen as 49,247 development / 12,312 sealed evaluation games using an independent salted SHA-256 allocation within the existing strata. The trial contains 16 development / 4 evaluation games. No held-out AppID may enter development training in any year; no retrieval-driven replacement or group rebalancing is allowed.
-
-The pending approval manifest binds candidate, membership, protected-inventory and implementation digests. The proposed budget is 60 total HTTP attempts across all restarts (up to 40 initial requests), with serial spacing of at least one second, a 30-second timeout and at most three attempts per endpoint/game. Journal loss, concurrent collectors, namespace collisions, changed provenance and approval mismatches stop execution. Evaluation responses must be encrypted to an externally held custodian key; actual custody and provider contracts remain unverified. Live mode requires separate human authorization and does not grant outcome-access or modeling permission.
-
-Artifacts: two planning CSVs under `data/intermediate/expansion/`; `autumn_sale_smoke_preflight.md`, `autumn_sale_smoke_preflight.json`, `autumn_sale_smoke_approval_manifest.json`, `autumn_sale_smoke_validation.json` and `autumn_sale_smoke_protected_inventory.json` under `reports/expansion/`. The preflight contains the exact proposed future command and receipt contract. No analytical figure is needed for this planning gate.
-
-```bash
-python3 -B src/11_prepare_expansion_collection.py --verify
-```
-
-All 36 focused offline tests pass, with zero failures, errors or skips. Two isolated verification runs produce byte-identical versions of all seven preparation outputs, including the validation receipt. All 225 protected earlier files remain byte-identical. Verification does not execute earlier model-training scripts. API credentials are not printed or stored; the recorded environment has no credential available. Approval remains PENDING. No live requests, new histories, operational labels or fitted models were produced. Collection feasibility remains conditional on matching, current account quota, response completeness, historical provenance and independent key custody. Await explicit approval for the exact 20-game trial; Phase 8B.2, 500-game collection and retraining remain unstarted.
+Historical authorization records, retired code/tests, frozen trial/evaluation-membership CSVs and pre-rollback documentation are archived at `~/Documents/Steam_Sale_Rollback_Archive/2026-10-13_012206_PHT`. They are research history, not active instructions. External authorization and private-custody files remain untouched. See [ROLLBACK_REPORT.md](ROLLBACK_REPORT.md) for integrity checks and restoration.

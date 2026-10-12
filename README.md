@@ -4,6 +4,10 @@ An independent data science research project investigating whether historical St
 
 The completed experiments compare a constant-probability Bernoulli baseline, logistic regression, Random Forest and XGBoost on a 100-game historical pilot. A separate offline audit assesses sampling and historical-data collection feasibility for larger cohorts. Training uses 2023–2024 observations; validation uses 2025 observations. The target is **recorded discount occurrence**, not independently verified sale participation.
 
+The Phase 8 authorization, encryption-custody and unfinished 20-game collection-trial workflow is **RETIRED** as of 2026-10-13. **No 20-game live collection occurred.** The original 100-game pipeline remains the active baseline. The next objective is incremental ITAD caching and configurable processing for larger game cohorts; no new pipeline has been implemented.
+
+Historical authorization records, retired code/tests, frozen trial/evaluation-membership CSVs and pre-rollback documentation are archived at `~/Documents/Steam_Sale_Rollback_Archive/2026-10-13_012206_PHT`. They are research history, not active instructions. External authorization and private-custody files remain untouched. See [ROLLBACK_REPORT.md](ROLLBACK_REPORT.md) for integrity checks and restoration.
+
 ## Research question
 
 Can information about a game before an Autumn Sale begins predict whether a qualifying Steam-store discount will be recorded during that sale?
@@ -112,25 +116,17 @@ The restricted balanced historical sampling frame contains **61,559 nonpilot gam
 
 Local histories remain limited to the pilot: **97 games have price observations, 88 have qualifying discount observations and three histories are empty**. Provider-side coverage for the other **99,094 catalog games** is unknown. Collection estimates, pilot-specific pipeline barriers and a proposed game-disjoint evaluation design are documented in the [feasibility report](reports/autumn_sale_scaling_feasibility.md) and [sampling plan](reports/autumn_sale_sampling_plan.md).
 
+For audit reproduction in a separate working copy (this command regenerates audit outputs):
+
 ```bash
 python3 -B src/10_audit_scaling_feasibility.py --verify
 ```
 
 The audit uses existing local files and dependencies, without API requests or model fitting. Its [validation receipt](reports/autumn_sale_scaling_validation.json) records 22 passing focused tests, two byte-identical audit runs and preservation of 214 earlier files. Four additional light-mode figures describe catalog releases, observed local evidence, planned sample composition and the sampling population. Collection feasibility remains conditional on quota, matching, response limits and historical provenance; bulk collection requires separate approval.
 
-### Bounded collection preparation
+### Retired authorization workflow
 
-The expansion collector is prepared for a separately approved **20-game trial**. No expansion histories have been retrieved. The trial preserves the first 20 new candidates in the approved ranking: one pre-2015 game, eight from 2015–2019, eight from 2020–2022 and three from 2023 before the sale. Missing histories or failed matches will not trigger replacement sampling or negative-label creation.
-
-Game-level memberships are frozen across all **61,559 eligible nonpilot games**: **49,247 development** and **12,312 sealed evaluation**. An independent SHA-256 priority assigns approximately 80/20 within each release stratum. The trial contains 16 development and four evaluation games; the original pilot remains separate. Held-out AppIDs are rejected from development inputs in every sale year.
-
-```bash
-python3 -B src/11_prepare_expansion_collection.py --verify
-```
-
-The default command is offline. All **36 focused tests pass**, using mocked HTTP responses and temporary encryption keys. Two isolated verified runs produce byte-identical preparation outputs and preserve all **225 protected earlier files**. The [preflight report](reports/expansion/autumn_sale_smoke_preflight.md) documents the exact cohort, API uncertainties, cache and failure accounting, and proposed future command. Its [approval manifest](reports/expansion/autumn_sale_smoke_approval_manifest.json) remains **PENDING**.
-
-Live mode requires explicit human approval bound to the manifest digest, a **60-attempt cumulative request budget**, and an external custodian's public certificate. Requests would be serial, spaced at least one second, with a 30-second timeout and at most three attempts per game/endpoint across restarts. Evaluation responses must be encrypted before storage. Separate private-key custody and a trusted collection operator are necessary; filesystem permissions and Python guards alone cannot guarantee blindness. Actual custody, current provider quota, matching and historical completeness remain unverified. No API credential is required for preparation, and no dependencies are installed by this workflow.
+The original independent-custody collector and both SELF_MANAGED_SEALED versions are retired. Their approval gates, encryption protocols, 20-game trial and frozen evaluation split are no longer active collection requirements. There are no live trial caches or journals. The useful scaling feasibility audit, candidate frame, sampling plan and figures remain unchanged.
 
 ## Limitations
 
@@ -256,15 +252,13 @@ The main modeling artifacts are:
 | Complete fitted Random Forest pipeline | `models/random_forest.joblib` |
 | Complete fitted XGBoost pipeline | `models/xgboost_model.joblib` |
 | Scaling candidates (planning only) | `data/intermediate/autumn_sale_scaling_candidates.csv` |
-| Frozen nonpilot evaluation membership | `data/intermediate/expansion/autumn_sale_evaluation_membership.csv` |
-| Pending 20-game collection cohort | `data/intermediate/expansion/autumn_sale_smoke_candidates.csv` |
 | Ensemble configuration and versions | `reports/autumn_sale_ensemble_model_manifest.json` |
 
 Operational labels and the separate positive/unlabeled view are target/provenance artifacts, not predictor tables. No PU-learning algorithm is implemented. [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md) records methodological decisions; [PROJECT_STATUS.md](PROJECT_STATUS.md) retains the implementation history.
 
 ## Planned work
 
-The four-model experiments, historical scaling feasibility audit and bounded collection preparation are complete. The 20-game historical collection trial awaits explicit authorization and external key custody. Expanded collection, cohort-aware label/feature construction and broader validation remain planned work; Phase 8B.2, Phase 8C and Phase 9 have not started. Future evaluation should distinguish represented games from unseen games and use training-only temporal resampling. The previously examined 2025 pilot cannot serve as a fresh confirmatory test. No future sale dates or predictions are assumed.
+The next objective is incremental ITAD caching and configurable processing for larger game cohorts, reusing the original collector, historical parsing, label semantics and 15 approved features. The current collector and processing wrappers retain pilot-specific paths and count checks; larger cohorts need explicit input/output namespaces and eligibility-aware counts. Preserve the 100-game caches and all completed experiments. The scaling candidate frame supports nested 500, 1,000, 2,000 and 5,000-game totals. Future evaluation should distinguish represented games from unseen games and use training-only temporal resampling. The previously examined 2025 pilot cannot serve as a fresh confirmatory test. No larger collection, model retraining or future-sale prediction is performed by this rollback.
 
 ## Sources and licensing
 
