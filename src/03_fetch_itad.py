@@ -151,8 +151,8 @@ def save_json(path, payload, key=''):
     safe_write(path, json.dumps(payload, ensure_ascii=False, indent=2, allow_nan=False) + '\n', key)
 
 
-def read_cache(appid):
-    path = CACHE / f'{appid}.json'
+def read_cache(appid, cache_dir=None):
+    path = (Path(cache_dir) if cache_dir is not None else CACHE) / f'{appid}.json'
     if not path.exists():
         return None, 'absent', ''
     try:
@@ -257,6 +257,7 @@ class Client:
                     pause = max(pause, float(raw) if raw.isdigit() else
                                 (parsedate_to_datetime(raw) - datetime.now(timezone.utc)).total_seconds())
                 except (ValueError, TypeError, OverflowError):
+                    self.abort = True
                     return None, evidence, 'invalid_retry_after; collection stopped'
             elif code == 429:
                 return None, evidence, 'HTTP_429_missing_retry_after; collection stopped'
@@ -275,7 +276,7 @@ def archive(path):
         path.rename(target)
 
 
-def collect(appid, client, previous=None):
+def collect(appid, client, previous=None, persist=None):
     obj = previous or {'steam_appid': int(appid), 'itad_game_id': None,
                        'request_configuration': CONFIG.copy(), 'lookup_response': None,
                        'history_response': None}
@@ -300,7 +301,10 @@ def collect(appid, client, previous=None):
         return obj
     meta['lookup_status'] = 'matched'
     # Persist the authoritative lookup even if interrupted before history completes.
-    save_json(CACHE / f'{appid}.json', obj, client.key)
+    if persist is None:
+        save_json(CACHE / f'{appid}.json', obj, client.key)
+    else:
+        persist(obj)
     payload, evidence, error = client.get(HISTORY, history_params(gid))
     obj.update(history_response=payload, history_evidence=evidence)
     if error:
@@ -554,9 +558,10 @@ def update_status(rows, run):
 
 if __name__ == '__main__':
     try:
-        sys.exit(main())
+        from incremental_itad import cli
+        sys.exit(cli())
     except (ValueError, OSError, KeyboardInterrupt):
         # Avoid rendering exception objects that could contain headers or raw secrets.
         print('Collector stopped: input, cache, filesystem, credential-reflection error, or interruption. '
-              'Preserved caches can be audited with --validate-cache.', file=sys.stderr)
+              'Use --cohort, --cache-dir and a separate --output-dir with --dry-run for an offline audit.', file=sys.stderr)
         sys.exit(1)

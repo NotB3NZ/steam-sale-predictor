@@ -149,7 +149,7 @@ def split_protocol(frame,training_years,evaluation_year):
 def validate_predictions(predictions,valid,names):
     required=b.KEYS+['model_name','actual_label','predicted_probability','predicted_class','decision_score']
     require(list(predictions.columns)==required,'Prediction schema mismatch')
-    require(len(predictions)==100*len(names) and set(predictions.model_name)==set(names),'Prediction model/row count mismatch')
+    require(len(predictions)==len(valid)*len(names) and set(predictions.model_name)==set(names),'Prediction model/row count mismatch')
     require(not predictions.duplicated(b.KEYS+['model_name']).any(),'Duplicate prediction identity')
     require(predictions[b.KEYS+['model_name','actual_label','predicted_probability','predicted_class']].notna().all().all(),'Missing prediction fields')
     for f in b.KEYS+['actual_label','predicted_class']:
@@ -228,9 +228,9 @@ def preprocessing_profile(model,train,features):
     return profile
 
 
-def fit_models(train,training_years=b.TRAIN_YEARS,include_baselines=False):
+def fit_models(train,training_years=b.TRAIN_YEARS,include_baselines=False,cohort_mode=False):
     require(list(training_years) in [b.TRAIN_YEARS,[2023]],'Unsupported fitting years')
-    require(set(train.sale_year.unique())==set(training_years) and len(train)==100*len(training_years),'Fitting received nontraining rows')
+    require(set(train.sale_year.unique())==set(training_years) and (cohort_mode or len(train)==100*len(training_years)),'Fitting received nontraining rows')
     train=train.sort_values(['sale_year','appid']).reset_index(drop=True)
     X,y=numeric_predictors(train),train[b.TARGET].to_numpy()
     models={}; profiles={}
@@ -656,8 +656,8 @@ def verify_execution(root=ROOT):
     return final
 
 
-if __name__=='__main__':
-    parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--verify',action='store_true',help='Run offline tests, repeated full experiments and integrity checks')
-    args=parser.parse_args()
-    verify_execution() if args.verify else run()
+if __name__ == '__main__':
+    # Active CLI requires isolated configurable outputs. Historical pure routines
+    # remain available for regression, without regenerating protected artifacts.
+    from cohort_pipeline import cli
+    cli('ensemble')

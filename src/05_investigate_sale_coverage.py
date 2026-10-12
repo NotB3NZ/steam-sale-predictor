@@ -108,7 +108,7 @@ def nearest(records, side):
     return ties, state
 
 
-def summarize_pair(game, year, window, records, cache_info, excluded_count=0):
+def summarize_pair(game, year, window, records, cache_info, excluded_count=0, include_sequence=True):
     """Valid record means valid timestamp/Steam shop; ambiguous deals are retained.
 
     Latest/earliest timestamp wins, never skip ambiguity for an older price.
@@ -160,12 +160,12 @@ def summarize_pair(game, year, window, records, cache_info, excluded_count=0):
     # precedes records only for display: the interval determines their partition.
     events = [dict(event='observed_record', relation=prefix, **r)
               for prefix, partition_records in [('pre', before), ('in_window', inside), ('post', after)]
-              for r in partition_records]
+              for r in partition_records] if include_sequence else []
     events.extend([dict(event='sale_start', timestamp_utc=audit.fmt(start)),
                    dict(event='sale_end', timestamp_utc=audit.fmt(end))])
     events.sort(key=lambda e: (audit.utc_stamp(e['timestamp_utc']), e['event'] == 'observed_record',
                                e.get('source_record_index', -1)))
-    row['observed_sequence_json'] = compact(events)
+    row['observed_sequence_json'] = compact(events) if include_sequence else ''
     row['in_window_records_json'] = compact(inside)
     for field in ('earliest_in_window_timestamp', 'latest_in_window_timestamp',
                   'min_observed_in_window_price', 'max_observed_in_window_regular_price',
@@ -736,11 +736,7 @@ def verify_execution(root=ROOT):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--verify', action='store_true', help='Run the full offline suite and verify deterministic full executions')
-    args = parser.parse_args()
-    if args.verify:
-        verify_execution()
-    else:
-        result = run()
-        print(f'Phase 5B.1: {len(result[0])} pairs; diagnostic execution offline; use --verify for execution checks.')
+    # Active CLI requires isolated configurable outputs. Historical pure routines
+    # remain available for regression, without regenerating protected artifacts.
+    from cohort_pipeline import cli
+    cli('coverage')

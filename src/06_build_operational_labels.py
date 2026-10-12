@@ -110,7 +110,7 @@ def mapping(category):
                 ambiguity_flag=category == 'C', requires_review=category == 'C')
 
 
-def construct_labels(inputs, windows):
+def construct_labels(inputs, windows, expected_pairs=None, cache_paths=None):
     """Reconcile saved evidence using the existing observation parser/category rule."""
     pairs = unique_index(inputs['pairs'], 'audit')
     diagnostics = unique_index(inputs['diagnostics'], 'coverage diagnostics', 'appid')
@@ -121,7 +121,8 @@ def construct_labels(inputs, windows):
             integer(r['AppID'], 'AppID', 1)
             require(r['AppID'] not in table, f'Duplicate AppID in {name}')
             table[r['AppID']] = r
-    expected = {(appid, y) for appid in games for y in windows}
+    expected = (expected_pairs if expected_pairs is not None else
+                {(appid, y) for appid in games for y in windows})
     require(set(pairs) == expected and set(games) == set(manifests), 'Expected every pilot AppID for every sale year')
     observed = defaultdict(list)
     seen = set()
@@ -160,7 +161,8 @@ def construct_labels(inputs, windows):
         status = ('uncertain_release_hour' if release.isoformat() == start_date else
                   'eligible_by_release_date' if eligible else 'ineligible_by_release_date')
         require(manifest['country'] == 'US' and manifest['steam_shop_id'] == '61', f'Collection scope mismatch: {key}')
-        require(r['cache_path'] == manifest['cache_path'] == f'data/raw/itad/{appid}.json', f'Cache path mismatch: {key}')
+        expected_path = cache_paths[appid] if cache_paths is not None else f'data/raw/itad/{appid}.json'
+        require(r['cache_path'] == manifest['cache_path'] == expected_path, f'Cache path mismatch: {key}')
         inside = sorted(observed[key], key=lambda o: (audit.utc_stamp(o['timestamp_utc']), o['source_record_index']))
         require(r['evidence_category'] == d['evidence_category'] == audit.category(inside), f'Evidence category mismatch: {key}')
         kinds = Counter(o['observation_kind'] for o in inside)
@@ -346,10 +348,7 @@ def build_report(rows, receipt, calendar):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--verify', action='store_true', help='Run all offline tests and verify deterministic full executions')
-    args = parser.parse_args()
-    if args.verify:
-        verify_execution()
-    else:
-        run()
+    # Active CLI requires isolated configurable outputs. Historical pure routines
+    # remain available for regression, without regenerating protected artifacts.
+    from cohort_pipeline import cli
+    cli('labels')

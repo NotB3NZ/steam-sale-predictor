@@ -1,0 +1,5 @@
+# Direct research dependencies matching the locally verified Python 3.9.6 stack.
+# No installation is performed by collection or processing commands.
+-r requirements-ensemble.txt
+threadpoolctl==3.6.0
+Pillow==11.3.0

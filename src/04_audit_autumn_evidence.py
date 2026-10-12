@@ -908,4 +908,7 @@ def run(root=ROOT):
 
 
 if __name__ == '__main__':
-    run()
+    # Active CLI requires isolated configurable outputs. Historical pure routines
+    # remain available for regression, without regenerating protected artifacts.
+    from cohort_pipeline import cli
+    cli('audit')

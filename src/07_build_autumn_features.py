@@ -408,7 +408,7 @@ def verify_execution(root=ROOT):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--verify', action='store_true', help='Run offline tests and verify deterministic executions')
-    args = parser.parse_args()
-    verify_execution() if args.verify else run()
+    # Active CLI requires isolated configurable outputs. Historical pure routines
+    # remain available for regression, without regenerating protected artifacts.
+    from cohort_pipeline import cli
+    cli('features')

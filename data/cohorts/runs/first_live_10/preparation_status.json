@@ -1,0 +1,73 @@
+{
+  "api_errors": [],
+  "api_key_present": false,
+  "coverage_by_sale_year": {
+    "2023": {
+      "retrieved_histories": 0,
+      "target_games": 10,
+      "unknown_labels": 10
+    },
+    "2024": {
+      "retrieved_histories": 0,
+      "target_games": 10,
+      "unknown_labels": 10
+    },
+    "2025": {
+      "retrieved_histories": 0,
+      "target_games": 10,
+      "unknown_labels": 10
+    }
+  },
+  "failed_requests": 0,
+  "live_collection_duration_seconds": 0,
+  "live_collection_started": false,
+  "maximum_cumulative_http_attempts": 30,
+  "models_trained": false,
+  "network_guard": true,
+  "newly_cached_games": 0,
+  "not_attempted_games": 10,
+  "offline_preparation_and_processing_seconds": 0.399797,
+  "original_appid_caches_verified": 100,
+  "parent_cohort_sha256": "1765eb1cffc66cf3ea48536da0daeae6b5e1a54c095d72d89d942d4fad59e9d9",
+  "parent_membership_and_order_preserved": true,
+  "prior_requests": {
+    "failed_api_requests": 0,
+    "interrupted_or_unknown_attempts": 0,
+    "successful_api_requests": 0,
+    "total_http_attempts": 0
+  },
+  "protected_artifacts_verified": 219,
+  "protected_hash_mismatches": [],
+  "rate_limit_responses": 0,
+  "selected_appids": [
+    "1521870",
+    "747130",
+    "2494860",
+    "1110980",
+    "779950",
+    "1777210",
+    "556770",
+    "1868280",
+    "410910",
+    "2358320"
+  ],
+  "selected_sample_ranks": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10"
+  ],
+  "status": "BLOCKED_MISSING_ITAD_API_KEY",
+  "successful_history_retrievals": 0,
+  "successful_lookups": 0,
+  "target_games": 10,
+  "test_cohort_sha256": "67c69c5cba7f883e386691dafb37a0111e2408bd3e3e21c7c43f41e7d3da5fd4",
+  "total_http_attempts": 0,
+  "unknown_or_insufficient_labels": 30
+}

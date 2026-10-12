@@ -1,0 +1,69 @@
+{
+  "already_cached_games": 0,
+  "cohort_sha256": "67c69c5cba7f883e386691dafb37a0111e2408bd3e3e21c7c43f41e7d3da5fd4",
+  "collection_duration_seconds": 0.01071,
+  "configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "coverage_by_sale_year": {
+    "2023": {
+      "categories": {
+        "unknown": 10
+      },
+      "missing_or_uncertain_labels": 10,
+      "observed_discount_games": 0,
+      "release_ineligible_games": 0,
+      "target_games": 10,
+      "usable_model_labels": 0
+    },
+    "2024": {
+      "categories": {
+        "unknown": 10
+      },
+      "missing_or_uncertain_labels": 10,
+      "observed_discount_games": 0,
+      "release_ineligible_games": 0,
+      "target_games": 10,
+      "usable_model_labels": 0
+    },
+    "2025": {
+      "categories": {
+        "unknown": 10
+      },
+      "missing_or_uncertain_labels": 10,
+      "observed_discount_games": 0,
+      "release_ineligible_games": 0,
+      "target_games": 10,
+      "usable_model_labels": 0
+    }
+  },
+  "cumulative_requests": {
+    "failed_api_requests": 0,
+    "interrupted_or_unknown_attempts": 0,
+    "successful_api_requests": 0,
+    "total_http_attempts": 0
+  },
+  "estimated_requests_without_retries": 20,
+  "games_with_incomplete_historical_records": 10,
+  "games_with_usable_historical_records": 0,
+  "games_with_usable_model_labels": 0,
+  "label_semantics": "Recorded discounts only; D retains the historical operational target but is excluded from expanded fitting. Steam participation remains unknown.",
+  "maximum_cumulative_attempts": 30,
+  "missing_or_uncertain_labels": 30,
+  "mode": "offline",
+  "newly_retrieved_games": 0,
+  "planned_games": 10,
+  "run_requests": {
+    "failed_api_requests": 0,
+    "interrupted_or_unknown_attempts": 0,
+    "successful_api_requests": 0,
+    "total_http_attempts": 0
+  },
+  "stopped": "",
+  "target_games": 10
+}

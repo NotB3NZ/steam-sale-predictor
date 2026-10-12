@@ -273,7 +273,7 @@ def predict(models, valid):
         f['predicted_probability'], f['predicted_class'], f['decision_score'] = p, classes(p), score
         frames.append(f)
     out = pd.concat(frames, ignore_index=True)
-    require(len(out) == 200 and not out.duplicated(KEYS + ['model_name']).any(), 'Prediction row count/uniqueness failure')
+    require(len(out) == len(valid)*len(models) and not out.duplicated(KEYS + ['model_name']).any(), 'Prediction row count/uniqueness failure')
     return out
 
 
@@ -612,7 +612,7 @@ def verify_execution(root=ROOT):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--verify',action='store_true',help='Run full offline suite and compare two complete experiments')
-    args = parser.parse_args()
-    verify_execution() if args.verify else run()
+    # Active CLI requires isolated configurable outputs. Historical pure routines
+    # remain available for regression, without regenerating protected artifacts.
+    from cohort_pipeline import cli
+    cli('baseline')

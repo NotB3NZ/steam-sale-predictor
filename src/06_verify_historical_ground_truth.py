@@ -375,15 +375,7 @@ def verify_execution(root=ROOT):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--show-pilot', action='store_true', help='Print selection without writing')
-    parser.add_argument('--verify', action='store_true', help='Run full offline suite and deterministic executions')
-    args = parser.parse_args()
-    if args.show_pilot:
-        print(json.dumps(select_pilot(audit.read_csv(ROOT / coverage.DIAGNOSTICS)), indent=2))
-    elif args.verify:
-        verify_execution()
-    else:
-        run()
-
-
+    # Active CLI requires isolated configurable outputs. Historical pure routines
+    # remain available for regression, without regenerating protected artifacts.
+    from cohort_pipeline import cli
+    cli('ground_truth')

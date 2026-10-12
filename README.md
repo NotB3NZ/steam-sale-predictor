@@ -4,7 +4,7 @@ An independent data science research project investigating whether historical St
 
 The completed experiments compare a constant-probability Bernoulli baseline, logistic regression, Random Forest and XGBoost on a 100-game historical pilot. A separate offline audit assesses sampling and historical-data collection feasibility for larger cohorts. Training uses 2023–2024 observations; validation uses 2025 observations. The target is **recorded discount occurrence**, not independently verified sale participation.
 
-The Phase 8 authorization, encryption-custody and unfinished 20-game collection-trial workflow is **RETIRED** as of 2026-10-13. **No 20-game live collection occurred.** The original 100-game pipeline remains the active baseline. The next objective is incremental ITAD caching and configurable processing for larger game cohorts; no new pipeline has been implemented.
+The Phase 8 authorization, encryption-custody and unfinished 20-game collection-trial workflow is **RETIRED** as of 2026-10-13. **No 20-game live collection occurred.** The original 100-game pipeline remains the active baseline. The existing pipeline now supports incremental ITAD caching and configurable offline processing for 500, 1,000, 2,000 and 5,000-game cohorts. Live expansion has not started. See [SCALABLE_PIPELINE_REPORT.md](SCALABLE_PIPELINE_REPORT.md) for commands, safeguards and validation.
 
 Historical authorization records, retired code/tests, frozen trial/evaluation-membership CSVs and pre-rollback documentation are archived at `~/Documents/Steam_Sale_Rollback_Archive/2026-10-13_012206_PHT`. They are research history, not active instructions. External authorization and private-custody files remain untouched. See [ROLLBACK_REPORT.md](ROLLBACK_REPORT.md) for integrity checks and restoration.
 
@@ -140,78 +140,34 @@ The pilot was selected using snapshot information and unequal inclusion probabil
 
 Run commands from the repository root. Baseline experiments were verified with Python **3.9.6**, NumPy **2.0.2**, pandas **2.3.3**, scikit-learn **1.6.1**, SciPy **1.13.1**, matplotlib **3.9.4** and joblib **1.5.3**. [requirements-baseline.txt](requirements-baseline.txt) specifies the tested modeling and plotting versions and includes the source-processing requirements from [requirements.txt](requirements.txt). The historical scripts also use Python's standard library and the system IANA timezone database.
 
-### Installation
+### Current setup and safe regression
 
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python3 -m pip install -r requirements-baseline.txt
+See [ENVIRONMENT_SETUP.md](ENVIRONMENT_SETUP.md). The existing `.venv` is preserved; it lacks the research dependencies. `/usr/bin/python3` supplies the locally verified research environment. No dependencies were installed during the upgrade.
+
+```sh
+env -u ITAD_API_KEY PYTHONDONTWRITEBYTECODE=1 TMPDIR=/private/tmp \
+  MPLCONFIGDIR=/private/tmp/steam-scalable-mpl \
+  /usr/bin/python3 -B tests/run_scalable_offline.py \
+  --results /private/tmp/steam-scalable-test-results.json
 ```
 
-For all four ensemble comparisons, `requirements-ensemble.txt` adds XGBoost 2.1.4. The feasibility audit does not require XGBoost or an API credential. Dependency installation requires package access. Once dependencies and the existing local inputs are available, baseline execution is offline and requires no API credential.
+The reviewed runner blocks repository writes, network access and subprocesses. It checks all original labels and predictors, predicts with the four existing models without refitting, and verifies 219 protected artifacts against prior hashes. Historical full-execution tests that regenerate artifacts are excluded.
 
-### Reproduce the comparative experiments
+### Configurable collection and processing
 
-```bash
-python3 -B src/09_train_ensemble_models.py --verify
-```
+[SCALABLE_PIPELINE_REPORT.md](SCALABLE_PIPELINE_REPORT.md) provides exact offline and future live commands. Use the existing candidate frame's nested sample flags to freeze a cohort, reuse `data/raw/itad` read-only, and write larger-cohort outputs under `data/cohorts`. The collector is offline by default; only explicit `--live` enables HTTP. Missing and failed games stay in the cohort and are never replaced. Attempt counts and provider cooldowns persist across restarts.
 
-The original baseline command, `python3 -B src/08_train_baseline_models.py --verify`, remains supported. Run earlier artifact-regenerating workflows in a separate working copy when preserving the approved comparison inputs.
+Scripts 04 through 09 accept `--cohort`, `--cache-dir`, `--output-dir` and optional repeated `--reuse-cache`. Baseline and ensemble entry points prepare game-disjoint temporal inputs by default. Explicit future `--fit` writes models only to a fresh isolated directory. No models were fitted during this task.
 
-The comparison command validates the approved baseline artifacts, fits available ensembles, runs the secondary check and coverage/importance diagnostics, generates figures and reports, and verifies two complete isolated executions. It saves only new comparison outputs and checks protected-input hashes. It does not regenerate earlier datasets or refresh price histories. Verification blocks socket and DNS access.
+Original labels, sale windows, strictly pre-sale feature cutoffs, 15 predictors, missing-value calculations and model parameters are preserved. Missing/failed histories have nullable targets. Historical category D remains an operational recorded absence, but lacks sufficient in-window evidence for expanded fitting. The previously inspected pilot stays in development; new held-out games are selected by a stable hash independent of outcomes.
 
-For the focused tests:
+### Historical experiments
 
-```bash
-python3 -B -m unittest discover -s tests -p 'test_baseline_models.py'
-python3 -B -m unittest discover -s tests -p 'test_ensemble_models.py'
-```
+The saved baseline and ensemble validation receipts retain their original test counts, metrics, model parameters and integrity records. Those receipts describe the historical code and artifact versions; source edits in this upgrade intentionally do not match their pinned source hashes. Reproduce historical full artifact generation only in a separate historical Git checkout. The current safe runner verifies stored artifact hashes and predictions without regenerating datasets, reports, figures or models.
 
-The [ensemble validation receipt](reports/autumn_sale_ensemble_validation.json) records **201 passing tests**, with no failures, errors or skips, using XGBoost 2.1.4. Repeated predictions, metrics, model fingerprints, secondary/diagnostic results, plotted data, PNG bytes and both ensemble artifact bytes are identical in the recorded environment. All **186 protected earlier files**, including every Phase 7A output and existing figure, remain unchanged. `requirements-ensemble.txt` declares the optional XGBoost dependency; this offline workflow does not install it.
+Scripts 00–02 and the scaling feasibility audit remain unchanged. Their artifact-generating runs are unnecessary for this upgrade; the existing catalogs, pilot, scaling candidate frame, sampling plan and figures remain the inputs.
 
-The saved [validation receipt](reports/autumn_sale_baseline_validation.json) records **171 passing offline tests**, including 35 baseline tests. It verifies identical predictions, metrics, fitted parameters, plotted data, PNG bytes and model bytes across repeated runs in the recorded environment, plus unchanged hashes for **166 protected earlier files**. Cross-platform numerical or image-byte identity and cross-version joblib compatibility are not guaranteed. Load only trusted local joblib artifacts.
 
-<details>
-<summary>Earlier data preparation and evidence workflows</summary>
-
-With the original `games.csv` available, the supported source-processing entry points are:
-
-```bash
-python3 src/00_inspect_source.py
-python3 src/01_build_games_master.py
-python3 src/02_create_pilot.py
-```
-
-The inspection prints diagnostics; master and pilot scripts regenerate intermediate datasets and reports. Use a separate working copy when rebuilding stages whose outputs are protected by later experiments.
-
-Historical collection requires `ITAD_API_KEY` in the process environment. The collector does not read the local `apikey` file or automatically load `.env`. Its smoke and full collection commands are:
-
-```bash
-python3 src/03_fetch_itad.py --limit 3
-python3 src/03_fetch_itad.py
-```
-
-The full run requires a valid three-game smoke receipt. These commands can make pricing API requests and are unnecessary for reproducing the cached experiments. The collector's `--validate-cache` mode makes no API calls but rewrites collection artifacts; it is not a read-only check of the frozen inputs.
-
-The cached evidence, coverage, reviewed verification ledger, labels and features have these supported offline entry points:
-
-```bash
-python3 src/04_audit_autumn_evidence.py
-python3 src/05_investigate_sale_coverage.py --verify
-python3 -B src/06_verify_historical_ground_truth.py --verify
-python3 -B src/06_build_operational_labels.py --verify
-python3 -B src/07_build_autumn_features.py --verify
-```
-
-These workflows regenerate their own outputs. The ground-truth verification script uses the reviewed local research ledger rather than repeating external research. Detailed input requirements and validation records are retained in their corresponding reports.
-
-The complete test suite can also be run independently:
-
-```bash
-python3 -m unittest discover -s tests -v
-```
-
-</details>
 
 ## Repository structure
 
@@ -258,7 +214,7 @@ Operational labels and the separate positive/unlabeled view are target/provenanc
 
 ## Planned work
 
-The next objective is incremental ITAD caching and configurable processing for larger game cohorts, reusing the original collector, historical parsing, label semantics and 15 approved features. The current collector and processing wrappers retain pilot-specific paths and count checks; larger cohorts need explicit input/output namespaces and eligibility-aware counts. Preserve the 100-game caches and all completed experiments. The scaling candidate frame supports nested 500, 1,000, 2,000 and 5,000-game totals. Future evaluation should distinguish represented games from unseen games and use training-only temporal resampling. The previously examined 2025 pilot cannot serve as a fresh confirmatory test. No larger collection, model retraining or future-sale prediction is performed by this rollback.
+The existing collector and processing entry points now support the planned nested cohort sizes through explicit paths and eligibility-aware processing. The next operational step is future incremental caching of the frozen 500-game cohort, after provider quota and coverage are checked. Expanded model inputs separate games across development and evaluation, preserve fixed parameters, and exclude insufficient evidence. Existing pilot results remain historical diagnostic results. No live expansion, original model retraining or future-sale prediction occurred during this offline upgrade.
 
 ## Sources and licensing
 

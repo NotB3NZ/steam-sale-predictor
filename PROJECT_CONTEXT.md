@@ -2,9 +2,13 @@
 
 ## Active baseline and retirement
 
-The Phase 8 authorization, encryption-custody and unfinished 20-game collection-trial workflow is **RETIRED** as of 2026-10-13. **No 20-game live collection occurred.** The original 100-game pipeline remains the active baseline. The next objective is incremental ITAD caching and configurable processing for larger game cohorts; no new pipeline has been implemented.
+The Phase 8 authorization, encryption-custody and unfinished 20-game collection-trial workflow is **RETIRED** as of 2026-10-13. **No 20-game live collection occurred.** The original 100-game pipeline remains the active baseline. The existing pipeline now supports incremental ITAD caching and configurable offline processing for 500, 1,000, 2,000 and 5,000-game cohorts. Live expansion has not started. See [SCALABLE_PIPELINE_REPORT.md](SCALABLE_PIPELINE_REPORT.md) for commands, safeguards and validation.
 
 Historical authorization records, retired code/tests, frozen trial/evaluation-membership CSVs and pre-rollback documentation are archived at `~/Documents/Steam_Sale_Rollback_Archive/2026-10-13_012206_PHT`. They are research history, not active instructions. External authorization and private-custody files remain untouched. See [ROLLBACK_REPORT.md](ROLLBACK_REPORT.md) for integrity checks and restoration.
+
+## Current execution instructions
+
+Use [ENVIRONMENT_SETUP.md](ENVIRONMENT_SETUP.md) and [SCALABLE_PIPELINE_REPORT.md](SCALABLE_PIPELINE_REPORT.md). Commands and test counts in the historical sections below document the completed experiments. Historical `--verify` and default artifact-generating commands are not current execution instructions. Active scripts 03–09 require configurable paths; model stages prepare only unless `--fit` is explicit. The safe reviewed runner checks existing models without fitting and blocks repository writes and network access.
 
 ## Research Question
 
@@ -246,10 +250,10 @@ python3 -B src/10_audit_scaling_feasibility.py --verify
 
 **22 focused offline tests pass**. Two complete isolated audit executions produce byte-identical candidate CSV, JSON/Markdown reports, plotted data and PNGs in this environment. All **214 completed source/data/report/model/dependency artifacts**, including raw source snapshots, all prior figures and Phase 7 outputs, retain their hashes. The three project documentation files are updated as authorized. The audit does not execute earlier model-fitting test suites; prior verified results remain hash-protected. Zero network/API requests, zero new histories and zero model fits.
 
-Next objective: incremental ITAD caching and configurable processing for larger game cohorts, using ordinary historical-price caches and the original 100-game pipeline as the baseline. Keep the existing 100-game artifacts unchanged and parameterize separate larger-cohort paths and counts in future work. Matching/nonresponse, response limits and current account quota still need confirmation before any future collection. This rollback performs no collection, new processing or model fitting; it creates no new research phase.
+Next operational step, outside this offline implementation task: incrementally cache missing games from the frozen 500-game selection in a separate cache namespace, then process the same cohort without substitutions. Current account quota and provider coverage still need confirmation before live collection. The original 100-game data and models remain unchanged; no live expansion or model refitting has occurred.
 
 ## Retired workflow history
 
-The Phase 8 authorization, encryption-custody and unfinished 20-game collection-trial workflow is **RETIRED** as of 2026-10-13. **No 20-game live collection occurred.** The original 100-game pipeline remains the active baseline. The next objective is incremental ITAD caching and configurable processing for larger game cohorts; no new pipeline has been implemented.
+The Phase 8 authorization, encryption-custody and unfinished 20-game collection-trial workflow is **RETIRED** as of 2026-10-13. **No 20-game live collection occurred.** The original 100-game pipeline remains the active baseline. The existing pipeline now supports incremental ITAD caching and configurable offline processing for 500, 1,000, 2,000 and 5,000-game cohorts. Live expansion has not started. See [SCALABLE_PIPELINE_REPORT.md](SCALABLE_PIPELINE_REPORT.md) for commands, safeguards and validation.
 
 Historical authorization records, retired code/tests, frozen trial/evaluation-membership CSVs and pre-rollback documentation are archived at `~/Documents/Steam_Sale_Rollback_Archive/2026-10-13_012206_PHT`. They are research history, not active instructions. External authorization and private-custody files remain untouched. See [ROLLBACK_REPORT.md](ROLLBACK_REPORT.md) for integrity checks and restoration.
