@@ -1,0 +1,79 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T18:07:02.631977Z",
+    "history_status": "empty_history",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T18:07:08.598829Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-712a-73e5-a0a1-4b28d4fcf300",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T18:07:08.598829Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 18:07:08 GMT"
+    }
+  },
+  "history_response": [],
+  "itad_game_id": "018d937f-712a-73e5-a0a1-4b28d4fcf300",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T18:07:05.585483Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-712a-73e5-a0a1-4b28d4fcf300\",\"slug\":\"heavenly-beauty-silver-bubble-ninetales\",\"title\":\"Heavenly Beauty \\u00d7 Silver Bubble Ninetales\",\"type\":\"game\",\"mature\":true,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-712a-73e5-a0a1-4b28d4fcf300\\/boxart.jpg?t=1791294012\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-712a-73e5-a0a1-4b28d4fcf300\\/banner145.jpg?t=1791294012\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-712a-73e5-a0a1-4b28d4fcf300\\/banner300.jpg?t=1791294013\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-712a-73e5-a0a1-4b28d4fcf300\\/banner400.jpg?t=1791294013\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-712a-73e5-a0a1-4b28d4fcf300\\/banner600.jpg?t=1791294014\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "2189530"
+    },
+    "received_at": "2026-10-13T18:07:05.585483Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 18:07:05 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-712a-73e5-a0a1-4b28d4fcf300/banner145.jpg?t=1791294012",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-712a-73e5-a0a1-4b28d4fcf300/banner300.jpg?t=1791294013",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-712a-73e5-a0a1-4b28d4fcf300/banner400.jpg?t=1791294013",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-712a-73e5-a0a1-4b28d4fcf300/banner600.jpg?t=1791294014",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-712a-73e5-a0a1-4b28d4fcf300/boxart.jpg?t=1791294012"
+      },
+      "id": "018d937f-712a-73e5-a0a1-4b28d4fcf300",
+      "mature": true,
+      "slug": "heavenly-beauty-silver-bubble-ninetales",
+      "title": "Heavenly Beauty × Silver Bubble Ninetales",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 2189530
+}

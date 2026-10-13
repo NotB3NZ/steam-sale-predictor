@@ -1,0 +1,100 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T16:38:45.780844Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T16:38:51.743630Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2022-11-01T20:16:59+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"regular\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-6675-70af-b9ab-69eb72eb2012",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T16:38:51.743630Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 16:38:51 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-11-01T20:16:59+01:00"
+    }
+  ],
+  "itad_game_id": "018d937f-6675-70af-b9ab-69eb72eb2012",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T16:38:48.710055Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-6675-70af-b9ab-69eb72eb2012\",\"slug\":\"girbal\",\"title\":\"Girbal\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-6675-70af-b9ab-69eb72eb2012\\/boxart.jpg?t=1733513215\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-6675-70af-b9ab-69eb72eb2012\\/banner145.jpg?t=1733513215\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-6675-70af-b9ab-69eb72eb2012\\/banner300.jpg?t=1733513215\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-6675-70af-b9ab-69eb72eb2012\\/banner400.jpg?t=1733513215\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-6675-70af-b9ab-69eb72eb2012\\/banner600.jpg?t=1733513216\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "1934650"
+    },
+    "received_at": "2026-10-13T16:38:48.710055Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 16:38:48 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-6675-70af-b9ab-69eb72eb2012/banner145.jpg?t=1733513215",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-6675-70af-b9ab-69eb72eb2012/banner300.jpg?t=1733513215",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-6675-70af-b9ab-69eb72eb2012/banner400.jpg?t=1733513215",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-6675-70af-b9ab-69eb72eb2012/banner600.jpg?t=1733513216",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-6675-70af-b9ab-69eb72eb2012/boxart.jpg?t=1733513215"
+      },
+      "id": "018d937f-6675-70af-b9ab-69eb72eb2012",
+      "mature": false,
+      "slug": "girbal",
+      "title": "Girbal",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 1934650
+}

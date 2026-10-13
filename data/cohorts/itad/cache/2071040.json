@@ -1,0 +1,79 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T18:47:21.566274Z",
+    "history_status": "empty_history",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T18:47:27.600068Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d97b7-9c80-70a3-90ba-b036cee211ca",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T18:47:27.600068Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 18:47:27 GMT"
+    }
+  },
+  "history_response": [],
+  "itad_game_id": "018d97b7-9c80-70a3-90ba-b036cee211ca",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T18:47:24.623217Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d97b7-9c80-70a3-90ba-b036cee211ca\",\"slug\":\"drive-drift-x-doraibudorifutox\",\"title\":\"DRIVE DRIFT X\\uff08\\u30c9\\u30e9\\u30a4\\u30d6\\u30c9\\u30ea\\u30d5\\u30c8X\\uff09\",\"type\":null,\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97b7-9c80-70a3-90ba-b036cee211ca\\/boxart.jpg?t=1787244923\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97b7-9c80-70a3-90ba-b036cee211ca\\/banner145.jpg?t=1787244924\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97b7-9c80-70a3-90ba-b036cee211ca\\/banner300.jpg?t=1787244924\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97b7-9c80-70a3-90ba-b036cee211ca\\/banner400.jpg?t=1787244924\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97b7-9c80-70a3-90ba-b036cee211ca\\/banner600.jpg?t=1787244925\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "2071040"
+    },
+    "received_at": "2026-10-13T18:47:24.623217Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 18:47:24 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d97b7-9c80-70a3-90ba-b036cee211ca/banner145.jpg?t=1787244924",
+        "banner300": "https://assets.isthereanydeal.com/018d97b7-9c80-70a3-90ba-b036cee211ca/banner300.jpg?t=1787244924",
+        "banner400": "https://assets.isthereanydeal.com/018d97b7-9c80-70a3-90ba-b036cee211ca/banner400.jpg?t=1787244924",
+        "banner600": "https://assets.isthereanydeal.com/018d97b7-9c80-70a3-90ba-b036cee211ca/banner600.jpg?t=1787244925",
+        "boxart": "https://assets.isthereanydeal.com/018d97b7-9c80-70a3-90ba-b036cee211ca/boxart.jpg?t=1787244923"
+      },
+      "id": "018d97b7-9c80-70a3-90ba-b036cee211ca",
+      "mature": false,
+      "slug": "drive-drift-x-doraibudorifutox",
+      "title": "DRIVE DRIFT X（ドライブドリフトX）",
+      "type": null
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 2071040
+}

@@ -1,0 +1,100 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T18:18:17.525693Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T18:18:23.560108Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2022-10-15T06:15:23+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":3.99,\"amountInt\":399,\"currency\":\"USD\"},\"regular\":{\"amount\":3.99,\"amountInt\":399,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-661b-71e4-ac5a-ed6bf2171303",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T18:18:23.560108Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 18:18:23 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 3.99,
+          "amountInt": 399,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 3.99,
+          "amountInt": 399,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-10-15T06:15:23+02:00"
+    }
+  ],
+  "itad_game_id": "018d937f-661b-71e4-ac5a-ed6bf2171303",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T18:18:20.540940Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-661b-71e4-ac5a-ed6bf2171303\",\"slug\":\"yu-wo-qian-ding-qi-yue-cheng-wei-jiu-shi-yong-zhe-ba\",\"title\":\"\\u4e0e\\u6211\\u7b7e\\u8ba2\\u5951\\u7ea6\\uff0c\\u6210\\u4e3a\\u6551\\u4e16\\u52c7\\u8005\\u5427\\uff01\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-661b-71e4-ac5a-ed6bf2171303\\/boxart.jpg?t=1763148468\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-661b-71e4-ac5a-ed6bf2171303\\/banner145.jpg?t=1763148469\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-661b-71e4-ac5a-ed6bf2171303\\/banner300.jpg?t=1763148469\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-661b-71e4-ac5a-ed6bf2171303\\/banner400.jpg?t=1763148469\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-661b-71e4-ac5a-ed6bf2171303\\/banner600.jpg?t=1763148469\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "1831290"
+    },
+    "received_at": "2026-10-13T18:18:20.540940Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 18:18:20 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-661b-71e4-ac5a-ed6bf2171303/banner145.jpg?t=1763148469",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-661b-71e4-ac5a-ed6bf2171303/banner300.jpg?t=1763148469",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-661b-71e4-ac5a-ed6bf2171303/banner400.jpg?t=1763148469",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-661b-71e4-ac5a-ed6bf2171303/banner600.jpg?t=1763148469",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-661b-71e4-ac5a-ed6bf2171303/boxart.jpg?t=1763148468"
+      },
+      "id": "018d937f-661b-71e4-ac5a-ed6bf2171303",
+      "mature": false,
+      "slug": "yu-wo-qian-ding-qi-yue-cheng-wei-jiu-shi-yong-zhe-ba",
+      "title": "与我签订契约，成为救世勇者吧！",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 1831290
+}

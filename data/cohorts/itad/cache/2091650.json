@@ -1,0 +1,79 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T19:03:07.977127Z",
+    "history_status": "empty_history",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T19:03:14.209016Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d97b8-f94b-7082-8728-339b1839d560",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T19:03:14.209016Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 19:03:14 GMT"
+    }
+  },
+  "history_response": [],
+  "itad_game_id": "018d97b8-f94b-7082-8728-339b1839d560",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T19:03:10.979634Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d97b8-f94b-7082-8728-339b1839d560\",\"slug\":\"myaosoftgarakekorekushon\",\"title\":\"MYAOSOFT\\u30ac\\u30e9\\u30b1\\u30fc\\u30b3\\u30ec\\u30af\\u30b7\\u30e7\\u30f3\",\"type\":null,\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97b8-f94b-7082-8728-339b1839d560\\/boxart.jpg?t=1790950623\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97b8-f94b-7082-8728-339b1839d560\\/banner145.jpg?t=1790950624\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97b8-f94b-7082-8728-339b1839d560\\/banner300.jpg?t=1790950624\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97b8-f94b-7082-8728-339b1839d560\\/banner400.jpg?t=1790950624\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97b8-f94b-7082-8728-339b1839d560\\/banner600.jpg?t=1790950625\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "2091650"
+    },
+    "received_at": "2026-10-13T19:03:10.979634Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 19:03:11 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d97b8-f94b-7082-8728-339b1839d560/banner145.jpg?t=1790950624",
+        "banner300": "https://assets.isthereanydeal.com/018d97b8-f94b-7082-8728-339b1839d560/banner300.jpg?t=1790950624",
+        "banner400": "https://assets.isthereanydeal.com/018d97b8-f94b-7082-8728-339b1839d560/banner400.jpg?t=1790950624",
+        "banner600": "https://assets.isthereanydeal.com/018d97b8-f94b-7082-8728-339b1839d560/banner600.jpg?t=1790950625",
+        "boxart": "https://assets.isthereanydeal.com/018d97b8-f94b-7082-8728-339b1839d560/boxart.jpg?t=1790950623"
+      },
+      "id": "018d97b8-f94b-7082-8728-339b1839d560",
+      "mature": false,
+      "slug": "myaosoftgarakekorekushon",
+      "title": "MYAOSOFTガラケーコレクション",
+      "type": null
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 2091650
+}

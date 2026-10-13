@@ -1,0 +1,100 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T16:53:00.742087Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T16:53:06.872848Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"regular\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-1c7e-71ec-9fee-bbb9422e4b6a",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T16:53:06.872848Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 16:53:07 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-01T01:00:00+01:00"
+    }
+  ],
+  "itad_game_id": "018d937f-1c7e-71ec-9fee-bbb9422e4b6a",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T16:53:03.726325Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-1c7e-71ec-9fee-bbb9422e4b6a\",\"slug\":\"streetcraft\",\"title\":\"StreetCraft\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1c7e-71ec-9fee-bbb9422e4b6a\\/boxart.png?t=1732000594\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1c7e-71ec-9fee-bbb9422e4b6a\\/banner145.jpg?t=1732000595\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1c7e-71ec-9fee-bbb9422e4b6a\\/banner300.jpg?t=1732000595\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1c7e-71ec-9fee-bbb9422e4b6a\\/banner400.jpg?t=1732000595\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1c7e-71ec-9fee-bbb9422e4b6a\\/banner600.jpg?t=1732000595\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "463540"
+    },
+    "received_at": "2026-10-13T16:53:03.726325Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 16:53:03 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-1c7e-71ec-9fee-bbb9422e4b6a/banner145.jpg?t=1732000595",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-1c7e-71ec-9fee-bbb9422e4b6a/banner300.jpg?t=1732000595",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-1c7e-71ec-9fee-bbb9422e4b6a/banner400.jpg?t=1732000595",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-1c7e-71ec-9fee-bbb9422e4b6a/banner600.jpg?t=1732000595",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-1c7e-71ec-9fee-bbb9422e4b6a/boxart.png?t=1732000594"
+      },
+      "id": "018d937f-1c7e-71ec-9fee-bbb9422e4b6a",
+      "mature": false,
+      "slug": "streetcraft",
+      "title": "StreetCraft",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 463540
+}

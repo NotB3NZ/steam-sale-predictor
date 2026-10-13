@@ -1,0 +1,100 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T16:34:27.112354Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T16:34:32.817780Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2021-10-29T04:03:11+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":7.99,\"amountInt\":799,\"currency\":\"USD\"},\"regular\":{\"amount\":7.99,\"amountInt\":799,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-5923-7175-ba5a-e9edd4384486",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T16:34:32.817780Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 16:34:33 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 7.99,
+          "amountInt": 799,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 7.99,
+          "amountInt": 799,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-10-29T04:03:11+02:00"
+    }
+  ],
+  "itad_game_id": "018d937f-5923-7175-ba5a-e9edd4384486",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T16:34:29.826292Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-5923-7175-ba5a-e9edd4384486\",\"slug\":\"voxel-farm-island\",\"title\":\"Voxel Farm Island\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-5923-7175-ba5a-e9edd4384486\\/boxart.jpg?t=1763184050\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-5923-7175-ba5a-e9edd4384486\\/banner145.jpg?t=1763184051\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-5923-7175-ba5a-e9edd4384486\\/banner300.jpg?t=1763184051\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-5923-7175-ba5a-e9edd4384486\\/banner400.jpg?t=1763184051\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-5923-7175-ba5a-e9edd4384486\\/banner600.jpg?t=1763184052\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "1787050"
+    },
+    "received_at": "2026-10-13T16:34:29.826292Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 16:34:30 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-5923-7175-ba5a-e9edd4384486/banner145.jpg?t=1763184051",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-5923-7175-ba5a-e9edd4384486/banner300.jpg?t=1763184051",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-5923-7175-ba5a-e9edd4384486/banner400.jpg?t=1763184051",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-5923-7175-ba5a-e9edd4384486/banner600.jpg?t=1763184052",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-5923-7175-ba5a-e9edd4384486/boxart.jpg?t=1763184050"
+      },
+      "id": "018d937f-5923-7175-ba5a-e9edd4384486",
+      "mature": false,
+      "slug": "voxel-farm-island",
+      "title": "Voxel Farm Island",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 1787050
+}

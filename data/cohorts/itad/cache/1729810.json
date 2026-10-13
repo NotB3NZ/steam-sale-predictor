@@ -1,0 +1,79 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T19:08:45.712994Z",
+    "history_status": "empty_history",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T19:08:52.048206Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-69e4-73fb-a3bb-983583189a54",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T19:08:52.048206Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 19:08:52 GMT"
+    }
+  },
+  "history_response": [],
+  "itad_game_id": "018d937f-69e4-73fb-a3bb-983583189a54",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T19:08:48.687409Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-69e4-73fb-a3bb-983583189a54\",\"slug\":\"boku-jiproject\",\"title\":\"\\u30dc\\u30af\\u59ebPROJECT\",\"type\":null,\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-69e4-73fb-a3bb-983583189a54\\/boxart.jpg?t=1790962895\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-69e4-73fb-a3bb-983583189a54\\/banner145.jpg?t=1790962895\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-69e4-73fb-a3bb-983583189a54\\/banner300.jpg?t=1790962896\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-69e4-73fb-a3bb-983583189a54\\/banner400.jpg?t=1790962896\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-69e4-73fb-a3bb-983583189a54\\/banner600.jpg?t=1790962897\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "1729810"
+    },
+    "received_at": "2026-10-13T19:08:48.687409Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 19:08:48 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-69e4-73fb-a3bb-983583189a54/banner145.jpg?t=1790962895",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-69e4-73fb-a3bb-983583189a54/banner300.jpg?t=1790962896",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-69e4-73fb-a3bb-983583189a54/banner400.jpg?t=1790962896",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-69e4-73fb-a3bb-983583189a54/banner600.jpg?t=1790962897",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-69e4-73fb-a3bb-983583189a54/boxart.jpg?t=1790962895"
+      },
+      "id": "018d937f-69e4-73fb-a3bb-983583189a54",
+      "mature": false,
+      "slug": "boku-jiproject",
+      "title": "ボク姫PROJECT",
+      "type": null
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 1729810
+}

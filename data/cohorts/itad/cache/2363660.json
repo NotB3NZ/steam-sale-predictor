@@ -1,0 +1,79 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T18:15:10.760232Z",
+    "history_status": "empty_history",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T18:15:16.784638Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d97e9-70b8-70d2-ba48-55a050b26f4a",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T18:15:16.784638Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 18:15:17 GMT"
+    }
+  },
+  "history_response": [],
+  "itad_game_id": "018d97e9-70b8-70d2-ba48-55a050b26f4a",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T18:15:13.758054Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d97e9-70b8-70d2-ba48-55a050b26f4a\",\"slug\":\"black-magic-c64-cpc-spectrum\",\"title\":\"Black Magic (C64\\/CPC\\/Spectrum)\",\"type\":null,\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97e9-70b8-70d2-ba48-55a050b26f4a\\/boxart.jpg?t=1763285455\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97e9-70b8-70d2-ba48-55a050b26f4a\\/banner145.jpg?t=1763285456\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97e9-70b8-70d2-ba48-55a050b26f4a\\/banner300.jpg?t=1763285456\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97e9-70b8-70d2-ba48-55a050b26f4a\\/banner400.jpg?t=1763285456\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97e9-70b8-70d2-ba48-55a050b26f4a\\/banner600.jpg?t=1763285456\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "2363660"
+    },
+    "received_at": "2026-10-13T18:15:13.758054Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 18:15:14 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d97e9-70b8-70d2-ba48-55a050b26f4a/banner145.jpg?t=1763285456",
+        "banner300": "https://assets.isthereanydeal.com/018d97e9-70b8-70d2-ba48-55a050b26f4a/banner300.jpg?t=1763285456",
+        "banner400": "https://assets.isthereanydeal.com/018d97e9-70b8-70d2-ba48-55a050b26f4a/banner400.jpg?t=1763285456",
+        "banner600": "https://assets.isthereanydeal.com/018d97e9-70b8-70d2-ba48-55a050b26f4a/banner600.jpg?t=1763285456",
+        "boxart": "https://assets.isthereanydeal.com/018d97e9-70b8-70d2-ba48-55a050b26f4a/boxart.jpg?t=1763285455"
+      },
+      "id": "018d97e9-70b8-70d2-ba48-55a050b26f4a",
+      "mature": false,
+      "slug": "black-magic-c64-cpc-spectrum",
+      "title": "Black Magic (C64/CPC/Spectrum)",
+      "type": null
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 2363660
+}

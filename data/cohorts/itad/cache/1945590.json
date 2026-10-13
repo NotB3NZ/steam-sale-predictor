@@ -1,0 +1,79 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T18:54:11.625590Z",
+    "history_status": "empty_history",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T18:54:17.500584Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-644c-7015-9331-4874e50cb5a9",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T18:54:17.500584Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 18:54:17 GMT"
+    }
+  },
+  "history_response": [],
+  "itad_game_id": "018d937f-644c-7015-9331-4874e50cb5a9",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T18:54:14.866332Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-644c-7015-9331-4874e50cb5a9\",\"slug\":\"linguist-fps-the-language-learning-fps\",\"title\":\"Linguist FPS - The Language Learning FPS\",\"type\":null,\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-644c-7015-9331-4874e50cb5a9\\/boxart.jpg?t=1787239813\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-644c-7015-9331-4874e50cb5a9\\/banner145.jpg?t=1787239813\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-644c-7015-9331-4874e50cb5a9\\/banner300.jpg?t=1787239813\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-644c-7015-9331-4874e50cb5a9\\/banner400.jpg?t=1787239813\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-644c-7015-9331-4874e50cb5a9\\/banner600.jpg?t=1787239814\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "1945590"
+    },
+    "received_at": "2026-10-13T18:54:14.866332Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 18:54:14 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-644c-7015-9331-4874e50cb5a9/banner145.jpg?t=1787239813",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-644c-7015-9331-4874e50cb5a9/banner300.jpg?t=1787239813",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-644c-7015-9331-4874e50cb5a9/banner400.jpg?t=1787239813",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-644c-7015-9331-4874e50cb5a9/banner600.jpg?t=1787239814",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-644c-7015-9331-4874e50cb5a9/boxart.jpg?t=1787239813"
+      },
+      "id": "018d937f-644c-7015-9331-4874e50cb5a9",
+      "mature": false,
+      "slug": "linguist-fps-the-language-learning-fps",
+      "title": "Linguist FPS - The Language Learning FPS",
+      "type": null
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 1945590
+}

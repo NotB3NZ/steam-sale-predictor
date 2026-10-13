@@ -1,0 +1,160 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T17:37:26.350026Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T17:37:32.087728Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2021-02-15T19:26:46+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":14.99,\"amountInt\":1499,\"currency\":\"USD\"},\"regular\":{\"amount\":14.99,\"amountInt\":1499,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-02-11T19:57:15+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":7.49,\"amountInt\":749,\"currency\":\"USD\"},\"regular\":{\"amount\":14.99,\"amountInt\":1499,\"currency\":\"USD\"},\"cut\":50}},{\"timestamp\":\"2021-01-05T19:49:54+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":14.99,\"amountInt\":1499,\"currency\":\"USD\"},\"regular\":{\"amount\":14.99,\"amountInt\":1499,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":7.49,\"amountInt\":749,\"currency\":\"USD\"},\"regular\":{\"amount\":14.99,\"amountInt\":1499,\"currency\":\"USD\"},\"cut\":50}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-0cac-73db-a99f-c40da2310ba6",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T17:37:32.087728Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 17:37:32 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 14.99,
+          "amountInt": 1499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 14.99,
+          "amountInt": 1499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-02-15T19:26:46+01:00"
+    },
+    {
+      "deal": {
+        "cut": 50,
+        "price": {
+          "amount": 7.49,
+          "amountInt": 749,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 14.99,
+          "amountInt": 1499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-02-11T19:57:15+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 14.99,
+          "amountInt": 1499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 14.99,
+          "amountInt": 1499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-05T19:49:54+01:00"
+    },
+    {
+      "deal": {
+        "cut": 50,
+        "price": {
+          "amount": 7.49,
+          "amountInt": 749,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 14.99,
+          "amountInt": 1499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-01T01:00:00+01:00"
+    }
+  ],
+  "itad_game_id": "018d937f-0cac-73db-a99f-c40da2310ba6",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T17:37:29.072516Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-0cac-73db-a99f-c40da2310ba6\",\"slug\":\"hyperdimension-neptunia-re-birth2-sisters-generation\",\"title\":\"Hyperdimension Neptunia Re;Birth2 Sisters Generation\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-0cac-73db-a99f-c40da2310ba6\\/boxart.jpg?t=1786492817\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-0cac-73db-a99f-c40da2310ba6\\/banner145.jpg?t=1786492817\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-0cac-73db-a99f-c40da2310ba6\\/banner300.jpg?t=1786492818\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-0cac-73db-a99f-c40da2310ba6\\/banner400.jpg?t=1786492818\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-0cac-73db-a99f-c40da2310ba6\\/banner600.jpg?t=1786492818\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "351710"
+    },
+    "received_at": "2026-10-13T17:37:29.072516Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 17:37:29 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-0cac-73db-a99f-c40da2310ba6/banner145.jpg?t=1786492817",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-0cac-73db-a99f-c40da2310ba6/banner300.jpg?t=1786492818",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-0cac-73db-a99f-c40da2310ba6/banner400.jpg?t=1786492818",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-0cac-73db-a99f-c40da2310ba6/banner600.jpg?t=1786492818",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-0cac-73db-a99f-c40da2310ba6/boxart.jpg?t=1786492817"
+      },
+      "id": "018d937f-0cac-73db-a99f-c40da2310ba6",
+      "mature": false,
+      "slug": "hyperdimension-neptunia-re-birth2-sisters-generation",
+      "title": "Hyperdimension Neptunia Re;Birth2 Sisters Generation",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 351710
+}

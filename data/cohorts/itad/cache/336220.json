@@ -1,0 +1,100 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T18:06:32.726022Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T18:06:38.473916Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":14.99,\"amountInt\":1499,\"currency\":\"USD\"},\"regular\":{\"amount\":14.99,\"amountInt\":1499,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937e-fa27-7170-81f7-98bc1484eb2d",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T18:06:38.473916Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 18:06:38 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 14.99,
+          "amountInt": 1499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 14.99,
+          "amountInt": 1499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-01T01:00:00+01:00"
+    }
+  ],
+  "itad_game_id": "018d937e-fa27-7170-81f7-98bc1484eb2d",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T18:06:35.480111Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937e-fa27-7170-81f7-98bc1484eb2d\",\"slug\":\"orbitor\",\"title\":\"ORBITOR\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937e-fa27-7170-81f7-98bc1484eb2d\\/boxart.png?t=1731997543\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937e-fa27-7170-81f7-98bc1484eb2d\\/banner145.jpg?t=1731997543\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937e-fa27-7170-81f7-98bc1484eb2d\\/banner300.jpg?t=1731997543\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937e-fa27-7170-81f7-98bc1484eb2d\\/banner400.jpg?t=1731997543\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937e-fa27-7170-81f7-98bc1484eb2d\\/banner600.jpg?t=1731997544\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "336220"
+    },
+    "received_at": "2026-10-13T18:06:35.480111Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 18:06:35 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937e-fa27-7170-81f7-98bc1484eb2d/banner145.jpg?t=1731997543",
+        "banner300": "https://assets.isthereanydeal.com/018d937e-fa27-7170-81f7-98bc1484eb2d/banner300.jpg?t=1731997543",
+        "banner400": "https://assets.isthereanydeal.com/018d937e-fa27-7170-81f7-98bc1484eb2d/banner400.jpg?t=1731997543",
+        "banner600": "https://assets.isthereanydeal.com/018d937e-fa27-7170-81f7-98bc1484eb2d/banner600.jpg?t=1731997544",
+        "boxart": "https://assets.isthereanydeal.com/018d937e-fa27-7170-81f7-98bc1484eb2d/boxart.png?t=1731997543"
+      },
+      "id": "018d937e-fa27-7170-81f7-98bc1484eb2d",
+      "mature": false,
+      "slug": "orbitor",
+      "title": "ORBITOR",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 336220
+}

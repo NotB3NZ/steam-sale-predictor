@@ -1,0 +1,140 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T19:05:32.801316Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T19:05:38.782007Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2021-02-28T05:21:15+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"regular\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-02-05T19:21:20+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":9.99,\"amountInt\":999,\"currency\":\"USD\"},\"regular\":{\"amount\":9.99,\"amountInt\":999,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-01-30T02:07:14+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":5.99,\"amountInt\":599,\"currency\":\"USD\"},\"regular\":{\"amount\":9.99,\"amountInt\":999,\"currency\":\"USD\"},\"cut\":40}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d9740-49f3-731e-a1e3-414542e8d362",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T19:05:38.782007Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 19:05:39 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-02-28T05:21:15+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 9.99,
+          "amountInt": 999,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 9.99,
+          "amountInt": 999,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-02-05T19:21:20+01:00"
+    },
+    {
+      "deal": {
+        "cut": 40,
+        "price": {
+          "amount": 5.99,
+          "amountInt": 599,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 9.99,
+          "amountInt": 999,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-30T02:07:14+01:00"
+    }
+  ],
+  "itad_game_id": "018d9740-49f3-731e-a1e3-414542e8d362",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T19:05:35.762578Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d9740-49f3-731e-a1e3-414542e8d362\",\"slug\":\"red-hands-2-player-game\",\"title\":\"Red Hands - 2-Player Game\",\"type\":null,\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d9740-49f3-731e-a1e3-414542e8d362\\/boxart.jpg?t=1790973613\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d9740-49f3-731e-a1e3-414542e8d362\\/banner145.jpg?t=1790973613\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d9740-49f3-731e-a1e3-414542e8d362\\/banner300.jpg?t=1790973613\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d9740-49f3-731e-a1e3-414542e8d362\\/banner400.jpg?t=1790973613\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d9740-49f3-731e-a1e3-414542e8d362\\/banner600.jpg?t=1790973614\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "1480600"
+    },
+    "received_at": "2026-10-13T19:05:35.762578Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 19:05:36 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d9740-49f3-731e-a1e3-414542e8d362/banner145.jpg?t=1790973613",
+        "banner300": "https://assets.isthereanydeal.com/018d9740-49f3-731e-a1e3-414542e8d362/banner300.jpg?t=1790973613",
+        "banner400": "https://assets.isthereanydeal.com/018d9740-49f3-731e-a1e3-414542e8d362/banner400.jpg?t=1790973613",
+        "banner600": "https://assets.isthereanydeal.com/018d9740-49f3-731e-a1e3-414542e8d362/banner600.jpg?t=1790973614",
+        "boxart": "https://assets.isthereanydeal.com/018d9740-49f3-731e-a1e3-414542e8d362/boxart.jpg?t=1790973613"
+      },
+      "id": "018d9740-49f3-731e-a1e3-414542e8d362",
+      "mature": false,
+      "slug": "red-hands-2-player-game",
+      "title": "Red Hands - 2-Player Game",
+      "type": null
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 1480600
+}

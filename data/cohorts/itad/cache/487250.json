@@ -1,0 +1,100 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T16:38:51.746782Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T16:38:58.032278Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":9.99,\"amountInt\":999,\"currency\":\"USD\"},\"regular\":{\"amount\":9.99,\"amountInt\":999,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-1d44-7275-bdd4-e7dc8226324b",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T16:38:58.032278Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 16:38:58 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 9.99,
+          "amountInt": 999,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 9.99,
+          "amountInt": 999,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-01T01:00:00+01:00"
+    }
+  ],
+  "itad_game_id": "018d937f-1d44-7275-bdd4-e7dc8226324b",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T16:38:54.748141Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-1d44-7275-bdd4-e7dc8226324b\",\"slug\":\"spaera\",\"title\":\"Spaera\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1d44-7275-bdd4-e7dc8226324b\\/boxart.png?t=1732022419\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1d44-7275-bdd4-e7dc8226324b\\/banner145.jpg?t=1732022419\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1d44-7275-bdd4-e7dc8226324b\\/banner300.jpg?t=1732022419\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1d44-7275-bdd4-e7dc8226324b\\/banner400.jpg?t=1732022419\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1d44-7275-bdd4-e7dc8226324b\\/banner600.jpg?t=1732022420\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "487250"
+    },
+    "received_at": "2026-10-13T16:38:54.748141Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 16:38:54 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-1d44-7275-bdd4-e7dc8226324b/banner145.jpg?t=1732022419",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-1d44-7275-bdd4-e7dc8226324b/banner300.jpg?t=1732022419",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-1d44-7275-bdd4-e7dc8226324b/banner400.jpg?t=1732022419",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-1d44-7275-bdd4-e7dc8226324b/banner600.jpg?t=1732022420",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-1d44-7275-bdd4-e7dc8226324b/boxart.png?t=1732022419"
+      },
+      "id": "018d937f-1d44-7275-bdd4-e7dc8226324b",
+      "mature": false,
+      "slug": "spaera",
+      "title": "Spaera",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 487250
+}

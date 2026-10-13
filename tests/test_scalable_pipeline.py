@@ -583,6 +583,19 @@ class ScalableTests(unittest.TestCase):
         self.collect(opener, maximum=2)
         self.assertEqual(opener.calls, [inc.itad.HISTORY])
 
+    def test_evidence_only_preserves_labels_without_feature_calculation(self):
+        self.collect(FakeOpener())
+        games = c.load_cohort(self.cohort)
+        resolver = lambda appid: inc.resolve_cache(appid, self.cache, [])
+        full = p.evidence(games, resolver)
+        with patch.object(p.features_core, 'build_features', side_effect=AssertionError('No features in audit')):
+            audited = p.evidence(games, resolver, include_features=False)
+        for field in ('pairs', 'records', 'diagnostics', 'labels', 'usable_history_ids'):
+            self.assertEqual(audited[field], full[field])
+        self.assertEqual(audited['features'], [])
+        self.assertEqual(audited['provenance'], [])
+        self.assertEqual(audited['modeling'], [])
+
     def test_unmatched_and_empty_success_are_not_sufficient_modeling_evidence(self):
         unmatched = self.collect(FakeOpener(outcomes=[{'found': False}]))
         self.assertEqual(unmatched['newly_retrieved_games'], 0)
@@ -596,6 +609,19 @@ class ScalableTests(unittest.TestCase):
         self.assertEqual(empty['games_with_incomplete_historical_records'], 1)
         result = p.run(self.cohort, self.cache, self.directory/'empty_processing', [])
         self.assertTrue(all(r['discount_observed'] == 0 and not r['model_eligible'] for r in result['labels']))
+
+    def test_labelability_view_keeps_empty_and_missing_histories_unknown(self):
+        from audit_cohort_labelability import labelability_view
+        games = c.load_cohort(self.cohort)
+        resolver = lambda appid: inc.resolve_cache(appid, self.cache, [])
+        missing = p.evidence(games, resolver, include_features=False)
+        self.assertTrue(all(r['discount_observed'] == '' for r in labelability_view(missing['labels'])))
+        self.collect(FakeOpener(history=[]), raw_only=True)
+        empty = p.evidence(games, resolver, include_features=False)
+        self.assertTrue(all(r['evidence_category'] == 'D' and r['discount_observed'] == 0 for r in empty['labels']))
+        self.assertTrue(all(r['empty_raw_history'] and r['discount_observed'] == '' and
+                            r['labelability_status'] == 'unknown_or_excluded'
+                            for r in labelability_view(empty['labels'])))
 
     def test_schema_failure_http200_is_not_retrieval_success(self):
         report = self.collect(FakeOpener(history={'invalid': 'history'}))

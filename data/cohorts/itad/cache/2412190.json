@@ -1,0 +1,79 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T19:02:13.696604Z",
+    "history_status": "empty_history",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T19:02:19.738386Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-7053-7095-a7f8-3ba678054db0",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T19:02:19.738386Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 19:02:19 GMT"
+    }
+  },
+  "history_response": [],
+  "itad_game_id": "018d937f-7053-7095-a7f8-3ba678054db0",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T19:02:16.714005Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-7053-7095-a7f8-3ba678054db0\",\"slug\":\"meaningless\",\"title\":\"Meaningless\",\"type\":null,\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-7053-7095-a7f8-3ba678054db0\\/boxart.jpg?t=1790929575\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-7053-7095-a7f8-3ba678054db0\\/banner145.jpg?t=1790929575\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-7053-7095-a7f8-3ba678054db0\\/banner300.jpg?t=1790929575\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-7053-7095-a7f8-3ba678054db0\\/banner400.jpg?t=1790929575\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-7053-7095-a7f8-3ba678054db0\\/banner600.jpg?t=1790929576\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "2412190"
+    },
+    "received_at": "2026-10-13T19:02:16.714005Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 19:02:16 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-7053-7095-a7f8-3ba678054db0/banner145.jpg?t=1790929575",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-7053-7095-a7f8-3ba678054db0/banner300.jpg?t=1790929575",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-7053-7095-a7f8-3ba678054db0/banner400.jpg?t=1790929575",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-7053-7095-a7f8-3ba678054db0/banner600.jpg?t=1790929576",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-7053-7095-a7f8-3ba678054db0/boxart.jpg?t=1790929575"
+      },
+      "id": "018d937f-7053-7095-a7f8-3ba678054db0",
+      "mature": false,
+      "slug": "meaningless",
+      "title": "Meaningless",
+      "type": null
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 2412190
+}

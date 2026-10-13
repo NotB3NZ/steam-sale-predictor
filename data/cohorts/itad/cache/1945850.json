@@ -1,0 +1,79 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T17:19:40.179438Z",
+    "history_status": "empty_history",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T17:19:45.899505Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d97ae-613c-737d-a229-08999fd0af8a",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T17:19:45.899505Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 17:19:46 GMT"
+    }
+  },
+  "history_response": [],
+  "itad_game_id": "018d97ae-613c-737d-a229-08999fd0af8a",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T17:19:42.894670Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d97ae-613c-737d-a229-08999fd0af8a\",\"slug\":\"dark-ill-an-hei-gu-guo\",\"title\":\"Dark ill \\u6697\\u9ed1\\u86ca\\u56fd\",\"type\":null,\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97ae-613c-737d-a229-08999fd0af8a\\/boxart.jpg?t=1787679938\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97ae-613c-737d-a229-08999fd0af8a\\/banner145.jpg?t=1787679938\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97ae-613c-737d-a229-08999fd0af8a\\/banner300.jpg?t=1787679939\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97ae-613c-737d-a229-08999fd0af8a\\/banner400.jpg?t=1787679939\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97ae-613c-737d-a229-08999fd0af8a\\/banner600.jpg?t=1787679940\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "1945850"
+    },
+    "received_at": "2026-10-13T17:19:42.894670Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 17:19:43 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d97ae-613c-737d-a229-08999fd0af8a/banner145.jpg?t=1787679938",
+        "banner300": "https://assets.isthereanydeal.com/018d97ae-613c-737d-a229-08999fd0af8a/banner300.jpg?t=1787679939",
+        "banner400": "https://assets.isthereanydeal.com/018d97ae-613c-737d-a229-08999fd0af8a/banner400.jpg?t=1787679939",
+        "banner600": "https://assets.isthereanydeal.com/018d97ae-613c-737d-a229-08999fd0af8a/banner600.jpg?t=1787679940",
+        "boxart": "https://assets.isthereanydeal.com/018d97ae-613c-737d-a229-08999fd0af8a/boxart.jpg?t=1787679938"
+      },
+      "id": "018d97ae-613c-737d-a229-08999fd0af8a",
+      "mature": false,
+      "slug": "dark-ill-an-hei-gu-guo",
+      "title": "Dark ill 暗黑蛊国",
+      "type": null
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 1945850
+}

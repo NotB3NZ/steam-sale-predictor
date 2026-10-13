@@ -1,0 +1,100 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T16:36:33.351660Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T16:36:39.304346Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2023-09-06T23:18:13+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"regular\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-74b7-71cc-bca7-1c020edd247e",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T16:36:39.304346Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 16:36:39 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-09-06T23:18:13+02:00"
+    }
+  ],
+  "itad_game_id": "018d937f-74b7-71cc-bca7-1c020edd247e",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T16:36:36.298708Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-74b7-71cc-bca7-1c020edd247e\",\"slug\":\"side-by-size\",\"title\":\"Side by Size\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-74b7-71cc-bca7-1c020edd247e\\/boxart.jpg?t=1763182109\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-74b7-71cc-bca7-1c020edd247e\\/banner145.jpg?t=1763182110\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-74b7-71cc-bca7-1c020edd247e\\/banner300.jpg?t=1763182110\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-74b7-71cc-bca7-1c020edd247e\\/banner400.jpg?t=1763182110\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-74b7-71cc-bca7-1c020edd247e\\/banner600.jpg?t=1763182111\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "2534620"
+    },
+    "received_at": "2026-10-13T16:36:36.298708Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 16:36:36 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-74b7-71cc-bca7-1c020edd247e/banner145.jpg?t=1763182110",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-74b7-71cc-bca7-1c020edd247e/banner300.jpg?t=1763182110",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-74b7-71cc-bca7-1c020edd247e/banner400.jpg?t=1763182110",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-74b7-71cc-bca7-1c020edd247e/banner600.jpg?t=1763182111",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-74b7-71cc-bca7-1c020edd247e/boxart.jpg?t=1763182109"
+      },
+      "id": "018d937f-74b7-71cc-bca7-1c020edd247e",
+      "mature": false,
+      "slug": "side-by-size",
+      "title": "Side by Size",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 2534620
+}

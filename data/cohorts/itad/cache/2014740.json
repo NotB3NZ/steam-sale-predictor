@@ -1,0 +1,79 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T18:06:20.609399Z",
+    "history_status": "empty_history",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T18:06:26.439116Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d97b5-6492-7320-b32d-0993c6ae11de",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T18:06:26.439116Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 18:06:26 GMT"
+    }
+  },
+  "history_response": [],
+  "itad_game_id": "018d97b5-6492-7320-b32d-0993c6ae11de",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T18:06:23.428573Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d97b5-6492-7320-b32d-0993c6ae11de\",\"slug\":\"last-devil-family-friendly\",\"title\":\"Last Devil - Family Friendly\",\"type\":null,\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97b5-6492-7320-b32d-0993c6ae11de\\/boxart.jpg?t=1788825660\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97b5-6492-7320-b32d-0993c6ae11de\\/banner145.jpg?t=1788825660\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97b5-6492-7320-b32d-0993c6ae11de\\/banner300.jpg?t=1788825661\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97b5-6492-7320-b32d-0993c6ae11de\\/banner400.jpg?t=1788825661\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97b5-6492-7320-b32d-0993c6ae11de\\/banner600.jpg?t=1788825662\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "2014740"
+    },
+    "received_at": "2026-10-13T18:06:23.428573Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 18:06:23 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d97b5-6492-7320-b32d-0993c6ae11de/banner145.jpg?t=1788825660",
+        "banner300": "https://assets.isthereanydeal.com/018d97b5-6492-7320-b32d-0993c6ae11de/banner300.jpg?t=1788825661",
+        "banner400": "https://assets.isthereanydeal.com/018d97b5-6492-7320-b32d-0993c6ae11de/banner400.jpg?t=1788825661",
+        "banner600": "https://assets.isthereanydeal.com/018d97b5-6492-7320-b32d-0993c6ae11de/banner600.jpg?t=1788825662",
+        "boxart": "https://assets.isthereanydeal.com/018d97b5-6492-7320-b32d-0993c6ae11de/boxart.jpg?t=1788825660"
+      },
+      "id": "018d97b5-6492-7320-b32d-0993c6ae11de",
+      "mature": false,
+      "slug": "last-devil-family-friendly",
+      "title": "Last Devil - Family Friendly",
+      "type": null
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 2014740
+}

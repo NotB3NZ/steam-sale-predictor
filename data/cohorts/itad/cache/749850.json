@@ -1,0 +1,140 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T18:15:47.229051Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T18:15:52.929218Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2021-03-15T18:21:54+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":12.49,\"amountInt\":1249,\"currency\":\"USD\"},\"regular\":{\"amount\":24.99,\"amountInt\":2499,\"currency\":\"USD\"},\"cut\":50}},{\"timestamp\":\"2021-01-07T19:21:11+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":24.99,\"amountInt\":2499,\"currency\":\"USD\"},\"regular\":{\"amount\":24.99,\"amountInt\":2499,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":12.49,\"amountInt\":1249,\"currency\":\"USD\"},\"regular\":{\"amount\":24.99,\"amountInt\":2499,\"currency\":\"USD\"},\"cut\":50}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-0fe8-7020-8cb4-fb46a9283919",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T18:15:52.929218Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 18:15:53 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 50,
+        "price": {
+          "amount": 12.49,
+          "amountInt": 1249,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 24.99,
+          "amountInt": 2499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-03-15T18:21:54+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 24.99,
+          "amountInt": 2499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 24.99,
+          "amountInt": 2499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-07T19:21:11+01:00"
+    },
+    {
+      "deal": {
+        "cut": 50,
+        "price": {
+          "amount": 12.49,
+          "amountInt": 1249,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 24.99,
+          "amountInt": 2499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-01T01:00:00+01:00"
+    }
+  ],
+  "itad_game_id": "018d937f-0fe8-7020-8cb4-fb46a9283919",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T18:15:49.908430Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-0fe8-7020-8cb4-fb46a9283919\",\"slug\":\"dragonfangz-the-rose-and-dungeon-of-time\",\"title\":\"DragonFangZ - The Rose & Dungeon of Time\",\"type\":null,\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-0fe8-7020-8cb4-fb46a9283919\\/boxart.png?t=1790893879\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-0fe8-7020-8cb4-fb46a9283919\\/banner145.jpg?t=1790893879\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-0fe8-7020-8cb4-fb46a9283919\\/banner300.jpg?t=1790893879\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-0fe8-7020-8cb4-fb46a9283919\\/banner400.jpg?t=1790893879\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-0fe8-7020-8cb4-fb46a9283919\\/banner600.jpg?t=1790893880\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "749850"
+    },
+    "received_at": "2026-10-13T18:15:49.908430Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 18:15:50 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-0fe8-7020-8cb4-fb46a9283919/banner145.jpg?t=1790893879",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-0fe8-7020-8cb4-fb46a9283919/banner300.jpg?t=1790893879",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-0fe8-7020-8cb4-fb46a9283919/banner400.jpg?t=1790893879",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-0fe8-7020-8cb4-fb46a9283919/banner600.jpg?t=1790893880",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-0fe8-7020-8cb4-fb46a9283919/boxart.png?t=1790893879"
+      },
+      "id": "018d937f-0fe8-7020-8cb4-fb46a9283919",
+      "mature": false,
+      "slug": "dragonfangz-the-rose-and-dungeon-of-time",
+      "title": "DragonFangZ - The Rose & Dungeon of Time",
+      "type": null
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 749850
+}

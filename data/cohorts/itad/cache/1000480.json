@@ -1,0 +1,100 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T17:28:11.924588Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T17:28:17.827352Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":9.99,\"amountInt\":999,\"currency\":\"USD\"},\"regular\":{\"amount\":9.99,\"amountInt\":999,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-1c99-7066-82ae-a536476d2663",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T17:28:17.827352Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 17:28:18 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 9.99,
+          "amountInt": 999,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 9.99,
+          "amountInt": 999,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-01T01:00:00+01:00"
+    }
+  ],
+  "itad_game_id": "018d937f-1c99-7066-82ae-a536476d2663",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T17:28:14.806370Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-1c99-7066-82ae-a536476d2663\",\"slug\":\"battle-motion\",\"title\":\"Battle Motion\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1c99-7066-82ae-a536476d2663\\/boxart.png?t=1732006284\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1c99-7066-82ae-a536476d2663\\/banner145.jpg?t=1732006284\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1c99-7066-82ae-a536476d2663\\/banner300.jpg?t=1732006284\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1c99-7066-82ae-a536476d2663\\/banner400.jpg?t=1732006284\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1c99-7066-82ae-a536476d2663\\/banner600.jpg?t=1732006285\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "1000480"
+    },
+    "received_at": "2026-10-13T17:28:14.806370Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 17:28:15 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-1c99-7066-82ae-a536476d2663/banner145.jpg?t=1732006284",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-1c99-7066-82ae-a536476d2663/banner300.jpg?t=1732006284",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-1c99-7066-82ae-a536476d2663/banner400.jpg?t=1732006284",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-1c99-7066-82ae-a536476d2663/banner600.jpg?t=1732006285",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-1c99-7066-82ae-a536476d2663/boxart.png?t=1732006284"
+      },
+      "id": "018d937f-1c99-7066-82ae-a536476d2663",
+      "mature": false,
+      "slug": "battle-motion",
+      "title": "Battle Motion",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 1000480
+}

@@ -1,0 +1,79 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T18:06:50.566656Z",
+    "history_status": "empty_history",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T18:06:56.576988Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d9779-0a41-724a-b741-a90302714510",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T18:06:56.576988Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 18:06:56 GMT"
+    }
+  },
+  "history_response": [],
+  "itad_game_id": "018d9779-0a41-724a-b741-a90302714510",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T18:06:53.553039Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d9779-0a41-724a-b741-a90302714510\",\"slug\":\"tong-tian-mo-ta-magictower\",\"title\":\"\\u901a\\u5929\\u9b54\\u5854-MagicTower\",\"type\":null,\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d9779-0a41-724a-b741-a90302714510\\/boxart.jpg?t=1763146821\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d9779-0a41-724a-b741-a90302714510\\/banner145.jpg?t=1763146821\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d9779-0a41-724a-b741-a90302714510\\/banner300.jpg?t=1763146821\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d9779-0a41-724a-b741-a90302714510\\/banner400.jpg?t=1763146821\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d9779-0a41-724a-b741-a90302714510\\/banner600.jpg?t=1763146822\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "1653120"
+    },
+    "received_at": "2026-10-13T18:06:53.553039Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 18:06:53 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d9779-0a41-724a-b741-a90302714510/banner145.jpg?t=1763146821",
+        "banner300": "https://assets.isthereanydeal.com/018d9779-0a41-724a-b741-a90302714510/banner300.jpg?t=1763146821",
+        "banner400": "https://assets.isthereanydeal.com/018d9779-0a41-724a-b741-a90302714510/banner400.jpg?t=1763146821",
+        "banner600": "https://assets.isthereanydeal.com/018d9779-0a41-724a-b741-a90302714510/banner600.jpg?t=1763146822",
+        "boxart": "https://assets.isthereanydeal.com/018d9779-0a41-724a-b741-a90302714510/boxart.jpg?t=1763146821"
+      },
+      "id": "018d9779-0a41-724a-b741-a90302714510",
+      "mature": false,
+      "slug": "tong-tian-mo-ta-magictower",
+      "title": "通天魔塔-MagicTower",
+      "type": null
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 1653120
+}

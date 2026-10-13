@@ -1,0 +1,200 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T16:35:45.239687Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T16:35:51.177749Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2021-02-15T19:25:05+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":69.99,\"amountInt\":6999,\"currency\":\"USD\"},\"regular\":{\"amount\":69.99,\"amountInt\":6999,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-02-11T19:30:20+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":24.49,\"amountInt\":2449,\"currency\":\"USD\"},\"regular\":{\"amount\":69.99,\"amountInt\":6999,\"currency\":\"USD\"},\"cut\":65}},{\"timestamp\":\"2021-01-18T19:21:39+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":69.99,\"amountInt\":6999,\"currency\":\"USD\"},\"regular\":{\"amount\":69.99,\"amountInt\":6999,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-01-11T19:21:13+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":20.99,\"amountInt\":2099,\"currency\":\"USD\"},\"regular\":{\"amount\":69.99,\"amountInt\":6999,\"currency\":\"USD\"},\"cut\":70}},{\"timestamp\":\"2021-01-05T19:57:43+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":69.99,\"amountInt\":6999,\"currency\":\"USD\"},\"regular\":{\"amount\":69.99,\"amountInt\":6999,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":20.99,\"amountInt\":2099,\"currency\":\"USD\"},\"regular\":{\"amount\":69.99,\"amountInt\":6999,\"currency\":\"USD\"},\"cut\":70}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-333d-73a0-b5c7-b40075c95b25",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T16:35:51.177749Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 16:35:51 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 69.99,
+          "amountInt": 6999,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 69.99,
+          "amountInt": 6999,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-02-15T19:25:05+01:00"
+    },
+    {
+      "deal": {
+        "cut": 65,
+        "price": {
+          "amount": 24.49,
+          "amountInt": 2449,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 69.99,
+          "amountInt": 6999,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-02-11T19:30:20+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 69.99,
+          "amountInt": 6999,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 69.99,
+          "amountInt": 6999,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-18T19:21:39+01:00"
+    },
+    {
+      "deal": {
+        "cut": 70,
+        "price": {
+          "amount": 20.99,
+          "amountInt": 2099,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 69.99,
+          "amountInt": 6999,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-11T19:21:13+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 69.99,
+          "amountInt": 6999,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 69.99,
+          "amountInt": 6999,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-05T19:57:43+01:00"
+    },
+    {
+      "deal": {
+        "cut": 70,
+        "price": {
+          "amount": 20.99,
+          "amountInt": 2099,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 69.99,
+          "amountInt": 6999,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-01T01:00:00+01:00"
+    }
+  ],
+  "itad_game_id": "018d937f-333d-73a0-b5c7-b40075c95b25",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T16:35:48.456654Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-333d-73a0-b5c7-b40075c95b25\",\"slug\":\"need-for-speed-heat\",\"title\":\"Need for Speed\\u2122 Heat\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-333d-73a0-b5c7-b40075c95b25\\/boxart.jpg?t=1786643731\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-333d-73a0-b5c7-b40075c95b25\\/banner145.jpg?t=1786643731\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-333d-73a0-b5c7-b40075c95b25\\/banner300.jpg?t=1786643731\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-333d-73a0-b5c7-b40075c95b25\\/banner400.jpg?t=1786643731\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-333d-73a0-b5c7-b40075c95b25\\/banner600.jpg?t=1786643731\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "1222680"
+    },
+    "received_at": "2026-10-13T16:35:48.456654Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 16:35:48 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-333d-73a0-b5c7-b40075c95b25/banner145.jpg?t=1786643731",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-333d-73a0-b5c7-b40075c95b25/banner300.jpg?t=1786643731",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-333d-73a0-b5c7-b40075c95b25/banner400.jpg?t=1786643731",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-333d-73a0-b5c7-b40075c95b25/banner600.jpg?t=1786643731",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-333d-73a0-b5c7-b40075c95b25/boxart.jpg?t=1786643731"
+      },
+      "id": "018d937f-333d-73a0-b5c7-b40075c95b25",
+      "mature": false,
+      "slug": "need-for-speed-heat",
+      "title": "Need for Speed™ Heat",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 1222680
+}

@@ -1,0 +1,180 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T16:45:59.222620Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T16:46:05.258004Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2026-02-12T19:19:28+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"regular\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2026-02-05T19:23:36+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"cut\":80}},{\"timestamp\":\"2025-12-15T11:30:30+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"regular\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2023-05-01T16:33:18+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2023-03-31T04:07:15+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":3.99,\"amountInt\":399,\"currency\":\"USD\"},\"regular\":{\"amount\":3.99,\"amountInt\":399,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d9988-b25a-711f-9fae-af5f7b9ef613",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T16:46:05.258004Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 16:46:05 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2026-02-12T19:19:28+01:00"
+    },
+    {
+      "deal": {
+        "cut": 80,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2026-02-05T19:23:36+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-12-15T11:30:30+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-05-01T16:33:18+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 3.99,
+          "amountInt": 399,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 3.99,
+          "amountInt": 399,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-03-31T04:07:15+02:00"
+    }
+  ],
+  "itad_game_id": "018d9988-b25a-711f-9fae-af5f7b9ef613",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T16:46:02.218427Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d9988-b25a-711f-9fae-af5f7b9ef613\",\"slug\":\"keyboard-warrior--2\",\"title\":\"Keyboard Warrior\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d9988-b25a-711f-9fae-af5f7b9ef613\\/boxart.jpg?t=1763133378\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d9988-b25a-711f-9fae-af5f7b9ef613\\/banner145.jpg?t=1763133378\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d9988-b25a-711f-9fae-af5f7b9ef613\\/banner300.jpg?t=1763133378\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d9988-b25a-711f-9fae-af5f7b9ef613\\/banner400.jpg?t=1763133378\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d9988-b25a-711f-9fae-af5f7b9ef613\\/banner600.jpg?t=1763133378\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "2352770"
+    },
+    "received_at": "2026-10-13T16:46:02.218427Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 16:46:02 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d9988-b25a-711f-9fae-af5f7b9ef613/banner145.jpg?t=1763133378",
+        "banner300": "https://assets.isthereanydeal.com/018d9988-b25a-711f-9fae-af5f7b9ef613/banner300.jpg?t=1763133378",
+        "banner400": "https://assets.isthereanydeal.com/018d9988-b25a-711f-9fae-af5f7b9ef613/banner400.jpg?t=1763133378",
+        "banner600": "https://assets.isthereanydeal.com/018d9988-b25a-711f-9fae-af5f7b9ef613/banner600.jpg?t=1763133378",
+        "boxart": "https://assets.isthereanydeal.com/018d9988-b25a-711f-9fae-af5f7b9ef613/boxart.jpg?t=1763133378"
+      },
+      "id": "018d9988-b25a-711f-9fae-af5f7b9ef613",
+      "mature": false,
+      "slug": "keyboard-warrior--2",
+      "title": "Keyboard Warrior",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 2352770
+}

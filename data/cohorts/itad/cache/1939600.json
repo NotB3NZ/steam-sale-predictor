@@ -1,0 +1,140 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T16:52:06.641739Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T16:52:12.729567Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2022-11-08T18:24:52+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2022-04-27T19:24:21+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":5.99,\"amountInt\":599,\"currency\":\"USD\"},\"regular\":{\"amount\":5.99,\"amountInt\":599,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2022-04-20T17:18:13+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":5.39,\"amountInt\":539,\"currency\":\"USD\"},\"regular\":{\"amount\":5.99,\"amountInt\":599,\"currency\":\"USD\"},\"cut\":10}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-5f40-711e-81c2-a6f298873072",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T16:52:12.729567Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 16:52:12 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-11-08T18:24:52+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 5.99,
+          "amountInt": 599,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 5.99,
+          "amountInt": 599,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-04-27T19:24:21+02:00"
+    },
+    {
+      "deal": {
+        "cut": 10,
+        "price": {
+          "amount": 5.39,
+          "amountInt": 539,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 5.99,
+          "amountInt": 599,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-04-20T17:18:13+02:00"
+    }
+  ],
+  "itad_game_id": "018d937f-5f40-711e-81c2-a6f298873072",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T16:52:09.532134Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-5f40-711e-81c2-a6f298873072\",\"slug\":\"sillage\",\"title\":\"Sillage\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-5f40-711e-81c2-a6f298873072\\/boxart.jpg?t=1763303748\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-5f40-711e-81c2-a6f298873072\\/banner145.jpg?t=1763303749\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-5f40-711e-81c2-a6f298873072\\/banner300.jpg?t=1763303749\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-5f40-711e-81c2-a6f298873072\\/banner400.jpg?t=1763303749\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-5f40-711e-81c2-a6f298873072\\/banner600.jpg?t=1763303749\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "1939600"
+    },
+    "received_at": "2026-10-13T16:52:09.532134Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 16:52:09 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-5f40-711e-81c2-a6f298873072/banner145.jpg?t=1763303749",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-5f40-711e-81c2-a6f298873072/banner300.jpg?t=1763303749",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-5f40-711e-81c2-a6f298873072/banner400.jpg?t=1763303749",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-5f40-711e-81c2-a6f298873072/banner600.jpg?t=1763303749",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-5f40-711e-81c2-a6f298873072/boxart.jpg?t=1763303748"
+      },
+      "id": "018d937f-5f40-711e-81c2-a6f298873072",
+      "mature": false,
+      "slug": "sillage",
+      "title": "Sillage",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 1939600
+}

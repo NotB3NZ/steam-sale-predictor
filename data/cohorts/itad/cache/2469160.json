@@ -1,0 +1,140 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T16:32:38.757127Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T16:32:44.437063Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2023-08-05T19:03:14+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":3.99,\"amountInt\":399,\"currency\":\"USD\"},\"regular\":{\"amount\":3.99,\"amountInt\":399,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2023-07-29T19:19:06+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":3.19,\"amountInt\":319,\"currency\":\"USD\"},\"regular\":{\"amount\":3.99,\"amountInt\":399,\"currency\":\"USD\"},\"cut\":20}},{\"timestamp\":\"2023-06-29T14:06:15+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":3.99,\"amountInt\":399,\"currency\":\"USD\"},\"regular\":{\"amount\":3.99,\"amountInt\":399,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-71d7-71fd-9698-b86f622ef7d6",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T16:32:44.437063Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 16:32:44 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 3.99,
+          "amountInt": 399,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 3.99,
+          "amountInt": 399,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-08-05T19:03:14+02:00"
+    },
+    {
+      "deal": {
+        "cut": 20,
+        "price": {
+          "amount": 3.19,
+          "amountInt": 319,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 3.99,
+          "amountInt": 399,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-07-29T19:19:06+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 3.99,
+          "amountInt": 399,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 3.99,
+          "amountInt": 399,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-06-29T14:06:15+02:00"
+    }
+  ],
+  "itad_game_id": "018d937f-71d7-71fd-9698-b86f622ef7d6",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T16:32:41.440231Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-71d7-71fd-9698-b86f622ef7d6\",\"slug\":\"quizfizz\",\"title\":\"QuizFizz\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-71d7-71fd-9698-b86f622ef7d6\\/boxart.jpg?t=1763638827\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-71d7-71fd-9698-b86f622ef7d6\\/banner145.jpg?t=1763638827\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-71d7-71fd-9698-b86f622ef7d6\\/banner300.jpg?t=1763638827\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-71d7-71fd-9698-b86f622ef7d6\\/banner400.jpg?t=1763638827\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-71d7-71fd-9698-b86f622ef7d6\\/banner600.jpg?t=1763638827\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "2469160"
+    },
+    "received_at": "2026-10-13T16:32:41.440231Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 16:32:41 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-71d7-71fd-9698-b86f622ef7d6/banner145.jpg?t=1763638827",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-71d7-71fd-9698-b86f622ef7d6/banner300.jpg?t=1763638827",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-71d7-71fd-9698-b86f622ef7d6/banner400.jpg?t=1763638827",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-71d7-71fd-9698-b86f622ef7d6/banner600.jpg?t=1763638827",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-71d7-71fd-9698-b86f622ef7d6/boxart.jpg?t=1763638827"
+      },
+      "id": "018d937f-71d7-71fd-9698-b86f622ef7d6",
+      "mature": false,
+      "slug": "quizfizz",
+      "title": "QuizFizz",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 2469160
+}

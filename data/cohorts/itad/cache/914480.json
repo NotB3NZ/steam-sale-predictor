@@ -1,0 +1,100 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T16:52:30.605866Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T16:52:36.591079Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":9.99,\"amountInt\":999,\"currency\":\"USD\"},\"regular\":{\"amount\":9.99,\"amountInt\":999,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-3074-738e-9bbf-49557055c3ee",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T16:52:36.591079Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 16:52:36 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 9.99,
+          "amountInt": 999,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 9.99,
+          "amountInt": 999,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-01T01:00:00+01:00"
+    }
+  ],
+  "itad_game_id": "018d937f-3074-738e-9bbf-49557055c3ee",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T16:52:33.581148Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-3074-738e-9bbf-49557055c3ee\",\"slug\":\"boom-bits\",\"title\":\"Boom Bits\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-3074-738e-9bbf-49557055c3ee\\/boxart.png?t=1733491347\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-3074-738e-9bbf-49557055c3ee\\/banner145.jpg?t=1733491348\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-3074-738e-9bbf-49557055c3ee\\/banner300.jpg?t=1733491348\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-3074-738e-9bbf-49557055c3ee\\/banner400.jpg?t=1733491348\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-3074-738e-9bbf-49557055c3ee\\/banner600.jpg?t=1733491348\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "914480"
+    },
+    "received_at": "2026-10-13T16:52:33.581148Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 16:52:33 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-3074-738e-9bbf-49557055c3ee/banner145.jpg?t=1733491348",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-3074-738e-9bbf-49557055c3ee/banner300.jpg?t=1733491348",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-3074-738e-9bbf-49557055c3ee/banner400.jpg?t=1733491348",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-3074-738e-9bbf-49557055c3ee/banner600.jpg?t=1733491348",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-3074-738e-9bbf-49557055c3ee/boxart.png?t=1733491347"
+      },
+      "id": "018d937f-3074-738e-9bbf-49557055c3ee",
+      "mature": false,
+      "slug": "boom-bits",
+      "title": "Boom Bits",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 914480
+}

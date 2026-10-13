@@ -22,7 +22,7 @@ def provenance_path(path):
     return str(path.relative_to(ROOT)) if path.is_relative_to(ROOT) else str(path)
 
 
-def evidence(games, caches):
+def evidence(games, caches, include_features=True):
     """Missing/unmatched/failed histories never become audited category D."""
     windows = audit.canonical_windows(ROOT)
     pairs, records, diagnostics, manifests, cache_paths = [], [], [], [], {}
@@ -56,12 +56,13 @@ def evidence(games, caches):
                 diagnostics.append(diagnostic)
                 records.extend(raw)
                 successful.add((appid, year))
-        eligible = [(int(appid), y) for y, window in windows.items()
-                    if date.fromisoformat(game['release_date']) <= date.fromisoformat(window[0])]
-        game_features, game_provenance = features_core.build_features(eligible, {int(appid): game},
-                                                     {int(appid): analyzed}, windows)
-        features.extend(game_features)
-        provenance.extend(game_provenance)
+        if include_features:
+            eligible = [(int(appid), y) for y, window in windows.items()
+                        if date.fromisoformat(game['release_date']) <= date.fromisoformat(window[0])]
+            game_features, game_provenance = features_core.build_features(eligible, {int(appid): game},
+                                                         {int(appid): analyzed}, windows)
+            features.extend(game_features)
+            provenance.extend(game_provenance)
     inputs = dict(pairs=strings([p for p in pairs if (p['AppID'], p['sale_year']) in successful]),
                   records=strings(records), diagnostics=strings(diagnostics), games=strings(games),
                   manifest=strings(manifests))

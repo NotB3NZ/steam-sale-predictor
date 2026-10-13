@@ -1,0 +1,100 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T19:03:44.249623Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T19:03:50.194461Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"regular\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-3419-7062-b2a4-35664d416833",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T19:03:50.194461Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 19:03:50 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-01T01:00:00+01:00"
+    }
+  ],
+  "itad_game_id": "018d937f-3419-7062-b2a4-35664d416833",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T19:03:47.169852Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-3419-7062-b2a4-35664d416833\",\"slug\":\"the-western-hunter\",\"title\":\"The Western Hunter\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-3419-7062-b2a4-35664d416833\\/boxart.png?t=1732053623\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-3419-7062-b2a4-35664d416833\\/banner145.jpg?t=1732053623\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-3419-7062-b2a4-35664d416833\\/banner300.jpg?t=1732053623\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-3419-7062-b2a4-35664d416833\\/banner400.jpg?t=1732053624\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-3419-7062-b2a4-35664d416833\\/banner600.jpg?t=1732053624\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "672570"
+    },
+    "received_at": "2026-10-13T19:03:47.169852Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 19:03:47 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-3419-7062-b2a4-35664d416833/banner145.jpg?t=1732053623",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-3419-7062-b2a4-35664d416833/banner300.jpg?t=1732053623",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-3419-7062-b2a4-35664d416833/banner400.jpg?t=1732053624",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-3419-7062-b2a4-35664d416833/banner600.jpg?t=1732053624",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-3419-7062-b2a4-35664d416833/boxart.png?t=1732053623"
+      },
+      "id": "018d937f-3419-7062-b2a4-35664d416833",
+      "mature": false,
+      "slug": "the-western-hunter",
+      "title": "The Western Hunter",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 672570
+}

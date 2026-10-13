@@ -1,0 +1,351 @@
+{
+  "affected_conflict_appids": [
+    "220",
+    "3800",
+    "19020",
+    "35140",
+    "115320",
+    "234490",
+    "239250",
+    "291030",
+    "302510",
+    "322970",
+    "325520",
+    "363500",
+    "363890",
+    "371550",
+    "421810",
+    "476510",
+    "539300",
+    "610370",
+    "1151340",
+    "1329790",
+    "1621070",
+    "1741420",
+    "1785150",
+    "1817400"
+  ],
+  "ambiguous_history_records": 0,
+  "baseline_comparison": {
+    "added_rows": 0,
+    "baseline": {
+      "sha256": "5d59669621686a81fb33c751ba7bebca6d148d2781da9f2db38aa4898cc11754",
+      "size_bytes": 68596
+    },
+    "baseline_rows": 178,
+    "current_rows": 178,
+    "current_sha256": "69f4930f07a8a5f56c4434611dab81597c626d02411d286a7b542b9889213336",
+    "git_head_matches_baseline": true,
+    "git_head_sha256": "5d59669621686a81fb33c751ba7bebca6d148d2781da9f2db38aa4898cc11754",
+    "interpretation": "Ordering-only mismatch",
+    "moved_rows": [
+      {
+        "appid": "2265760",
+        "baseline_position": 153,
+        "current_position": 152,
+        "sale_year": "2024",
+        "source_record_index": "17"
+      },
+      {
+        "appid": "2265760",
+        "baseline_position": 154,
+        "current_position": 153,
+        "sale_year": "2025",
+        "source_record_index": "7"
+      },
+      {
+        "appid": "2270520",
+        "baseline_position": 156,
+        "current_position": 154,
+        "sale_year": "2023",
+        "source_record_index": "44"
+      },
+      {
+        "appid": "2270520",
+        "baseline_position": 157,
+        "current_position": 155,
+        "sale_year": "2024",
+        "source_record_index": "22"
+      },
+      {
+        "appid": "2270520",
+        "baseline_position": 158,
+        "current_position": 156,
+        "sale_year": "2025",
+        "source_record_index": "12"
+      },
+      {
+        "appid": "2312170",
+        "baseline_position": 159,
+        "current_position": 157,
+        "sale_year": "2023",
+        "source_record_index": "26"
+      },
+      {
+        "appid": "2312170",
+        "baseline_position": 160,
+        "current_position": 158,
+        "sale_year": "2024",
+        "source_record_index": "16"
+      },
+      {
+        "appid": "2312170",
+        "baseline_position": 161,
+        "current_position": 159,
+        "sale_year": "2025",
+        "source_record_index": "8"
+      },
+      {
+        "appid": "2314050",
+        "baseline_position": 162,
+        "current_position": 160,
+        "sale_year": "2023",
+        "source_record_index": "50"
+      },
+      {
+        "appid": "2314050",
+        "baseline_position": 163,
+        "current_position": 161,
+        "sale_year": "2024",
+        "source_record_index": "36"
+      },
+      {
+        "appid": "2314050",
+        "baseline_position": 164,
+        "current_position": 162,
+        "sale_year": "2025",
+        "source_record_index": "20"
+      },
+      {
+        "appid": "2383710",
+        "baseline_position": 165,
+        "current_position": 163,
+        "sale_year": "2024",
+        "source_record_index": "44"
+      },
+      {
+        "appid": "2383710",
+        "baseline_position": 166,
+        "current_position": 164,
+        "sale_year": "2025",
+        "source_record_index": "22"
+      },
+      {
+        "appid": "2387820",
+        "baseline_position": 167,
+        "current_position": 165,
+        "sale_year": "2023",
+        "source_record_index": "64"
+      },
+      {
+        "appid": "2387820",
+        "baseline_position": 168,
+        "current_position": 166,
+        "sale_year": "2024",
+        "source_record_index": "44"
+      },
+      {
+        "appid": "2387820",
+        "baseline_position": 169,
+        "current_position": 167,
+        "sale_year": "2025",
+        "source_record_index": "24"
+      },
+      {
+        "appid": "2490910",
+        "baseline_position": 170,
+        "current_position": 168,
+        "sale_year": "2023",
+        "source_record_index": "52"
+      },
+      {
+        "appid": "2490910",
+        "baseline_position": 171,
+        "current_position": 169,
+        "sale_year": "2024",
+        "source_record_index": "32"
+      },
+      {
+        "appid": "2490910",
+        "baseline_position": 172,
+        "current_position": 170,
+        "sale_year": "2025",
+        "source_record_index": "18"
+      },
+      {
+        "appid": "2544720",
+        "baseline_position": 173,
+        "current_position": 171,
+        "sale_year": "2023",
+        "source_record_index": "68"
+      },
+      {
+        "appid": "2544720",
+        "baseline_position": 174,
+        "current_position": 172,
+        "sale_year": "2024",
+        "source_record_index": "45"
+      },
+      {
+        "appid": "2544720",
+        "baseline_position": 175,
+        "current_position": 173,
+        "sale_year": "2025",
+        "source_record_index": "24"
+      },
+      {
+        "appid": "2621900",
+        "baseline_position": 176,
+        "current_position": 174,
+        "sale_year": "2024",
+        "source_record_index": "39"
+      },
+      {
+        "appid": "2621900",
+        "baseline_position": 177,
+        "current_position": 175,
+        "sale_year": "2025",
+        "source_record_index": "20"
+      },
+      {
+        "appid": "2205710",
+        "baseline_position": 152,
+        "current_position": 176,
+        "sale_year": "2025",
+        "source_record_index": "21"
+      },
+      {
+        "appid": "2268470",
+        "baseline_position": 155,
+        "current_position": 177,
+        "sale_year": "2023",
+        "source_record_index": "0"
+      }
+    ],
+    "path": "data/intermediate/autumn_sale_evidence_records.csv",
+    "removed_rows": 0,
+    "row_multisets_identical": true,
+    "row_order_identical": false
+  },
+  "cache_status_counts": {
+    "valid": 2000
+  },
+  "cohort_sha256": "04bd856cc620d575f4425b9ebcf6eb28d783f3eb7ee14548b1deda649a045f33",
+  "coverage_by_year": {
+    "2023": {
+      "evidence_categories": {
+        "A": 979,
+        "B": 10,
+        "C": 0,
+        "D": 1011,
+        "not_classified": 0
+      },
+      "game_year_pairs": 2000,
+      "in_window_conflict_pairs": 1,
+      "legacy_operational_nulls": 0,
+      "legacy_operational_ones": 979,
+      "legacy_operational_zeros": 1021,
+      "release_hour_uncertain": 1,
+      "release_ineligible": 0,
+      "reliably_observed_label_percent": 49.4,
+      "unknown_or_excluded": 1012,
+      "usable_negative_labels": 9,
+      "usable_positive_labels": 979,
+      "verified_participation_negative_labels": 0
+    },
+    "2024": {
+      "evidence_categories": {
+        "A": 1068,
+        "B": 5,
+        "C": 0,
+        "D": 927,
+        "not_classified": 0
+      },
+      "game_year_pairs": 2000,
+      "in_window_conflict_pairs": 0,
+      "legacy_operational_nulls": 0,
+      "legacy_operational_ones": 1068,
+      "legacy_operational_zeros": 932,
+      "release_hour_uncertain": 0,
+      "release_ineligible": 0,
+      "reliably_observed_label_percent": 53.65,
+      "unknown_or_excluded": 927,
+      "usable_negative_labels": 5,
+      "usable_positive_labels": 1068,
+      "verified_participation_negative_labels": 0
+    },
+    "2025": {
+      "evidence_categories": {
+        "A": 983,
+        "B": 8,
+        "C": 0,
+        "D": 1009,
+        "not_classified": 0
+      },
+      "game_year_pairs": 2000,
+      "in_window_conflict_pairs": 0,
+      "legacy_operational_nulls": 0,
+      "legacy_operational_ones": 983,
+      "legacy_operational_zeros": 1017,
+      "release_hour_uncertain": 0,
+      "release_ineligible": 0,
+      "reliably_observed_label_percent": 49.55,
+      "unknown_or_excluded": 1009,
+      "usable_negative_labels": 8,
+      "usable_positive_labels": 983,
+      "verified_participation_negative_labels": 0
+    }
+  },
+  "games_with_usable_historical_evidence": 1918,
+  "games_with_usable_labels": 1268,
+  "historical_baseline_matches": 218,
+  "historical_label_rule": "operational_observed_v1",
+  "identical_duplicate_records": 0,
+  "input_files_preserved": 2015,
+  "journal": {
+    "failed_api_requests": 15,
+    "interrupted_or_unknown_attempts": 0,
+    "successful_api_requests": 3801,
+    "total_http_attempts": 3816
+  },
+  "no_feature_calculation": true,
+  "no_model_training": true,
+  "no_network": true,
+  "non_steam_records_excluded": 0,
+  "original_11_groups_across_9_games_preserved": true,
+  "protected_artifacts_preserved_during_phase": 219,
+  "raw_history_records": 93286,
+  "record_parsing_failures": 0,
+  "records_excluded_at_or_after_2026": 14023,
+  "sale_windows": {
+    "2023": {
+      "end_exclusive": "2023-11-28T18:00:00Z",
+      "start_inclusive": "2023-11-21T18:00:00Z"
+    },
+    "2024": {
+      "end_exclusive": "2024-12-04T18:00:00Z",
+      "start_inclusive": "2024-11-27T18:00:00Z"
+    },
+    "2025": {
+      "end_exclusive": "2025-10-06T17:00:00Z",
+      "start_inclusive": "2025-09-29T17:00:00Z"
+    }
+  },
+  "semantics": "Recorded discounts/full-price observations only; unknowns stay blank. No verified full-sale negatives or official participation labels.",
+  "source_sha256": {
+    "src/04_audit_autumn_evidence.py": "415f16100ed1e324c31e5198c69ef87cc8aa96b3dcf46a0dfecc30b10dec3847",
+    "src/05_investigate_sale_coverage.py": "b40f4cf441849c9cf47b59f28f8f2329d6ed2574a9147b2ada0cf47e5facfcbd",
+    "src/06_build_operational_labels.py": "0a4d33c1846ded06c888a25194cc38a299445b0fa48dd8396edf655ff387c0c0",
+    "src/audit_cohort_labelability.py": "f4b18ddc2615b91d5f324aab3ff84ac2c1cc79dbdc283eb055f1b59bb4c50ce2",
+    "src/autumn_sale_calendar.json": "f7d37c4b33a1386a467b93d8660c1405cf4ce15687903e26e3e9517e9734d7b7",
+    "src/cohort_pipeline.py": "3007ebe8397a56679263ec40e2f8122e0092c21ca8454cb53f2d56b91f9ec61c"
+  },
+  "successful_empty_histories": 81,
+  "timestamp_shop_conflict_groups": 51,
+  "total_game_year_pairs": 6000,
+  "total_games": 2000,
+  "usable_label_pairs": 3052,
+  "usable_label_percent": 50.86666666666667,
+  "usable_label_rule": "Existing cohort_pipeline model_eligible mask: A/B and not requires_review",
+  "validated_at_utc": "2026-10-13T19:25:20.931625+00:00"
+}

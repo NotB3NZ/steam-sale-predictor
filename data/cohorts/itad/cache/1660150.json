@@ -1,0 +1,100 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T17:16:51.386368Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T17:16:57.482918Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2021-06-23T12:18:09+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"regular\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-50d6-701c-93ce-50c01e12f107",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T17:16:57.482918Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 17:16:57 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-06-23T12:18:09+02:00"
+    }
+  ],
+  "itad_game_id": "018d937f-50d6-701c-93ce-50c01e12f107",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T17:16:54.304904Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-50d6-701c-93ce-50c01e12f107\",\"slug\":\"redacted-epilogue\",\"title\":\"Redacted Epilogue\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-50d6-701c-93ce-50c01e12f107\\/boxart.jpg?t=1763202938\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-50d6-701c-93ce-50c01e12f107\\/banner145.jpg?t=1763202938\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-50d6-701c-93ce-50c01e12f107\\/banner300.jpg?t=1763202938\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-50d6-701c-93ce-50c01e12f107\\/banner400.jpg?t=1763202938\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-50d6-701c-93ce-50c01e12f107\\/banner600.jpg?t=1763202939\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "1660150"
+    },
+    "received_at": "2026-10-13T17:16:54.304904Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 17:16:54 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-50d6-701c-93ce-50c01e12f107/banner145.jpg?t=1763202938",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-50d6-701c-93ce-50c01e12f107/banner300.jpg?t=1763202938",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-50d6-701c-93ce-50c01e12f107/banner400.jpg?t=1763202938",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-50d6-701c-93ce-50c01e12f107/banner600.jpg?t=1763202939",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-50d6-701c-93ce-50c01e12f107/boxart.jpg?t=1763202938"
+      },
+      "id": "018d937f-50d6-701c-93ce-50c01e12f107",
+      "mature": false,
+      "slug": "redacted-epilogue",
+      "title": "Redacted Epilogue",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 1660150
+}

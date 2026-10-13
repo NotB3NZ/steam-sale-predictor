@@ -1,0 +1,79 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T18:59:49.107336Z",
+    "history_status": "empty_history",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T18:59:55.062780Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-737e-7103-892d-3d0d56bfc8c9",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T18:59:55.062780Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 18:59:55 GMT"
+    }
+  },
+  "history_response": [],
+  "itad_game_id": "018d937f-737e-7103-892d-3d0d56bfc8c9",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T18:59:52.349965Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-737e-7103-892d-3d0d56bfc8c9\",\"slug\":\"rising-snake-the-present-world\",\"title\":\"Rising snake:The present world\",\"type\":null,\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-737e-7103-892d-3d0d56bfc8c9\\/boxart.jpg?t=1790913104\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-737e-7103-892d-3d0d56bfc8c9\\/banner145.jpg?t=1790913104\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-737e-7103-892d-3d0d56bfc8c9\\/banner300.jpg?t=1790913104\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-737e-7103-892d-3d0d56bfc8c9\\/banner400.jpg?t=1790913104\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-737e-7103-892d-3d0d56bfc8c9\\/banner600.jpg?t=1790913105\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "2433460"
+    },
+    "received_at": "2026-10-13T18:59:52.349965Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 18:59:52 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-737e-7103-892d-3d0d56bfc8c9/banner145.jpg?t=1790913104",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-737e-7103-892d-3d0d56bfc8c9/banner300.jpg?t=1790913104",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-737e-7103-892d-3d0d56bfc8c9/banner400.jpg?t=1790913104",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-737e-7103-892d-3d0d56bfc8c9/banner600.jpg?t=1790913105",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-737e-7103-892d-3d0d56bfc8c9/boxart.jpg?t=1790913104"
+      },
+      "id": "018d937f-737e-7103-892d-3d0d56bfc8c9",
+      "mature": false,
+      "slug": "rising-snake-the-present-world",
+      "title": "Rising snake:The present world",
+      "type": null
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 2433460
+}

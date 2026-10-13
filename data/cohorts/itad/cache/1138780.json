@@ -1,0 +1,180 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T18:48:58.051926Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T18:49:04.256006Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2025-07-10T19:47:31+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"regular\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2025-07-02T23:14:10+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":1.39,\"amountInt\":139,\"currency\":\"USD\"},\"regular\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"cut\":80}},{\"timestamp\":\"2025-01-02T19:41:37+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"regular\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2024-12-20T04:33:55+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.9,\"amountInt\":90,\"currency\":\"USD\"},\"regular\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"cut\":87}},{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"regular\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-3a50-71bb-9c87-7d839518a6f6",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T18:49:04.256006Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 18:49:04 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-07-10T19:47:31+02:00"
+    },
+    {
+      "deal": {
+        "cut": 80,
+        "price": {
+          "amount": 1.39,
+          "amountInt": 139,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-07-02T23:14:10+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-01-02T19:41:37+01:00"
+    },
+    {
+      "deal": {
+        "cut": 87,
+        "price": {
+          "amount": 0.9,
+          "amountInt": 90,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-12-20T04:33:55+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-01T01:00:00+01:00"
+    }
+  ],
+  "itad_game_id": "018d937f-3a50-71bb-9c87-7d839518a6f6",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T18:49:00.974875Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-3a50-71bb-9c87-7d839518a6f6\",\"slug\":\"rotobrix\",\"title\":\"RotoBrix\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-3a50-71bb-9c87-7d839518a6f6\\/boxart.jpg?t=1763277380\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-3a50-71bb-9c87-7d839518a6f6\\/banner145.jpg?t=1763277381\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-3a50-71bb-9c87-7d839518a6f6\\/banner300.jpg?t=1763277381\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-3a50-71bb-9c87-7d839518a6f6\\/banner400.jpg?t=1763277381\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-3a50-71bb-9c87-7d839518a6f6\\/banner600.jpg?t=1763277381\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "1138780"
+    },
+    "received_at": "2026-10-13T18:49:00.974875Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 18:49:01 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-3a50-71bb-9c87-7d839518a6f6/banner145.jpg?t=1763277381",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-3a50-71bb-9c87-7d839518a6f6/banner300.jpg?t=1763277381",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-3a50-71bb-9c87-7d839518a6f6/banner400.jpg?t=1763277381",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-3a50-71bb-9c87-7d839518a6f6/banner600.jpg?t=1763277381",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-3a50-71bb-9c87-7d839518a6f6/boxart.jpg?t=1763277380"
+      },
+      "id": "018d937f-3a50-71bb-9c87-7d839518a6f6",
+      "mature": false,
+      "slug": "rotobrix",
+      "title": "RotoBrix",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 1138780
+}

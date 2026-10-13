@@ -1,0 +1,79 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T18:48:21.849083Z",
+    "history_status": "empty_history",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T18:48:27.875959Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d97e9-cb1c-7049-81c1-00b5f66da9c1",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T18:48:27.875959Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 18:48:28 GMT"
+    }
+  },
+  "history_response": [],
+  "itad_game_id": "018d97e9-cb1c-7049-81c1-00b5f66da9c1",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T18:48:25.049911Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d97e9-cb1c-7049-81c1-00b5f66da9c1\",\"slug\":\"bomb-bomb-bomb\",\"title\":\"Bomb Bomb Bomb\",\"type\":null,\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97e9-cb1c-7049-81c1-00b5f66da9c1\\/boxart.jpg?t=1763717415\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97e9-cb1c-7049-81c1-00b5f66da9c1\\/banner145.jpg?t=1763717416\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97e9-cb1c-7049-81c1-00b5f66da9c1\\/banner300.jpg?t=1763717416\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97e9-cb1c-7049-81c1-00b5f66da9c1\\/banner400.jpg?t=1763717416\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97e9-cb1c-7049-81c1-00b5f66da9c1\\/banner600.jpg?t=1763717416\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "2368570"
+    },
+    "received_at": "2026-10-13T18:48:25.049911Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 18:48:25 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d97e9-cb1c-7049-81c1-00b5f66da9c1/banner145.jpg?t=1763717416",
+        "banner300": "https://assets.isthereanydeal.com/018d97e9-cb1c-7049-81c1-00b5f66da9c1/banner300.jpg?t=1763717416",
+        "banner400": "https://assets.isthereanydeal.com/018d97e9-cb1c-7049-81c1-00b5f66da9c1/banner400.jpg?t=1763717416",
+        "banner600": "https://assets.isthereanydeal.com/018d97e9-cb1c-7049-81c1-00b5f66da9c1/banner600.jpg?t=1763717416",
+        "boxart": "https://assets.isthereanydeal.com/018d97e9-cb1c-7049-81c1-00b5f66da9c1/boxart.jpg?t=1763717415"
+      },
+      "id": "018d97e9-cb1c-7049-81c1-00b5f66da9c1",
+      "mature": false,
+      "slug": "bomb-bomb-bomb",
+      "title": "Bomb Bomb Bomb",
+      "type": null
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 2368570
+}

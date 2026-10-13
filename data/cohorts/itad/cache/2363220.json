@@ -1,0 +1,79 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T18:58:24.797448Z",
+    "history_status": "empty_history",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T18:58:30.893926Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-731b-70b3-a5a8-daf74f381ade",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T18:58:30.893926Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 18:58:30 GMT"
+    }
+  },
+  "history_response": [],
+  "itad_game_id": "018d937f-731b-70b3-a5a8-daf74f381ade",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T18:58:27.687414Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-731b-70b3-a5a8-daf74f381ade\",\"slug\":\"the-cube-of-world\",\"title\":\"The Cube of World\",\"type\":null,\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-731b-70b3-a5a8-daf74f381ade\\/boxart.jpg?t=1763281011\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-731b-70b3-a5a8-daf74f381ade\\/banner145.jpg?t=1763281012\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-731b-70b3-a5a8-daf74f381ade\\/banner300.jpg?t=1763281012\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-731b-70b3-a5a8-daf74f381ade\\/banner400.jpg?t=1763281012\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-731b-70b3-a5a8-daf74f381ade\\/banner600.jpg?t=1763281013\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "2363220"
+    },
+    "received_at": "2026-10-13T18:58:27.687414Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 18:58:27 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-731b-70b3-a5a8-daf74f381ade/banner145.jpg?t=1763281012",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-731b-70b3-a5a8-daf74f381ade/banner300.jpg?t=1763281012",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-731b-70b3-a5a8-daf74f381ade/banner400.jpg?t=1763281012",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-731b-70b3-a5a8-daf74f381ade/banner600.jpg?t=1763281013",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-731b-70b3-a5a8-daf74f381ade/boxart.jpg?t=1763281011"
+      },
+      "id": "018d937f-731b-70b3-a5a8-daf74f381ade",
+      "mature": false,
+      "slug": "the-cube-of-world",
+      "title": "The Cube of World",
+      "type": null
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 2363220
+}

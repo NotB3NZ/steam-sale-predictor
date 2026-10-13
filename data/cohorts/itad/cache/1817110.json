@@ -1,0 +1,120 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T18:15:52.932793Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T18:15:58.990924Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2023-01-13T19:19:33+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":11.99,\"amountInt\":1199,\"currency\":\"USD\"},\"regular\":{\"amount\":11.99,\"amountInt\":1199,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2023-01-06T16:54:56+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":10.79,\"amountInt\":1079,\"currency\":\"USD\"},\"regular\":{\"amount\":11.99,\"amountInt\":1199,\"currency\":\"USD\"},\"cut\":10}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-6815-70f7-aaa7-141789ae7dbe",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T18:15:58.990924Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 18:15:59 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 11.99,
+          "amountInt": 1199,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 11.99,
+          "amountInt": 1199,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-01-13T19:19:33+01:00"
+    },
+    {
+      "deal": {
+        "cut": 10,
+        "price": {
+          "amount": 10.79,
+          "amountInt": 1079,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 11.99,
+          "amountInt": 1199,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-01-06T16:54:56+01:00"
+    }
+  ],
+  "itad_game_id": "018d937f-6815-70f7-aaa7-141789ae7dbe",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T18:15:55.940499Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-6815-70f7-aaa7-141789ae7dbe\",\"slug\":\"isaiah-188\",\"title\":\"Isaiah 188\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-6815-70f7-aaa7-141789ae7dbe\\/boxart.jpg?t=1763139334\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-6815-70f7-aaa7-141789ae7dbe\\/banner145.jpg?t=1763139334\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-6815-70f7-aaa7-141789ae7dbe\\/banner300.jpg?t=1763139334\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-6815-70f7-aaa7-141789ae7dbe\\/banner400.jpg?t=1763139334\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-6815-70f7-aaa7-141789ae7dbe\\/banner600.jpg?t=1763139335\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "1817110"
+    },
+    "received_at": "2026-10-13T18:15:55.940499Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 18:15:56 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-6815-70f7-aaa7-141789ae7dbe/banner145.jpg?t=1763139334",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-6815-70f7-aaa7-141789ae7dbe/banner300.jpg?t=1763139334",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-6815-70f7-aaa7-141789ae7dbe/banner400.jpg?t=1763139334",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-6815-70f7-aaa7-141789ae7dbe/banner600.jpg?t=1763139335",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-6815-70f7-aaa7-141789ae7dbe/boxart.jpg?t=1763139334"
+      },
+      "id": "018d937f-6815-70f7-aaa7-141789ae7dbe",
+      "mature": false,
+      "slug": "isaiah-188",
+      "title": "Isaiah 188",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 1817110
+}

@@ -1,0 +1,4320 @@
+{
+  "active_provider_cooldowns": 0,
+  "additional_attempt_allowance": 550,
+  "archived_checkpoints_unchanged": 9,
+  "byte_identical_reproduction": true,
+  "cohort_path": "data/cohorts/cohort_2000.csv",
+  "cohort_sha256": "04bd856cc620d575f4425b9ebcf6eb28d783f3eb7ee14548b1deda649a045f33",
+  "collector_lock_available_at_validation": true,
+  "elapsed_seconds_since_latest_successful_http_response": 1173.213,
+  "exclusive_lock_enforced_by_collector": true,
+  "existing_cache_file_hashes": {
+    "data/cohorts/itad/cache/1001220.json": {
+      "sha256": "bf1b4c9dffb1a0e8ebf257d81befa06e19181c698205cd0be3805898f788d1b4",
+      "size_bytes": 14821
+    },
+    "data/cohorts/itad/cache/1002030.json": {
+      "sha256": "c86704f61f190fd4336c2635d7f209cd8457e09294f378167131adeaf47051c6",
+      "size_bytes": 86029
+    },
+    "data/cohorts/itad/cache/1002980.json": {
+      "sha256": "ad66d6e14a7d6491074a9e5f4a04d9c51be9931d8e6fbbf31503d7af3f540d50",
+      "size_bytes": 24422
+    },
+    "data/cohorts/itad/cache/1004050.json": {
+      "sha256": "b9d001fefde5a5880b4f98374fb23aed29bbb4c73e5dfb67ecfcc3afd52b5510",
+      "size_bytes": 14681
+    },
+    "data/cohorts/itad/cache/1005630.json": {
+      "sha256": "5b025c2b573f99812382ccfc629c351eaa7c296a7521b1589f39de9f87fb1892",
+      "size_bytes": 89369
+    },
+    "data/cohorts/itad/cache/1009240.json": {
+      "sha256": "32f67f0ca616c52ed69540a4cf0323a6a9e858e27760d922a9178da8ac00a066",
+      "size_bytes": 5733
+    },
+    "data/cohorts/itad/cache/1009350.json": {
+      "sha256": "9a92f887881709b5103517d52ad7f67f1de9dab89abdbff17e9c05a9d5e8e9ae",
+      "size_bytes": 27481
+    },
+    "data/cohorts/itad/cache/1015350.json": {
+      "sha256": "db309525381694d5aeb56ee967e158c953eb9057a5705335cd30b73728c8cdce",
+      "size_bytes": 80681
+    },
+    "data/cohorts/itad/cache/1015580.json": {
+      "sha256": "0e9a87e85b40379447b1b5c1933e91628c25414b74a27a2527b447531e9b803c",
+      "size_bytes": 30297
+    },
+    "data/cohorts/itad/cache/1017240.json": {
+      "sha256": "a05af6f5dcdb537fb63f23f11c235a2c611f15c9ce17d497ff58b4ca4021daeb",
+      "size_bytes": 23659
+    },
+    "data/cohorts/itad/cache/1018170.json": {
+      "sha256": "a1f5ea48e37b7dad5f652b84cf6df52c1415b16f1b0b091257a91d7ab2a04357",
+      "size_bytes": 3985
+    },
+    "data/cohorts/itad/cache/1020980.json": {
+      "sha256": "0fe9ec04a7e0d4bacef81a45b6876a74d75c5395355a0cffc99599a4b5d3f536",
+      "size_bytes": 3967
+    },
+    "data/cohorts/itad/cache/1024450.json": {
+      "sha256": "8f1c3bb7c9b2479098ecaf62d71f99d7bc3e5cd911a8618cf2ff9932654fd5ea",
+      "size_bytes": 4475
+    },
+    "data/cohorts/itad/cache/1024490.json": {
+      "sha256": "6c25ec1f1116c314e9f77d173a3e21527165f2c1856da73860a5baffba3097e6",
+      "size_bytes": 91469
+    },
+    "data/cohorts/itad/cache/1027800.json": {
+      "sha256": "7ebd065799c51e9224d8265a0f99a1def99189822ad396a33880f9ef7f273d77",
+      "size_bytes": 86123
+    },
+    "data/cohorts/itad/cache/1027970.json": {
+      "sha256": "8a7c62b630851435a772b23ae7b17730a24d302d6eb7103fcc24874096773664",
+      "size_bytes": 19811
+    },
+    "data/cohorts/itad/cache/1028880.json": {
+      "sha256": "9211a56094404ad483d29f3b4daa1e3c4db91c9ec9e27debcd7cc8ef683b06d9",
+      "size_bytes": 7719
+    },
+    "data/cohorts/itad/cache/1030470.json": {
+      "sha256": "e59e5160b6f33383bf9a645a424be316dfde409f29523bea7806a1d3f3cbdf7c",
+      "size_bytes": 6429
+    },
+    "data/cohorts/itad/cache/1030520.json": {
+      "sha256": "3d7930dda01a2b56afa6ef1003b15d4972220b2bac584724a331232aab8e6cb1",
+      "size_bytes": 3837
+    },
+    "data/cohorts/itad/cache/1031560.json": {
+      "sha256": "75ac991a37078d6047a70065b2b0129960315794fc559e0c55bbadfc9587e9f1",
+      "size_bytes": 35639
+    },
+    "data/cohorts/itad/cache/1033930.json": {
+      "sha256": "fbcd811dd7511ac503ff5ef1927bf7600cefaf80dd5a169e9d75cfdf56629549",
+      "size_bytes": 64650
+    },
+    "data/cohorts/itad/cache/1039280.json": {
+      "sha256": "906be6024edce09799bb18b4c595e9c45beb0b2ab34701209f0c6c4c91b3f846",
+      "size_bytes": 39637
+    },
+    "data/cohorts/itad/cache/1040900.json": {
+      "sha256": "6f04dd8beb6b547a71e455060c94def6381d66c6dd18238d7e79d01641e8824e",
+      "size_bytes": 28039
+    },
+    "data/cohorts/itad/cache/1042210.json": {
+      "sha256": "d4257fbecb87c0ab8f67e75a1e727378abb3f5731ee65a522d82f496d8701d2c",
+      "size_bytes": 3227
+    },
+    "data/cohorts/itad/cache/1043250.json": {
+      "sha256": "50e8f3627e45885dee7177c333a568ae75c2116d848eca0ba06461a81bac3533",
+      "size_bytes": 3843
+    },
+    "data/cohorts/itad/cache/1048410.json": {
+      "sha256": "acbac68d3dae51c1d40f2ced29067bccbcabdbdc00ff12dd35175996310b9434",
+      "size_bytes": 3917
+    },
+    "data/cohorts/itad/cache/1052580.json": {
+      "sha256": "fb90d468f43c2c554409413c4ea4351e8079ec22fb74d7637ca93d38a1a8e96e",
+      "size_bytes": 10371
+    },
+    "data/cohorts/itad/cache/1054570.json": {
+      "sha256": "0516806a2158e6ad61074fa7b4a5b06de7d1dd0e6eab7eb54c60e2ca4c1adf1c",
+      "size_bytes": 14705
+    },
+    "data/cohorts/itad/cache/1057460.json": {
+      "sha256": "3f67d5fc65fb86a8fbfba909a05110f703fbd93a4e735f8b8186295b8d6bc1df",
+      "size_bytes": 12781
+    },
+    "data/cohorts/itad/cache/1059460.json": {
+      "sha256": "f43cb5814e1f101103e9811fc082ab56a1b432012a0d7e32a71dc342b78c9620",
+      "size_bytes": 7205
+    },
+    "data/cohorts/itad/cache/1064910.json": {
+      "sha256": "c6766a20eb8d74367860fe8edec4cc1b3dfcb679aa44e2eda0919583fb53f47a",
+      "size_bytes": 76417
+    },
+    "data/cohorts/itad/cache/1069050.json": {
+      "sha256": "32c81d5fb67d556119e438c2c0bf922a8d1b5c3d6ed284d76e6631a0e83b14c2",
+      "size_bytes": 84417
+    },
+    "data/cohorts/itad/cache/1069720.json": {
+      "sha256": "beca9ee02e80989a6070ba5bb74ae0f69152a0e2205071911d1bd24b9d4e90ae",
+      "size_bytes": 10991
+    },
+    "data/cohorts/itad/cache/1071640.json": {
+      "sha256": "86ac175319868a88203e2b469a856c8b68a43fda2799666cac72e26ec3d96efc",
+      "size_bytes": 46641
+    },
+    "data/cohorts/itad/cache/1072590.json": {
+      "sha256": "266dad78da9fbf968b36591eb7196345f09c500240d280002852f584fd6e12f6",
+      "size_bytes": 73175
+    },
+    "data/cohorts/itad/cache/1077890.json": {
+      "sha256": "e1a249d336f54178a7367a4db1b22f6ace849168ca0398532c63aa05087404bb",
+      "size_bytes": 67091
+    },
+    "data/cohorts/itad/cache/1081630.json": {
+      "sha256": "a997a0396f02e89f70ed46bf78deeb88ad590fdb70d583e2fdb9a965a724146b",
+      "size_bytes": 6423
+    },
+    "data/cohorts/itad/cache/1082770.json": {
+      "sha256": "ee15d17e6ba0976712d53d98343afa6a387920a3e46873cc1cc63f0112f5c846",
+      "size_bytes": 4523
+    },
+    "data/cohorts/itad/cache/1086990.json": {
+      "sha256": "0dd00b2cd82ddddff7f67730db921db2bc5e26771a81f4ee9710550109db5f5c",
+      "size_bytes": 70949
+    },
+    "data/cohorts/itad/cache/1100410.json": {
+      "sha256": "b2aee8b47a8ada58082401d75c2e2d1f051761544d6d7c86ea67dedd97d3f658",
+      "size_bytes": 63913
+    },
+    "data/cohorts/itad/cache/1102100.json": {
+      "sha256": "a8b3325fd99e68f978da03c3fed53a6d4414dabb25882eaf4afce562b529c9d5",
+      "size_bytes": 23285
+    },
+    "data/cohorts/itad/cache/1102750.json": {
+      "sha256": "fd7e5dfa1fdbd3b7440cff0e82e0478cd2c59459589ca16c4627a5f8f59fd8d8",
+      "size_bytes": 10251
+    },
+    "data/cohorts/itad/cache/1103690.json": {
+      "sha256": "464175d83ec6e18bb11dde6da7f5a22a24b01afe7d131b1dc2db2321a74e4942",
+      "size_bytes": 7697
+    },
+    "data/cohorts/itad/cache/1104170.json": {
+      "sha256": "52d5bb7fcea7394b1adfa7f861d29caa318432a5491cab53b89076d50d3830c8",
+      "size_bytes": 17259
+    },
+    "data/cohorts/itad/cache/1104670.json": {
+      "sha256": "6c7d057fb8f362fbe08dd656ff6aaca7330595b8e2eab72975e577c35c0cd31f",
+      "size_bytes": 66367
+    },
+    "data/cohorts/itad/cache/11050.json": {
+      "sha256": "e448949389608176d3e4708f2216069ff42843a2bd5c64df0fc9836c5337ef68",
+      "size_bytes": 78573
+    },
+    "data/cohorts/itad/cache/1106060.json": {
+      "sha256": "b2ccea044f997447aa35b0e5b4d1a3631b84bb7542913ebfd0bb5a486337862b",
+      "size_bytes": 35213
+    },
+    "data/cohorts/itad/cache/1106730.json": {
+      "sha256": "0b8860a9db123d85dc5303af8a4312dc29f353fa937d19cb8316d2d4929d52be",
+      "size_bytes": 4527
+    },
+    "data/cohorts/itad/cache/1108350.json": {
+      "sha256": "229c2da83dea9b7f20572cd39ee458f1a297fddefcf8a8a6b921770c7904ecaf",
+      "size_bytes": 3869
+    },
+    "data/cohorts/itad/cache/1108590.json": {
+      "sha256": "31dfd8eee2ef464b393685036820fcedc7c07471f945bee6359f7b7957b761d7",
+      "size_bytes": 64525
+    },
+    "data/cohorts/itad/cache/1109110.json": {
+      "sha256": "e33823446c5e5cf1dc8724f287275a5253d4ed8e3d3eb1c396c15552daa86408",
+      "size_bytes": 4491
+    },
+    "data/cohorts/itad/cache/1109550.json": {
+      "sha256": "598b70e2c2bbf105239ba94b9571b74a9870fecf46e80925577deb93d515b3b5",
+      "size_bytes": 3897
+    },
+    "data/cohorts/itad/cache/1110200.json": {
+      "sha256": "c3aa204338ea441a3b25b2e65e8598685d54ea3c585ffb54e4f39d6378d13286",
+      "size_bytes": 27525
+    },
+    "data/cohorts/itad/cache/1110980.json": {
+      "sha256": "df61eaacb0b14ea1a8cb390142819e24db51446a407df0d85bc73dbebd0f4d1e",
+      "size_bytes": 53763
+    },
+    "data/cohorts/itad/cache/1113300.json": {
+      "sha256": "9bce22f5c741b3f3533fb7691a83a657461b66b7fc7ae3139975eea5cfd2ac01",
+      "size_bytes": 3911
+    },
+    "data/cohorts/itad/cache/1114660.json": {
+      "sha256": "2b346f48324c83a5f1f0a8fd7d53fc1bb70c5684bb72052847d90fe1cd244c42",
+      "size_bytes": 60633
+    },
+    "data/cohorts/itad/cache/11190.json": {
+      "sha256": "40edce19cd608a5ddafcf4252b8014bbe959978a49b774d2f2df309d83f89c37",
+      "size_bytes": 86335
+    },
+    "data/cohorts/itad/cache/1124530.json": {
+      "sha256": "12dfb50971b46aca8287ade2175aeccfd530c07971c71ef5b2490f8868888ed1",
+      "size_bytes": 20665
+    },
+    "data/cohorts/itad/cache/1125340.json": {
+      "sha256": "5094d211d4ccb43fb6557915edcd15ca38c4c23731b705abe6463a25d9c25d6a",
+      "size_bytes": 3865
+    },
+    "data/cohorts/itad/cache/1127460.json": {
+      "sha256": "0ff1d583a0821edc379e7f10adaa4ccb191f14edb3187b2c8f78969c1e256a62",
+      "size_bytes": 19831
+    },
+    "data/cohorts/itad/cache/1128210.json": {
+      "sha256": "316d77306f6301205b26e3f1b34fd5f07c987fc7feba4532ad404d4313703211",
+      "size_bytes": 32873
+    },
+    "data/cohorts/itad/cache/1128370.json": {
+      "sha256": "dba35c13bc64868618d2cc773d253e2ccdc15aa707903bf2a0c792ead1176f58",
+      "size_bytes": 77221
+    },
+    "data/cohorts/itad/cache/1131430.json": {
+      "sha256": "bc9fbd407165dcb1c9d5be1513dcd5fee627aab6fc621a93128a720b2eedf175",
+      "size_bytes": 3923
+    },
+    "data/cohorts/itad/cache/1135130.json": {
+      "sha256": "0e996a5f8faf230db5cc24e62983fd6df5aee123c69bf0df7d60b38f7aa58c4e",
+      "size_bytes": 45371
+    },
+    "data/cohorts/itad/cache/1136080.json": {
+      "sha256": "5141c66de862b78dc2d4ac61572d3742568ac8e3d70c9a63a0ce9e4f0b4dfdc0",
+      "size_bytes": 89463
+    },
+    "data/cohorts/itad/cache/1136390.json": {
+      "sha256": "17793bf28f83c027a0404a38adf1e001e5488384d2208463758fdca755369b12",
+      "size_bytes": 9709
+    },
+    "data/cohorts/itad/cache/1136790.json": {
+      "sha256": "3aba9d52c2f66c88febd21239c45a5cfec6d7f4b392853ccd6cb477c1f5cc290",
+      "size_bytes": 27511
+    },
+    "data/cohorts/itad/cache/1140170.json": {
+      "sha256": "605228ad6740ac8c7485e64f7f4b2d222275b023aa6614cea39501efc97974b4",
+      "size_bytes": 83887
+    },
+    "data/cohorts/itad/cache/1141570.json": {
+      "sha256": "7ea75cc4dbefe658c9f973b4d1cef8520b46e843e66770eab4221e31877bdbe6",
+      "size_bytes": 31607
+    },
+    "data/cohorts/itad/cache/1141950.json": {
+      "sha256": "94df6391049e74ce99291754cdcb7608c55aa443e98176b3ada44164f44a507b",
+      "size_bytes": 26437
+    },
+    "data/cohorts/itad/cache/1142560.json": {
+      "sha256": "c1110840760158a6f28921ddad4af08f3f38b35109b6f08abf987f9f0c378250",
+      "size_bytes": 11557
+    },
+    "data/cohorts/itad/cache/1145450.json": {
+      "sha256": "d2441cb0ef0963f22707ae36fbdf4e40a8e1919b20d8362594154da5ccaca74b",
+      "size_bytes": 34753
+    },
+    "data/cohorts/itad/cache/1147460.json": {
+      "sha256": "018245a38c117ea2fc8120e7a5180e236386acd8445952b2df9a2b8cd4bcbeb3",
+      "size_bytes": 8319
+    },
+    "data/cohorts/itad/cache/1148200.json": {
+      "sha256": "bf76562ca35120365df7452cb1954a8e70245f2fb19c7026a521f68080be33fd",
+      "size_bytes": 3873
+    },
+    "data/cohorts/itad/cache/1151100.json": {
+      "sha256": "94c22aa0f0144c88f029b376a45e5d60be208b637ab904ce133116cf0ac2ae21",
+      "size_bytes": 10283
+    },
+    "data/cohorts/itad/cache/1152570.json": {
+      "sha256": "55f904903beece7d88a0e60febe6e03ac80f2486a43f97cbae181069498a1be2",
+      "size_bytes": 12837
+    },
+    "data/cohorts/itad/cache/1153070.json": {
+      "sha256": "048a944de4a27af35de7d8d8bf43fff00d30bac1a0953d75aa9e25b09d0e149e",
+      "size_bytes": 68689
+    },
+    "data/cohorts/itad/cache/1154470.json": {
+      "sha256": "448243f1a135e6bfbf2757bd0258bd3e030f00cd8fd045a9b13324a96cd3f99e",
+      "size_bytes": 20501
+    },
+    "data/cohorts/itad/cache/1158160.json": {
+      "sha256": "55a0a4b45f57b2eaac7c808a59b138a777f2433e3638ffbc5341fb5cccd579de",
+      "size_bytes": 39453
+    },
+    "data/cohorts/itad/cache/1159160.json": {
+      "sha256": "23047460ae7fde7fe5e8575e5a3a00285fd655c4efcc2f5e5e98527f4c597db6",
+      "size_bytes": 27785
+    },
+    "data/cohorts/itad/cache/1165860.json": {
+      "sha256": "48d125e70b533d9f906b5e3f4f8fea5636d52182081171c247abdaf5a081274e",
+      "size_bytes": 75577
+    },
+    "data/cohorts/itad/cache/1166290.json": {
+      "sha256": "ce7d0f67d63201b1fd3af30880f2ef000a39d3902a618a48c310cab014e9d74e",
+      "size_bytes": 93533
+    },
+    "data/cohorts/itad/cache/1166430.json": {
+      "sha256": "76e99c4632009270945f091682dd766a6e6c9dd3b42b0fe48f5fad551d0e2119",
+      "size_bytes": 3853
+    },
+    "data/cohorts/itad/cache/1178130.json": {
+      "sha256": "88862564257cb9d1baeeef88e165c563528940a34ead34a3e8c6f75e4f013181",
+      "size_bytes": 3289
+    },
+    "data/cohorts/itad/cache/1178500.json": {
+      "sha256": "5c7abf6756a12cb574c5b1518ae50200a1ac7704b1f0e8a5156931b989ee9430",
+      "size_bytes": 88255
+    },
+    "data/cohorts/itad/cache/1179620.json": {
+      "sha256": "cc7de47e16eb68f6972eba9bba1e4d66314db3c2a491f9c7b349aac6e97f0bd8",
+      "size_bytes": 12231
+    },
+    "data/cohorts/itad/cache/1181510.json": {
+      "sha256": "74c6cf28f19b944a7469e55d47dd47236cdf61d4d4199736e49249e549a22cc3",
+      "size_bytes": 4549
+    },
+    "data/cohorts/itad/cache/1184160.json": {
+      "sha256": "ff8ef2f63dc61bc1182f64e08c950ce3284c8be2df867128a0ce8ee0283e36c6",
+      "size_bytes": 74345
+    },
+    "data/cohorts/itad/cache/1185600.json": {
+      "sha256": "0f8e036c642087d541b0b88728c771b50c557fd67fa54a2729039b722378231f",
+      "size_bytes": 5157
+    },
+    "data/cohorts/itad/cache/1186640.json": {
+      "sha256": "f9cb84f36769a06050b8caf5333a80f8d6dd0aa3500e50b9fd73420b026d2e76",
+      "size_bytes": 85883
+    },
+    "data/cohorts/itad/cache/1194140.json": {
+      "sha256": "d36d155bd571dbd1de1aec7a2678137acede14d03f70dbdf702a841474f7cc43",
+      "size_bytes": 35177
+    },
+    "data/cohorts/itad/cache/1196630.json": {
+      "sha256": "ebe04a72753cab574fbcd2e2206f98f56192cfdcff2cf78d11e9ead95196cd96",
+      "size_bytes": 54875
+    },
+    "data/cohorts/itad/cache/1200150.json": {
+      "sha256": "b04b115442f62ac70b0e72066212e08ef338c84402bb4f0fcd3806c8123f19bc",
+      "size_bytes": 6489
+    },
+    "data/cohorts/itad/cache/1201650.json": {
+      "sha256": "3d14dee8351c1abf903f87cd006a4250bd9fc85a7f8715472868946afbd46931",
+      "size_bytes": 23035
+    },
+    "data/cohorts/itad/cache/1203370.json": {
+      "sha256": "e9d5212dd1ea06bb5cfa2359db6a089d53a7f6958647af91d491ecfa4eabe13d",
+      "size_bytes": 57297
+    },
+    "data/cohorts/itad/cache/1204490.json": {
+      "sha256": "0160c4a5b621094ce4458b4cfd603219a150fc3563ecb476630768861ca457d9",
+      "size_bytes": 85843
+    },
+    "data/cohorts/itad/cache/1215000.json": {
+      "sha256": "6a6cc1d1a5add880144de2374b3a10478d6768b43c39e31553f576b7219c4442",
+      "size_bytes": 14833
+    },
+    "data/cohorts/itad/cache/1215260.json": {
+      "sha256": "14733bb93fbc4b08bbd3b20bd9ac1c55a422ad9159242ec02141a1bd1074a013",
+      "size_bytes": 74087
+    },
+    "data/cohorts/itad/cache/1215550.json": {
+      "sha256": "4041e80881f2157e5f6c8fd1128ca8efc7f3e0f847b29ad04abd8ab27c175614",
+      "size_bytes": 75485
+    },
+    "data/cohorts/itad/cache/1217660.json": {
+      "sha256": "e9631a09f69b8216853db5ecf6380c0cac01b150bccd1131cc9a711cd036d5fa",
+      "size_bytes": 4027
+    },
+    "data/cohorts/itad/cache/1217850.json": {
+      "sha256": "be9e74c2b9f2cdd49f2d156fd446a0e3e6194584a01d9251564025abb8f2e7bd",
+      "size_bytes": 43003
+    },
+    "data/cohorts/itad/cache/1222000.json": {
+      "sha256": "c31e0a74c8114ad6a5ecafaed050159221a1f79cd0871600bff9caba6a5200a0",
+      "size_bytes": 21787
+    },
+    "data/cohorts/itad/cache/1225320.json": {
+      "sha256": "b3f31bb8a50bba1599588bccde77ed875205108e5710b48cae6a8951e2aad27f",
+      "size_bytes": 36237
+    },
+    "data/cohorts/itad/cache/1225660.json": {
+      "sha256": "b9af76e9d5165b9ae450c4842704a9e5a46cd2e3f0e1ae8fd63fbb142752c25b",
+      "size_bytes": 79167
+    },
+    "data/cohorts/itad/cache/1226610.json": {
+      "sha256": "139c6ed06a91369d5a6cb508f8437fcf1fde6e7cb4c8b57bc74c2cb4a6c151d5",
+      "size_bytes": 16005
+    },
+    "data/cohorts/itad/cache/1234730.json": {
+      "sha256": "d8116e5c3bef311012af13b34e083a49d65988db15b2f4f393e1268c21afd2df",
+      "size_bytes": 23977
+    },
+    "data/cohorts/itad/cache/1241140.json": {
+      "sha256": "6e7ffd36756ead740316a0b142e910a7f902103e9e2b6cf6ed1bc65c0580ec92",
+      "size_bytes": 23659
+    },
+    "data/cohorts/itad/cache/1245350.json": {
+      "sha256": "f7eeb321ecc70c79d6e8164896c30e14273b11887451a8e953c28258087eace0",
+      "size_bytes": 37729
+    },
+    "data/cohorts/itad/cache/1246940.json": {
+      "sha256": "e8f1bb9e4f28fbba82466a9aa2c20c382a206d006268c8161a28cc88c044cec4",
+      "size_bytes": 3929
+    },
+    "data/cohorts/itad/cache/1248370.json": {
+      "sha256": "99a5cb097264a83e6a2f0d752534f40ff1b7f5bb5165b7cb1d4678664a6b4220",
+      "size_bytes": 9631
+    },
+    "data/cohorts/itad/cache/1249260.json": {
+      "sha256": "097b6b84ee332e46b60d941d68a2db74f6e23f16aa0b86571a450a4717b6b3f6",
+      "size_bytes": 75619
+    },
+    "data/cohorts/itad/cache/1255920.json": {
+      "sha256": "b0bcbfb7a2438628166f4f9e7077dfc67f441e13d893c17336123a05eec90767",
+      "size_bytes": 51771
+    },
+    "data/cohorts/itad/cache/1257890.json": {
+      "sha256": "70f40e6100d94f5ec140efe435ba8e8297a93f0fd41a748977f180a34c927715",
+      "size_bytes": 51845
+    },
+    "data/cohorts/itad/cache/1258310.json": {
+      "sha256": "467ddc67db8a394774b7cdc9fa1f96021fc0e92544996e1046730a36ae60b959",
+      "size_bytes": 78801
+    },
+    "data/cohorts/itad/cache/1258930.json": {
+      "sha256": "fe5aad4063b5fb3c8141abdf428f5142826b892e0fe99b54247566119f25fc7d",
+      "size_bytes": 4641
+    },
+    "data/cohorts/itad/cache/1259860.json": {
+      "sha256": "a58cf467f87ca2b616133cc5f0c03b91c60fa88b8459e8a508890dee1bbf9b0c",
+      "size_bytes": 65771
+    },
+    "data/cohorts/itad/cache/1260220.json": {
+      "sha256": "45d922268ef63f2c28279edeba7bbc816fa9d203cacad142507560ac97a6297c",
+      "size_bytes": 77675
+    },
+    "data/cohorts/itad/cache/1260790.json": {
+      "sha256": "267905173209d3dfec79c59960a7dbf901530158335f48b25e03632d7bef89f4",
+      "size_bytes": 39043
+    },
+    "data/cohorts/itad/cache/1265770.json": {
+      "sha256": "f3e005e2287084ce9b3275a4b5658270bcbd65edad814ca04901175a194a1cd2",
+      "size_bytes": 3853
+    },
+    "data/cohorts/itad/cache/1266220.json": {
+      "sha256": "44e4b5dd9900738cb83c6669d8a67af83554794651d8e01f41386f8ef05f8081",
+      "size_bytes": 51707
+    },
+    "data/cohorts/itad/cache/1268410.json": {
+      "sha256": "9bef0259c1a4fc95ee54317195f361a53404a6e90c092b094c260c9b0301a03f",
+      "size_bytes": 84507
+    },
+    "data/cohorts/itad/cache/1272970.json": {
+      "sha256": "4b9c3228fd44eb574f678287a0cea199ef45d2a053bf3500b7a120a1d4b55634",
+      "size_bytes": 79261
+    },
+    "data/cohorts/itad/cache/1275150.json": {
+      "sha256": "b40cb04179305279ca83c716cf232cbcc07642af875fceb2d7ef26608814d330",
+      "size_bytes": 43213
+    },
+    "data/cohorts/itad/cache/1276790.json": {
+      "sha256": "9bd2c70adbb644218bd89120124f3dbe0f261f382ad06ba2488859b5a024e138",
+      "size_bytes": 32421
+    },
+    "data/cohorts/itad/cache/1280980.json": {
+      "sha256": "0325e16f8852f503bcd809218989c765ab7acd837c23f22ceb5519cd60d2b0fa",
+      "size_bytes": 4493
+    },
+    "data/cohorts/itad/cache/1284660.json": {
+      "sha256": "dca753b3c4ee2753ae3ae9a614c78cd13e270356cf394817bcf17f836854b19f",
+      "size_bytes": 17623
+    },
+    "data/cohorts/itad/cache/1287510.json": {
+      "sha256": "1fc3decafde4715a13811d233d73c7ec11cb7b1ea4859a7b9ebeb44abd83b7b7",
+      "size_bytes": 82121
+    },
+    "data/cohorts/itad/cache/1288670.json": {
+      "sha256": "b07f83ab82e98aa4d5e179a181bc7bec88526ca691b276900980671774884b39",
+      "size_bytes": 15347
+    },
+    "data/cohorts/itad/cache/1295420.json": {
+      "sha256": "b9041e57df695d6cc8ee06ecd05c02ba52673c1ff0a0abf0c0c573e0a2d37261",
+      "size_bytes": 7049
+    },
+    "data/cohorts/itad/cache/1296370.json": {
+      "sha256": "071db55842df3737f0467e83f4970bd59563d0fca29b926be5c55186ea17b141",
+      "size_bytes": 3857
+    },
+    "data/cohorts/itad/cache/1298140.json": {
+      "sha256": "359e382d4574dd2664f2f18bd0510466aeca385a4e412d7310d24ee3f2a6830a",
+      "size_bytes": 65265
+    },
+    "data/cohorts/itad/cache/1299030.json": {
+      "sha256": "00c32bb4f2a0dd0dd9cb8dc12814b606d31ecd390db74dac8bf1a99be5811033",
+      "size_bytes": 12263
+    },
+    "data/cohorts/itad/cache/1299880.json": {
+      "sha256": "ba1e0fbab2424bd58c29aec88633151a19a422ac436ae514e35594f944cd928b",
+      "size_bytes": 12797
+    },
+    "data/cohorts/itad/cache/1301930.json": {
+      "sha256": "5eae0bd409a56361c74f01160c9e06df1e7959e61a14bf5599d632e6debba6c5",
+      "size_bytes": 66807
+    },
+    "data/cohorts/itad/cache/1302990.json": {
+      "sha256": "d5b2b1dc76b9665480fb2bd95d6b431303cdeceba3ffc28a679a0369e525fb63",
+      "size_bytes": 15979
+    },
+    "data/cohorts/itad/cache/1304520.json": {
+      "sha256": "d7c4e310d01974f4622b7f1e8f59557b3ec288a78877332f4a4e937176bae1d7",
+      "size_bytes": 5097
+    },
+    "data/cohorts/itad/cache/1306110.json": {
+      "sha256": "0b2819fb9d0a4b4380739ed0f4342c417112d50d1c2ca4b63aecac12a17a0468",
+      "size_bytes": 7145
+    },
+    "data/cohorts/itad/cache/1307180.json": {
+      "sha256": "2b0afffc65bcc00c8e653d685deb2dd748c4aeb35d483cee6bbed25397f1fe4a",
+      "size_bytes": 29855
+    },
+    "data/cohorts/itad/cache/1307530.json": {
+      "sha256": "5a4ccece593af5d188a9d4ad63c716ea7e981108546f3dea43d0c84c9107d017",
+      "size_bytes": 4585
+    },
+    "data/cohorts/itad/cache/1307860.json": {
+      "sha256": "cfbcbbed2a84c69b492703ba2585a6dcbf709aa8e4f2571498cd069edf16ac58",
+      "size_bytes": 6463
+    },
+    "data/cohorts/itad/cache/1313630.json": {
+      "sha256": "a3dfa8b8a84fd1ff4614c606663a26c7f0314d57a1803a282fb386811a024099",
+      "size_bytes": 4537
+    },
+    "data/cohorts/itad/cache/1318690.json": {
+      "sha256": "98d65a6a5522efd37f43090ec0a8a7eb6d4a3e7fa62a2096b004e06fac678693",
+      "size_bytes": 82411
+    },
+    "data/cohorts/itad/cache/1318970.json": {
+      "sha256": "2de6897e812dcb153197e6e1f9bd9bbdf9303180fd95998ac8e8769a941d9e59",
+      "size_bytes": 54377
+    },
+    "data/cohorts/itad/cache/1323200.json": {
+      "sha256": "0bc7511688ddfdf64cbe73536cf4f267f5f70338c48f8b7cf2848323236f209a",
+      "size_bytes": 3849
+    },
+    "data/cohorts/itad/cache/1323620.json": {
+      "sha256": "804f325a6eb47a02a0e8a507cfe92632222f9fc79a2655e04c98735900ed99ec",
+      "size_bytes": 36849
+    },
+    "data/cohorts/itad/cache/1324490.json": {
+      "sha256": "737c90a4d092a61eb12b851c40679c174e802fe21a79c5c7fc8c5525288a688e",
+      "size_bytes": 36459
+    },
+    "data/cohorts/itad/cache/1324630.json": {
+      "sha256": "20fd693b3864d3956da3a349c87a16a44d517e87fa7ecfaa3f3b8b40ec048072",
+      "size_bytes": 6417
+    },
+    "data/cohorts/itad/cache/1325470.json": {
+      "sha256": "19c3055dec1578c44bbc9338b2217ce3e4f70f8c81fee95a64a0756a4da0ce83",
+      "size_bytes": 65739
+    },
+    "data/cohorts/itad/cache/1328350.json": {
+      "sha256": "3393e2ded857b21daf921d97c7dffa2d4f4c32d73c34927a94b6833b5428ae4d",
+      "size_bytes": 53659
+    },
+    "data/cohorts/itad/cache/1328840.json": {
+      "sha256": "695c8d08ea49090d613ab73dc86bf651ccb97c2ad6b5487b123cd967c4db53c0",
+      "size_bytes": 61313
+    },
+    "data/cohorts/itad/cache/1330710.json": {
+      "sha256": "e72f5f6b2c8b4944bceb82d252755140bf9b2673a86b19a7ec9126a8c3031a61",
+      "size_bytes": 5865
+    },
+    "data/cohorts/itad/cache/1332090.json": {
+      "sha256": "f8869976d7e764d94b7236bb31363f325c73e98c27510c22c1ee6cbabc65519a",
+      "size_bytes": 48587
+    },
+    "data/cohorts/itad/cache/1336460.json": {
+      "sha256": "65f7801c0a4cec8fc00878d93f82b7ac9b158f770b69f3c437f05abb94f4ae13",
+      "size_bytes": 36423
+    },
+    "data/cohorts/itad/cache/1337710.json": {
+      "sha256": "d98fb66456067b6938ed05bb06ea1f75fb35c02f1f29176ad0b451e63ae7339f",
+      "size_bytes": 38471
+    },
+    "data/cohorts/itad/cache/1338090.json": {
+      "sha256": "97e0820f151bbb0b6b21afc0676e45608262f3ce0e6f9b59a65b27cdf626c89a",
+      "size_bytes": 3887
+    },
+    "data/cohorts/itad/cache/1338330.json": {
+      "sha256": "242a2390bc92c4302dea87aea76c3451354ab797519e7861bf71e2f0bf906345",
+      "size_bytes": 60667
+    },
+    "data/cohorts/itad/cache/1339030.json": {
+      "sha256": "def22a672630e9ea24cd0e25e57760be2a376b7f014b19560bf5269449da7c3e",
+      "size_bytes": 3891
+    },
+    "data/cohorts/itad/cache/1341400.json": {
+      "sha256": "f0785854025faa47e352c85965793782d1c35ed46bf60b78daaba20386dc621c",
+      "size_bytes": 71047
+    },
+    "data/cohorts/itad/cache/1344110.json": {
+      "sha256": "f9d58b1ecce191e5f85b809122d5f40483b4e4b4f9f6e477a42d59b84e56d416",
+      "size_bytes": 90807
+    },
+    "data/cohorts/itad/cache/1345940.json": {
+      "sha256": "4b5fcdb746b788db8b962a6643a161df9339a0dd9d7bdf9a58ec4019c6056faf",
+      "size_bytes": 53687
+    },
+    "data/cohorts/itad/cache/1346630.json": {
+      "sha256": "a10e47a5cb03d85bb9ec7ef68a59fc5a0f9dbc9d12ba90065fefa8d04aa621c0",
+      "size_bytes": 7049
+    },
+    "data/cohorts/itad/cache/1348920.json": {
+      "sha256": "106534195dd7eb5b7025606df43b36778752238af6145c9a51f79d5928c94d6d",
+      "size_bytes": 68319
+    },
+    "data/cohorts/itad/cache/1352730.json": {
+      "sha256": "14d6cea80a40b4d8d3f5ccb041f70c1ecc793357a3f55a5db028980abf7ebe88",
+      "size_bytes": 3873
+    },
+    "data/cohorts/itad/cache/1357400.json": {
+      "sha256": "55bd7dc21438c03d784c2db4c8fa075d247924642de641e7ccaa7254ca5f8772",
+      "size_bytes": 14059
+    },
+    "data/cohorts/itad/cache/1367860.json": {
+      "sha256": "130f0ad867faefe96de2ca9aff99ec3332b2576e37f7ff9643cc7b2eeecc029b",
+      "size_bytes": 9609
+    },
+    "data/cohorts/itad/cache/1372120.json": {
+      "sha256": "83072ee544b660fdc7a31eac89d3b5146dbeef94a643bfe34e906296e42759cb",
+      "size_bytes": 70631
+    },
+    "data/cohorts/itad/cache/1374630.json": {
+      "sha256": "10fa28b27bf58cbc8892940af0728ffc77097643e6d37dce0be9f68c511a75cc",
+      "size_bytes": 3845
+    },
+    "data/cohorts/itad/cache/1375160.json": {
+      "sha256": "b7a85f1b9399f5264d78ab56f81d86fcd9dbe28d6f0ae532030163dd3a0699fa",
+      "size_bytes": 5889
+    },
+    "data/cohorts/itad/cache/1379900.json": {
+      "sha256": "99878e3c3f8c501b214c4fec471159f989be4127ef366b3e9acdb4713c49f5fc",
+      "size_bytes": 7231
+    },
+    "data/cohorts/itad/cache/1380010.json": {
+      "sha256": "d4d88288bfb20fd00420548814477d76b22067cbd26e449a45321685d590fc5d",
+      "size_bytes": 13607
+    },
+    "data/cohorts/itad/cache/1388390.json": {
+      "sha256": "a8fbb5278acc373225c3b7c03ced452e27683c18ddf3106b73725d4af0d86f14",
+      "size_bytes": 9615
+    },
+    "data/cohorts/itad/cache/1391130.json": {
+      "sha256": "0a66e1f7d2598c8dcb8e025d71e333c85af18e6b9e647e47dbed408086a122ba",
+      "size_bytes": 3845
+    },
+    "data/cohorts/itad/cache/1391280.json": {
+      "sha256": "5e1a480e6ed3d1263a52144d4d3054a96348dcc2423f5de87158be481aacdfce",
+      "size_bytes": 74803
+    },
+    "data/cohorts/itad/cache/1392660.json": {
+      "sha256": "74caf1fafa026c580aff4755e0b76979be4c0d3c14daa4f4ae9894290574472f",
+      "size_bytes": 26251
+    },
+    "data/cohorts/itad/cache/1392690.json": {
+      "sha256": "917b2e30c2d326c197dfc4725ac75e99d2904f4ff2eabcdf6e21b55d66bf43e3",
+      "size_bytes": 45805
+    },
+    "data/cohorts/itad/cache/1392750.json": {
+      "sha256": "b4e8b8079d3eb71c7b7b8b5edf3d3bf217117ef7ea09b353bae7911218b06ab0",
+      "size_bytes": 19193
+    },
+    "data/cohorts/itad/cache/1395400.json": {
+      "sha256": "43eeda1b607ea8b05581960e60c8046e4cb990a0debddcea1487ba804b11c2b7",
+      "size_bytes": 40961
+    },
+    "data/cohorts/itad/cache/1395510.json": {
+      "sha256": "c6b90d6dc0f6ed14c97a81a794af950535d1763b3905ff3b1f378cac5f0afaa1",
+      "size_bytes": 6413
+    },
+    "data/cohorts/itad/cache/1396890.json": {
+      "sha256": "6e2a0dc5411909016e58351f38c0306ed9ea80a7ef0270922f9055a111c32e2b",
+      "size_bytes": 23555
+    },
+    "data/cohorts/itad/cache/1398110.json": {
+      "sha256": "9a5fb5f0993f1e764ba422e712d92af26d75b0497c5bc5a97171b1ad33297946",
+      "size_bytes": 16021
+    },
+    "data/cohorts/itad/cache/1399280.json": {
+      "sha256": "8ba064185caa8dccc366cdcf0408270b4b5226985ee5414da829f393aabdca58",
+      "size_bytes": 54347
+    },
+    "data/cohorts/itad/cache/1400290.json": {
+      "sha256": "d952a3bcbcff6b1f4bcfef75813279de4111dcd7d34bc233bf570fcf32ddc278",
+      "size_bytes": 74247
+    },
+    "data/cohorts/itad/cache/1403800.json": {
+      "sha256": "65edce57b5e1dac1aefbf04bffcf45d2eb49dbd7e1cdbd0e6401544a9caa6c51",
+      "size_bytes": 31791
+    },
+    "data/cohorts/itad/cache/1408000.json": {
+      "sha256": "e9a7d1dc0743f67a32b8aaf65cd5e8e7b8c1fd05ea2c1505fd961be1d7d8b3f2",
+      "size_bytes": 3869
+    },
+    "data/cohorts/itad/cache/1411490.json": {
+      "sha256": "46e292368d0a111dd33e068da08845974b75e8fbdc7b2c04c269db4bb47274c4",
+      "size_bytes": 35653
+    },
+    "data/cohorts/itad/cache/1415200.json": {
+      "sha256": "fdf370da941b0ea17a055fdb42edaee56d99f84d3eb2a5da115eaa97af1bb12e",
+      "size_bytes": 24153
+    },
+    "data/cohorts/itad/cache/1419440.json": {
+      "sha256": "1a6f3098c62533d6fb5f9502bd958e6a99611db1ef1707ef3038c3e2cd24e253",
+      "size_bytes": 7693
+    },
+    "data/cohorts/itad/cache/1419880.json": {
+      "sha256": "61e281029d9e7b340158a5e435718212ed698cb80fa8e6c244df0cdb9fa8b9a1",
+      "size_bytes": 89377
+    },
+    "data/cohorts/itad/cache/1420400.json": {
+      "sha256": "5cd276b82b7ad9f35faab63cbfafddaf233bb4efb91f1f02f6e9533a6c06a589",
+      "size_bytes": 3857
+    },
+    "data/cohorts/itad/cache/1420650.json": {
+      "sha256": "11b5ba1d61485ffb3c89af37f8dcaa12f30066cc38ec7b720350234934f72950",
+      "size_bytes": 3311
+    },
+    "data/cohorts/itad/cache/1422910.json": {
+      "sha256": "b1e254f0790fe354e131162e05491be601920243d61d4d7a69ddd9bd919c8898",
+      "size_bytes": 8969
+    },
+    "data/cohorts/itad/cache/1422980.json": {
+      "sha256": "bd892e8e4532e9e78414b091cea1b266bd64e5b6fd7d94bc4a7f77c0628515f5",
+      "size_bytes": 16007
+    },
+    "data/cohorts/itad/cache/1424120.json": {
+      "sha256": "e26d713fe66064bc48291498e24c91d65f169423db84224dce21c917cb8fb164",
+      "size_bytes": 5781
+    },
+    "data/cohorts/itad/cache/1426490.json": {
+      "sha256": "5da0f206549d6c8a235703a0d94be33f3eceb309adb09b1263dfdfe41d3cbc2b",
+      "size_bytes": 45851
+    },
+    "data/cohorts/itad/cache/1432500.json": {
+      "sha256": "3baf11ebe1d854f68d78f4329c87504a14d314a05f05ed0a9e6b13feb884bbdd",
+      "size_bytes": 29131
+    },
+    "data/cohorts/itad/cache/1434550.json": {
+      "sha256": "8f7b8e6a9f345e308ca8344e8933cdc92b4c9e0725e979c2b0d695e0b48d59d7",
+      "size_bytes": 12773
+    },
+    "data/cohorts/itad/cache/1435960.json": {
+      "sha256": "019ce5171a8a4b0ee75ae283a5c7e0579dc8dc12f4390c3d6e0f603da6340de7",
+      "size_bytes": 14773
+    },
+    "data/cohorts/itad/cache/1437480.json": {
+      "sha256": "0c1aba0973d2568ce49118efaf78d0b9e66d9ff188f70aa19f34f0179f038f7c",
+      "size_bytes": 10867
+    },
+    "data/cohorts/itad/cache/1437820.json": {
+      "sha256": "4eae7b05dbe2c8107f548497b538f58856be8c7a4bc8ef454dcff5fa1634d4e5",
+      "size_bytes": 7713
+    },
+    "data/cohorts/itad/cache/1442040.json": {
+      "sha256": "80aec326a7d29ae520b9c1ad233f90ac5fd0a0b8f1579a0dbcd6094295a56e8e",
+      "size_bytes": 35989
+    },
+    "data/cohorts/itad/cache/1443430.json": {
+      "sha256": "aa9e9e8e2b7d74409fd189c69e636bac3150f94ffbf66c2fa730698491ea4e76",
+      "size_bytes": 20447
+    },
+    "data/cohorts/itad/cache/1447600.json": {
+      "sha256": "d7e7550237f2eeb566bb2698babeb762af777541851d3d321ec2bd7a9ef473c4",
+      "size_bytes": 37497
+    },
+    "data/cohorts/itad/cache/1454650.json": {
+      "sha256": "12fdc5f16b427641500784b39a591dabb17f853957a3bfd42984580af5b56c83",
+      "size_bytes": 41521
+    },
+    "data/cohorts/itad/cache/1457080.json": {
+      "sha256": "0aa2981ce1dda536be2fe2e5d03e923856e80c9be2e35394dccb4bf5eba26dfc",
+      "size_bytes": 24669
+    },
+    "data/cohorts/itad/cache/1459070.json": {
+      "sha256": "3a7165174986d2b10ea28f1e5305506c817893d6ab8537af47863e87deebb5b5",
+      "size_bytes": 19283
+    },
+    "data/cohorts/itad/cache/1459650.json": {
+      "sha256": "fcd5660d1a49de2f21cab053a38b64e1d1450f765cb7dfaa037ea47448024985",
+      "size_bytes": 3829
+    },
+    "data/cohorts/itad/cache/1462560.json": {
+      "sha256": "ffa68dcc1b679d7869b4cb121c4edd623bd93e1447de15e9cc29bf9f8302b03c",
+      "size_bytes": 3949
+    },
+    "data/cohorts/itad/cache/1463760.json": {
+      "sha256": "020f904197e98c2d0cc663c8f0130f76c57f02b40580b958d7937b142d966ca0",
+      "size_bytes": 71615
+    },
+    "data/cohorts/itad/cache/1470420.json": {
+      "sha256": "8a181be293f3fce84f1ceefdc90c971d2634e4d159b4894b65edd79cfd3517b1",
+      "size_bytes": 27529
+    },
+    "data/cohorts/itad/cache/1473920.json": {
+      "sha256": "edfc6f37fd4c44a6b488c7432e0a66986b7ef8c2d3ec2aa1d80a12a719f0e456",
+      "size_bytes": 61033
+    },
+    "data/cohorts/itad/cache/1474770.json": {
+      "sha256": "48dc9804c5457202fc4e5b5549c2e45524bd1821a726f7772371c3affd923ace",
+      "size_bytes": 46655
+    },
+    "data/cohorts/itad/cache/1475770.json": {
+      "sha256": "0acd7b37a475d972f2c37d66b72bdb5fdc31ceeec8b73e731f8d9f356bca1bb9",
+      "size_bytes": 32747
+    },
+    "data/cohorts/itad/cache/1478420.json": {
+      "sha256": "0a98fe94e24b14d09d25f60a6b4467c30f0c17481a3bfa940e14270c3cc6c03e",
+      "size_bytes": 54185
+    },
+    "data/cohorts/itad/cache/1479000.json": {
+      "sha256": "497ca978840f1affa571e5bed4b90e692ffba580a7a33910b9fabb01e9af34ee",
+      "size_bytes": 3877
+    },
+    "data/cohorts/itad/cache/1480190.json": {
+      "sha256": "04026bd05e6fafb8905223f1a7e077c3e76f66d4086aed0707097f1810f78ee7",
+      "size_bytes": 8326
+    },
+    "data/cohorts/itad/cache/1484740.json": {
+      "sha256": "23cbdf1d6b5978692023c0cb178792f7beb7e779fb7cb6ffcadbb60f8cac8a19",
+      "size_bytes": 47033
+    },
+    "data/cohorts/itad/cache/1485590.json": {
+      "sha256": "0935f135607edeff59025c36c28c5cdcdf3c7c029a81b6d3759027ad7b421ebb",
+      "size_bytes": 37569
+    },
+    "data/cohorts/itad/cache/1487860.json": {
+      "sha256": "c45417b29d93e19263f7eaf2afcd1cbce34d288408f8539746c949f79983ea83",
+      "size_bytes": 7073
+    },
+    "data/cohorts/itad/cache/1489480.json": {
+      "sha256": "c908ca644d909197a582e56a03f445d2c2a7e02deb1480de74aca47ffa950462",
+      "size_bytes": 83991
+    },
+    "data/cohorts/itad/cache/1490030.json": {
+      "sha256": "9af49ceaa2278b4fbd2b8ad4585289e99c1942cee4fdf47d51ae451665528c51",
+      "size_bytes": 8329
+    },
+    "data/cohorts/itad/cache/1491460.json": {
+      "sha256": "567e5bbfe14436fbabdfa3a54b181f7dadad81130f126fb3cd81f3d8fd639724",
+      "size_bytes": 10925
+    },
+    "data/cohorts/itad/cache/1498740.json": {
+      "sha256": "5ed35dfbededdbcda7f18fb7c88a59ae510f2e14ca85c81f9e3dc98ab498cc1f",
+      "size_bytes": 48403
+    },
+    "data/cohorts/itad/cache/1500300.json": {
+      "sha256": "3af03220285eb58767498fd9fd7530a09a96bae923994ec741eaee33054453c1",
+      "size_bytes": 19915
+    },
+    "data/cohorts/itad/cache/1501540.json": {
+      "sha256": "cf17fdd0dcf98b84236bdfea23d462eecb95dd909d0869d0ce1c62599781f827",
+      "size_bytes": 7703
+    },
+    "data/cohorts/itad/cache/1502080.json": {
+      "sha256": "b24b74c816938e0c88eed7ea9663e366f8b71f77c0b91e0a48d7d625aae21fa4",
+      "size_bytes": 39497
+    },
+    "data/cohorts/itad/cache/1502520.json": {
+      "sha256": "1716ee4c47c13d7c55aae1456fa1b9bbe5ca2cdbe89194285b7dc526a4e00ae7",
+      "size_bytes": 41599
+    },
+    "data/cohorts/itad/cache/1503820.json": {
+      "sha256": "a338a467a030271155a800da88e2e5d10c45d9ccc0fbaf600738a5a983ad2e06",
+      "size_bytes": 73497
+    },
+    "data/cohorts/itad/cache/1506430.json": {
+      "sha256": "82dd5c5a14038584ee0ca09408097e9be1d9107220af810c0de1dd6612ab3067",
+      "size_bytes": 46475
+    },
+    "data/cohorts/itad/cache/1506630.json": {
+      "sha256": "8bb21687eb9b5463782a0c6346c5175e1d0821067c5072d03cd7edc45eff4b68",
+      "size_bytes": 31819
+    },
+    "data/cohorts/itad/cache/1507640.json": {
+      "sha256": "e41ea6fc22952643ca354257a79bb008df66e62cb4c13a71f900d92636977191",
+      "size_bytes": 38375
+    },
+    "data/cohorts/itad/cache/1510600.json": {
+      "sha256": "d9a50618e745a54d313438850dd10e8f177336a84eab749d0faefe1f9ffedadd",
+      "size_bytes": 84809
+    },
+    "data/cohorts/itad/cache/1511970.json": {
+      "sha256": "1caa9968b8f87c5dca4b83ff6ae116b4672ac171dd5c761c9738ab2e2b712284",
+      "size_bytes": 3359
+    },
+    "data/cohorts/itad/cache/1521670.json": {
+      "sha256": "967203dfd81a3e9c330a1a656e308e468205f12adeb79d18b3e97686aefb9e07",
+      "size_bytes": 23757
+    },
+    "data/cohorts/itad/cache/1521870.json": {
+      "sha256": "6ae20213672d4dc5c4b65ea82c7afdb7223e43247eb001e1a9b75780a0584a7b",
+      "size_bytes": 5333
+    },
+    "data/cohorts/itad/cache/1526180.json": {
+      "sha256": "f4919485c98cd2f6be3120fa9a9a282583d0162ad2520df08d275844368d95ab",
+      "size_bytes": 50519
+    },
+    "data/cohorts/itad/cache/1528550.json": {
+      "sha256": "8617ee0cf55ffd46257a12db2bfeb34a8988a51d0a2aa707b66eeb6bacc43f3e",
+      "size_bytes": 74689
+    },
+    "data/cohorts/itad/cache/1529780.json": {
+      "sha256": "992f06043bd4493a5fb9fc6c2ca44be8f281f78f9b7e70d10b188d1886e742e8",
+      "size_bytes": 23691
+    },
+    "data/cohorts/itad/cache/1536210.json": {
+      "sha256": "ba3e38f8505844059b92dc936abb37ed6de1c1a008a593d171d58d5555f1b3cc",
+      "size_bytes": 30967
+    },
+    "data/cohorts/itad/cache/1537970.json": {
+      "sha256": "18de570ef41d55bcdeb2c9ca2bc95210aaa34699e7f9b51cd6adfb702540fc58",
+      "size_bytes": 6411
+    },
+    "data/cohorts/itad/cache/1538270.json": {
+      "sha256": "3b7ba468ce89c618137e4ba626cd75f81fc4b5b3c2c80ed3b8bb7c8f00488da6",
+      "size_bytes": 7695
+    },
+    "data/cohorts/itad/cache/1543750.json": {
+      "sha256": "73f79c380d2d7a022ec976c2914773927ebfaa519c4ac6631226fb7a5eac8dae",
+      "size_bytes": 77563
+    },
+    "data/cohorts/itad/cache/1546770.json": {
+      "sha256": "3e354d6da45de8ae4e300ae42c04023bb0d3d832a517ad989223b6d33e0ec4b6",
+      "size_bytes": 11665
+    },
+    "data/cohorts/itad/cache/1549750.json": {
+      "sha256": "cb675e3c99393279711e6404114aa2f930b3cf13837babc260065e47ba496e2b",
+      "size_bytes": 28127
+    },
+    "data/cohorts/itad/cache/1554920.json": {
+      "sha256": "f10a2020b7a4df3af1e72611de9739e1a14ce902fac0af4f869a46ddc45f6794",
+      "size_bytes": 3861
+    },
+    "data/cohorts/itad/cache/1562430.json": {
+      "sha256": "5087df31cbc5c91d7e816754f88c22bddbcf6d9e6e2033c9c13b9de492e9b7e0",
+      "size_bytes": 40693
+    },
+    "data/cohorts/itad/cache/1564280.json": {
+      "sha256": "89b4e7e4bbe38636f55f05f98556586107d3b4d066a4c9124b732584a2d46a16",
+      "size_bytes": 33231
+    },
+    "data/cohorts/itad/cache/1565200.json": {
+      "sha256": "1eb38f5e429b5979fbe82e240a06e31a2384d9be714ef7e9169762a64e9bba3d",
+      "size_bytes": 40859
+    },
+    "data/cohorts/itad/cache/1568190.json": {
+      "sha256": "54eb308877119d793b014080ba1723cc2e4fe17ea64429fdc2a6bdcb8dfcbd5b",
+      "size_bytes": 88767
+    },
+    "data/cohorts/itad/cache/1575510.json": {
+      "sha256": "367d00dc833b6c8b46b6ce499a5e1eecb25227b38a8444c572a570a982e73c10",
+      "size_bytes": 37719
+    },
+    "data/cohorts/itad/cache/1575640.json": {
+      "sha256": "67152077e28b770e8093400043ade2111491ac3f48db51b189d209961718dabe",
+      "size_bytes": 44549
+    },
+    "data/cohorts/itad/cache/1576110.json": {
+      "sha256": "09e26fc65102fc3200077f748fe59f2d2b0e267bb4bc49a5a1e89d0576d6c9a2",
+      "size_bytes": 3853
+    },
+    "data/cohorts/itad/cache/1577680.json": {
+      "sha256": "d14c9915e50683f187566ac857283fc0f448e3b6650289bd7f895d7111ab0d3c",
+      "size_bytes": 12157
+    },
+    "data/cohorts/itad/cache/1579380.json": {
+      "sha256": "966cb1d93c064caadac60f38de8a4fc8581905c5423be6bf79d109c677ee0344",
+      "size_bytes": 68535
+    },
+    "data/cohorts/itad/cache/1580290.json": {
+      "sha256": "951b141a5c754253e05dd15bc97dfbfc6626aa43a101272ed419717ab114d41f",
+      "size_bytes": 10867
+    },
+    "data/cohorts/itad/cache/1580960.json": {
+      "sha256": "2aa648231daa306d9ca85fc6b6ebc21e9d11c75bfd3d2298b5aea5d583d01658",
+      "size_bytes": 37227
+    },
+    "data/cohorts/itad/cache/1581180.json": {
+      "sha256": "518a168861faf0256eef80415d268cc18b84593b25705ebf7142db4573942332",
+      "size_bytes": 81781
+    },
+    "data/cohorts/itad/cache/1582680.json": {
+      "sha256": "8a02dadc4f8d097edb3c0c6125e43756d0b9f119ca6aeb65e2d9954e657d4750",
+      "size_bytes": 56145
+    },
+    "data/cohorts/itad/cache/1585640.json": {
+      "sha256": "236e0e10c71fe83e461dd35f7204207adf63fe05034eaba48f73866cdc16f679",
+      "size_bytes": 18047
+    },
+    "data/cohorts/itad/cache/1590260.json": {
+      "sha256": "9450127cca45a68448e08776f525be8734a40058313b30bdef28fa5b00293e3b",
+      "size_bytes": 42585
+    },
+    "data/cohorts/itad/cache/1590910.json": {
+      "sha256": "e24fe13923f2c43a4b1ec0ba8ee1242c0211930443bacba0fa1181ac356897a6",
+      "size_bytes": 63305
+    },
+    "data/cohorts/itad/cache/1595310.json": {
+      "sha256": "5366c1503d718c858629f06958b4854c6e60c60b316236902b357d670865cc13",
+      "size_bytes": 45177
+    },
+    "data/cohorts/itad/cache/1596380.json": {
+      "sha256": "d3930d8834052f702d38fe41fe7690fd722d4a9d5f08a8108c60f3cc4519fe1b",
+      "size_bytes": 30641
+    },
+    "data/cohorts/itad/cache/1598910.json": {
+      "sha256": "554cf218a504af4b9299dfdbcfaaefc2c9a32b45e93836da423b358b33cd4950",
+      "size_bytes": 58957
+    },
+    "data/cohorts/itad/cache/1599660.json": {
+      "sha256": "0774c0fc67d00fbf35f73e8f73409aed8512a2f44591e03900c76929f95acc06",
+      "size_bytes": 33677
+    },
+    "data/cohorts/itad/cache/1609570.json": {
+      "sha256": "96b0ee0d678e245b6abc92b14746099e90f3f4f5d635d51a5b02d25faf1855e8",
+      "size_bytes": 15343
+    },
+    "data/cohorts/itad/cache/1609600.json": {
+      "sha256": "1124cdd0568386a063dd19fc63c89b61a1ae57a1532d32301bd45d2991f0e898",
+      "size_bytes": 45235
+    },
+    "data/cohorts/itad/cache/1614030.json": {
+      "sha256": "cd2ccd52229adfeccbbe2fb3e98b924f40cf76f49af38b1397a50b777cdcdc6b",
+      "size_bytes": 18585
+    },
+    "data/cohorts/itad/cache/1621070.json": {
+      "sha256": "c31140002ebf2e48f53d8c2afacd19a5613a41636093274f0bd11a900fc2d5d2",
+      "size_bytes": 50541
+    },
+    "data/cohorts/itad/cache/1627360.json": {
+      "sha256": "cc2b724dd7ba3753b20653fd7b11537d1b04282ed46f257a45165fe75c5b7d4a",
+      "size_bytes": 37667
+    },
+    "data/cohorts/itad/cache/1629220.json": {
+      "sha256": "e46de07b5dc8bffab4c153944caef4f34818d2c68f7f1b4ff73a2769f30f5030",
+      "size_bytes": 9017
+    },
+    "data/cohorts/itad/cache/1632710.json": {
+      "sha256": "2aae45caf84ce91bf5dfba2645704f4055448fb8cc07a2672dc12fcdca837593",
+      "size_bytes": 38385
+    },
+    "data/cohorts/itad/cache/1637540.json": {
+      "sha256": "d3255927da75fa0c6bb7a798d6c55cca7e8eadb27a15ee7934649f2f613f0c21",
+      "size_bytes": 10877
+    },
+    "data/cohorts/itad/cache/1639090.json": {
+      "sha256": "6d7fd7c0d8e48876850080f6775b1f0111c2f6b7cbeeee06b6d5f02788e7e64a",
+      "size_bytes": 74225
+    },
+    "data/cohorts/itad/cache/1642790.json": {
+      "sha256": "e6209c9a90c2cfde1ccd13893df60cdc2122289f63f7ec001b3fcd7c05313659",
+      "size_bytes": 47743
+    },
+    "data/cohorts/itad/cache/1644810.json": {
+      "sha256": "80db9f2efc86cc9cc201defc67386d5fff5f24af489b5a89024e398e894332bc",
+      "size_bytes": 54911
+    },
+    "data/cohorts/itad/cache/1646890.json": {
+      "sha256": "3c0281a7982de7d4ef86da730387dd14d8b6da479add772552012145217a0300",
+      "size_bytes": 63719
+    },
+    "data/cohorts/itad/cache/1648590.json": {
+      "sha256": "d33422be987bd974e803ba99cb0cd62a4b1127ab8bd5aa29748b7efb5e7d198f",
+      "size_bytes": 3225
+    },
+    "data/cohorts/itad/cache/1649630.json": {
+      "sha256": "c6fa5ccc9a6a2da6d659a6a001de8c11696bc58ed1fc56cd4e82be68d16c58eb",
+      "size_bytes": 46677
+    },
+    "data/cohorts/itad/cache/1650830.json": {
+      "sha256": "83660e5db964a3a77cf3a1cda977731d22bbde9fdc20facba9be165f726101cb",
+      "size_bytes": 58173
+    },
+    "data/cohorts/itad/cache/1654890.json": {
+      "sha256": "26052ff62ca58f9fea69756ad7be75c59ef36a24ef76e4ecad66d23409f93a00",
+      "size_bytes": 35129
+    },
+    "data/cohorts/itad/cache/1656650.json": {
+      "sha256": "d6a0ff4ab0a6154a4b9d6d5c4505692e95ec79da711f5847972aedf2727b6f21",
+      "size_bytes": 44445
+    },
+    "data/cohorts/itad/cache/1668310.json": {
+      "sha256": "92e6a02405ce5211342e46ad17c15d785ef7d1f13a06cc30ad16e124f0df6bbd",
+      "size_bytes": 34239
+    },
+    "data/cohorts/itad/cache/1670120.json": {
+      "sha256": "8f66299dd39f1ac98033260e0ac8297155a61fc6770b1f0885011620a1616449",
+      "size_bytes": 3219
+    },
+    "data/cohorts/itad/cache/1671330.json": {
+      "sha256": "222e835983aed54f3ab636ae0cd3e51ccb163a13bdbb2888c48118d3a0ca9c86",
+      "size_bytes": 67457
+    },
+    "data/cohorts/itad/cache/1674020.json": {
+      "sha256": "5e86f2c02d5c69a5229edf9fd950ada5196ce5a4d08258b69818ebc6c55d131f",
+      "size_bytes": 5821
+    },
+    "data/cohorts/itad/cache/1674420.json": {
+      "sha256": "827820133c682ed2dbf042123a0d6a143b45f0d72a95f5511d061f0b237fb327",
+      "size_bytes": 3857
+    },
+    "data/cohorts/itad/cache/1680400.json": {
+      "sha256": "0f98c5f89e5d42d9fd99cfd61208fead082c14565794297bc0797ca215fbcaac",
+      "size_bytes": 14093
+    },
+    "data/cohorts/itad/cache/1681110.json": {
+      "sha256": "b3cd87763067815396bdb4550253524097a1974021fdb7521a8281d4acee200f",
+      "size_bytes": 5789
+    },
+    "data/cohorts/itad/cache/1686570.json": {
+      "sha256": "d06b726a0e1b7cb492600085bdcb429e331b0c88bacea650cbb07cc4fedb2960",
+      "size_bytes": 40895
+    },
+    "data/cohorts/itad/cache/1687150.json": {
+      "sha256": "d31e5bdada5b1480bcc446e3fb63f480fb2abe27e0232d0aa2c5bec6c0d95dfb",
+      "size_bytes": 23675
+    },
+    "data/cohorts/itad/cache/1687480.json": {
+      "sha256": "7309227c6b84fa1ba3b609056de20f54582e5fac1101238f6fba12ec2c8f207c",
+      "size_bytes": 10967
+    },
+    "data/cohorts/itad/cache/1693140.json": {
+      "sha256": "b9e0743f78864b8fcd03d3f71a9b624e988edac12f809ff81060bd455e1e59ea",
+      "size_bytes": 3873
+    },
+    "data/cohorts/itad/cache/1695260.json": {
+      "sha256": "38bf1f04da046eb03f20671a056d0cd9b332030931719610d2a668a8311ce885",
+      "size_bytes": 43919
+    },
+    "data/cohorts/itad/cache/1696670.json": {
+      "sha256": "aedbe68bad4180001f556412ec59135e6caee8fce2c5ef97a4e39fb934bf999f",
+      "size_bytes": 27595
+    },
+    "data/cohorts/itad/cache/1698640.json": {
+      "sha256": "2e7a3823ec5cab0f369887a6328a9078fcb0a511f544c2a114d560bca95f5de6",
+      "size_bytes": 43867
+    },
+    "data/cohorts/itad/cache/1698850.json": {
+      "sha256": "319acab1664637dd46cb03a1653382241b5f5e49708cd3d963082f8964a35095",
+      "size_bytes": 11683
+    },
+    "data/cohorts/itad/cache/1703140.json": {
+      "sha256": "b26fcb117f6121d75e794b8a11b9582897ff919f71aeb7ddfa5cf1b809e221bf",
+      "size_bytes": 60649
+    },
+    "data/cohorts/itad/cache/1705920.json": {
+      "sha256": "6d2817b8621cf9d885d38539d62223c1bbb9575d0d960f9834edbb361dd7f2d3",
+      "size_bytes": 12809
+    },
+    "data/cohorts/itad/cache/1709580.json": {
+      "sha256": "b0ae67d1a5cd37931a7b852662e339e6ccf56e8e0d29f150bf44503aa3b24918",
+      "size_bytes": 67147
+    },
+    "data/cohorts/itad/cache/1710600.json": {
+      "sha256": "cf453b937cffedca8ec5519b0c6a03d89305308c24001dd5935da7c4573b53aa",
+      "size_bytes": 61981
+    },
+    "data/cohorts/itad/cache/1716370.json": {
+      "sha256": "0669b2acf2318556bdc301341bd9912f92a358969b6fd843c7bd8310625b8df7",
+      "size_bytes": 5883
+    },
+    "data/cohorts/itad/cache/1716810.json": {
+      "sha256": "1600fe934227fae7d3aac42faeaa6431807fac233dc7cde5f10745f37822877c",
+      "size_bytes": 40903
+    },
+    "data/cohorts/itad/cache/1718130.json": {
+      "sha256": "50af9a9612cfc96daee694321de37e48e670524c6765a1287a1bd944a49674e5",
+      "size_bytes": 14889
+    },
+    "data/cohorts/itad/cache/1719250.json": {
+      "sha256": "2af94828596f8bd881bbb96367deb1e53997028dcb0f93f637609e8b4d68bb74",
+      "size_bytes": 11535
+    },
+    "data/cohorts/itad/cache/1726330.json": {
+      "sha256": "7840b1e17044ca5662d16338d663e2f6ce3e623f18adaf49e674fd92eb7b1f5a",
+      "size_bytes": 28859
+    },
+    "data/cohorts/itad/cache/1727210.json": {
+      "sha256": "ba3e513cf174372b9bb6741693513de9daeefadbea1f43ba54f0f1d70a616857",
+      "size_bytes": 33611
+    },
+    "data/cohorts/itad/cache/1728080.json": {
+      "sha256": "9183bf91d6aa7c38d606af60e9ed01cb8271aeb8a7425559eddba4039a7883a9",
+      "size_bytes": 36441
+    },
+    "data/cohorts/itad/cache/1728410.json": {
+      "sha256": "72c1c8a16799de6235ffe0652e0c67037463f27fe51f4683d5032ed161607b96",
+      "size_bytes": 3237
+    },
+    "data/cohorts/itad/cache/1728660.json": {
+      "sha256": "0991dd4bc559515e61e6d51baaacea40df839c83b9f5ea2157f1626bb451fb62",
+      "size_bytes": 52913
+    },
+    "data/cohorts/itad/cache/1729060.json": {
+      "sha256": "43607f179af49ef0dc58c3dd9e7c0da8be0a9a9a4ae82a30dbda8dad284469d6",
+      "size_bytes": 46727
+    },
+    "data/cohorts/itad/cache/1732190.json": {
+      "sha256": "42061e990f038c76dbce134f117164536efcf5b3a3f1b57d63bd6f361262f976",
+      "size_bytes": 33775
+    },
+    "data/cohorts/itad/cache/1734890.json": {
+      "sha256": "5cc2414296dc756a41fa1c87e4e2295d2e9125295a4378cbb4e7150b0a08baad",
+      "size_bytes": 76955
+    },
+    "data/cohorts/itad/cache/1745280.json": {
+      "sha256": "f2b7f30b8f0d6803d664fbb010e65135463a48795df90041d905d4d3a02b0813",
+      "size_bytes": 8381
+    },
+    "data/cohorts/itad/cache/1745480.json": {
+      "sha256": "b750a72917a26e73e91a2264f847221c25e29719ca00511110f9f521bac1c1fb",
+      "size_bytes": 28155
+    },
+    "data/cohorts/itad/cache/1747840.json": {
+      "sha256": "7311be216bc21fcec0afddb21dff9a21a150eae9bd8f97b93c0a34079ac49a6f",
+      "size_bytes": 3337
+    },
+    "data/cohorts/itad/cache/1755250.json": {
+      "sha256": "89f9bebc2de1992ea4d6a3f2cf07d98f28f3c03410b9d63ea090b0074a130b11",
+      "size_bytes": 8311
+    },
+    "data/cohorts/itad/cache/1757260.json": {
+      "sha256": "083dee3c69403009767284d2850a0393a8fce4c2678d5f3e20a5e578dd16b2ed",
+      "size_bytes": 7729
+    },
+    "data/cohorts/itad/cache/1761560.json": {
+      "sha256": "00048561ae4fcc8f7be3cf2beb6c8685083530a0872369f4158ed27a0154e576",
+      "size_bytes": 64485
+    },
+    "data/cohorts/itad/cache/1764870.json": {
+      "sha256": "d8f6ddfec2acb0f9361c463168a5998772fbe3931a31535e3a1e0919629c487e",
+      "size_bytes": 11007
+    },
+    "data/cohorts/itad/cache/1765310.json": {
+      "sha256": "3c9ab2866a3225df2f079587cb28f72f9650be708a2b0132c15d304785c533e1",
+      "size_bytes": 32673
+    },
+    "data/cohorts/itad/cache/1765820.json": {
+      "sha256": "06f0f633f6a7a294606c42bfa7a647fe0e86b5b679bafecd51d3e46d9e053688",
+      "size_bytes": 7059
+    },
+    "data/cohorts/itad/cache/1765980.json": {
+      "sha256": "e7bf956194c30417386e9dddad146b40ea15300b0b18b70ad1653cfa088d3cd9",
+      "size_bytes": 47975
+    },
+    "data/cohorts/itad/cache/1766400.json": {
+      "sha256": "eb9a47aed87db9eccd8047fe774ba42d547564e1f1cdb503a4c54f657fccb7a8",
+      "size_bytes": 3237
+    },
+    "data/cohorts/itad/cache/1771340.json": {
+      "sha256": "6834853ce6ce2fbc2e5ad86d87af610c572ee0ed2823f3aaf9d0fa5f0f54e431",
+      "size_bytes": 46481
+    },
+    "data/cohorts/itad/cache/1771400.json": {
+      "sha256": "5b696a0267d04e3bbc31cefb28ac07b62a3a7c33d0e4feaf2173606660234989",
+      "size_bytes": 14067
+    },
+    "data/cohorts/itad/cache/1772160.json": {
+      "sha256": "7e73e7242bb3c03a7cc39190a80d324b4277bfb49d983244eee02fa1989bdd77",
+      "size_bytes": 3253
+    },
+    "data/cohorts/itad/cache/1776600.json": {
+      "sha256": "7ddecc5fc993d677733ccdf8abac8fef43aea88ccb807235dd28da52a40c2eb7",
+      "size_bytes": 3353
+    },
+    "data/cohorts/itad/cache/1776930.json": {
+      "sha256": "6abb374a21992a8b40ff715c1d22e7743185280c4e61c271e176b04ae20fbc5e",
+      "size_bytes": 67755
+    },
+    "data/cohorts/itad/cache/1777210.json": {
+      "sha256": "a84eeb106ac75d01fc85b312ad8a9dd8c3245d6601a4b0278d0e431cf8be8026",
+      "size_bytes": 12803
+    },
+    "data/cohorts/itad/cache/1778720.json": {
+      "sha256": "7eae80e3bcacc15b87c70685efea0422964bae3494def3fde020276bdec2f9fd",
+      "size_bytes": 54975
+    },
+    "data/cohorts/itad/cache/1782860.json": {
+      "sha256": "149004927a60d05753127402f17d22e804c677163e48cc9a202c55d091c34c3e",
+      "size_bytes": 29519
+    },
+    "data/cohorts/itad/cache/1785100.json": {
+      "sha256": "ee46f4511e1655bd81f68975d7b4c7396612d51cfd049a90fabc7733246c8f64",
+      "size_bytes": 17309
+    },
+    "data/cohorts/itad/cache/1787450.json": {
+      "sha256": "769bdc3667dd1c1501bfdbd65a249a88ccfe21531546a1299ce2e8c2faabd500",
+      "size_bytes": 39921
+    },
+    "data/cohorts/itad/cache/1789480.json": {
+      "sha256": "bc169fa5dbdff3e3cd0d37d2eb63eefd29a9a0bd750b71daa76a1bb7366f1c0c",
+      "size_bytes": 21973
+    },
+    "data/cohorts/itad/cache/1794690.json": {
+      "sha256": "68848851ee8c5889533a6d60752baa5fa9a0aba1df25d709357bc79ae08627e7",
+      "size_bytes": 57547
+    },
+    "data/cohorts/itad/cache/1797440.json": {
+      "sha256": "c2446e4f17212acd3a187d0f3d53d89ffa397dc62ea53651d81854a78825f815",
+      "size_bytes": 73473
+    },
+    "data/cohorts/itad/cache/1797940.json": {
+      "sha256": "34b69fce101b78e22acbcfac63573fae4e007a916b3de28c8b19942353bd52f9",
+      "size_bytes": 33727
+    },
+    "data/cohorts/itad/cache/1798180.json": {
+      "sha256": "85748483155d3fd16191a8e32e1968ce73f449418c3a31379fcd6ebb9d26035a",
+      "size_bytes": 16741
+    },
+    "data/cohorts/itad/cache/1801110.json": {
+      "sha256": "39ebe5d227ee57420e4e633c5bdc34b10d32d9781feb89d7d516dd555f8cbab9",
+      "size_bytes": 43503
+    },
+    "data/cohorts/itad/cache/1809370.json": {
+      "sha256": "3837cac8f9f85a464f26e63fd5d6b5fbfbfec5c72be29d0dbc19d77b1f9749d8",
+      "size_bytes": 8395
+    },
+    "data/cohorts/itad/cache/1810210.json": {
+      "sha256": "471df6502dbbc934321db281099a7de7c28c07f3b796be69dcd3bedda6eb7b02",
+      "size_bytes": 56229
+    },
+    "data/cohorts/itad/cache/1811740.json": {
+      "sha256": "fa1c1a215b7cb647860a19a6d51f1f203f504ef3b3bcd2611ba147f11c42e916",
+      "size_bytes": 63987
+    },
+    "data/cohorts/itad/cache/1814720.json": {
+      "sha256": "acbdc8e7e66c78c68d92c93abcd30ebc5cdcb732c9b96766bb510607ca69e98a",
+      "size_bytes": 3197
+    },
+    "data/cohorts/itad/cache/1823540.json": {
+      "sha256": "6845c57d1f4f2bc19adc852ea2641fdb20cea503f14109c9945401559ab75fff",
+      "size_bytes": 59611
+    },
+    "data/cohorts/itad/cache/1828770.json": {
+      "sha256": "486f23bd6b79031b51e257cdb73d0315945b7223fa8548d5971ffbc8e8d8b57c",
+      "size_bytes": 5789
+    },
+    "data/cohorts/itad/cache/1829980.json": {
+      "sha256": "24eec09d73984eaba0180d46e0e9cf08a216ab8d8ddac5ef2f50ad2acf1056ef",
+      "size_bytes": 44746
+    },
+    "data/cohorts/itad/cache/1834760.json": {
+      "sha256": "1b6dee791079b8195008bf46b60908a54d924a3061b61ead6b16a6c47083d4fc",
+      "size_bytes": 67195
+    },
+    "data/cohorts/itad/cache/1835250.json": {
+      "sha256": "47a1af7fb3ffafa5716e4dfc98794ea4803260c80fd928bf05abf6545e3e845c",
+      "size_bytes": 11459
+    },
+    "data/cohorts/itad/cache/1836030.json": {
+      "sha256": "e9fe711f4d65d7ce97346e580627c0d29bfa79f273793d329b4eb72436b1123c",
+      "size_bytes": 55663
+    },
+    "data/cohorts/itad/cache/1843900.json": {
+      "sha256": "314cbd38b05cfb5f79f77c57094f4b6cdbfa79651a9fee3e81099cf4ed86a836",
+      "size_bytes": 10215
+    },
+    "data/cohorts/itad/cache/1844060.json": {
+      "sha256": "dfafb3aa4b1a8ce93cd3188d4c798a3311d4b6b5bf78cbffc750e1426ed73b09",
+      "size_bytes": 3245
+    },
+    "data/cohorts/itad/cache/1844680.json": {
+      "sha256": "f485c7b0eaceecdacc8c215c081c021f221e67b9ad4de5a77610bbc0e14c8d18",
+      "size_bytes": 16007
+    },
+    "data/cohorts/itad/cache/1846030.json": {
+      "sha256": "ec4e2192101a4afc7b87682b6934fa338006191cdfbb2df8e18987e78f881e60",
+      "size_bytes": 7077
+    },
+    "data/cohorts/itad/cache/1849570.json": {
+      "sha256": "0da2797449e27d804b1d4b5469164a0e42b16a992fe584e0f768cf87f1d81f24",
+      "size_bytes": 45467
+    },
+    "data/cohorts/itad/cache/1850680.json": {
+      "sha256": "545f598cf7f606c8ecd6f85b2e65e7393cc6686c1f232cd37d64432103da09df",
+      "size_bytes": 12235
+    },
+    "data/cohorts/itad/cache/1851190.json": {
+      "sha256": "883d1bb646d54f5f93e0d8efe8408fa32bceb08e80902063af67fcea4dee6cc5",
+      "size_bytes": 9627
+    },
+    "data/cohorts/itad/cache/1853970.json": {
+      "sha256": "3020710c4e6a68e93a20df47b340fafc44b1aa64917bb577db9c67cab17f5c32",
+      "size_bytes": 13471
+    },
+    "data/cohorts/itad/cache/1855660.json": {
+      "sha256": "98a1487a82467b862b3f5a7c652f1ce94e9faf090fb8d46bd5a7979296857ca2",
+      "size_bytes": 3389
+    },
+    "data/cohorts/itad/cache/1855950.json": {
+      "sha256": "f0efdfdcdb2f6fb87b51e9d297bc678b5cb2f62264cba0a36d42c60c94dfe686",
+      "size_bytes": 3201
+    },
+    "data/cohorts/itad/cache/1857580.json": {
+      "sha256": "06d2b760dd8675359d96a43953d4bb2051c3e678d17f734d60b7b938cf3a3cb6",
+      "size_bytes": 49927
+    },
+    "data/cohorts/itad/cache/1859220.json": {
+      "sha256": "bd65a97663703b2b8d61d38fe88b6dd604c68dcdd5e3c9adacc715b670df6713",
+      "size_bytes": 3251
+    },
+    "data/cohorts/itad/cache/1859680.json": {
+      "sha256": "bc54690ae62374709bf86d3312da7210a81e5a00127bfa18e7138fc03b38b37b",
+      "size_bytes": 6405
+    },
+    "data/cohorts/itad/cache/1860350.json": {
+      "sha256": "c62b58721b93bcab91e16f9d679aadddeac0b0f9428e6d4ac2e2dcb6dde6036c",
+      "size_bytes": 47263
+    },
+    "data/cohorts/itad/cache/1863100.json": {
+      "sha256": "4ed3c49195f98750b31a475f97bb1875277f3525370b6eaa06b6ba2ba890a147",
+      "size_bytes": 47693
+    },
+    "data/cohorts/itad/cache/1866430.json": {
+      "sha256": "148366ac51c85646b93fc4ec73c15a33fe76cf9f161a54821463c57c61ec7781",
+      "size_bytes": 36269
+    },
+    "data/cohorts/itad/cache/1866890.json": {
+      "sha256": "ba395813909ba899688f7e966171d52a8a06bb0edaefc4cb280fa4cbfd6e07c7",
+      "size_bytes": 17893
+    },
+    "data/cohorts/itad/cache/1868280.json": {
+      "sha256": "8061a58fa4af8298c0f43cbad180b0670d8f1afa4b851a3128a94707a00b58b6",
+      "size_bytes": 59913
+    },
+    "data/cohorts/itad/cache/1873170.json": {
+      "sha256": "3cb5edc8fb6363a9d75d068bb17df4f3bf2ca27095c21f14afd1d1906380a5b0",
+      "size_bytes": 51699
+    },
+    "data/cohorts/itad/cache/1876890.json": {
+      "sha256": "6f9bd04ce829243ab98772cb22dac32a11e982c2f5d16ebbb8bce01f9abb9737",
+      "size_bytes": 40115
+    },
+    "data/cohorts/itad/cache/1879680.json": {
+      "sha256": "60c9709d21450edb2d9ccda2cc9c2ba323c038b4055cd4ecdc8cfe44b17f022f",
+      "size_bytes": 36819
+    },
+    "data/cohorts/itad/cache/1880230.json": {
+      "sha256": "39371e6abec1d7d5595a4a490cac58a8094aca302c64a83b26ac5d6406b5c109",
+      "size_bytes": 14845
+    },
+    "data/cohorts/itad/cache/1882600.json": {
+      "sha256": "2d6e5ef5af9478c097fe28c89953f0792da36c0b9ba339c2df6f7aa3daadef8b",
+      "size_bytes": 35813
+    },
+    "data/cohorts/itad/cache/1887050.json": {
+      "sha256": "4d3f72b1a8df7615bc6458265c98cbfc06b4fe93d46565c09588508d2d99d9f0",
+      "size_bytes": 25033
+    },
+    "data/cohorts/itad/cache/1889130.json": {
+      "sha256": "019782aa5c7e87e901871dd707dfbb5b65a35a9ae12377ddf6b5df46efac29b9",
+      "size_bytes": 29447
+    },
+    "data/cohorts/itad/cache/1899800.json": {
+      "sha256": "d0b99c8fa3cd052b807d877d3884773893abe2b135fcae95dad406088c24bdb5",
+      "size_bytes": 10251
+    },
+    "data/cohorts/itad/cache/19020.json": {
+      "sha256": "fb87c42c28e29d1bd8ef3ba563318e97bc6ca5f280c065a1921473e63b8ef73b",
+      "size_bytes": 49219
+    },
+    "data/cohorts/itad/cache/1915550.json": {
+      "sha256": "1344974abb734bd8767bda58fd2035259555268c386e3941cdfa2fb2171abea6",
+      "size_bytes": 49101
+    },
+    "data/cohorts/itad/cache/1917600.json": {
+      "sha256": "f57ae9911fb404f16fbd47d76aaf5e51e838dff47befd995bbfcf9bdaff2617d",
+      "size_bytes": 5277
+    },
+    "data/cohorts/itad/cache/1918250.json": {
+      "sha256": "2b325b1f37970dbb50d567ef54239cd061ad55c5662e29359a1c54b9d3aff191",
+      "size_bytes": 32991
+    },
+    "data/cohorts/itad/cache/1918460.json": {
+      "sha256": "e9ca2f9797c95e59043383d9e736a122147c9b9d209a0ee58cd46e4865559949",
+      "size_bytes": 3543
+    },
+    "data/cohorts/itad/cache/1921200.json": {
+      "sha256": "98e112708ca9d203c3c1ead5f7ad801e1ce533a909a86073d38acc58f61e8ec7",
+      "size_bytes": 34761
+    },
+    "data/cohorts/itad/cache/1927020.json": {
+      "sha256": "76687b2853274d1b30c0cce1c336cbff87ac04030089fd2332d059f09505f41c",
+      "size_bytes": 29431
+    },
+    "data/cohorts/itad/cache/1929210.json": {
+      "sha256": "a49a7ad02c5d1c62658c8e57f1c26e24a4fe71afb21926f5a8f672fa23914b0a",
+      "size_bytes": 26851
+    },
+    "data/cohorts/itad/cache/1931680.json": {
+      "sha256": "c60b4a103b31ebf1ae2ebb23187ed9b6a6d599cbde8c7610e2d110e6523660fa",
+      "size_bytes": 67099
+    },
+    "data/cohorts/itad/cache/1934990.json": {
+      "sha256": "d3be97451f74c4308599db90749f927eae06e397b4e96404d59d990299a0951e",
+      "size_bytes": 45901
+    },
+    "data/cohorts/itad/cache/1938200.json": {
+      "sha256": "f1a7aeb94e61e984370db77ae3ba158be672ba0a8a6d56130b05f9f8b126b4a7",
+      "size_bytes": 56895
+    },
+    "data/cohorts/itad/cache/1938380.json": {
+      "sha256": "776ebc33066c65fb3ad92f06419111fbb502f52ee5e4cdcd0a9efb9bed0e6b73",
+      "size_bytes": 5793
+    },
+    "data/cohorts/itad/cache/1941360.json": {
+      "sha256": "9a45b059a82a9aa0de8a28d3d37fc0801f0e8182a32c35f7a64d254980bc0614",
+      "size_bytes": 4601
+    },
+    "data/cohorts/itad/cache/1945220.json": {
+      "sha256": "e0516e4ec4c4b8f75fbef7198789127301b07ecb519a679131e0e888d7f4eb32",
+      "size_bytes": 68409
+    },
+    "data/cohorts/itad/cache/1945750.json": {
+      "sha256": "b30bd919c93dac1d287e426f7815a9dca7c1dd845e7302cd376ee83743c0c4ff",
+      "size_bytes": 5871
+    },
+    "data/cohorts/itad/cache/1947210.json": {
+      "sha256": "c06cb6807d994081fafe7cbea12780818ae4d3dcdb1f675489f037e8e9cc9bf7",
+      "size_bytes": 11483
+    },
+    "data/cohorts/itad/cache/1947750.json": {
+      "sha256": "40499d3fad51751673692d382a5ac72be716993b474cbc770ccec2d5367c8a2d",
+      "size_bytes": 60167
+    },
+    "data/cohorts/itad/cache/1952490.json": {
+      "sha256": "9fc6af46f7d29fe2569af256405e724018014d75981dd7f93abac5ad962b92dc",
+      "size_bytes": 52433
+    },
+    "data/cohorts/itad/cache/1954340.json": {
+      "sha256": "00c6e8471b311009248c8c9fa691d8d59aa2fba6f521d5f6f8fb8cf7d2623f1c",
+      "size_bytes": 12793
+    },
+    "data/cohorts/itad/cache/1957230.json": {
+      "sha256": "a8eaed0972a0cc7c5104a12d9279a5a03dd8597cbdc3a3394f2ae629354cc4ab",
+      "size_bytes": 30735
+    },
+    "data/cohorts/itad/cache/1968530.json": {
+      "sha256": "37f027979a8bc15187bbb27b58c91328ed56491e4aa1ebd99a52bd9ea4220e68",
+      "size_bytes": 12149
+    },
+    "data/cohorts/itad/cache/1971480.json": {
+      "sha256": "1bc0dabb984d5b45671490fd215a34d5d2920fb9676bc28dc6c0a28618bec7e5",
+      "size_bytes": 3205
+    },
+    "data/cohorts/itad/cache/1980240.json": {
+      "sha256": "7c2b28fc1e0b479bf029309b0d5550f948a7c0ed7bde516820bb99849df150aa",
+      "size_bytes": 3209
+    },
+    "data/cohorts/itad/cache/1981000.json": {
+      "sha256": "1c90fa108a61e1beba77411e883f61c391730cf5a29dcb96755d8d0edfaeb154",
+      "size_bytes": 14887
+    },
+    "data/cohorts/itad/cache/1984630.json": {
+      "sha256": "750175c89b82c0550cf550f05d9838f20cf3045041f81351de8eb6d253589db2",
+      "size_bytes": 5107
+    },
+    "data/cohorts/itad/cache/1988010.json": {
+      "sha256": "b23c4f5a046aeecbcd91339ef29aabe7756b663eab8b13000710cf2d2740b103",
+      "size_bytes": 15995
+    },
+    "data/cohorts/itad/cache/1989780.json": {
+      "sha256": "eb6c0c30fddc06adf3bb8a98e6cebf2805c78cbee5ea75f35ff23536db1f8cf2",
+      "size_bytes": 23695
+    },
+    "data/cohorts/itad/cache/1989820.json": {
+      "sha256": "d37b83a074b781e262f4731425a604008a026c4b039727c8607d6791c26d2e68",
+      "size_bytes": 52449
+    },
+    "data/cohorts/itad/cache/1990940.json": {
+      "sha256": "6c64bd6f9cbf7a879012c336b1600ffb428d62a46ad7adaa0c5fb71c23f5538e",
+      "size_bytes": 3897
+    },
+    "data/cohorts/itad/cache/1991090.json": {
+      "sha256": "064b3f0e48254da14b945ac6d5c027f8bfa476e3b8daa3b89e28aa32d6d08b1a",
+      "size_bytes": 58691
+    },
+    "data/cohorts/itad/cache/1992420.json": {
+      "sha256": "fa5a1656e23c7d8931f605cc5b8c6af7062045ff11296f875c05cd82e0bcedd9",
+      "size_bytes": 4521
+    },
+    "data/cohorts/itad/cache/1998450.json": {
+      "sha256": "afb682817ae2b1a86e1e816e11454457ccd1db0d261da76aeaeb9b3150ad2cc5",
+      "size_bytes": 44619
+    },
+    "data/cohorts/itad/cache/1998540.json": {
+      "sha256": "b23860ded7be5ed855220f209cabe9414ecb0c2adbc4f8f8fc2a3679541fe704",
+      "size_bytes": 17843
+    },
+    "data/cohorts/itad/cache/2002670.json": {
+      "sha256": "b2ade2424236fc71e597047b10c672741126ac5e9dfdbdf4267175886287544b",
+      "size_bytes": 3857
+    },
+    "data/cohorts/itad/cache/2005430.json": {
+      "sha256": "fbe52646b75d196ba618c5d52cb9c90dce53dcab229fc0419781b4eb6e0389cc",
+      "size_bytes": 3889
+    },
+    "data/cohorts/itad/cache/2008110.json": {
+      "sha256": "3637c9b9139b1145270cbe1b115b562c9e7fa5e188ae8185a977df2578bf0a35",
+      "size_bytes": 8431
+    },
+    "data/cohorts/itad/cache/2009840.json": {
+      "sha256": "17f7038aa503724e7180accabc793f5bcb1ba6a40ed154142bd38b443b056d67",
+      "size_bytes": 17265
+    },
+    "data/cohorts/itad/cache/2009930.json": {
+      "sha256": "64863eaa9ed265707f48b08cc8f742c8f5d883bf3c1c748be7863ea78db8a50d",
+      "size_bytes": 6439
+    },
+    "data/cohorts/itad/cache/2012910.json": {
+      "sha256": "a6931e4219efde8a2f8c38bfae37458563d007a7a112f511a5e49818889c1cbb",
+      "size_bytes": 27521
+    },
+    "data/cohorts/itad/cache/2015700.json": {
+      "sha256": "c9cc4a53def717942c29ad891b8e6d9f5321b3890a1c47d9e125c555c8f8f9bc",
+      "size_bytes": 49381
+    },
+    "data/cohorts/itad/cache/2018230.json": {
+      "sha256": "966eb631de845ac6eb2eed6018d57a2a95ed3acb3c3125a6f5f543dae7268ce4",
+      "size_bytes": 3249
+    },
+    "data/cohorts/itad/cache/2018380.json": {
+      "sha256": "3ac23c20a7fd2a51c67837db824b0ef1c3c5780464f930ab62dd8df846f54fe1",
+      "size_bytes": 61961
+    },
+    "data/cohorts/itad/cache/2023360.json": {
+      "sha256": "4cf8b17c0a393621ce4718b72a705b6fac7c50276d4325654d5272074a8914fd",
+      "size_bytes": 35649
+    },
+    "data/cohorts/itad/cache/2025930.json": {
+      "sha256": "918302fca05b0f879b4bc42dec90668314a45f77dcc99b55960ce319c944658c",
+      "size_bytes": 10251
+    },
+    "data/cohorts/itad/cache/204560.json": {
+      "sha256": "6d82632aa52024f2bb893f41d7a13b1d9c2ad11865c1183cb5624a28fa34a278",
+      "size_bytes": 6419
+    },
+    "data/cohorts/itad/cache/2061340.json": {
+      "sha256": "bd633e3d371e06b86928f1bcd7d852df83d6f53c229691234740a01ee530574f",
+      "size_bytes": 14767
+    },
+    "data/cohorts/itad/cache/2062820.json": {
+      "sha256": "f30b2ee01d85326597d8d55779cb57a17124337484486f94deb2ca921798411c",
+      "size_bytes": 45393
+    },
+    "data/cohorts/itad/cache/2069160.json": {
+      "sha256": "fa9d4a19560ea34b694375ed4ff308291610c2dd9eae8302de951a7ac9a51159",
+      "size_bytes": 26223
+    },
+    "data/cohorts/itad/cache/2069310.json": {
+      "sha256": "e76f4c945407b2de280c2ea23f504db66c253fd0430c02af07f8d76e0787b6ce",
+      "size_bytes": 6489
+    },
+    "data/cohorts/itad/cache/2076220.json": {
+      "sha256": "b780521cab08012421a3d484a05603cb4c75c9705c3036b4b7b3784391287713",
+      "size_bytes": 24589
+    },
+    "data/cohorts/itad/cache/2077580.json": {
+      "sha256": "9d6e1d80ad44d74fd785db975b33dcbb07f62f0694d4d70eb591a7e245bf438c",
+      "size_bytes": 17913
+    },
+    "data/cohorts/itad/cache/2078780.json": {
+      "sha256": "ebdfca69bd854b47515e1784383d674984c8a446ae26b04e2a0ce658530be948",
+      "size_bytes": 49909
+    },
+    "data/cohorts/itad/cache/2079160.json": {
+      "sha256": "3e463051f661819ff1f8d6d5cb113568d08ee70231aa3fd221d2d46863b6ebaf",
+      "size_bytes": 50507
+    },
+    "data/cohorts/itad/cache/2080240.json": {
+      "sha256": "c6afbfdb31cbd6b081d531e2e531d683f6c79bc1c7b334f1fe11c859d7aa848b",
+      "size_bytes": 65149
+    },
+    "data/cohorts/itad/cache/2080690.json": {
+      "sha256": "513d1e19dbb8b8bde21234c1aa446b4419c57e31fe56326eb40e4828a79e0aa4",
+      "size_bytes": 25213
+    },
+    "data/cohorts/itad/cache/2082170.json": {
+      "sha256": "c7478686d8742e7e8287d4e85b485a16471d77a9018a09e343375d6c61683680",
+      "size_bytes": 60507
+    },
+    "data/cohorts/itad/cache/2083840.json": {
+      "sha256": "1a690b57634efb7d2d0a012281c6b03cb17788a58f81dbaa2e351a0f78971644",
+      "size_bytes": 45417
+    },
+    "data/cohorts/itad/cache/2084170.json": {
+      "sha256": "730a664eac3563bbb2b1f1b2f6d6d283ccaedf521ae143e10ce6fa6f5de7adbd",
+      "size_bytes": 3829
+    },
+    "data/cohorts/itad/cache/2092850.json": {
+      "sha256": "82ad057f5f055d72581e83a9f5e650c43a065ca16b6924baf2c0cd90940087a3",
+      "size_bytes": 38224
+    },
+    "data/cohorts/itad/cache/2093860.json": {
+      "sha256": "66f69296b2be9548c6929b4e679b976ebb20b7b3f8ad286f035d068d52440459",
+      "size_bytes": 4531
+    },
+    "data/cohorts/itad/cache/2094640.json": {
+      "sha256": "64543a85296a3033608435fdc3d906e2f9d20caa24a0c08b1ee38c7c46b8e037",
+      "size_bytes": 63153
+    },
+    "data/cohorts/itad/cache/2095190.json": {
+      "sha256": "8f13100c4ad90a4d15779f4d9d8cab410a3ed9272a5e7594bacad60ac63892b0",
+      "size_bytes": 40967
+    },
+    "data/cohorts/itad/cache/2097910.json": {
+      "sha256": "85bb23e58efc68bc1232157136e065cc9681ea254702ca767911428b3ae63288",
+      "size_bytes": 22683
+    },
+    "data/cohorts/itad/cache/2098820.json": {
+      "sha256": "9c6d4c003b52544dca497b97102dfed28f346447c0545547308f00b0271389a3",
+      "size_bytes": 4517
+    },
+    "data/cohorts/itad/cache/2109630.json": {
+      "sha256": "7f294a1fc0b0c0749478fecc7cac2e72913ac5c2927460b6983842749564f24a",
+      "size_bytes": 4485
+    },
+    "data/cohorts/itad/cache/2112880.json": {
+      "sha256": "1d74f7003c50d9e3f18c9cda21bf28a4e90c495030749dbf439c4e4b0e429b23",
+      "size_bytes": 38991
+    },
+    "data/cohorts/itad/cache/211440.json": {
+      "sha256": "0284a972db5792a5c1b7af829133c7ff08293685ad2900c6a495b378915e83fa",
+      "size_bytes": 9003
+    },
+    "data/cohorts/itad/cache/2115020.json": {
+      "sha256": "d50b3b7d5198c48cde666de44fdb8e4c94c84897e0a3a1b9ba6bfa4731bf4f4e",
+      "size_bytes": 8297
+    },
+    "data/cohorts/itad/cache/2116980.json": {
+      "sha256": "ff8ca0236c8786f3324a1eeeee58cbe572643058d5858ef8ccdf1ca99e6c1674",
+      "size_bytes": 7053
+    },
+    "data/cohorts/itad/cache/2119730.json": {
+      "sha256": "c0357c4a2b748be34f34bc7b72b7f02a8a9379a4cc43dad76457b71e3d6b1f31",
+      "size_bytes": 36235
+    },
+    "data/cohorts/itad/cache/2120950.json": {
+      "sha256": "f529f436dd74eaaee086c6e1c51517c33a9362b695b19a607a4a831243881ef4",
+      "size_bytes": 62269
+    },
+    "data/cohorts/itad/cache/2125100.json": {
+      "sha256": "bdd60f2ece04bb7f2cbda7b0ebd5ce43d4d7d5fbfbe150b9efb815df78307b91",
+      "size_bytes": 3397
+    },
+    "data/cohorts/itad/cache/2125460.json": {
+      "sha256": "6f8e405cc4ae5d642a320a9ca2d9f347e3408fe00445f9d3cb269667a5e52147",
+      "size_bytes": 3863
+    },
+    "data/cohorts/itad/cache/2126500.json": {
+      "sha256": "47d4338c03f7b3f2da64500397a7308696e42a7a2b26c81572892443256aa4f8",
+      "size_bytes": 3279
+    },
+    "data/cohorts/itad/cache/2132350.json": {
+      "sha256": "74353fe5d4d9fe5e417755181c898058027c2d886342538fef3a808770337a8e",
+      "size_bytes": 43951
+    },
+    "data/cohorts/itad/cache/2133940.json": {
+      "sha256": "3cfb12b0214f54d321dc99b05c0f6481b03eb546c7d17bf19a65fb36cd2c0999",
+      "size_bytes": 3873
+    },
+    "data/cohorts/itad/cache/2143160.json": {
+      "sha256": "f410a95bcb37a0ba6fedd0a756a8f776da84ba44f093ccef001836319a6c68b7",
+      "size_bytes": 56871
+    },
+    "data/cohorts/itad/cache/2143840.json": {
+      "sha256": "f0588a5a7f2712fe1ea4cd4d7d0b7ccb9f5622540a4f160231cfeeddfa1ffc55",
+      "size_bytes": 3391
+    },
+    "data/cohorts/itad/cache/2144260.json": {
+      "sha256": "a77537250d57d50f1cf40fd48ea7246f13860c9d6b3f79f8303e048edf655099",
+      "size_bytes": 3239
+    },
+    "data/cohorts/itad/cache/2145480.json": {
+      "sha256": "c845b30624cd1087d57d3b0ae6e14db83872099c506359ec9dff8dc8d8b81bae",
+      "size_bytes": 3889
+    },
+    "data/cohorts/itad/cache/2149420.json": {
+      "sha256": "e0313126c74cb35871544aa12f75fb5ceb22979b929277a0c2ab2966e68cbae2",
+      "size_bytes": 48377
+    },
+    "data/cohorts/itad/cache/2152080.json": {
+      "sha256": "f8f6791972f52df67dc4d5f8fea00abd0cc357a2df1da67c23a901a303074ab1",
+      "size_bytes": 3269
+    },
+    "data/cohorts/itad/cache/217140.json": {
+      "sha256": "8796ba89ebc2f50524e6117f426b936a7df054fc60b9ef494f8f69d65590a2ec",
+      "size_bytes": 45823
+    },
+    "data/cohorts/itad/cache/2172920.json": {
+      "sha256": "d6d1207929743dd73963c40ad723c1702ddd58bc0a026f12e80c6473cc8942a0",
+      "size_bytes": 5179
+    },
+    "data/cohorts/itad/cache/2183090.json": {
+      "sha256": "ca66d690e21e84d2df4e82a2c9dd8b68b309dafcf4601ab77736036cc90dbd6e",
+      "size_bytes": 4513
+    },
+    "data/cohorts/itad/cache/2186320.json": {
+      "sha256": "00ee3ce1e79da47f5a4ef8beed2f7ea1667e698d2fdd18de7e3693be802a1842",
+      "size_bytes": 36549
+    },
+    "data/cohorts/itad/cache/2188570.json": {
+      "sha256": "37cdfbc22aa205f4c3615aaf210c2c48ecad9aa205bdd50bf13d2c1917420c9a",
+      "size_bytes": 3247
+    },
+    "data/cohorts/itad/cache/2193760.json": {
+      "sha256": "1e134d7e50ef09f48dbb225800274258dac7768563d271096803f7ad07baf98a",
+      "size_bytes": 45407
+    },
+    "data/cohorts/itad/cache/2199830.json": {
+      "sha256": "106783253cb4cd03932580961652fc996249cc873d4a3b656f8c1933a7f4392b",
+      "size_bytes": 53085
+    },
+    "data/cohorts/itad/cache/2200170.json": {
+      "sha256": "b6ccb53d3cd310cbcf2a223f306426449a85e58cc52df79683d1e931bf8421da",
+      "size_bytes": 45299
+    },
+    "data/cohorts/itad/cache/2203570.json": {
+      "sha256": "58c28c32d3109889b34f0edf9c34cb1a88af1866b4706f2160432a6170ee84cb",
+      "size_bytes": 31313
+    },
+    "data/cohorts/itad/cache/2206580.json": {
+      "sha256": "fce8cd63e652c7be42b552fa4afa27f1bfa7e5d31b4bd5d06050aea627bf17b7",
+      "size_bytes": 55631
+    },
+    "data/cohorts/itad/cache/2210670.json": {
+      "sha256": "5832d8236276f46d6530b83520b0c9e904aa813062caee7286720fba074c42ef",
+      "size_bytes": 16629
+    },
+    "data/cohorts/itad/cache/2213880.json": {
+      "sha256": "f1a1f37fe77503dc39342d4142b3a5f352eba6b1eab4b4d9aa2187cd3c610b11",
+      "size_bytes": 33895
+    },
+    "data/cohorts/itad/cache/2224740.json": {
+      "sha256": "1076b426990ea45cd43dedbe8622e8914bead24f2a9f71f5a8faefc45033bbf7",
+      "size_bytes": 41397
+    },
+    "data/cohorts/itad/cache/2230410.json": {
+      "sha256": "58a6113dc92dfbe925650fc6c9cc4b853bd5144ecfc7947a4054c26df2016d99",
+      "size_bytes": 19147
+    },
+    "data/cohorts/itad/cache/2235240.json": {
+      "sha256": "3b4bc4affeb1f4ea30756713f51a7c2c64c56df6ce6d1c9832b804333cf0a8a4",
+      "size_bytes": 11481
+    },
+    "data/cohorts/itad/cache/2237940.json": {
+      "sha256": "b49a4341a4183660872c7fa613d68c509793c6e65d4863806e9f0b6bc724ec80",
+      "size_bytes": 56859
+    },
+    "data/cohorts/itad/cache/2238340.json": {
+      "sha256": "b691eed710c31189149748042ff043e8c0d9f3258d9df87ebcfb4c34a2cf457d",
+      "size_bytes": 24995
+    },
+    "data/cohorts/itad/cache/2243000.json": {
+      "sha256": "cbec74cc7fb7bcf54f8995c39687c8a7a5ffe4daa1b179c77f819c130c4e94f5",
+      "size_bytes": 50535
+    },
+    "data/cohorts/itad/cache/2243140.json": {
+      "sha256": "89f7e3d1a147720c2ccf6828b855dd7271f484d34d9f87889971c1b94e7dd3f6",
+      "size_bytes": 28761
+    },
+    "data/cohorts/itad/cache/2244570.json": {
+      "sha256": "bb22fa773e28da5476a658ffb20b6f89029a0ad1eef1b550a2a8879ffd73c706",
+      "size_bytes": 31299
+    },
+    "data/cohorts/itad/cache/2245490.json": {
+      "sha256": "18fcba4c5ba922f78c00c0fe460b5edc990d0760da2376cf32ae033735368951",
+      "size_bytes": 10229
+    },
+    "data/cohorts/itad/cache/2248020.json": {
+      "sha256": "2bd5de8f10a8aeecd6603cf6fa2b0aaac4e736774ff55620c852f61b6cfc6e87",
+      "size_bytes": 3253
+    },
+    "data/cohorts/itad/cache/2250840.json": {
+      "sha256": "b94ad1e5e646eea3648d9df47dc59539917ff12a04c7b9a6766edcdc8c539684",
+      "size_bytes": 53123
+    },
+    "data/cohorts/itad/cache/2251570.json": {
+      "sha256": "96a5c7b1d7e69182877397a410da8fdae3ca6d67cf9569747392abe1e2426401",
+      "size_bytes": 9641
+    },
+    "data/cohorts/itad/cache/2255310.json": {
+      "sha256": "074fff7c203c6eb039bf7798e168a0b5ae02eadbf4f4c7600fdb91b27dfd37c1",
+      "size_bytes": 4437
+    },
+    "data/cohorts/itad/cache/2259360.json": {
+      "sha256": "a943ddfd14df98f38e84e4ffb766648dc28518f2a375e76e23eaca93265c814e",
+      "size_bytes": 14749
+    },
+    "data/cohorts/itad/cache/2260650.json": {
+      "sha256": "a091ac56744e7aac593306732b1c86426cf9189b9cc1322f6551057c70ccfa5c",
+      "size_bytes": 10315
+    },
+    "data/cohorts/itad/cache/2265750.json": {
+      "sha256": "486489173bbf4464eaca732bfec1a89f4e059ae135dcdc2573d8daed3ffe7379",
+      "size_bytes": 13439
+    },
+    "data/cohorts/itad/cache/2267170.json": {
+      "sha256": "f08f5b89be0026ba96c39288302014090c5303a5882df3b7d7bb94956255eaed",
+      "size_bytes": 56257
+    },
+    "data/cohorts/itad/cache/2267860.json": {
+      "sha256": "3f48826aae28b0c076830ff8d84490b7e71afcec8956cff23065f37830061fc3",
+      "size_bytes": 3207
+    },
+    "data/cohorts/itad/cache/227000.json": {
+      "sha256": "a23f1d946a64632d6791f0e9fc04794d3e99dee3397c04a342cb10c8d77bbc53",
+      "size_bytes": 41549
+    },
+    "data/cohorts/itad/cache/2270900.json": {
+      "sha256": "70363d457adb2c26647a908f7d2e1d3793c78095807e311f0af9a38426a85c84",
+      "size_bytes": 6425
+    },
+    "data/cohorts/itad/cache/227760.json": {
+      "sha256": "c7466df645fae10fffbd64f2a8968faffebd6b0ddcb4f929c2ba1fc46cc6f3d0",
+      "size_bytes": 65813
+    },
+    "data/cohorts/itad/cache/2280.json": {
+      "sha256": "a5f8bd33915f7c345da3d5118cb54b6af1b0df02b8eaba877e32b82af5dafc3a",
+      "size_bytes": 53709
+    },
+    "data/cohorts/itad/cache/2287390.json": {
+      "sha256": "e7344c4174920fd5a5a296f8924ae29ffaf0545dd4f26bdd0a5ce86fa137317c",
+      "size_bytes": 47873
+    },
+    "data/cohorts/itad/cache/2290610.json": {
+      "sha256": "853d1ab9e1a76a80fa7d459c21df041cd96ed0c2d2e29922b43806bcb5937a2e",
+      "size_bytes": 12775
+    },
+    "data/cohorts/itad/cache/2291920.json": {
+      "sha256": "ca7e2a68ec6b18090749736d8fbacfe8a8edbe0c38524f46d71e49c8e268baa5",
+      "size_bytes": 3861
+    },
+    "data/cohorts/itad/cache/2303180.json": {
+      "sha256": "b0a911650de6ca492a227e4d6617a1fee8fad395a82e578fb6a9e0a3cbc67009",
+      "size_bytes": 3243
+    },
+    "data/cohorts/itad/cache/2304090.json": {
+      "sha256": "a4a0a07cedd80ea7a76916bfcd2034598e4591fcbeee55da576296a7ecefadd8",
+      "size_bytes": 3239
+    },
+    "data/cohorts/itad/cache/2308890.json": {
+      "sha256": "661a8c4d60cd5a72ca8f60654c5ab69cfb6800c1f77dca0532fc938a80f78b60",
+      "size_bytes": 35163
+    },
+    "data/cohorts/itad/cache/2311020.json": {
+      "sha256": "657ea345a369c183d5a10f2a829cbe484764418f2fd260226698d4d69abc2c84",
+      "size_bytes": 18579
+    },
+    "data/cohorts/itad/cache/2315610.json": {
+      "sha256": "659cb1550f6f2d7213acc9a6a293b59fdddc16f582bab2d36e7e0576f2d89877",
+      "size_bytes": 39337
+    },
+    "data/cohorts/itad/cache/2319830.json": {
+      "sha256": "bb3d1c1992ef713795689014275f5cfa9d4eadbf14355ada5ab40b0bac9e714f",
+      "size_bytes": 50223
+    },
+    "data/cohorts/itad/cache/2324520.json": {
+      "sha256": "4fb3e8d62f6a1e0afec927f9334529cf50c76b541fbf29fe538d349067ec0c8d",
+      "size_bytes": 12177
+    },
+    "data/cohorts/itad/cache/2324730.json": {
+      "sha256": "09e87c4c2a06a460f33b0dfc056c374ca863936e9311289f548f50fb5ebb3b3d",
+      "size_bytes": 28607
+    },
+    "data/cohorts/itad/cache/2330750.json": {
+      "sha256": "9f14aab0e2dcdd833cc90b4d0dbc1f3a85f244c73602e0cf29a5a630f9df74c0",
+      "size_bytes": 10393
+    },
+    "data/cohorts/itad/cache/2332540.json": {
+      "sha256": "5970fe880c4a7054c20eecbeabbe395ace3ef7d82d7f14da2b25c26d0600f65b",
+      "size_bytes": 25711
+    },
+    "data/cohorts/itad/cache/2334390.json": {
+      "sha256": "b777934a530825d8fdde725f376bf12bf6e7faf532c0dd30d1e43f25c58a073a",
+      "size_bytes": 15349
+    },
+    "data/cohorts/itad/cache/233510.json": {
+      "sha256": "3dcda331ac63a9d0b82abb159f4c68da0930aa68d838e71662ebed11c29468fb",
+      "size_bytes": 3867
+    },
+    "data/cohorts/itad/cache/2337140.json": {
+      "sha256": "8d840b728058aee49c5e657ee4a575c3084d6a7b93989bb8e868eb568b319b98",
+      "size_bytes": 56971
+    },
+    "data/cohorts/itad/cache/2337710.json": {
+      "sha256": "3efaca50067b8f8b910c7ec5e1820664f452e5d871860cc2a181671ab8c5bf17",
+      "size_bytes": 3885
+    },
+    "data/cohorts/itad/cache/2339650.json": {
+      "sha256": "d534fb4f82f9086cd1b193d920a21b201a17c48c11f6b095ddd7be37197d6257",
+      "size_bytes": 3371
+    },
+    "data/cohorts/itad/cache/2341530.json": {
+      "sha256": "7db2b2ab4cdc668f02c5209f5d0c04be8ce1e7f54b1276114ffd181ecc70c532",
+      "size_bytes": 3221
+    },
+    "data/cohorts/itad/cache/2342430.json": {
+      "sha256": "3aadea166fb039d385da8ad7ff1f537d0322bc5a76a5875cada10463776afee6",
+      "size_bytes": 3871
+    },
+    "data/cohorts/itad/cache/2344650.json": {
+      "sha256": "11f196c66f97c012e7ff83a6c4dfd01a3dada8072f2a9d0584864b1cf6f5397d",
+      "size_bytes": 22393
+    },
+    "data/cohorts/itad/cache/2354450.json": {
+      "sha256": "565791a0646a903e2b6d1a140c1c260e315f3632d962e2ba116e8a1e6defd0d2",
+      "size_bytes": 41029
+    },
+    "data/cohorts/itad/cache/2358320.json": {
+      "sha256": "39cabe7e8e9ce3a5c9afda50f5c495ed2e6ca856cde893e7c69a5308d02e5653",
+      "size_bytes": 19095
+    },
+    "data/cohorts/itad/cache/2361100.json": {
+      "sha256": "830d2f47ebd4d5128a0a6f5bc8c0d126175ed37148717da3720222e92b0769b3",
+      "size_bytes": 7799
+    },
+    "data/cohorts/itad/cache/2375870.json": {
+      "sha256": "d48dec5bfca288c4dd3f502d2cea0a05c5cd3d2d6bffe5cd08ccd287e7066ce8",
+      "size_bytes": 25593
+    },
+    "data/cohorts/itad/cache/2377120.json": {
+      "sha256": "5fd4a6ce2da7f4900e9b5711abfaaa681f6607629edec8f5d39d6ab1d566237f",
+      "size_bytes": 32389
+    },
+    "data/cohorts/itad/cache/2382350.json": {
+      "sha256": "9db7f1061b8627e03d9ede65eb002bd0634b5c93578af72b8f0b0197711c13aa",
+      "size_bytes": 3885
+    },
+    "data/cohorts/itad/cache/2382470.json": {
+      "sha256": "24ba6c6cc454d3e44645c7925422db6f10130e6a22f451564b9977eb4bce06c5",
+      "size_bytes": 18527
+    },
+    "data/cohorts/itad/cache/2384790.json": {
+      "sha256": "246d517ac634a74f3d01eb48b7c2322eafd3b8429518cf1ab2e74c2d50004881",
+      "size_bytes": 53083
+    },
+    "data/cohorts/itad/cache/2385280.json": {
+      "sha256": "a8e891fe48186f25d00c19f437cd38318185fe03a68b65d75e38c4f40aa0a464",
+      "size_bytes": 52875
+    },
+    "data/cohorts/itad/cache/239250.json": {
+      "sha256": "901c33bfd6a6f6f0cd362c5ba41a057704f90c0349cfaac98fc2f68a0f05f093",
+      "size_bytes": 56181
+    },
+    "data/cohorts/itad/cache/2392730.json": {
+      "sha256": "66792563068896bcb3e07bd08bf17902765209bd9db564b327e7d5534cb17a3b",
+      "size_bytes": 31367
+    },
+    "data/cohorts/itad/cache/24043.json": {
+      "sha256": "e232ab862e8cc8679e01c17cab8b9ea53980beb559850886ca07b9246ad5e49f",
+      "size_bytes": 2030
+    },
+    "data/cohorts/itad/cache/2407310.json": {
+      "sha256": "bc15949117e8a6c7244192a4c60abd14f8f7cded3bd6b79b45a9e2ea1debc173",
+      "size_bytes": 46681
+    },
+    "data/cohorts/itad/cache/2410970.json": {
+      "sha256": "fa70815b2a1530647992306ca69d053ea78b745c7a7235a2f37ade87a72604fd",
+      "size_bytes": 46517
+    },
+    "data/cohorts/itad/cache/2411390.json": {
+      "sha256": "87169ef055c24be296a459047b76685b047f963f600386b94974f366082e5029",
+      "size_bytes": 18625
+    },
+    "data/cohorts/itad/cache/2422110.json": {
+      "sha256": "121db85f70d7c4d212386552ddfd668a485f94043e1f5e635f7dc75bc2b97047",
+      "size_bytes": 15511
+    },
+    "data/cohorts/itad/cache/2424660.json": {
+      "sha256": "22f75aacd6592e4c36a16aee3a3d3e444c9c5740b641fa837339fcb4c0aa41bd",
+      "size_bytes": 3273
+    },
+    "data/cohorts/itad/cache/2436400.json": {
+      "sha256": "2cc2556469404c0b52576d153c4295ce54dbeab4d6aa093a235eb81d36025544",
+      "size_bytes": 12879
+    },
+    "data/cohorts/itad/cache/2442770.json": {
+      "sha256": "560c378fd3462e902330a87401617861c34e5f5c5dc825d9fb6361669a27cf73",
+      "size_bytes": 22419
+    },
+    "data/cohorts/itad/cache/2443410.json": {
+      "sha256": "93dec36027e8b7a09adc1cb3cbde1dba37601fe32d3959e013bad5ee53a5a83b",
+      "size_bytes": 42207
+    },
+    "data/cohorts/itad/cache/2461040.json": {
+      "sha256": "3c5bd3107c91f1dcb67a166655cc473e1763190b2de822b57e8b54eaab45c6a5",
+      "size_bytes": 21123
+    },
+    "data/cohorts/itad/cache/2463920.json": {
+      "sha256": "5a3fc13c9905317627d1f955885eb638249fa403235720304c6b63faabece1f3",
+      "size_bytes": 38353
+    },
+    "data/cohorts/itad/cache/2464220.json": {
+      "sha256": "5637704b1e0ced772735c1ddbed8dd69b167e1890b04fcbeb284071882d84c0c",
+      "size_bytes": 7079
+    },
+    "data/cohorts/itad/cache/2469240.json": {
+      "sha256": "dd78d608995cbd8a005c7e89341d0bc73da3c41d79c8d983c4567838ffd1d553",
+      "size_bytes": 21775
+    },
+    "data/cohorts/itad/cache/2471170.json": {
+      "sha256": "84b5ff1bcdd8b0424ce87ebf33c2fc72aad1b70191be711368397737a401db1a",
+      "size_bytes": 26285
+    },
+    "data/cohorts/itad/cache/24720.json": {
+      "sha256": "fd742b776d52ab852b378c89ba0629b9512725cdc55a8239d5ca5a00d5a8649f",
+      "size_bytes": 61323
+    },
+    "data/cohorts/itad/cache/2473240.json": {
+      "sha256": "c60de5d950bf7635e8d58b3d4589bf1048e7d8e7b8bd1d9cb5aa8d718fc906ce",
+      "size_bytes": 48647
+    },
+    "data/cohorts/itad/cache/2479230.json": {
+      "sha256": "7ee677bff145c19ebfd2d397fa304e739b130453ebd13b60bb63e195db90a641",
+      "size_bytes": 3221
+    },
+    "data/cohorts/itad/cache/2481520.json": {
+      "sha256": "23ca8a9fb5390915cbfca8896ec548ee3b0f31bf0e2df868189ded9210bca92d",
+      "size_bytes": 8383
+    },
+    "data/cohorts/itad/cache/2483150.json": {
+      "sha256": "e0fe8efab5fa41426fb43d4338ac980546d3d679bb1cee31d0553536834772e0",
+      "size_bytes": 35223
+    },
+    "data/cohorts/itad/cache/248530.json": {
+      "sha256": "51c86e3bb204c249f4b476004a40a86dc9fa776017cb2464290c16442e3ce83d",
+      "size_bytes": 4561
+    },
+    "data/cohorts/itad/cache/2488050.json": {
+      "sha256": "0edca9d93491bb38bb82cd3fb74ba721dc116f15a62b1dfb61819d046b127669",
+      "size_bytes": 35333
+    },
+    "data/cohorts/itad/cache/2491820.json": {
+      "sha256": "0bf910f974d46ec835875d9651a55c0df6be9d7492a69e1e0f4c6be89da3afbb",
+      "size_bytes": 3241
+    },
+    "data/cohorts/itad/cache/2494860.json": {
+      "sha256": "fac9b480ce9b9b64d3a0a611482ba8340e8ac9631435f39571bfc9b0cce9c6ce",
+      "size_bytes": 20771
+    },
+    "data/cohorts/itad/cache/2505580.json": {
+      "sha256": "cb65e836a1148887afc9901d9d81f18986a7c595ed442715f088dd6bf77bbf7e",
+      "size_bytes": 30989
+    },
+    "data/cohorts/itad/cache/2510770.json": {
+      "sha256": "67f6a58fa12bb14a4bb0e0c1a7cae434b67dd01fcef5615fd9c88bb747aa0d69",
+      "size_bytes": 29079
+    },
+    "data/cohorts/itad/cache/2514850.json": {
+      "sha256": "f7a7f61a4a81f715b4ab4f111a4267ea123379c130584acbe23f14c813243cea",
+      "size_bytes": 44825
+    },
+    "data/cohorts/itad/cache/2526410.json": {
+      "sha256": "d1236d8a93327219bf6a946875d1452c011acc6705d8ca83a9c92114dc8c94af",
+      "size_bytes": 49135
+    },
+    "data/cohorts/itad/cache/2527420.json": {
+      "sha256": "2267d32ba89f7f332a512744ae27e917ad437b7f0e436ecd0be9405b0cb56a91",
+      "size_bytes": 29489
+    },
+    "data/cohorts/itad/cache/2531460.json": {
+      "sha256": "cf9ee6c8179c4e8d578a06f2d4f228df09c127f7503e8777a0794dfe3382708b",
+      "size_bytes": 3845
+    },
+    "data/cohorts/itad/cache/253350.json": {
+      "sha256": "0d95951b9ee921be1d7bfbe5dfb5c4087c8abe0dd9b26044e25428648011c9fa",
+      "size_bytes": 35539
+    },
+    "data/cohorts/itad/cache/254100.json": {
+      "sha256": "0da4930388377488a13da0d132b241e3f84533620df1f6326952596148b157cd",
+      "size_bytes": 88259
+    },
+    "data/cohorts/itad/cache/2541470.json": {
+      "sha256": "6577839c69cb63abf64783525ab6a740c1bf0de77e34336b7e3133db5861671d",
+      "size_bytes": 3501
+    },
+    "data/cohorts/itad/cache/2543630.json": {
+      "sha256": "3124733fa7bdcfc9eb727c68c1ff838343f74b4d141037d412fe80ed31e5a7b1",
+      "size_bytes": 47925
+    },
+    "data/cohorts/itad/cache/2556810.json": {
+      "sha256": "9cce3f82f22da401192cc12b34599bbea1ba965a24c06e90edfdf0e1d77ebe9e",
+      "size_bytes": 11519
+    },
+    "data/cohorts/itad/cache/255960.json": {
+      "sha256": "950048c3ce18b114e744c3a07372b490b1514c7e30d7aaf63ec509865575aea1",
+      "size_bytes": 53679
+    },
+    "data/cohorts/itad/cache/2588190.json": {
+      "sha256": "3f9b2f9971e342b0d14c1db6dfaed3ff1df8d6517449f9042b4b01d38298150e",
+      "size_bytes": 36453
+    },
+    "data/cohorts/itad/cache/2590580.json": {
+      "sha256": "4bf90890a35ecfcfea512160865c2823239f0607d9fffd6cdd560046e41928b1",
+      "size_bytes": 47053
+    },
+    "data/cohorts/itad/cache/2608260.json": {
+      "sha256": "275da3a7df1d4673961dd6f9038c3d72be6ec49f8266df99254bb8e8cac82a3f",
+      "size_bytes": 6473
+    },
+    "data/cohorts/itad/cache/2611780.json": {
+      "sha256": "f95958ac4190ba67b16298a0e5b418e3a28bd268d8107f995778b752a04137b3",
+      "size_bytes": 45787
+    },
+    "data/cohorts/itad/cache/2615200.json": {
+      "sha256": "f6d41445d1101fb40004d92c4944b483bdb477a88b72751d6508cf41001c80c5",
+      "size_bytes": 32087
+    },
+    "data/cohorts/itad/cache/2625300.json": {
+      "sha256": "d4c4879163a7c0a559bc25afd72f55c331c512a4b1863a933af920c0e7ee4942",
+      "size_bytes": 40981
+    },
+    "data/cohorts/itad/cache/2630860.json": {
+      "sha256": "8f283559970ded8bfe2c43dd470bcbae2e21624a251f149fbf6f0df7d62db0ff",
+      "size_bytes": 14081
+    },
+    "data/cohorts/itad/cache/2642780.json": {
+      "sha256": "416d316d3001c1258c207559879b9487cfa7c8d6cc2a77d672a4e995d9031b30",
+      "size_bytes": 5177
+    },
+    "data/cohorts/itad/cache/2654520.json": {
+      "sha256": "7a1aad84fd952bade4ab3465894f35d389893f5132ae49962be0ab92b01469eb",
+      "size_bytes": 21157
+    },
+    "data/cohorts/itad/cache/265950.json": {
+      "sha256": "137ff7188a3b9fcad216e4c8ca4af767735c8a1d68d6109d4c9da1e6e6887a89",
+      "size_bytes": 34193
+    },
+    "data/cohorts/itad/cache/268870.json": {
+      "sha256": "e0ebe2c53835ac0724ba7eddd36e95a8f0d5de0dccef93255860ce1932f244a2",
+      "size_bytes": 5817
+    },
+    "data/cohorts/itad/cache/269330.json": {
+      "sha256": "d0400d3d511f444ea10a125eed166fd026345a515942eb2fb5fb16357e7a7e0a",
+      "size_bytes": 86811
+    },
+    "data/cohorts/itad/cache/271500.json": {
+      "sha256": "f32b7c560c286477885ced370a78fccefb2b020e97f13f3d3e6f01f49ef1e162",
+      "size_bytes": 66487
+    },
+    "data/cohorts/itad/cache/274560.json": {
+      "sha256": "b10a5282535a8340c1349233affd9bfd0ece968dd9cdea800e2225be41ebffed",
+      "size_bytes": 36457
+    },
+    "data/cohorts/itad/cache/283960.json": {
+      "sha256": "530ba404202611e40fb9fa1a544c459d9fd45f9f1126eaff3d85a2bfe0d3e2bd",
+      "size_bytes": 39153
+    },
+    "data/cohorts/itad/cache/286240.json": {
+      "sha256": "748b7680ef682142b1212e0e815fdb6a4cef19924a8d4fc93cb1a914606a9832",
+      "size_bytes": 37731
+    },
+    "data/cohorts/itad/cache/289300.json": {
+      "sha256": "a1cf33dd59687d3015adeb14f54119e20fbc190072eacec2c89cd6789c4f9d88",
+      "size_bytes": 46605
+    },
+    "data/cohorts/itad/cache/291030.json": {
+      "sha256": "92475d2845ae7559340b975f4d9640f5c7fb40845cf01974c2b3cf5c36fdd20f",
+      "size_bytes": 65189
+    },
+    "data/cohorts/itad/cache/291840.json": {
+      "sha256": "5417f52636fee247da42e0288608df509e9264abbb5048e479f4912c1a62a3d1",
+      "size_bytes": 5861
+    },
+    "data/cohorts/itad/cache/292380.json": {
+      "sha256": "857b54ea073e80aa93ee23559d59d6cd508b176265bd3aa8007aa0a5bb1b78b9",
+      "size_bytes": 12775
+    },
+    "data/cohorts/itad/cache/292840.json": {
+      "sha256": "50f8f4d8c85205296fb5f88f5290addf08f7d7e71c8f31a26c044116a9b236bb",
+      "size_bytes": 40325
+    },
+    "data/cohorts/itad/cache/294140.json": {
+      "sha256": "e26361d0ec6b3b4afa6aa769ee35511133638b619b37f9d2a5bcffa96ff67d41",
+      "size_bytes": 38949
+    },
+    "data/cohorts/itad/cache/295650.json": {
+      "sha256": "9c5152a1793b365a35c1c81a7e349aeed45bfac30502731a7b0935e5d26029ac",
+      "size_bytes": 61039
+    },
+    "data/cohorts/itad/cache/296180.json": {
+      "sha256": "d1bde513110e3db2eb4163eee1a86dd7d073f1184a0d81aa0c86f3a4f76877e0",
+      "size_bytes": 70865
+    },
+    "data/cohorts/itad/cache/299180.json": {
+      "sha256": "985fa1288b249c36268cfbaef0a797d635f2bce98ac6cbe616b4e321d88ed542",
+      "size_bytes": 59391
+    },
+    "data/cohorts/itad/cache/300630.json": {
+      "sha256": "a9b99d79e0cb48b5b78c96c740345a58b81da3a081c2c75c82c56e981785abf9",
+      "size_bytes": 5873
+    },
+    "data/cohorts/itad/cache/302460.json": {
+      "sha256": "3a5e17524a67b9b3cac65928915249221e2601f4e03ed7f5c8340b7f85bc3ae6",
+      "size_bytes": 4547
+    },
+    "data/cohorts/itad/cache/302510.json": {
+      "sha256": "17eafc835403f6af7d6c2ceeef0babc4449c38e7840a270345ce20c963692d6a",
+      "size_bytes": 72897
+    },
+    "data/cohorts/itad/cache/302910.json": {
+      "sha256": "8b63e024667fff2a029c420f9ab4ed6abfcfd8f25ed747f8fea0503877596b23",
+      "size_bytes": 11507
+    },
+    "data/cohorts/itad/cache/306670.json": {
+      "sha256": "e8c9f65a8b4af2ee7437cba0445af1977369405fbe2dffe4c0286fb42468eec0",
+      "size_bytes": 49289
+    },
+    "data/cohorts/itad/cache/306680.json": {
+      "sha256": "4b5e2ded23b0494b90771186b730e06c168906aa291b51dc78770069fa8a2bc0",
+      "size_bytes": 49157
+    },
+    "data/cohorts/itad/cache/311560.json": {
+      "sha256": "f507c5c1d74cae7302a75e9bf1f2f872313028ce56e0f679f8e2d4f609419f85",
+      "size_bytes": 70339
+    },
+    "data/cohorts/itad/cache/314500.json": {
+      "sha256": "5071dad4cb7f2869bbcaf24b031d74d899535fd09f332b2bf30d27111420b220",
+      "size_bytes": 8375
+    },
+    "data/cohorts/itad/cache/317950.json": {
+      "sha256": "00ed7e6e46da739813e85873524e747cf9aac1ee14a568db5a8a45179f77ef47",
+      "size_bytes": 3895
+    },
+    "data/cohorts/itad/cache/320970.json": {
+      "sha256": "3f3c4178ddc3b39165713e4536822d323c4827a83076557c3c99987323c34919",
+      "size_bytes": 3919
+    },
+    "data/cohorts/itad/cache/322970.json": {
+      "sha256": "20519ac66aa5e81fa2479f96975579f108672c68020a5b77c0358218e0f2060b",
+      "size_bytes": 70247
+    },
+    "data/cohorts/itad/cache/323680.json": {
+      "sha256": "4dd7bf30064ae4c596f09f7f203e2076a558b9961819c7adb28c4fa628abe1d1",
+      "size_bytes": 3851
+    },
+    "data/cohorts/itad/cache/32370.json": {
+      "sha256": "f48ed8024b01d154d0b190d29d5668232a0b5303df62d2b5472621f2de9907ca",
+      "size_bytes": 41661
+    },
+    "data/cohorts/itad/cache/324160.json": {
+      "sha256": "6e178a5b0ff628808ed15f4836420b38c2fec18d8031e86cb10c04cc201b4012",
+      "size_bytes": 54961
+    },
+    "data/cohorts/itad/cache/331190.json": {
+      "sha256": "00f5b5fd5bad1c0bbc52063ed769f9fd6e5ebc6fbf00334f1e7d16e5c75531b0",
+      "size_bytes": 86791
+    },
+    "data/cohorts/itad/cache/331600.json": {
+      "sha256": "78037d3d208a24df57ccc2bd03c6be1326f974ccfdee30896dca27a023a85da6",
+      "size_bytes": 61331
+    },
+    "data/cohorts/itad/cache/334310.json": {
+      "sha256": "6e7b4a39a9b39baa52c8a6bbcc12dbace322d669e8299476b3c608708ddf78ce",
+      "size_bytes": 72955
+    },
+    "data/cohorts/itad/cache/335210.json": {
+      "sha256": "0bcbb786eaba176177f8c8b493f56da17328ee2e5cf34b0a7df9dcf2ef47e872",
+      "size_bytes": 77719
+    },
+    "data/cohorts/itad/cache/338530.json": {
+      "sha256": "35ef14d6c3f138446163a92cfb2b9e1efcfc01f3f6fdd88c7345c6617d22bbe9",
+      "size_bytes": 7063
+    },
+    "data/cohorts/itad/cache/340220.json": {
+      "sha256": "9d243cb4b649bf5bdddc746f6b8998e30849b145dce41d689176275acaeac109",
+      "size_bytes": 14715
+    },
+    "data/cohorts/itad/cache/340730.json": {
+      "sha256": "62b8ef10cd29e9e57551f82d59cf737fe96dc7d2cae2ef5d4c5f4064f5f5ac97",
+      "size_bytes": 68415
+    },
+    "data/cohorts/itad/cache/343570.json": {
+      "sha256": "22702d13035b477b92317de156841918d893b5635d9ce0b63f4e4751ba796e42",
+      "size_bytes": 3859
+    },
+    "data/cohorts/itad/cache/344340.json": {
+      "sha256": "75a1f6ed01f9dc8de6fa8ee7bdb699df4949377d714419cb2b143628dcd9447b",
+      "size_bytes": 9751
+    },
+    "data/cohorts/itad/cache/344770.json": {
+      "sha256": "6240f7f9578f174580596965d19eaabc90cf4bd361d3eebd72f8f39dddc5c740",
+      "size_bytes": 68441
+    },
+    "data/cohorts/itad/cache/347260.json": {
+      "sha256": "76dcb9b2511f1c609d28908f55223f16ddb351a3cd67a22781232709ae02e9d8",
+      "size_bytes": 62637
+    },
+    "data/cohorts/itad/cache/347580.json": {
+      "sha256": "fb59f0c3ae3b70094fe80d30da6b970f47b303941c13d58bdc95dbbf3555ab77",
+      "size_bytes": 3949
+    },
+    "data/cohorts/itad/cache/348000.json": {
+      "sha256": "64a29fa7a98adc299256d6c08b5b07201e2755b54e08180b64dcf6b6fec921b1",
+      "size_bytes": 3839
+    },
+    "data/cohorts/itad/cache/350140.json": {
+      "sha256": "2b4a6da282de9c5686ca7d83419468a400eae56b35de38660f04e29a05edd705",
+      "size_bytes": 16635
+    },
+    "data/cohorts/itad/cache/35140.json": {
+      "sha256": "900ba8ff8521898f6004c14b6174c4679eb787cec770c961843d12f9a468d532",
+      "size_bytes": 67853
+    },
+    "data/cohorts/itad/cache/355650.json": {
+      "sha256": "8b98969cdcd8e20642d2efe9c068d6f03de78b933b000a30e87720c5be7a3389",
+      "size_bytes": 72229
+    },
+    "data/cohorts/itad/cache/357030.json": {
+      "sha256": "149e1ed4db07f0661606b35c2f6e1e175144848384a86aa9ab0dd1d5b5638b57",
+      "size_bytes": 40619
+    },
+    "data/cohorts/itad/cache/3580.json": {
+      "sha256": "f8defde0ed282451258ef60824e89f5d18c3dd776a4cc71125895220e0ab7245",
+      "size_bytes": 38729
+    },
+    "data/cohorts/itad/cache/359310.json": {
+      "sha256": "44443b1671141968733c1c7ec7c193185643b020239bb485bff4b262c62e2a76",
+      "size_bytes": 37395
+    },
+    "data/cohorts/itad/cache/359420.json": {
+      "sha256": "d2ecd52427fc74ee85ee8ffc91410cc1da283e8e912b0afadc0e36c09322d576",
+      "size_bytes": 3965
+    },
+    "data/cohorts/itad/cache/362870.json": {
+      "sha256": "8451707728afb4955f5e84b0295b4a0adaca3d9e0cb4caa232830d72f0d60fd8",
+      "size_bytes": 78693
+    },
+    "data/cohorts/itad/cache/362940.json": {
+      "sha256": "e3cf6b9f0e51f700e1eec925bfcca1dde9bea4f50ec7d8b96d530b0f42809359",
+      "size_bytes": 21827
+    },
+    "data/cohorts/itad/cache/366270.json": {
+      "sha256": "757c514df81a294a73d09716e2f84736f7f3ced5ef93e31386ffa4c377dafb8a",
+      "size_bytes": 44125
+    },
+    "data/cohorts/itad/cache/366620.json": {
+      "sha256": "10f40193396b1513886fe9b1d915640937a9d1712390f5fe16c10930b9fce593",
+      "size_bytes": 7689
+    },
+    "data/cohorts/itad/cache/368370.json": {
+      "sha256": "340af53dbb4909bfd207d7118a86e8dd6521b3f523a148e7474cd06f4550d7f0",
+      "size_bytes": 76037
+    },
+    "data/cohorts/itad/cache/370460.json": {
+      "sha256": "3af6c25d989d34a0149dfd13350b69f82c9203274ebbb458ee75f6859721c25a",
+      "size_bytes": 44555
+    },
+    "data/cohorts/itad/cache/371550.json": {
+      "sha256": "cb79c9a8eeab8bcbbd1b78880bdf550a2d2fc4b1ebe825ad959e000329e6198e",
+      "size_bytes": 72223
+    },
+    "data/cohorts/itad/cache/373810.json": {
+      "sha256": "ef63f32080cdbf54f86d08c977f4f80f942918254a0851723c1d724e4c46f889",
+      "size_bytes": 51119
+    },
+    "data/cohorts/itad/cache/375290.json": {
+      "sha256": "7c1aaadbf1411252f52be3eae4b608260927bad1ad23aee9c7aac96fe62fd313",
+      "size_bytes": 30013
+    },
+    "data/cohorts/itad/cache/3800.json": {
+      "sha256": "60c8ac4aaca8618d2495df8d4f596b47a3f63682c9eb2a7d7b5cc6a1354063a2",
+      "size_bytes": 46673
+    },
+    "data/cohorts/itad/cache/381140.json": {
+      "sha256": "2a970ef75be4a66ea949f8be38b5a73aac8bed0c007c8d8b1a569bea5e8cb5be",
+      "size_bytes": 5121
+    },
+    "data/cohorts/itad/cache/381800.json": {
+      "sha256": "df1085f98d1e79b7b9643b4b3a0943a91d6783437503a60821e2a5be2844a42e",
+      "size_bytes": 3843
+    },
+    "data/cohorts/itad/cache/385270.json": {
+      "sha256": "45206979fc41b2e438d56674a018921e186234fee8c8a0f9fe84a6b91b5f5a9a",
+      "size_bytes": 3965
+    },
+    "data/cohorts/itad/cache/386880.json": {
+      "sha256": "c311150d2d6bd2c7b1d61b846b96cbee0e2b430cd50e13b16d4bb2ea15d37258",
+      "size_bytes": 7023
+    },
+    "data/cohorts/itad/cache/390200.json": {
+      "sha256": "d1a48e22b8972399470236dbff6bef8efdb2c8130020c1f8c8d9671ba4039893",
+      "size_bytes": 59141
+    },
+    "data/cohorts/itad/cache/395550.json": {
+      "sha256": "80dbd6893cac1121e021e484736206d914f3ccc191045460795d3f7de13eb01f",
+      "size_bytes": 22415
+    },
+    "data/cohorts/itad/cache/398960.json": {
+      "sha256": "e093a68e66887e9b12276e0f57f82a48fc93ec974cf70adc4f9c19418d28aaa6",
+      "size_bytes": 3899
+    },
+    "data/cohorts/itad/cache/399640.json": {
+      "sha256": "5b97c020695b1fa24d30df6fc73103e5081ac6b47b517c9cbec55472eab68c4d",
+      "size_bytes": 33875
+    },
+    "data/cohorts/itad/cache/404170.json": {
+      "sha256": "5f9b9f7379ed66206cb6de29e72839da17a273bd3a6ddb6de7fa1bd6e9e66416",
+      "size_bytes": 57811
+    },
+    "data/cohorts/itad/cache/404680.json": {
+      "sha256": "ae53834fbce43a3a6cafba5bb84ae9b725e74e33d484e91a0f53b547bee7c90b",
+      "size_bytes": 63815
+    },
+    "data/cohorts/itad/cache/409040.json": {
+      "sha256": "95c18cdb8fbe997ec88a3b92c772aa138260ebb61f903e2a049ca1b7353a3cbd",
+      "size_bytes": 79195
+    },
+    "data/cohorts/itad/cache/40950.json": {
+      "sha256": "02ab6d66c16126fb5fcf71ac9323117c845aae38df0c38152069869db4c111b3",
+      "size_bytes": 81181
+    },
+    "data/cohorts/itad/cache/410040.json": {
+      "sha256": "83812474b7f14b919ccafe332302e4171d582285fedff878c2d63851361c0a19",
+      "size_bytes": 3859
+    },
+    "data/cohorts/itad/cache/410890.json": {
+      "sha256": "f0119bea4691f4a708c8fbd5cb3822d438a44ca42dfae2b4e869c20bcd4d3b77",
+      "size_bytes": 53195
+    },
+    "data/cohorts/itad/cache/410910.json": {
+      "sha256": "1c1b30a6774e32ab9483bc8c9b9830a03a22fca8c92d736efa40a0330d5e61eb",
+      "size_bytes": 35869
+    },
+    "data/cohorts/itad/cache/41400.json": {
+      "sha256": "b0f053b1659d5ba4b98e0a12f0ee680a4c76a1cc2d0e2018dbde3a6225749962",
+      "size_bytes": 3603
+    },
+    "data/cohorts/itad/cache/414950.json": {
+      "sha256": "d5d7299c789bafacec664445591719c764d575d126a0262dcb4e808653b2e6e2",
+      "size_bytes": 23861
+    },
+    "data/cohorts/itad/cache/416120.json": {
+      "sha256": "392b9f1df9b7216765e8b17f24957d5c31ce6318367f88675e2ea6d11ab12993",
+      "size_bytes": 20473
+    },
+    "data/cohorts/itad/cache/419020.json": {
+      "sha256": "a8228110eab94114cf2783173637a95cef2d8e51993eb2b04d980b9136d3b068",
+      "size_bytes": 8365
+    },
+    "data/cohorts/itad/cache/420300.json": {
+      "sha256": "43b2775a0ceba6c32717f151b547845047bcd3b27f5bb7aa38677f7f215dbc43",
+      "size_bytes": 5123
+    },
+    "data/cohorts/itad/cache/420330.json": {
+      "sha256": "1e66b8e8a7019bbecda22f8d1730635352239f5a9cfc53019ea5830b139ade19",
+      "size_bytes": 14713
+    },
+    "data/cohorts/itad/cache/421810.json": {
+      "sha256": "4bd5c563150322e7c3d4bbdd4656f68b960ce52fa5d98ad25fed226a933b4f5d",
+      "size_bytes": 84865
+    },
+    "data/cohorts/itad/cache/425070.json": {
+      "sha256": "79264c6c6de883326374468daf6d32419d7ff77cd566ae791b5db892d43341d9",
+      "size_bytes": 7723
+    },
+    "data/cohorts/itad/cache/427770.json": {
+      "sha256": "ac791f0a0c50399dfe19882b9491e13c54c756a891e14b987d13d2ffbc5ade60",
+      "size_bytes": 3859
+    },
+    "data/cohorts/itad/cache/428950.json": {
+      "sha256": "1e451a3c00f11dbe23a5a43f537c36154bbc13d444933ad4fcd4464f0b8ef59a",
+      "size_bytes": 60019
+    },
+    "data/cohorts/itad/cache/429260.json": {
+      "sha256": "76632d08799637d7546c1d11773ea2a24bdc7da4c803acc66bd2dc35ace7e33a",
+      "size_bytes": 32023
+    },
+    "data/cohorts/itad/cache/430070.json": {
+      "sha256": "82cdfe4dbf00a0b6447e6d39907114c0c04be3725b1fcab54de8e5d92181108f",
+      "size_bytes": 85751
+    },
+    "data/cohorts/itad/cache/431840.json": {
+      "sha256": "1fa42223dfa8678ec797ca0c434453216dc521b1430712df9f9a4b446a8a50bb",
+      "size_bytes": 78487
+    },
+    "data/cohorts/itad/cache/431960.json": {
+      "sha256": "04236f63849fd13120f6e241fb6fbceeb5e6ef9583f1b6930818db9f246467a4",
+      "size_bytes": 16009
+    },
+    "data/cohorts/itad/cache/433650.json": {
+      "sha256": "a1272439410ae1b58700ddd069d1498487c50f59fc1bb672213dc98093daef7e",
+      "size_bytes": 3867
+    },
+    "data/cohorts/itad/cache/436510.json": {
+      "sha256": "bac7abf9942462a389fcc0f222433bdec1ea6c82b7452d1b11eea2d9d7584970",
+      "size_bytes": 3913
+    },
+    "data/cohorts/itad/cache/437920.json": {
+      "sha256": "444fe422d52d1c0f41ab0edebd6b2fa201d326288a4e485ecf477e9a928bf5d7",
+      "size_bytes": 65145
+    },
+    "data/cohorts/itad/cache/439250.json": {
+      "sha256": "14bcf8d0d3ddbe99bc31d7b05385d0e5d4ae5fc18004f085174fbeddcafca8f1",
+      "size_bytes": 84351
+    },
+    "data/cohorts/itad/cache/447290.json": {
+      "sha256": "e4971c3c2065fffb57dd9da48a354dc8c42fe7f60550e0eeadf1ec8bc910e2bc",
+      "size_bytes": 71223
+    },
+    "data/cohorts/itad/cache/448650.json": {
+      "sha256": "ea2b7fe9c2f68a1cdaa779e9a10b8d44faf7fdc66ee85ee777c26c60c03d88b6",
+      "size_bytes": 3851
+    },
+    "data/cohorts/itad/cache/448910.json": {
+      "sha256": "51741df4bcb1931d3e529cf3b2f7caf9edb63a5da42a0b1279e72752021eeca1",
+      "size_bytes": 64573
+    },
+    "data/cohorts/itad/cache/453830.json": {
+      "sha256": "0556458d093f4e41e8c57ab7b5f377d262fa5b8a3072ef60eb67491d3624f02a",
+      "size_bytes": 37507
+    },
+    "data/cohorts/itad/cache/454180.json": {
+      "sha256": "5724deeaba2c58b888d0306bf8c6ca9eed0def30654748c26da455fc50783fb2",
+      "size_bytes": 22379
+    },
+    "data/cohorts/itad/cache/454700.json": {
+      "sha256": "f1d726d69224473eeee3ceaa4e192925595cff623d8685b9559698a3e20605bc",
+      "size_bytes": 5133
+    },
+    "data/cohorts/itad/cache/454870.json": {
+      "sha256": "da69831eaa81e098db21eca4c51361a4e27a285e17a57064e2414d6999a42e41",
+      "size_bytes": 3855
+    },
+    "data/cohorts/itad/cache/456660.json": {
+      "sha256": "52eb4987bf9cacc87dfc0c50727c36e9934a859835d2487695a31b25a66be18e",
+      "size_bytes": 3865
+    },
+    "data/cohorts/itad/cache/457320.json": {
+      "sha256": "73acd44c0c1ccdbe85ec20c0bb4a6c87a18a14226c2623f36c440c9856d73128",
+      "size_bytes": 58043
+    },
+    "data/cohorts/itad/cache/45740.json": {
+      "sha256": "2ee3244cfb37f995ce24cafa12dbfe05e1abeb7b9335d6339c3d1b65c9998db3",
+      "size_bytes": 67732
+    },
+    "data/cohorts/itad/cache/457490.json": {
+      "sha256": "ca82c292fb9550e28bfd0c82fabf03ac35f8e1cfc4e1d0a12b2c283433e941bb",
+      "size_bytes": 7783
+    },
+    "data/cohorts/itad/cache/457710.json": {
+      "sha256": "b1d95045778e5a88156057a8ed32a75b9da3fc5ad9f54db441266c5f5aeeab63",
+      "size_bytes": 50417
+    },
+    "data/cohorts/itad/cache/457770.json": {
+      "sha256": "197795cee6df5f963a725d424172b2015c9fcee5b36a7fdae123bf28562279d5",
+      "size_bytes": 23665
+    },
+    "data/cohorts/itad/cache/458470.json": {
+      "sha256": "c27d230799d8c4848ec263cf27e4369ee305a17952e35f7522ee7fc4e3fa24f6",
+      "size_bytes": 59187
+    },
+    "data/cohorts/itad/cache/459580.json": {
+      "sha256": "a55518f0d9408555d8bec7140bddbb646b818e5ecf9a5c519d84970fc76a225e",
+      "size_bytes": 3847
+    },
+    "data/cohorts/itad/cache/461550.json": {
+      "sha256": "489bbc8377d77ce56dbef84dc2b483a246957c4df811f792a1f4e36768bc9c0b",
+      "size_bytes": 64107
+    },
+    "data/cohorts/itad/cache/461940.json": {
+      "sha256": "2ab98916bf5701e6b74a366e7c03ec0b06d517942327be57124128242af6dce1",
+      "size_bytes": 5815
+    },
+    "data/cohorts/itad/cache/463860.json": {
+      "sha256": "21f9715776fa845038bc68385712d14a814ea9145b7e8e9156f799b33bf42a3e",
+      "size_bytes": 35191
+    },
+    "data/cohorts/itad/cache/46410.json": {
+      "sha256": "4c034eeb8f8ec31c0d56541ced43fec3fb23da050ff2715a5b2806c4f27d8b4a",
+      "size_bytes": 48589
+    },
+    "data/cohorts/itad/cache/465660.json": {
+      "sha256": "d60153997144cf492694f8c16ce9bb18555ea6a6725481f2f92dc4222398b278",
+      "size_bytes": 5213
+    },
+    "data/cohorts/itad/cache/467290.json": {
+      "sha256": "80a6911c31989483e1896c2cb89cedb1b495e052dc8de1b674bab84af9264c3b",
+      "size_bytes": 51131
+    },
+    "data/cohorts/itad/cache/470440.json": {
+      "sha256": "03291696bef9921e76028b66147ab6d50a728c79c2b61aaf4acc2c5d55e7a811",
+      "size_bytes": 9577
+    },
+    "data/cohorts/itad/cache/476510.json": {
+      "sha256": "0691ddfaa272af443a475847830e3289bd29653f579a763c194d7810147e1725",
+      "size_bytes": 88213
+    },
+    "data/cohorts/itad/cache/486180.json": {
+      "sha256": "eb78acc80b2ca2b38fedc48f2c7fa4c94d1211ca832794fef255c55cea0a69e6",
+      "size_bytes": 31343
+    },
+    "data/cohorts/itad/cache/489730.json": {
+      "sha256": "a705c45d18bcd4116334b9c08d6bc04c4defaef5c70ac980143d6fa2442a95a6",
+      "size_bytes": 31803
+    },
+    "data/cohorts/itad/cache/490820.json": {
+      "sha256": "016ad06b5d146e5c7edfb08760541a907fa3d880350ba399f63401e9eb7b6981",
+      "size_bytes": 78783
+    },
+    "data/cohorts/itad/cache/491220.json": {
+      "sha256": "ea335694bcad02c6a44cd20d2bca2e98d2e5519550f50c1e95a5a790e9c0d25d",
+      "size_bytes": 39655
+    },
+    "data/cohorts/itad/cache/493710.json": {
+      "sha256": "d4a392d1b85d4d98e6657fe6fef78e583471ac3b301c0341920747c9c2d94ca4",
+      "size_bytes": 26839
+    },
+    "data/cohorts/itad/cache/497730.json": {
+      "sha256": "f32998f9561caf8ff405e9c531a665e33254c79eeb7916d5da9e23a042006c6f",
+      "size_bytes": 69099
+    },
+    "data/cohorts/itad/cache/499520.json": {
+      "sha256": "0496a7977e73b579cb13833116684a464f7d2c7bf0b5c54902fe68d22860c9d9",
+      "size_bytes": 30981
+    },
+    "data/cohorts/itad/cache/504420.json": {
+      "sha256": "9e034180eeaa7e3ca800bb93a95329449c50afc468dff7c818c04a2c69fa141c",
+      "size_bytes": 5177
+    },
+    "data/cohorts/itad/cache/506550.json": {
+      "sha256": "029dc15b707d39d1a20d3b6ff2d4cf1f0ab134c90668a7160364192ebb4bc0b6",
+      "size_bytes": 3855
+    },
+    "data/cohorts/itad/cache/508680.json": {
+      "sha256": "37fca2efb0f4a3a9dbe15e5226fdd7cf8df281368269894f211a0a5853f4e62b",
+      "size_bytes": 3847
+    },
+    "data/cohorts/itad/cache/511660.json": {
+      "sha256": "7f38c2bd5088761f2fc33e6af924b80e012192fd5cb026b742aa9a63ba167148",
+      "size_bytes": 5139
+    },
+    "data/cohorts/itad/cache/513880.json": {
+      "sha256": "8477baaa91412b51ac2fea944e553edcd247c302353ea5e5d3aa68bbbbd477fd",
+      "size_bytes": 82341
+    },
+    "data/cohorts/itad/cache/514200.json": {
+      "sha256": "269bf159e0c832c37c37d7348c2608d36c0fcf66cfdcac0d92ba18a33d8b08b7",
+      "size_bytes": 3891
+    },
+    "data/cohorts/itad/cache/514990.json": {
+      "sha256": "f8814e1012d7721a00103714209b2375e5d786b9e4b469fc0b956b44c44e6ccb",
+      "size_bytes": 87529
+    },
+    "data/cohorts/itad/cache/517790.json": {
+      "sha256": "e463dabb278c1bf1b5adbc4e7505ff98e46f4c366b9b78f1af71de7086ba71a7",
+      "size_bytes": 68383
+    },
+    "data/cohorts/itad/cache/522900.json": {
+      "sha256": "d006ab6a65fd53e3529efe711738abb805769b9f0c386a114acb4bc086784ca6",
+      "size_bytes": 27535
+    },
+    "data/cohorts/itad/cache/523410.json": {
+      "sha256": "df26bbef31865af921e5018b6c4d55c5a5ee605026f2a8ef075c2e6988e228b4",
+      "size_bytes": 36445
+    },
+    "data/cohorts/itad/cache/525050.json": {
+      "sha256": "c087517876ecc0081d4b4b2e1b7c87e46f8f0419fee09ee9c5209429c8ce2863",
+      "size_bytes": 3909
+    },
+    "data/cohorts/itad/cache/525740.json": {
+      "sha256": "58fc8fd7e54a3571f3b0a503a3339128a7d9cc276aa70da7221d53491a3e6082",
+      "size_bytes": 4495
+    },
+    "data/cohorts/itad/cache/533170.json": {
+      "sha256": "610eee0ce7454af56d86591a7ec8b35c50fe01214b41c54df1ec70532eee1f74",
+      "size_bytes": 37739
+    },
+    "data/cohorts/itad/cache/534370.json": {
+      "sha256": "c1164a2b5850076e30b92ab2ef4414da2a1facabbd34bcaaf768a7b9337c13a1",
+      "size_bytes": 8401
+    },
+    "data/cohorts/itad/cache/538410.json": {
+      "sha256": "8b92a12f131e114c5d3d8d60da8eb8db8e45ede292c94ca6812c8314f62d957f",
+      "size_bytes": 3863
+    },
+    "data/cohorts/itad/cache/539400.json": {
+      "sha256": "33b775cc21de8e2dd4b8d1ed0c4eaf2b7aa57ae7629a664db13f9d5409a86baa",
+      "size_bytes": 84501
+    },
+    "data/cohorts/itad/cache/540180.json": {
+      "sha256": "d28ae8b451e85ff23d8212d440ea14c426f4d4a6a96a93a15444137fbf660281",
+      "size_bytes": 3847
+    },
+    "data/cohorts/itad/cache/543300.json": {
+      "sha256": "016320986546b7363d7cb6249b8ae5d208e0f910133d16473da9a2cef36202ac",
+      "size_bytes": 3883
+    },
+    "data/cohorts/itad/cache/550450.json": {
+      "sha256": "961562a1a7821fe88ec1228282aa95f64012618b983de6e4c25990587e1b30ef",
+      "size_bytes": 31357
+    },
+    "data/cohorts/itad/cache/551330.json": {
+      "sha256": "7b2fa7e029278ad5dd0dca27ff770814e58b31758186a376b4adef73256fc237",
+      "size_bytes": 33469
+    },
+    "data/cohorts/itad/cache/553530.json": {
+      "sha256": "c2a383d5c5f2fb5a69d8efb04fd017a91e35e89f273295643f9fd5afef9a0cb1",
+      "size_bytes": 3855
+    },
+    "data/cohorts/itad/cache/555320.json": {
+      "sha256": "f9a9ad8e0d21f09fe76718ad31b26cf3bb89e08c935f6dca2094ca298869be6d",
+      "size_bytes": 90119
+    },
+    "data/cohorts/itad/cache/556050.json": {
+      "sha256": "f558e85164996233b397ea23e7cbc221779569474b1d2bdf0166860857043a68",
+      "size_bytes": 63193
+    },
+    "data/cohorts/itad/cache/556770.json": {
+      "sha256": "514b541af4934f27e2eed3d1d3f1595dec85144181257d9d4a9ef3e954c9483f",
+      "size_bytes": 3859
+    },
+    "data/cohorts/itad/cache/557790.json": {
+      "sha256": "db4078a9fe7fe84b63a8b94be9048b30a9614c24067b27d4e97523ff22a91b69",
+      "size_bytes": 3867
+    },
+    "data/cohorts/itad/cache/559300.json": {
+      "sha256": "f37b38edd9e329ddb83c56bf0182faf5522aeb611edf8577293458a9b9ffb38d",
+      "size_bytes": 3965
+    },
+    "data/cohorts/itad/cache/560220.json": {
+      "sha256": "36fcd9ab2c18487bfbe80ab4c4b718bb6ec920f9b5821e43f6148245be6fd787",
+      "size_bytes": 3907
+    },
+    "data/cohorts/itad/cache/562480.json": {
+      "sha256": "93c49fed79cc9f0a7802423e9bc6c1df82d766e38d44340db0c040560b0547c1",
+      "size_bytes": 58931
+    },
+    "data/cohorts/itad/cache/567130.json": {
+      "sha256": "fca98c7a62fee7a316790dc0c5ea85f4c23baca0e5d6a6935090371c7300d58b",
+      "size_bytes": 54327
+    },
+    "data/cohorts/itad/cache/567430.json": {
+      "sha256": "040fa3cf2d86eeb1c3e4de7743ba754ae8419308cbca6af2d9c731ea96629049",
+      "size_bytes": 3859
+    },
+    "data/cohorts/itad/cache/568070.json": {
+      "sha256": "88b75d7035337c32e07926516e89081423598202c49f5bc8ff209653e5b2fc8f",
+      "size_bytes": 78061
+    },
+    "data/cohorts/itad/cache/570060.json": {
+      "sha256": "2438de096344e9560b1e213181992c509987f1ae95d1a598dfd44980177fc256",
+      "size_bytes": 3839
+    },
+    "data/cohorts/itad/cache/572630.json": {
+      "sha256": "74c162c5f89e51cb010425afd132e2e48dc82b989bb682420c0f3b4e07e27a20",
+      "size_bytes": 26485
+    },
+    "data/cohorts/itad/cache/580520.json": {
+      "sha256": "c4687acdd1a06f2a2637a757619327b9e4c59a38548b52ef9092c8bed58cfded",
+      "size_bytes": 14835
+    },
+    "data/cohorts/itad/cache/581340.json": {
+      "sha256": "e8856cc60e0397c3d1be47cc6532a9d52321cd2795f9d80556f66b253e7716e8",
+      "size_bytes": 51717
+    },
+    "data/cohorts/itad/cache/593700.json": {
+      "sha256": "c636492d0c31f9570f384a97a8ece54653e1a6b5507d352460c6bf8eb75c3fc4",
+      "size_bytes": 22399
+    },
+    "data/cohorts/itad/cache/594000.json": {
+      "sha256": "3cbadd6228c319940eaec35b76d75458092415ed07f534e1fdc8ac2dc501688c",
+      "size_bytes": 91961
+    },
+    "data/cohorts/itad/cache/595770.json": {
+      "sha256": "ad9937fd498f81676a140d757af6f081591e2c81436fa492df714bf5ef96f53e",
+      "size_bytes": 33568
+    },
+    "data/cohorts/itad/cache/596050.json": {
+      "sha256": "f27e5a714b582ac056c71c0e5db9af5eec7ef6d10c39ecdcae41dd0b927aca82",
+      "size_bytes": 5811
+    },
+    "data/cohorts/itad/cache/597670.json": {
+      "sha256": "83ee46fccb19286e71c57a78da33328a491a58b08151e80bc5a4598b32ed84c0",
+      "size_bytes": 14721
+    },
+    "data/cohorts/itad/cache/601240.json": {
+      "sha256": "b849cd180659abc28545a024cba8a793a58e977518f2daf715cf5af36a8f9546",
+      "size_bytes": 72413
+    },
+    "data/cohorts/itad/cache/601520.json": {
+      "sha256": "b7b6ab7bcd3cdb9e3bf5a86d73845602f1e455f542b1dc16ba5616341fdcd839",
+      "size_bytes": 8397
+    },
+    "data/cohorts/itad/cache/601880.json": {
+      "sha256": "9dc948c661d053960641ae886dadaf53df77a4f34c2f328d459830464c70a953",
+      "size_bytes": 3849
+    },
+    "data/cohorts/itad/cache/6080.json": {
+      "sha256": "9131071f40167b2407defbd8527ebc9b6e0a230ce3888ebf4452153fe5c53743",
+      "size_bytes": 36518
+    },
+    "data/cohorts/itad/cache/608370.json": {
+      "sha256": "7ffacda25d5a7701f90aeb37b779df820242e2b24d57069a5e80b00e9548883c",
+      "size_bytes": 3859
+    },
+    "data/cohorts/itad/cache/609920.json": {
+      "sha256": "1075d05fa911269ccce6464a4e639cc160e330d011f7e2fa33d162fe59b086dc",
+      "size_bytes": 74179
+    },
+    "data/cohorts/itad/cache/610370.json": {
+      "sha256": "cdb412bed1bb11927ce7c43d6fd1e0c583d1bcc1c744af07f209f76d9223752d",
+      "size_bytes": 62593
+    },
+    "data/cohorts/itad/cache/610660.json": {
+      "sha256": "65a28272cba50c976e95e25ce101a6cf7b5edcf77ec27555b16487532966b13c",
+      "size_bytes": 90631
+    },
+    "data/cohorts/itad/cache/612390.json": {
+      "sha256": "49b257d279080df786c82ac0b6f2e4742bd0d04950d4cc1859dc2addb4525343",
+      "size_bytes": 73599
+    },
+    "data/cohorts/itad/cache/617620.json": {
+      "sha256": "2b113d9d9294d1728fae361e02d8585a66d9d58acd10e2a6daff743a5b6582da",
+      "size_bytes": 9657
+    },
+    "data/cohorts/itad/cache/618510.json": {
+      "sha256": "15859ef9f2a94b1626219529a8b3bd0ca76c2e6b3d5e6ac0dc0fc5f697bea3a9",
+      "size_bytes": 20369
+    },
+    "data/cohorts/itad/cache/622930.json": {
+      "sha256": "ebf30a8dbba6be3089893470c04688bf7596cfd009091ca695fa3eccd72baa42",
+      "size_bytes": 3855
+    },
+    "data/cohorts/itad/cache/623570.json": {
+      "sha256": "6a0faf06f26fe711573ef0be45adf7f8d218ecc5924ab010398a1fd1f89ec0a4",
+      "size_bytes": 3849
+    },
+    "data/cohorts/itad/cache/634700.json": {
+      "sha256": "b7b6bbb52e8e6abc202dfe2b4ad22dd4ba11e09e42af7c710d3f2ee02a840478",
+      "size_bytes": 3847
+    },
+    "data/cohorts/itad/cache/637640.json": {
+      "sha256": "9e66722cd58ca1ad037ab53084e232733ab44f708160203936987153c981ca26",
+      "size_bytes": 3847
+    },
+    "data/cohorts/itad/cache/638260.json": {
+      "sha256": "e301e9ae330e09a5b5fb2ef33a10dbcb63662303721428aa637fea69dd6b2114",
+      "size_bytes": 36029
+    },
+    "data/cohorts/itad/cache/638740.json": {
+      "sha256": "276d639e38fe3fe422dc02df3d12025236518406ba49ba7f2bcb4647b2b3c1a3",
+      "size_bytes": 89373
+    },
+    "data/cohorts/itad/cache/647930.json": {
+      "sha256": "fd8ebdfeae2bd7c31e559ee766289c64fc130d4a5212c77b22bdef4d085baf25",
+      "size_bytes": 36017
+    },
+    "data/cohorts/itad/cache/650860.json": {
+      "sha256": "e30a5db5573bdc7cabfba4fafd8dc75916e3e1636d4c7eeedf7ac263d3c91703",
+      "size_bytes": 28803
+    },
+    "data/cohorts/itad/cache/651380.json": {
+      "sha256": "ad6329040961f47b022466a94288ad94d1b42fcde7268e1efa4d6ae6c1a8f917",
+      "size_bytes": 7157
+    },
+    "data/cohorts/itad/cache/652250.json": {
+      "sha256": "34d3bd4dc991e9ccddba98b4a06c96ddb5c176d61537d74020a2a9900bdde3f4",
+      "size_bytes": 3847
+    },
+    "data/cohorts/itad/cache/655650.json": {
+      "sha256": "d8df134397c72cffca35bcb0b348d0a103ab357f188420314e4931dcea19cef8",
+      "size_bytes": 34637
+    },
+    "data/cohorts/itad/cache/656460.json": {
+      "sha256": "a0b1ed0996eb7cc48116c8cfa6feecb4648ca6b1f7c7ce563f0f69525c245c8a",
+      "size_bytes": 51591
+    },
+    "data/cohorts/itad/cache/658120.json": {
+      "sha256": "3e18f67c0bdd0242fc23c962365c4208a7af74d2444bcbe826cbe80d0a1fd5ee",
+      "size_bytes": 3851
+    },
+    "data/cohorts/itad/cache/660160.json": {
+      "sha256": "9bd7b69a080f93c7af1c20379e3f051010107185fc8b9cd1f6061bdb93714a54",
+      "size_bytes": 69033
+    },
+    "data/cohorts/itad/cache/660990.json": {
+      "sha256": "b4d8d4949d8f8d1d11e4b31ce8bd03195ecad02dc4bc967a9eb10b886a329fea",
+      "size_bytes": 42595
+    },
+    "data/cohorts/itad/cache/662690.json": {
+      "sha256": "32f94fb817e7aff55e89d095b70ec48f3d2655af3ef7203e64584e98b48baf41",
+      "size_bytes": 3819
+    },
+    "data/cohorts/itad/cache/664420.json": {
+      "sha256": "ad484f1f426bffb025daa994ecd9cfe2f638e86fd1049f18402ac66a408c0713",
+      "size_bytes": 81759
+    },
+    "data/cohorts/itad/cache/664620.json": {
+      "sha256": "d302b5adae8a0aa0dccdadf6edd53e031d39ce758ca2cfab7f4599100329d5c0",
+      "size_bytes": 18473
+    },
+    "data/cohorts/itad/cache/665120.json": {
+      "sha256": "3ff190677cfd335f9775fe9c0b773c28042a41407af58449e139a5466be73cae",
+      "size_bytes": 4479
+    },
+    "data/cohorts/itad/cache/665510.json": {
+      "sha256": "34c119ed5d9eb9d81e1f546de24e322e8ba3438d20c7df857b5cfc84c34a3fc1",
+      "size_bytes": 60125
+    },
+    "data/cohorts/itad/cache/666730.json": {
+      "sha256": "9e44370aea1447587c56a789efd17550ed3deb6ace5ddeef6afd59e114206d6b",
+      "size_bytes": 53555
+    },
+    "data/cohorts/itad/cache/670320.json": {
+      "sha256": "d3e535e190ecc2d08213f64d14ff31145a5c44b32ae868e05620fea53c10d246",
+      "size_bytes": 3881
+    },
+    "data/cohorts/itad/cache/671980.json": {
+      "sha256": "676c17ed077e67b95513d39ec281da0da4c240eb394175addc27a17de33f9f5a",
+      "size_bytes": 47655
+    },
+    "data/cohorts/itad/cache/672490.json": {
+      "sha256": "ff450f2bb73a7b1bb7a4f1ca80246c74108219e15c1598672828322be85fe4ee",
+      "size_bytes": 16557
+    },
+    "data/cohorts/itad/cache/672590.json": {
+      "sha256": "220d3e0ec7d2db0c0499888a3862410f1b3e31abefc02ff76404d020550bbc95",
+      "size_bytes": 36799
+    },
+    "data/cohorts/itad/cache/674230.json": {
+      "sha256": "82c3843b66dac36aaea52284683af7d9378e4ee429e20338fd87fc9564d97014",
+      "size_bytes": 3895
+    },
+    "data/cohorts/itad/cache/674480.json": {
+      "sha256": "07bd40dd2583e841d38312ba015e4150ab9ea7b860e6be1b09f8f976e4bedd67",
+      "size_bytes": 3883
+    },
+    "data/cohorts/itad/cache/678010.json": {
+      "sha256": "ee7f16be7b0f5250a5960765c261c01568ed81f528676353f5aec072bd4d3b02",
+      "size_bytes": 5223
+    },
+    "data/cohorts/itad/cache/678540.json": {
+      "sha256": "1bf02529bb6e44d6c66b8e8ffd06c1cd0b3e90c5203d6edff6df67ffaf056bee",
+      "size_bytes": 8977
+    },
+    "data/cohorts/itad/cache/679110.json": {
+      "sha256": "b1ade13c4b230c07f6e800e4be4ecf7fa4df01ea517b8a66a48b0b06e7d0bcb0",
+      "size_bytes": 52383
+    },
+    "data/cohorts/itad/cache/679510.json": {
+      "sha256": "17bcb8c25e44830be59387cb546b0ecf84699ded7e9287d756dfd249986731f7",
+      "size_bytes": 5147
+    },
+    "data/cohorts/itad/cache/680250.json": {
+      "sha256": "dee5da84f34375d5c2d942a0b0797eab6fa19e8e312afc2f6fe8b4fe64e4976e",
+      "size_bytes": 3923
+    },
+    "data/cohorts/itad/cache/686510.json": {
+      "sha256": "81a98c3366a66f7a79e7566a4e1fa8b6ef33f1878328beb87008d9ba344723ff",
+      "size_bytes": 22391
+    },
+    "data/cohorts/itad/cache/686720.json": {
+      "sha256": "9be7880d2063d31ea8eb1c7dd0a5625cdad1c95dd8504aa863c92477d581c6c0",
+      "size_bytes": 48467
+    },
+    "data/cohorts/itad/cache/687600.json": {
+      "sha256": "16a4c0ae78ad40f7c387fb5f6dfc34647c9c3dc21d017eff71a8309a70739261",
+      "size_bytes": 3887
+    },
+    "data/cohorts/itad/cache/689020.json": {
+      "sha256": "894fc8b1aa936e3f79edb714e50a552afe0261ad17327b347b674f5ad801407a",
+      "size_bytes": 35933
+    },
+    "data/cohorts/itad/cache/691630.json": {
+      "sha256": "48f4915b1087dabbe4edee933929c39e74205c082473d5a13a59b99a2ac2e5d1",
+      "size_bytes": 81797
+    },
+    "data/cohorts/itad/cache/691750.json": {
+      "sha256": "c98049964a3fd1c7b85b9cc576fdcb345b34e5e4a952c315602e025ab7a76b1f",
+      "size_bytes": 23655
+    },
+    "data/cohorts/itad/cache/694930.json": {
+      "sha256": "a3dc989f63dcedd6c860e38ab40304e4c83e3bdc43d0afb5de0f95a324486f8d",
+      "size_bytes": 7045
+    },
+    "data/cohorts/itad/cache/695990.json": {
+      "sha256": "095abaf249b5cf9cf2b6ebe42980f05b3a31d6d52c4e66675a93f1158bc43916",
+      "size_bytes": 36025
+    },
+    "data/cohorts/itad/cache/696220.json": {
+      "sha256": "d26672cec4690079572a7b024538a5f615b8ba8f93fcc704a3c6d244b6f410ae",
+      "size_bytes": 18097
+    },
+    "data/cohorts/itad/cache/698160.json": {
+      "sha256": "d1daa25cbc11ee38f1fae1afd47e434e586a995e869553eb881fa880081b25ab",
+      "size_bytes": 3867
+    },
+    "data/cohorts/itad/cache/703600.json": {
+      "sha256": "e9bc1aa0d007cb2e9f0b3e4c294bee6ae352154373c29a57b4a52ae902c12da8",
+      "size_bytes": 41477
+    },
+    "data/cohorts/itad/cache/708120.json": {
+      "sha256": "b5a68a8aa3c4e3b53513e897cf07936fb6fef9ab6686a190bd366e391e4428bd",
+      "size_bytes": 34287
+    },
+    "data/cohorts/itad/cache/712620.json": {
+      "sha256": "1a3430c21bd486380dd6d14aee339acda71010ecc0ed4beabe70478645cf6a59",
+      "size_bytes": 3847
+    },
+    "data/cohorts/itad/cache/712700.json": {
+      "sha256": "b063f879f49e9337493e66dd249cc215e2013721e0ac514879bc91adfdf21fcf",
+      "size_bytes": 10277
+    },
+    "data/cohorts/itad/cache/715430.json": {
+      "sha256": "6748cf0e704502f89d05264d93c8212b4c33cb725f7b17cb8ca6fa96399a0974",
+      "size_bytes": 3859
+    },
+    "data/cohorts/itad/cache/716360.json": {
+      "sha256": "ee89733b1c05487cbea20bc59ddf8d2e26494ddfe3bb9cfaa50ad6838f3dcd22",
+      "size_bytes": 19823
+    },
+    "data/cohorts/itad/cache/718970.json": {
+      "sha256": "c4370ead58110f59ac749151fec9f869616507f6b8ab8fdb130e3ee70f8057c8",
+      "size_bytes": 3851
+    },
+    "data/cohorts/itad/cache/723380.json": {
+      "sha256": "cee8786d01f731f94d7094ef12ef66e121989ea1b1ef84a22fd43ad13437a5b6",
+      "size_bytes": 3835
+    },
+    "data/cohorts/itad/cache/724090.json": {
+      "sha256": "c9aa6636c37e2981861ca32d55b5b9f61545aa07259e43c86f222db14382a97a",
+      "size_bytes": 32453
+    },
+    "data/cohorts/itad/cache/731760.json": {
+      "sha256": "6de37077712babcc6ff4db02236b30dead0e5f9e8fb540af80dd88bc62c3dda7",
+      "size_bytes": 28173
+    },
+    "data/cohorts/itad/cache/732930.json": {
+      "sha256": "fad51c68b13fa7c6e9976b488cb18685c8eaad5782ab7a31600bf1511f2706eb",
+      "size_bytes": 37429
+    },
+    "data/cohorts/itad/cache/733540.json": {
+      "sha256": "f7fd2114fa06955a69e38b388deb60eacff98d3a45330c48a7b6ab3f200c504c",
+      "size_bytes": 84397
+    },
+    "data/cohorts/itad/cache/733550.json": {
+      "sha256": "284aecf94565a6690a726bdffd0c7550c09ee59ab85451d4f0eb40ecbac613bd",
+      "size_bytes": 3887
+    },
+    "data/cohorts/itad/cache/734570.json": {
+      "sha256": "3f4b8c95f6199105372b9e4abcaa541b5bb86ec0aab1fd08f0666fc22088284f",
+      "size_bytes": 26323
+    },
+    "data/cohorts/itad/cache/747130.json": {
+      "sha256": "b03efedd9197957b2feada9030dbba8a3cdaa56ea51c489fd46176ca51f59b8a",
+      "size_bytes": 3887
+    },
+    "data/cohorts/itad/cache/748540.json": {
+      "sha256": "ac9dbf67792c88817a7db300fe0e40c6f23cb9e563b5dcc807729aa5eeed4a56",
+      "size_bytes": 9675
+    },
+    "data/cohorts/itad/cache/749580.json": {
+      "sha256": "3d6a7282a19d05f208fa0294945e7509de35a313e42d11bd10da349ae384434a",
+      "size_bytes": 3875
+    },
+    "data/cohorts/itad/cache/750200.json": {
+      "sha256": "81f9de2762a2df3ded74c730889bdd761ee3b70ca04ed3106d4abefbbc6a3868",
+      "size_bytes": 72311
+    },
+    "data/cohorts/itad/cache/751300.json": {
+      "sha256": "767d594f303504f360f822b6a90e4190f43633a8bca8c90d4b565cf206ad159e",
+      "size_bytes": 27535
+    },
+    "data/cohorts/itad/cache/754850.json": {
+      "sha256": "02faaf76c02373782d045d9e83315b2c1c79072d50bac70e246eb1df641ca339",
+      "size_bytes": 43511
+    },
+    "data/cohorts/itad/cache/756490.json": {
+      "sha256": "7e5e8dd522ede2d55ccf0209377bc029a876dce23f94f28a3d482c747057970c",
+      "size_bytes": 15989
+    },
+    "data/cohorts/itad/cache/757200.json": {
+      "sha256": "a0b9aa264bcd7b4c3863c17dc2856c5fe494352d38d4811549f003f8f5776c92",
+      "size_bytes": 17913
+    },
+    "data/cohorts/itad/cache/760030.json": {
+      "sha256": "5d363efcd9b0ec33886d0c99625a400baacb1aff0913bdb77f2a77900d04f553",
+      "size_bytes": 3863
+    },
+    "data/cohorts/itad/cache/762930.json": {
+      "sha256": "ab3eafb0875a7669b7492bbff21548d6de5a578ab6f04572fac2906b75c06e12",
+      "size_bytes": 53625
+    },
+    "data/cohorts/itad/cache/768540.json": {
+      "sha256": "5634882707e5f7fbd2759cc406499151a5a68caf03782faa748cc2dcf4492421",
+      "size_bytes": 68469
+    },
+    "data/cohorts/itad/cache/770520.json": {
+      "sha256": "0b6c4aea865a712f35d410c46b7c68413114f0a809b9fb8cf8f457c19af1be23",
+      "size_bytes": 14023
+    },
+    "data/cohorts/itad/cache/771430.json": {
+      "sha256": "26fe5610cdca0ba0202870d4b6335d5adc62adc2810286b09813b2fa84e7b97e",
+      "size_bytes": 31953
+    },
+    "data/cohorts/itad/cache/771950.json": {
+      "sha256": "55f1c681aba9dd737c5d58895c277a771197b8742dd9ded9510a426986b0784c",
+      "size_bytes": 28605
+    },
+    "data/cohorts/itad/cache/773570.json": {
+      "sha256": "b771de2f7648159b5c5f9df8a989dc37def7c127780d9e56b2fbfc38f6dd0db0",
+      "size_bytes": 3863
+    },
+    "data/cohorts/itad/cache/774171.json": {
+      "sha256": "43ab9d71b1428cf10d65e0dee97a8ed79cb54e01b00879110744640a951f074d",
+      "size_bytes": 49157
+    },
+    "data/cohorts/itad/cache/777220.json": {
+      "sha256": "69cc9c32e1dfb46a88eb3120bd8229602f00f32685a54958f599e95312411d40",
+      "size_bytes": 6461
+    },
+    "data/cohorts/itad/cache/777380.json": {
+      "sha256": "e944566e7378ab290b5d008328a6ab756b027997fda6b07498f791a3fb0fd39a",
+      "size_bytes": 3891
+    },
+    "data/cohorts/itad/cache/779810.json": {
+      "sha256": "c09b577a3f6113dab3ab38ff5a7c05f7b287498a93d5933d5adea6243dbc3990",
+      "size_bytes": 3845
+    },
+    "data/cohorts/itad/cache/779950.json": {
+      "sha256": "2624db67b7b6a886bb870e5f6c8e27878b413bada0cc1ba04acf2980d041d844",
+      "size_bytes": 77337
+    },
+    "data/cohorts/itad/cache/781500.json": {
+      "sha256": "3ad195f7cca3a99409aef4ba90d2879e78462e0edbfd383d6276d4f7723dde8c",
+      "size_bytes": 16025
+    },
+    "data/cohorts/itad/cache/786800.json": {
+      "sha256": "0cd8dcdcc8137cbb11049c06fd5f8b369045e54e36f8c5c40918fa37ccde5a5b",
+      "size_bytes": 7705
+    },
+    "data/cohorts/itad/cache/788120.json": {
+      "sha256": "9f6ca490bca069ff4fc1a22c95b0248296ca9ca5c16879767607687d596d5358",
+      "size_bytes": 3843
+    },
+    "data/cohorts/itad/cache/789750.json": {
+      "sha256": "fbc8a685ec52e0edcad5244c7882f43cdc43e194ea1583de84ea152806f26c86",
+      "size_bytes": 9571
+    },
+    "data/cohorts/itad/cache/790390.json": {
+      "sha256": "d600f232a836f62fdab7c031ffd822c4e60d6e0ad2b150526c2c9bc42d17091a",
+      "size_bytes": 32729
+    },
+    "data/cohorts/itad/cache/793060.json": {
+      "sha256": "2f55f5450c8ec9eaad4c2d64876935ad58899736606e541f140fb49ea62cd083",
+      "size_bytes": 20995
+    },
+    "data/cohorts/itad/cache/794270.json": {
+      "sha256": "2a98cc5e14e69a820a9ce30c8bc907f7f14fdce657caf15ed311dfa2305358c9",
+      "size_bytes": 18743
+    },
+    "data/cohorts/itad/cache/797450.json": {
+      "sha256": "bcce1e3e8669df9dbeafd138c637b555270b53719b22f876b0acd7cd0b9a7402",
+      "size_bytes": 73593
+    },
+    "data/cohorts/itad/cache/801400.json": {
+      "sha256": "08fa70878227a9c168e5fef544eea74a2f3a5e713a2caedb107f8c568eea9fdd",
+      "size_bytes": 26861
+    },
+    "data/cohorts/itad/cache/809340.json": {
+      "sha256": "6e135f4447a967c75a7553c3ceaf3091089c0f3615ca0e88e60672d60ba58604",
+      "size_bytes": 74889
+    },
+    "data/cohorts/itad/cache/812890.json": {
+      "sha256": "8113385b83466ee10c3313f43623828d93bb0cc23951107abb4a737796641fad",
+      "size_bytes": 3879
+    },
+    "data/cohorts/itad/cache/813730.json": {
+      "sha256": "85c41e4bc3fc99070db2a599cd0c5a8a7de2d730352302b010d5ce43233d89a4",
+      "size_bytes": 3859
+    },
+    "data/cohorts/itad/cache/820070.json": {
+      "sha256": "236c2bc6751b363e7d247c1a5642d41aa96e9fc3798c24c6970a3239609a6625",
+      "size_bytes": 21335
+    },
+    "data/cohorts/itad/cache/825480.json": {
+      "sha256": "0c011e19d1bce3cd0b40a15ddcdcf5809f9e03a32a35721a3e6ab4771ec0ce76",
+      "size_bytes": 3855
+    },
+    "data/cohorts/itad/cache/827110.json": {
+      "sha256": "c23c02dbec7ad9c9bb206c3868bca608f1941a35141bed1c0e8a8c8475647603",
+      "size_bytes": 62065
+    },
+    "data/cohorts/itad/cache/827770.json": {
+      "sha256": "eb5d9cad6a0f537568023d581a9776fe35b3a36bfa8ae91b14bfc660a0b1eed1",
+      "size_bytes": 3843
+    },
+    "data/cohorts/itad/cache/832320.json": {
+      "sha256": "22a1676085452ef93e0b4b4d2f04867cc20854c66a3d3749302fb7119a8d1ae1",
+      "size_bytes": 32321
+    },
+    "data/cohorts/itad/cache/834760.json": {
+      "sha256": "e1efccf488dc61e00931d09dfa3409a4b4a3c7bb61ea608373db44977082c5b5",
+      "size_bytes": 36785
+    },
+    "data/cohorts/itad/cache/835910.json": {
+      "sha256": "3ffe2a1958ab51c976384fb28166884654ad4577b3d3a129527f4c73bcc97b07",
+      "size_bytes": 10345
+    },
+    "data/cohorts/itad/cache/846730.json": {
+      "sha256": "f5ff71c059db42285b97cf14eba09e700a5b5b3356561057dd08332283b49433",
+      "size_bytes": 43869
+    },
+    "data/cohorts/itad/cache/849177.json": {
+      "sha256": "8ff0514c1a153b41c4296de6a43028ca424ae3d93fe72e6dec42570029fc3438",
+      "size_bytes": 2102
+    },
+    "data/cohorts/itad/cache/850060.json": {
+      "sha256": "6ac3da518f111ca006eeeace7a7897c757fc63c4db631cc169cc9ae91405d91a",
+      "size_bytes": 77533
+    },
+    "data/cohorts/itad/cache/852790.json": {
+      "sha256": "6da17cda954edba2836fdcc89211e382bac294809888d392e48f708d1b4b6002",
+      "size_bytes": 61911
+    },
+    "data/cohorts/itad/cache/853850.json": {
+      "sha256": "d7e7c6e43aa695f16973efc7cd49c75fa722a635461ca5be4d6fc4713955f737",
+      "size_bytes": 83131
+    },
+    "data/cohorts/itad/cache/857060.json": {
+      "sha256": "db9de119af0dc8ae8e29bbd450bb79e2aa42fbd67466c1accc33e9477799fcd5",
+      "size_bytes": 85287
+    },
+    "data/cohorts/itad/cache/857420.json": {
+      "sha256": "5b980a2cf2e436ff7b73b976502071d69bfcbb4f5401a0ed3ae23aed9edbb792",
+      "size_bytes": 6487
+    },
+    "data/cohorts/itad/cache/859200.json": {
+      "sha256": "e7a25b3e3bcc4624e4a1685678367f74368a07611bcadd4252f0e796d997a25a",
+      "size_bytes": 5775
+    },
+    "data/cohorts/itad/cache/860860.json": {
+      "sha256": "58e4f7d705c6180955500f24aa4522d0bf0a616d57b74a3c285dd3962e443f67",
+      "size_bytes": 49861
+    },
+    "data/cohorts/itad/cache/861270.json": {
+      "sha256": "43338b63c36938a2ba7fd760ff9c24da73488957a7d18d06464bde2062d4a1d0",
+      "size_bytes": 8403
+    },
+    "data/cohorts/itad/cache/872730.json": {
+      "sha256": "040f9f316fc35cdcdea8dfdaadeadd18d8926a1dff0097b0357aa13886f73e1a",
+      "size_bytes": 85571
+    },
+    "data/cohorts/itad/cache/878670.json": {
+      "sha256": "2aebd41b64e26c4d9135051ef37ad9cd61dd677cdc8ab3ea48d8aa6a58aa6ec1",
+      "size_bytes": 63911
+    },
+    "data/cohorts/itad/cache/880320.json": {
+      "sha256": "64daa3962ceccac5ecb36f6bc844ae2ef55427fd7c69b20af596ea670e0fcd78",
+      "size_bytes": 9765
+    },
+    "data/cohorts/itad/cache/881180.json": {
+      "sha256": "1cf1ffbf3d4b3cf515d8b76fcc72788f3bbf7c0e6422806f635b92c12c756a6b",
+      "size_bytes": 6399
+    },
+    "data/cohorts/itad/cache/884400.json": {
+      "sha256": "4d6ef5af79fe4cbdf4efb8446fa48a67c561e51eeaa8b2192a8c57b1670d38dd",
+      "size_bytes": 32005
+    },
+    "data/cohorts/itad/cache/892860.json": {
+      "sha256": "ae3dcbfc0f08e22c1c609cbf945ead9391d697210b5c1f11f03f3627088279a6",
+      "size_bytes": 70957
+    },
+    "data/cohorts/itad/cache/895610.json": {
+      "sha256": "07e4d1afb7b00ba962350e816795005d1184dc774277882c15c052bca0b93671",
+      "size_bytes": 3857
+    },
+    "data/cohorts/itad/cache/897000.json": {
+      "sha256": "b21346b02e9b5192ae36274f3376108ca962b83188a15cc006c091d7a9d5cb60",
+      "size_bytes": 36027
+    },
+    "data/cohorts/itad/cache/899190.json": {
+      "sha256": "e496168a57997243530e87d2e9c3a956759ca18e4deddc892bbfa690049412df",
+      "size_bytes": 18629
+    },
+    "data/cohorts/itad/cache/900290.json": {
+      "sha256": "39b014a9d37f5f9ff00a82abd95f3dcc737d55f9cc16ff203a3c343454553919",
+      "size_bytes": 8343
+    },
+    "data/cohorts/itad/cache/904360.json": {
+      "sha256": "d0c7e68f292712f8a3026617ccc8bc608380502a2542e76569b1dda329f1168d",
+      "size_bytes": 52247
+    },
+    "data/cohorts/itad/cache/904770.json": {
+      "sha256": "54635a9085813acc3f42aacd47047035e74586ead6c97f0634df369f704d6ed4",
+      "size_bytes": 3899
+    },
+    "data/cohorts/itad/cache/905060.json": {
+      "sha256": "fb84a712ddc8cb02b109830c8063814e28a3b799cfca071ee1cee2e7d788e6b8",
+      "size_bytes": 61913
+    },
+    "data/cohorts/itad/cache/907220.json": {
+      "sha256": "036c2f74216a7c7209494f6498aaee470a07fa15a13658df9270ea9b3b03c3d8",
+      "size_bytes": 3855
+    },
+    "data/cohorts/itad/cache/914600.json": {
+      "sha256": "d9fec8544405c09eb26c5e7511466c4686a116a139c57773352dad60e7680bc2",
+      "size_bytes": 3837
+    },
+    "data/cohorts/itad/cache/915230.json": {
+      "sha256": "34909546ec7dea61a6c720e7f4d9d2abfa4bfcd278cc237c8461607a366313a4",
+      "size_bytes": 3287
+    },
+    "data/cohorts/itad/cache/915600.json": {
+      "sha256": "2bcbf71eccd2f626a4bd6c79442d6531e56909f326d015eb5447dedc57ebfcb2",
+      "size_bytes": 54927
+    },
+    "data/cohorts/itad/cache/916150.json": {
+      "sha256": "ea91d7dbadc960c3a0c4cd6449ace103f018c98e0d0f5d80ec4368675d449e06",
+      "size_bytes": 3839
+    },
+    "data/cohorts/itad/cache/918690.json": {
+      "sha256": "78ab6abd478f9f2ad1e97be9ce434c9fdf1660a32e7786f54e1b548f2d8f7d2a",
+      "size_bytes": 25577
+    },
+    "data/cohorts/itad/cache/923590.json": {
+      "sha256": "1cc4bb085266d177f4fd8db36110eab53de5cec05d1df0c037b48a6bc119fc37",
+      "size_bytes": 10957
+    },
+    "data/cohorts/itad/cache/926250.json": {
+      "sha256": "9bb0afd86242780c71806180ae350287ffda97f3f6f84f940288528a44b25cd9",
+      "size_bytes": 3901
+    },
+    "data/cohorts/itad/cache/928610.json": {
+      "sha256": "ec9e0caab53f9e24101fbf1d741987b021299e625ec4a3950802980b08b0fcf5",
+      "size_bytes": 68815
+    },
+    "data/cohorts/itad/cache/932270.json": {
+      "sha256": "e89572c64cf3935aad13cb10b562fc5879ed8e8daa534e945db97d471ca9a73d",
+      "size_bytes": 3887
+    },
+    "data/cohorts/itad/cache/934920.json": {
+      "sha256": "6afddf64972b34a46b28873d2929c54e3909603cd49d2bf10e8654809d108e4a",
+      "size_bytes": 7085
+    },
+    "data/cohorts/itad/cache/936770.json": {
+      "sha256": "fd75c2823b0da02ec1dd5e06ef451411ce93b44e209c5bbe451dab0b2937e7bb",
+      "size_bytes": 46689
+    },
+    "data/cohorts/itad/cache/936980.json": {
+      "sha256": "45714e145692aa29ac41b5001504b2f8a09ba41db9a6c78d8ce35aab2e51e130",
+      "size_bytes": 36165
+    },
+    "data/cohorts/itad/cache/9420.json": {
+      "sha256": "daac1ddb804982647082270c9dbccff792174319d8c212c8a215aec71443eb89",
+      "size_bytes": 54901
+    },
+    "data/cohorts/itad/cache/942930.json": {
+      "sha256": "6d8ac01c38281f042ac381c5ac09bac073c2c1230b1ab1e2f01d9b392407a290",
+      "size_bytes": 46847
+    },
+    "data/cohorts/itad/cache/947250.json": {
+      "sha256": "e13aecb3e0ff26a6d6dc8ebd385060b61e6487431ed7d441ef0b94328eb5dc37",
+      "size_bytes": 5891
+    },
+    "data/cohorts/itad/cache/954240.json": {
+      "sha256": "91f15c6f698e8a6226009fd9f96f1cec1712c7e94302c184100921e53578185d",
+      "size_bytes": 32619
+    },
+    "data/cohorts/itad/cache/957430.json": {
+      "sha256": "961f58c76620320ce96aab539f8fe0408bcee30fb2eb13b93d5f23c01db9b7dd",
+      "size_bytes": 86831
+    },
+    "data/cohorts/itad/cache/958300.json": {
+      "sha256": "378cb79d4b5568ffdbe0c9e63cc45c93bebdef0abe0b2331e12e7f7ea871ecfd",
+      "size_bytes": 7129
+    },
+    "data/cohorts/itad/cache/959410.json": {
+      "sha256": "7880718d35d3587136dc75fb97352c5eb396b536ca468a844f22bc96f7b0ebe1",
+      "size_bytes": 19207
+    },
+    "data/cohorts/itad/cache/961210.json": {
+      "sha256": "92971afaedb2ad6622e58db56c74fa5a44fa9746a5566874ac7fc35ac43a1f90",
+      "size_bytes": 11475
+    },
+    "data/cohorts/itad/cache/962310.json": {
+      "sha256": "b69b1c238bfc5e65357ea7631e218d12fda9d67c289301f2ec9968f6dd8d027e",
+      "size_bytes": 7731
+    },
+    "data/cohorts/itad/cache/963020.json": {
+      "sha256": "b6f6337d2318c5d9e71e21cfa968b65b374e5f9f4598974d6ba843949ecc3cd3",
+      "size_bytes": 24889
+    },
+    "data/cohorts/itad/cache/963670.json": {
+      "sha256": "3da7a7a25c8582fbbd93a3ba0c057dccb0c01f1de29fc9fb9c80b714b89e6621",
+      "size_bytes": 3863
+    },
+    "data/cohorts/itad/cache/963900.json": {
+      "sha256": "09f548c76445125de014c4ef50a3375837909d7a43ba8a1d30055bd0395af9ea",
+      "size_bytes": 17909
+    },
+    "data/cohorts/itad/cache/965830.json": {
+      "sha256": "f1747d4f67088638377daf13c18558d86b7e905040deeb25a3ed110353b5f814",
+      "size_bytes": 89631
+    },
+    "data/cohorts/itad/cache/968950.json": {
+      "sha256": "eb75fc036199085f2ca41a21a3964646e51aafff1dbd5514894fbb008fbb6c5a",
+      "size_bytes": 86291
+    },
+    "data/cohorts/itad/cache/972770.json": {
+      "sha256": "0d1a30dfb3214953cee21a44ad6a9c90374ef121c957d4d614a25ddfd96a09d5",
+      "size_bytes": 76777
+    },
+    "data/cohorts/itad/cache/979620.json": {
+      "sha256": "02d93bef2e108f0bfc754a21c03abb99d5c3f5c760b4bdea61cf49c55eb31821",
+      "size_bytes": 3843
+    },
+    "data/cohorts/itad/cache/981020.json": {
+      "sha256": "9212bc21f077437db3b70683b23a446785208cb2a1c24ea20789044d5cd2b371",
+      "size_bytes": 73691
+    },
+    "data/cohorts/itad/cache/985580.json": {
+      "sha256": "2b89b27ce0a43598fe0c55b80cc81c4f7d44584b1bd423afaa4399351c0b0baf",
+      "size_bytes": 62899
+    },
+    "data/cohorts/itad/cache/987950.json": {
+      "sha256": "1344418d495c1dd09322a2c2ad3b1bd64d95c089be25f100e7fdcf9314433c06",
+      "size_bytes": 68271
+    },
+    "data/cohorts/itad/cache/989080.json": {
+      "sha256": "0951023cffef5200e515245fafa76fc14294433392e1407f52d96b86b019cde6",
+      "size_bytes": 92027
+    },
+    "data/cohorts/itad/cache/989650.json": {
+      "sha256": "584d89a6c0b1d7308fa374b8356dbd975f4838cf36b47e3c061da32a3b4594f8",
+      "size_bytes": 3915
+    },
+    "data/cohorts/itad/cache/990390.json": {
+      "sha256": "7609a5d124685fcfc4d2468be648193cefd8687ceb6e9bdc0501e7d461e45d57",
+      "size_bytes": 41673
+    },
+    "data/cohorts/itad/cache/994750.json": {
+      "sha256": "f21a345856cfe3cb679e4bc92fcbffae8718511fddc77d208f1363dc3f13c43e",
+      "size_bytes": 51001
+    },
+    "data/cohorts/itad/cache/996450.json": {
+      "sha256": "8ab2584deff037f8aad43c75f880b9ee7ddd4e2a4c8ca6d6d1301c1770cee22f",
+      "size_bytes": 35853
+    },
+    "data/cohorts/itad/cache/997370.json": {
+      "sha256": "eafce5144a9ce5317e4b0e819ae715350cfa22254ba9f81c4db65625340a7301",
+      "size_bytes": 28139
+    },
+    "data/cohorts/itad/cache/998150.json": {
+      "sha256": "0aaa10cdce80716c6b7e8be8e61ecdd5ab2128fa2951c977acd85c55ce6b7d7b",
+      "size_bytes": 3901
+    },
+    "data/cohorts/itad/cache/99830.json": {
+      "sha256": "ea205506a176e69037166b85bb1921e233d0008f6f3b3dbbe00870fbd9906866",
+      "size_bytes": 1976
+    },
+    "data/cohorts/itad/cache/998300.json": {
+      "sha256": "f6bc9ef9daee5f334cb6640cb5d3634b6611fd4f14f4ed3792ca0b990148adc0",
+      "size_bytes": 3885
+    },
+    "data/raw/itad/1005530.json": {
+      "sha256": "e3ee445e77d1af4edc9b5f993e4d72698326e24b5ee1c1fed9961fdd066ba2bd",
+      "size_bytes": 3937
+    },
+    "data/raw/itad/1023370.json": {
+      "sha256": "1a8442a997c5ad268604b79c6ea0c64cf366f3d1cdf371726dd27c9fba839b22",
+      "size_bytes": 3875
+    },
+    "data/raw/itad/1063730.json": {
+      "sha256": "f8f18fe243329f2a388d9a6439560ce691e31777f636cb0b620bc72457d53f5a",
+      "size_bytes": 10335
+    },
+    "data/raw/itad/1083210.json": {
+      "sha256": "a860a0ee0c0002a9c665852f4d8b3c4145550d0003b7579417775e1d544bc5bf",
+      "size_bytes": 82025
+    },
+    "data/raw/itad/1090250.json": {
+      "sha256": "fcc8be2829286fd3037da4b07edae38e501e8e538d989f3fbe2c1da4b1bc7fa5",
+      "size_bytes": 34287
+    },
+    "data/raw/itad/1097370.json": {
+      "sha256": "f12b6b899d082207bac97d907086e49d20607b8ce582a303562b3591340bcde2",
+      "size_bytes": 8329
+    },
+    "data/raw/itad/1141280.json": {
+      "sha256": "b954fc3dfb40420d9426aff067f889c0094ed0f23ae4308aadfd535a37e1f413",
+      "size_bytes": 3893
+    },
+    "data/raw/itad/115320.json": {
+      "sha256": "157ae25a79a3c0069c2ee5beb972d910e416393603d537d463698e49cd4c6c93",
+      "size_bytes": 70986
+    },
+    "data/raw/itad/1158850.json": {
+      "sha256": "e8dea7cc4f280166faceafda7eacb4386bbeecef1fb6c9aa522d2e0a2b0dfe35",
+      "size_bytes": 58949
+    },
+    "data/raw/itad/1200900.json": {
+      "sha256": "7a73e672d1ce9b2626dfcafe9e666683239220cdff4b89847aacc17a2a181063",
+      "size_bytes": 4607
+    },
+    "data/raw/itad/1239260.json": {
+      "sha256": "a9a7a29d9f55edfd686f644cf5c311f0174396eed680865554d9b7171fa86b0f",
+      "size_bytes": 77071
+    },
+    "data/raw/itad/1249680.json": {
+      "sha256": "b0f9a5b3a325f4e0d479fd7f2953143d2bdd074d851386dd77cdf2265aba6165",
+      "size_bytes": 39733
+    },
+    "data/raw/itad/1257270.json": {
+      "sha256": "19d4de45ac52ac3f0a80718e31d58499e5fa5a6321730f41cab7467280c61a6e",
+      "size_bytes": 85443
+    },
+    "data/raw/itad/1271420.json": {
+      "sha256": "34d49fb61e662a6e376c7b07a602a11edc49f07d776697d2809cf877f538c243",
+      "size_bytes": 5191
+    },
+    "data/raw/itad/1338570.json": {
+      "sha256": "3316fd0fa3232670b222851b562968a4e6895517937d709e25469fd91d28adac",
+      "size_bytes": 3945
+    },
+    "data/raw/itad/1373180.json": {
+      "sha256": "1c81b310c5d886364fb777318690ee14ddcee3c1c713b9ee3d349674579c078b",
+      "size_bytes": 29483
+    },
+    "data/raw/itad/1413660.json": {
+      "sha256": "88db3ff78057a11c43cb147a3d9555ae1ec45f1b35541d66c4200d1babd8d3fb",
+      "size_bytes": 52899
+    },
+    "data/raw/itad/1418360.json": {
+      "sha256": "cd92b5d7bb796d6822107155b7669b7a25577ec8d92303591eac124040436084",
+      "size_bytes": 58813
+    },
+    "data/raw/itad/1465260.json": {
+      "sha256": "4c4c31a738bafdf257c37737f89aecb810affc0856c78cbaf363351033927cf9",
+      "size_bytes": 78563
+    },
+    "data/raw/itad/15170.json": {
+      "sha256": "6407c6441dcdfce1536a5ebd18f8090bcc820b1d8fb149bcd028efb824cdf7a5",
+      "size_bytes": 67799
+    },
+    "data/raw/itad/1532510.json": {
+      "sha256": "e6ed31fca4c96420f11734ba36fdda0c6a572d2b4ad525e013fd4620eb817125",
+      "size_bytes": 21217
+    },
+    "data/raw/itad/1544810.json": {
+      "sha256": "2751a85836c1f79324dcb020bfc1caef86350fe5f5ecf473b030052a0b780670",
+      "size_bytes": 4523
+    },
+    "data/raw/itad/1560770.json": {
+      "sha256": "c39461e5b09826dfa1c6bd6ab6fa1e70b7a980aed4cd961ac832f8456c71aed8",
+      "size_bytes": 61351
+    },
+    "data/raw/itad/1575230.json": {
+      "sha256": "1e347aea00eafbb0e67d4421d7ed26949557d40a2bf8a64e02c8497eca3bcd97",
+      "size_bytes": 10215
+    },
+    "data/raw/itad/1588760.json": {
+      "sha256": "267b1343bd972d7578fc3a5625e1e78919e395f57dc14862fff64084826d0667",
+      "size_bytes": 78805
+    },
+    "data/raw/itad/1655440.json": {
+      "sha256": "9c26559c62dcd273cf0f1f784014ece7d468a73783d18bc7c36b2a2ba188b880",
+      "size_bytes": 26275
+    },
+    "data/raw/itad/1708340.json": {
+      "sha256": "f3b56594f26427d857144709bfcf3838ef8ec3f1053e98afd396d56651fee173",
+      "size_bytes": 13619
+    },
+    "data/raw/itad/1740720.json": {
+      "sha256": "89895e6d9871119b7d3081d4e806e6b59df069a615c451380ad1ec4650b650b3",
+      "size_bytes": 45257
+    },
+    "data/raw/itad/1785150.json": {
+      "sha256": "cb12d2362f01f5f317b2f0e7182ef93b83a82cc1e6b233db4ba44e3ca3c52760",
+      "size_bytes": 54347
+    },
+    "data/raw/itad/1836120.json": {
+      "sha256": "1483e85cb18c1d913663716aece4b7a60b49ab7375d03fc56e1de7fadcf595dc",
+      "size_bytes": 49583
+    },
+    "data/raw/itad/1882420.json": {
+      "sha256": "0175ae45eff7a7c6e589c1dc8cdc86d1a8847164762d9d54ac9c1e6d35b3b9cf",
+      "size_bytes": 28227
+    },
+    "data/raw/itad/1894600.json": {
+      "sha256": "4d094ff300380090ca86165b5d2e8eac13ba599c3efac40c2691e32ada0d9548",
+      "size_bytes": 3193
+    },
+    "data/raw/itad/2009420.json": {
+      "sha256": "5a397a04ffab66be83fc50bfe87e8e95dee64c50ad0e46396aa2ef7c6eaaf972",
+      "size_bytes": 46717
+    },
+    "data/raw/itad/202410.json": {
+      "sha256": "e9ea08652b3a9f43d0791f838ae74806c5f3cb0a32f2c1398a810a7ed2db9d0d",
+      "size_bytes": 4879
+    },
+    "data/raw/itad/2062610.json": {
+      "sha256": "a547cfcf7730f097b8bab3338770eb8346d736884ae5fa7242f559845309657a",
+      "size_bytes": 3271
+    },
+    "data/raw/itad/20710.json": {
+      "sha256": "37d4632e562d5ea8c8aef10c816edf74bc413bc5177ca58fa451fa3378f1b312",
+      "size_bytes": 29797
+    },
+    "data/raw/itad/2123430.json": {
+      "sha256": "8e8527864b4cb11f63f7ba82eaac459399e08148e3e3f025c33460c3bc92da4f",
+      "size_bytes": 12793
+    },
+    "data/raw/itad/213670.json": {
+      "sha256": "07d3e81f2e91abe12a759b5b79ab43567de7bc148fcb0d48b0efa8382816e984",
+      "size_bytes": 68435
+    },
+    "data/raw/itad/2164880.json": {
+      "sha256": "23383d3c35179080d132e2f643700f8fab750adac505b2c38ee72ca5afed9bd3",
+      "size_bytes": 7039
+    },
+    "data/raw/itad/218740.json": {
+      "sha256": "eac7e580ecc4152d10b57f8010143500d61c48743c834a76faf69080740c6658",
+      "size_bytes": 39889
+    },
+    "data/raw/itad/219200.json": {
+      "sha256": "c85b345b024ac732dcf810f873cad487f4e777d6c05d997072085fd7ff88672d",
+      "size_bytes": 49507
+    },
+    "data/raw/itad/2205710.json": {
+      "sha256": "bf6cd2bae5ea968a6f1ce32736c9b8ae6205fa35f33d7b4f580a530f3e86d924",
+      "size_bytes": 50849
+    },
+    "data/raw/itad/2265760.json": {
+      "sha256": "eae7b0fbf12461224fdbdb66d1a04aa8d165621fd32e9495c00d2fd3c581dfb8",
+      "size_bytes": 16845
+    },
+    "data/raw/itad/2268470.json": {
+      "sha256": "27349ebc6af00d870a71b203bb95f45cfddf6d9c134a33be699ca4461a900403",
+      "size_bytes": 6417
+    },
+    "data/raw/itad/2270520.json": {
+      "sha256": "b640b2fd09caf759719f7eb1c9aa38bc661164dca96d3257b93889c7491c5f55",
+      "size_bytes": 39005
+    },
+    "data/raw/itad/228320.json": {
+      "sha256": "7b4d71da4e804a8e0aa9ce9e298993bffd637d592903b426b5f958b867cb6a20",
+      "size_bytes": 7777
+    },
+    "data/raw/itad/2312170.json": {
+      "sha256": "722b2db62d73e19a171c9fe8cae17f006d6b19531b537ed4646bb3d5f5c46133",
+      "size_bytes": 22355
+    },
+    "data/raw/itad/2314050.json": {
+      "sha256": "ba4b938007d892e70e10f8931b8e194c63dc57159908d767f559a2fb4a7b95f7",
+      "size_bytes": 38401
+    },
+    "data/raw/itad/234490.json": {
+      "sha256": "0626f3519a51869f39aabe1e947d67243bc7b644419934aa06cd2efbbb026dea",
+      "size_bytes": 35751
+    },
+    "data/raw/itad/2383710.json": {
+      "sha256": "7fac58b50e8fd909e478d988b791d8a1947a1049ec9b0f10b1a1168096e420b3",
+      "size_bytes": 52389
+    },
+    "data/raw/itad/2387820.json": {
+      "sha256": "d880326dfe77abf65e3f8c3ec082b482c75ea96f749c309a80c55dab994cac80",
+      "size_bytes": 52189
+    },
+    "data/raw/itad/242960.json": {
+      "sha256": "f62200f1d022ea3bb1ec1a30103016c354657eb62fa3d3fe59489be2c25e5932",
+      "size_bytes": 58791
+    },
+    "data/raw/itad/2490910.json": {
+      "sha256": "bb5f3bf5ebb38e76dd53ff2f4495e44efa9fa180a65826b754f1bc9e45f9b581",
+      "size_bytes": 39033
+    },
+    "data/raw/itad/2504210.json": {
+      "sha256": "34fe3ae80ae2474f884354797a2ea06542a75d9e4511af03215d7be638ccc9c1",
+      "size_bytes": 3301
+    },
+    "data/raw/itad/252490.json": {
+      "sha256": "3078c0b96abf594d4ceb0b842c677998c5fad13735c3e7c9160ac48d40f85b68",
+      "size_bytes": 60745
+    },
+    "data/raw/itad/2544720.json": {
+      "sha256": "b89dce19412027d8a1c9a0be2b12ed3260668c5a3033ecdf8ffe146209abe141",
+      "size_bytes": 50107
+    },
+    "data/raw/itad/2621900.json": {
+      "sha256": "987a792ce4a7cd6a3b7e063a9ab762426ebfa96b2c02b380b5e5cc500a3f3bce",
+      "size_bytes": 43525
+    },
+    "data/raw/itad/262470.json": {
+      "sha256": "9e1d744ec9e7f1273958d5a4ba60e2c1654e430f3cb6ea34625b7907442c87bf",
+      "size_bytes": 33925
+    },
+    "data/raw/itad/2650840.json": {
+      "sha256": "6aec0f68350a764aa3734968ce1927445c4d9c23a6095bc96fe46e31f993b000",
+      "size_bytes": 38323
+    },
+    "data/raw/itad/270880.json": {
+      "sha256": "2ffe25e13a7c94cbf0862aee7addc5bd53294abc757352ab3717d30aecec2cb2",
+      "size_bytes": 89053
+    },
+    "data/raw/itad/282010.json": {
+      "sha256": "3b22e0adbac21b93f86857a66e4e9cc2d64ba90c9d3834d84dda55ef91786cdb",
+      "size_bytes": 8365
+    },
+    "data/raw/itad/292400.json": {
+      "sha256": "9bbf717a11f8f2548c75f8b00d0056e93fd1ae1376304bef4452482b968a4819",
+      "size_bytes": 34509
+    },
+    "data/raw/itad/303680.json": {
+      "sha256": "79e8e26d4f7c391ba6ade6a1eb4ab03fba2ca8a1656a63f5ec79d868c7b543b5",
+      "size_bytes": 33933
+    },
+    "data/raw/itad/312520.json": {
+      "sha256": "6c0266ca78bf3db6149a3f649ccab1c9795f5c05505ca70cbca355671a77d595",
+      "size_bytes": 71675
+    },
+    "data/raw/itad/314300.json": {
+      "sha256": "0a3c1b8b28faca8a017282218aae61405a074be99d76d563b167db6286a35d97",
+      "size_bytes": 3831
+    },
+    "data/raw/itad/331200.json": {
+      "sha256": "ab607a48a217d737be19ee0f09c087f89a601d5d77cc6733b4084a29852107f0",
+      "size_bytes": 41573
+    },
+    "data/raw/itad/360430.json": {
+      "sha256": "a4b59aaa533ce396f2996a31efc71513fbfe138ea6f8beda98fca4b1e04d2850",
+      "size_bytes": 83929
+    },
+    "data/raw/itad/363890.json": {
+      "sha256": "a510eae7c6d93c99b3f9e84dfcecf83314f15719ed36663ba601392264e7937d",
+      "size_bytes": 84049
+    },
+    "data/raw/itad/371450.json": {
+      "sha256": "d2f307f911ee0971705881eaaffa3defe518aeff51287bb94aa70cdda8b1b582",
+      "size_bytes": 14009
+    },
+    "data/raw/itad/38210.json": {
+      "sha256": "28679707bb5e5dc1e8f660af6d1237bd42ba335d3236dfae93a5e7f21ae0cf09",
+      "size_bytes": 53347
+    },
+    "data/raw/itad/397310.json": {
+      "sha256": "520e298ca4eb6bd55ca05e01d17401a3c8f5557f81c54105fe2a54bbba227923",
+      "size_bytes": 82543
+    },
+    "data/raw/itad/418030.json": {
+      "sha256": "6d21765a44e19859ba24097f5806c197976506e6f841f2b51110752746103c78",
+      "size_bytes": 73703
+    },
+    "data/raw/itad/445220.json": {
+      "sha256": "0bfa1f694e6632a55d6cdd53b8ba9dbb65bf505f7a8b1926e5ca2334b6371e16",
+      "size_bytes": 38767
+    },
+    "data/raw/itad/449310.json": {
+      "sha256": "04032dea4592061852ea26dad74d59575b6411aa0f0a6cfcaeebb13ca3266bfa",
+      "size_bytes": 4505
+    },
+    "data/raw/itad/451950.json": {
+      "sha256": "5d7931ed8ac6dae3e223d1415959ae27cd4dabc7a0a2dbfe56265508f66f1cf3",
+      "size_bytes": 7151
+    },
+    "data/raw/itad/528950.json": {
+      "sha256": "de4104f4e3e6986e9f03ce3a013dc0a1bb3e654fd360c8bbc14bfb045f915c14",
+      "size_bytes": 76683
+    },
+    "data/raw/itad/536220.json": {
+      "sha256": "58215030a233b73b22943d84b1cd7f1c681276d5a3ae9130bd5de4900ebd7268",
+      "size_bytes": 56187
+    },
+    "data/raw/itad/582660.json": {
+      "sha256": "138c6a307070db3700237b4d41a30d3bd1d8d4d874cc1c3dd3572ae5b003508a",
+      "size_bytes": 62461
+    },
+    "data/raw/itad/595140.json": {
+      "sha256": "8828fef59dd6d0a2441bde958f605fcc64c0fc38c9086c499e21f7ae7568f88f",
+      "size_bytes": 32911
+    },
+    "data/raw/itad/603210.json": {
+      "sha256": "059b984416652625f737f5861735c40bcc03c764c2f87de5c9560f55a669d38c",
+      "size_bytes": 3841
+    },
+    "data/raw/itad/61600.json": {
+      "sha256": "42fcedfd27dead61d919e18c45dabc4e0ccccefcde0d59b3abf59392701b4f87",
+      "size_bytes": 28097
+    },
+    "data/raw/itad/646350.json": {
+      "sha256": "d785467a5fef6808403878377c273938578e59c0135d93f1fc816c55193d7b56",
+      "size_bytes": 23921
+    },
+    "data/raw/itad/666120.json": {
+      "sha256": "3a3cdafb91797325b31a1b415c37080f6b7dffa35765c3bdbecc5fd82df43bdf",
+      "size_bytes": 3915
+    },
+    "data/raw/itad/700600.json": {
+      "sha256": "b83a37529e98636969807533b15cbf76894f078e854180883005cbff1e50fe19",
+      "size_bytes": 45267
+    },
+    "data/raw/itad/708430.json": {
+      "sha256": "bc8c497b951ef94713ba2ceac2535e92a3da5773427eaec89000e2699b0b5f69",
+      "size_bytes": 89771
+    },
+    "data/raw/itad/745880.json": {
+      "sha256": "12fdb016c2988ed4196d4e03bd329f9a48c840dece4dfb680a63addefb53cbe2",
+      "size_bytes": 3999
+    },
+    "data/raw/itad/757320.json": {
+      "sha256": "95ffc008b115ca91e2e27d952eef7a71571f946cb5f06b11b6b9accf4b13c927",
+      "size_bytes": 82547
+    },
+    "data/raw/itad/7830.json": {
+      "sha256": "6201ff9563086967e736567814e4b726d2d38cf4261293cc2e0d84784382a6dd",
+      "size_bytes": 45317
+    },
+    "data/raw/itad/791800.json": {
+      "sha256": "5954b9b5ce65f1fe998faf95f7f982a78b0ef0ae1e3124935d6096c60e8f1f22",
+      "size_bytes": 28399
+    },
+    "data/raw/itad/799600.json": {
+      "sha256": "91b17abd9ad1c549af923911429686572bde9c7f366ddc2d24454dfacbe7bc28",
+      "size_bytes": 50571
+    },
+    "data/raw/itad/806140.json": {
+      "sha256": "c686b25a22e845e161b5e830758e3a8ff693ecae69a01f62de6f9908f4b2e9c8",
+      "size_bytes": 7057
+    },
+    "data/raw/itad/809230.json": {
+      "sha256": "071dd3030806cc2494bef709975b72f20a7cb69f232697c622f76f315ac52ceb",
+      "size_bytes": 80071
+    },
+    "data/raw/itad/821720.json": {
+      "sha256": "daf76e86a1c1a56ead3aeb8194aa0b8f32bdd8055ad032113d74e844d7571c3d",
+      "size_bytes": 76711
+    },
+    "data/raw/itad/826420.json": {
+      "sha256": "f4ea538548edf392d5d7e8c5c733de993c4f60acad0b578411f8731cf267ff09",
+      "size_bytes": 34103
+    },
+    "data/raw/itad/829590.json": {
+      "sha256": "740cfa3fa51906d7dac4902ad114c3a9ff9501788e052c795646099d7e5a2b66",
+      "size_bytes": 83853
+    },
+    "data/raw/itad/887920.json": {
+      "sha256": "bb0a40a3bdb476c72f83cecad6a5fbbab74c970159f301f560a76e6dc61d5f94",
+      "size_bytes": 33433
+    },
+    "data/raw/itad/8930.json": {
+      "sha256": "68de47079f76d818c8e1dd515cbb9e33758e14a13ccbc0b795b2c2a5f4a0bb36",
+      "size_bytes": 22621
+    },
+    "data/raw/itad/965590.json": {
+      "sha256": "3e9694d62b32254582aacab1c06d697c80519390a043439d637b1802f9be71b2",
+      "size_bytes": 49847
+    },
+    "data/raw/itad/966000.json": {
+      "sha256": "f291f91930e955d61eb33c3e7abe757bd8790539679c2f7d46ff7d8dcea1e5fd",
+      "size_bytes": 5293
+    },
+    "data/raw/itad/9730.json": {
+      "sha256": "490151313ac8d4659947993759ceee12d8b741c6195ec96a75a992efff4b2b23",
+      "size_bytes": 55403
+    }
+  },
+  "existing_cache_statuses": {
+    "absent": 1000,
+    "valid": 1000
+  },
+  "existing_frozen_cohorts_unchanged": true,
+  "existing_raw_caches_unchanged": 1000,
+  "existing_source_files_unchanged": true,
+  "first_batch_cumulative_attempt_cap": 2366,
+  "first_batch_expected_requests": 500,
+  "first_batch_games": 250,
+  "first_batch_planned_appids": [
+    "1928120",
+    "514760",
+    "1022980",
+    "462000",
+    "2228890",
+    "966610",
+    "2488350",
+    "289340",
+    "2055650",
+    "279900",
+    "1499640",
+    "710940",
+    "2067300",
+    "2184220",
+    "523570",
+    "2005710",
+    "620130",
+    "1662350",
+    "2469160",
+    "834450",
+    "1958120",
+    "720510",
+    "1263590",
+    "721420",
+    "979110",
+    "1069660",
+    "266250",
+    "1777110",
+    "459050",
+    "1222140",
+    "513600",
+    "2635120",
+    "1221240",
+    "514890",
+    "1427680",
+    "661530",
+    "1787050",
+    "410120",
+    "2335110",
+    "1315810",
+    "461210",
+    "1039100",
+    "883130",
+    "1257360",
+    "1395710",
+    "1098670",
+    "1178510",
+    "318530",
+    "448560",
+    "1222680",
+    "2331110",
+    "894330",
+    "552080",
+    "393380",
+    "373990",
+    "1385830",
+    "864510",
+    "2534620",
+    "1895560",
+    "436870",
+    "1854790",
+    "981980",
+    "2072430",
+    "1668800",
+    "299600",
+    "1565030",
+    "307340",
+    "339090",
+    "1826070",
+    "1987500",
+    "767030",
+    "1794600",
+    "598690",
+    "1866840",
+    "952860",
+    "2106420",
+    "2419220",
+    "956550",
+    "1355140",
+    "1934650",
+    "487250",
+    "2175610",
+    "758870",
+    "765610",
+    "1864440",
+    "323950",
+    "1031830",
+    "1329790",
+    "849100",
+    "656400",
+    "2093380",
+    "370300",
+    "865980",
+    "593740",
+    "2342760",
+    "1306760",
+    "1028460",
+    "1389450",
+    "781220",
+    "458180",
+    "2248120",
+    "1013790",
+    "1229260",
+    "885510",
+    "924370",
+    "279420",
+    "1253050",
+    "1119840",
+    "877400",
+    "1138310",
+    "463800",
+    "1639900",
+    "871300",
+    "2253200",
+    "2108560",
+    "955860",
+    "1247950",
+    "729670",
+    "1250060",
+    "1929610",
+    "517350",
+    "2127930",
+    "708760",
+    "2225500",
+    "220",
+    "1156630",
+    "1707670",
+    "1729160",
+    "551520",
+    "1697680",
+    "1295760",
+    "1109690",
+    "2058850",
+    "1698030",
+    "427980",
+    "1394800",
+    "585690",
+    "1285530",
+    "2418000",
+    "988100",
+    "1472540",
+    "1006250",
+    "1245810",
+    "280640",
+    "787780",
+    "2326240",
+    "767490",
+    "534680",
+    "939100",
+    "502100",
+    "1199650",
+    "2352770",
+    "717380",
+    "1337760",
+    "791740",
+    "1585250",
+    "2559360",
+    "1845760",
+    "825110",
+    "1470320",
+    "1181470",
+    "1418310",
+    "739260",
+    "2080970",
+    "311190",
+    "1842430",
+    "713180",
+    "1620860",
+    "441830",
+    "1331860",
+    "2265410",
+    "783560",
+    "1524350",
+    "890710",
+    "1257920",
+    "2599300",
+    "96100",
+    "1486630",
+    "993750",
+    "1247830",
+    "460950",
+    "1819020",
+    "2500760",
+    "3620",
+    "1684780",
+    "860650",
+    "761010",
+    "450440",
+    "2270970",
+    "1651280",
+    "365330",
+    "2080060",
+    "455480",
+    "1916580",
+    "1644320",
+    "706690",
+    "1353160",
+    "1144100",
+    "1912700",
+    "603930",
+    "868730",
+    "2269350",
+    "267600",
+    "676410",
+    "1897460",
+    "487740",
+    "1209190",
+    "2105600",
+    "834030",
+    "2055370",
+    "1276040",
+    "1096540",
+    "1939600",
+    "679660",
+    "2614790",
+    "2062190",
+    "914480",
+    "1066760",
+    "985530",
+    "2255350",
+    "1518000",
+    "463540",
+    "267220",
+    "2068050",
+    "755950",
+    "1734310",
+    "2407350",
+    "585240",
+    "1708800",
+    "837210",
+    "1991360",
+    "520660",
+    "2471620",
+    "1713720",
+    "932310",
+    "1392510",
+    "1944240",
+    "467960",
+    "2329580",
+    "1458680",
+    "794570",
+    "276750",
+    "1376350",
+    "820780",
+    "1943240",
+    "1741420",
+    "545490",
+    "1201830",
+    "1123400",
+    "1909420"
+  ],
+  "five_minute_break_satisfied_at_validation": true,
+  "journal_attempts": 1816,
+  "journal_sha256": "290b9a90dfb1db3a0034538abae02dd3f088d74f7c199f6a84e00ed1f229a627",
+  "journal_unchanged": true,
+  "latest_successful_http_response_at_utc": "2026-10-13T16:03:39.656379+00:00",
+  "live_requests_made": 0,
+  "minimum_interbatch_break_seconds": 300,
+  "new_games_requiring_collection": 1000,
+  "offline_tests": {
+    "errors": 0,
+    "failures": 0,
+    "full_historical_regeneration_tests_excluded": true,
+    "network_guard": true,
+    "passed": true,
+    "pilot_models_refitted": false,
+    "protected_artifacts_unchanged": true,
+    "protected_artifacts_verified": 219,
+    "real_credentials_available": false,
+    "repository_write_guard": true,
+    "skips": 0,
+    "tests_run": 187
+  },
+  "original_pilot_caches_unchanged": 100,
+  "preexisting_preservation_inventory_files": 1136,
+  "preexisting_preservation_inventory_mismatches": [],
+  "preserved_prefix_rows": 1000,
+  "prior_rows_preserved": true,
+  "protected_artifacts_unchanged": true,
+  "protected_artifacts_verified": 219,
+  "protected_baseline": "tests/scalable_artifact_hashes.json",
+  "request_interval_seconds": 3,
+  "retry_reserve": 50,
+  "reusable_cache_locations": {
+    "data/cohorts/itad/cache": 900,
+    "data/raw/itad": 100
+  },
+  "schema_version": 1,
+  "successful_history_states": {
+    "empty_history": 43,
+    "history_received": 957
+  },
+  "target_games": 2000,
+  "unique_appids": 2000,
+  "unresolved_active_checkpoints": 0,
+  "validated_at_utc": "2026-10-13T16:23:12.869264+00:00"
+}

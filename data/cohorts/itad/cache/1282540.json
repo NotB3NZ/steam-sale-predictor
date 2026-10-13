@@ -1,0 +1,100 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T19:02:07.928526Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T19:02:13.694237Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2021-03-27T14:07:14+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-43e5-73ac-879e-ded3953e026f",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T19:02:13.694237Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 19:02:13 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-03-27T14:07:14+01:00"
+    }
+  ],
+  "itad_game_id": "018d937f-43e5-73ac-879e-ded3953e026f",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T19:02:10.679979Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-43e5-73ac-879e-ded3953e026f\",\"slug\":\"tales-of-kongfu\",\"title\":\"Tales of Kongfu\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-43e5-73ac-879e-ded3953e026f\\/boxart.jpg?t=1763396733\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-43e5-73ac-879e-ded3953e026f\\/banner145.jpg?t=1763396733\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-43e5-73ac-879e-ded3953e026f\\/banner300.jpg?t=1763396733\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-43e5-73ac-879e-ded3953e026f\\/banner400.jpg?t=1763396733\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-43e5-73ac-879e-ded3953e026f\\/banner600.jpg?t=1763396733\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "1282540"
+    },
+    "received_at": "2026-10-13T19:02:10.679979Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 19:02:10 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-43e5-73ac-879e-ded3953e026f/banner145.jpg?t=1763396733",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-43e5-73ac-879e-ded3953e026f/banner300.jpg?t=1763396733",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-43e5-73ac-879e-ded3953e026f/banner400.jpg?t=1763396733",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-43e5-73ac-879e-ded3953e026f/banner600.jpg?t=1763396733",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-43e5-73ac-879e-ded3953e026f/boxart.jpg?t=1763396733"
+      },
+      "id": "018d937f-43e5-73ac-879e-ded3953e026f",
+      "mature": false,
+      "slug": "tales-of-kongfu",
+      "title": "Tales of Kongfu",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 1282540
+}

@@ -1,0 +1,100 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T16:55:31.347844Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T16:55:37.515479Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"regular\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937e-ea56-7278-9ea1-308c69bc565e",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T16:55:37.515479Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 16:55:37 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-01T01:00:00+01:00"
+    }
+  ],
+  "itad_game_id": "018d937e-ea56-7278-9ea1-308c69bc565e",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T16:55:34.437622Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937e-ea56-7278-9ea1-308c69bc565e\",\"slug\":\"akuya\",\"title\":\"Akuya\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937e-ea56-7278-9ea1-308c69bc565e\\/boxart.png?t=1731986209\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937e-ea56-7278-9ea1-308c69bc565e\\/banner145.jpg?t=1731986209\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937e-ea56-7278-9ea1-308c69bc565e\\/banner300.jpg?t=1731986209\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937e-ea56-7278-9ea1-308c69bc565e\\/banner400.jpg?t=1731986209\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937e-ea56-7278-9ea1-308c69bc565e\\/banner600.jpg?t=1731986210\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "545490"
+    },
+    "received_at": "2026-10-13T16:55:34.437622Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 16:55:34 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937e-ea56-7278-9ea1-308c69bc565e/banner145.jpg?t=1731986209",
+        "banner300": "https://assets.isthereanydeal.com/018d937e-ea56-7278-9ea1-308c69bc565e/banner300.jpg?t=1731986209",
+        "banner400": "https://assets.isthereanydeal.com/018d937e-ea56-7278-9ea1-308c69bc565e/banner400.jpg?t=1731986209",
+        "banner600": "https://assets.isthereanydeal.com/018d937e-ea56-7278-9ea1-308c69bc565e/banner600.jpg?t=1731986210",
+        "boxart": "https://assets.isthereanydeal.com/018d937e-ea56-7278-9ea1-308c69bc565e/boxart.png?t=1731986209"
+      },
+      "id": "018d937e-ea56-7278-9ea1-308c69bc565e",
+      "mature": false,
+      "slug": "akuya",
+      "title": "Akuya",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 545490
+}

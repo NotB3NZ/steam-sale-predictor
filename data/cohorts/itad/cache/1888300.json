@@ -1,0 +1,79 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T18:24:43.387072Z",
+    "history_status": "empty_history",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T18:24:49.323196Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018ead11-8ad2-72a5-9889-5ba01bf2f4c3",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T18:24:49.323196Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 18:24:49 GMT"
+    }
+  },
+  "history_response": [],
+  "itad_game_id": "018ead11-8ad2-72a5-9889-5ba01bf2f4c3",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T18:24:46.578076Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018ead11-8ad2-72a5-9889-5ba01bf2f4c3\",\"slug\":\"horos-web-of-shadows\",\"title\":\"HOROS - Web of Shadows\",\"type\":null,\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018ead11-8ad2-72a5-9889-5ba01bf2f4c3\\/boxart.jpg?t=1789146937\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018ead11-8ad2-72a5-9889-5ba01bf2f4c3\\/banner145.jpg?t=1789146938\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018ead11-8ad2-72a5-9889-5ba01bf2f4c3\\/banner300.jpg?t=1789146938\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018ead11-8ad2-72a5-9889-5ba01bf2f4c3\\/banner400.jpg?t=1789146938\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018ead11-8ad2-72a5-9889-5ba01bf2f4c3\\/banner600.jpg?t=1789146938\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "1888300"
+    },
+    "received_at": "2026-10-13T18:24:46.578076Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 18:24:46 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018ead11-8ad2-72a5-9889-5ba01bf2f4c3/banner145.jpg?t=1789146938",
+        "banner300": "https://assets.isthereanydeal.com/018ead11-8ad2-72a5-9889-5ba01bf2f4c3/banner300.jpg?t=1789146938",
+        "banner400": "https://assets.isthereanydeal.com/018ead11-8ad2-72a5-9889-5ba01bf2f4c3/banner400.jpg?t=1789146938",
+        "banner600": "https://assets.isthereanydeal.com/018ead11-8ad2-72a5-9889-5ba01bf2f4c3/banner600.jpg?t=1789146938",
+        "boxart": "https://assets.isthereanydeal.com/018ead11-8ad2-72a5-9889-5ba01bf2f4c3/boxart.jpg?t=1789146937"
+      },
+      "id": "018ead11-8ad2-72a5-9889-5ba01bf2f4c3",
+      "mature": false,
+      "slug": "horos-web-of-shadows",
+      "title": "HOROS - Web of Shadows",
+      "type": null
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 1888300
+}
