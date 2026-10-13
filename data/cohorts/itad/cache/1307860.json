@@ -1,0 +1,180 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T03:18:34.599954Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T03:18:36.928344Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2022-07-25T19:32:45+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"regular\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2022-07-18T19:04:20+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":3.49,\"amountInt\":349,\"currency\":\"USD\"},\"regular\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"cut\":50}},{\"timestamp\":\"2022-07-07T21:55:10+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"regular\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2022-06-23T22:00:00+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":3.49,\"amountInt\":349,\"currency\":\"USD\"},\"regular\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"cut\":50}},{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"regular\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-4979-7262-a259-db99bf22e3b1",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T03:18:36.928344Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 03:18:36 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-07-25T19:32:45+02:00"
+    },
+    {
+      "deal": {
+        "cut": 50,
+        "price": {
+          "amount": 3.49,
+          "amountInt": 349,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-07-18T19:04:20+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-07-07T21:55:10+02:00"
+    },
+    {
+      "deal": {
+        "cut": 50,
+        "price": {
+          "amount": 3.49,
+          "amountInt": 349,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-06-23T22:00:00+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-01T01:00:00+01:00"
+    }
+  ],
+  "itad_game_id": "018d937f-4979-7262-a259-db99bf22e3b1",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T03:18:35.839028Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-4979-7262-a259-db99bf22e3b1\",\"slug\":\"queerskins-a-love-story\",\"title\":\"Queerskins: a love story\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-4979-7262-a259-db99bf22e3b1\\/boxart.jpg?t=1763209545\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-4979-7262-a259-db99bf22e3b1\\/banner145.jpg?t=1763209545\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-4979-7262-a259-db99bf22e3b1\\/banner300.jpg?t=1763209545\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-4979-7262-a259-db99bf22e3b1\\/banner400.jpg?t=1763209545\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-4979-7262-a259-db99bf22e3b1\\/banner600.jpg?t=1763209546\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "1307860"
+    },
+    "received_at": "2026-10-13T03:18:35.839028Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 03:18:35 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-4979-7262-a259-db99bf22e3b1/banner145.jpg?t=1763209545",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-4979-7262-a259-db99bf22e3b1/banner300.jpg?t=1763209545",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-4979-7262-a259-db99bf22e3b1/banner400.jpg?t=1763209545",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-4979-7262-a259-db99bf22e3b1/banner600.jpg?t=1763209546",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-4979-7262-a259-db99bf22e3b1/boxart.jpg?t=1763209545"
+      },
+      "id": "018d937f-4979-7262-a259-db99bf22e3b1",
+      "mature": false,
+      "slug": "queerskins-a-love-story",
+      "title": "Queerskins: a love story",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 1307860
+}

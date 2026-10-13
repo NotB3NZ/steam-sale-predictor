@@ -1,0 +1,79 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T03:08:25.048112Z",
+    "history_status": "empty_history",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T03:08:27.214096Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-65d8-7253-b2e9-820db27a6b07",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T03:08:27.214096Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 03:08:27 GMT"
+    }
+  },
+  "history_response": [],
+  "itad_game_id": "018d937f-65d8-7253-b2e9-820db27a6b07",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T03:08:26.110015Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-65d8-7253-b2e9-820db27a6b07\",\"slug\":\"ares-virus2\",\"title\":\"Ares Virus2\",\"type\":null,\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-65d8-7253-b2e9-820db27a6b07\\/boxart.jpg?t=1763105755\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-65d8-7253-b2e9-820db27a6b07\\/banner145.jpg?t=1763105756\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-65d8-7253-b2e9-820db27a6b07\\/banner300.jpg?t=1763105756\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-65d8-7253-b2e9-820db27a6b07\\/banner400.jpg?t=1763105756\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-65d8-7253-b2e9-820db27a6b07\\/banner600.jpg?t=1763105756\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "1980240"
+    },
+    "received_at": "2026-10-13T03:08:26.110015Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 03:08:26 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-65d8-7253-b2e9-820db27a6b07/banner145.jpg?t=1763105756",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-65d8-7253-b2e9-820db27a6b07/banner300.jpg?t=1763105756",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-65d8-7253-b2e9-820db27a6b07/banner400.jpg?t=1763105756",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-65d8-7253-b2e9-820db27a6b07/banner600.jpg?t=1763105756",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-65d8-7253-b2e9-820db27a6b07/boxart.jpg?t=1763105755"
+      },
+      "id": "018d937f-65d8-7253-b2e9-820db27a6b07",
+      "mature": false,
+      "slug": "ares-virus2",
+      "title": "Ares Virus2",
+      "type": null
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 1980240
+}

@@ -6,6 +6,7 @@ from pathlib import Path
 import socket
 import sys
 import tempfile
+import time
 import unittest
 from unittest.mock import patch
 from urllib.error import HTTPError
@@ -42,6 +43,7 @@ class FakeOpener:
         self.history = [RECORD] if history is None else history
         self.outcomes = list(outcomes)
         self.calls = []
+        self.lookup_appids = []
     def open(self, req, timeout):
         url = urlparse(req.full_url)
         query = parse_qs(url.query)
@@ -52,6 +54,7 @@ class FakeOpener:
             assert query == {'id': [GID], 'country': ['US'], 'shops': ['61'], 'since': ['2021-01-01T00:00:00Z']}
         else:
             assert url.path == inc.itad.LOOKUP and set(query) == {'appid'}
+            self.lookup_appids.append(query['appid'][0])
         self.calls.append(url.path)
         if self.outcomes:
             outcome = self.outcomes.pop(0)
@@ -77,12 +80,224 @@ class ScalableTests(unittest.TestCase):
         c.write_csv(self.cohort, [dict(AppID='999999991', Name='Synthetic game', release_date='2020-01-01',
                                      evaluation_group='development')], ['AppID', 'Name', 'release_date', 'evaluation_group'])
         self.sleep = patch.object(inc.time, 'sleep')
-        self.sleep.start()
+        self.sleep_mock = self.sleep.start()
         self.addCleanup(self.sleep.stop)
 
     def collect(self, opener=None, **kwargs):
         return inc.run(self.cohort, self.cache, self.output, reuse_dirs=[],
                        live=opener is not None, opener=opener, key=KEY if opener is not None else '', **kwargs)
+
+    def batch_cohort(self, ids=('999999993', '999999991', '999999992')):
+        c.write_csv(self.cohort, [dict(AppID=appid, Name='Synthetic '+appid,
+                                     release_date='2020-01-01', evaluation_group='development')
+                                    for appid in ids],
+                    ['AppID', 'Name', 'release_date', 'evaluation_group'])
+        return list(ids)
+
+    def test_raw_only_bypasses_all_downstream_calculations(self):
+        with patch.dict(sys.modules, {'cohort_pipeline': None}), \
+             patch.object(p.features_core, 'build_features', side_effect=AssertionError('No features')), \
+             patch.object(p.labels_core, 'construct_labels', side_effect=AssertionError('No labels')):
+            report = self.collect(FakeOpener(), raw_only=True)
+        self.assertTrue(report['raw_only'])
+        self.assertEqual(report['games_with_complete_caches'], 1)
+        self.assertEqual(report['successful_lookups'], 1)
+        self.assertEqual(report['successful_histories'], 1)
+        self.assertNotIn('coverage_by_sale_year', report)
+        self.assertNotIn('missing_or_uncertain_labels', report)
+        self.assertEqual({p.name for p in self.output.iterdir()},
+                         {'collection_manifest.csv', 'collection_quality.json'})
+
+    def test_raw_only_offline_has_no_key_client_or_cache_creation(self):
+        with patch.object(inc, 'RecordingClient', side_effect=AssertionError('No client')), \
+             patch.dict(sys.modules, {'cohort_pipeline': None}):
+            report = self.collect(raw_only=True, max_new_games=1)
+        self.assertEqual(report['planned_games'], 1)
+        self.assertEqual(report['cumulative_requests']['total_http_attempts'], 0)
+        self.assertFalse(self.cache.exists())
+
+    def test_batch_limit_and_selection_preserve_frozen_order(self):
+        ids = self.batch_cohort()
+        frozen = self.cohort.read_bytes()
+        first = FakeOpener()
+        report = self.collect(first, raw_only=True, max_new_games=2)
+        self.assertEqual(first.lookup_appids, ids[:2])
+        self.assertEqual(report['planned_appids'], ids[:2])
+        self.assertEqual(report['games_with_complete_caches'], 2)
+        self.assertFalse((self.cache/(ids[2]+'.json')).exists())
+        second = FakeOpener()
+        again = self.collect(second, raw_only=True, max_new_games=2)
+        self.assertEqual(second.lookup_appids, ids[2:])
+        self.assertEqual(again['games_with_complete_caches'], 3)
+        self.assertEqual(self.cohort.read_bytes(), frozen)
+
+    def test_complete_games_do_not_consume_batch_limit(self):
+        ids = self.batch_cohort()
+        self.collect(FakeOpener(), raw_only=True, max_new_games=1)
+        cached = (self.cache/(ids[0]+'.json')).read_bytes()
+        opener = FakeOpener()
+        report = self.collect(opener, raw_only=True, max_new_games=1)
+        self.assertEqual(opener.lookup_appids, [ids[1]])
+        self.assertEqual(report['already_cached_games'], 1)
+        self.assertEqual(report['planned_games'], 1)
+        self.assertEqual((self.cache/(ids[0]+'.json')).read_bytes(), cached)
+
+    def test_original_reused_cache_does_not_consume_batch_limit(self):
+        original = c.load_cohort(c.ROOT/'data/intermediate/pilot_games.csv')[0]
+        fresh = dict(AppID='999999991', Name='Synthetic', release_date='2020-01-01',
+                     evaluation_group='development')
+        fields = ['AppID', 'Name', 'release_date', 'evaluation_group']
+        c.write_csv(self.cohort, [{k: original[k] for k in fields}, fresh], fields)
+        path = c.ORIGINAL_CACHE/(original['AppID']+'.json')
+        before = c.digest(path)
+        opener = FakeOpener()
+        report = inc.run(self.cohort, self.cache, self.output, live=True, key=KEY,
+                         opener=opener, raw_only=True, max_new_games=1)
+        self.assertEqual(report['already_cached_games'], 1)
+        self.assertEqual(opener.lookup_appids, [fresh['AppID']])
+        self.assertFalse((self.cache/path.name).exists())
+        self.assertEqual(c.digest(path), before)
+
+    def test_zero_batch_and_invalid_limits(self):
+        opener = FakeOpener()
+        report = self.collect(opener, raw_only=True, max_new_games=0)
+        self.assertEqual(opener.calls, [])
+        self.assertEqual(report['planned_games'], 0)
+        for limit in (-1, 1.5, True):
+            with self.assertRaises(ValueError):
+                self.collect(opener, raw_only=True, max_new_games=limit)
+        self.assertEqual(opener.calls, [])
+
+    def test_raw_batch_resumes_interrupted_history_without_reset(self):
+        ids = self.batch_cohort()
+        first = self.collect(FakeOpener(outcomes=[None, KeyboardInterrupt()]),
+                             raw_only=True, max_new_games=1)
+        self.assertIn('Interrupted', first['stopped'])
+        path = self.cache/'http_attempts.jsonl'
+        prefix = path.read_bytes()
+        opener = FakeOpener()
+        report = self.collect(opener, raw_only=True, max_new_games=1)
+        self.assertEqual(opener.calls, [inc.itad.HISTORY])
+        self.assertEqual(report['planned_appids'], [ids[0]])
+        self.assertEqual(report['games_with_complete_caches'], 1)
+        journal = inc.Journal(self.cache, 18, readonly=True)
+        self.assertEqual(journal.counts()['total_http_attempts'], 3)
+        self.assertEqual(journal.counts()['interrupted_or_unknown_attempts'], 1)
+        self.assertFalse(any(e['kind'] == 'round' for e in journal.events))
+        self.assertTrue(path.read_bytes().startswith(prefix))
+
+    def test_batch_failures_keep_counters_until_explicit_retry(self):
+        ids = self.batch_cohort()
+        self.collect(FakeOpener(outcomes=[error(503), error(503), error(503)]),
+                     raw_only=True, max_new_games=1)
+        failed = (self.cache/(ids[0]+'.json')).read_bytes()
+        next_batch = FakeOpener()
+        self.collect(next_batch, raw_only=True, max_new_games=1)
+        self.assertEqual(next_batch.lookup_appids, [ids[1]])
+        journal = inc.Journal(self.cache, 18, readonly=True)
+        self.assertEqual(journal.used(ids[0], inc.itad.LOOKUP, 0), 3)
+        self.assertFalse(any(e['kind'] == 'round' for e in journal.events))
+        retry = FakeOpener()
+        self.collect(retry, raw_only=True, max_new_games=1, retry_failed=True)
+        self.assertEqual(retry.lookup_appids, [ids[0]])
+        self.assertEqual(next((self.cache/'archive'/ids[0]).glob('*.json')).read_bytes(), failed)
+        journal = inc.Journal(self.cache, 18, readonly=True)
+        self.assertEqual(journal.used(ids[0], inc.itad.LOOKUP, 0), 3)
+        self.assertEqual(journal.round_for(ids[0]), 1)
+
+    def test_raw_batch_budget_survives_restart_and_keeps_partial_lookup(self):
+        ids = self.batch_cohort()
+        report = self.collect(FakeOpener(), raw_only=True, max_new_games=1, maximum=1)
+        self.assertIn('budget', report['stopped'])
+        prefix = (self.cache/'http_attempts.jsonl').read_bytes()
+        blocked = FakeOpener()
+        self.collect(blocked, raw_only=True, max_new_games=1, maximum=1)
+        self.assertEqual(blocked.calls, [])
+        self.assertEqual((self.cache/'http_attempts.jsonl').read_bytes(), prefix)
+        resume = FakeOpener()
+        report = self.collect(resume, raw_only=True, max_new_games=1, maximum=2)
+        self.assertEqual(resume.calls, [inc.itad.HISTORY])
+        self.assertEqual(report['cumulative_requests']['total_http_attempts'], 2)
+        final = FakeOpener()
+        report = self.collect(final, raw_only=True, max_new_games=1, maximum=4)
+        self.assertEqual(final.lookup_appids, [ids[1]])
+        self.assertEqual(report['cumulative_requests']['total_http_attempts'], 4)
+        self.assertTrue((self.cache/'http_attempts.jsonl').read_bytes().startswith(prefix))
+
+    def test_429_immediately_stops_and_saves_lookup_or_history_checkpoint(self):
+        self.batch_cohort()
+        for stage in ('lookup', 'history'):
+            for retry_after in (None, '0', '7', '120', 'invalid'):
+                with self.subTest(stage=stage, retry_after=retry_after):
+                    self.cache = self.directory/f'429_{stage}_{retry_after}'
+                    headers = {} if retry_after is None else {'Retry-After': retry_after}
+                    outcomes = ([None] if stage == 'history' else []) + [error(429, headers)]
+                    opener = FakeOpener(outcomes=outcomes)
+                    self.sleep_mock.reset_mock()
+                    report = self.collect(opener, raw_only=True, max_new_games=2)
+                    self.assertEqual(len(opener.calls), 2 if stage == 'history' else 1)
+                    self.assertTrue(report['stopped'])
+                    obj = c.read_json(self.cache/'999999993.json')
+                    self.assertEqual(obj['collection_metadata']['reason'], 'HTTP_429')
+                    self.assertEqual(obj[stage+'_evidence']['http_status'], 429)
+                    self.assertEqual(obj[stage+'_evidence']['response_headers'], headers)
+                    journal = inc.Journal(self.cache, 18, readonly=True)
+                    self.assertEqual(journal.events[-1]['kind'],
+                                     'cooldown' if retry_after in ('7', '120') else 'result')
+                    self.assertFalse(any(call.args == (7.0,) or call.args == (120.0,)
+                                         for call in self.sleep_mock.call_args_list))
+
+    def test_cooldown_is_persistent_and_recovery_works_after_expiration(self):
+        clock = time.time()
+        with patch.object(inc.time, 'time', return_value=clock):
+            self.collect(FakeOpener(outcomes=[None, error(429, {'Retry-After': '120'})]), raw_only=True)
+            journal = inc.Journal(self.cache, 6, readonly=True)
+            self.assertEqual(journal.events[-1]['not_before_epoch'], clock+120)
+            prefix = (self.cache/'http_attempts.jsonl').read_bytes()
+            blocked = FakeOpener()
+            report = self.collect(blocked, raw_only=True, retry_failed=True)
+            self.assertEqual(blocked.calls, [])
+            self.assertIn('cooldown', report['stopped'])
+            self.assertEqual(report['cumulative_requests']['total_http_attempts'], 2)
+        with patch.object(inc.time, 'time', return_value=clock+121):
+            retry = FakeOpener()
+            report = self.collect(retry, raw_only=True, retry_failed=True)
+        self.assertEqual(retry.calls, [inc.itad.HISTORY])
+        self.assertEqual(report['games_with_complete_caches'], 1)
+        self.assertEqual(report['cumulative_requests']['total_http_attempts'], 3)
+        self.assertTrue((self.cache/'http_attempts.jsonl').read_bytes().startswith(prefix))
+
+    def test_401_and_403_immediately_stop_batch_and_preserve_checkpoint(self):
+        ids = self.batch_cohort()
+        for status in (401, 403):
+            for stage in ('lookup', 'history'):
+                with self.subTest(status=status, stage=stage):
+                    self.cache = self.directory/f'auth_{status}_{stage}'
+                    outcomes = ([None] if stage == 'history' else []) + [error(status)]
+                    opener = FakeOpener(outcomes=outcomes)
+                    report = self.collect(opener, raw_only=True, max_new_games=2)
+                    self.assertEqual(len(opener.calls), 2 if stage == 'history' else 1)
+                    self.assertTrue(report['stopped'])
+                    obj = c.read_json(self.cache/(ids[0]+'.json'))
+                    self.assertEqual(obj['collection_metadata']['reason'], f'HTTP_{status}')
+                    self.assertFalse((self.cache/(ids[1]+'.json')).exists())
+
+    def test_raw_batch_cli_passes_both_flags_to_collector(self):
+        ids = self.batch_cohort()
+        opener = FakeOpener()
+        with patch.dict(inc.os.environ, {'ITAD_API_KEY': ' \t'+KEY+'\r\n'}), \
+             patch.object(inc.itad, 'build_opener', return_value=opener), \
+             patch.dict(sys.modules, {'cohort_pipeline': None}), \
+             patch('sys.stdout', io.StringIO()):
+            status = inc.cli(['--cohort', str(self.cohort), '--cache-dir', str(self.cache),
+                              '--output-dir', str(self.output), '--reuse-cache',
+                              str(self.directory/'unused'), '--live', '--raw-only',
+                              '--max-new-games', '1', '--max-total-attempts', '2'])
+        self.assertEqual(status, 0)
+        self.assertEqual(opener.lookup_appids, [ids[0]])
+        report = c.read_json(self.output/'collection_quality.json')
+        self.assertEqual(report['max_new_games'], 1)
+        self.assertEqual(report['maximum_cumulative_attempts'], 2)
 
     def test_dry_run_requires_no_key_no_network_no_cache_creation(self):
         with patch.object(inc.itad, 'Client', side_effect=AssertionError('No client offline')):

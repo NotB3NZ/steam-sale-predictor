@@ -1,0 +1,240 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T04:25:46.010819Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T04:25:48.332392Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2021-07-08T22:05:31+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":7.99,\"amountInt\":799,\"currency\":\"USD\"},\"regular\":{\"amount\":7.99,\"amountInt\":799,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-06-24T20:00:01+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":6.39,\"amountInt\":639,\"currency\":\"USD\"},\"regular\":{\"amount\":7.99,\"amountInt\":799,\"currency\":\"USD\"},\"cut\":20}},{\"timestamp\":\"2021-03-08T19:21:11+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":7.99,\"amountInt\":799,\"currency\":\"USD\"},\"regular\":{\"amount\":7.99,\"amountInt\":799,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-03-01T19:21:28+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":6.39,\"amountInt\":639,\"currency\":\"USD\"},\"regular\":{\"amount\":7.99,\"amountInt\":799,\"currency\":\"USD\"},\"cut\":20}},{\"timestamp\":\"2021-02-15T19:23:46+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":7.99,\"amountInt\":799,\"currency\":\"USD\"},\"regular\":{\"amount\":7.99,\"amountInt\":799,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-02-11T19:56:42+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":7.03,\"amountInt\":703,\"currency\":\"USD\"},\"regular\":{\"amount\":7.99,\"amountInt\":799,\"currency\":\"USD\"},\"cut\":12}},{\"timestamp\":\"2021-01-12T19:21:13+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":7.99,\"amountInt\":799,\"currency\":\"USD\"},\"regular\":{\"amount\":7.99,\"amountInt\":799,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-01-05T16:35:13+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":7.03,\"amountInt\":703,\"currency\":\"USD\"},\"regular\":{\"amount\":7.99,\"amountInt\":799,\"currency\":\"USD\"},\"cut\":12}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-49ea-72b3-a1a7-98edebfc30fa",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T04:25:48.332392Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 04:25:48 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 7.99,
+          "amountInt": 799,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 7.99,
+          "amountInt": 799,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-07-08T22:05:31+02:00"
+    },
+    {
+      "deal": {
+        "cut": 20,
+        "price": {
+          "amount": 6.39,
+          "amountInt": 639,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 7.99,
+          "amountInt": 799,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-06-24T20:00:01+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 7.99,
+          "amountInt": 799,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 7.99,
+          "amountInt": 799,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-03-08T19:21:11+01:00"
+    },
+    {
+      "deal": {
+        "cut": 20,
+        "price": {
+          "amount": 6.39,
+          "amountInt": 639,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 7.99,
+          "amountInt": 799,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-03-01T19:21:28+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 7.99,
+          "amountInt": 799,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 7.99,
+          "amountInt": 799,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-02-15T19:23:46+01:00"
+    },
+    {
+      "deal": {
+        "cut": 12,
+        "price": {
+          "amount": 7.03,
+          "amountInt": 703,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 7.99,
+          "amountInt": 799,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-02-11T19:56:42+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 7.99,
+          "amountInt": 799,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 7.99,
+          "amountInt": 799,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-12T19:21:13+01:00"
+    },
+    {
+      "deal": {
+        "cut": 12,
+        "price": {
+          "amount": 7.03,
+          "amountInt": 703,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 7.99,
+          "amountInt": 799,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-05T16:35:13+01:00"
+    }
+  ],
+  "itad_game_id": "018d937f-49ea-72b3-a1a7-98edebfc30fa",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T04:25:47.360700Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-49ea-72b3-a1a7-98edebfc30fa\",\"slug\":\"salyut-p\",\"title\":\"Salyut \\u03c0\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-49ea-72b3-a1a7-98edebfc30fa\\/boxart.jpg?t=1763272295\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-49ea-72b3-a1a7-98edebfc30fa\\/banner145.jpg?t=1763272295\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-49ea-72b3-a1a7-98edebfc30fa\\/banner300.jpg?t=1763272295\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-49ea-72b3-a1a7-98edebfc30fa\\/banner400.jpg?t=1763272295\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-49ea-72b3-a1a7-98edebfc30fa\\/banner600.jpg?t=1763272296\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "1480190"
+    },
+    "received_at": "2026-10-13T04:25:47.360700Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 04:25:47 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-49ea-72b3-a1a7-98edebfc30fa/banner145.jpg?t=1763272295",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-49ea-72b3-a1a7-98edebfc30fa/banner300.jpg?t=1763272295",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-49ea-72b3-a1a7-98edebfc30fa/banner400.jpg?t=1763272295",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-49ea-72b3-a1a7-98edebfc30fa/banner600.jpg?t=1763272296",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-49ea-72b3-a1a7-98edebfc30fa/boxart.jpg?t=1763272295"
+      },
+      "id": "018d937f-49ea-72b3-a1a7-98edebfc30fa",
+      "mature": false,
+      "slug": "salyut-p",
+      "title": "Salyut π",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 1480190
+}

@@ -161,6 +161,8 @@ class RecordingOpener:
 
 
 class RecordingClient(itad.Client):
+    stop_on_rate_limit = True
+
     def __init__(self, key, journal, opener=None):
         super().__init__(key, delay=1.0, attempts=3, timeout=30)
         self.journal = journal
@@ -206,7 +208,8 @@ def paths(cohort, cache_dir, reuse_dirs, output_dir):
 
 
 def run(cohort, cache_dir, output_dir, reuse_dirs=(ORIGINAL_CACHE,), live=False,
-        retry_failed=False, stale=(), maximum=None, key='', opener=None):
+        retry_failed=False, stale=(), maximum=None, key='', opener=None,
+        raw_only=False, max_new_games=None):
     started = time.monotonic()
     cohort, cache_dir, reuse_dirs, output_dir = paths(cohort, cache_dir, reuse_dirs, output_dir)
     games = load_cohort(cohort)
@@ -215,6 +218,8 @@ def run(cohort, cache_dir, output_dir, reuse_dirs=(ORIGINAL_CACHE,), live=False,
     require(stale <= {g['AppID'] for g in games}, 'Stale AppID outside frozen cohort')
     maximum = maximum if maximum is not None else 6*len(games)
     require(maximum >= 0, 'Invalid cumulative attempt budget')
+    require(max_new_games is None or (type(max_new_games) is int and max_new_games >= 0),
+            'Invalid new-game limit')
     already = 0
     planned, planned_requests, newly = [], 0, 0
     for g in games:
@@ -230,6 +235,10 @@ def run(cohort, cache_dir, output_dir, reuse_dirs=(ORIGINAL_CACHE,), live=False,
         if status == 'invalid' and appid not in stale:
             continue
         if status == 'incomplete' and not (retry_failed or interrupted):
+            continue
+        # Limit eligible work in frozen cohort order, including partial checkpoints.
+        # Keep scanning so already_cached_games covers the entire cohort.
+        if max_new_games is not None and len(planned) >= max_new_games:
             continue
         reuse_lookup = obj and status == 'incomplete' and obj['collection_metadata']['lookup_status'] == 'matched'
         planned.append((appid, copy.deepcopy(obj) if reuse_lookup and appid not in stale else None,
@@ -283,14 +292,17 @@ def run(cohort, cache_dir, output_dir, reuse_dirs=(ORIGINAL_CACHE,), live=False,
         # Read-only journal validation/counting; existing binding prevents append.
         journal = Journal(cache_dir, maximum, readonly=True)
         before = after = journal.counts()
-    from cohort_pipeline import evidence, quality
-    result = evidence(games, lambda appid: resolve_cache(appid, cache_dir, reuse_dirs))
     report = dict(mode='live' if live else 'offline', target_games=len(games), already_cached_games=already,
                   newly_retrieved_games=newly, planned_games=len(planned),
                   estimated_requests_without_retries=planned_requests, maximum_cumulative_attempts=maximum,
                   run_requests={k: after[k]-before[k] for k in after}, cumulative_requests=after,
                   cohort_sha256=digest(cohort), configuration=itad.CONFIG, stopped=stopped,
-                  collection_duration_seconds=round(time.monotonic()-started, 6), **quality(result))
+                  collection_duration_seconds=round(time.monotonic()-started, 6))
+    if not raw_only:
+        from cohort_pipeline import evidence, quality
+        result = evidence(games, lambda appid: resolve_cache(appid, cache_dir, reuse_dirs))
+        report.update(quality(result))
+        report['collection_duration_seconds'] = round(time.monotonic()-started, 6)
     rows = []
     for g in games:
         obj, status, reason, path = resolve_cache(g['AppID'], cache_dir, reuse_dirs)
@@ -298,6 +310,15 @@ def run(cohort, cache_dir, output_dir, reuse_dirs=(ORIGINAL_CACHE,), live=False,
         row['cache_path'] = str(path) if path.exists() else ''
         row['evaluation_group'] = g['evaluation_group']
         rows.append(row)
+    if raw_only:
+        complete = sum(row['cache_status'] == 'valid' for row in rows)
+        report.update(raw_only=True, max_new_games=max_new_games,
+                      planned_appids=[appid for appid, _, _ in planned],
+                      games_with_complete_caches=complete,
+                      games_with_unresolved_failures=len(games)-complete,
+                      successful_lookups=sum(row['lookup_status'] in {'matched', 'not_found'} for row in rows),
+                      successful_histories=sum(row['history_status'] in itad.SUCCESS for row in rows),
+                      cache_status_counts=dict(Counter(row['cache_status'] for row in rows)))
     write_csv(output_dir/'collection_manifest.csv', rows, itad.FIELDS+['evaluation_group'])
     write_json(output_dir/'collection_quality.json', report, key)
     return report
@@ -314,12 +335,17 @@ def cli(argv=None):
     p.add_argument('--retry-failed', action='store_true')
     p.add_argument('--stale-appid', action='append', default=[])
     p.add_argument('--max-total-attempts', type=int)
+    p.add_argument('--raw-only', action='store_true',
+                   help='Write collection summaries without labels, features or modeling calculations')
+    p.add_argument('--max-new-games', type=int,
+                   help='Limit eligible incomplete/uncached games in frozen cohort order; complete caches are skipped')
     args = p.parse_args(argv)
     require(not (args.live and args.dry_run), '--live and --dry-run are mutually exclusive')
     key = os.environ.get('ITAD_API_KEY', '') if args.live else ''
     report = run(args.cohort, args.cache_dir, args.output_dir,
                  args.reuse_cache if args.reuse_cache is not None else (ORIGINAL_CACHE,), args.live,
-                 args.retry_failed, args.stale_appid, args.max_total_attempts, key)
+                 args.retry_failed, args.stale_appid, args.max_total_attempts, key,
+                 raw_only=args.raw_only, max_new_games=args.max_new_games)
     print(json.dumps({k: report[k] for k in ('mode', 'target_games', 'already_cached_games',
                      'newly_retrieved_games', 'planned_games', 'estimated_requests_without_retries', 'stopped')}))
     return 2 if report['stopped'] else 0

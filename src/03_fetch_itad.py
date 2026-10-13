@@ -208,6 +208,9 @@ class NoRedirect(HTTPRedirectHandler):
 
 
 class Client:
+    # The scalable collector opts into immediate 429 stopping; preserve legacy behavior.
+    stop_on_rate_limit = False
+
     def __init__(self, key, delay=1.0, attempts=3, timeout=30):
         self.key, self.delay, self.attempts, self.timeout = key, delay, attempts, timeout
         self.opener = build_opener(NoRedirect())
@@ -247,6 +250,10 @@ class Client:
             reason = reason or f'HTTP_{code}'
             if code in (401, 403, 429) or (code is not None and 300 <= code < 400):
                 self.abort = True
+            if code in (401, 403) or (code == 429 and self.stop_on_rate_limit):
+                # The scalable opener already journals the result and any cooldown.
+                # Return the failure so collect() persists its checkpoint before stopping.
+                return None, evidence, reason
             transient = code in (408, 429, 500, 502, 503, 504) or reason == 'timeout_or_connection_failure'
             if not transient or attempt + 1 == self.attempts:
                 return None, evidence, reason

@@ -1,0 +1,160 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T04:33:01.307798Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T04:33:03.276202Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2024-03-20T15:18:31+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":2.99,\"amountInt\":299,\"currency\":\"USD\"},\"regular\":{\"amount\":2.99,\"amountInt\":299,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2023-04-06T19:19:04+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":16.99,\"amountInt\":1699,\"currency\":\"USD\"},\"regular\":{\"amount\":16.99,\"amountInt\":1699,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2023-03-16T18:19:10+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":4.24,\"amountInt\":424,\"currency\":\"USD\"},\"regular\":{\"amount\":16.99,\"amountInt\":1699,\"currency\":\"USD\"},\"cut\":75}},{\"timestamp\":\"2022-04-11T17:18:13+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":16.99,\"amountInt\":1699,\"currency\":\"USD\"},\"regular\":{\"amount\":16.99,\"amountInt\":1699,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-5f09-737a-890f-bd0a19e43428",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T04:33:03.276202Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 04:33:03 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 2.99,
+          "amountInt": 299,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 2.99,
+          "amountInt": 299,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-03-20T15:18:31+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 16.99,
+          "amountInt": 1699,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 16.99,
+          "amountInt": 1699,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-04-06T19:19:04+02:00"
+    },
+    {
+      "deal": {
+        "cut": 75,
+        "price": {
+          "amount": 4.24,
+          "amountInt": 424,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 16.99,
+          "amountInt": 1699,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-03-16T18:19:10+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 16.99,
+          "amountInt": 1699,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 16.99,
+          "amountInt": 1699,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-04-11T17:18:13+02:00"
+    }
+  ],
+  "itad_game_id": "018d937f-5f09-737a-890f-bd0a19e43428",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T04:33:02.295412Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-5f09-737a-890f-bd0a19e43428\",\"slug\":\"escape-down\",\"title\":\"Escape Down\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-5f09-737a-890f-bd0a19e43428\\/boxart.jpg?t=1734410706\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-5f09-737a-890f-bd0a19e43428\\/banner145.jpg?t=1734410706\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-5f09-737a-890f-bd0a19e43428\\/banner300.jpg?t=1734410707\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-5f09-737a-890f-bd0a19e43428\\/banner400.jpg?t=1734410707\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-5f09-737a-890f-bd0a19e43428\\/banner600.jpg?t=1734410707\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "1938380"
+    },
+    "received_at": "2026-10-13T04:33:02.295412Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 04:33:02 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-5f09-737a-890f-bd0a19e43428/banner145.jpg?t=1734410706",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-5f09-737a-890f-bd0a19e43428/banner300.jpg?t=1734410707",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-5f09-737a-890f-bd0a19e43428/banner400.jpg?t=1734410707",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-5f09-737a-890f-bd0a19e43428/banner600.jpg?t=1734410707",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-5f09-737a-890f-bd0a19e43428/boxart.jpg?t=1734410706"
+      },
+      "id": "018d937f-5f09-737a-890f-bd0a19e43428",
+      "mature": false,
+      "slug": "escape-down",
+      "title": "Escape Down",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 1938380
+}

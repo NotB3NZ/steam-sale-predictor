@@ -1,0 +1,100 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T03:26:49.830524Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T03:26:52.544870Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":9.99,\"amountInt\":999,\"currency\":\"USD\"},\"regular\":{\"amount\":9.99,\"amountInt\":999,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d958a-6009-70d6-ae8e-996919d24450",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T03:26:52.544870Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 03:26:52 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 9.99,
+          "amountInt": 999,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 9.99,
+          "amountInt": 999,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-01T01:00:00+01:00"
+    }
+  ],
+  "itad_game_id": "018d958a-6009-70d6-ae8e-996919d24450",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T03:26:51.425893Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d958a-6009-70d6-ae8e-996919d24450\",\"slug\":\"the-journeyman-project-1-pegasus-prime\",\"title\":\"The Journeyman Project 1: Pegasus Prime\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d958a-6009-70d6-ae8e-996919d24450\\/boxart.png?t=1732013101\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d958a-6009-70d6-ae8e-996919d24450\\/banner145.jpg?t=1732013101\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d958a-6009-70d6-ae8e-996919d24450\\/banner300.jpg?t=1732013101\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d958a-6009-70d6-ae8e-996919d24450\\/banner400.jpg?t=1732013101\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d958a-6009-70d6-ae8e-996919d24450\\/banner600.jpg?t=1732013101\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "359420"
+    },
+    "received_at": "2026-10-13T03:26:51.425893Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 03:26:51 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d958a-6009-70d6-ae8e-996919d24450/banner145.jpg?t=1732013101",
+        "banner300": "https://assets.isthereanydeal.com/018d958a-6009-70d6-ae8e-996919d24450/banner300.jpg?t=1732013101",
+        "banner400": "https://assets.isthereanydeal.com/018d958a-6009-70d6-ae8e-996919d24450/banner400.jpg?t=1732013101",
+        "banner600": "https://assets.isthereanydeal.com/018d958a-6009-70d6-ae8e-996919d24450/banner600.jpg?t=1732013101",
+        "boxart": "https://assets.isthereanydeal.com/018d958a-6009-70d6-ae8e-996919d24450/boxart.png?t=1732013101"
+      },
+      "id": "018d958a-6009-70d6-ae8e-996919d24450",
+      "mature": false,
+      "slug": "the-journeyman-project-1-pegasus-prime",
+      "title": "The Journeyman Project 1: Pegasus Prime",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 359420
+}

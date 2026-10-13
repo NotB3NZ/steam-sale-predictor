@@ -1,0 +1,79 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T04:33:14.872716Z",
+    "history_status": "empty_history",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T04:33:16.436639Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-7045-703e-8bdb-3e7a8728491d",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T04:33:16.436639Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 04:33:16 GMT"
+    }
+  },
+  "history_response": [],
+  "itad_game_id": "018d937f-7045-703e-8bdb-3e7a8728491d",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T04:33:15.881566Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-7045-703e-8bdb-3e7a8728491d\",\"slug\":\"suzu-and-maris-adventure-2-lost-colors-and-golden-bells\",\"title\":\"Suzu & Mari's Adventure 2 ~ lost colors and golden bells ~\",\"type\":null,\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-7045-703e-8bdb-3e7a8728491d\\/boxart.jpg?t=1763823633\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-7045-703e-8bdb-3e7a8728491d\\/banner145.jpg?t=1763823635\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-7045-703e-8bdb-3e7a8728491d\\/banner300.jpg?t=1763823635\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-7045-703e-8bdb-3e7a8728491d\\/banner400.jpg?t=1763823635\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-7045-703e-8bdb-3e7a8728491d\\/banner600.jpg?t=1763823636\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "2143840"
+    },
+    "received_at": "2026-10-13T04:33:15.881566Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 04:33:15 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-7045-703e-8bdb-3e7a8728491d/banner145.jpg?t=1763823635",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-7045-703e-8bdb-3e7a8728491d/banner300.jpg?t=1763823635",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-7045-703e-8bdb-3e7a8728491d/banner400.jpg?t=1763823635",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-7045-703e-8bdb-3e7a8728491d/banner600.jpg?t=1763823636",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-7045-703e-8bdb-3e7a8728491d/boxart.jpg?t=1763823633"
+      },
+      "id": "018d937f-7045-703e-8bdb-3e7a8728491d",
+      "mature": false,
+      "slug": "suzu-and-maris-adventure-2-lost-colors-and-golden-bells",
+      "title": "Suzu & Mari's Adventure 2 ~ lost colors and golden bells ~",
+      "type": null
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 2143840
+}

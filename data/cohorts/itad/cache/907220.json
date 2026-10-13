@@ -1,0 +1,100 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T04:25:54.195540Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T04:25:57.395475Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":2.99,\"amountInt\":299,\"currency\":\"USD\"},\"regular\":{\"amount\":2.99,\"amountInt\":299,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937e-fa08-7068-85f9-d6a6ac1148be",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T04:25:57.395475Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 04:25:57 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 2.99,
+          "amountInt": 299,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 2.99,
+          "amountInt": 299,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-01T01:00:00+01:00"
+    }
+  ],
+  "itad_game_id": "018d937e-fa08-7068-85f9-d6a6ac1148be",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T04:25:56.292588Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937e-fa08-7068-85f9-d6a6ac1148be\",\"slug\":\"one-piu-day\",\"title\":\"One Piu Day\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937e-fa08-7068-85f9-d6a6ac1148be\\/boxart.png?t=1731992773\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937e-fa08-7068-85f9-d6a6ac1148be\\/banner145.jpg?t=1731992774\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937e-fa08-7068-85f9-d6a6ac1148be\\/banner300.jpg?t=1731992774\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937e-fa08-7068-85f9-d6a6ac1148be\\/banner400.jpg?t=1731992774\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937e-fa08-7068-85f9-d6a6ac1148be\\/banner600.jpg?t=1731992774\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "907220"
+    },
+    "received_at": "2026-10-13T04:25:56.292588Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 04:25:56 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937e-fa08-7068-85f9-d6a6ac1148be/banner145.jpg?t=1731992774",
+        "banner300": "https://assets.isthereanydeal.com/018d937e-fa08-7068-85f9-d6a6ac1148be/banner300.jpg?t=1731992774",
+        "banner400": "https://assets.isthereanydeal.com/018d937e-fa08-7068-85f9-d6a6ac1148be/banner400.jpg?t=1731992774",
+        "banner600": "https://assets.isthereanydeal.com/018d937e-fa08-7068-85f9-d6a6ac1148be/banner600.jpg?t=1731992774",
+        "boxart": "https://assets.isthereanydeal.com/018d937e-fa08-7068-85f9-d6a6ac1148be/boxart.png?t=1731992773"
+      },
+      "id": "018d937e-fa08-7068-85f9-d6a6ac1148be",
+      "mature": false,
+      "slug": "one-piu-day",
+      "title": "One Piu Day",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 907220
+}

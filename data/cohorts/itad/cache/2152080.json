@@ -1,0 +1,79 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T02:57:52.547497Z",
+    "history_status": "empty_history",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T02:57:54.621111Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-679e-7276-b6f1-e59da6d8f941",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T02:57:54.621111Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 02:57:54 GMT"
+    }
+  },
+  "history_response": [],
+  "itad_game_id": "018d937f-679e-7276-b6f1-e59da6d8f941",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T02:57:52.995446Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-679e-7276-b6f1-e59da6d8f941\",\"slug\":\"futanari-of-the-apocalypse\",\"title\":\"Futanari of the Apocalypse\",\"type\":null,\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-679e-7276-b6f1-e59da6d8f941\\/boxart.jpg?t=1787640618\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-679e-7276-b6f1-e59da6d8f941\\/banner145.jpg?t=1787640618\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-679e-7276-b6f1-e59da6d8f941\\/banner300.jpg?t=1787640618\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-679e-7276-b6f1-e59da6d8f941\\/banner400.jpg?t=1787640618\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-679e-7276-b6f1-e59da6d8f941\\/banner600.jpg?t=1787640619\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "2152080"
+    },
+    "received_at": "2026-10-13T02:57:52.995446Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 02:57:53 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-679e-7276-b6f1-e59da6d8f941/banner145.jpg?t=1787640618",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-679e-7276-b6f1-e59da6d8f941/banner300.jpg?t=1787640618",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-679e-7276-b6f1-e59da6d8f941/banner400.jpg?t=1787640618",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-679e-7276-b6f1-e59da6d8f941/banner600.jpg?t=1787640619",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-679e-7276-b6f1-e59da6d8f941/boxart.jpg?t=1787640618"
+      },
+      "id": "018d937f-679e-7276-b6f1-e59da6d8f941",
+      "mature": false,
+      "slug": "futanari-of-the-apocalypse",
+      "title": "Futanari of the Apocalypse",
+      "type": null
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 2152080
+}

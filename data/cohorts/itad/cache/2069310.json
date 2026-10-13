@@ -1,0 +1,180 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T03:08:21.032243Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T03:08:23.015654Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2025-01-02T19:59:53+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":99.99,\"amountInt\":9999,\"currency\":\"USD\"},\"regular\":{\"amount\":99.99,\"amountInt\":9999,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2024-12-19T22:24:15+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":69.99,\"amountInt\":6999,\"currency\":\"USD\"},\"regular\":{\"amount\":99.99,\"amountInt\":9999,\"currency\":\"USD\"},\"cut\":30}},{\"timestamp\":\"2024-06-03T19:20:08+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":99.99,\"amountInt\":9999,\"currency\":\"USD\"},\"regular\":{\"amount\":99.99,\"amountInt\":9999,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2024-05-27T19:15:45+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":69.99,\"amountInt\":6999,\"currency\":\"USD\"},\"regular\":{\"amount\":99.99,\"amountInt\":9999,\"currency\":\"USD\"},\"cut\":30}},{\"timestamp\":\"2022-10-27T19:19:55+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":99.99,\"amountInt\":9999,\"currency\":\"USD\"},\"regular\":{\"amount\":99.99,\"amountInt\":9999,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-665e-72d1-a8b7-14008e0ec342",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T03:08:23.015654Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 03:08:23 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 99.99,
+          "amountInt": 9999,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 99.99,
+          "amountInt": 9999,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-01-02T19:59:53+01:00"
+    },
+    {
+      "deal": {
+        "cut": 30,
+        "price": {
+          "amount": 69.99,
+          "amountInt": 6999,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 99.99,
+          "amountInt": 9999,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-12-19T22:24:15+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 99.99,
+          "amountInt": 9999,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 99.99,
+          "amountInt": 9999,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-06-03T19:20:08+02:00"
+    },
+    {
+      "deal": {
+        "cut": 30,
+        "price": {
+          "amount": 69.99,
+          "amountInt": 6999,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 99.99,
+          "amountInt": 9999,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-05-27T19:15:45+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 99.99,
+          "amountInt": 9999,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 99.99,
+          "amountInt": 9999,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-10-27T19:19:55+02:00"
+    }
+  ],
+  "itad_game_id": "018d937f-665e-72d1-a8b7-14008e0ec342",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T03:08:21.997460Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-665e-72d1-a8b7-14008e0ec342\",\"slug\":\"realflight-evolution\",\"title\":\"RealFlight Evolution\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-665e-72d1-a8b7-14008e0ec342\\/boxart.jpg?t=1791253539\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-665e-72d1-a8b7-14008e0ec342\\/banner145.jpg?t=1791253539\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-665e-72d1-a8b7-14008e0ec342\\/banner300.jpg?t=1791253539\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-665e-72d1-a8b7-14008e0ec342\\/banner400.jpg?t=1791253539\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-665e-72d1-a8b7-14008e0ec342\\/banner600.jpg?t=1791253539\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "2069310"
+    },
+    "received_at": "2026-10-13T03:08:21.997460Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 03:08:21 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-665e-72d1-a8b7-14008e0ec342/banner145.jpg?t=1791253539",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-665e-72d1-a8b7-14008e0ec342/banner300.jpg?t=1791253539",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-665e-72d1-a8b7-14008e0ec342/banner400.jpg?t=1791253539",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-665e-72d1-a8b7-14008e0ec342/banner600.jpg?t=1791253539",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-665e-72d1-a8b7-14008e0ec342/boxart.jpg?t=1791253539"
+      },
+      "id": "018d937f-665e-72d1-a8b7-14008e0ec342",
+      "mature": false,
+      "slug": "realflight-evolution",
+      "title": "RealFlight Evolution",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 2069310
+}

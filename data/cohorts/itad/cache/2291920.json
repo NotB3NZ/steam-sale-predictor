@@ -1,0 +1,100 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T02:51:39.111964Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T02:51:42.143167Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2023-03-24T13:23:31+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"regular\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-6bf2-72e9-9e00-fee0fb2f8fcb",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T02:51:42.143167Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 02:51:42 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-03-24T13:23:31+01:00"
+    }
+  ],
+  "itad_game_id": "018d937f-6bf2-72e9-9e00-fee0fb2f8fcb",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T02:51:41.168596Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-6bf2-72e9-9e00-fee0fb2f8fcb\",\"slug\":\"wonder-trips\",\"title\":\"Wonder Trips\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-6bf2-72e9-9e00-fee0fb2f8fcb\\/boxart.jpg?t=1763155010\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-6bf2-72e9-9e00-fee0fb2f8fcb\\/banner145.jpg?t=1763155010\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-6bf2-72e9-9e00-fee0fb2f8fcb\\/banner300.jpg?t=1763155010\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-6bf2-72e9-9e00-fee0fb2f8fcb\\/banner400.jpg?t=1763155010\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-6bf2-72e9-9e00-fee0fb2f8fcb\\/banner600.jpg?t=1763155011\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "2291920"
+    },
+    "received_at": "2026-10-13T02:51:41.168596Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 02:51:41 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-6bf2-72e9-9e00-fee0fb2f8fcb/banner145.jpg?t=1763155010",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-6bf2-72e9-9e00-fee0fb2f8fcb/banner300.jpg?t=1763155010",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-6bf2-72e9-9e00-fee0fb2f8fcb/banner400.jpg?t=1763155010",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-6bf2-72e9-9e00-fee0fb2f8fcb/banner600.jpg?t=1763155011",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-6bf2-72e9-9e00-fee0fb2f8fcb/boxart.jpg?t=1763155010"
+      },
+      "id": "018d937f-6bf2-72e9-9e00-fee0fb2f8fcb",
+      "mature": false,
+      "slug": "wonder-trips",
+      "title": "Wonder Trips",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 2291920
+}

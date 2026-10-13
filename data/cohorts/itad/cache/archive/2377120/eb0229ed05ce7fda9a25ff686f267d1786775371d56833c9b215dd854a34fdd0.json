@@ -1,0 +1,41 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T03:28:10.577471Z",
+    "history_status": "not_requested",
+    "lookup_status": "lookup_error",
+    "reason": "HTTP_429"
+  },
+  "history_response": null,
+  "itad_game_id": null,
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T03:28:11.600017Z",
+        "http_status": 429,
+        "reason": ""
+      }
+    ],
+    "body": "",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 429,
+    "params": {
+      "appid": "2377120"
+    },
+    "received_at": "2026-10-13T03:28:11.600017Z",
+    "response_headers": {
+      "Content-Type": "text/html; charset=UTF-8",
+      "Date": "Tue, 13 Oct 2026 03:28:11 GMT",
+      "Retry-After": "179"
+    }
+  },
+  "lookup_response": null,
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 2377120
+}

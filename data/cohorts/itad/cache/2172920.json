@@ -1,0 +1,140 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T02:57:00.270998Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T02:57:02.830049Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2026-04-16T19:20:40+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"regular\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2026-04-09T19:19:09+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":3.49,\"amountInt\":349,\"currency\":\"USD\"},\"regular\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"cut\":50}},{\"timestamp\":\"2022-11-03T10:48:21+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"regular\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-26d3-72cf-a451-b27e7777afa8",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T02:57:02.830049Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 02:57:02 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2026-04-16T19:20:40+02:00"
+    },
+    {
+      "deal": {
+        "cut": 50,
+        "price": {
+          "amount": 3.49,
+          "amountInt": 349,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2026-04-09T19:19:09+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-11-03T10:48:21+01:00"
+    }
+  ],
+  "itad_game_id": "018d937f-26d3-72cf-a451-b27e7777afa8",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T02:57:01.729330Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-26d3-72cf-a451-b27e7777afa8\",\"slug\":\"christmas-wonderland-4\",\"title\":\"Christmas Wonderland 4\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-26d3-72cf-a451-b27e7777afa8\\/boxart.jpg?t=1763177031\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-26d3-72cf-a451-b27e7777afa8\\/banner145.jpg?t=1763177032\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-26d3-72cf-a451-b27e7777afa8\\/banner300.jpg?t=1763177032\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-26d3-72cf-a451-b27e7777afa8\\/banner400.jpg?t=1763177032\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-26d3-72cf-a451-b27e7777afa8\\/banner600.jpg?t=1763177032\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "2172920"
+    },
+    "received_at": "2026-10-13T02:57:01.729330Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 02:57:01 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-26d3-72cf-a451-b27e7777afa8/banner145.jpg?t=1763177032",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-26d3-72cf-a451-b27e7777afa8/banner300.jpg?t=1763177032",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-26d3-72cf-a451-b27e7777afa8/banner400.jpg?t=1763177032",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-26d3-72cf-a451-b27e7777afa8/banner600.jpg?t=1763177032",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-26d3-72cf-a451-b27e7777afa8/boxart.jpg?t=1763177031"
+      },
+      "id": "018d937f-26d3-72cf-a451-b27e7777afa8",
+      "mature": false,
+      "slug": "christmas-wonderland-4",
+      "title": "Christmas Wonderland 4",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 2172920
+}
