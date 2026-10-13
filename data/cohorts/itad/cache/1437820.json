@@ -1,0 +1,220 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T15:33:10.403788Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T15:33:16.456379Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2021-02-15T19:22:20+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-02-11T19:35:01+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.69,\"amountInt\":69,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":30}},{\"timestamp\":\"2021-01-19T20:04:41+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-01-13T20:10:28+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0,\"amountInt\":0,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":100}},{\"timestamp\":\"2021-01-13T20:07:14+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-01-12T21:09:06+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0,\"amountInt\":0,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":100}},{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d957f-f0b4-7330-bac5-2e38ebfc94ea",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T15:33:16.456379Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 15:33:16 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-02-15T19:22:20+01:00"
+    },
+    {
+      "deal": {
+        "cut": 30,
+        "price": {
+          "amount": 0.69,
+          "amountInt": 69,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-02-11T19:35:01+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-19T20:04:41+01:00"
+    },
+    {
+      "deal": {
+        "cut": 100,
+        "price": {
+          "amount": 0,
+          "amountInt": 0,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-13T20:10:28+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-13T20:07:14+01:00"
+    },
+    {
+      "deal": {
+        "cut": 100,
+        "price": {
+          "amount": 0,
+          "amountInt": 0,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-12T21:09:06+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-01T01:00:00+01:00"
+    }
+  ],
+  "itad_game_id": "018d957f-f0b4-7330-bac5-2e38ebfc94ea",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T15:33:13.333487Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d957f-f0b4-7330-bac5-2e38ebfc94ea\",\"slug\":\"heroes-of-the-three-kingdoms\",\"title\":\"Heroes of the Three Kingdoms\",\"type\":null,\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d957f-f0b4-7330-bac5-2e38ebfc94ea\\/boxart.jpg?t=1790979068\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d957f-f0b4-7330-bac5-2e38ebfc94ea\\/banner145.jpg?t=1790979069\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d957f-f0b4-7330-bac5-2e38ebfc94ea\\/banner300.jpg?t=1790979069\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d957f-f0b4-7330-bac5-2e38ebfc94ea\\/banner400.jpg?t=1790979069\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d957f-f0b4-7330-bac5-2e38ebfc94ea\\/banner600.jpg?t=1790979069\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "1437820"
+    },
+    "received_at": "2026-10-13T15:33:13.333487Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 15:33:13 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d957f-f0b4-7330-bac5-2e38ebfc94ea/banner145.jpg?t=1790979069",
+        "banner300": "https://assets.isthereanydeal.com/018d957f-f0b4-7330-bac5-2e38ebfc94ea/banner300.jpg?t=1790979069",
+        "banner400": "https://assets.isthereanydeal.com/018d957f-f0b4-7330-bac5-2e38ebfc94ea/banner400.jpg?t=1790979069",
+        "banner600": "https://assets.isthereanydeal.com/018d957f-f0b4-7330-bac5-2e38ebfc94ea/banner600.jpg?t=1790979069",
+        "boxart": "https://assets.isthereanydeal.com/018d957f-f0b4-7330-bac5-2e38ebfc94ea/boxart.jpg?t=1790979068"
+      },
+      "id": "018d957f-f0b4-7330-bac5-2e38ebfc94ea",
+      "mature": false,
+      "slug": "heroes-of-the-three-kingdoms",
+      "title": "Heroes of the Three Kingdoms",
+      "type": null
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 1437820
+}

@@ -1,0 +1,79 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T16:02:57.946357Z",
+    "history_status": "empty_history",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T16:03:03.568657Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-1f55-72b5-a6fc-b7b7e4cac266",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T16:03:03.568657Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 16:03:03 GMT"
+    }
+  },
+  "history_response": [],
+  "itad_game_id": "018d937f-1f55-72b5-a6fc-b7b7e4cac266",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T16:03:00.561499Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-1f55-72b5-a6fc-b7b7e4cac266\",\"slug\":\"guts-and-goals\",\"title\":\"Guts And Goals\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1f55-72b5-a6fc-b7b7e4cac266\\/boxart.jpg?t=1790916775\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1f55-72b5-a6fc-b7b7e4cac266\\/banner145.jpg?t=1790916777\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1f55-72b5-a6fc-b7b7e4cac266\\/banner300.jpg?t=1790916777\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1f55-72b5-a6fc-b7b7e4cac266\\/banner400.jpg?t=1790916777\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1f55-72b5-a6fc-b7b7e4cac266\\/banner600.jpg?t=1790916777\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "1042210"
+    },
+    "received_at": "2026-10-13T16:03:00.561499Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 16:03:00 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-1f55-72b5-a6fc-b7b7e4cac266/banner145.jpg?t=1790916777",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-1f55-72b5-a6fc-b7b7e4cac266/banner300.jpg?t=1790916777",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-1f55-72b5-a6fc-b7b7e4cac266/banner400.jpg?t=1790916777",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-1f55-72b5-a6fc-b7b7e4cac266/banner600.jpg?t=1790916777",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-1f55-72b5-a6fc-b7b7e4cac266/boxart.jpg?t=1790916775"
+      },
+      "id": "018d937f-1f55-72b5-a6fc-b7b7e4cac266",
+      "mature": false,
+      "slug": "guts-and-goals",
+      "title": "Guts And Goals",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 1042210
+}

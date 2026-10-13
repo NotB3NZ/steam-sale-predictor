@@ -1,0 +1,100 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T14:05:40.472547Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T14:05:46.407351Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"regular\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-1a9b-7187-a0eb-044319ccba3d",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T14:05:46.407351Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 14:05:46 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-01T01:00:00+01:00"
+    }
+  ],
+  "itad_game_id": "018d937f-1a9b-7187-a0eb-044319ccba3d",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T14:05:43.670781Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-1a9b-7187-a0eb-044319ccba3d\",\"slug\":\"horizon-of-history\",\"title\":\"Horizon Of History\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1a9b-7187-a0eb-044319ccba3d\\/boxart.png?t=1732095967\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1a9b-7187-a0eb-044319ccba3d\\/banner145.jpg?t=1732095968\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1a9b-7187-a0eb-044319ccba3d\\/banner300.jpg?t=1732095968\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1a9b-7187-a0eb-044319ccba3d\\/banner400.jpg?t=1732095968\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1a9b-7187-a0eb-044319ccba3d\\/banner600.jpg?t=1732095969\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "543300"
+    },
+    "received_at": "2026-10-13T14:05:43.670781Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 14:05:43 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-1a9b-7187-a0eb-044319ccba3d/banner145.jpg?t=1732095968",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-1a9b-7187-a0eb-044319ccba3d/banner300.jpg?t=1732095968",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-1a9b-7187-a0eb-044319ccba3d/banner400.jpg?t=1732095968",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-1a9b-7187-a0eb-044319ccba3d/banner600.jpg?t=1732095969",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-1a9b-7187-a0eb-044319ccba3d/boxart.png?t=1732095967"
+      },
+      "id": "018d937f-1a9b-7187-a0eb-044319ccba3d",
+      "mature": false,
+      "slug": "horizon-of-history",
+      "title": "Horizon Of History",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 543300
+}

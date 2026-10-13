@@ -1,0 +1,2460 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T14:05:58.485348Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T14:06:04.579871Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2026-10-12T19:23:03+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2026-10-08T19:29:40+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2026-10-01T20:54:34+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2026-08-31T19:26:56+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2026-08-24T19:21:08+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2026-07-20T19:34:11+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2026-07-13T19:22:34+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2026-07-09T19:23:44+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2026-06-25T20:14:54+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2026-05-18T19:32:09+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2026-05-11T19:22:17+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2026-04-06T19:20:34+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2026-03-30T19:21:14+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2026-03-26T18:23:30+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2026-03-19T18:30:10+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2026-02-23T19:28:45+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2026-02-16T19:20:46+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2026-01-12T19:19:17+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2025-12-18T20:55:12+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2025-11-24T19:31:16+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2025-11-17T19:19:03+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2025-10-13T19:17:18+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2025-09-29T22:23:51+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2025-09-01T19:16:49+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2025-08-25T19:20:23+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2025-07-21T19:18:36+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2025-07-14T19:16:02+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2025-07-10T19:26:29+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2025-06-27T00:15:27+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2025-06-02T20:59:13+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2025-05-26T21:21:27+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2025-04-21T19:18:30+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2025-04-14T19:16:29+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2025-03-20T18:23:43+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2025-03-13T20:50:12+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2025-03-10T18:16:04+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2025-03-03T19:18:20+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2025-01-27T19:37:47+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2025-01-20T19:19:53+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2025-01-02T19:23:37+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2024-12-19T22:55:13+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2024-12-16T19:17:28+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2024-12-09T19:18:12+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2024-12-04T19:24:45+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2024-11-27T21:33:20+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2024-10-28T18:58:28+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2024-10-21T19:18:47+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2024-09-16T19:17:14+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2024-09-09T19:20:21+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2024-08-05T19:16:32+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2024-07-29T19:17:51+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2024-07-11T19:25:16+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2024-06-27T20:43:18+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2024-06-24T19:15:39+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2024-06-17T19:15:45+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2024-05-06T19:21:40+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2024-04-29T19:15:53+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2024-03-21T18:22:34+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2024-03-14T18:25:45+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2024-02-19T19:16:54+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2024-02-12T19:15:26+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.59,\"amountInt\":59,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":40}},{\"timestamp\":\"2023-07-24T19:09:27+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2023-07-17T19:21:37+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.48,\"amountInt\":48,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":52}},{\"timestamp\":\"2023-07-13T19:13:10+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2023-06-30T00:28:06+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.48,\"amountInt\":48,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":52}},{\"timestamp\":\"2023-06-05T19:06:28+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2023-05-29T19:34:37+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.48,\"amountInt\":48,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":52}},{\"timestamp\":\"2023-04-24T19:03:31+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2023-04-17T19:21:07+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.48,\"amountInt\":48,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":52}},{\"timestamp\":\"2023-03-23T19:13:52+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2023-03-16T21:53:21+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.48,\"amountInt\":48,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":52}},{\"timestamp\":\"2023-03-13T18:20:11+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2023-03-06T19:15:38+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.48,\"amountInt\":48,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":52}},{\"timestamp\":\"2023-01-23T19:09:27+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2023-01-16T19:22:21+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.48,\"amountInt\":48,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":52}},{\"timestamp\":\"2023-01-05T19:50:13+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2022-12-22T19:23:36+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.48,\"amountInt\":48,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":52}},{\"timestamp\":\"2022-12-12T21:09:26+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2022-12-05T20:06:15+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.51,\"amountInt\":51,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":48}},{\"timestamp\":\"2022-11-29T19:10:37+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2022-11-22T23:38:26+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.66,\"amountInt\":66,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":33}},{\"timestamp\":\"2022-10-31T18:58:33+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2022-10-24T19:06:31+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.51,\"amountInt\":51,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":48}},{\"timestamp\":\"2022-08-29T19:23:59+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2022-08-22T19:31:05+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.51,\"amountInt\":51,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":48}},{\"timestamp\":\"2022-07-25T19:18:58+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2022-07-18T19:31:03+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.51,\"amountInt\":51,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":48}},{\"timestamp\":\"2022-07-07T20:38:08+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2022-06-23T19:32:52+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.51,\"amountInt\":51,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":48}},{\"timestamp\":\"2022-06-20T19:12:32+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2022-06-13T19:19:54+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.51,\"amountInt\":51,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":48}},{\"timestamp\":\"2022-05-16T19:18:44+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2022-05-09T19:45:55+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.51,\"amountInt\":51,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":48}},{\"timestamp\":\"2022-04-11T19:12:51+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2022-04-04T19:06:41+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.51,\"amountInt\":51,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":48}},{\"timestamp\":\"2022-03-07T19:36:50+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2022-02-28T19:21:27+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.54,\"amountInt\":54,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":45}},{\"timestamp\":\"2022-02-14T19:30:38+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2022-02-07T20:20:38+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2022-02-03T19:42:18+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2022-01-27T19:13:33+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2022-01-05T20:36:03+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-12-23T00:26:22+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2021-12-13T19:27:07+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-12-06T19:06:18+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2021-12-01T19:45:59+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-11-24T19:43:23+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2021-11-01T18:44:42+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-10-28T19:23:38+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2021-09-27T19:03:15+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-09-20T19:03:17+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2021-07-08T20:39:28+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-06-24T23:41:26+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2021-05-31T19:20:38+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-05-24T19:18:56+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2021-02-01T19:21:08+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-01-25T19:21:30+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2021-01-05T19:53:11+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937e-f876-739c-a4c3-2f783fd45c6a",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T14:06:04.579871Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 14:06:04 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2026-10-12T19:23:03+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2026-10-08T19:29:40+02:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2026-10-01T20:54:34+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2026-08-31T19:26:56+02:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2026-08-24T19:21:08+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2026-07-20T19:34:11+02:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2026-07-13T19:22:34+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2026-07-09T19:23:44+02:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2026-06-25T20:14:54+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2026-05-18T19:32:09+02:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2026-05-11T19:22:17+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2026-04-06T19:20:34+02:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2026-03-30T19:21:14+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2026-03-26T18:23:30+01:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2026-03-19T18:30:10+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2026-02-23T19:28:45+01:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2026-02-16T19:20:46+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2026-01-12T19:19:17+01:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-12-18T20:55:12+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-11-24T19:31:16+01:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-11-17T19:19:03+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-10-13T19:17:18+02:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-09-29T22:23:51+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-09-01T19:16:49+02:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-08-25T19:20:23+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-07-21T19:18:36+02:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-07-14T19:16:02+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-07-10T19:26:29+02:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-06-27T00:15:27+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-06-02T20:59:13+02:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-05-26T21:21:27+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-04-21T19:18:30+02:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-04-14T19:16:29+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-03-20T18:23:43+01:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-03-13T20:50:12+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-03-10T18:16:04+01:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-03-03T19:18:20+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-01-27T19:37:47+01:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-01-20T19:19:53+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-01-02T19:23:37+01:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-12-19T22:55:13+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-12-16T19:17:28+01:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-12-09T19:18:12+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-12-04T19:24:45+01:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-11-27T21:33:20+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-10-28T18:58:28+01:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-10-21T19:18:47+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-09-16T19:17:14+02:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-09-09T19:20:21+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-08-05T19:16:32+02:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-07-29T19:17:51+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-07-11T19:25:16+02:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-06-27T20:43:18+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-06-24T19:15:39+02:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-06-17T19:15:45+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-05-06T19:21:40+02:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-04-29T19:15:53+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-03-21T18:22:34+01:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-03-14T18:25:45+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-02-19T19:16:54+01:00"
+    },
+    {
+      "deal": {
+        "cut": 40,
+        "price": {
+          "amount": 0.59,
+          "amountInt": 59,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-02-12T19:15:26+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-07-24T19:09:27+02:00"
+    },
+    {
+      "deal": {
+        "cut": 52,
+        "price": {
+          "amount": 0.48,
+          "amountInt": 48,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-07-17T19:21:37+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-07-13T19:13:10+02:00"
+    },
+    {
+      "deal": {
+        "cut": 52,
+        "price": {
+          "amount": 0.48,
+          "amountInt": 48,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-06-30T00:28:06+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-06-05T19:06:28+02:00"
+    },
+    {
+      "deal": {
+        "cut": 52,
+        "price": {
+          "amount": 0.48,
+          "amountInt": 48,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-05-29T19:34:37+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-04-24T19:03:31+02:00"
+    },
+    {
+      "deal": {
+        "cut": 52,
+        "price": {
+          "amount": 0.48,
+          "amountInt": 48,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-04-17T19:21:07+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-03-23T19:13:52+01:00"
+    },
+    {
+      "deal": {
+        "cut": 52,
+        "price": {
+          "amount": 0.48,
+          "amountInt": 48,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-03-16T21:53:21+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-03-13T18:20:11+01:00"
+    },
+    {
+      "deal": {
+        "cut": 52,
+        "price": {
+          "amount": 0.48,
+          "amountInt": 48,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-03-06T19:15:38+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-01-23T19:09:27+01:00"
+    },
+    {
+      "deal": {
+        "cut": 52,
+        "price": {
+          "amount": 0.48,
+          "amountInt": 48,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-01-16T19:22:21+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-01-05T19:50:13+01:00"
+    },
+    {
+      "deal": {
+        "cut": 52,
+        "price": {
+          "amount": 0.48,
+          "amountInt": 48,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-12-22T19:23:36+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-12-12T21:09:26+01:00"
+    },
+    {
+      "deal": {
+        "cut": 48,
+        "price": {
+          "amount": 0.51,
+          "amountInt": 51,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-12-05T20:06:15+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-11-29T19:10:37+01:00"
+    },
+    {
+      "deal": {
+        "cut": 33,
+        "price": {
+          "amount": 0.66,
+          "amountInt": 66,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-11-22T23:38:26+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-10-31T18:58:33+01:00"
+    },
+    {
+      "deal": {
+        "cut": 48,
+        "price": {
+          "amount": 0.51,
+          "amountInt": 51,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-10-24T19:06:31+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-08-29T19:23:59+02:00"
+    },
+    {
+      "deal": {
+        "cut": 48,
+        "price": {
+          "amount": 0.51,
+          "amountInt": 51,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-08-22T19:31:05+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-07-25T19:18:58+02:00"
+    },
+    {
+      "deal": {
+        "cut": 48,
+        "price": {
+          "amount": 0.51,
+          "amountInt": 51,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-07-18T19:31:03+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-07-07T20:38:08+02:00"
+    },
+    {
+      "deal": {
+        "cut": 48,
+        "price": {
+          "amount": 0.51,
+          "amountInt": 51,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-06-23T19:32:52+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-06-20T19:12:32+02:00"
+    },
+    {
+      "deal": {
+        "cut": 48,
+        "price": {
+          "amount": 0.51,
+          "amountInt": 51,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-06-13T19:19:54+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-05-16T19:18:44+02:00"
+    },
+    {
+      "deal": {
+        "cut": 48,
+        "price": {
+          "amount": 0.51,
+          "amountInt": 51,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-05-09T19:45:55+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-04-11T19:12:51+02:00"
+    },
+    {
+      "deal": {
+        "cut": 48,
+        "price": {
+          "amount": 0.51,
+          "amountInt": 51,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-04-04T19:06:41+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-03-07T19:36:50+01:00"
+    },
+    {
+      "deal": {
+        "cut": 45,
+        "price": {
+          "amount": 0.54,
+          "amountInt": 54,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-02-28T19:21:27+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-02-14T19:30:38+01:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-02-07T20:20:38+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-02-03T19:42:18+01:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-01-27T19:13:33+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-01-05T20:36:03+01:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-12-23T00:26:22+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-12-13T19:27:07+01:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-12-06T19:06:18+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-12-01T19:45:59+01:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-11-24T19:43:23+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-11-01T18:44:42+01:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-10-28T19:23:38+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-09-27T19:03:15+02:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-09-20T19:03:17+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-07-08T20:39:28+02:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-06-24T23:41:26+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-05-31T19:20:38+02:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-05-24T19:18:56+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-02-01T19:21:08+01:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-25T19:21:30+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-05T19:53:11+01:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-01T01:00:00+01:00"
+    }
+  ],
+  "itad_game_id": "018d937e-f876-739c-a4c3-2f783fd45c6a",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T14:06:01.443303Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937e-f876-739c-a4c3-2f783fd45c6a\",\"slug\":\"fly-o-clock\",\"title\":\"Fly O'Clock\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937e-f876-739c-a4c3-2f783fd45c6a\\/boxart.jpg?t=1787623861\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937e-f876-739c-a4c3-2f783fd45c6a\\/banner145.jpg?t=1787623862\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937e-f876-739c-a4c3-2f783fd45c6a\\/banner300.jpg?t=1787623862\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937e-f876-739c-a4c3-2f783fd45c6a\\/banner400.jpg?t=1787623862\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937e-f876-739c-a4c3-2f783fd45c6a\\/banner600.jpg?t=1787623862\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "490820"
+    },
+    "received_at": "2026-10-13T14:06:01.443303Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 14:06:01 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937e-f876-739c-a4c3-2f783fd45c6a/banner145.jpg?t=1787623862",
+        "banner300": "https://assets.isthereanydeal.com/018d937e-f876-739c-a4c3-2f783fd45c6a/banner300.jpg?t=1787623862",
+        "banner400": "https://assets.isthereanydeal.com/018d937e-f876-739c-a4c3-2f783fd45c6a/banner400.jpg?t=1787623862",
+        "banner600": "https://assets.isthereanydeal.com/018d937e-f876-739c-a4c3-2f783fd45c6a/banner600.jpg?t=1787623862",
+        "boxart": "https://assets.isthereanydeal.com/018d937e-f876-739c-a4c3-2f783fd45c6a/boxart.jpg?t=1787623861"
+      },
+      "id": "018d937e-f876-739c-a4c3-2f783fd45c6a",
+      "mature": false,
+      "slug": "fly-o-clock",
+      "title": "Fly O'Clock",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 490820
+}

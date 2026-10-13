@@ -1,0 +1,100 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T14:06:46.655665Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T14:06:52.574787Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":2.99,\"amountInt\":299,\"currency\":\"USD\"},\"regular\":{\"amount\":2.99,\"amountInt\":299,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-0a37-7154-ae2e-d9598a964e7b",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T14:06:52.574787Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 14:06:52 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 2.99,
+          "amountInt": 299,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 2.99,
+          "amountInt": 299,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-01T01:00:00+01:00"
+    }
+  ],
+  "itad_game_id": "018d937f-0a37-7154-ae2e-d9598a964e7b",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T14:06:49.826371Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-0a37-7154-ae2e-d9598a964e7b\",\"slug\":\"wheres-baby\",\"title\":\"Where's Baby\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-0a37-7154-ae2e-d9598a964e7b\\/boxart.png?t=1732149915\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-0a37-7154-ae2e-d9598a964e7b\\/banner145.jpg?t=1732149915\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-0a37-7154-ae2e-d9598a964e7b\\/banner300.jpg?t=1732149915\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-0a37-7154-ae2e-d9598a964e7b\\/banner400.jpg?t=1732149915\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-0a37-7154-ae2e-d9598a964e7b\\/banner600.jpg?t=1732149916\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "895610"
+    },
+    "received_at": "2026-10-13T14:06:49.826371Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 14:06:49 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-0a37-7154-ae2e-d9598a964e7b/banner145.jpg?t=1732149915",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-0a37-7154-ae2e-d9598a964e7b/banner300.jpg?t=1732149915",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-0a37-7154-ae2e-d9598a964e7b/banner400.jpg?t=1732149915",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-0a37-7154-ae2e-d9598a964e7b/banner600.jpg?t=1732149916",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-0a37-7154-ae2e-d9598a964e7b/boxart.png?t=1732149915"
+      },
+      "id": "018d937f-0a37-7154-ae2e-d9598a964e7b",
+      "mature": false,
+      "slug": "wheres-baby",
+      "title": "Where's Baby",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 895610
+}

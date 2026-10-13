@@ -1,0 +1,200 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T14:29:36.663513Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T14:29:42.668959Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2023-03-23T22:00:20+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"regular\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2023-03-16T19:26:02+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.39,\"amountInt\":39,\"currency\":\"USD\"},\"regular\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"cut\":80}},{\"timestamp\":\"2023-01-05T21:28:45+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"regular\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2022-12-22T22:49:32+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.39,\"amountInt\":39,\"currency\":\"USD\"},\"regular\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"cut\":80}},{\"timestamp\":\"2022-11-08T18:25:59+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"regular\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2022-11-01T18:18:14+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":1.39,\"amountInt\":139,\"currency\":\"USD\"},\"regular\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"cut\":30}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d97d0-a3e1-70b7-83d2-9e162e7e052d",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T14:29:42.668959Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 14:29:42 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-03-23T22:00:20+01:00"
+    },
+    {
+      "deal": {
+        "cut": 80,
+        "price": {
+          "amount": 0.39,
+          "amountInt": 39,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-03-16T19:26:02+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-01-05T21:28:45+01:00"
+    },
+    {
+      "deal": {
+        "cut": 80,
+        "price": {
+          "amount": 0.39,
+          "amountInt": 39,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-12-22T22:49:32+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-11-08T18:25:59+01:00"
+    },
+    {
+      "deal": {
+        "cut": 30,
+        "price": {
+          "amount": 1.39,
+          "amountInt": 139,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-11-01T18:18:14+01:00"
+    }
+  ],
+  "itad_game_id": "018d97d0-a3e1-70b7-83d2-9e162e7e052d",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T14:29:39.655788Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d97d0-a3e1-70b7-83d2-9e162e7e052d\",\"slug\":\"the-hideaway\",\"title\":\"The Hideaway\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97d0-a3e1-70b7-83d2-9e162e7e052d\\/boxart.jpg?t=1763214501\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97d0-a3e1-70b7-83d2-9e162e7e052d\\/banner145.jpg?t=1763214502\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97d0-a3e1-70b7-83d2-9e162e7e052d\\/banner300.jpg?t=1763214502\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97d0-a3e1-70b7-83d2-9e162e7e052d\\/banner400.jpg?t=1763214502\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d97d0-a3e1-70b7-83d2-9e162e7e052d\\/banner600.jpg?t=1763214502\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "2116980"
+    },
+    "received_at": "2026-10-13T14:29:39.655788Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 14:29:39 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d97d0-a3e1-70b7-83d2-9e162e7e052d/banner145.jpg?t=1763214502",
+        "banner300": "https://assets.isthereanydeal.com/018d97d0-a3e1-70b7-83d2-9e162e7e052d/banner300.jpg?t=1763214502",
+        "banner400": "https://assets.isthereanydeal.com/018d97d0-a3e1-70b7-83d2-9e162e7e052d/banner400.jpg?t=1763214502",
+        "banner600": "https://assets.isthereanydeal.com/018d97d0-a3e1-70b7-83d2-9e162e7e052d/banner600.jpg?t=1763214502",
+        "boxart": "https://assets.isthereanydeal.com/018d97d0-a3e1-70b7-83d2-9e162e7e052d/boxart.jpg?t=1763214501"
+      },
+      "id": "018d97d0-a3e1-70b7-83d2-9e162e7e052d",
+      "mature": false,
+      "slug": "the-hideaway",
+      "title": "The Hideaway",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 2116980
+}

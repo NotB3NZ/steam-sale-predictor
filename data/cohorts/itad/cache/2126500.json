@@ -1,0 +1,79 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T14:06:10.713340Z",
+    "history_status": "empty_history",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T14:06:16.483212Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-66c9-73b6-a1e0-471302d9954e",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T14:06:16.483212Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 14:06:16 GMT"
+    }
+  },
+  "history_response": [],
+  "itad_game_id": "018d937f-66c9-73b6-a1e0-471302d9954e",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T14:06:13.491814Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-66c9-73b6-a1e0-471302d9954e\",\"slug\":\"wwii-tanks-forgotten-battles\",\"title\":\"WWII Tanks: Forgotten Battles\",\"type\":null,\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-66c9-73b6-a1e0-471302d9954e\\/boxart.jpg?t=1787596524\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-66c9-73b6-a1e0-471302d9954e\\/banner145.jpg?t=1787596524\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-66c9-73b6-a1e0-471302d9954e\\/banner300.jpg?t=1787596524\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-66c9-73b6-a1e0-471302d9954e\\/banner400.jpg?t=1787596524\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-66c9-73b6-a1e0-471302d9954e\\/banner600.jpg?t=1787596524\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "2126500"
+    },
+    "received_at": "2026-10-13T14:06:13.491814Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 14:06:13 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-66c9-73b6-a1e0-471302d9954e/banner145.jpg?t=1787596524",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-66c9-73b6-a1e0-471302d9954e/banner300.jpg?t=1787596524",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-66c9-73b6-a1e0-471302d9954e/banner400.jpg?t=1787596524",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-66c9-73b6-a1e0-471302d9954e/banner600.jpg?t=1787596524",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-66c9-73b6-a1e0-471302d9954e/boxart.jpg?t=1787596524"
+      },
+      "id": "018d937f-66c9-73b6-a1e0-471302d9954e",
+      "mature": false,
+      "slug": "wwii-tanks-forgotten-battles",
+      "title": "WWII Tanks: Forgotten Battles",
+      "type": null
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 2126500
+}

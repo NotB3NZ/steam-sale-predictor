@@ -1,5 +1,6 @@
 """Offline scalable regression. Every generated artifact is in a temp directory."""
 import copy
+from contextlib import contextmanager
 import io
 import json
 from pathlib import Path
@@ -69,6 +70,38 @@ def error(code, headers=None):
     return HTTPError('https://example.test', code, 'synthetic', headers or {}, io.BytesIO(b'{"error":"synthetic"}'))
 
 
+class FakeClock:
+    def __init__(self):
+        self.now = 2000000000.0
+        self.sleeps = []
+
+    def time(self):
+        return self.now
+
+    def sleep(self, seconds):
+        assert seconds >= 0
+        self.sleeps.append(seconds)
+        self.now += seconds
+
+    @contextmanager
+    def installed(self):
+        with patch.object(inc.time, 'time', self.time), \
+             patch.object(inc.time, 'monotonic', self.time), \
+             patch.object(inc.time, 'sleep', self.sleep):
+            yield self
+
+
+class TimedOpener(FakeOpener):
+    def __init__(self, clock, latency=0.4, **kwargs):
+        super().__init__(**kwargs)
+        self.clock, self.latency, self.starts = clock, latency, []
+
+    def open(self, req, timeout):
+        self.starts.append(self.clock.now)
+        self.clock.now += self.latency
+        return super().open(req, timeout)
+
+
 class ScalableTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
@@ -93,6 +126,107 @@ class ScalableTests(unittest.TestCase):
                                     for appid in ids],
                     ['AppID', 'Name', 'release_date', 'evaluation_group'])
         return list(ids)
+
+    def test_configurable_pacing_covers_lookup_history_and_next_game(self):
+        self.batch_cohort()
+        clock = FakeClock()
+        opener = TimedOpener(clock)
+        with clock.installed():
+            report = self.collect(opener, raw_only=True, max_new_games=2,
+                                  request_interval_seconds=3)
+        self.assertEqual(opener.calls, [inc.itad.LOOKUP, inc.itad.HISTORY]*2)
+        self.assertEqual([b-a for a, b in zip(opener.starts, opener.starts[1:])], [3, 3, 3])
+        self.assertEqual(report['request_interval_seconds'], 3)
+        self.assertEqual(report['run_requests']['total_http_attempts'], 4)
+
+    def test_pacing_default_is_one_second_and_zero_is_supported(self):
+        for interval in (None, 0):
+            with self.subTest(interval=interval):
+                self.cache = self.directory/f'interval_{interval}'
+                clock = FakeClock()
+                opener = TimedOpener(clock, latency=0)
+                kwargs = {} if interval is None else {'request_interval_seconds': interval}
+                with clock.installed():
+                    report = self.collect(opener, raw_only=True, **kwargs)
+                expected = 1 if interval is None else 0
+                self.assertEqual(opener.starts[1]-opener.starts[0], expected)
+                self.assertEqual(report['request_interval_seconds'], expected)
+
+    def test_retries_obey_configured_pacing_and_keep_bounded_backoff(self):
+        clock = FakeClock()
+        opener = TimedOpener(clock, latency=0, outcomes=[error(503), None, None])
+        with clock.installed():
+            report = self.collect(opener, raw_only=True, request_interval_seconds=3)
+        self.assertEqual(opener.calls, [inc.itad.LOOKUP, inc.itad.LOOKUP, inc.itad.HISTORY])
+        self.assertEqual([b-a for a, b in zip(opener.starts, opener.starts[1:])], [3, 3])
+        self.assertIn(2, clock.sleeps)
+        self.assertEqual(report['cumulative_requests']['total_http_attempts'], 3)
+
+    def test_slow_responses_do_not_add_a_full_interval_after_completion(self):
+        clock = FakeClock()
+        opener = TimedOpener(clock, latency=5)
+        with clock.installed():
+            self.collect(opener, raw_only=True, request_interval_seconds=3)
+        self.assertEqual(opener.starts[1]-opener.starts[0], 5)
+        self.assertFalse(any(clock.sleeps))
+
+    def test_pacing_measures_actual_start_after_journal_persistence(self):
+        clock = FakeClock()
+        opener = TimedOpener(clock, latency=0)
+        append = inc.Journal.append
+        delayed = []
+
+        def persist(journal, event):
+            append(journal, event)
+            if event['kind'] == 'attempt' and not delayed:
+                clock.now += 1
+                delayed.append(True)
+
+        with clock.installed(), patch.object(inc.Journal, 'append', persist):
+            self.collect(opener, raw_only=True, request_interval_seconds=3)
+        self.assertEqual(opener.starts[1]-opener.starts[0], 3)
+
+    def test_pacing_survives_restart_and_reuses_partial_lookup(self):
+        clock = FakeClock()
+        first = TimedOpener(clock, latency=0)
+        with clock.installed():
+            self.collect(first, raw_only=True, maximum=1, request_interval_seconds=3)
+            path = self.cache/'http_attempts.jsonl'
+            prefix = path.read_bytes()
+            # Model a restart one second after the saved HTTP reservation.
+            clock.now = first.starts[0]+1
+            resume = TimedOpener(clock, latency=0)
+            report = self.collect(resume, raw_only=True, maximum=2, request_interval_seconds=3)
+        self.assertEqual(resume.calls, [inc.itad.HISTORY])
+        self.assertEqual(resume.starts[0]-first.starts[0], 3)
+        self.assertTrue(path.read_bytes().startswith(prefix))
+        self.assertEqual(report['games_with_complete_caches'], 1)
+
+    def test_invalid_pacing_is_rejected_before_files_or_requests(self):
+        for interval in (-1, float('nan'), float('inf'), -float('inf'), True, None, 'invalid'):
+            with self.subTest(interval=str(interval)), \
+                 patch.object(inc, 'cache_lock') as lock, \
+                 patch.object(inc, 'RecordingClient') as client:
+                opener = FakeOpener()
+                with self.assertRaises(ValueError):
+                    self.collect(opener, raw_only=True, request_interval_seconds=interval)
+                with self.assertRaises(ValueError):
+                    inc.Journal(self.cache, 2, request_interval_seconds=interval)
+                lock.assert_not_called()
+                client.assert_not_called()
+                self.assertEqual(opener.calls, [])
+        self.assertFalse(self.cache.exists())
+        self.assertFalse(self.output.exists())
+
+    def test_cli_rejects_invalid_pacing_before_running(self):
+        for interval in ('-1', 'nan', 'inf', '-inf', 'invalid'):
+            with self.subTest(interval=interval), patch.object(inc, 'run') as run, \
+                 patch('sys.stderr', io.StringIO()):
+                with self.assertRaises(SystemExit) as stopped:
+                    inc.cli(['--cohort', str(self.cohort), '--cache-dir', str(self.cache),
+                             '--output-dir', str(self.output), '--request-interval-seconds='+interval])
+                self.assertEqual(stopped.exception.code, 2)
+                run.assert_not_called()
 
     def test_raw_only_bypasses_all_downstream_calculations(self):
         with patch.dict(sys.modules, {'cohort_pipeline': None}), \
@@ -292,12 +426,14 @@ class ScalableTests(unittest.TestCase):
             status = inc.cli(['--cohort', str(self.cohort), '--cache-dir', str(self.cache),
                               '--output-dir', str(self.output), '--reuse-cache',
                               str(self.directory/'unused'), '--live', '--raw-only',
-                              '--max-new-games', '1', '--max-total-attempts', '2'])
+                              '--max-new-games', '1', '--max-total-attempts', '2',
+                              '--request-interval-seconds', '3'])
         self.assertEqual(status, 0)
         self.assertEqual(opener.lookup_appids, [ids[0]])
         report = c.read_json(self.output/'collection_quality.json')
         self.assertEqual(report['max_new_games'], 1)
         self.assertEqual(report['maximum_cumulative_attempts'], 2)
+        self.assertEqual(report['request_interval_seconds'], 3)
 
     def test_dry_run_requires_no_key_no_network_no_cache_creation(self):
         with patch.object(inc.itad, 'Client', side_effect=AssertionError('No client offline')):
@@ -591,6 +727,19 @@ class ScalableTests(unittest.TestCase):
         train, evaluation = p.model_frames(r)
         self.assertFalse(set(train.appid) & set(evaluation.appid))
         self.assertTrue(evaluation.empty)  # No new games have been retrieved yet.
+
+    def test_1000_game_selection_preserves_frozen_500_prefix_byte_reproducibly(self):
+        first, repeated = self.directory/'1000.csv', self.directory/'1000_repeat.csv'
+        receipt = c.select_cohort(1000, first)
+        c.select_cohort(1000, repeated)
+        self.assertEqual(first.read_bytes(), repeated.read_bytes())
+        rows = c.read_csv(first)
+        old = c.read_csv(c.ROOT/'data/cohorts/cohort_500.csv')
+        self.assertEqual(rows[:500], old)
+        self.assertEqual(len(rows), 1000)
+        self.assertEqual(len({r['AppID'] for r in rows}), 1000)
+        self.assertEqual(len({r['AppID'] for r in rows}-{r['AppID'] for r in old}), 500)
+        self.assertEqual(receipt['cohort_sha256'], c.digest(first))
 
     def test_configurable_model_preparation_never_fits_or_overwrites_models(self):
         self.collect(FakeOpener())

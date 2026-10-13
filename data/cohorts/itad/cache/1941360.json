@@ -1,0 +1,120 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T16:00:57.188318Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T16:01:03.238486Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2023-10-05T06:37:41+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":10.99,\"amountInt\":1099,\"currency\":\"USD\"},\"regular\":{\"amount\":10.99,\"amountInt\":1099,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2022-07-30T07:48:11+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":39.99,\"amountInt\":3999,\"currency\":\"USD\"},\"regular\":{\"amount\":39.99,\"amountInt\":3999,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-6368-722b-80c4-8d37141c1a21",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T16:01:03.238486Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 16:01:03 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 10.99,
+          "amountInt": 1099,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 10.99,
+          "amountInt": 1099,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-10-05T06:37:41+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 39.99,
+          "amountInt": 3999,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 39.99,
+          "amountInt": 3999,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-07-30T07:48:11+02:00"
+    }
+  ],
+  "itad_game_id": "018d937f-6368-722b-80c4-8d37141c1a21",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T16:01:00.209565Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-6368-722b-80c4-8d37141c1a21\",\"slug\":\"football-history-football-simulator\",\"title\":\"Football History Football Simulator\",\"type\":null,\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-6368-722b-80c4-8d37141c1a21\\/boxart.jpg?t=1763136572\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-6368-722b-80c4-8d37141c1a21\\/banner145.jpg?t=1763136572\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-6368-722b-80c4-8d37141c1a21\\/banner300.jpg?t=1763136572\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-6368-722b-80c4-8d37141c1a21\\/banner400.jpg?t=1763136572\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-6368-722b-80c4-8d37141c1a21\\/banner600.jpg?t=1763136573\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "1941360"
+    },
+    "received_at": "2026-10-13T16:01:00.209565Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 16:01:00 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-6368-722b-80c4-8d37141c1a21/banner145.jpg?t=1763136572",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-6368-722b-80c4-8d37141c1a21/banner300.jpg?t=1763136572",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-6368-722b-80c4-8d37141c1a21/banner400.jpg?t=1763136572",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-6368-722b-80c4-8d37141c1a21/banner600.jpg?t=1763136573",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-6368-722b-80c4-8d37141c1a21/boxart.jpg?t=1763136572"
+      },
+      "id": "018d937f-6368-722b-80c4-8d37141c1a21",
+      "mature": false,
+      "slug": "football-history-football-simulator",
+      "title": "Football History Football Simulator",
+      "type": null
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 1941360
+}

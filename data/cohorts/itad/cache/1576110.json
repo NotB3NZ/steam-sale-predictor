@@ -1,0 +1,100 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T13:38:38.526251Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T13:38:44.533424Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2021-05-01T02:33:06+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":8.99,\"amountInt\":899,\"currency\":\"USD\"},\"regular\":{\"amount\":8.99,\"amountInt\":899,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-4ebe-730b-b986-b5efd44665dc",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T13:38:44.533424Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 13:38:44 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 8.99,
+          "amountInt": 899,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 8.99,
+          "amountInt": 899,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-05-01T02:33:06+02:00"
+    }
+  ],
+  "itad_game_id": "018d937f-4ebe-730b-b986-b5efd44665dc",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T13:38:41.772370Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-4ebe-730b-b986-b5efd44665dc\",\"slug\":\"heisen-bay\",\"title\":\"Heisen Bay\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-4ebe-730b-b986-b5efd44665dc\\/boxart.jpg?t=1763173431\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-4ebe-730b-b986-b5efd44665dc\\/banner145.jpg?t=1763173432\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-4ebe-730b-b986-b5efd44665dc\\/banner300.jpg?t=1763173432\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-4ebe-730b-b986-b5efd44665dc\\/banner400.jpg?t=1763173432\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-4ebe-730b-b986-b5efd44665dc\\/banner600.jpg?t=1763173432\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "1576110"
+    },
+    "received_at": "2026-10-13T13:38:41.772370Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 13:38:41 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-4ebe-730b-b986-b5efd44665dc/banner145.jpg?t=1763173432",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-4ebe-730b-b986-b5efd44665dc/banner300.jpg?t=1763173432",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-4ebe-730b-b986-b5efd44665dc/banner400.jpg?t=1763173432",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-4ebe-730b-b986-b5efd44665dc/banner600.jpg?t=1763173432",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-4ebe-730b-b986-b5efd44665dc/boxart.jpg?t=1763173431"
+      },
+      "id": "018d937f-4ebe-730b-b986-b5efd44665dc",
+      "mature": false,
+      "slug": "heisen-bay",
+      "title": "Heisen Bay",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 1576110
+}

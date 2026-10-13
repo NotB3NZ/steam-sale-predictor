@@ -1,0 +1,100 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T14:03:52.149718Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T14:03:58.150638Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":19.99,\"amountInt\":1999,\"currency\":\"USD\"},\"regular\":{\"amount\":19.99,\"amountInt\":1999,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-0eb7-7315-92fb-4b111d606fcf",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T14:03:58.150638Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 14:03:58 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 19.99,
+          "amountInt": 1999,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 19.99,
+          "amountInt": 1999,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-01T01:00:00+01:00"
+    }
+  ],
+  "itad_game_id": "018d937f-0eb7-7315-92fb-4b111d606fcf",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T14:03:55.419092Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-0eb7-7315-92fb-4b111d606fcf\",\"slug\":\"drums-hero\",\"title\":\"Drums Hero\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-0eb7-7315-92fb-4b111d606fcf\\/boxart.png?t=1732005927\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-0eb7-7315-92fb-4b111d606fcf\\/banner145.jpg?t=1732005928\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-0eb7-7315-92fb-4b111d606fcf\\/banner300.jpg?t=1732005928\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-0eb7-7315-92fb-4b111d606fcf\\/banner400.jpg?t=1732005928\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-0eb7-7315-92fb-4b111d606fcf\\/banner600.jpg?t=1732005929\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "608370"
+    },
+    "received_at": "2026-10-13T14:03:55.419092Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 14:03:55 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-0eb7-7315-92fb-4b111d606fcf/banner145.jpg?t=1732005928",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-0eb7-7315-92fb-4b111d606fcf/banner300.jpg?t=1732005928",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-0eb7-7315-92fb-4b111d606fcf/banner400.jpg?t=1732005928",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-0eb7-7315-92fb-4b111d606fcf/banner600.jpg?t=1732005929",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-0eb7-7315-92fb-4b111d606fcf/boxart.png?t=1732005927"
+      },
+      "id": "018d937f-0eb7-7315-92fb-4b111d606fcf",
+      "mature": false,
+      "slug": "drums-hero",
+      "title": "Drums Hero",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 608370
+}

@@ -1,0 +1,200 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T15:43:48.471699Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T15:43:54.234252Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2021-03-01T19:21:36+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":7.99,\"amountInt\":799,\"currency\":\"USD\"},\"regular\":{\"amount\":7.99,\"amountInt\":799,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-02-22T19:21:21+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":3.99,\"amountInt\":399,\"currency\":\"USD\"},\"regular\":{\"amount\":7.99,\"amountInt\":799,\"currency\":\"USD\"},\"cut\":50}},{\"timestamp\":\"2021-02-15T19:24:43+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":7.99,\"amountInt\":799,\"currency\":\"USD\"},\"regular\":{\"amount\":7.99,\"amountInt\":799,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-02-11T19:33:51+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":1.59,\"amountInt\":159,\"currency\":\"USD\"},\"regular\":{\"amount\":7.99,\"amountInt\":799,\"currency\":\"USD\"},\"cut\":80}},{\"timestamp\":\"2021-01-05T19:53:01+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":7.99,\"amountInt\":799,\"currency\":\"USD\"},\"regular\":{\"amount\":7.99,\"amountInt\":799,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":2.39,\"amountInt\":239,\"currency\":\"USD\"},\"regular\":{\"amount\":7.99,\"amountInt\":799,\"currency\":\"USD\"},\"cut\":70}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d96f1-62da-70a2-9634-96cbd6abc35b",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T15:43:54.234252Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 15:43:54 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 7.99,
+          "amountInt": 799,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 7.99,
+          "amountInt": 799,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-03-01T19:21:36+01:00"
+    },
+    {
+      "deal": {
+        "cut": 50,
+        "price": {
+          "amount": 3.99,
+          "amountInt": 399,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 7.99,
+          "amountInt": 799,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-02-22T19:21:21+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 7.99,
+          "amountInt": 799,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 7.99,
+          "amountInt": 799,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-02-15T19:24:43+01:00"
+    },
+    {
+      "deal": {
+        "cut": 80,
+        "price": {
+          "amount": 1.59,
+          "amountInt": 159,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 7.99,
+          "amountInt": 799,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-02-11T19:33:51+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 7.99,
+          "amountInt": 799,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 7.99,
+          "amountInt": 799,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-05T19:53:01+01:00"
+    },
+    {
+      "deal": {
+        "cut": 70,
+        "price": {
+          "amount": 2.39,
+          "amountInt": 239,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 7.99,
+          "amountInt": 799,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-01T01:00:00+01:00"
+    }
+  ],
+  "itad_game_id": "018d96f1-62da-70a2-9634-96cbd6abc35b",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T15:43:51.207148Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d96f1-62da-70a2-9634-96cbd6abc35b\",\"slug\":\"angkor-celebrations-match-3-puzzle\",\"title\":\"Angkor: Celebrations - Match 3 Puzzle\",\"type\":null,\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d96f1-62da-70a2-9634-96cbd6abc35b\\/boxart.jpg?t=1787639171\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d96f1-62da-70a2-9634-96cbd6abc35b\\/banner145.jpg?t=1787639171\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d96f1-62da-70a2-9634-96cbd6abc35b\\/banner300.jpg?t=1787639172\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d96f1-62da-70a2-9634-96cbd6abc35b\\/banner400.jpg?t=1787639172\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d96f1-62da-70a2-9634-96cbd6abc35b\\/banner600.jpg?t=1787639173\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "1306110"
+    },
+    "received_at": "2026-10-13T15:43:51.207148Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 15:43:51 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d96f1-62da-70a2-9634-96cbd6abc35b/banner145.jpg?t=1787639171",
+        "banner300": "https://assets.isthereanydeal.com/018d96f1-62da-70a2-9634-96cbd6abc35b/banner300.jpg?t=1787639172",
+        "banner400": "https://assets.isthereanydeal.com/018d96f1-62da-70a2-9634-96cbd6abc35b/banner400.jpg?t=1787639172",
+        "banner600": "https://assets.isthereanydeal.com/018d96f1-62da-70a2-9634-96cbd6abc35b/banner600.jpg?t=1787639173",
+        "boxart": "https://assets.isthereanydeal.com/018d96f1-62da-70a2-9634-96cbd6abc35b/boxart.jpg?t=1787639171"
+      },
+      "id": "018d96f1-62da-70a2-9634-96cbd6abc35b",
+      "mature": false,
+      "slug": "angkor-celebrations-match-3-puzzle",
+      "title": "Angkor: Celebrations - Match 3 Puzzle",
+      "type": null
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 1306110
+}

@@ -1,0 +1,100 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T14:32:49.304225Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T14:32:55.460814Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":2.99,\"amountInt\":299,\"currency\":\"USD\"},\"regular\":{\"amount\":2.99,\"amountInt\":299,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-19e0-73ba-a6b2-438db2ca3bff",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T14:32:55.460814Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 14:32:55 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 2.99,
+          "amountInt": 299,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 2.99,
+          "amountInt": 299,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-01T01:00:00+01:00"
+    }
+  ],
+  "itad_game_id": "018d937f-19e0-73ba-a6b2-438db2ca3bff",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T14:32:52.264909Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-19e0-73ba-a6b2-438db2ca3bff\",\"slug\":\"thunder-spheres-virtual-reality-3d-pool\",\"title\":\"Thunder Spheres - Virtual Reality 3D Pool\",\"type\":null,\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-19e0-73ba-a6b2-438db2ca3bff\\/boxart.png?t=1731996405\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-19e0-73ba-a6b2-438db2ca3bff\\/banner145.jpg?t=1731996405\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-19e0-73ba-a6b2-438db2ca3bff\\/banner300.jpg?t=1731996405\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-19e0-73ba-a6b2-438db2ca3bff\\/banner400.jpg?t=1731996405\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-19e0-73ba-a6b2-438db2ca3bff\\/banner600.jpg?t=1731996406\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "559300"
+    },
+    "received_at": "2026-10-13T14:32:52.264909Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 14:32:52 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-19e0-73ba-a6b2-438db2ca3bff/banner145.jpg?t=1731996405",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-19e0-73ba-a6b2-438db2ca3bff/banner300.jpg?t=1731996405",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-19e0-73ba-a6b2-438db2ca3bff/banner400.jpg?t=1731996405",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-19e0-73ba-a6b2-438db2ca3bff/banner600.jpg?t=1731996406",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-19e0-73ba-a6b2-438db2ca3bff/boxart.png?t=1731996405"
+      },
+      "id": "018d937f-19e0-73ba-a6b2-438db2ca3bff",
+      "mature": false,
+      "slug": "thunder-spheres-virtual-reality-3d-pool",
+      "title": "Thunder Spheres - Virtual Reality 3D Pool",
+      "type": null
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 559300
+}

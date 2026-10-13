@@ -1,0 +1,240 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T15:38:29.304026Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T15:38:35.322564Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2025-07-10T20:14:30+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2025-06-26T23:59:25+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2025-03-20T19:04:54+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2025-03-13T19:04:10+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.49,\"amountInt\":49,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":51}},{\"timestamp\":\"2023-10-27T00:50:13+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"regular\":{\"amount\":0.99,\"amountInt\":99,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2023-10-16T19:50:21+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":2.99,\"amountInt\":299,\"currency\":\"USD\"},\"regular\":{\"amount\":2.99,\"amountInt\":299,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2023-10-09T19:11:52+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":2.39,\"amountInt\":239,\"currency\":\"USD\"},\"regular\":{\"amount\":2.99,\"amountInt\":299,\"currency\":\"USD\"},\"cut\":20}},{\"timestamp\":\"2023-09-05T18:48:20+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":2.99,\"amountInt\":299,\"currency\":\"USD\"},\"regular\":{\"amount\":2.99,\"amountInt\":299,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-74af-70fe-8beb-1809d017adaf",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T15:38:35.322564Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 15:38:35 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-07-10T20:14:30+02:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-06-26T23:59:25+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-03-20T19:04:54+01:00"
+    },
+    {
+      "deal": {
+        "cut": 51,
+        "price": {
+          "amount": 0.49,
+          "amountInt": 49,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-03-13T19:04:10+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 0.99,
+          "amountInt": 99,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-10-27T00:50:13+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 2.99,
+          "amountInt": 299,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 2.99,
+          "amountInt": 299,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-10-16T19:50:21+02:00"
+    },
+    {
+      "deal": {
+        "cut": 20,
+        "price": {
+          "amount": 2.39,
+          "amountInt": 239,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 2.99,
+          "amountInt": 299,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-10-09T19:11:52+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 2.99,
+          "amountInt": 299,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 2.99,
+          "amountInt": 299,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-09-05T18:48:20+02:00"
+    }
+  ],
+  "itad_game_id": "018d937f-74af-70fe-8beb-1809d017adaf",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T15:38:32.306437Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-74af-70fe-8beb-1809d017adaf\",\"slug\":\"glowstrike-robot-obliteration\",\"title\":\"Glowstrike: Robot Obliteration\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-74af-70fe-8beb-1809d017adaf\\/boxart.jpg?t=1763092226\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-74af-70fe-8beb-1809d017adaf\\/banner145.jpg?t=1763092227\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-74af-70fe-8beb-1809d017adaf\\/banner300.jpg?t=1763092227\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-74af-70fe-8beb-1809d017adaf\\/banner400.jpg?t=1763092227\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-74af-70fe-8beb-1809d017adaf\\/banner600.jpg?t=1763092227\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "2481520"
+    },
+    "received_at": "2026-10-13T15:38:32.306437Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 15:38:32 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-74af-70fe-8beb-1809d017adaf/banner145.jpg?t=1763092227",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-74af-70fe-8beb-1809d017adaf/banner300.jpg?t=1763092227",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-74af-70fe-8beb-1809d017adaf/banner400.jpg?t=1763092227",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-74af-70fe-8beb-1809d017adaf/banner600.jpg?t=1763092227",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-74af-70fe-8beb-1809d017adaf/boxart.jpg?t=1763092226"
+      },
+      "id": "018d937f-74af-70fe-8beb-1809d017adaf",
+      "mature": false,
+      "slug": "glowstrike-robot-obliteration",
+      "title": "Glowstrike: Robot Obliteration",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 2481520
+}

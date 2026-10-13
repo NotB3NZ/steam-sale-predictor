@@ -1,0 +1,100 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T13:22:52.611051Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T13:22:58.542190Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"regular\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-3308-708c-aa5f-32a49a39e1bd",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T13:22:58.542190Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 13:22:58 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-01T01:00:00+01:00"
+    }
+  ],
+  "itad_game_id": "018d937f-3308-708c-aa5f-32a49a39e1bd",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T13:22:55.578922Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-3308-708c-aa5f-32a49a39e1bd\",\"slug\":\"guang-zhi-mi-cheng-dawn-of-the-lost-castle\",\"title\":\"\\u5149\\u4e4b\\u8ff7\\u57ce \\/ Dawn of the Lost Castle\",\"type\":null,\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-3308-708c-aa5f-32a49a39e1bd\\/boxart.png?t=1731994602\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-3308-708c-aa5f-32a49a39e1bd\\/banner145.jpg?t=1731994603\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-3308-708c-aa5f-32a49a39e1bd\\/banner300.jpg?t=1731994603\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-3308-708c-aa5f-32a49a39e1bd\\/banner400.jpg?t=1731994603\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-3308-708c-aa5f-32a49a39e1bd\\/banner600.jpg?t=1731994603\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "1018170"
+    },
+    "received_at": "2026-10-13T13:22:55.578922Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 13:22:55 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-3308-708c-aa5f-32a49a39e1bd/banner145.jpg?t=1731994603",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-3308-708c-aa5f-32a49a39e1bd/banner300.jpg?t=1731994603",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-3308-708c-aa5f-32a49a39e1bd/banner400.jpg?t=1731994603",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-3308-708c-aa5f-32a49a39e1bd/banner600.jpg?t=1731994603",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-3308-708c-aa5f-32a49a39e1bd/boxart.png?t=1731994602"
+      },
+      "id": "018d937f-3308-708c-aa5f-32a49a39e1bd",
+      "mature": false,
+      "slug": "guang-zhi-mi-cheng-dawn-of-the-lost-castle",
+      "title": "光之迷城 / Dawn of the Lost Castle",
+      "type": null
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 1018170
+}

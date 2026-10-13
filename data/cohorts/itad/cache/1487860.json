@@ -1,0 +1,200 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T14:03:46.123018Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T14:03:52.146076Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2026-01-05T20:17:50+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"regular\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2025-12-18T19:59:27+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.79,\"amountInt\":79,\"currency\":\"USD\"},\"regular\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"cut\":60}},{\"timestamp\":\"2021-09-27T17:18:15+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"regular\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-08-09T19:06:42+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"regular\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-08-02T19:19:46+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":2.49,\"amountInt\":249,\"currency\":\"USD\"},\"regular\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"cut\":50}},{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"regular\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-4a2d-71ab-9815-89a2440e4ab8",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T14:03:52.146076Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 14:03:52 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2026-01-05T20:17:50+01:00"
+    },
+    {
+      "deal": {
+        "cut": 60,
+        "price": {
+          "amount": 0.79,
+          "amountInt": 79,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-12-18T19:59:27+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-09-27T17:18:15+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-08-09T19:06:42+02:00"
+    },
+    {
+      "deal": {
+        "cut": 50,
+        "price": {
+          "amount": 2.49,
+          "amountInt": 249,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-08-02T19:19:46+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-01T01:00:00+01:00"
+    }
+  ],
+  "itad_game_id": "018d937f-4a2d-71ab-9815-89a2440e4ab8",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T14:03:49.116279Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-4a2d-71ab-9815-89a2440e4ab8\",\"slug\":\"toxik-aim-trainer\",\"title\":\"Toxik aim trainer\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-4a2d-71ab-9815-89a2440e4ab8\\/boxart.jpg?t=1763277989\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-4a2d-71ab-9815-89a2440e4ab8\\/banner145.jpg?t=1763277990\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-4a2d-71ab-9815-89a2440e4ab8\\/banner300.jpg?t=1763277990\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-4a2d-71ab-9815-89a2440e4ab8\\/banner400.jpg?t=1763277990\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-4a2d-71ab-9815-89a2440e4ab8\\/banner600.jpg?t=1763277991\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "1487860"
+    },
+    "received_at": "2026-10-13T14:03:49.116279Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 14:03:49 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-4a2d-71ab-9815-89a2440e4ab8/banner145.jpg?t=1763277990",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-4a2d-71ab-9815-89a2440e4ab8/banner300.jpg?t=1763277990",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-4a2d-71ab-9815-89a2440e4ab8/banner400.jpg?t=1763277990",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-4a2d-71ab-9815-89a2440e4ab8/banner600.jpg?t=1763277991",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-4a2d-71ab-9815-89a2440e4ab8/boxart.jpg?t=1763277989"
+      },
+      "id": "018d937f-4a2d-71ab-9815-89a2440e4ab8",
+      "mature": false,
+      "slug": "toxik-aim-trainer",
+      "title": "Toxik aim trainer",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 1487860
+}

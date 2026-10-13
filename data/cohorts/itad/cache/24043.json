@@ -1,0 +1,73 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T15:46:54.800311Z",
+    "history_status": "empty_history",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T15:47:00.727785Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-00a9-7098-8dc0-ca8e37186dc7",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T15:47:00.727785Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 15:47:00 GMT"
+    }
+  },
+  "history_response": [],
+  "itad_game_id": "018d937f-00a9-7098-8dc0-ca8e37186dc7",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T15:46:57.857116Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-00a9-7098-8dc0-ca8e37186dc7\",\"slug\":\"railworks-class-20-pack\",\"title\":\"Railworks Class 20 Pack\",\"type\":null,\"mature\":false,\"assets\":{}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "24043"
+    },
+    "received_at": "2026-10-13T15:46:57.857116Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 15:46:57 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {},
+      "id": "018d937f-00a9-7098-8dc0-ca8e37186dc7",
+      "mature": false,
+      "slug": "railworks-class-20-pack",
+      "title": "Railworks Class 20 Pack",
+      "type": null
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 24043
+}

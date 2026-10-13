@@ -1,0 +1,120 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T15:56:56.441943Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T15:57:02.385081Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2021-02-22T07:07:13+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":7.99,\"amountInt\":799,\"currency\":\"USD\"},\"regular\":{\"amount\":7.99,\"amountInt\":799,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":5.99,\"amountInt\":599,\"currency\":\"USD\"},\"regular\":{\"amount\":5.99,\"amountInt\":599,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d96f1-7b50-7089-a723-e6eb9bb6b355",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T15:57:02.385081Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 15:57:02 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 7.99,
+          "amountInt": 799,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 7.99,
+          "amountInt": 799,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-02-22T07:07:13+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 5.99,
+          "amountInt": 599,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 5.99,
+          "amountInt": 599,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-01T01:00:00+01:00"
+    }
+  ],
+  "itad_game_id": "018d96f1-7b50-7089-a723-e6eb9bb6b355",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T15:56:59.361711Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d96f1-7b50-7089-a723-e6eb9bb6b355\",\"slug\":\"infection-maze-gan-ranmeizu\",\"title\":\"Infection Maze \\/ \\u611f\\u67d3\\u30e1\\u30a4\\u30ba\",\"type\":null,\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d96f1-7b50-7089-a723-e6eb9bb6b355\\/boxart.jpg?t=1761630411\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d96f1-7b50-7089-a723-e6eb9bb6b355\\/banner145.jpg?t=1761630412\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d96f1-7b50-7089-a723-e6eb9bb6b355\\/banner300.jpg?t=1761630412\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d96f1-7b50-7089-a723-e6eb9bb6b355\\/banner400.jpg?t=1761630412\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d96f1-7b50-7089-a723-e6eb9bb6b355\\/banner600.jpg?t=1761630413\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "1307530"
+    },
+    "received_at": "2026-10-13T15:56:59.361711Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 15:56:59 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d96f1-7b50-7089-a723-e6eb9bb6b355/banner145.jpg?t=1761630412",
+        "banner300": "https://assets.isthereanydeal.com/018d96f1-7b50-7089-a723-e6eb9bb6b355/banner300.jpg?t=1761630412",
+        "banner400": "https://assets.isthereanydeal.com/018d96f1-7b50-7089-a723-e6eb9bb6b355/banner400.jpg?t=1761630412",
+        "banner600": "https://assets.isthereanydeal.com/018d96f1-7b50-7089-a723-e6eb9bb6b355/banner600.jpg?t=1761630413",
+        "boxart": "https://assets.isthereanydeal.com/018d96f1-7b50-7089-a723-e6eb9bb6b355/boxart.jpg?t=1761630411"
+      },
+      "id": "018d96f1-7b50-7089-a723-e6eb9bb6b355",
+      "mature": false,
+      "slug": "infection-maze-gan-ranmeizu",
+      "title": "Infection Maze / 感染メイズ",
+      "type": null
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 1307530
+}

@@ -37,9 +37,20 @@ class BudgetStop(RuntimeError):
     pass
 
 
+def validated_interval(value):
+    message = 'Request interval must be a finite, nonnegative number'
+    try:
+        interval = float(value)
+    except (ValueError, TypeError, OverflowError):
+        raise ValueError(message) from None
+    require(not isinstance(value, bool) and math.isfinite(interval) and interval >= 0, message)
+    return interval
+
+
 class Journal:
     """Append-only reservations count even an interrupted, unknown HTTP attempt."""
-    def __init__(self, cache_dir, maximum, readonly=False):
+    def __init__(self, cache_dir, maximum, readonly=False, request_interval_seconds=1.0):
+        self.request_interval_seconds = validated_interval(request_interval_seconds)
         self.path = checked_path(Path(cache_dir)/'http_attempts.jsonl', write=True)
         self.maximum = maximum
         self.events = []
@@ -122,7 +133,7 @@ class Journal:
             raise BudgetStop('Attempt budget or endpoint limit reached')
         attempts = [e for e in self.events if e['kind'] == 'attempt']
         if attempts:
-            time.sleep(max(0, 1.0-(time.time()-attempts[-1]['started_epoch'])))
+            time.sleep(max(0, self.request_interval_seconds-(time.time()-attempts[-1]['started_epoch'])))
         self.append(dict(kind='attempt', sequence=number, appid=appid, endpoint=endpoint,
                          round=round_id, started_epoch=time.time()))
         return number
@@ -135,6 +146,9 @@ class RecordingOpener:
     def open(self, request, timeout):
         c = self.client
         number = self.journal.reserve(c.appid, c.endpoint, c.round_id)
+        # Journal pacing/fsync may delay the actual start beyond the client's
+        # initial timestamp. Measure the next interval from this HTTP start.
+        c.last_request = time.monotonic()
         try:
             response = self.opener.open(request, timeout=timeout)
         except HTTPError as error:
@@ -164,7 +178,7 @@ class RecordingClient(itad.Client):
     stop_on_rate_limit = True
 
     def __init__(self, key, journal, opener=None):
-        super().__init__(key, delay=1.0, attempts=3, timeout=30)
+        super().__init__(key, delay=journal.request_interval_seconds, attempts=3, timeout=30)
         self.journal = journal
         self.opener = RecordingOpener(self, opener or self.opener, journal)
         self.appid, self.endpoint, self.round_id = '', '', 0
@@ -209,7 +223,8 @@ def paths(cohort, cache_dir, reuse_dirs, output_dir):
 
 def run(cohort, cache_dir, output_dir, reuse_dirs=(ORIGINAL_CACHE,), live=False,
         retry_failed=False, stale=(), maximum=None, key='', opener=None,
-        raw_only=False, max_new_games=None):
+        raw_only=False, max_new_games=None, request_interval_seconds=1.0):
+    request_interval_seconds = validated_interval(request_interval_seconds)
     started = time.monotonic()
     cohort, cache_dir, reuse_dirs, output_dir = paths(cohort, cache_dir, reuse_dirs, output_dir)
     games = load_cohort(cohort)
@@ -255,7 +270,7 @@ def run(cohort, cache_dir, output_dir, reuse_dirs=(ORIGINAL_CACHE,), live=False,
         require(not any(c in key for c in '\r\n'),
                 'ITAD_API_KEY contains invalid header characters; zero API calls.')
         with cache_lock(cache_dir):
-            journal = Journal(cache_dir, maximum)
+            journal = Journal(cache_dir, maximum, request_interval_seconds=request_interval_seconds)
             before = journal.counts()
             client = RecordingClient(key, journal, opener)
             try:
@@ -290,11 +305,13 @@ def run(cohort, cache_dir, output_dir, reuse_dirs=(ORIGINAL_CACHE,), live=False,
             after = journal.counts()
     elif (cache_dir/'http_attempts.jsonl').exists():
         # Read-only journal validation/counting; existing binding prevents append.
-        journal = Journal(cache_dir, maximum, readonly=True)
+        journal = Journal(cache_dir, maximum, readonly=True,
+                          request_interval_seconds=request_interval_seconds)
         before = after = journal.counts()
     report = dict(mode='live' if live else 'offline', target_games=len(games), already_cached_games=already,
                   newly_retrieved_games=newly, planned_games=len(planned),
                   estimated_requests_without_retries=planned_requests, maximum_cumulative_attempts=maximum,
+                  request_interval_seconds=request_interval_seconds,
                   run_requests={k: after[k]-before[k] for k in after}, cumulative_requests=after,
                   cohort_sha256=digest(cohort), configuration=itad.CONFIG, stopped=stopped,
                   collection_duration_seconds=round(time.monotonic()-started, 6))
@@ -339,13 +356,16 @@ def cli(argv=None):
                    help='Write collection summaries without labels, features or modeling calculations')
     p.add_argument('--max-new-games', type=int,
                    help='Limit eligible incomplete/uncached games in frozen cohort order; complete caches are skipped')
+    p.add_argument('--request-interval-seconds', type=validated_interval, default=1.0,
+                   help='Minimum seconds between HTTP request starts, including retries and restarts (default: 1)')
     args = p.parse_args(argv)
     require(not (args.live and args.dry_run), '--live and --dry-run are mutually exclusive')
     key = os.environ.get('ITAD_API_KEY', '') if args.live else ''
     report = run(args.cohort, args.cache_dir, args.output_dir,
                  args.reuse_cache if args.reuse_cache is not None else (ORIGINAL_CACHE,), args.live,
                  args.retry_failed, args.stale_appid, args.max_total_attempts, key,
-                 raw_only=args.raw_only, max_new_games=args.max_new_games)
+                 raw_only=args.raw_only, max_new_games=args.max_new_games,
+                 request_interval_seconds=args.request_interval_seconds)
     print(json.dumps({k: report[k] for k in ('mode', 'target_games', 'already_cached_games',
                      'newly_retrieved_games', 'planned_games', 'estimated_requests_without_retries', 'stopped')}))
     return 2 if report['stopped'] else 0

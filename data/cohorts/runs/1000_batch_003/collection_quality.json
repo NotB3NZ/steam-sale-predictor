@@ -1,0 +1,70 @@
+{
+  "already_cached_games": 550,
+  "cache_status_counts": {
+    "absent": 425,
+    "valid": 575
+  },
+  "cohort_sha256": "52939264125e128573624ee11575c09e2b68b6693a6499c651b6751077c615e6",
+  "collection_duration_seconds": 148.920043,
+  "configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "cumulative_requests": {
+    "failed_api_requests": 14,
+    "interrupted_or_unknown_attempts": 0,
+    "successful_api_requests": 951,
+    "total_http_attempts": 965
+  },
+  "estimated_requests_without_retries": 50,
+  "games_with_complete_caches": 575,
+  "games_with_unresolved_failures": 425,
+  "max_new_games": 25,
+  "maximum_cumulative_attempts": 975,
+  "mode": "live",
+  "newly_retrieved_games": 25,
+  "planned_appids": [
+    "1348920",
+    "555320",
+    "1338090",
+    "1102100",
+    "1159160",
+    "1934990",
+    "268870",
+    "1379900",
+    "320970",
+    "731760",
+    "1357400",
+    "2025930",
+    "286240",
+    "1435960",
+    "959410",
+    "1747840",
+    "923590",
+    "2337140",
+    "1915550",
+    "1104670",
+    "1473920",
+    "1071640",
+    "1549750",
+    "2193760",
+    "771950"
+  ],
+  "planned_games": 25,
+  "raw_only": true,
+  "request_interval_seconds": 3.0,
+  "run_requests": {
+    "failed_api_requests": 0,
+    "interrupted_or_unknown_attempts": 0,
+    "successful_api_requests": 50,
+    "total_http_attempts": 50
+  },
+  "stopped": "",
+  "successful_histories": 575,
+  "successful_lookups": 575,
+  "target_games": 1000
+}

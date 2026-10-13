@@ -1,0 +1,100 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T13:49:26.676459Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T13:49:32.525488Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2024-02-11T09:26:54+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":3.99,\"amountInt\":399,\"currency\":\"USD\"},\"regular\":{\"amount\":3.99,\"amountInt\":399,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-435c-7281-9666-611aad455b18",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T13:49:32.525488Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 13:49:32 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 3.99,
+          "amountInt": 399,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 3.99,
+          "amountInt": 399,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-02-11T09:26:54+01:00"
+    }
+  ],
+  "itad_game_id": "018d937f-435c-7281-9666-611aad455b18",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T13:49:29.661511Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-435c-7281-9666-611aad455b18\",\"slug\":\"the-zombies-horror\",\"title\":\"The Zombie's Horror\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-435c-7281-9666-611aad455b18\\/boxart.jpg?t=1763204420\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-435c-7281-9666-611aad455b18\\/banner145.jpg?t=1763204421\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-435c-7281-9666-611aad455b18\\/banner300.jpg?t=1763204421\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-435c-7281-9666-611aad455b18\\/banner400.jpg?t=1763204421\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-435c-7281-9666-611aad455b18\\/banner600.jpg?t=1763204421\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "1338090"
+    },
+    "received_at": "2026-10-13T13:49:29.661511Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 13:49:29 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-435c-7281-9666-611aad455b18/banner145.jpg?t=1763204421",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-435c-7281-9666-611aad455b18/banner300.jpg?t=1763204421",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-435c-7281-9666-611aad455b18/banner400.jpg?t=1763204421",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-435c-7281-9666-611aad455b18/banner600.jpg?t=1763204421",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-435c-7281-9666-611aad455b18/boxart.jpg?t=1763204420"
+      },
+      "id": "018d937f-435c-7281-9666-611aad455b18",
+      "mature": false,
+      "slug": "the-zombies-horror",
+      "title": "The Zombie's Horror",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 1338090
+}

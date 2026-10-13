@@ -1,0 +1,220 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T14:06:28.507782Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T14:06:34.528095Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2022-07-07T19:39:38+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"regular\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2022-06-23T20:16:47+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":1.39,\"amountInt\":139,\"currency\":\"USD\"},\"regular\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"cut\":80}},{\"timestamp\":\"2022-03-07T19:15:20+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"regular\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2022-03-03T14:03:06+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":1.74,\"amountInt\":174,\"currency\":\"USD\"},\"regular\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"cut\":75}},{\"timestamp\":\"2021-07-08T20:00:49+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"regular\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-06-24T21:05:52+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":1.74,\"amountInt\":174,\"currency\":\"USD\"},\"regular\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"cut\":75}},{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"regular\":{\"amount\":6.99,\"amountInt\":699,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-180e-73eb-ab44-10f89f77c583",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T14:06:34.528095Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 14:06:34 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-07-07T19:39:38+02:00"
+    },
+    {
+      "deal": {
+        "cut": 80,
+        "price": {
+          "amount": 1.39,
+          "amountInt": 139,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-06-23T20:16:47+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-03-07T19:15:20+01:00"
+    },
+    {
+      "deal": {
+        "cut": 75,
+        "price": {
+          "amount": 1.74,
+          "amountInt": 174,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-03-03T14:03:06+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-07-08T20:00:49+02:00"
+    },
+    {
+      "deal": {
+        "cut": 75,
+        "price": {
+          "amount": 1.74,
+          "amountInt": 174,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-06-24T21:05:52+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 6.99,
+          "amountInt": 699,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-01T01:00:00+01:00"
+    }
+  ],
+  "itad_game_id": "018d937f-180e-73eb-ab44-10f89f77c583",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T14:06:31.528640Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-180e-73eb-ab44-10f89f77c583\",\"slug\":\"broken-bots\",\"title\":\"Broken Bots\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-180e-73eb-ab44-10f89f77c583\\/boxart.png?t=1731988943\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-180e-73eb-ab44-10f89f77c583\\/banner145.jpg?t=1731988943\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-180e-73eb-ab44-10f89f77c583\\/banner300.jpg?t=1731988943\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-180e-73eb-ab44-10f89f77c583\\/banner400.jpg?t=1731988944\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-180e-73eb-ab44-10f89f77c583\\/banner600.jpg?t=1731988944\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "366620"
+    },
+    "received_at": "2026-10-13T14:06:31.528640Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 14:06:31 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-180e-73eb-ab44-10f89f77c583/banner145.jpg?t=1731988943",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-180e-73eb-ab44-10f89f77c583/banner300.jpg?t=1731988943",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-180e-73eb-ab44-10f89f77c583/banner400.jpg?t=1731988944",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-180e-73eb-ab44-10f89f77c583/banner600.jpg?t=1731988944",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-180e-73eb-ab44-10f89f77c583/boxart.png?t=1731988943"
+      },
+      "id": "018d937f-180e-73eb-ab44-10f89f77c583",
+      "mature": false,
+      "slug": "broken-bots",
+      "title": "Broken Bots",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 366620
+}

@@ -1,0 +1,300 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T14:03:34.184496Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T14:03:40.335218Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2026-10-08T20:50:30+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"regular\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2026-10-01T19:22:38+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":2.49,\"amountInt\":249,\"currency\":\"USD\"},\"regular\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"cut\":50}},{\"timestamp\":\"2025-03-07T15:48:04+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"regular\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2024-12-04T20:24:01+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":14.99,\"amountInt\":1499,\"currency\":\"USD\"},\"regular\":{\"amount\":14.99,\"amountInt\":1499,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2024-11-27T20:11:06+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":4.94,\"amountInt\":494,\"currency\":\"USD\"},\"regular\":{\"amount\":14.99,\"amountInt\":1499,\"currency\":\"USD\"},\"cut\":67}},{\"timestamp\":\"2024-01-04T22:44:39+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":14.99,\"amountInt\":1499,\"currency\":\"USD\"},\"regular\":{\"amount\":14.99,\"amountInt\":1499,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2023-12-21T23:56:25+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":11.99,\"amountInt\":1199,\"currency\":\"USD\"},\"regular\":{\"amount\":14.99,\"amountInt\":1499,\"currency\":\"USD\"},\"cut\":20}},{\"timestamp\":\"2023-11-28T22:33:26+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":14.99,\"amountInt\":1499,\"currency\":\"USD\"},\"regular\":{\"amount\":14.99,\"amountInt\":1499,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2023-11-24T14:49:51+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":11.99,\"amountInt\":1199,\"currency\":\"USD\"},\"regular\":{\"amount\":14.99,\"amountInt\":1499,\"currency\":\"USD\"},\"cut\":20}},{\"timestamp\":\"2023-07-31T17:18:17+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":14.99,\"amountInt\":1499,\"currency\":\"USD\"},\"regular\":{\"amount\":14.99,\"amountInt\":1499,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2023-07-28T08:18:12+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":19.9,\"amountInt\":1990,\"currency\":\"USD\"},\"regular\":{\"amount\":19.9,\"amountInt\":1990,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-7368-7003-ae45-7f0db2288c73",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T14:03:40.335218Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 14:03:40 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2026-10-08T20:50:30+02:00"
+    },
+    {
+      "deal": {
+        "cut": 50,
+        "price": {
+          "amount": 2.49,
+          "amountInt": 249,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2026-10-01T19:22:38+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-03-07T15:48:04+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 14.99,
+          "amountInt": 1499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 14.99,
+          "amountInt": 1499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-12-04T20:24:01+01:00"
+    },
+    {
+      "deal": {
+        "cut": 67,
+        "price": {
+          "amount": 4.94,
+          "amountInt": 494,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 14.99,
+          "amountInt": 1499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-11-27T20:11:06+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 14.99,
+          "amountInt": 1499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 14.99,
+          "amountInt": 1499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-01-04T22:44:39+01:00"
+    },
+    {
+      "deal": {
+        "cut": 20,
+        "price": {
+          "amount": 11.99,
+          "amountInt": 1199,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 14.99,
+          "amountInt": 1499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-12-21T23:56:25+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 14.99,
+          "amountInt": 1499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 14.99,
+          "amountInt": 1499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-11-28T22:33:26+01:00"
+    },
+    {
+      "deal": {
+        "cut": 20,
+        "price": {
+          "amount": 11.99,
+          "amountInt": 1199,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 14.99,
+          "amountInt": 1499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-11-24T14:49:51+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 14.99,
+          "amountInt": 1499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 14.99,
+          "amountInt": 1499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-07-31T17:18:17+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 19.9,
+          "amountInt": 1990,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 19.9,
+          "amountInt": 1990,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-07-28T08:18:12+02:00"
+    }
+  ],
+  "itad_game_id": "018d937f-7368-7003-ae45-7f0db2288c73",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T14:03:37.091970Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-7368-7003-ae45-7f0db2288c73\",\"slug\":\"arcadia-colony\",\"title\":\"Arcadia: Colony\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-7368-7003-ae45-7f0db2288c73\\/boxart.jpg?t=1790933238\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-7368-7003-ae45-7f0db2288c73\\/banner145.jpg?t=1790933238\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-7368-7003-ae45-7f0db2288c73\\/banner300.jpg?t=1790933238\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-7368-7003-ae45-7f0db2288c73\\/banner400.jpg?t=1790933238\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-7368-7003-ae45-7f0db2288c73\\/banner600.jpg?t=1790933239\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "2260650"
+    },
+    "received_at": "2026-10-13T14:03:37.091970Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 14:03:37 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-7368-7003-ae45-7f0db2288c73/banner145.jpg?t=1790933238",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-7368-7003-ae45-7f0db2288c73/banner300.jpg?t=1790933238",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-7368-7003-ae45-7f0db2288c73/banner400.jpg?t=1790933238",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-7368-7003-ae45-7f0db2288c73/banner600.jpg?t=1790933239",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-7368-7003-ae45-7f0db2288c73/boxart.jpg?t=1790933238"
+      },
+      "id": "018d937f-7368-7003-ae45-7f0db2288c73",
+      "mature": false,
+      "slug": "arcadia-colony",
+      "title": "Arcadia: Colony",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 2260650
+}

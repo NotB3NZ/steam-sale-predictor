@@ -1,0 +1,100 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T14:33:13.495277Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T14:33:19.413767Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2022-06-08T10:03:11+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":2.99,\"amountInt\":299,\"currency\":\"USD\"},\"regular\":{\"amount\":2.99,\"amountInt\":299,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-5f9a-7292-9067-88718fe13c03",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T14:33:19.413767Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 14:33:19 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 2.99,
+          "amountInt": 299,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 2.99,
+          "amountInt": 299,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2022-06-08T10:03:11+02:00"
+    }
+  ],
+  "itad_game_id": "018d937f-5f9a-7292-9067-88718fe13c03",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T14:33:16.343925Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-5f9a-7292-9067-88718fe13c03\",\"slug\":\"the-call-of-krul-ar\",\"title\":\"The Call of Krul'ar\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-5f9a-7292-9067-88718fe13c03\\/boxart.jpg?t=1763158106\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-5f9a-7292-9067-88718fe13c03\\/banner145.jpg?t=1763158106\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-5f9a-7292-9067-88718fe13c03\\/banner300.jpg?t=1763158106\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-5f9a-7292-9067-88718fe13c03\\/banner400.jpg?t=1763158106\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-5f9a-7292-9067-88718fe13c03\\/banner600.jpg?t=1763158107\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "2005430"
+    },
+    "received_at": "2026-10-13T14:33:16.343925Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 14:33:16 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-5f9a-7292-9067-88718fe13c03/banner145.jpg?t=1763158106",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-5f9a-7292-9067-88718fe13c03/banner300.jpg?t=1763158106",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-5f9a-7292-9067-88718fe13c03/banner400.jpg?t=1763158106",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-5f9a-7292-9067-88718fe13c03/banner600.jpg?t=1763158107",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-5f9a-7292-9067-88718fe13c03/boxart.jpg?t=1763158106"
+      },
+      "id": "018d937f-5f9a-7292-9067-88718fe13c03",
+      "mature": false,
+      "slug": "the-call-of-krul-ar",
+      "title": "The Call of Krul'ar",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 2005430
+}

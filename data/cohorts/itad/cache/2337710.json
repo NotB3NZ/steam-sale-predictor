@@ -1,0 +1,100 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T15:47:54.873709Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T15:48:00.892908Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2023-05-22T19:22:22+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"regular\":{\"amount\":4.99,\"amountInt\":499,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-6e82-70b6-a484-a2991701ae3f",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T15:48:00.892908Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 15:48:01 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 4.99,
+          "amountInt": 499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2023-05-22T19:22:22+02:00"
+    }
+  ],
+  "itad_game_id": "018d937f-6e82-70b6-a484-a2991701ae3f",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T15:47:57.865777Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-6e82-70b6-a484-a2991701ae3f\",\"slug\":\"the-last-survivors\",\"title\":\"The Last Survivors\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-6e82-70b6-a484-a2991701ae3f\\/boxart.jpg?t=1763119818\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-6e82-70b6-a484-a2991701ae3f\\/banner145.jpg?t=1763119819\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-6e82-70b6-a484-a2991701ae3f\\/banner300.jpg?t=1763119819\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-6e82-70b6-a484-a2991701ae3f\\/banner400.jpg?t=1763119819\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-6e82-70b6-a484-a2991701ae3f\\/banner600.jpg?t=1763119820\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "2337710"
+    },
+    "received_at": "2026-10-13T15:47:57.865777Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 15:47:58 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-6e82-70b6-a484-a2991701ae3f/banner145.jpg?t=1763119819",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-6e82-70b6-a484-a2991701ae3f/banner300.jpg?t=1763119819",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-6e82-70b6-a484-a2991701ae3f/banner400.jpg?t=1763119819",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-6e82-70b6-a484-a2991701ae3f/banner600.jpg?t=1763119820",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-6e82-70b6-a484-a2991701ae3f/boxart.jpg?t=1763119818"
+      },
+      "id": "018d937f-6e82-70b6-a484-a2991701ae3f",
+      "mature": false,
+      "slug": "the-last-survivors",
+      "title": "The Last Survivors",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 2337710
+}

@@ -1,0 +1,200 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T15:51:55.735748Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T15:52:01.540639Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2025-03-22T16:45:26+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":24.99,\"amountInt\":2499,\"currency\":\"USD\"},\"regular\":{\"amount\":24.99,\"amountInt\":2499,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2024-12-04T19:42:07+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":18.99,\"amountInt\":1899,\"currency\":\"USD\"},\"regular\":{\"amount\":18.99,\"amountInt\":1899,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2024-11-27T20:28:46+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":9.49,\"amountInt\":949,\"currency\":\"USD\"},\"regular\":{\"amount\":18.99,\"amountInt\":1899,\"currency\":\"USD\"},\"cut\":50}},{\"timestamp\":\"2024-07-11T19:36:20+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":18.99,\"amountInt\":1899,\"currency\":\"USD\"},\"regular\":{\"amount\":18.99,\"amountInt\":1899,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2024-06-27T19:24:08+02:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":9.49,\"amountInt\":949,\"currency\":\"USD\"},\"regular\":{\"amount\":18.99,\"amountInt\":1899,\"currency\":\"USD\"},\"cut\":50}},{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":18.99,\"amountInt\":1899,\"currency\":\"USD\"},\"regular\":{\"amount\":18.99,\"amountInt\":1899,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937e-fdd0-723a-b35e-4a2a2d66fba4",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T15:52:01.540639Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 15:52:01 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 24.99,
+          "amountInt": 2499,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 24.99,
+          "amountInt": 2499,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2025-03-22T16:45:26+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 18.99,
+          "amountInt": 1899,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 18.99,
+          "amountInt": 1899,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-12-04T19:42:07+01:00"
+    },
+    {
+      "deal": {
+        "cut": 50,
+        "price": {
+          "amount": 9.49,
+          "amountInt": 949,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 18.99,
+          "amountInt": 1899,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-11-27T20:28:46+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 18.99,
+          "amountInt": 1899,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 18.99,
+          "amountInt": 1899,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-07-11T19:36:20+02:00"
+    },
+    {
+      "deal": {
+        "cut": 50,
+        "price": {
+          "amount": 9.49,
+          "amountInt": 949,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 18.99,
+          "amountInt": 1899,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2024-06-27T19:24:08+02:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 18.99,
+          "amountInt": 1899,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 18.99,
+          "amountInt": 1899,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-01T01:00:00+01:00"
+    }
+  ],
+  "itad_game_id": "018d937e-fdd0-723a-b35e-4a2a2d66fba4",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T15:51:58.512007Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937e-fdd0-723a-b35e-4a2a2d66fba4\",\"slug\":\"sparkchess\",\"title\":\"SparkChess\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937e-fdd0-723a-b35e-4a2a2d66fba4\\/boxart.jpg?t=1763229057\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937e-fdd0-723a-b35e-4a2a2d66fba4\\/banner145.jpg?t=1763229058\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937e-fdd0-723a-b35e-4a2a2d66fba4\\/banner300.jpg?t=1763229058\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937e-fdd0-723a-b35e-4a2a2d66fba4\\/banner400.jpg?t=1763229058\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937e-fdd0-723a-b35e-4a2a2d66fba4\\/banner600.jpg?t=1763229058\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "934920"
+    },
+    "received_at": "2026-10-13T15:51:58.512007Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 15:51:58 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937e-fdd0-723a-b35e-4a2a2d66fba4/banner145.jpg?t=1763229058",
+        "banner300": "https://assets.isthereanydeal.com/018d937e-fdd0-723a-b35e-4a2a2d66fba4/banner300.jpg?t=1763229058",
+        "banner400": "https://assets.isthereanydeal.com/018d937e-fdd0-723a-b35e-4a2a2d66fba4/banner400.jpg?t=1763229058",
+        "banner600": "https://assets.isthereanydeal.com/018d937e-fdd0-723a-b35e-4a2a2d66fba4/banner600.jpg?t=1763229058",
+        "boxart": "https://assets.isthereanydeal.com/018d937e-fdd0-723a-b35e-4a2a2d66fba4/boxart.jpg?t=1763229057"
+      },
+      "id": "018d937e-fdd0-723a-b35e-4a2a2d66fba4",
+      "mature": false,
+      "slug": "sparkchess",
+      "title": "SparkChess",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 934920
+}

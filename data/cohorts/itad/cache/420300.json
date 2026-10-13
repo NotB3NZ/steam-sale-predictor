@@ -1,0 +1,140 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T15:43:12.164886Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T15:43:18.128781Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2021-02-10T19:21:11+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"regular\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"cut\":0}},{\"timestamp\":\"2021-01-27T19:21:08+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":0.89,\"amountInt\":89,\"currency\":\"USD\"},\"regular\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"cut\":55}},{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"regular\":{\"amount\":1.99,\"amountInt\":199,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-1797-735c-8905-a696d2f9becc",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T15:43:18.128781Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 15:43:18 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-02-10T19:21:11+01:00"
+    },
+    {
+      "deal": {
+        "cut": 55,
+        "price": {
+          "amount": 0.89,
+          "amountInt": 89,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-27T19:21:08+01:00"
+    },
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 1.99,
+          "amountInt": 199,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-01T01:00:00+01:00"
+    }
+  ],
+  "itad_game_id": "018d937f-1797-735c-8905-a696d2f9becc",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T15:43:15.112549Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-1797-735c-8905-a696d2f9becc\",\"slug\":\"the-admin\",\"title\":\"The Admin\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1797-735c-8905-a696d2f9becc\\/boxart.jpg?t=1763268089\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1797-735c-8905-a696d2f9becc\\/banner145.jpg?t=1763268090\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1797-735c-8905-a696d2f9becc\\/banner300.jpg?t=1763268090\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1797-735c-8905-a696d2f9becc\\/banner400.jpg?t=1763268090\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-1797-735c-8905-a696d2f9becc\\/banner600.jpg?t=1763268091\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "420300"
+    },
+    "received_at": "2026-10-13T15:43:15.112549Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 15:43:15 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-1797-735c-8905-a696d2f9becc/banner145.jpg?t=1763268090",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-1797-735c-8905-a696d2f9becc/banner300.jpg?t=1763268090",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-1797-735c-8905-a696d2f9becc/banner400.jpg?t=1763268090",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-1797-735c-8905-a696d2f9becc/banner600.jpg?t=1763268091",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-1797-735c-8905-a696d2f9becc/boxart.jpg?t=1763268089"
+      },
+      "id": "018d937f-1797-735c-8905-a696d2f9becc",
+      "mature": false,
+      "slug": "the-admin",
+      "title": "The Admin",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 420300
+}

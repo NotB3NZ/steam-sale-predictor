@@ -1,0 +1,100 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T14:06:58.643346Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T14:07:04.610542Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":10.99,\"amountInt\":1099,\"currency\":\"USD\"},\"regular\":{\"amount\":10.99,\"amountInt\":1099,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937e-f495-711b-9722-b2f599215c2a",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T14:07:04.610542Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 14:07:04 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 10.99,
+          "amountInt": 1099,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 10.99,
+          "amountInt": 1099,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-01T01:00:00+01:00"
+    }
+  ],
+  "itad_game_id": "018d937e-f495-711b-9722-b2f599215c2a",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T14:07:01.637608Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937e-f495-711b-9722-b2f599215c2a\",\"slug\":\"huan-le-kuai-dui\",\"title\":\"\\u6b22\\u4e50\\u5757\\u961f\",\"type\":null,\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937e-f495-711b-9722-b2f599215c2a\\/boxart.png?t=1732086018\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937e-f495-711b-9722-b2f599215c2a\\/banner145.jpg?t=1732086018\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937e-f495-711b-9722-b2f599215c2a\\/banner300.jpg?t=1732086018\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937e-f495-711b-9722-b2f599215c2a\\/banner400.jpg?t=1732086018\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937e-f495-711b-9722-b2f599215c2a\\/banner600.jpg?t=1732086019\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "998300"
+    },
+    "received_at": "2026-10-13T14:07:01.637608Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 14:07:01 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937e-f495-711b-9722-b2f599215c2a/banner145.jpg?t=1732086018",
+        "banner300": "https://assets.isthereanydeal.com/018d937e-f495-711b-9722-b2f599215c2a/banner300.jpg?t=1732086018",
+        "banner400": "https://assets.isthereanydeal.com/018d937e-f495-711b-9722-b2f599215c2a/banner400.jpg?t=1732086018",
+        "banner600": "https://assets.isthereanydeal.com/018d937e-f495-711b-9722-b2f599215c2a/banner600.jpg?t=1732086019",
+        "boxart": "https://assets.isthereanydeal.com/018d937e-f495-711b-9722-b2f599215c2a/boxart.png?t=1732086018"
+      },
+      "id": "018d937e-f495-711b-9722-b2f599215c2a",
+      "mature": false,
+      "slug": "huan-le-kuai-dui",
+      "title": "欢乐块队",
+      "type": null
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 998300
+}

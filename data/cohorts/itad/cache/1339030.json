@@ -1,0 +1,100 @@
+{
+  "collection_metadata": {
+    "collected_at": "2026-10-13T15:43:18.133253Z",
+    "history_status": "history_received",
+    "lookup_status": "matched",
+    "reason": ""
+  },
+  "history_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T15:43:24.148199Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "[{\"timestamp\":\"2021-01-01T01:00:00+01:00\",\"shop\":{\"id\":61,\"name\":\"Steam\"},\"deal\":{\"price\":{\"amount\":5.99,\"amountInt\":599,\"currency\":\"USD\"},\"regular\":{\"amount\":5.99,\"amountInt\":599,\"currency\":\"USD\"},\"cut\":0}}]",
+    "endpoint": "/games/history/v2",
+    "http_status": 200,
+    "params": {
+      "country": "US",
+      "id": "018d937f-43fc-7103-9b6a-8ef79a22889c",
+      "shops": "61",
+      "since": "2021-01-01T00:00:00Z"
+    },
+    "received_at": "2026-10-13T15:43:24.148199Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 15:43:24 GMT"
+    }
+  },
+  "history_response": [
+    {
+      "deal": {
+        "cut": 0,
+        "price": {
+          "amount": 5.99,
+          "amountInt": 599,
+          "currency": "USD"
+        },
+        "regular": {
+          "amount": 5.99,
+          "amountInt": 599,
+          "currency": "USD"
+        }
+      },
+      "shop": {
+        "id": 61,
+        "name": "Steam"
+      },
+      "timestamp": "2021-01-01T01:00:00+01:00"
+    }
+  ],
+  "itad_game_id": "018d937f-43fc-7103-9b6a-8ef79a22889c",
+  "lookup_evidence": {
+    "attempts": [
+      {
+        "at": "2026-10-13T15:43:21.161474Z",
+        "http_status": 200,
+        "reason": ""
+      }
+    ],
+    "body": "{\"found\":true,\"game\":{\"id\":\"018d937f-43fc-7103-9b6a-8ef79a22889c\",\"slug\":\"final-hope-the-plot\",\"title\":\"Final Hope: The Plot\",\"type\":\"game\",\"mature\":false,\"assets\":{\"boxart\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-43fc-7103-9b6a-8ef79a22889c\\/boxart.jpg?t=1763159855\",\"banner145\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-43fc-7103-9b6a-8ef79a22889c\\/banner145.jpg?t=1763159856\",\"banner300\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-43fc-7103-9b6a-8ef79a22889c\\/banner300.jpg?t=1763159856\",\"banner400\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-43fc-7103-9b6a-8ef79a22889c\\/banner400.jpg?t=1763159856\",\"banner600\":\"https:\\/\\/assets.isthereanydeal.com\\/018d937f-43fc-7103-9b6a-8ef79a22889c\\/banner600.jpg?t=1763159856\"}}}",
+    "endpoint": "/games/lookup/v1",
+    "http_status": 200,
+    "params": {
+      "appid": "1339030"
+    },
+    "received_at": "2026-10-13T15:43:21.161474Z",
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 13 Oct 2026 15:43:21 GMT"
+    }
+  },
+  "lookup_response": {
+    "found": true,
+    "game": {
+      "assets": {
+        "banner145": "https://assets.isthereanydeal.com/018d937f-43fc-7103-9b6a-8ef79a22889c/banner145.jpg?t=1763159856",
+        "banner300": "https://assets.isthereanydeal.com/018d937f-43fc-7103-9b6a-8ef79a22889c/banner300.jpg?t=1763159856",
+        "banner400": "https://assets.isthereanydeal.com/018d937f-43fc-7103-9b6a-8ef79a22889c/banner400.jpg?t=1763159856",
+        "banner600": "https://assets.isthereanydeal.com/018d937f-43fc-7103-9b6a-8ef79a22889c/banner600.jpg?t=1763159856",
+        "boxart": "https://assets.isthereanydeal.com/018d937f-43fc-7103-9b6a-8ef79a22889c/boxart.jpg?t=1763159855"
+      },
+      "id": "018d937f-43fc-7103-9b6a-8ef79a22889c",
+      "mature": false,
+      "slug": "final-hope-the-plot",
+      "title": "Final Hope: The Plot",
+      "type": "game"
+    }
+  },
+  "request_configuration": {
+    "api_base": "https://api.isthereanydeal.com",
+    "country": "US",
+    "history_endpoint": "/games/history/v2",
+    "lookup_endpoint": "/games/lookup/v1",
+    "requested_since": "2021-01-01T00:00:00Z",
+    "steam_shop_id": 61
+  },
+  "steam_appid": 1339030
+}
