@@ -1,0 +1,206 @@
+{
+  "candidate_order": [
+    "bernoulli_baseline",
+    "logistic_regression",
+    "random_forest",
+    "xgboost"
+  ],
+  "configurations": {
+    "bernoulli_baseline": {
+      "random_state": 42,
+      "strategy": "prior"
+    },
+    "logistic_regression": {
+      "C": 1.0,
+      "class_weight": null,
+      "max_iter": 2000,
+      "penalty": "l2",
+      "random_state": 42,
+      "solver": "lbfgs",
+      "tol": 0.0001
+    },
+    "random_forest": {
+      "max_depth": 4,
+      "max_features": "sqrt",
+      "min_samples_leaf": 5,
+      "n_estimators": 200,
+      "n_jobs": 1,
+      "random_state": 42
+    },
+    "xgboost": {
+      "colsample_bytree": 0.8,
+      "eval_metric": "logloss",
+      "learning_rate": 0.05,
+      "max_depth": 3,
+      "n_estimators": 100,
+      "n_jobs": 1,
+      "objective": "binary:logistic",
+      "random_state": 42,
+      "subsample": 0.8
+    }
+  },
+  "dependency_versions": {
+    "joblib": "1.5.3",
+    "numpy": "2.0.2",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.6.1",
+    "scipy": "1.13.1",
+    "threadpoolctl": "3.6.0",
+    "xgboost": "2.1.4"
+  },
+  "feature_allowlist": [
+    "game_age_days",
+    "release_year",
+    "release_month",
+    "release_quarter",
+    "prior_price_record_count",
+    "prior_discount_count",
+    "prior_discount_rate",
+    "days_since_last_price_record",
+    "days_since_last_discount",
+    "max_prior_discount_pct",
+    "mean_prior_discount_pct",
+    "last_observed_price",
+    "last_observed_discount_pct",
+    "has_prior_price_history",
+    "has_prior_discount_observation"
+  ],
+  "input_verification": {
+    "checksum_index_sha256": "f3800675dd1f7372283c96eea9368ccc48095fc6f42f1ea23329f5973c88dd58",
+    "dataset_sha256": "e26d11ad8369b8110689092b2c21c8c61ae8805faa472af2cab24bbcdaf41523",
+    "phase6c_file_sha256": {
+      "README.md": "2c1d9b260d1d92034c27f336fc101062b3255fb39cc914693a0c3315499a1afb",
+      "feature_manifest.json": "cca70eba68ef038d18218be5419affe1616442608178b7c9182cfb136583c458",
+      "feature_provenance.json": "083f1dba3b8fa31b2ebcdec2f1f731c65858f7519b55bd0c8284e2d5f5fa776b",
+      "features.csv": "05116125265dd0747f1bf4a6fee25cea3e9ad634af22d9e880b9d2be8415e7a4",
+      "input_manifest.json": "8444f6af176b935d3e8b84d13900c853106e1484114e78e9492b8ef7870c8e17",
+      "label_distribution.json": "f1173a9aeb4d4f25db8aee22ba5025934e86d9e27696ca420bf54ff9ef83867f",
+      "missingness.csv": "0da580706bd9b0854de78906f777575b96ee351d19d5f366fd2ae972dff9b390",
+      "model_readiness.json": "bc1cf75574174c8bcc3569e5471927e3ea837b59f9b3990c273a12b3461f8b8a",
+      "modeling.csv": "e26d11ad8369b8110689092b2c21c8c61ae8805faa472af2cab24bbcdaf41523",
+      "offline_test_results.json": "7baf11196c93b06b122916aad50a8c5a1ce825d091fe264b52e38619c3da9cd9",
+      "reproduction.json": "2eb6770fa6091f4e2956f0cce878aaa0a65395ef12ea1ae8855145e6f4f9ca7c",
+      "split_membership.csv": "48814f5c80860116d2ae9fad9c19cd59c309bb11cf8f5fe546b17dc876cf0585",
+      "temporal_split_manifest.json": "163def7d7ce03d397e1990e5ca4bb3767fb2709286b6117a0c128f89b6d862bf",
+      "validation.json": "56d4a8bbbd0fc805b255afa62f96a586ba3ce235db21a38856b2ea2a6ed3ac62"
+    }
+  },
+  "protocol": {
+    "dependence": "Three observations per game are dependent; do not claim 6000 independent samples. Any future uncertainty analysis must account for game clusters.",
+    "development_train_validation_game_overlap": 2000,
+    "development_training_years": [
+      2023
+    ],
+    "development_validation_year": 2024,
+    "evaluation_scope": "Later-sale generalization for previously represented games, not unseen-game generalization",
+    "final_train_test_game_overlap": 2000,
+    "final_training_years": [
+      2023,
+      2024
+    ],
+    "held_out_test_year": 2025,
+    "label_policy": "operational_observed_v1",
+    "metrics": [
+      "ROC-AUC",
+      "average precision",
+      "log loss",
+      "Brier score",
+      "accuracy",
+      "precision",
+      "recall",
+      "F1",
+      "confusion matrix"
+    ],
+    "no_models_trained": true,
+    "preprocessing": {
+      "all_missing_training_columns": "Existing logistic core excludes all-missing training columns using training data only. Tree core retains them with documented structural-zero imputation. Record the chosen policy before fitting.",
+      "development_fit_on": "2023 training rows only; transform 2024 without fitting",
+      "final_fit_on": "Fresh preprocessing fitted on 2023+2024 training rows only; transform 2025 without fitting",
+      "fitted_during_preparation": false,
+      "learned_steps": [
+        "imputation",
+        "scaling",
+        "encoding if applicable",
+        "feature selection if applicable"
+      ],
+      "missing_values": "No preparation-time imputation or zero filling"
+    },
+    "previous_cohort_evaluation_groups": "Preserved in frozen cohort; not used by this explicitly requested temporal protocol",
+    "probability_threshold": 0.5,
+    "protocol_version": "cohort_2000_chronological_v1",
+    "random_seed": 42,
+    "selection_rules": "Use only 2023->2024 development scores for any authorized model/parameter selection; freeze candidates before consulting 2025 metrics. No test-driven preprocessing, tuning, threshold optimization, calibration, early stopping, or feature changes.",
+    "split_unit": "game-year; deterministic chronological membership, not random or game-disjoint",
+    "splits": {
+      "development_training": {
+        "evidence_categories": {
+          "A": 979,
+          "B": 10,
+          "C": 0,
+          "D": 1011
+        },
+        "operational_zeros": 1021,
+        "positives": 979,
+        "rows": 2000,
+        "unique_games": 2000,
+        "unknowns": 0
+      },
+      "development_validation": {
+        "evidence_categories": {
+          "A": 1068,
+          "B": 5,
+          "C": 0,
+          "D": 927
+        },
+        "operational_zeros": 932,
+        "positives": 1068,
+        "rows": 2000,
+        "unique_games": 2000,
+        "unknowns": 0
+      },
+      "final_training": {
+        "evidence_categories": {
+          "A": 2047,
+          "B": 15,
+          "C": 0,
+          "D": 1938
+        },
+        "operational_zeros": 1953,
+        "positives": 2047,
+        "rows": 4000,
+        "unique_games": 2000,
+        "unknowns": 0
+      },
+      "held_out_test": {
+        "evidence_categories": {
+          "A": 983,
+          "B": 8,
+          "C": 0,
+          "D": 1009
+        },
+        "operational_zeros": 1017,
+        "positives": 983,
+        "rows": 2000,
+        "unique_games": 2000,
+        "unknowns": 0
+      }
+    },
+    "test_inspection": "2025 labels have already been audited. Freeze this test for model selection purposes; it is not an untouched confirmatory holdout."
+  },
+  "selection": {
+    "data": "2023->2024 only",
+    "hyperparameter_trials_per_model": 1,
+    "primary_metric": "average_precision",
+    "threshold": 0.5,
+    "tie_breakers": [
+      "lower Brier score",
+      "predefined model order"
+    ]
+  },
+  "source_sha256": {
+    "src/08_train_baseline_models.py": "04f7aaacced4cbecd6845ff8640aae43918602db88548a860a65deaed1ed7669",
+    "src/09_train_ensemble_models.py": "0ec25183d81179c4286a78c4d0a180f29ea10a66770b58667b90a213fcffda8c",
+    "src/train_cohort_temporal.py": "a4ed300bc303fae8bfe981dc8c7f6523634c485307515885994404e0aa49e2e5"
+  },
+  "unavailable_models": {}
+}

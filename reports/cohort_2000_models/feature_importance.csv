@@ -1,0 +1,91 @@
+stage,model,feature,value,definition
+development,logistic_regression,game_age_days,0.010500395498808086,standardized log-odds coefficient
+development,logistic_regression,release_year,-0.12734641545604636,standardized log-odds coefficient
+development,logistic_regression,release_month,0.19295754070343665,standardized log-odds coefficient
+development,logistic_regression,release_quarter,-0.47336439432593796,standardized log-odds coefficient
+development,logistic_regression,prior_price_record_count,-0.3267657357817197,standardized log-odds coefficient
+development,logistic_regression,prior_discount_count,0.8844494053859913,standardized log-odds coefficient
+development,logistic_regression,prior_discount_rate,0.05093590724721778,standardized log-odds coefficient
+development,logistic_regression,days_since_last_price_record,-2.0894604055398944,standardized log-odds coefficient
+development,logistic_regression,days_since_last_discount,-1.4532112422333336,standardized log-odds coefficient
+development,logistic_regression,max_prior_discount_pct,0.20430166984645196,standardized log-odds coefficient
+development,logistic_regression,mean_prior_discount_pct,-0.18793052029389645,standardized log-odds coefficient
+development,logistic_regression,last_observed_price,0.2605731803258956,standardized log-odds coefficient
+development,logistic_regression,last_observed_discount_pct,-0.8312619310634083,standardized log-odds coefficient
+development,logistic_regression,has_prior_price_history,1.0262880340855138,standardized log-odds coefficient
+development,logistic_regression,has_prior_discount_observation,0.6106379261385275,standardized log-odds coefficient
+development,random_forest,game_age_days,0.02252891453941373,impurity importance
+development,random_forest,release_year,0.014881836623029734,impurity importance
+development,random_forest,release_month,0.0024395842593928447,impurity importance
+development,random_forest,release_quarter,0.0023325323747294844,impurity importance
+development,random_forest,prior_price_record_count,0.15919582118407388,impurity importance
+development,random_forest,prior_discount_count,0.15400109277115595,impurity importance
+development,random_forest,prior_discount_rate,0.04837500737843615,impurity importance
+development,random_forest,days_since_last_price_record,0.22698781174133306,impurity importance
+development,random_forest,days_since_last_discount,0.1992255419342384,impurity importance
+development,random_forest,max_prior_discount_pct,0.0221371884816355,impurity importance
+development,random_forest,mean_prior_discount_pct,0.032622724533022805,impurity importance
+development,random_forest,last_observed_price,0.015478857378105644,impurity importance
+development,random_forest,last_observed_discount_pct,0.034348294986776995,impurity importance
+development,random_forest,has_prior_price_history,0.007521769473504616,impurity importance
+development,random_forest,has_prior_discount_observation,0.057923022341151355,impurity importance
+development,xgboost,game_age_days,0.03589558228850365,normalized gain importance
+development,xgboost,release_year,0.1238798201084137,normalized gain importance
+development,xgboost,release_month,0.019708268344402313,normalized gain importance
+development,xgboost,release_quarter,0.018441971391439438,normalized gain importance
+development,xgboost,prior_price_record_count,0.11218088865280151,normalized gain importance
+development,xgboost,prior_discount_count,0.13993270695209503,normalized gain importance
+development,xgboost,prior_discount_rate,0.022675685584545135,normalized gain importance
+development,xgboost,days_since_last_price_record,0.24939052760601044,normalized gain importance
+development,xgboost,days_since_last_discount,0.06432271003723145,normalized gain importance
+development,xgboost,max_prior_discount_pct,0.017919879406690598,normalized gain importance
+development,xgboost,mean_prior_discount_pct,0.011632240377366543,normalized gain importance
+development,xgboost,last_observed_price,0.02928772382438183,normalized gain importance
+development,xgboost,last_observed_discount_pct,0.09288781881332397,normalized gain importance
+development,xgboost,has_prior_price_history,0.06184418871998787,normalized gain importance
+development,xgboost,has_prior_discount_observation,0.0,normalized gain importance
+final,logistic_regression,game_age_days,1.0613998028497145,standardized log-odds coefficient
+final,logistic_regression,release_year,0.9695999097810737,standardized log-odds coefficient
+final,logistic_regression,release_month,0.20431174823606812,standardized log-odds coefficient
+final,logistic_regression,release_quarter,-0.3075371367215485,standardized log-odds coefficient
+final,logistic_regression,prior_price_record_count,-0.12032934957596503,standardized log-odds coefficient
+final,logistic_regression,prior_discount_count,0.8652085438233842,standardized log-odds coefficient
+final,logistic_regression,prior_discount_rate,0.3075080631316464,standardized log-odds coefficient
+final,logistic_regression,days_since_last_price_record,-1.826736973410675,standardized log-odds coefficient
+final,logistic_regression,days_since_last_discount,-1.1777249795094031,standardized log-odds coefficient
+final,logistic_regression,max_prior_discount_pct,-0.0271082760711769,standardized log-odds coefficient
+final,logistic_regression,mean_prior_discount_pct,-0.0005964106499714336,standardized log-odds coefficient
+final,logistic_regression,last_observed_price,0.14531281119533537,standardized log-odds coefficient
+final,logistic_regression,last_observed_discount_pct,-0.7833831819421435,standardized log-odds coefficient
+final,logistic_regression,has_prior_price_history,1.1810442431742325,standardized log-odds coefficient
+final,logistic_regression,has_prior_discount_observation,0.4221997813634704,standardized log-odds coefficient
+final,random_forest,game_age_days,0.015070625973401539,impurity importance
+final,random_forest,release_year,0.009626485263969465,impurity importance
+final,random_forest,release_month,0.0010812960656188231,impurity importance
+final,random_forest,release_quarter,0.0007218588736033244,impurity importance
+final,random_forest,prior_price_record_count,0.18429300444770058,impurity importance
+final,random_forest,prior_discount_count,0.1725543446318498,impurity importance
+final,random_forest,prior_discount_rate,0.05062216519761527,impurity importance
+final,random_forest,days_since_last_price_record,0.2421437986624437,impurity importance
+final,random_forest,days_since_last_discount,0.1744338175549116,impurity importance
+final,random_forest,max_prior_discount_pct,0.02067764106776439,impurity importance
+final,random_forest,mean_prior_discount_pct,0.02744842868121953,impurity importance
+final,random_forest,last_observed_price,0.01110412920128774,impurity importance
+final,random_forest,last_observed_discount_pct,0.028858735169229103,impurity importance
+final,random_forest,has_prior_price_history,0.00822594222887034,impurity importance
+final,random_forest,has_prior_discount_observation,0.05313772698051487,impurity importance
+final,xgboost,game_age_days,0.01830916665494442,normalized gain importance
+final,xgboost,release_year,0.03476594761013985,normalized gain importance
+final,xgboost,release_month,0.017565743997693062,normalized gain importance
+final,xgboost,release_quarter,0.0108212074264884,normalized gain importance
+final,xgboost,prior_price_record_count,0.06641435623168945,normalized gain importance
+final,xgboost,prior_discount_count,0.21926584839820862,normalized gain importance
+final,xgboost,prior_discount_rate,0.016752729192376137,normalized gain importance
+final,xgboost,days_since_last_price_record,0.3168799579143524,normalized gain importance
+final,xgboost,days_since_last_discount,0.0633273720741272,normalized gain importance
+final,xgboost,max_prior_discount_pct,0.020893901586532593,normalized gain importance
+final,xgboost,mean_prior_discount_pct,0.008112490177154541,normalized gain importance
+final,xgboost,last_observed_price,0.024483541026711464,normalized gain importance
+final,xgboost,last_observed_discount_pct,0.10134235769510269,normalized gain importance
+final,xgboost,has_prior_price_history,0.08106547594070435,normalized gain importance
+final,xgboost,has_prior_discount_observation,0.0,normalized gain importance

@@ -1,0 +1,280 @@
+{
+  "development_2023": {
+    "classification_threshold": 0.5,
+    "models": {
+      "bernoulli_baseline": {
+        "accuracy": 0.5105,
+        "actual_negative": 1021,
+        "actual_positive": 979,
+        "average_precision": 0.4895,
+        "balanced_accuracy": 0.5,
+        "brier_score": 0.24988975000000002,
+        "confusion_matrix": [
+          [
+            1021,
+            0
+          ],
+          [
+            979,
+            0
+          ]
+        ],
+        "confusion_matrix_orientation": "rows actual [0,1]; columns predicted [0,1]",
+        "f1": 0.0,
+        "log_loss": 0.6929266643503358,
+        "mean_probability": 0.4894999999999998,
+        "observations": 2000,
+        "pr_auc": 0.4895,
+        "pr_auc_trapezoidal": 0.74475,
+        "precision": null,
+        "predicted_negative": 2000,
+        "predicted_positive": 0,
+        "recall": 0.0,
+        "roc_auc": 0.5,
+        "threshold": 0.5,
+        "undefined_metrics": {
+          "precision": "Undefined: zero denominator; reported as JSON null."
+        }
+      },
+      "logistic_regression": {
+        "accuracy": 0.8625,
+        "actual_negative": 1021,
+        "actual_positive": 979,
+        "average_precision": 0.9123827882898651,
+        "balanced_accuracy": 0.8637314055498475,
+        "brier_score": 0.10123388672820784,
+        "confusion_matrix": [
+          [
+            822,
+            199
+          ],
+          [
+            76,
+            903
+          ]
+        ],
+        "confusion_matrix_orientation": "rows actual [0,1]; columns predicted [0,1]",
+        "f1": 0.8678519942335415,
+        "log_loss": 0.32297200911940976,
+        "mean_probability": 0.4894885239514966,
+        "observations": 2000,
+        "pr_auc": 0.9123827882898651,
+        "pr_auc_trapezoidal": 0.912303124465603,
+        "precision": 0.8194192377495463,
+        "predicted_negative": 898,
+        "predicted_positive": 1102,
+        "recall": 0.9223697650663942,
+        "roc_auc": 0.9294799006361805,
+        "threshold": 0.5,
+        "undefined_metrics": {}
+      },
+      "random_forest": {
+        "accuracy": 0.881,
+        "actual_negative": 1021,
+        "actual_positive": 979,
+        "average_precision": 0.926560060070318,
+        "balanced_accuracy": 0.8823761278723917,
+        "brier_score": 0.09564832361116331,
+        "confusion_matrix": [
+          [
+            834,
+            187
+          ],
+          [
+            51,
+            928
+          ]
+        ],
+        "confusion_matrix_orientation": "rows actual [0,1]; columns predicted [0,1]",
+        "f1": 0.8863419293218721,
+        "log_loss": 0.31836952726103784,
+        "mean_probability": 0.490063728732492,
+        "observations": 2000,
+        "pr_auc": 0.926560060070318,
+        "pr_auc_trapezoidal": 0.9265021352485582,
+        "precision": 0.8322869955156951,
+        "predicted_negative": 885,
+        "predicted_positive": 1115,
+        "recall": 0.947906026557712,
+        "roc_auc": 0.9412891084968471,
+        "threshold": 0.5,
+        "undefined_metrics": {}
+      },
+      "xgboost": {
+        "accuracy": 0.8925,
+        "actual_negative": 1021,
+        "actual_positive": 979,
+        "average_precision": 0.9480364031649113,
+        "balanced_accuracy": 0.8937026228566798,
+        "brier_score": 0.07891197697869035,
+        "confusion_matrix": [
+          [
+            854,
+            167
+          ],
+          [
+            48,
+            931
+          ]
+        ],
+        "confusion_matrix_orientation": "rows actual [0,1]; columns predicted [0,1]",
+        "f1": 0.8964853153586905,
+        "log_loss": 0.26317028573600953,
+        "mean_probability": 0.49102798127382996,
+        "observations": 2000,
+        "pr_auc": 0.9480364031649113,
+        "pr_auc_trapezoidal": 0.9480008971645708,
+        "precision": 0.8479052823315119,
+        "predicted_negative": 902,
+        "predicted_positive": 1098,
+        "recall": 0.95097037793667,
+        "roc_auc": 0.9573111742278344,
+        "threshold": 0.5,
+        "undefined_metrics": {}
+      }
+    },
+    "operational_zero": "No discount observed in available evidence, not verified nonparticipation",
+    "positive_class": 1,
+    "pr_auc_definition": "Primary PR-AUC is average precision (step-weighted). Trapezoidal PR area is reported separately.",
+    "target_definition": "1: a qualifying Steam-store discount was recorded during the official Autumn Sale window; 0: no qualifying discount was recorded. Zero does not establish absence of an actual discount. Probabilities concern recorded occurrence, not verified participation.",
+    "validation_positive_prevalence": 0.4895
+  },
+  "final_2023_2024": {
+    "classification_threshold": 0.5,
+    "models": {
+      "bernoulli_baseline": {
+        "accuracy": 0.51175,
+        "actual_negative": 1953,
+        "actual_positive": 2047,
+        "average_precision": 0.51175,
+        "balanced_accuracy": 0.5,
+        "brier_score": 0.24986193750000002,
+        "confusion_matrix": [
+          [
+            0,
+            1953
+          ],
+          [
+            0,
+            2047
+          ]
+        ],
+        "confusion_matrix_orientation": "rows actual [0,1]; columns predicted [0,1]",
+        "f1": 0.6770299321977841,
+        "log_loss": 0.6928710301393243,
+        "mean_probability": 0.51175,
+        "observations": 4000,
+        "pr_auc": 0.51175,
+        "pr_auc_trapezoidal": 0.7558750000000001,
+        "precision": 0.51175,
+        "predicted_negative": 0,
+        "predicted_positive": 4000,
+        "recall": 1.0,
+        "roc_auc": 0.5,
+        "threshold": 0.5,
+        "undefined_metrics": {}
+      },
+      "logistic_regression": {
+        "accuracy": 0.88275,
+        "actual_negative": 1953,
+        "actual_positive": 2047,
+        "average_precision": 0.92695500478011,
+        "balanced_accuracy": 0.881092208171963,
+        "brier_score": 0.09217204103273002,
+        "confusion_matrix": [
+          [
+            1583,
+            370
+          ],
+          [
+            99,
+            1948
+          ]
+        ],
+        "confusion_matrix_orientation": "rows actual [0,1]; columns predicted [0,1]",
+        "f1": 0.8925544100801833,
+        "log_loss": 0.3089542043894613,
+        "mean_probability": 0.5117616495613686,
+        "observations": 4000,
+        "pr_auc": 0.92695500478011,
+        "pr_auc_trapezoidal": 0.9269234808112833,
+        "precision": 0.8403796376186368,
+        "predicted_negative": 1682,
+        "predicted_positive": 2318,
+        "recall": 0.9516365412799218,
+        "roc_auc": 0.9371985679091279,
+        "threshold": 0.5,
+        "undefined_metrics": {}
+      },
+      "random_forest": {
+        "accuracy": 0.89125,
+        "actual_negative": 1953,
+        "actual_positive": 2047,
+        "average_precision": 0.9357715802725239,
+        "balanced_accuracy": 0.8898555477262318,
+        "brier_score": 0.08803511303369972,
+        "confusion_matrix": [
+          [
+            1622,
+            331
+          ],
+          [
+            104,
+            1943
+          ]
+        ],
+        "confusion_matrix_orientation": "rows actual [0,1]; columns predicted [0,1]",
+        "f1": 0.8993288590604027,
+        "log_loss": 0.3007026601278932,
+        "mean_probability": 0.5118951521188416,
+        "observations": 4000,
+        "pr_auc": 0.9357715802725239,
+        "pr_auc_trapezoidal": 0.9357424096285294,
+        "precision": 0.8544415127528584,
+        "predicted_negative": 1726,
+        "predicted_positive": 2274,
+        "recall": 0.9491939423546654,
+        "roc_auc": 0.9453516954738252,
+        "threshold": 0.5,
+        "undefined_metrics": {}
+      },
+      "xgboost": {
+        "accuracy": 0.90125,
+        "actual_negative": 1953,
+        "actual_positive": 2047,
+        "average_precision": 0.9514476381507139,
+        "balanced_accuracy": 0.9000491771580856,
+        "brier_score": 0.07753230967169313,
+        "confusion_matrix": [
+          [
+            1658,
+            295
+          ],
+          [
+            100,
+            1947
+          ]
+        ],
+        "confusion_matrix_orientation": "rows actual [0,1]; columns predicted [0,1]",
+        "f1": 0.9079039403124272,
+        "log_loss": 0.2628198543964956,
+        "mean_probability": 0.5124980006818659,
+        "observations": 4000,
+        "pr_auc": 0.9514476381507139,
+        "pr_auc_trapezoidal": 0.9514315787265131,
+        "precision": 0.868421052631579,
+        "predicted_negative": 1758,
+        "predicted_positive": 2242,
+        "recall": 0.9511480214948705,
+        "roc_auc": 0.9564943490042376,
+        "threshold": 0.5,
+        "undefined_metrics": {}
+      }
+    },
+    "operational_zero": "No discount observed in available evidence, not verified nonparticipation",
+    "positive_class": 1,
+    "pr_auc_definition": "Primary PR-AUC is average precision (step-weighted). Trapezoidal PR area is reported separately.",
+    "target_definition": "1: a qualifying Steam-store discount was recorded during the official Autumn Sale window; 0: no qualifying discount was recorded. Zero does not establish absence of an actual discount. Probabilities concern recorded occurrence, not verified participation.",
+    "validation_positive_prevalence": 0.51175
+  }
+}

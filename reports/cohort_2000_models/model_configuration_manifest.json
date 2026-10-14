@@ -1,0 +1,331 @@
+{
+  "classification_threshold": 0.5,
+  "coverage_diagnostics_not_used_to_revise_selection": true,
+  "dependency_versions": {
+    "joblib": "1.5.3",
+    "numpy": "2.0.2",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.6.1",
+    "scipy": "1.13.1",
+    "threadpoolctl": "3.6.0",
+    "xgboost": "2.1.4"
+  },
+  "feature_allowlist": [
+    "game_age_days",
+    "release_year",
+    "release_month",
+    "release_quarter",
+    "prior_price_record_count",
+    "prior_discount_count",
+    "prior_discount_rate",
+    "days_since_last_price_record",
+    "days_since_last_discount",
+    "max_prior_discount_pct",
+    "mean_prior_discount_pct",
+    "last_observed_price",
+    "last_observed_discount_pct",
+    "has_prior_price_history",
+    "has_prior_discount_observation"
+  ],
+  "fixed_configurations": {
+    "bernoulli_baseline": {
+      "random_state": 42,
+      "strategy": "prior"
+    },
+    "logistic_regression": {
+      "C": 1.0,
+      "class_weight": null,
+      "max_iter": 2000,
+      "penalty": "l2",
+      "random_state": 42,
+      "solver": "lbfgs",
+      "tol": 0.0001
+    },
+    "random_forest": {
+      "max_depth": 4,
+      "max_features": "sqrt",
+      "min_samples_leaf": 5,
+      "n_estimators": 200,
+      "n_jobs": 1,
+      "random_state": 42
+    },
+    "xgboost": {
+      "colsample_bytree": 0.8,
+      "eval_metric": "logloss",
+      "learning_rate": 0.05,
+      "max_depth": 3,
+      "n_estimators": 100,
+      "n_jobs": 1,
+      "objective": "binary:logistic",
+      "random_state": 42,
+      "subsample": 0.8
+    }
+  },
+  "hyperparameter_search": false,
+  "input_hashes": {
+    "checksum_index_sha256": "f3800675dd1f7372283c96eea9368ccc48095fc6f42f1ea23329f5973c88dd58",
+    "dataset_sha256": "e26d11ad8369b8110689092b2c21c8c61ae8805faa472af2cab24bbcdaf41523",
+    "phase6c_file_sha256": {
+      "README.md": "2c1d9b260d1d92034c27f336fc101062b3255fb39cc914693a0c3315499a1afb",
+      "feature_manifest.json": "cca70eba68ef038d18218be5419affe1616442608178b7c9182cfb136583c458",
+      "feature_provenance.json": "083f1dba3b8fa31b2ebcdec2f1f731c65858f7519b55bd0c8284e2d5f5fa776b",
+      "features.csv": "05116125265dd0747f1bf4a6fee25cea3e9ad634af22d9e880b9d2be8415e7a4",
+      "input_manifest.json": "8444f6af176b935d3e8b84d13900c853106e1484114e78e9492b8ef7870c8e17",
+      "label_distribution.json": "f1173a9aeb4d4f25db8aee22ba5025934e86d9e27696ca420bf54ff9ef83867f",
+      "missingness.csv": "0da580706bd9b0854de78906f777575b96ee351d19d5f366fd2ae972dff9b390",
+      "model_readiness.json": "bc1cf75574174c8bcc3569e5471927e3ea837b59f9b3990c273a12b3461f8b8a",
+      "modeling.csv": "e26d11ad8369b8110689092b2c21c8c61ae8805faa472af2cab24bbcdaf41523",
+      "offline_test_results.json": "7baf11196c93b06b122916aad50a8c5a1ce825d091fe264b52e38619c3da9cd9",
+      "reproduction.json": "2eb6770fa6091f4e2956f0cce878aaa0a65395ef12ea1ae8855145e6f4f9ca7c",
+      "split_membership.csv": "48814f5c80860116d2ae9fad9c19cd59c309bb11cf8f5fe546b17dc876cf0585",
+      "temporal_split_manifest.json": "163def7d7ce03d397e1990e5ca4bb3767fb2709286b6117a0c128f89b6d862bf",
+      "validation.json": "56d4a8bbbd0fc805b255afa62f96a586ba3ce235db21a38856b2ea2a6ed3ac62"
+    }
+  },
+  "label_policy": "operational_observed_v1",
+  "model_artifact_reload_probe": "Training rows only; no repeated 2025 probability pass",
+  "models_trained": [
+    "bernoulli_baseline",
+    "logistic_regression",
+    "random_forest",
+    "xgboost"
+  ],
+  "new_model_training_tests_use_synthetic_data": true,
+  "positive_class": 1,
+  "preprocessing_artifact": "preprocessing.json",
+  "preprocessing_statistics_verified_against_training_only": true,
+  "protocol_artifact": "precommitted_protocol.json",
+  "python_version": "3.9.6",
+  "resolved_estimator_parameters": {
+    "development": {
+      "bernoulli_baseline": {
+        "estimator_parameters": {
+          "constant": null,
+          "random_state": 42,
+          "strategy": "prior"
+        },
+        "path": "development_models/bernoulli_baseline.joblib",
+        "reload_probability_identity_verified": true,
+        "sha256": "84185b827285839a06cbae646501795a51bd7d8f1d817cf3d1f025a94806f727"
+      },
+      "logistic_regression": {
+        "estimator_parameters": {
+          "C": 1.0,
+          "class_weight": null,
+          "dual": false,
+          "fit_intercept": true,
+          "intercept_scaling": 1,
+          "l1_ratio": null,
+          "max_iter": 2000,
+          "multi_class": "deprecated",
+          "n_jobs": null,
+          "penalty": "l2",
+          "random_state": 42,
+          "solver": "lbfgs",
+          "tol": 0.0001,
+          "verbose": 0,
+          "warm_start": false
+        },
+        "path": "development_models/logistic_regression.joblib",
+        "reload_probability_identity_verified": true,
+        "sha256": "e705529e174079855b94256bb7a43d2c9d711897576af1c7e6398219e527a1fe"
+      },
+      "random_forest": {
+        "estimator_parameters": {
+          "bootstrap": true,
+          "ccp_alpha": 0.0,
+          "class_weight": null,
+          "criterion": "gini",
+          "max_depth": 4,
+          "max_features": "sqrt",
+          "max_leaf_nodes": null,
+          "max_samples": null,
+          "min_impurity_decrease": 0.0,
+          "min_samples_leaf": 5,
+          "min_samples_split": 2,
+          "min_weight_fraction_leaf": 0.0,
+          "monotonic_cst": null,
+          "n_estimators": 200,
+          "n_jobs": 1,
+          "oob_score": false,
+          "random_state": 42,
+          "verbose": 0,
+          "warm_start": false
+        },
+        "path": "development_models/random_forest.joblib",
+        "reload_probability_identity_verified": true,
+        "sha256": "f186f9a31f3c7fa05eb666cc492cce7b341a2281cfbb13cb1dff6012d6d54032"
+      },
+      "xgboost": {
+        "estimator_parameters": {
+          "base_score": null,
+          "booster": null,
+          "callbacks": null,
+          "colsample_bylevel": null,
+          "colsample_bynode": null,
+          "colsample_bytree": 0.8,
+          "device": null,
+          "early_stopping_rounds": null,
+          "enable_categorical": false,
+          "eval_metric": "logloss",
+          "feature_types": null,
+          "gamma": null,
+          "grow_policy": null,
+          "importance_type": null,
+          "interaction_constraints": null,
+          "learning_rate": 0.05,
+          "max_bin": null,
+          "max_cat_threshold": null,
+          "max_cat_to_onehot": null,
+          "max_delta_step": null,
+          "max_depth": 3,
+          "max_leaves": null,
+          "min_child_weight": null,
+          "missing": "NaN",
+          "monotone_constraints": null,
+          "multi_strategy": null,
+          "n_estimators": 100,
+          "n_jobs": 1,
+          "num_parallel_tree": null,
+          "objective": "binary:logistic",
+          "random_state": 42,
+          "reg_alpha": null,
+          "reg_lambda": null,
+          "sampling_method": null,
+          "scale_pos_weight": null,
+          "subsample": 0.8,
+          "tree_method": null,
+          "validate_parameters": null,
+          "verbosity": null
+        },
+        "path": "development_models/xgboost.joblib",
+        "reload_probability_identity_verified": true,
+        "sha256": "e09b0f3a84614c44964dd64f42d3adbb50b41a36e79ec9cd3e63aafa8b2c504f"
+      }
+    },
+    "final": {
+      "bernoulli_baseline": {
+        "estimator_parameters": {
+          "constant": null,
+          "random_state": 42,
+          "strategy": "prior"
+        },
+        "path": "final_models/bernoulli_baseline.joblib",
+        "reload_probability_identity_verified": true,
+        "sha256": "b064b31f2dab7dc27cbb2fdf08ae5d41dd6c00851dbbee8edb6caa9f4e869806"
+      },
+      "logistic_regression": {
+        "estimator_parameters": {
+          "C": 1.0,
+          "class_weight": null,
+          "dual": false,
+          "fit_intercept": true,
+          "intercept_scaling": 1,
+          "l1_ratio": null,
+          "max_iter": 2000,
+          "multi_class": "deprecated",
+          "n_jobs": null,
+          "penalty": "l2",
+          "random_state": 42,
+          "solver": "lbfgs",
+          "tol": 0.0001,
+          "verbose": 0,
+          "warm_start": false
+        },
+        "path": "final_models/logistic_regression.joblib",
+        "reload_probability_identity_verified": true,
+        "sha256": "bd54025d3761af8dce2225144b5ede5675e6bb8494d682118bbf12c1ce14b724"
+      },
+      "random_forest": {
+        "estimator_parameters": {
+          "bootstrap": true,
+          "ccp_alpha": 0.0,
+          "class_weight": null,
+          "criterion": "gini",
+          "max_depth": 4,
+          "max_features": "sqrt",
+          "max_leaf_nodes": null,
+          "max_samples": null,
+          "min_impurity_decrease": 0.0,
+          "min_samples_leaf": 5,
+          "min_samples_split": 2,
+          "min_weight_fraction_leaf": 0.0,
+          "monotonic_cst": null,
+          "n_estimators": 200,
+          "n_jobs": 1,
+          "oob_score": false,
+          "random_state": 42,
+          "verbose": 0,
+          "warm_start": false
+        },
+        "path": "final_models/random_forest.joblib",
+        "reload_probability_identity_verified": true,
+        "sha256": "b319153a9e733ca49df5cafbd44949666a85b68456efa5fea83b955b087cb6ee"
+      },
+      "xgboost": {
+        "estimator_parameters": {
+          "base_score": null,
+          "booster": null,
+          "callbacks": null,
+          "colsample_bylevel": null,
+          "colsample_bynode": null,
+          "colsample_bytree": 0.8,
+          "device": null,
+          "early_stopping_rounds": null,
+          "enable_categorical": false,
+          "eval_metric": "logloss",
+          "feature_types": null,
+          "gamma": null,
+          "grow_policy": null,
+          "importance_type": null,
+          "interaction_constraints": null,
+          "learning_rate": 0.05,
+          "max_bin": null,
+          "max_cat_threshold": null,
+          "max_cat_to_onehot": null,
+          "max_delta_step": null,
+          "max_depth": 3,
+          "max_leaves": null,
+          "min_child_weight": null,
+          "missing": "NaN",
+          "monotone_constraints": null,
+          "multi_strategy": null,
+          "n_estimators": 100,
+          "n_jobs": 1,
+          "num_parallel_tree": null,
+          "objective": "binary:logistic",
+          "random_state": 42,
+          "reg_alpha": null,
+          "reg_lambda": null,
+          "sampling_method": null,
+          "scale_pos_weight": null,
+          "subsample": 0.8,
+          "tree_method": null,
+          "validate_parameters": null,
+          "verbosity": null
+        },
+        "path": "final_models/xgboost.joblib",
+        "reload_probability_identity_verified": true,
+        "sha256": "61fdf4fc9b469531713c2bbaf307281a261ed2b333e166fda44c905c2719b2b7"
+      }
+    },
+    "selected": {
+      "name": "xgboost",
+      "path": "selected_model.joblib",
+      "sha256": "61fdf4fc9b469531713c2bbaf307281a261ed2b333e166fda44c905c2719b2b7"
+    }
+  },
+  "run": "Phase 7A cohort_2000 temporal operational models",
+  "seed": 42,
+  "selected_model": "xgboost",
+  "selection_artifact": "selection.json",
+  "selection_frozen_before_test": true,
+  "selection_sha256": "fe7ac78308a7dec11822c027aace7704fbb55da2486e9e24eb9102653803babc",
+  "source_sha256": {
+    "src/08_train_baseline_models.py": "04f7aaacced4cbecd6845ff8640aae43918602db88548a860a65deaed1ed7669",
+    "src/09_train_ensemble_models.py": "0ec25183d81179c4286a78c4d0a180f29ea10a66770b58667b90a213fcffda8c",
+    "src/train_cohort_temporal.py": "a4ed300bc303fae8bfe981dc8c7f6523634c485307515885994404e0aa49e2e5"
+  },
+  "target_definition": "1: a qualifying Steam-store discount was recorded during the official Autumn Sale window; 0: no qualifying discount was recorded. Zero does not establish absence of an actual discount. Probabilities concern recorded occurrence, not verified participation.",
+  "test_probability_passes_per_model": 1
+}

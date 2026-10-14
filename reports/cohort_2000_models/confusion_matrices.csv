@@ -1,0 +1,9 @@
+stage,model,tn,fp,fn,tp,orientation
+development_2024,bernoulli_baseline,932,0,1068,0,"rows actual [0,1]; columns predicted [0,1]"
+development_2024,logistic_regression,806,126,85,983,"rows actual [0,1]; columns predicted [0,1]"
+development_2024,random_forest,822,110,178,890,"rows actual [0,1]; columns predicted [0,1]"
+development_2024,xgboost,844,88,145,923,"rows actual [0,1]; columns predicted [0,1]"
+held_out_2025,bernoulli_baseline,0,1017,0,983,"rows actual [0,1]; columns predicted [0,1]"
+held_out_2025,logistic_regression,803,214,31,952,"rows actual [0,1]; columns predicted [0,1]"
+held_out_2025,random_forest,872,145,58,925,"rows actual [0,1]; columns predicted [0,1]"
+held_out_2025,xgboost,912,105,67,916,"rows actual [0,1]; columns predicted [0,1]"

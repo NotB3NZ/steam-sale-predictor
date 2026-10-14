@@ -1,0 +1,30 @@
+{
+  "bernoulli_baseline": {
+    "development_training_ap": 0.4895,
+    "development_validation_ap": 0.534,
+    "final_training_ap": 0.51175,
+    "held_out_ap": 0.4915,
+    "seed_stability_evaluated": false
+  },
+  "logistic_regression": {
+    "development_training_ap": 0.9123827882898651,
+    "development_validation_ap": 0.9382706744367653,
+    "final_training_ap": 0.92695500478011,
+    "held_out_ap": 0.929312178424619,
+    "seed_stability_evaluated": false
+  },
+  "random_forest": {
+    "development_training_ap": 0.926560060070318,
+    "development_validation_ap": 0.9358253931921294,
+    "final_training_ap": 0.9357715802725239,
+    "held_out_ap": 0.9440183645300276,
+    "seed_stability_evaluated": false
+  },
+  "xgboost": {
+    "development_training_ap": 0.9480364031649113,
+    "development_validation_ap": 0.9445494624907955,
+    "final_training_ap": 0.9514476381507139,
+    "held_out_ap": 0.9479351932694834,
+    "seed_stability_evaluated": false
+  }
+}

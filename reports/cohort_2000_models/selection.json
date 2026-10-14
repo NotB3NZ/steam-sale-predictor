@@ -1,0 +1,48 @@
+{
+  "development_scores": {
+    "bernoulli_baseline": {
+      "average_precision": 0.534,
+      "brier_score": 0.25082425
+    },
+    "logistic_regression": {
+      "average_precision": 0.9382706744367653,
+      "brier_score": 0.08505938890620865
+    },
+    "random_forest": {
+      "average_precision": 0.9358253931921294,
+      "brier_score": 0.09714556132724993
+    },
+    "xgboost": {
+      "average_precision": 0.9445494624907955,
+      "brier_score": 0.08961851277150615
+    }
+  },
+  "hyperparameter_search": false,
+  "primary_metric": "average_precision",
+  "ranking": [
+    "xgboost",
+    "logistic_regression",
+    "random_forest",
+    "bernoulli_baseline"
+  ],
+  "rationale": "Highest development average precision among the predefined configurations; no 2025 scores used",
+  "selected_configuration": {
+    "colsample_bytree": 0.8,
+    "eval_metric": "logloss",
+    "learning_rate": 0.05,
+    "max_depth": 3,
+    "n_estimators": 100,
+    "n_jobs": 1,
+    "objective": "binary:logistic",
+    "random_state": 42,
+    "subsample": 0.8
+  },
+  "selected_model": "xgboost",
+  "selection_data": "2023 training -> 2024 development validation only",
+  "selection_locked_at_utc": "2026-10-14T01:35:36.337523+00:00",
+  "threshold": 0.5,
+  "tie_breakers": [
+    "lower Brier score",
+    "predefined model order"
+  ]
+}
