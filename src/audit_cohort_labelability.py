@@ -33,8 +33,21 @@ def mismatch_comparison():
     name = 'data/intermediate/autumn_sale_evidence_records.csv'
     baseline = read_json(ROOT/'tests/scalable_artifact_hashes.json')[name]
     current = (ROOT/name).read_bytes()
-    old = subprocess.run(['git', '--no-optional-locks', 'show', 'HEAD:'+name],
+    head = subprocess.run(['git', '--no-optional-locks', 'show', 'HEAD:'+name],
                          cwd=ROOT, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE).stdout
+    old, reference = head, 'HEAD'
+    if hashlib.sha256(old).hexdigest() != baseline['sha256']:
+        # HEAD may advance after an audit. Compare against actual baseline bytes,
+        # not an arbitrary current Git copy that also carries the known mismatch.
+        revisions = subprocess.run(['git', '--no-optional-locks', 'log', '--all', '--format=%H', '--', name],
+                                   cwd=ROOT, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE).stdout.decode().splitlines()
+        for revision in revisions:
+            candidate = subprocess.run(['git', '--no-optional-locks', 'show', revision+':'+name],
+                                       cwd=ROOT, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE).stdout
+            if hashlib.sha256(candidate).hexdigest() == baseline['sha256']:
+                old, reference = candidate, revision
+                break
+    reference_matches = hashlib.sha256(old).hexdigest() == baseline['sha256']
     import io
     prior_rows = list(csv.DictReader(io.StringIO(old.decode('utf-8'), newline='')))
     current_rows = read_csv(ROOT/name)
@@ -44,8 +57,9 @@ def mismatch_comparison():
     positions = lambda rows: {canonical(r): i+1 for i, r in enumerate(rows)}
     prior_positions, current_positions = positions(prior_rows), positions(current_rows)
     return dict(path=name, baseline=baseline, current_sha256=digest(ROOT/name),
-                git_head_sha256=hashlib.sha256(old).hexdigest(),
-                git_head_matches_baseline=hashlib.sha256(old).hexdigest() == baseline['sha256'],
+                git_head_sha256=hashlib.sha256(head).hexdigest(),
+                git_head_matches_baseline=hashlib.sha256(head).hexdigest() == baseline['sha256'],
+                comparison_reference=reference, reference_matches_baseline=reference_matches,
                 baseline_rows=len(prior_rows), current_rows=len(current_rows),
                 row_multisets_identical=prior_counts == current_counts,
                 row_order_identical=prior_rows == current_rows,
@@ -57,8 +71,10 @@ def mismatch_comparison():
                                  current_position=current_positions[canonical(r)])
                             for r in current_rows if canonical(r) in prior_positions and
                             prior_positions[canonical(r)] != current_positions[canonical(r)]],
-                interpretation='Ordering-only mismatch' if prior_counts == current_counts else
-                               'Content mismatch requires review; no repair performed')
+                interpretation=('Baseline bytes unavailable; row comparison is against HEAD only' if not reference_matches else
+                                'Ordering-only mismatch' if prior_counts == current_counts and prior_rows != current_rows else
+                                'Identical baseline records' if prior_rows == current_rows else
+                                'Content mismatch requires review; no repair performed'))
 
 
 def build(cohort, cache_dir, reuse_dirs):

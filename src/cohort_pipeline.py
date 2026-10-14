@@ -22,8 +22,9 @@ def provenance_path(path):
     return str(path.relative_to(ROOT)) if path.is_relative_to(ROOT) else str(path)
 
 
-def evidence(games, caches, include_features=True):
+def evidence(games, caches, include_features=True, label_policy='conservative'):
     """Missing/unmatched/failed histories never become audited category D."""
+    require(label_policy in {'conservative', 'operational'}, 'Unknown label policy')
     windows = audit.canonical_windows(ROOT)
     pairs, records, diagnostics, manifests, cache_paths = [], [], [], [], {}
     features, provenance = [], []
@@ -83,11 +84,15 @@ def evidence(games, caches, include_features=True):
                        eligibility_status='ineligible_by_release_date' if not pair['eligible_for_sale'] else 'unknown_history',
                        eligibility_reason=pair['eligibility_reason'], release_date=game['release_date'],
                        cache_path=cache_paths[appid], source_shop_id=61, source_region='US')
-        # Original D means no *recorded* in-window discount, never a confirmed
-        # negative Steam participation label. Exclude it from expanded fitting.
-        sufficient = row['evidence_category'] in {'A', 'B'} and not row['requires_review']
+        # Both policies retain the original targets. Only the eligibility mask
+        # differs; operational zeros never assert actual sale nonparticipation.
+        sufficient = (row['evidence_category'] in {'A', 'B', 'D'} and
+                      row['discount_observed'] in {0, 1}) if label_policy == 'operational' else (
+                      row['evidence_category'] in {'A', 'B'} and not row['requires_review'])
         row.update(evaluation_group=game['evaluation_group'], model_eligible=bool(sufficient),
-                   evidence_sufficiency='observed_in_window_price' if sufficient else 'missing_or_uncertain_in_window_evidence',
+                   evidence_sufficiency=('operational_observation_target' if sufficient and label_policy == 'operational'
+                                        else 'observed_in_window_price' if sufficient
+                                        else 'missing_or_uncertain_in_window_evidence'),
                    steam_sale_participation='UNKNOWN', confirmed_negative=False)
         labels.append(row)
     features.sort(key=lambda r: (r['appid'], r['sale_year']))
@@ -101,7 +106,7 @@ def evidence(games, caches, include_features=True):
                              evidence_sufficiency=label['evidence_sufficiency']))
     return dict(games=games, windows=windows, pairs=pairs, records=records, diagnostics=diagnostics,
                 labels=labels, features=features, provenance=provenance, modeling=modeling,
-                usable_history_ids=usable_histories)
+                usable_history_ids=usable_histories, label_policy=label_policy)
 
 
 def quality(result):
@@ -120,7 +125,10 @@ def quality(result):
                 games_with_usable_model_labels=len(usable_ids),
                 missing_or_uncertain_labels=sum(not r['model_eligible'] for r in result['labels']),
                 coverage_by_sale_year=years,
-                label_semantics='Recorded discounts only; D retains the historical operational target but is excluded from expanded fitting. Steam participation remains unknown.')
+                label_policy=result.get('label_policy', 'conservative'),
+                label_semantics=('A=1, B/D=0, C=Unknown. Operational zero means no discount observed in available evidence; actual Steam participation remains unknown.'
+                                 if result.get('label_policy') == 'operational' else
+                                 'Recorded discounts only; D retains the historical operational target but is excluded from expanded fitting. Steam participation remains unknown.'))
 
 
 def write_table(path, rows, fields=None):
@@ -185,12 +193,12 @@ def modeling(result, output_dir, stage, fit=False):
     return report
 
 
-def run(cohort, cache_dir, output_dir, reuse_dirs=None, stage='features', fit=False):
+def run(cohort, cache_dir, output_dir, reuse_dirs=None, stage='features', fit=False, label_policy='conservative'):
     from incremental_itad import paths, resolve_cache, ORIGINAL_CACHE
     cohort, cache_dir, reuse_dirs, output_dir = paths(cohort, cache_dir,
                     reuse_dirs if reuse_dirs is not None else (ORIGINAL_CACHE,), output_dir)
     games = load_cohort(cohort)
-    result = evidence(games, lambda appid: resolve_cache(appid, cache_dir, reuse_dirs))
+    result = evidence(games, lambda appid: resolve_cache(appid, cache_dir, reuse_dirs), label_policy=label_policy)
     output_dir.mkdir(parents=True, exist_ok=True)
     # All stages produce reconciled evidence; none invokes historical fixed-path writers.
     write_table(output_dir/'evidence_audit.csv', result['pairs'])
@@ -222,6 +230,8 @@ def cli(stage=None, argv=None):
     p.add_argument('--cohort-size', type=int, choices=[500, 1000, 2000, 5000])
     p.add_argument('--cohort-output', type=Path)
     p.add_argument('--fit', action='store_true', help='Explicitly fit into a fresh isolated model directory; default prepares only')
+    p.add_argument('--label-policy', choices=['conservative', 'operational'], default='conservative',
+                   help='Use operational for the original A=1, B/D=0, C=Unknown modeling target; conservative preserves the separate diagnostic eligibility mask')
     args = p.parse_args(argv)
     stage = stage or args.stage
     if stage == 'select':
@@ -230,7 +240,7 @@ def cli(stage=None, argv=None):
     else:
         require(args.cohort and args.cache_dir and args.output_dir, 'Supply --cohort, --cache-dir and --output-dir')
         require(not args.fit or stage in {'baseline', 'ensemble'}, '--fit is only for model stages')
-        result = run(args.cohort, args.cache_dir, args.output_dir, args.reuse_cache, stage, args.fit)
+        result = run(args.cohort, args.cache_dir, args.output_dir, args.reuse_cache, stage, args.fit, args.label_policy)
         print(json.dumps(dict(stage=stage, target_games=len(result['games']), **quality(result))))
 
 

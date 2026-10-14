@@ -1,0 +1,17 @@
+{
+  "byte_identical_payloads": [
+    "feature_manifest.json",
+    "feature_provenance.json",
+    "features.csv",
+    "input_manifest.json",
+    "label_distribution.json",
+    "missingness.csv",
+    "modeling.csv",
+    "split_membership.csv",
+    "temporal_split_manifest.json"
+  ],
+  "execution_receipt_excluded": "validation.json records phase-specific preservation inventory",
+  "independent_rebuild": true,
+  "modeling_sha256": "e26d11ad8369b8110689092b2c21c8c61ae8805faa472af2cab24bbcdaf41523",
+  "no_models_or_preprocessing_fitted": true
+}

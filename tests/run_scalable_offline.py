@@ -100,6 +100,7 @@ def main():
         'test_operational_labels.py': ['MappingTests'],
         'test_autumn_features.py': ['TemporalFeatureTests', 'PriceFeatureTests', 'StaticAndSchemaTests'],
         'test_scalable_pipeline.py': None,
+        'test_frozen_modeling.py': None,
     }
     tests = []
     with patch('socket.getaddrinfo', no_network), patch('socket.create_connection', no_network), \

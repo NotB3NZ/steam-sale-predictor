@@ -1,0 +1,110 @@
+{
+  "by_split": {
+    "development_training": {
+      "evidence_categories": {
+        "A": 979,
+        "B": 10,
+        "C": 0,
+        "D": 1011
+      },
+      "operational_zeros": 1021,
+      "positives": 979,
+      "rows": 2000,
+      "unique_games": 2000,
+      "unknowns": 0
+    },
+    "development_validation": {
+      "evidence_categories": {
+        "A": 1068,
+        "B": 5,
+        "C": 0,
+        "D": 927
+      },
+      "operational_zeros": 932,
+      "positives": 1068,
+      "rows": 2000,
+      "unique_games": 2000,
+      "unknowns": 0
+    },
+    "final_training": {
+      "evidence_categories": {
+        "A": 2047,
+        "B": 15,
+        "C": 0,
+        "D": 1938
+      },
+      "operational_zeros": 1953,
+      "positives": 2047,
+      "rows": 4000,
+      "unique_games": 2000,
+      "unknowns": 0
+    },
+    "held_out_test": {
+      "evidence_categories": {
+        "A": 983,
+        "B": 8,
+        "C": 0,
+        "D": 1009
+      },
+      "operational_zeros": 1017,
+      "positives": 983,
+      "rows": 2000,
+      "unique_games": 2000,
+      "unknowns": 0
+    }
+  },
+  "by_year": {
+    "2023": {
+      "evidence_categories": {
+        "A": 979,
+        "B": 10,
+        "C": 0,
+        "D": 1011
+      },
+      "operational_zeros": 1021,
+      "positives": 979,
+      "rows": 2000,
+      "unique_games": 2000,
+      "unknowns": 0
+    },
+    "2024": {
+      "evidence_categories": {
+        "A": 1068,
+        "B": 5,
+        "C": 0,
+        "D": 927
+      },
+      "operational_zeros": 932,
+      "positives": 1068,
+      "rows": 2000,
+      "unique_games": 2000,
+      "unknowns": 0
+    },
+    "2025": {
+      "evidence_categories": {
+        "A": 983,
+        "B": 8,
+        "C": 0,
+        "D": 1009
+      },
+      "operational_zeros": 1017,
+      "positives": 983,
+      "rows": 2000,
+      "unique_games": 2000,
+      "unknowns": 0
+    }
+  },
+  "overall": {
+    "evidence_categories": {
+      "A": 3030,
+      "B": 23,
+      "C": 0,
+      "D": 2947
+    },
+    "operational_zeros": 2970,
+    "positives": 3030,
+    "rows": 6000,
+    "unique_games": 2000,
+    "unknowns": 0
+  }
+}

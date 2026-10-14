@@ -1,0 +1,76 @@
+{
+  "candidate_models": [
+    "Random Forest",
+    "XGBoost"
+  ],
+  "cohort_adapters_required": [
+    "Load/check frozen dataset and manifests into numeric frames with blank cells represented as missing",
+    "Use split_membership.csv for all-game temporal splits; do not use cohort_pipeline.model_frames",
+    "Replace fixed-100 pilot split/inspection/report writer assumptions",
+    "For 2023-only logistic development reuse the existing 09:pipeline constructor; 08:fit_models deliberately requires both training years",
+    "Save every fitted preprocessing/model/report artifact under a new namespace"
+  ],
+  "data_readiness": "Ready for the requested retrospective operational experiment; maintain observational/source-availability caveats",
+  "evaluation_limits": [
+    "Repeated games across years",
+    "2025 outcome distributions already audited; not a fresh confirmatory holdout",
+    "Zeros describe returned evidence, not verified nonparticipation",
+    "Provider backfill and release metadata stability remain unverified"
+  ],
+  "historical_baseline_status": "218/219; preserve known mismatch; legacy receipt regeneration cannot claim full agreement",
+  "initial_baselines": [
+    "training-prior Bernoulli",
+    "L2 logistic regression"
+  ],
+  "library_versions": {
+    "numpy": "2.0.2",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "2.1.4"
+  },
+  "no_model_files_generated": true,
+  "no_training_or_preprocessing_fitted": true,
+  "predefined_parameters": {
+    "logistic_regression": {
+      "C": 1.0,
+      "class_weight": null,
+      "max_iter": 2000,
+      "penalty": "l2",
+      "random_state": 42,
+      "solver": "lbfgs",
+      "tol": 0.0001
+    },
+    "random_forest": {
+      "max_depth": 4,
+      "max_features": "sqrt",
+      "min_samples_leaf": 5,
+      "n_estimators": 200,
+      "n_jobs": 1,
+      "random_state": 42
+    },
+    "xgboost": {
+      "colsample_bytree": 0.8,
+      "eval_metric": "logloss",
+      "learning_rate": 0.05,
+      "max_depth": 3,
+      "n_estimators": 100,
+      "n_jobs": 1,
+      "objective": "binary:logistic",
+      "random_state": 42,
+      "subsample": 0.8
+    }
+  },
+  "python_version": "3.9.6",
+  "reused_directly": [
+    "07:build_features",
+    "08:select_predictors",
+    "08:fit_models for 2023+2024",
+    "08:predict/evaluate",
+    "09:pipeline",
+    "09:fit_models(cohort_mode=True)"
+  ],
+  "source_sha256": {
+    "src/08_train_baseline_models.py": "04f7aaacced4cbecd6845ff8640aae43918602db88548a860a65deaed1ed7669",
+    "src/09_train_ensemble_models.py": "0ec25183d81179c4286a78c4d0a180f29ea10a66770b58667b90a213fcffda8c"
+  }
+}

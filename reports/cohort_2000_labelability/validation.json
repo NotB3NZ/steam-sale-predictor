@@ -1,0 +1,60 @@
+{
+  "all_preexisting_data_report_model_files_preserved": 2203,
+  "deterministic_saved_tables": true,
+  "evaluation_label_diagnostics": {
+    "classes": {
+      "0": 1,
+      "1": 176
+    },
+    "games": 177,
+    "rows": 177
+  },
+  "exactly_three_years_per_game": true,
+  "game_year_pairs": 6000,
+  "historical_baseline_matches": 218,
+  "historical_mismatch_unchanged": true,
+  "journal_attempts": 3816,
+  "missing_or_duplicate_pairs": 0,
+  "no_api_calls": true,
+  "no_features_generated": true,
+  "no_models_trained": true,
+  "offline_test_results": {
+    "errors": 0,
+    "failures": 1,
+    "full_historical_regeneration_tests_excluded": true,
+    "network_guard": true,
+    "passed": false,
+    "pilot_models_refitted": false,
+    "protected_artifacts_unchanged": false,
+    "protected_artifacts_verified": 219,
+    "real_credentials_available": false,
+    "repository_write_guard": true,
+    "skips": 0,
+    "tests_run": 189
+  },
+  "output_sha256": {
+    "reports/cohort_2000_labelability/README.md": "ff270847da44c1198c0f074e23c5dd3f80d91fd61457b5c7b856cc817ca63bfc",
+    "reports/cohort_2000_labelability/coverage_diagnostics.csv": "2bd4199e934664f2e24d24d1895063f5b2bd1b702ed8f35ced9544634f464034",
+    "reports/cohort_2000_labelability/evidence_audit.csv": "1afb788d0a957e06086b0a4b4880ce448afbda59ccb2127b126dbe120d995092",
+    "reports/cohort_2000_labelability/evidence_records.csv": "faaae1130d76283d46da723c0cf581a9bcd9fe91c4acb9629331b79806ff7f33",
+    "reports/cohort_2000_labelability/game_cache_audit.csv": "130f59fa8414628042fe661ce1b4b85083393cb2bce40a9a56991b2fb42a86b6",
+    "reports/cohort_2000_labelability/labelability.csv": "a3089e9d89da9af7eaaf0c5beb56610896fc37bc71c5d403a886ad61d26cf868",
+    "reports/cohort_2000_labelability/labelability_summary.json": "ae8bd66963f64779116b6685e57a685f04c439d01d5bca09750914fc8c832db9",
+    "reports/cohort_2000_labelability/timestamp_shop_conflicts.csv": "5d34d75d70d633b7f29fdc73cfc1048101d977f52fbad47cd0781d93275800d5"
+  },
+  "preservation_mismatches": [],
+  "protected_artifacts_preserved_this_phase": 219,
+  "raw_cache_and_data_inventory_unchanged": true,
+  "raw_record_provenance_reconciled": true,
+  "test_interpretation": "188 tests passed; one existing baseline hash regression failed on the known ordering-only mismatch. No errors or skips; both new audit regressions passed.",
+  "training_label_diagnostics": {
+    "classes": {
+      "0": 10,
+      "1": 1692
+    },
+    "games": 993,
+    "rows": 1702
+  },
+  "unique_appids": 2000,
+  "utc_windows_validated": true
+}

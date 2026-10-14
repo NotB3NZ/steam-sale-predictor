@@ -1,0 +1,102 @@
+{
+  "dependence": "Three observations per game are dependent; do not claim 6000 independent samples. Any future uncertainty analysis must account for game clusters.",
+  "development_train_validation_game_overlap": 2000,
+  "development_training_years": [
+    2023
+  ],
+  "development_validation_year": 2024,
+  "evaluation_scope": "Later-sale generalization for previously represented games, not unseen-game generalization",
+  "final_train_test_game_overlap": 2000,
+  "final_training_years": [
+    2023,
+    2024
+  ],
+  "held_out_test_year": 2025,
+  "label_policy": "operational_observed_v1",
+  "metrics": [
+    "ROC-AUC",
+    "average precision",
+    "log loss",
+    "Brier score",
+    "accuracy",
+    "precision",
+    "recall",
+    "F1",
+    "confusion matrix"
+  ],
+  "no_models_trained": true,
+  "preprocessing": {
+    "all_missing_training_columns": "Existing logistic core excludes all-missing training columns using training data only. Tree core retains them with documented structural-zero imputation. Record the chosen policy before fitting.",
+    "development_fit_on": "2023 training rows only; transform 2024 without fitting",
+    "final_fit_on": "Fresh preprocessing fitted on 2023+2024 training rows only; transform 2025 without fitting",
+    "fitted_during_preparation": false,
+    "learned_steps": [
+      "imputation",
+      "scaling",
+      "encoding if applicable",
+      "feature selection if applicable"
+    ],
+    "missing_values": "No preparation-time imputation or zero filling"
+  },
+  "previous_cohort_evaluation_groups": "Preserved in frozen cohort; not used by this explicitly requested temporal protocol",
+  "probability_threshold": 0.5,
+  "protocol_version": "cohort_2000_chronological_v1",
+  "random_seed": 42,
+  "selection_rules": "Use only 2023->2024 development scores for any authorized model/parameter selection; freeze candidates before consulting 2025 metrics. No test-driven preprocessing, tuning, threshold optimization, calibration, early stopping, or feature changes.",
+  "split_unit": "game-year; deterministic chronological membership, not random or game-disjoint",
+  "splits": {
+    "development_training": {
+      "evidence_categories": {
+        "A": 979,
+        "B": 10,
+        "C": 0,
+        "D": 1011
+      },
+      "operational_zeros": 1021,
+      "positives": 979,
+      "rows": 2000,
+      "unique_games": 2000,
+      "unknowns": 0
+    },
+    "development_validation": {
+      "evidence_categories": {
+        "A": 1068,
+        "B": 5,
+        "C": 0,
+        "D": 927
+      },
+      "operational_zeros": 932,
+      "positives": 1068,
+      "rows": 2000,
+      "unique_games": 2000,
+      "unknowns": 0
+    },
+    "final_training": {
+      "evidence_categories": {
+        "A": 2047,
+        "B": 15,
+        "C": 0,
+        "D": 1938
+      },
+      "operational_zeros": 1953,
+      "positives": 2047,
+      "rows": 4000,
+      "unique_games": 2000,
+      "unknowns": 0
+    },
+    "held_out_test": {
+      "evidence_categories": {
+        "A": 983,
+        "B": 8,
+        "C": 0,
+        "D": 1009
+      },
+      "operational_zeros": 1017,
+      "positives": 983,
+      "rows": 2000,
+      "unique_games": 2000,
+      "unknowns": 0
+    }
+  },
+  "test_inspection": "2025 labels have already been audited. Freeze this test for model selection purposes; it is not an untouched confirmatory holdout."
+}

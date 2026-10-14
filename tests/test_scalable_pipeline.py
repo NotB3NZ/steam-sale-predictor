@@ -596,6 +596,83 @@ class ScalableTests(unittest.TestCase):
         self.assertEqual(audited['provenance'], [])
         self.assertEqual(audited['modeling'], [])
 
+    def test_operational_policy_reuses_original_targets_and_retains_empty_history_zeros(self):
+        self.collect(FakeOpener(history=[]))
+        games = c.load_cohort(self.cohort)
+        resolver = lambda appid: inc.resolve_cache(appid, self.cache, [])
+        conservative = p.evidence(games, resolver, include_features=False)
+        operational = p.evidence(games, resolver, include_features=False, label_policy='operational')
+        self.assertEqual([r['discount_observed'] for r in operational['labels']],
+                         [r['discount_observed'] for r in conservative['labels']])
+        self.assertTrue(all(r['evidence_category'] == 'D' and r['discount_observed'] == 0 and
+                            r['model_eligible'] and not r['confirmed_negative'] for r in operational['labels']))
+        self.assertTrue(all(not r['model_eligible'] for r in conservative['labels']))
+        self.assertEqual(p.quality(operational)['missing_or_uncertain_labels'], 0)
+
+    def test_operational_policy_does_not_turn_missing_history_into_zero(self):
+        games = c.load_cohort(self.cohort)
+        result = p.evidence(games, lambda appid: inc.resolve_cache(appid, self.cache, []),
+                            include_features=False, label_policy='operational')
+        self.assertTrue(all(r['discount_observed'] == '' and not r['model_eligible'] for r in result['labels']))
+
+    def test_operational_policy_keeps_category_c_unknown(self):
+        self.collect(FakeOpener(history=[dict(RECORD, deal=None)]))
+        result = p.evidence(c.load_cohort(self.cohort), lambda appid: inc.resolve_cache(appid, self.cache, []),
+                            include_features=False, label_policy='operational')
+        row = next(r for r in result['labels'] if r['sale_year'] == 2023)
+        self.assertEqual(row['evidence_category'], 'C')
+        self.assertEqual(row['discount_observed'], '')
+        self.assertFalse(row['model_eligible'])
+
+    def test_operational_policy_keeps_release_hour_review_without_discarding_target(self):
+        self.collect(FakeOpener())
+        games = c.load_cohort(self.cohort)
+        games[0]['release_date'] = '2023-11-21'
+        result = p.evidence(games, lambda appid: inc.resolve_cache(appid, self.cache, []),
+                            include_features=False, label_policy='operational')
+        row = next(r for r in result['labels'] if r['sale_year'] == 2023)
+        self.assertTrue(row['requires_review'])
+        self.assertTrue(row['model_eligible'])
+        self.assertEqual(row['discount_observed'], 1)
+
+    def test_unknown_label_policy_is_rejected(self):
+        with self.assertRaises(ValueError):
+            p.evidence([], {}, label_policy='invented')
+
+    def test_operational_policy_reaches_configurable_processing_and_model_frames(self):
+        self.collect(FakeOpener(history=[]))
+        result = p.run(self.cohort, self.cache, self.directory/'operational', [], 'labels',
+                       label_policy='operational')
+        train, evaluation = p.model_frames(result)
+        self.assertEqual(len(train), 2)
+        self.assertEqual(set(train.discount_observed), {0})
+        self.assertTrue(evaluation.empty)
+        self.assertEqual(result['label_policy'], 'operational')
+        self.assertEqual(p.quality(result)['missing_or_uncertain_labels'], 0)
+
+    def test_baseline_comparison_finds_verified_historical_bytes_after_head_advances(self):
+        import hashlib
+        from types import SimpleNamespace
+        import audit_cohort_labelability as adapter
+        name = 'data/intermediate/autumn_sale_evidence_records.csv'
+        old = b'AppID,sale_year,source_record_index\n1,2023,0\n2,2024,1\n'
+        current = b'AppID,sale_year,source_record_index\n2,2024,1\n1,2023,0\n'
+        target = self.directory/name
+        target.parent.mkdir(parents=True)
+        target.write_bytes(current)
+        c.write_json(self.directory/'tests/scalable_artifact_hashes.json',
+                     {name: dict(sha256=hashlib.sha256(old).hexdigest(), size_bytes=len(old))})
+        outputs = [SimpleNamespace(stdout=current), SimpleNamespace(stdout=b'historical-revision\n'),
+                   SimpleNamespace(stdout=old)]
+        with patch.object(adapter, 'ROOT', self.directory), patch.object(adapter.subprocess, 'run', side_effect=outputs):
+            comparison = adapter.mismatch_comparison()
+        self.assertFalse(comparison['git_head_matches_baseline'])
+        self.assertTrue(comparison['reference_matches_baseline'])
+        self.assertEqual(comparison['comparison_reference'], 'historical-revision')
+        self.assertTrue(comparison['row_multisets_identical'])
+        self.assertFalse(comparison['row_order_identical'])
+        self.assertEqual(comparison['interpretation'], 'Ordering-only mismatch')
+
     def test_unmatched_and_empty_success_are_not_sufficient_modeling_evidence(self):
         unmatched = self.collect(FakeOpener(outcomes=[{'found': False}]))
         self.assertEqual(unmatched['newly_retrieved_games'], 0)
