@@ -1,0 +1,41 @@
+{
+  "classification_threshold": 0.5,
+  "frozen_xgboost_configuration": {
+    "colsample_bytree": 0.8,
+    "eval_metric": "logloss",
+    "learning_rate": 0.05,
+    "max_depth": 3,
+    "n_estimators": 100,
+    "n_jobs": 1,
+    "objective": "binary:logistic",
+    "random_state": 42,
+    "subsample": 0.8
+  },
+  "missing_handling": "Existing median imputation; refit medians on 2023\u20132025 only in Phase 8B. No imputation fitted in this audit.",
+  "necessary_adapters": [
+    "Pass explicit verified {2026: window} to unchanged feature core; use full parsed histories without historical wrapper Jan-2026 truncation",
+    "Use existing XGBoost pipeline constructor in a cohort-aware runner accepting 2023\u20132025; existing fit helpers reject that year set",
+    "Write new refit model/features/predictions with retrospective and provider-availability flags; do not overwrite Phase 7 artifacts"
+  ],
+  "original_historical_calendar_and_feature_definitions_unchanged": true,
+  "predictor_names": [
+    "game_age_days",
+    "release_year",
+    "release_month",
+    "release_quarter",
+    "prior_price_record_count",
+    "prior_discount_count",
+    "prior_discount_rate",
+    "days_since_last_price_record",
+    "days_since_last_discount",
+    "max_prior_discount_pct",
+    "mean_prior_discount_pct",
+    "last_observed_price",
+    "last_observed_discount_pct",
+    "has_prior_price_history",
+    "has_prior_discount_observation"
+  ],
+  "predictor_order_matches": true,
+  "predictor_types_compatible": true,
+  "saved_model_preserved_sha256": "61fdf4fc9b469531713c2bbaf307281a261ed2b333e166fda44c905c2719b2b7"
+}

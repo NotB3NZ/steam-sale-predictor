@@ -1,0 +1,27 @@
+{
+  "calibration_or_performance_estimated": false,
+  "description": "Retrospective event-time-filtered predictions using post-cutoff-collected historical data.",
+  "games": 2000,
+  "observed_2026_outcomes_used": false,
+  "predicted_operational_zero": 974,
+  "predicted_positive": 1026,
+  "predicted_positive_percent": 51.3,
+  "predicted_zero_percent": 48.7,
+  "probability_max": 0.9591066837310791,
+  "probability_mean": 0.49964911729330197,
+  "probability_min": 0.008055508136749268,
+  "probability_quantiles": {
+    "0": 0.008055508136749268,
+    "0.01": 0.008428421802818775,
+    "0.05": 0.009216069802641868,
+    "0.25": 0.03125200839713216,
+    "0.5": 0.7096369862556458,
+    "0.75": 0.9376334100961685,
+    "0.95": 0.9547137022018433,
+    "0.99": 0.9584081113338471,
+    "1": 0.9591066837310791
+  },
+  "probability_std_population": 0.41917496770571205,
+  "probability_vs_observation_count_spearman": 0.892484082231661,
+  "threshold": 0.5
+}

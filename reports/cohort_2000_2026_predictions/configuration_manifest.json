@@ -1,0 +1,59 @@
+{
+  "dependency_versions": {
+    "joblib": "1.5.3",
+    "numpy": "2.0.2",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.6.1",
+    "scipy": "1.13.1",
+    "threadpoolctl": "3.6.0",
+    "xgboost": "2.1.4"
+  },
+  "description": "Retrospective event-time-filtered predictions using post-cutoff-collected historical data.",
+  "features": [
+    "game_age_days",
+    "release_year",
+    "release_month",
+    "release_quarter",
+    "prior_price_record_count",
+    "prior_discount_count",
+    "prior_discount_rate",
+    "days_since_last_price_record",
+    "days_since_last_discount",
+    "max_prior_discount_pct",
+    "mean_prior_discount_pct",
+    "last_observed_price",
+    "last_observed_discount_pct",
+    "has_prior_price_history",
+    "has_prior_discount_observation"
+  ],
+  "hyperparameter_search": false,
+  "model_selection": false,
+  "new_refit_pipeline": "refit_2023_2025_pipeline.joblib",
+  "no_2026_outcomes_used": true,
+  "operational_zero_labels": 2970,
+  "original_evaluated_model": "reports/cohort_2000_models/selected_model.joblib",
+  "positive_labels": 3030,
+  "provider_point_in_time_availability_proven": false,
+  "python_version": "3.9.6",
+  "random_seed": 42,
+  "selected_configuration": {
+    "colsample_bytree": 0.8,
+    "eval_metric": "logloss",
+    "learning_rate": 0.05,
+    "max_depth": 3,
+    "n_estimators": 100,
+    "n_jobs": 1,
+    "objective": "binary:logistic",
+    "random_state": 42,
+    "subsample": 0.8
+  },
+  "selection_receipt_sha256": "fe7ac78308a7dec11822c027aace7704fbb55da2486e9e24eb9102653803babc",
+  "threshold": 0.5,
+  "threshold_tuning": false,
+  "training_rows": 6000,
+  "training_years": [
+    2023,
+    2024,
+    2025
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "blockers": {
+    "computational_exercise": "No additional game/data collection needed; feasible under explicitly retrospective event-time assumptions",
+    "execution_adapter": "Required: current shared year guards reject 2023\u20132025 training and historical wrapper discards pre-sale 2026 observations",
+    "verified_point_in_time_claim": "Requires authenticated archived responses or provider first-availability/record-version evidence before cutoff. A new live response cannot establish past availability."
+  },
+  "calendar": {
+    "feature_timestamp_rule": "timestamp < prediction_cutoff_utc",
+    "label_window_rule": "start-inclusive, end-exclusive; no 2026 labels generated in Phase 8A",
+    "prediction_context": "Retrospective pre-sale reconstruction after the 2026 sale ended; not a prospective forecast",
+    "prediction_cutoff_utc": "2026-10-01T17:00:00Z",
+    "sale_end_pacific": "2026-10-08T10:00:00-07:00",
+    "sale_end_utc": "2026-10-08T17:00:00Z",
+    "sale_start_pacific": "2026-10-01T10:00:00-07:00",
+    "sale_start_utc": "2026-10-01T17:00:00Z",
+    "sale_year": 2026,
+    "source_access_limitation": "The expired Steamworks event page redirects to documentation home. Indexed official text establishes the explicit start/end clock time, with dates/end corroborated in the live Valve announcement archive. This is not a newly downloaded full Steamworks page.",
+    "sources": [
+      {
+        "evidence_type": "Search-indexed official documentation, crawled last week; direct URL now redirects to documentation home",
+        "short_quote": "This year's Steam Autumn Sale runs October 1 - 8, 2026 at 10am Pacific.",
+        "supports": "October 1 through October 8, 2026; 10am Pacific endpoints",
+        "title": "Valve Steamworks: Steam Autumn Sale 2026",
+        "url": "https://partner.steamgames.com/doc/marketing/upcoming_events/2026_autumn_sale?l=english"
+      },
+      {
+        "evidence_type": "Live official Steam News archive text and announcement link",
+        "supports": "October 1 announcement; sale live then and ends October 8 at 10am Pacific",
+        "text_archive_url": "https://store.steampowered.com/oldnews/?headlines=0&l=english",
+        "title": "Valve Steam News: Steam Autumn Sale is here!",
+        "url": "https://steamcommunity.com/games/593110/announcements/detail/687517158280790640"
+      },
+      {
+        "evidence_type": "Search-indexed official Steam Promotions event listing",
+        "supports": "October 1 to October 8, 2026 calendar dates",
+        "title": "Valve Steam Promotions: Autumn Sale 2026 Featured Deep Discounts",
+        "url": "https://steamcommunity.com/groups/store_promos/announcements"
+      }
+    ],
+    "timezone": "America/Los_Angeles",
+    "utc_conversion_method": "Python zoneinfo America/Los_Angeles; both endpoints PDT (UTC-07), not a fixed PST assumption",
+    "verification_scope": "Official event-calendar research only; no ITAD or game-pricing requests",
+    "verified_on": "2026-10-14"
+  },
+  "cohort": {
+    "games": 2000,
+    "no_expansion": true,
+    "path": "data/cohorts/cohort_2000.csv",
+    "sha256": "04bd856cc620d575f4425b9ebcf6eb28d783f3eb7ee14548b1deda649a045f33"
+  },
+  "dependency_versions": {
+    "joblib": "1.5.3",
+    "numpy": "2.0.2",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.6.1",
+    "scipy": "1.13.1",
+    "threadpoolctl": "3.6.0",
+    "xgboost": "2.1.4"
+  },
+  "estimator": {
+    "calibration_fitting": false,
+    "configuration": {
+      "colsample_bytree": 0.8,
+      "eval_metric": "logloss",
+      "learning_rate": 0.05,
+      "max_depth": 3,
+      "n_estimators": 100,
+      "n_jobs": 1,
+      "objective": "binary:logistic",
+      "random_state": 42,
+      "subsample": 0.8
+    },
+    "constructor": "Reuse 09_train_ensemble_models.py:pipeline(\"xgboost\"); new adapter explicitly permits [2023,2024,2025]",
+    "early_stopping": false,
+    "hyperparameter_tuning": false,
+    "n_jobs": 1,
+    "name": "xgboost",
+    "random_seed": 42
+  },
+  "execution_status": "PREPARED_NOT_EXECUTED",
+  "execution_steps": [
+    "Verify all frozen Phase 6C/7A/8A checksums, cohort 2000 uniqueness and untouched old evaluation",
+    "Build and freeze the 2000-row 2026 feature artifact with exact source/raw-index receipts and explicit event-time-only status",
+    "Validate 15-column names/order/types/nulls; independently prove cutoff removal/exact-boundary invariance",
+    "Construct unchanged XGBoost pipeline and fit fresh preprocessing/model once on 6000 frozen 2023\u20132025 rows only",
+    "Save a new refit pipeline/configuration/learned-imputer manifest and verify reload on training probes",
+    "Generate one probability/class per game using the frozen 2026 feature artifact, threshold 0.5; do not consult 2026 outcomes",
+    "Save predictions with retrospective/backfill/missingness metadata and integrity receipt; report without prospective claims"
+  ],
+  "features_2026": {
+    "core": "07_build_autumn_features.py:build_features",
+    "input_histories": "Full existing parsed caches; never apply historical wrapper 2026-01-01 truncation",
+    "missing_values": "Preserve nulls in the 2026 feature artifact; transform using only the refitted historical training imputer",
+    "point_in_time_status": "Unverified: all currently available history receipts are post-cutoff",
+    "source_sha256": "ff60a5d4c8e05c7edc7f80fa2f234c7cfcea1dc707c7876ab6499efd2b997891",
+    "timestamp_rule": "Strictly timestamp < 2026-10-01T17:00:00Z; exact-boundary and later records excluded",
+    "windows_argument": "{2026: (\"2026-10-01\", \"2026-10-08\", 2026-10-01T17:00:00Z, 2026-10-08T17:00:00Z)}"
+  },
+  "no_training_or_predictions_executed": true,
+  "predictions": {
+    "classification_rule": "1 if probability >= 0.5, else 0",
+    "new_probability_passes": 1,
+    "no_2026_outcome_evaluation_in_prediction_phase": true,
+    "one_row_per_frozen_appid": true,
+    "probability_target": "Observed ITAD discount evidence in the verified 2026 Autumn Sale window",
+    "required_metadata": [
+      "appid",
+      "sale_year=2026",
+      "cutoff_utc",
+      "predicted_probability",
+      "operational_prediction",
+      "retrospective_pre_sale=True",
+      "point_in_time_provider_availability_proven=False",
+      "missing_feature_count",
+      "prior_price_record_count",
+      "history_receipt_utc"
+    ],
+    "rows": 2000,
+    "threshold": 0.5
+  },
+  "preservation": {
+    "old_evaluation_metrics": "Benchmark of the original 2023\u20132024 model only; not fresh performance estimates for the new 2023\u20132025 refit",
+    "original_2025_evaluation": "Leave all Phase 7 models, selection receipts, predictions and 2025 metrics unchanged; no re-evaluation of the new refit on its training year 2025",
+    "output_namespace": "Separate new reports directory for Phase 8B; preserve all Phase 6/7/8A outputs",
+    "raw_caches_cohorts_labels_and_journal": "Read-only, checksum-verified; no ITAD calls or new games",
+    "saved_model": "Create a separately named 2023\u20132025 refit pipeline; do not overwrite selected_model.joblib"
+  },
+  "protocol_version": "cohort_2000_retrospective_2026_refit_v1",
+  "scope": "Retrospective event-time pre-sale predictions of observed ITAD discount evidence; provider point-in-time availability unverified",
+  "training": {
+    "all_missing_training_feature_policy": "Preflight must show none; otherwise stop and document a policy before fitting",
+    "dataset": "reports/cohort_2000_modeling/modeling.csv",
+    "feature_allowlist": [
+      "game_age_days",
+      "release_year",
+      "release_month",
+      "release_quarter",
+      "prior_price_record_count",
+      "prior_discount_count",
+      "prior_discount_rate",
+      "days_since_last_price_record",
+      "days_since_last_discount",
+      "max_prior_discount_pct",
+      "mean_prior_discount_pct",
+      "last_observed_price",
+      "last_observed_discount_pct",
+      "has_prior_price_history",
+      "has_prior_discount_observation"
+    ],
+    "operational_zero_labels": 2970,
+    "positive_labels": 3030,
+    "preprocessing": "Fresh median imputation fitted only on the 6000 frozen 2023\u20132025 rows. No 2026 data used to fit transforms, select features or tune. No silent zero filling.",
+    "prohibited_training_information": "Any 2026 target sale outcomes, labels, prices or observations at/after target cutoff; no raw-history relabeling or feature regeneration for old years",
+    "rows": 6000,
+    "sha256": "e26d11ad8369b8110689092b2c21c8c61ae8805faa472af2cab24bbcdaf41523",
+    "target_semantics": "Observed qualifying Autumn Sale discount evidence; zero does not verify nonparticipation",
+    "unknown_labels": 0,
+    "years": [
+      2023,
+      2024,
+      2025
+    ]
+  }
+}

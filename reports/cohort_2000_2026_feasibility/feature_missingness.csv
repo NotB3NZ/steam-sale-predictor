@@ -1,0 +1,16 @@
+feature,total_games,missing,missing_percent,observed_min,observed_median,observed_max,training_2023_2025_min,training_2023_2025_max,values_outside_training_range,availability
+game_age_days,2000,0,0.0,1045,2248.5,10685,0.0,10318.0,1,Reported release-date assumption
+release_year,2000,0,0.0,1997,2020.0,2023,1997.0,2023.0,0,Reported release-date assumption
+release_month,2000,0,0.0,1,7.0,12,1.0,12.0,0,Reported release-date assumption
+release_quarter,2000,0,0.0,1,3.0,4,1.0,4.0,0,Reported release-date assumption
+prior_price_record_count,2000,0,0.0,0,40.0,275,0.0,256.0,1,Provider point-in-time availability unverified
+prior_discount_count,2000,0,0.0,0,20.0,192,0.0,182.0,1,Provider point-in-time availability unverified
+prior_discount_rate,2000,81,4.05,0.0,0.49572649572649574,0.6981818181818182,0.0,1.0,0,Provider point-in-time availability unverified
+days_since_last_price_record,2000,81,4.05,0.030775462962962963,83.97887731481481,2099.7083333333335,0.028622685185185185,1732.7083333333333,306,Provider point-in-time availability unverified
+days_since_last_discount,2000,336,16.8,0.9861805555555555,97.9654224537037,2099.7083333333335,0.5428125,1732.7083333333333,121,Provider point-in-time availability unverified
+max_prior_discount_pct,2000,336,16.8,10,71.0,100,10.0,100.0,0,Provider point-in-time availability unverified
+mean_prior_discount_pct,2000,336,16.8,10,52.63174603174603,93.33333333333333,10.0,92.5,1,Provider point-in-time availability unverified
+last_observed_price,2000,81,4.05,0,5.99,199.99,0.0,199.99,0,Provider point-in-time availability unverified
+last_observed_discount_pct,2000,81,4.05,0,0,95,0.0,95.0,0,Provider point-in-time availability unverified
+has_prior_price_history,2000,0,0.0,0,1.0,1,0.0,1.0,0,Provider point-in-time availability unverified
+has_prior_discount_observation,2000,0,0.0,0,1.0,1,0.0,1.0,0,Provider point-in-time availability unverified

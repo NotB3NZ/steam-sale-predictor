@@ -1,0 +1,33 @@
+{
+  "api_calls": 0,
+  "boundary_invariant_vectors": 2000,
+  "cohort_games": 2000,
+  "excluded_postcutoff_records": 1997,
+  "existing_baseline_mismatch": "data/intermediate/autumn_sale_evidence_records.csv",
+  "existing_baseline_mismatch_preserved_sha256": "69f4930f07a8a5f56c4434611dab81597c626d02411d286a7b542b9889213336",
+  "feature_shape": [
+    2000,
+    15
+  ],
+  "frozen_configuration_verified": true,
+  "frozen_input_checksums_verified": true,
+  "fully_point_in_time_proven_vectors": 0,
+  "historical_baseline_matches": 218,
+  "journal": {
+    "failed_api_requests": 15,
+    "interrupted_or_unknown_attempts": 0,
+    "successful_api_requests": 3801,
+    "total_http_attempts": 3816
+  },
+  "missingness_matches_phase8a": true,
+  "no_2026_outcomes_used": true,
+  "no_frozen_inputs_modified": true,
+  "no_original_models_refitted": true,
+  "old_january_filter_bypassed": true,
+  "preserved_input_files": 2323,
+  "protected_artifacts_preserved": 219,
+  "target_year": 2026,
+  "timestamp_violations": 0,
+  "training_rows": 6000,
+  "unique_predictions": 2000
+}
