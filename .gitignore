@@ -87,3 +87,18 @@ Icon
 # Data sets (optional - you may want to ignore large datasets)
 games.csv
 games.json
+
+# Phase 9B.2: local environment and credential variants; tracked research stays intact.
+.env.*
+!.env.example
+.venv*/
+venv*/
+/apikey.*
+/api_key
+/api_key.*
+/credentials.json
+/credentials.local.*
+/secrets.json
+/secrets.local.*
+*.pem
+*.key
