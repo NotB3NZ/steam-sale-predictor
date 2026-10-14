@@ -1,0 +1,9 @@
+stage,segment,observations,actual_positive,actual_negative,accuracy,precision,recall,balanced_accuracy,average_precision,tn,fp,fn,tp,undefined_metrics
+development,0,82,0,82,1.0,,,,,82,0,0,0,"{""average_precision"": ""Undefined: no operational positives."", ""balanced_accuracy"": ""Single-class subgroup; balanced accuracy omitted."", ""f1"": ""Undefined: zero denominator; reported as JSON null."", ""precision"": ""Undefined: zero denominator; reported as JSON null."", ""recall"": ""Undefined: zero denominator; reported as JSON null."", ""roc_auc"": ""Undefined: validation has only one operational class.""}"
+development,1-9,590,40,550,0.9389830508474576,0.8333333333333334,0.125,0.561590909090909,0.48237216793113824,549,1,35,5,{}
+development,10-29,478,280,198,0.7677824267782427,0.8448979591836735,0.7392857142857143,0.7736832611832611,0.8641528393869689,160,38,73,207,{}
+development,30+,850,748,102,0.8988235294117647,0.9355263157894737,0.9505347593582888,0.7350713012477719,0.9663895915147052,53,49,37,711,{}
+held_out,0,82,0,82,1.0,,,,,82,0,0,0,"{""average_precision"": ""Undefined: no operational positives."", ""balanced_accuracy"": ""Single-class subgroup; balanced accuracy omitted."", ""f1"": ""Undefined: zero denominator; reported as JSON null."", ""precision"": ""Undefined: zero denominator; reported as JSON null."", ""recall"": ""Undefined: zero denominator; reported as JSON null."", ""roc_auc"": ""Undefined: validation has only one operational class.""}"
+held_out,1-9,538,19,519,0.9721189591078067,0.7,0.3684210526315789,0.6813203529053848,0.48020456926148536,516,3,12,7,{}
+held_out,10-29,336,118,218,0.8184523809523809,0.7050359712230215,0.8305084745762712,0.8212175400404291,0.7475393872105354,177,41,20,98,{}
+held_out,30+,1044,846,198,0.9080459770114943,0.930045871559633,0.958628841607565,0.8252740167633785,0.9605858654154701,137,61,35,811,{}

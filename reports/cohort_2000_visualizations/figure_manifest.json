@@ -1,0 +1,294 @@
+{
+  "colors": {
+    "bernoulli_baseline": "#88939D",
+    "logistic_regression": "#527D9D",
+    "random_forest": "#C58B57",
+    "xgboost": "#779584"
+  },
+  "figures": [
+    {
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "filename": "development_calibration.png",
+      "height": 1470,
+      "sha256": "533dc7af6957a9b6ad7a3d14f674e6bbb011467ed87d68137e004489f140df3e",
+      "visually_reviewed": true,
+      "white_background": true,
+      "width": 2160
+    },
+    {
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "filename": "development_coverage_probability.png",
+      "height": 1470,
+      "sha256": "65d2475c1e23a19f3977252fabbdb2a0915d3d7d61975fef3b085ee53d2f18dd",
+      "visually_reviewed": true,
+      "white_background": true,
+      "width": 2160
+    },
+    {
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "filename": "development_errors_by_coverage.png",
+      "height": 1590,
+      "sha256": "56f8699652792bd638ae08b146ca533a52677e1b44f1269b1ce5ef82cf33848b",
+      "visually_reviewed": true,
+      "white_background": true,
+      "width": 2550
+    },
+    {
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "filename": "development_labels_by_coverage.png",
+      "height": 1590,
+      "sha256": "3b978569c5d061b820e804a8398a9b042b9d06f3dfc183fabd2ec6e95e0f796f",
+      "visually_reviewed": true,
+      "white_background": true,
+      "width": 2550
+    },
+    {
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "filename": "development_model_comparison.png",
+      "height": 1950,
+      "sha256": "639b65666d4740bd9857400e893db76334be0dd9a2192cfac48ac9460e5afa0c",
+      "visually_reviewed": true,
+      "white_background": true,
+      "width": 2700
+    },
+    {
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "filename": "development_observation_count_distribution.png",
+      "height": 1470,
+      "sha256": "ce163f75dcf2bfa965f9aed0b8e2bca1dee5cea3baf4d2bdf81345079f2c5c99",
+      "visually_reviewed": true,
+      "white_background": true,
+      "width": 2160
+    },
+    {
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "filename": "development_performance_by_coverage.png",
+      "height": 1590,
+      "sha256": "6af3c1ed3882a0e73a437af7627de92d7806277b6471546e7a9f0a73b2dfb0e1",
+      "visually_reviewed": true,
+      "white_background": true,
+      "width": 2550
+    },
+    {
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "filename": "development_pr_curves.png",
+      "height": 1470,
+      "sha256": "58069b9bec952a9460059f90af9f70bbd47285acd9b6a2d26fabb366eccaa46d",
+      "visually_reviewed": true,
+      "white_background": true,
+      "width": 2160
+    },
+    {
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "filename": "development_probability_distribution.png",
+      "height": 1470,
+      "sha256": "4ea1dbb5b0cb82ee7f644bbbed7fc168afc36e48c04409ad5f350b130e23703c",
+      "visually_reviewed": true,
+      "white_background": true,
+      "width": 2160
+    },
+    {
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "filename": "development_roc_curves.png",
+      "height": 1470,
+      "sha256": "4569b33706123b6d151b7e5abf0f4a9eef0d230742e7c86a16f9844f2597d4fa",
+      "visually_reviewed": true,
+      "white_background": true,
+      "width": 2160
+    },
+    {
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "filename": "development_xgboost_confusion.png",
+      "height": 1470,
+      "sha256": "dfa95e2a7baa948b36ac8132b419ffc08bf1e701f0a8784bf7096da903830ab6",
+      "visually_reviewed": true,
+      "white_background": true,
+      "width": 1920
+    },
+    {
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "filename": "held_out_calibration.png",
+      "height": 1470,
+      "sha256": "3a6c34d9023570ea3d0e81ce98198d01379f5f497ecad3ffa7d0942787f2568f",
+      "visually_reviewed": true,
+      "white_background": true,
+      "width": 2160
+    },
+    {
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "filename": "held_out_coverage_probability.png",
+      "height": 1470,
+      "sha256": "1d248675f05d94a35d16e4563b339037ae57419682a8f2472dfd1741bffdeed7",
+      "visually_reviewed": true,
+      "white_background": true,
+      "width": 2160
+    },
+    {
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "filename": "held_out_errors_by_coverage.png",
+      "height": 1590,
+      "sha256": "9969b43a73cc854503683a8a60e89bcc7547a77f04280a2020cce68cab88e275",
+      "visually_reviewed": true,
+      "white_background": true,
+      "width": 2550
+    },
+    {
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "filename": "held_out_labels_by_coverage.png",
+      "height": 1590,
+      "sha256": "9fa5986944d854e7079bcddc6accb931cb1c4019830d44bc64908dbd223cc928",
+      "visually_reviewed": true,
+      "white_background": true,
+      "width": 2550
+    },
+    {
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "filename": "held_out_model_comparison.png",
+      "height": 1950,
+      "sha256": "6328cbd8575fbe0a446f921fdc84c6ae503322a76633beff00fa4f2318b72d90",
+      "visually_reviewed": true,
+      "white_background": true,
+      "width": 2700
+    },
+    {
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "filename": "held_out_observation_count_distribution.png",
+      "height": 1470,
+      "sha256": "220b824713fc5868fac589b8ab998013e4fed50829227432267fe3b2b8c489f2",
+      "visually_reviewed": true,
+      "white_background": true,
+      "width": 2160
+    },
+    {
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "filename": "held_out_performance_by_coverage.png",
+      "height": 1590,
+      "sha256": "733a97bc72587222c8ec126e5fe4e5b0449125a6bfc4959bac06ad9d63955545",
+      "visually_reviewed": true,
+      "white_background": true,
+      "width": 2550
+    },
+    {
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "filename": "held_out_pr_curves.png",
+      "height": 1470,
+      "sha256": "f0f090f0d9478faa122e6840a97b1d9ebcb879bb73ecbb45485bf6c06aad591a",
+      "visually_reviewed": true,
+      "white_background": true,
+      "width": 2160
+    },
+    {
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "filename": "held_out_probability_distribution.png",
+      "height": 1470,
+      "sha256": "c7cd8ff61d0ccf7f5d1a95ca81271765cf233611b7b2302ff934f30d58e32c4a",
+      "visually_reviewed": true,
+      "white_background": true,
+      "width": 2160
+    },
+    {
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "filename": "held_out_roc_curves.png",
+      "height": 1470,
+      "sha256": "643a30670ffcbb29aaa319f67e156d0d2826a69b758d1938b9ff997953f7cf8a",
+      "visually_reviewed": true,
+      "white_background": true,
+      "width": 2160
+    },
+    {
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "filename": "held_out_xgboost_confusion.png",
+      "height": 1470,
+      "sha256": "f5e0b60698ee8b1fc0b344f1a4b8f54f7f62d30ae7497f31124306a461db8224",
+      "visually_reviewed": true,
+      "white_background": true,
+      "width": 1920
+    },
+    {
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "filename": "xgboost_gain_importance.png",
+      "height": 1800,
+      "sha256": "659043bfd8fd4584a0b9d57a23f3e0142af4768db8f5766e7afd50444623e2b3",
+      "visually_reviewed": true,
+      "white_background": true,
+      "width": 2400
+    }
+  ],
+  "independent_png_reproduction": true,
+  "light_theme": true,
+  "source_sha256": {
+    "src/plotting_style.py": "aa41b88c389dc85f3f3ab02c1f404764637a97ed6a29841cd3b4ea7f5006a18d",
+    "src/train_cohort_temporal.py": "a4ed300bc303fae8bfe981dc8c7f6523634c485307515885994404e0aa49e2e5",
+    "src/visualize_cohort_models.py": "59c75fe004d0542df835fbe08687db3b15ae1bbdd3b27d18713711e1c726b820"
+  },
+  "static_png": true
+}
